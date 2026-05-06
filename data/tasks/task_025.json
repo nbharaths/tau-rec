@@ -1,0 +1,64 @@
+{
+  "id": "task_025",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Horror"
+      },
+      "reveal": "on_ask"
+    },
+    {
+      "constraint": {
+        "field": "runtime",
+        "op": "<=",
+        "value": 120
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "content_rating",
+        "op": "in",
+        "value": [
+          "R",
+          "NR"
+        ]
+      },
+      "reveal": "on_ask"
+    },
+    {
+      "constraint": {
+        "field": "rating",
+        "op": ">=",
+        "value": 6.0
+      },
+      "reveal": "on_ask"
+    }
+  ],
+  "persona": "You are a dad who fell asleep during the last three movies you tried. You need something genuinely gripping from minute one.",
+  "soft_preferences": [
+    "wants found-footage style or mockumentary"
+  ],
+  "policy_flags": [
+    "age_restricted",
+    "recommend_tool",
+    "availability"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "medium",
+  "reveal_difficulty": "mixed",
+  "user_id": "user_1",
+  "user_history": {
+    "user_1": {
+      "watched": [],
+      "ratings": {}
+    }
+  },
+  "user_services": [
+    "AMC+",
+    "Hulu",
+    "Apple TV+"
+  ]
+}

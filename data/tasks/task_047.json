@@ -1,0 +1,71 @@
+{
+  "id": "task_047",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Drama"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "runtime",
+        "op": ">=",
+        "value": 110
+      },
+      "reveal": "hidden"
+    },
+    {
+      "constraint": {
+        "field": "rating",
+        "op": ">=",
+        "value": 6.5
+      },
+      "reveal": "hidden"
+    },
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "not_contains",
+        "value": "Comedy"
+      },
+      "reveal": "hidden"
+    },
+    {
+      "constraint": {
+        "field": "content_rating",
+        "op": "in",
+        "value": [
+          "R",
+          "NR"
+        ]
+      },
+      "reveal": "hidden"
+    }
+  ],
+  "persona": "You are a musician who values soundtracks and sound design. A great score can make or break a movie for you.",
+  "soft_preferences": [
+    "wants something emotionally devastating"
+  ],
+  "policy_flags": [
+    "age_restricted",
+    "recommend_tool",
+    "availability"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "complex",
+  "reveal_difficulty": "hidden",
+  "user_id": "user_1",
+  "user_history": {
+    "user_1": {
+      "watched": [],
+      "ratings": {}
+    }
+  },
+  "user_services": [
+    "Netflix",
+    "Hulu"
+  ]
+}

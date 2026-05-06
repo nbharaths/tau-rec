@@ -1,0 +1,53 @@
+{
+  "id": "task_033",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Horror"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "streaming_services",
+        "op": "contains_any",
+        "value": [
+          "Netflix",
+          "Hulu"
+        ]
+      },
+      "reveal": "hidden"
+    },
+    {
+      "constraint": {
+        "field": "runtime",
+        "op": "<=",
+        "value": 110
+      },
+      "reveal": "hidden"
+    }
+  ],
+  "persona": "You are visiting from abroad and want to watch something that captures American culture. You speak English well but prefer clear dialogue.",
+  "soft_preferences": [
+    "wants folk horror or cosmic horror"
+  ],
+  "policy_flags": [
+    "availability",
+    "recommend_tool"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "medium",
+  "reveal_difficulty": "hidden",
+  "user_id": "user_1",
+  "user_history": {
+    "user_1": {
+      "watched": [],
+      "ratings": {}
+    }
+  },
+  "user_services": [
+    "Netflix"
+  ]
+}

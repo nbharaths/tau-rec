@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use τ-Rec, please cite the following work."
+title: "τ-Rec: A Verifiable Benchmark for Agentic Recommender Systems"
+authors:
+  - family-names: "Narasimhan"
+    given-names: "Bharath Sivaram"
+    affiliation: "Independent Researcher"
+    email: "nbharaths@gmail.com"
+  - family-names: "Narasimhan"
+    given-names: "Karthik R"
+    affiliation: "Princeton University"
+    email: "karthikn@princeton.edu"
+version: "1.0"
+date-released: "2026-05-05"
+license: "MIT"
+repository-code: "https://github.com/nbharaths/tau-rec"
+keywords:
+  - "agentic recommender systems"
+  - "conversational recommender systems"
+  - "verifiable evaluation"
+  - "benchmark"
+  - "user simulation"
+  - "multi-turn interaction"

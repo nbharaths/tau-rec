@@ -1,0 +1,50 @@
+{
+  "id": "task_005",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Drama"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "rating",
+        "op": ">=",
+        "value": 6.0
+      },
+      "reveal": "volunteer"
+    }
+  ],
+  "persona": "You are a software engineer unwinding after a long day. You want something engaging but not emotionally draining. You give short answers.",
+  "soft_preferences": [
+    "loves character studies",
+    "prefers slow burn"
+  ],
+  "policy_flags": [
+    "watch_history",
+    "recommend_tool",
+    "availability"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "simple",
+  "reveal_difficulty": "volunteer",
+  "user_id": "user_1",
+  "user_history": {
+    "user_1": {
+      "watched": [
+        "tmdb_858024"
+      ],
+      "ratings": {
+        "tmdb_858024": 8.0
+      }
+    }
+  },
+  "user_services": [
+    "Hulu",
+    "Paramount+",
+    "Amazon Prime Video"
+  ]
+}

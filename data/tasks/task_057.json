@@ -1,0 +1,51 @@
+{
+  "id": "task_057",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Action"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "runtime",
+        "op": "<=",
+        "value": 120
+      },
+      "reveal": "on_ask"
+    },
+    {
+      "constraint": {
+        "field": "rating",
+        "op": ">=",
+        "value": 6.0
+      },
+      "reveal": "on_ask"
+    }
+  ],
+  "persona": "You want an action movie. On your first rejection, state explicitly that you dislike Animation. Reject any follow-up recommendation that has Animation as a genre.",
+  "soft_preferences": [
+    "likes practical stunts"
+  ],
+  "policy_flags": [
+    "recommend_tool",
+    "availability"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "medium",
+  "reveal_difficulty": "mixed",
+  "user_id": "user_1",
+  "user_history": {
+    "user_1": {
+      "watched": [],
+      "ratings": {}
+    }
+  },
+  "user_services": [
+    "Netflix",
+    "Hulu"
+  ]
+}

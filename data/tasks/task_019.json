@@ -1,0 +1,71 @@
+{
+  "id": "task_019",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Action"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "rating",
+        "op": ">=",
+        "value": 6.0
+      },
+      "reveal": "hidden"
+    },
+    {
+      "constraint": {
+        "field": "runtime",
+        "op": "<=",
+        "value": 140
+      },
+      "reveal": "hidden"
+    },
+    {
+      "constraint": {
+        "field": "content_rating",
+        "op": "in",
+        "value": [
+          "PG-13",
+          "R",
+          "NR"
+        ]
+      },
+      "reveal": "on_ask"
+    }
+  ],
+  "persona": "You are a teenager looking for something to watch alone on a Saturday. You get bored easily and want something that hooks you fast.",
+  "soft_preferences": [
+    "loves heist movies and clever plans"
+  ],
+  "policy_flags": [
+    "watch_history",
+    "recommend_tool",
+    "availability",
+    "age_restricted"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "medium",
+  "reveal_difficulty": "mixed",
+  "user_id": "user_1",
+  "user_history": {
+    "user_1": {
+      "watched": [
+        "tmdb_1088434"
+      ],
+      "ratings": {
+        "tmdb_1088434": 7.0
+      }
+    }
+  },
+  "user_services": [
+    "Amazon Prime Video",
+    "Netflix",
+    "Hulu",
+    "Peacock"
+  ]
+}

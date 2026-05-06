@@ -1,0 +1,63 @@
+{
+  "id": "task_041",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Drama"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "not_contains",
+        "value": "Horror"
+      },
+      "reveal": "on_ask"
+    },
+    {
+      "constraint": {
+        "field": "runtime",
+        "op": "<=",
+        "value": 130
+      },
+      "reveal": "on_ask"
+    },
+    {
+      "constraint": {
+        "field": "rating",
+        "op": ">=",
+        "value": 6.0
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "content_rating",
+        "op": "==",
+        "value": "PG-13"
+      },
+      "reveal": "on_ask"
+    }
+  ],
+  "persona": "You are a high school teacher looking for a movie to show in class. It needs to be appropriate and have some educational value.",
+  "soft_preferences": [
+    "loves coming-of-age stories"
+  ],
+  "policy_flags": [
+    "recommend_tool"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "complex",
+  "reveal_difficulty": "mixed",
+  "user_id": "user_1",
+  "user_history": {
+    "user_1": {
+      "watched": [],
+      "ratings": {}
+    }
+  },
+  "user_services": []
+}

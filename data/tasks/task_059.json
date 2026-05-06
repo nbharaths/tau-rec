@@ -1,0 +1,46 @@
+{
+  "id": "task_059",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Thriller"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "rating",
+        "op": ">=",
+        "value": 6.5
+      },
+      "reveal": "volunteer"
+    }
+  ],
+  "persona": "You like thrillers. You expect the assistant to present one option at a time. If they list two or more titles together, push back and remind them you want them to commit to a single pick first.",
+  "soft_preferences": [
+    "prefers slow-burn pacing"
+  ],
+  "policy_flags": [
+    "single_recommendation",
+    "recommend_tool",
+    "availability"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "simple",
+  "reveal_difficulty": "volunteer",
+  "user_id": "user_1",
+  "user_history": {
+    "user_1": {
+      "watched": [],
+      "ratings": {}
+    }
+  },
+  "user_services": [
+    "fuboTV",
+    "Philo",
+    "Apple TV+",
+    "HBO Max"
+  ]
+}

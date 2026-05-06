@@ -1,0 +1,7667 @@
+{
+  "task_001": {
+    "constraint_solutions": [
+      "tmdb_467905",
+      "tmdb_639988",
+      "tmdb_696393",
+      "tmdb_803796",
+      "tmdb_991494",
+      "tmdb_1049471",
+      "tmdb_1084242",
+      "tmdb_1084577",
+      "tmdb_1115544",
+      "tmdb_1117857",
+      "tmdb_1119449",
+      "tmdb_1129104",
+      "tmdb_1145899",
+      "tmdb_1146058",
+      "tmdb_1154538",
+      "tmdb_1168190",
+      "tmdb_1198994",
+      "tmdb_1209511",
+      "tmdb_1226863",
+      "tmdb_1234731",
+      "tmdb_1262815",
+      "tmdb_1266127",
+      "tmdb_1287141",
+      "tmdb_1291335",
+      "tmdb_1292695",
+      "tmdb_1297842",
+      "tmdb_1325734",
+      "tmdb_1327819",
+      "tmdb_1336770",
+      "tmdb_1416391",
+      "tmdb_1450527",
+      "tmdb_1455079",
+      "tmdb_1465563",
+      "tmdb_1493859",
+      "tmdb_1497970",
+      "tmdb_1620551",
+      "tmdb_1635276"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_467905",
+        "title": "How to Make a Killing"
+      },
+      {
+        "id": "tmdb_639988",
+        "title": "No Other Choice"
+      },
+      {
+        "id": "tmdb_696393",
+        "title": "Cold Storage"
+      },
+      {
+        "id": "tmdb_803796",
+        "title": "KPop Demon Hunters"
+      },
+      {
+        "id": "tmdb_991494",
+        "title": "The SpongeBob Movie: Search for SquarePants"
+      },
+      {
+        "id": "tmdb_1049471",
+        "title": "Outcome"
+      },
+      {
+        "id": "tmdb_1084242",
+        "title": "Zootopia 2"
+      },
+      {
+        "id": "tmdb_1084577",
+        "title": "Balls Up"
+      },
+      {
+        "id": "tmdb_1115544",
+        "title": "Mike & Nick & Nick & Alice"
+      },
+      {
+        "id": "tmdb_1117857",
+        "title": "In Your Dreams"
+      },
+      {
+        "id": "tmdb_1119449",
+        "title": "Good Luck, Have Fun, Don't Die"
+      },
+      {
+        "id": "tmdb_1129104",
+        "title": "Flavia"
+      },
+      {
+        "id": "tmdb_1145899",
+        "title": "Marsupilami"
+      },
+      {
+        "id": "tmdb_1146058",
+        "title": "The Pout-Pout Fish"
+      },
+      {
+        "id": "tmdb_1154538",
+        "title": "Nirvanna the Band the Show the Movie"
+      },
+      {
+        "id": "tmdb_1168190",
+        "title": "The Wrecking Crew"
+      },
+      {
+        "id": "tmdb_1198994",
+        "title": "Send Help"
+      },
+      {
+        "id": "tmdb_1209511",
+        "title": "Love Insurance Kompany"
+      },
+      {
+        "id": "tmdb_1226863",
+        "title": "The Super Mario Galaxy Movie"
+      },
+      {
+        "id": "tmdb_1234731",
+        "title": "Anaconda"
+      },
+      {
+        "id": "tmdb_1262815",
+        "title": "The Choral"
+      },
+      {
+        "id": "tmdb_1266127",
+        "title": "Ready or Not: Here I Come"
+      },
+      {
+        "id": "tmdb_1287141",
+        "title": "Pillion"
+      },
+      {
+        "id": "tmdb_1291335",
+        "title": "Solo Mio"
+      },
+      {
+        "id": "tmdb_1292695",
+        "title": "They Will Kill You"
+      },
+      {
+        "id": "tmdb_1297842",
+        "title": "GOAT"
+      },
+      {
+        "id": "tmdb_1325734",
+        "title": "The Drama"
+      },
+      {
+        "id": "tmdb_1327819",
+        "title": "Hoppers"
+      },
+      {
+        "id": "tmdb_1336770",
+        "title": "Vaazha II"
+      },
+      {
+        "id": "tmdb_1416391",
+        "title": "Toaster"
+      },
+      {
+        "id": "tmdb_1450527",
+        "title": "Forbidden Fruits"
+      },
+      {
+        "id": "tmdb_1455079",
+        "title": "You, Me & Tuscany"
+      },
+      {
+        "id": "tmdb_1465563",
+        "title": "A Poet"
+      },
+      {
+        "id": "tmdb_1493859",
+        "title": "Pizza Movie"
+      },
+      {
+        "id": "tmdb_1497970",
+        "title": "Tom and Jerry: Forbidden Compass"
+      },
+      {
+        "id": "tmdb_1620551",
+        "title": "Feel My Voice"
+      },
+      {
+        "id": "tmdb_1635276",
+        "title": "Eat Pray Bark"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_803796",
+      "tmdb_1084577",
+      "tmdb_1115544",
+      "tmdb_1117857",
+      "tmdb_1168190",
+      "tmdb_1234731",
+      "tmdb_1416391",
+      "tmdb_1493859",
+      "tmdb_1620551",
+      "tmdb_1635276"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_803796",
+        "title": "KPop Demon Hunters"
+      },
+      {
+        "id": "tmdb_1084577",
+        "title": "Balls Up"
+      },
+      {
+        "id": "tmdb_1115544",
+        "title": "Mike & Nick & Nick & Alice"
+      },
+      {
+        "id": "tmdb_1117857",
+        "title": "In Your Dreams"
+      },
+      {
+        "id": "tmdb_1168190",
+        "title": "The Wrecking Crew"
+      },
+      {
+        "id": "tmdb_1234731",
+        "title": "Anaconda"
+      },
+      {
+        "id": "tmdb_1416391",
+        "title": "Toaster"
+      },
+      {
+        "id": "tmdb_1493859",
+        "title": "Pizza Movie"
+      },
+      {
+        "id": "tmdb_1620551",
+        "title": "Feel My Voice"
+      },
+      {
+        "id": "tmdb_1635276",
+        "title": "Eat Pray Bark"
+      }
+    ],
+    "user_services": [
+      "Hulu",
+      "Amazon Prime Video",
+      "Netflix",
+      "HBO Max"
+    ]
+  },
+  "task_002": {
+    "constraint_solutions": [
+      "tmdb_604079",
+      "tmdb_680493",
+      "tmdb_696393",
+      "tmdb_999136",
+      "tmdb_1010755",
+      "tmdb_1043197",
+      "tmdb_1084187",
+      "tmdb_1086260",
+      "tmdb_1110034",
+      "tmdb_1159559",
+      "tmdb_1193501",
+      "tmdb_1194963",
+      "tmdb_1198994",
+      "tmdb_1234731",
+      "tmdb_1241470",
+      "tmdb_1242937",
+      "tmdb_1266127",
+      "tmdb_1276038",
+      "tmdb_1285965",
+      "tmdb_1290417",
+      "tmdb_1292695",
+      "tmdb_1297454",
+      "tmdb_1309083",
+      "tmdb_1370814",
+      "tmdb_1408208",
+      "tmdb_1412598",
+      "tmdb_1418657",
+      "tmdb_1450527",
+      "tmdb_1470130",
+      "tmdb_1480387",
+      "tmdb_1519168",
+      "tmdb_1526650",
+      "tmdb_1572073",
+      "tmdb_1610418"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_604079",
+        "title": "The Long Walk"
+      },
+      {
+        "id": "tmdb_680493",
+        "title": "Return to Silent Hill"
+      },
+      {
+        "id": "tmdb_696393",
+        "title": "Cold Storage"
+      },
+      {
+        "id": "tmdb_999136",
+        "title": "Do Not Enter"
+      },
+      {
+        "id": "tmdb_1010755",
+        "title": "The Strangers: Chapter 3"
+      },
+      {
+        "id": "tmdb_1043197",
+        "title": "Dust Bunny"
+      },
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1086260",
+        "title": "The Astronaut"
+      },
+      {
+        "id": "tmdb_1110034",
+        "title": "Kraken"
+      },
+      {
+        "id": "tmdb_1159559",
+        "title": "Scream 7"
+      },
+      {
+        "id": "tmdb_1193501",
+        "title": "Whistle"
+      },
+      {
+        "id": "tmdb_1194963",
+        "title": "Noise"
+      },
+      {
+        "id": "tmdb_1198994",
+        "title": "Send Help"
+      },
+      {
+        "id": "tmdb_1234731",
+        "title": "Anaconda"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242937",
+        "title": "The Dreadful"
+      },
+      {
+        "id": "tmdb_1266127",
+        "title": "Ready or Not: Here I Come"
+      },
+      {
+        "id": "tmdb_1276038",
+        "title": "A Desert"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      },
+      {
+        "id": "tmdb_1290417",
+        "title": "Thrash"
+      },
+      {
+        "id": "tmdb_1292695",
+        "title": "They Will Kill You"
+      },
+      {
+        "id": "tmdb_1297454",
+        "title": "The Death That Awaits"
+      },
+      {
+        "id": "tmdb_1309083",
+        "title": "Dolly"
+      },
+      {
+        "id": "tmdb_1370814",
+        "title": "The Plague"
+      },
+      {
+        "id": "tmdb_1408208",
+        "title": "Exit 8"
+      },
+      {
+        "id": "tmdb_1412598",
+        "title": "Killer Whale"
+      },
+      {
+        "id": "tmdb_1418657",
+        "title": "The Yeti"
+      },
+      {
+        "id": "tmdb_1450527",
+        "title": "Forbidden Fruits"
+      },
+      {
+        "id": "tmdb_1470130",
+        "title": "The Mortuary Assistant"
+      },
+      {
+        "id": "tmdb_1480387",
+        "title": "undertone"
+      },
+      {
+        "id": "tmdb_1519168",
+        "title": "The Jester 2"
+      },
+      {
+        "id": "tmdb_1526650",
+        "title": "Mudborn"
+      },
+      {
+        "id": "tmdb_1572073",
+        "title": "The Deadly Little Mermaid"
+      },
+      {
+        "id": "tmdb_1610418",
+        "title": "The House on Haunted Grounds"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1086260",
+      "tmdb_1241470",
+      "tmdb_1285965"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1086260",
+        "title": "The Astronaut"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      }
+    ],
+    "user_services": [
+      "Hulu"
+    ]
+  },
+  "task_003": {
+    "constraint_solutions": [
+      "tmdb_662707",
+      "tmdb_1043197",
+      "tmdb_1084187",
+      "tmdb_1084577",
+      "tmdb_1088434",
+      "tmdb_1110034",
+      "tmdb_1119449",
+      "tmdb_1144107",
+      "tmdb_1168190",
+      "tmdb_1218925",
+      "tmdb_1220522",
+      "tmdb_1234821",
+      "tmdb_1236153",
+      "tmdb_1241470",
+      "tmdb_1242265",
+      "tmdb_1242332",
+      "tmdb_1242501",
+      "tmdb_1242898",
+      "tmdb_1254135",
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1290821",
+      "tmdb_1292415",
+      "tmdb_1292695",
+      "tmdb_1305781",
+      "tmdb_1311031",
+      "tmdb_1336770",
+      "tmdb_1339876",
+      "tmdb_1356039",
+      "tmdb_1383731",
+      "tmdb_1387382",
+      "tmdb_1401778",
+      "tmdb_1406657",
+      "tmdb_1412598",
+      "tmdb_1419406",
+      "tmdb_1472951",
+      "tmdb_1539104",
+      "tmdb_1545621",
+      "tmdb_1582770",
+      "tmdb_1641319"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_662707",
+        "title": "Starbright"
+      },
+      {
+        "id": "tmdb_1043197",
+        "title": "Dust Bunny"
+      },
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1084577",
+        "title": "Balls Up"
+      },
+      {
+        "id": "tmdb_1088434",
+        "title": "Hellfire"
+      },
+      {
+        "id": "tmdb_1110034",
+        "title": "Kraken"
+      },
+      {
+        "id": "tmdb_1119449",
+        "title": "Good Luck, Have Fun, Don't Die"
+      },
+      {
+        "id": "tmdb_1144107",
+        "title": "The Legend of Hei 2"
+      },
+      {
+        "id": "tmdb_1168190",
+        "title": "The Wrecking Crew"
+      },
+      {
+        "id": "tmdb_1218925",
+        "title": "Chainsaw Man - The Movie: Reze Arc"
+      },
+      {
+        "id": "tmdb_1220522",
+        "title": "Dacoit"
+      },
+      {
+        "id": "tmdb_1234821",
+        "title": "Jurassic World Rebirth"
+      },
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242265",
+        "title": "Fuze"
+      },
+      {
+        "id": "tmdb_1242332",
+        "title": "Normal"
+      },
+      {
+        "id": "tmdb_1242501",
+        "title": "Icefall"
+      },
+      {
+        "id": "tmdb_1242898",
+        "title": "Predator: Badlands"
+      },
+      {
+        "id": "tmdb_1254135",
+        "title": "13 Days, 13 Nights"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1290821",
+        "title": "Shelter"
+      },
+      {
+        "id": "tmdb_1292415",
+        "title": "Beast"
+      },
+      {
+        "id": "tmdb_1292695",
+        "title": "They Will Kill You"
+      },
+      {
+        "id": "tmdb_1305781",
+        "title": "Blades of the Guardians: Wind Rises in the Desert"
+      },
+      {
+        "id": "tmdb_1311031",
+        "title": "Demon Slayer: Kimetsu no Yaiba Infinity Castle"
+      },
+      {
+        "id": "tmdb_1336770",
+        "title": "Vaazha II"
+      },
+      {
+        "id": "tmdb_1339876",
+        "title": "Mardaani 3"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      },
+      {
+        "id": "tmdb_1383731",
+        "title": "Protector"
+      },
+      {
+        "id": "tmdb_1387382",
+        "title": "Hunting Season"
+      },
+      {
+        "id": "tmdb_1401778",
+        "title": "Turbulence"
+      },
+      {
+        "id": "tmdb_1406657",
+        "title": "Scarlet"
+      },
+      {
+        "id": "tmdb_1412598",
+        "title": "Killer Whale"
+      },
+      {
+        "id": "tmdb_1419406",
+        "title": "The Shadow's Edge"
+      },
+      {
+        "id": "tmdb_1472951",
+        "title": "Infiltrate"
+      },
+      {
+        "id": "tmdb_1539104",
+        "title": "JUJUTSU KAISEN: Execution"
+      },
+      {
+        "id": "tmdb_1545621",
+        "title": "Detective Conan: Fallen Angel of the Highway"
+      },
+      {
+        "id": "tmdb_1582770",
+        "title": "Dhurandhar: The Revenge"
+      },
+      {
+        "id": "tmdb_1641319",
+        "title": "Sniper: No Nation"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1084187",
+      "tmdb_1084577",
+      "tmdb_1168190",
+      "tmdb_1236153",
+      "tmdb_1241470",
+      "tmdb_1242898"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1084577",
+        "title": "Balls Up"
+      },
+      {
+        "id": "tmdb_1168190",
+        "title": "The Wrecking Crew"
+      },
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242898",
+        "title": "Predator: Badlands"
+      }
+    ],
+    "user_services": [
+      "Hulu",
+      "Paramount+",
+      "HBO Max",
+      "Amazon Prime Video"
+    ]
+  },
+  "task_004": {
+    "constraint_solutions": [
+      "tmdb_682012",
+      "tmdb_803796",
+      "tmdb_804370",
+      "tmdb_991494",
+      "tmdb_1084242",
+      "tmdb_1117857",
+      "tmdb_1146058",
+      "tmdb_1167307",
+      "tmdb_1226863",
+      "tmdb_1297842",
+      "tmdb_1327819",
+      "tmdb_1497970",
+      "tmdb_1575337"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_682012",
+        "title": "Little Am\u00e9lie or the Character of Rain"
+      },
+      {
+        "id": "tmdb_803796",
+        "title": "KPop Demon Hunters"
+      },
+      {
+        "id": "tmdb_804370",
+        "title": "Arco"
+      },
+      {
+        "id": "tmdb_991494",
+        "title": "The SpongeBob Movie: Search for SquarePants"
+      },
+      {
+        "id": "tmdb_1084242",
+        "title": "Zootopia 2"
+      },
+      {
+        "id": "tmdb_1117857",
+        "title": "In Your Dreams"
+      },
+      {
+        "id": "tmdb_1146058",
+        "title": "The Pout-Pout Fish"
+      },
+      {
+        "id": "tmdb_1167307",
+        "title": "David"
+      },
+      {
+        "id": "tmdb_1226863",
+        "title": "The Super Mario Galaxy Movie"
+      },
+      {
+        "id": "tmdb_1297842",
+        "title": "GOAT"
+      },
+      {
+        "id": "tmdb_1327819",
+        "title": "Hoppers"
+      },
+      {
+        "id": "tmdb_1497970",
+        "title": "Tom and Jerry: Forbidden Compass"
+      },
+      {
+        "id": "tmdb_1575337",
+        "title": "Cosmic Princess Kaguya!"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_803796",
+      "tmdb_991494",
+      "tmdb_1084242",
+      "tmdb_1117857",
+      "tmdb_1575337"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_803796",
+        "title": "KPop Demon Hunters"
+      },
+      {
+        "id": "tmdb_991494",
+        "title": "The SpongeBob Movie: Search for SquarePants"
+      },
+      {
+        "id": "tmdb_1084242",
+        "title": "Zootopia 2"
+      },
+      {
+        "id": "tmdb_1117857",
+        "title": "In Your Dreams"
+      },
+      {
+        "id": "tmdb_1575337",
+        "title": "Cosmic Princess Kaguya!"
+      }
+    ],
+    "user_services": [
+      "Netflix",
+      "Paramount+",
+      "HBO Max",
+      "Disney+"
+    ]
+  },
+  "task_005": {
+    "constraint_solutions": [
+      "tmdb_524635",
+      "tmdb_682012",
+      "tmdb_842924",
+      "tmdb_858024",
+      "tmdb_875828",
+      "tmdb_878608",
+      "tmdb_936075",
+      "tmdb_1033148",
+      "tmdb_1124566",
+      "tmdb_1134463",
+      "tmdb_1151272",
+      "tmdb_1160360",
+      "tmdb_1167307",
+      "tmdb_1168719",
+      "tmdb_1214931",
+      "tmdb_1262815",
+      "tmdb_1263012",
+      "tmdb_1268127",
+      "tmdb_1284460",
+      "tmdb_1287141",
+      "tmdb_1291659",
+      "tmdb_1292415",
+      "tmdb_1305781",
+      "tmdb_1307373",
+      "tmdb_1314786",
+      "tmdb_1316092",
+      "tmdb_1317149",
+      "tmdb_1317288",
+      "tmdb_1321179",
+      "tmdb_1325734",
+      "tmdb_1336770",
+      "tmdb_1341137",
+      "tmdb_1367642",
+      "tmdb_1370814",
+      "tmdb_1379266",
+      "tmdb_1381027",
+      "tmdb_1387382",
+      "tmdb_1401778",
+      "tmdb_1406657",
+      "tmdb_1419406",
+      "tmdb_1429348",
+      "tmdb_1432605",
+      "tmdb_1443576",
+      "tmdb_1456349",
+      "tmdb_1465563",
+      "tmdb_1480382",
+      "tmdb_1487320",
+      "tmdb_1523145",
+      "tmdb_1620551",
+      "tmdb_1630433",
+      "tmdb_1631917"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_524635",
+        "title": "The Chronology of Water"
+      },
+      {
+        "id": "tmdb_682012",
+        "title": "Little Am\u00e9lie or the Character of Rain"
+      },
+      {
+        "id": "tmdb_842924",
+        "title": "The Life of Chuck"
+      },
+      {
+        "id": "tmdb_858024",
+        "title": "Hamnet"
+      },
+      {
+        "id": "tmdb_875828",
+        "title": "Peaky Blinders: The Immortal Man"
+      },
+      {
+        "id": "tmdb_878608",
+        "title": "Resurrection"
+      },
+      {
+        "id": "tmdb_936075",
+        "title": "Michael"
+      },
+      {
+        "id": "tmdb_1033148",
+        "title": "Die My Love"
+      },
+      {
+        "id": "tmdb_1124566",
+        "title": "Sentimental Value"
+      },
+      {
+        "id": "tmdb_1134463",
+        "title": "Dreams"
+      },
+      {
+        "id": "tmdb_1151272",
+        "title": "Sir\u0101t"
+      },
+      {
+        "id": "tmdb_1160360",
+        "title": "If I Had Legs I'd Kick You"
+      },
+      {
+        "id": "tmdb_1167307",
+        "title": "David"
+      },
+      {
+        "id": "tmdb_1168719",
+        "title": "Silent Friend"
+      },
+      {
+        "id": "tmdb_1214931",
+        "title": "Nuremberg"
+      },
+      {
+        "id": "tmdb_1262815",
+        "title": "The Choral"
+      },
+      {
+        "id": "tmdb_1263012",
+        "title": "Dead Man's Wire"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1284460",
+        "title": "Alpha"
+      },
+      {
+        "id": "tmdb_1287141",
+        "title": "Pillion"
+      },
+      {
+        "id": "tmdb_1291659",
+        "title": "The Wizard of the Kremlin"
+      },
+      {
+        "id": "tmdb_1292415",
+        "title": "Beast"
+      },
+      {
+        "id": "tmdb_1305781",
+        "title": "Blades of the Guardians: Wind Rises in the Desert"
+      },
+      {
+        "id": "tmdb_1307373",
+        "title": "Wasteman"
+      },
+      {
+        "id": "tmdb_1314786",
+        "title": "Agent Zeta"
+      },
+      {
+        "id": "tmdb_1316092",
+        "title": "\"Wuthering Heights\""
+      },
+      {
+        "id": "tmdb_1317149",
+        "title": "I Swear"
+      },
+      {
+        "id": "tmdb_1317288",
+        "title": "Marty Supreme"
+      },
+      {
+        "id": "tmdb_1321179",
+        "title": "The King's Warden"
+      },
+      {
+        "id": "tmdb_1325734",
+        "title": "The Drama"
+      },
+      {
+        "id": "tmdb_1336770",
+        "title": "Vaazha II"
+      },
+      {
+        "id": "tmdb_1341137",
+        "title": "A Great Awakening"
+      },
+      {
+        "id": "tmdb_1367642",
+        "title": "Reminders of Him"
+      },
+      {
+        "id": "tmdb_1370814",
+        "title": "The Plague"
+      },
+      {
+        "id": "tmdb_1379266",
+        "title": "Kokuho"
+      },
+      {
+        "id": "tmdb_1381027",
+        "title": "Good Boy"
+      },
+      {
+        "id": "tmdb_1387382",
+        "title": "Hunting Season"
+      },
+      {
+        "id": "tmdb_1401778",
+        "title": "Turbulence"
+      },
+      {
+        "id": "tmdb_1406657",
+        "title": "Scarlet"
+      },
+      {
+        "id": "tmdb_1419406",
+        "title": "The Shadow's Edge"
+      },
+      {
+        "id": "tmdb_1429348",
+        "title": "The Stranger"
+      },
+      {
+        "id": "tmdb_1432605",
+        "title": "My Father's Shadow"
+      },
+      {
+        "id": "tmdb_1443576",
+        "title": "Sundays"
+      },
+      {
+        "id": "tmdb_1456349",
+        "title": "It Was Just an Accident"
+      },
+      {
+        "id": "tmdb_1465563",
+        "title": "A Poet"
+      },
+      {
+        "id": "tmdb_1480382",
+        "title": "The Voice of Hind Rajab"
+      },
+      {
+        "id": "tmdb_1487320",
+        "title": "The Giant Falls"
+      },
+      {
+        "id": "tmdb_1523145",
+        "title": "Your Heart Will Be Broken"
+      },
+      {
+        "id": "tmdb_1620551",
+        "title": "Feel My Voice"
+      },
+      {
+        "id": "tmdb_1630433",
+        "title": "The Red Line"
+      },
+      {
+        "id": "tmdb_1631917",
+        "title": "18th Rose"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_842924",
+      "tmdb_1124566",
+      "tmdb_1314786",
+      "tmdb_1456349",
+      "tmdb_1480382"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_842924",
+        "title": "The Life of Chuck"
+      },
+      {
+        "id": "tmdb_1124566",
+        "title": "Sentimental Value"
+      },
+      {
+        "id": "tmdb_1314786",
+        "title": "Agent Zeta"
+      },
+      {
+        "id": "tmdb_1456349",
+        "title": "It Was Just an Accident"
+      },
+      {
+        "id": "tmdb_1480382",
+        "title": "The Voice of Hind Rajab"
+      }
+    ],
+    "user_services": [
+      "Hulu",
+      "Paramount+",
+      "Amazon Prime Video"
+    ]
+  },
+  "task_006": {
+    "constraint_solutions": [
+      "tmdb_425274",
+      "tmdb_467905",
+      "tmdb_604079",
+      "tmdb_755898",
+      "tmdb_840464",
+      "tmdb_1010755",
+      "tmdb_1084187",
+      "tmdb_1086260",
+      "tmdb_1088434",
+      "tmdb_1110034",
+      "tmdb_1134463",
+      "tmdb_1151272",
+      "tmdb_1194963",
+      "tmdb_1198994",
+      "tmdb_1236153",
+      "tmdb_1242265",
+      "tmdb_1242332",
+      "tmdb_1242501",
+      "tmdb_1254135",
+      "tmdb_1263012",
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1276038",
+      "tmdb_1285965",
+      "tmdb_1290417",
+      "tmdb_1290821",
+      "tmdb_1297454",
+      "tmdb_1307373",
+      "tmdb_1356039",
+      "tmdb_1366906",
+      "tmdb_1381027",
+      "tmdb_1383731",
+      "tmdb_1387382",
+      "tmdb_1401778",
+      "tmdb_1412598",
+      "tmdb_1418657",
+      "tmdb_1456349",
+      "tmdb_1472951",
+      "tmdb_1519168",
+      "tmdb_1526650",
+      "tmdb_1641319"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_425274",
+        "title": "Now You See Me: Now You Don't"
+      },
+      {
+        "id": "tmdb_467905",
+        "title": "How to Make a Killing"
+      },
+      {
+        "id": "tmdb_604079",
+        "title": "The Long Walk"
+      },
+      {
+        "id": "tmdb_755898",
+        "title": "War of the Worlds"
+      },
+      {
+        "id": "tmdb_840464",
+        "title": "Greenland 2: Migration"
+      },
+      {
+        "id": "tmdb_1010755",
+        "title": "The Strangers: Chapter 3"
+      },
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1086260",
+        "title": "The Astronaut"
+      },
+      {
+        "id": "tmdb_1088434",
+        "title": "Hellfire"
+      },
+      {
+        "id": "tmdb_1110034",
+        "title": "Kraken"
+      },
+      {
+        "id": "tmdb_1134463",
+        "title": "Dreams"
+      },
+      {
+        "id": "tmdb_1151272",
+        "title": "Sir\u0101t"
+      },
+      {
+        "id": "tmdb_1194963",
+        "title": "Noise"
+      },
+      {
+        "id": "tmdb_1198994",
+        "title": "Send Help"
+      },
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      },
+      {
+        "id": "tmdb_1242265",
+        "title": "Fuze"
+      },
+      {
+        "id": "tmdb_1242332",
+        "title": "Normal"
+      },
+      {
+        "id": "tmdb_1242501",
+        "title": "Icefall"
+      },
+      {
+        "id": "tmdb_1254135",
+        "title": "13 Days, 13 Nights"
+      },
+      {
+        "id": "tmdb_1263012",
+        "title": "Dead Man's Wire"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1276038",
+        "title": "A Desert"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      },
+      {
+        "id": "tmdb_1290417",
+        "title": "Thrash"
+      },
+      {
+        "id": "tmdb_1290821",
+        "title": "Shelter"
+      },
+      {
+        "id": "tmdb_1297454",
+        "title": "The Death That Awaits"
+      },
+      {
+        "id": "tmdb_1307373",
+        "title": "Wasteman"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      },
+      {
+        "id": "tmdb_1366906",
+        "title": "The Gates"
+      },
+      {
+        "id": "tmdb_1381027",
+        "title": "Good Boy"
+      },
+      {
+        "id": "tmdb_1383731",
+        "title": "Protector"
+      },
+      {
+        "id": "tmdb_1387382",
+        "title": "Hunting Season"
+      },
+      {
+        "id": "tmdb_1401778",
+        "title": "Turbulence"
+      },
+      {
+        "id": "tmdb_1412598",
+        "title": "Killer Whale"
+      },
+      {
+        "id": "tmdb_1418657",
+        "title": "The Yeti"
+      },
+      {
+        "id": "tmdb_1456349",
+        "title": "It Was Just an Accident"
+      },
+      {
+        "id": "tmdb_1472951",
+        "title": "Infiltrate"
+      },
+      {
+        "id": "tmdb_1519168",
+        "title": "The Jester 2"
+      },
+      {
+        "id": "tmdb_1526650",
+        "title": "Mudborn"
+      },
+      {
+        "id": "tmdb_1641319",
+        "title": "Sniper: No Nation"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1290417",
+      "tmdb_1356039",
+      "tmdb_1526650"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1290417",
+        "title": "Thrash"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      },
+      {
+        "id": "tmdb_1526650",
+        "title": "Mudborn"
+      }
+    ],
+    "user_services": [
+      "Netflix",
+      "Peacock"
+    ]
+  },
+  "task_007": {
+    "constraint_solutions": [
+      "tmdb_467905",
+      "tmdb_639988",
+      "tmdb_696393",
+      "tmdb_803796",
+      "tmdb_991494",
+      "tmdb_1084242",
+      "tmdb_1084577",
+      "tmdb_1115544",
+      "tmdb_1117857",
+      "tmdb_1119449",
+      "tmdb_1129104",
+      "tmdb_1145899",
+      "tmdb_1146058",
+      "tmdb_1154538",
+      "tmdb_1168190",
+      "tmdb_1198994",
+      "tmdb_1209511",
+      "tmdb_1226863",
+      "tmdb_1234731",
+      "tmdb_1262815",
+      "tmdb_1266127",
+      "tmdb_1287141",
+      "tmdb_1291335",
+      "tmdb_1292695",
+      "tmdb_1297842",
+      "tmdb_1325734",
+      "tmdb_1327819",
+      "tmdb_1336770",
+      "tmdb_1416391",
+      "tmdb_1450527",
+      "tmdb_1455079",
+      "tmdb_1465563",
+      "tmdb_1493859",
+      "tmdb_1497970",
+      "tmdb_1620551",
+      "tmdb_1635276"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_467905",
+        "title": "How to Make a Killing"
+      },
+      {
+        "id": "tmdb_639988",
+        "title": "No Other Choice"
+      },
+      {
+        "id": "tmdb_696393",
+        "title": "Cold Storage"
+      },
+      {
+        "id": "tmdb_803796",
+        "title": "KPop Demon Hunters"
+      },
+      {
+        "id": "tmdb_991494",
+        "title": "The SpongeBob Movie: Search for SquarePants"
+      },
+      {
+        "id": "tmdb_1084242",
+        "title": "Zootopia 2"
+      },
+      {
+        "id": "tmdb_1084577",
+        "title": "Balls Up"
+      },
+      {
+        "id": "tmdb_1115544",
+        "title": "Mike & Nick & Nick & Alice"
+      },
+      {
+        "id": "tmdb_1117857",
+        "title": "In Your Dreams"
+      },
+      {
+        "id": "tmdb_1119449",
+        "title": "Good Luck, Have Fun, Don't Die"
+      },
+      {
+        "id": "tmdb_1129104",
+        "title": "Flavia"
+      },
+      {
+        "id": "tmdb_1145899",
+        "title": "Marsupilami"
+      },
+      {
+        "id": "tmdb_1146058",
+        "title": "The Pout-Pout Fish"
+      },
+      {
+        "id": "tmdb_1154538",
+        "title": "Nirvanna the Band the Show the Movie"
+      },
+      {
+        "id": "tmdb_1168190",
+        "title": "The Wrecking Crew"
+      },
+      {
+        "id": "tmdb_1198994",
+        "title": "Send Help"
+      },
+      {
+        "id": "tmdb_1209511",
+        "title": "Love Insurance Kompany"
+      },
+      {
+        "id": "tmdb_1226863",
+        "title": "The Super Mario Galaxy Movie"
+      },
+      {
+        "id": "tmdb_1234731",
+        "title": "Anaconda"
+      },
+      {
+        "id": "tmdb_1262815",
+        "title": "The Choral"
+      },
+      {
+        "id": "tmdb_1266127",
+        "title": "Ready or Not: Here I Come"
+      },
+      {
+        "id": "tmdb_1287141",
+        "title": "Pillion"
+      },
+      {
+        "id": "tmdb_1291335",
+        "title": "Solo Mio"
+      },
+      {
+        "id": "tmdb_1292695",
+        "title": "They Will Kill You"
+      },
+      {
+        "id": "tmdb_1297842",
+        "title": "GOAT"
+      },
+      {
+        "id": "tmdb_1325734",
+        "title": "The Drama"
+      },
+      {
+        "id": "tmdb_1327819",
+        "title": "Hoppers"
+      },
+      {
+        "id": "tmdb_1336770",
+        "title": "Vaazha II"
+      },
+      {
+        "id": "tmdb_1416391",
+        "title": "Toaster"
+      },
+      {
+        "id": "tmdb_1450527",
+        "title": "Forbidden Fruits"
+      },
+      {
+        "id": "tmdb_1455079",
+        "title": "You, Me & Tuscany"
+      },
+      {
+        "id": "tmdb_1465563",
+        "title": "A Poet"
+      },
+      {
+        "id": "tmdb_1493859",
+        "title": "Pizza Movie"
+      },
+      {
+        "id": "tmdb_1497970",
+        "title": "Tom and Jerry: Forbidden Compass"
+      },
+      {
+        "id": "tmdb_1620551",
+        "title": "Feel My Voice"
+      },
+      {
+        "id": "tmdb_1635276",
+        "title": "Eat Pray Bark"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_803796",
+      "tmdb_1084577",
+      "tmdb_1117857",
+      "tmdb_1168190",
+      "tmdb_1234731",
+      "tmdb_1416391",
+      "tmdb_1620551",
+      "tmdb_1635276"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_803796",
+        "title": "KPop Demon Hunters"
+      },
+      {
+        "id": "tmdb_1084577",
+        "title": "Balls Up"
+      },
+      {
+        "id": "tmdb_1117857",
+        "title": "In Your Dreams"
+      },
+      {
+        "id": "tmdb_1168190",
+        "title": "The Wrecking Crew"
+      },
+      {
+        "id": "tmdb_1234731",
+        "title": "Anaconda"
+      },
+      {
+        "id": "tmdb_1416391",
+        "title": "Toaster"
+      },
+      {
+        "id": "tmdb_1620551",
+        "title": "Feel My Voice"
+      },
+      {
+        "id": "tmdb_1635276",
+        "title": "Eat Pray Bark"
+      }
+    ],
+    "user_services": [
+      "Amazon Prime Video",
+      "Netflix"
+    ]
+  },
+  "task_008": {
+    "constraint_solutions": [
+      "tmdb_524635",
+      "tmdb_680493",
+      "tmdb_842924",
+      "tmdb_875828",
+      "tmdb_878608",
+      "tmdb_1033148",
+      "tmdb_1049471",
+      "tmdb_1124566",
+      "tmdb_1134463",
+      "tmdb_1151272",
+      "tmdb_1160360",
+      "tmdb_1168719",
+      "tmdb_1262815",
+      "tmdb_1263012",
+      "tmdb_1268127",
+      "tmdb_1284460",
+      "tmdb_1287141",
+      "tmdb_1290432",
+      "tmdb_1291659",
+      "tmdb_1292415",
+      "tmdb_1305781",
+      "tmdb_1307373",
+      "tmdb_1314786",
+      "tmdb_1316092",
+      "tmdb_1317149",
+      "tmdb_1317288",
+      "tmdb_1321179",
+      "tmdb_1325734",
+      "tmdb_1336770",
+      "tmdb_1370814",
+      "tmdb_1379266",
+      "tmdb_1381027",
+      "tmdb_1387382",
+      "tmdb_1401778",
+      "tmdb_1419406",
+      "tmdb_1429348",
+      "tmdb_1432605",
+      "tmdb_1450257",
+      "tmdb_1465563",
+      "tmdb_1480382",
+      "tmdb_1487320",
+      "tmdb_1523145",
+      "tmdb_1620551",
+      "tmdb_1630433",
+      "tmdb_1631917",
+      "tmdb_1646787",
+      "tmdb_1658216",
+      "tmdb_1658217"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_524635",
+        "title": "The Chronology of Water"
+      },
+      {
+        "id": "tmdb_680493",
+        "title": "Return to Silent Hill"
+      },
+      {
+        "id": "tmdb_842924",
+        "title": "The Life of Chuck"
+      },
+      {
+        "id": "tmdb_875828",
+        "title": "Peaky Blinders: The Immortal Man"
+      },
+      {
+        "id": "tmdb_878608",
+        "title": "Resurrection"
+      },
+      {
+        "id": "tmdb_1033148",
+        "title": "Die My Love"
+      },
+      {
+        "id": "tmdb_1049471",
+        "title": "Outcome"
+      },
+      {
+        "id": "tmdb_1124566",
+        "title": "Sentimental Value"
+      },
+      {
+        "id": "tmdb_1134463",
+        "title": "Dreams"
+      },
+      {
+        "id": "tmdb_1151272",
+        "title": "Sir\u0101t"
+      },
+      {
+        "id": "tmdb_1160360",
+        "title": "If I Had Legs I'd Kick You"
+      },
+      {
+        "id": "tmdb_1168719",
+        "title": "Silent Friend"
+      },
+      {
+        "id": "tmdb_1262815",
+        "title": "The Choral"
+      },
+      {
+        "id": "tmdb_1263012",
+        "title": "Dead Man's Wire"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1284460",
+        "title": "Alpha"
+      },
+      {
+        "id": "tmdb_1287141",
+        "title": "Pillion"
+      },
+      {
+        "id": "tmdb_1290432",
+        "title": "A Private Life"
+      },
+      {
+        "id": "tmdb_1291659",
+        "title": "The Wizard of the Kremlin"
+      },
+      {
+        "id": "tmdb_1292415",
+        "title": "Beast"
+      },
+      {
+        "id": "tmdb_1305781",
+        "title": "Blades of the Guardians: Wind Rises in the Desert"
+      },
+      {
+        "id": "tmdb_1307373",
+        "title": "Wasteman"
+      },
+      {
+        "id": "tmdb_1314786",
+        "title": "Agent Zeta"
+      },
+      {
+        "id": "tmdb_1316092",
+        "title": "\"Wuthering Heights\""
+      },
+      {
+        "id": "tmdb_1317149",
+        "title": "I Swear"
+      },
+      {
+        "id": "tmdb_1317288",
+        "title": "Marty Supreme"
+      },
+      {
+        "id": "tmdb_1321179",
+        "title": "The King's Warden"
+      },
+      {
+        "id": "tmdb_1325734",
+        "title": "The Drama"
+      },
+      {
+        "id": "tmdb_1336770",
+        "title": "Vaazha II"
+      },
+      {
+        "id": "tmdb_1370814",
+        "title": "The Plague"
+      },
+      {
+        "id": "tmdb_1379266",
+        "title": "Kokuho"
+      },
+      {
+        "id": "tmdb_1381027",
+        "title": "Good Boy"
+      },
+      {
+        "id": "tmdb_1387382",
+        "title": "Hunting Season"
+      },
+      {
+        "id": "tmdb_1401778",
+        "title": "Turbulence"
+      },
+      {
+        "id": "tmdb_1419406",
+        "title": "The Shadow's Edge"
+      },
+      {
+        "id": "tmdb_1429348",
+        "title": "The Stranger"
+      },
+      {
+        "id": "tmdb_1432605",
+        "title": "My Father's Shadow"
+      },
+      {
+        "id": "tmdb_1450257",
+        "title": "Clika"
+      },
+      {
+        "id": "tmdb_1465563",
+        "title": "A Poet"
+      },
+      {
+        "id": "tmdb_1480382",
+        "title": "The Voice of Hind Rajab"
+      },
+      {
+        "id": "tmdb_1487320",
+        "title": "The Giant Falls"
+      },
+      {
+        "id": "tmdb_1523145",
+        "title": "Your Heart Will Be Broken"
+      },
+      {
+        "id": "tmdb_1620551",
+        "title": "Feel My Voice"
+      },
+      {
+        "id": "tmdb_1630433",
+        "title": "The Red Line"
+      },
+      {
+        "id": "tmdb_1631917",
+        "title": "18th Rose"
+      },
+      {
+        "id": "tmdb_1646787",
+        "title": "Sundutan"
+      },
+      {
+        "id": "tmdb_1658216",
+        "title": "Stepdaddy"
+      },
+      {
+        "id": "tmdb_1658217",
+        "title": "Sawsawan"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1049471",
+      "tmdb_1370814",
+      "tmdb_1401778"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1049471",
+        "title": "Outcome"
+      },
+      {
+        "id": "tmdb_1370814",
+        "title": "The Plague"
+      },
+      {
+        "id": "tmdb_1401778",
+        "title": "Turbulence"
+      }
+    ],
+    "user_services": [
+      "Philo",
+      "Apple TV+"
+    ]
+  },
+  "task_009": {
+    "constraint_solutions": [
+      "tmdb_604079",
+      "tmdb_696393",
+      "tmdb_755898",
+      "tmdb_804370",
+      "tmdb_840464",
+      "tmdb_1086260",
+      "tmdb_1115544",
+      "tmdb_1119449",
+      "tmdb_1154538",
+      "tmdb_1159831",
+      "tmdb_1234821",
+      "tmdb_1236153",
+      "tmdb_1241470",
+      "tmdb_1242898",
+      "tmdb_1265609",
+      "tmdb_1284460",
+      "tmdb_1327819",
+      "tmdb_1406657",
+      "tmdb_1412598",
+      "tmdb_1575337"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_604079",
+        "title": "The Long Walk"
+      },
+      {
+        "id": "tmdb_696393",
+        "title": "Cold Storage"
+      },
+      {
+        "id": "tmdb_755898",
+        "title": "War of the Worlds"
+      },
+      {
+        "id": "tmdb_804370",
+        "title": "Arco"
+      },
+      {
+        "id": "tmdb_840464",
+        "title": "Greenland 2: Migration"
+      },
+      {
+        "id": "tmdb_1086260",
+        "title": "The Astronaut"
+      },
+      {
+        "id": "tmdb_1115544",
+        "title": "Mike & Nick & Nick & Alice"
+      },
+      {
+        "id": "tmdb_1119449",
+        "title": "Good Luck, Have Fun, Don't Die"
+      },
+      {
+        "id": "tmdb_1154538",
+        "title": "Nirvanna the Band the Show the Movie"
+      },
+      {
+        "id": "tmdb_1159831",
+        "title": "The Bride!"
+      },
+      {
+        "id": "tmdb_1234821",
+        "title": "Jurassic World Rebirth"
+      },
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242898",
+        "title": "Predator: Badlands"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1284460",
+        "title": "Alpha"
+      },
+      {
+        "id": "tmdb_1327819",
+        "title": "Hoppers"
+      },
+      {
+        "id": "tmdb_1406657",
+        "title": "Scarlet"
+      },
+      {
+        "id": "tmdb_1412598",
+        "title": "Killer Whale"
+      },
+      {
+        "id": "tmdb_1575337",
+        "title": "Cosmic Princess Kaguya!"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1086260",
+      "tmdb_1115544",
+      "tmdb_1241470",
+      "tmdb_1242898"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1086260",
+        "title": "The Astronaut"
+      },
+      {
+        "id": "tmdb_1115544",
+        "title": "Mike & Nick & Nick & Alice"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242898",
+        "title": "Predator: Badlands"
+      }
+    ],
+    "user_services": [
+      "Hulu"
+    ]
+  },
+  "task_010": {
+    "constraint_solutions": [
+      "tmdb_662707",
+      "tmdb_1043197",
+      "tmdb_1084187",
+      "tmdb_1088434",
+      "tmdb_1110034",
+      "tmdb_1119449",
+      "tmdb_1144107",
+      "tmdb_1168190",
+      "tmdb_1218925",
+      "tmdb_1220522",
+      "tmdb_1234821",
+      "tmdb_1236153",
+      "tmdb_1241470",
+      "tmdb_1242265",
+      "tmdb_1242332",
+      "tmdb_1242501",
+      "tmdb_1242898",
+      "tmdb_1254135",
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1290821",
+      "tmdb_1292415",
+      "tmdb_1292695",
+      "tmdb_1305781",
+      "tmdb_1311031",
+      "tmdb_1336770",
+      "tmdb_1339876",
+      "tmdb_1356039",
+      "tmdb_1383731",
+      "tmdb_1387382",
+      "tmdb_1401778",
+      "tmdb_1406657",
+      "tmdb_1419406",
+      "tmdb_1545621",
+      "tmdb_1582770",
+      "tmdb_1641319"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_662707",
+        "title": "Starbright"
+      },
+      {
+        "id": "tmdb_1043197",
+        "title": "Dust Bunny"
+      },
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1088434",
+        "title": "Hellfire"
+      },
+      {
+        "id": "tmdb_1110034",
+        "title": "Kraken"
+      },
+      {
+        "id": "tmdb_1119449",
+        "title": "Good Luck, Have Fun, Don't Die"
+      },
+      {
+        "id": "tmdb_1144107",
+        "title": "The Legend of Hei 2"
+      },
+      {
+        "id": "tmdb_1168190",
+        "title": "The Wrecking Crew"
+      },
+      {
+        "id": "tmdb_1218925",
+        "title": "Chainsaw Man - The Movie: Reze Arc"
+      },
+      {
+        "id": "tmdb_1220522",
+        "title": "Dacoit"
+      },
+      {
+        "id": "tmdb_1234821",
+        "title": "Jurassic World Rebirth"
+      },
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242265",
+        "title": "Fuze"
+      },
+      {
+        "id": "tmdb_1242332",
+        "title": "Normal"
+      },
+      {
+        "id": "tmdb_1242501",
+        "title": "Icefall"
+      },
+      {
+        "id": "tmdb_1242898",
+        "title": "Predator: Badlands"
+      },
+      {
+        "id": "tmdb_1254135",
+        "title": "13 Days, 13 Nights"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1290821",
+        "title": "Shelter"
+      },
+      {
+        "id": "tmdb_1292415",
+        "title": "Beast"
+      },
+      {
+        "id": "tmdb_1292695",
+        "title": "They Will Kill You"
+      },
+      {
+        "id": "tmdb_1305781",
+        "title": "Blades of the Guardians: Wind Rises in the Desert"
+      },
+      {
+        "id": "tmdb_1311031",
+        "title": "Demon Slayer: Kimetsu no Yaiba Infinity Castle"
+      },
+      {
+        "id": "tmdb_1336770",
+        "title": "Vaazha II"
+      },
+      {
+        "id": "tmdb_1339876",
+        "title": "Mardaani 3"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      },
+      {
+        "id": "tmdb_1383731",
+        "title": "Protector"
+      },
+      {
+        "id": "tmdb_1387382",
+        "title": "Hunting Season"
+      },
+      {
+        "id": "tmdb_1401778",
+        "title": "Turbulence"
+      },
+      {
+        "id": "tmdb_1406657",
+        "title": "Scarlet"
+      },
+      {
+        "id": "tmdb_1419406",
+        "title": "The Shadow's Edge"
+      },
+      {
+        "id": "tmdb_1545621",
+        "title": "Detective Conan: Fallen Angel of the Highway"
+      },
+      {
+        "id": "tmdb_1582770",
+        "title": "Dhurandhar: The Revenge"
+      },
+      {
+        "id": "tmdb_1641319",
+        "title": "Sniper: No Nation"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1084187",
+      "tmdb_1168190",
+      "tmdb_1236153",
+      "tmdb_1401778"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1168190",
+        "title": "The Wrecking Crew"
+      },
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      },
+      {
+        "id": "tmdb_1401778",
+        "title": "Turbulence"
+      }
+    ],
+    "user_services": [
+      "MGM+",
+      "Amazon Prime Video",
+      "Starz",
+      "Disney+"
+    ]
+  },
+  "task_011": {
+    "constraint_solutions": [
+      "tmdb_604079",
+      "tmdb_680493",
+      "tmdb_696393",
+      "tmdb_999136",
+      "tmdb_1010755",
+      "tmdb_1043197",
+      "tmdb_1084187",
+      "tmdb_1086260",
+      "tmdb_1110034",
+      "tmdb_1193501",
+      "tmdb_1194963",
+      "tmdb_1234731",
+      "tmdb_1241470",
+      "tmdb_1242937",
+      "tmdb_1266127",
+      "tmdb_1276038",
+      "tmdb_1285965",
+      "tmdb_1290417",
+      "tmdb_1292695",
+      "tmdb_1297454",
+      "tmdb_1309083",
+      "tmdb_1370814",
+      "tmdb_1408208",
+      "tmdb_1412598",
+      "tmdb_1418657",
+      "tmdb_1450527",
+      "tmdb_1470130",
+      "tmdb_1480387",
+      "tmdb_1519168",
+      "tmdb_1572073",
+      "tmdb_1610418"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_604079",
+        "title": "The Long Walk"
+      },
+      {
+        "id": "tmdb_680493",
+        "title": "Return to Silent Hill"
+      },
+      {
+        "id": "tmdb_696393",
+        "title": "Cold Storage"
+      },
+      {
+        "id": "tmdb_999136",
+        "title": "Do Not Enter"
+      },
+      {
+        "id": "tmdb_1010755",
+        "title": "The Strangers: Chapter 3"
+      },
+      {
+        "id": "tmdb_1043197",
+        "title": "Dust Bunny"
+      },
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1086260",
+        "title": "The Astronaut"
+      },
+      {
+        "id": "tmdb_1110034",
+        "title": "Kraken"
+      },
+      {
+        "id": "tmdb_1193501",
+        "title": "Whistle"
+      },
+      {
+        "id": "tmdb_1194963",
+        "title": "Noise"
+      },
+      {
+        "id": "tmdb_1234731",
+        "title": "Anaconda"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242937",
+        "title": "The Dreadful"
+      },
+      {
+        "id": "tmdb_1266127",
+        "title": "Ready or Not: Here I Come"
+      },
+      {
+        "id": "tmdb_1276038",
+        "title": "A Desert"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      },
+      {
+        "id": "tmdb_1290417",
+        "title": "Thrash"
+      },
+      {
+        "id": "tmdb_1292695",
+        "title": "They Will Kill You"
+      },
+      {
+        "id": "tmdb_1297454",
+        "title": "The Death That Awaits"
+      },
+      {
+        "id": "tmdb_1309083",
+        "title": "Dolly"
+      },
+      {
+        "id": "tmdb_1370814",
+        "title": "The Plague"
+      },
+      {
+        "id": "tmdb_1408208",
+        "title": "Exit 8"
+      },
+      {
+        "id": "tmdb_1412598",
+        "title": "Killer Whale"
+      },
+      {
+        "id": "tmdb_1418657",
+        "title": "The Yeti"
+      },
+      {
+        "id": "tmdb_1450527",
+        "title": "Forbidden Fruits"
+      },
+      {
+        "id": "tmdb_1470130",
+        "title": "The Mortuary Assistant"
+      },
+      {
+        "id": "tmdb_1480387",
+        "title": "undertone"
+      },
+      {
+        "id": "tmdb_1519168",
+        "title": "The Jester 2"
+      },
+      {
+        "id": "tmdb_1572073",
+        "title": "The Deadly Little Mermaid"
+      },
+      {
+        "id": "tmdb_1610418",
+        "title": "The House on Haunted Grounds"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1086260",
+      "tmdb_1234731",
+      "tmdb_1241470",
+      "tmdb_1285965",
+      "tmdb_1290417"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1086260",
+        "title": "The Astronaut"
+      },
+      {
+        "id": "tmdb_1234731",
+        "title": "Anaconda"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      },
+      {
+        "id": "tmdb_1290417",
+        "title": "Thrash"
+      }
+    ],
+    "user_services": [
+      "Netflix",
+      "Hulu"
+    ]
+  },
+  "task_012": {
+    "constraint_solutions": [
+      "tmdb_467905",
+      "tmdb_639988",
+      "tmdb_696393",
+      "tmdb_803796",
+      "tmdb_991494",
+      "tmdb_1084242",
+      "tmdb_1115544",
+      "tmdb_1117857",
+      "tmdb_1119449",
+      "tmdb_1129104",
+      "tmdb_1145899",
+      "tmdb_1146058",
+      "tmdb_1154538",
+      "tmdb_1168190",
+      "tmdb_1198994",
+      "tmdb_1209511",
+      "tmdb_1226863",
+      "tmdb_1262815",
+      "tmdb_1266127",
+      "tmdb_1287141",
+      "tmdb_1291335",
+      "tmdb_1292695",
+      "tmdb_1297842",
+      "tmdb_1325734",
+      "tmdb_1327819",
+      "tmdb_1336770",
+      "tmdb_1416391",
+      "tmdb_1450527",
+      "tmdb_1465563",
+      "tmdb_1493859",
+      "tmdb_1497970",
+      "tmdb_1620551"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_467905",
+        "title": "How to Make a Killing"
+      },
+      {
+        "id": "tmdb_639988",
+        "title": "No Other Choice"
+      },
+      {
+        "id": "tmdb_696393",
+        "title": "Cold Storage"
+      },
+      {
+        "id": "tmdb_803796",
+        "title": "KPop Demon Hunters"
+      },
+      {
+        "id": "tmdb_991494",
+        "title": "The SpongeBob Movie: Search for SquarePants"
+      },
+      {
+        "id": "tmdb_1084242",
+        "title": "Zootopia 2"
+      },
+      {
+        "id": "tmdb_1115544",
+        "title": "Mike & Nick & Nick & Alice"
+      },
+      {
+        "id": "tmdb_1117857",
+        "title": "In Your Dreams"
+      },
+      {
+        "id": "tmdb_1119449",
+        "title": "Good Luck, Have Fun, Don't Die"
+      },
+      {
+        "id": "tmdb_1129104",
+        "title": "Flavia"
+      },
+      {
+        "id": "tmdb_1145899",
+        "title": "Marsupilami"
+      },
+      {
+        "id": "tmdb_1146058",
+        "title": "The Pout-Pout Fish"
+      },
+      {
+        "id": "tmdb_1154538",
+        "title": "Nirvanna the Band the Show the Movie"
+      },
+      {
+        "id": "tmdb_1168190",
+        "title": "The Wrecking Crew"
+      },
+      {
+        "id": "tmdb_1198994",
+        "title": "Send Help"
+      },
+      {
+        "id": "tmdb_1209511",
+        "title": "Love Insurance Kompany"
+      },
+      {
+        "id": "tmdb_1226863",
+        "title": "The Super Mario Galaxy Movie"
+      },
+      {
+        "id": "tmdb_1262815",
+        "title": "The Choral"
+      },
+      {
+        "id": "tmdb_1266127",
+        "title": "Ready or Not: Here I Come"
+      },
+      {
+        "id": "tmdb_1287141",
+        "title": "Pillion"
+      },
+      {
+        "id": "tmdb_1291335",
+        "title": "Solo Mio"
+      },
+      {
+        "id": "tmdb_1292695",
+        "title": "They Will Kill You"
+      },
+      {
+        "id": "tmdb_1297842",
+        "title": "GOAT"
+      },
+      {
+        "id": "tmdb_1325734",
+        "title": "The Drama"
+      },
+      {
+        "id": "tmdb_1327819",
+        "title": "Hoppers"
+      },
+      {
+        "id": "tmdb_1336770",
+        "title": "Vaazha II"
+      },
+      {
+        "id": "tmdb_1416391",
+        "title": "Toaster"
+      },
+      {
+        "id": "tmdb_1450527",
+        "title": "Forbidden Fruits"
+      },
+      {
+        "id": "tmdb_1465563",
+        "title": "A Poet"
+      },
+      {
+        "id": "tmdb_1493859",
+        "title": "Pizza Movie"
+      },
+      {
+        "id": "tmdb_1497970",
+        "title": "Tom and Jerry: Forbidden Compass"
+      },
+      {
+        "id": "tmdb_1620551",
+        "title": "Feel My Voice"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_991494"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_991494",
+        "title": "The SpongeBob Movie: Search for SquarePants"
+      }
+    ],
+    "user_services": [
+      "HBO Max",
+      "Paramount+"
+    ]
+  },
+  "task_013": {
+    "constraint_solutions": [
+      "tmdb_524635",
+      "tmdb_680493",
+      "tmdb_842924",
+      "tmdb_858024",
+      "tmdb_875828",
+      "tmdb_878608",
+      "tmdb_936075",
+      "tmdb_1033148",
+      "tmdb_1124566",
+      "tmdb_1134463",
+      "tmdb_1151272",
+      "tmdb_1160360",
+      "tmdb_1167307",
+      "tmdb_1168719",
+      "tmdb_1214931",
+      "tmdb_1262815",
+      "tmdb_1263012",
+      "tmdb_1268127",
+      "tmdb_1284460",
+      "tmdb_1287141",
+      "tmdb_1290432",
+      "tmdb_1291659",
+      "tmdb_1292415",
+      "tmdb_1305781",
+      "tmdb_1307373",
+      "tmdb_1314786",
+      "tmdb_1316092",
+      "tmdb_1317149",
+      "tmdb_1317288",
+      "tmdb_1321179",
+      "tmdb_1325734",
+      "tmdb_1336770",
+      "tmdb_1341137",
+      "tmdb_1367642",
+      "tmdb_1370814",
+      "tmdb_1379266",
+      "tmdb_1381027",
+      "tmdb_1387382",
+      "tmdb_1401778",
+      "tmdb_1406657",
+      "tmdb_1419406",
+      "tmdb_1429348",
+      "tmdb_1432605",
+      "tmdb_1443576",
+      "tmdb_1456349",
+      "tmdb_1465563",
+      "tmdb_1487320",
+      "tmdb_1523145",
+      "tmdb_1620551",
+      "tmdb_1630433",
+      "tmdb_1631917"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_524635",
+        "title": "The Chronology of Water"
+      },
+      {
+        "id": "tmdb_680493",
+        "title": "Return to Silent Hill"
+      },
+      {
+        "id": "tmdb_842924",
+        "title": "The Life of Chuck"
+      },
+      {
+        "id": "tmdb_858024",
+        "title": "Hamnet"
+      },
+      {
+        "id": "tmdb_875828",
+        "title": "Peaky Blinders: The Immortal Man"
+      },
+      {
+        "id": "tmdb_878608",
+        "title": "Resurrection"
+      },
+      {
+        "id": "tmdb_936075",
+        "title": "Michael"
+      },
+      {
+        "id": "tmdb_1033148",
+        "title": "Die My Love"
+      },
+      {
+        "id": "tmdb_1124566",
+        "title": "Sentimental Value"
+      },
+      {
+        "id": "tmdb_1134463",
+        "title": "Dreams"
+      },
+      {
+        "id": "tmdb_1151272",
+        "title": "Sir\u0101t"
+      },
+      {
+        "id": "tmdb_1160360",
+        "title": "If I Had Legs I'd Kick You"
+      },
+      {
+        "id": "tmdb_1167307",
+        "title": "David"
+      },
+      {
+        "id": "tmdb_1168719",
+        "title": "Silent Friend"
+      },
+      {
+        "id": "tmdb_1214931",
+        "title": "Nuremberg"
+      },
+      {
+        "id": "tmdb_1262815",
+        "title": "The Choral"
+      },
+      {
+        "id": "tmdb_1263012",
+        "title": "Dead Man's Wire"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1284460",
+        "title": "Alpha"
+      },
+      {
+        "id": "tmdb_1287141",
+        "title": "Pillion"
+      },
+      {
+        "id": "tmdb_1290432",
+        "title": "A Private Life"
+      },
+      {
+        "id": "tmdb_1291659",
+        "title": "The Wizard of the Kremlin"
+      },
+      {
+        "id": "tmdb_1292415",
+        "title": "Beast"
+      },
+      {
+        "id": "tmdb_1305781",
+        "title": "Blades of the Guardians: Wind Rises in the Desert"
+      },
+      {
+        "id": "tmdb_1307373",
+        "title": "Wasteman"
+      },
+      {
+        "id": "tmdb_1314786",
+        "title": "Agent Zeta"
+      },
+      {
+        "id": "tmdb_1316092",
+        "title": "\"Wuthering Heights\""
+      },
+      {
+        "id": "tmdb_1317149",
+        "title": "I Swear"
+      },
+      {
+        "id": "tmdb_1317288",
+        "title": "Marty Supreme"
+      },
+      {
+        "id": "tmdb_1321179",
+        "title": "The King's Warden"
+      },
+      {
+        "id": "tmdb_1325734",
+        "title": "The Drama"
+      },
+      {
+        "id": "tmdb_1336770",
+        "title": "Vaazha II"
+      },
+      {
+        "id": "tmdb_1341137",
+        "title": "A Great Awakening"
+      },
+      {
+        "id": "tmdb_1367642",
+        "title": "Reminders of Him"
+      },
+      {
+        "id": "tmdb_1370814",
+        "title": "The Plague"
+      },
+      {
+        "id": "tmdb_1379266",
+        "title": "Kokuho"
+      },
+      {
+        "id": "tmdb_1381027",
+        "title": "Good Boy"
+      },
+      {
+        "id": "tmdb_1387382",
+        "title": "Hunting Season"
+      },
+      {
+        "id": "tmdb_1401778",
+        "title": "Turbulence"
+      },
+      {
+        "id": "tmdb_1406657",
+        "title": "Scarlet"
+      },
+      {
+        "id": "tmdb_1419406",
+        "title": "The Shadow's Edge"
+      },
+      {
+        "id": "tmdb_1429348",
+        "title": "The Stranger"
+      },
+      {
+        "id": "tmdb_1432605",
+        "title": "My Father's Shadow"
+      },
+      {
+        "id": "tmdb_1443576",
+        "title": "Sundays"
+      },
+      {
+        "id": "tmdb_1456349",
+        "title": "It Was Just an Accident"
+      },
+      {
+        "id": "tmdb_1465563",
+        "title": "A Poet"
+      },
+      {
+        "id": "tmdb_1487320",
+        "title": "The Giant Falls"
+      },
+      {
+        "id": "tmdb_1523145",
+        "title": "Your Heart Will Be Broken"
+      },
+      {
+        "id": "tmdb_1620551",
+        "title": "Feel My Voice"
+      },
+      {
+        "id": "tmdb_1630433",
+        "title": "The Red Line"
+      },
+      {
+        "id": "tmdb_1631917",
+        "title": "18th Rose"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_842924",
+      "tmdb_1124566",
+      "tmdb_1160360",
+      "tmdb_1456349"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_842924",
+        "title": "The Life of Chuck"
+      },
+      {
+        "id": "tmdb_1124566",
+        "title": "Sentimental Value"
+      },
+      {
+        "id": "tmdb_1160360",
+        "title": "If I Had Legs I'd Kick You"
+      },
+      {
+        "id": "tmdb_1456349",
+        "title": "It Was Just an Accident"
+      }
+    ],
+    "user_services": [
+      "HBO Max",
+      "Hulu"
+    ]
+  },
+  "task_014": {
+    "constraint_solutions": [
+      "tmdb_467905",
+      "tmdb_604079",
+      "tmdb_639988",
+      "tmdb_1010755",
+      "tmdb_1084187",
+      "tmdb_1088434",
+      "tmdb_1110034",
+      "tmdb_1134463",
+      "tmdb_1151272",
+      "tmdb_1171145",
+      "tmdb_1194963",
+      "tmdb_1198994",
+      "tmdb_1220522",
+      "tmdb_1242265",
+      "tmdb_1242332",
+      "tmdb_1242501",
+      "tmdb_1254135",
+      "tmdb_1263012",
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1276038",
+      "tmdb_1285965",
+      "tmdb_1290417",
+      "tmdb_1290821",
+      "tmdb_1297454",
+      "tmdb_1307373",
+      "tmdb_1314786",
+      "tmdb_1317288",
+      "tmdb_1339876",
+      "tmdb_1356039",
+      "tmdb_1366906",
+      "tmdb_1368166",
+      "tmdb_1381027",
+      "tmdb_1383731",
+      "tmdb_1387382",
+      "tmdb_1401778",
+      "tmdb_1412598",
+      "tmdb_1418657",
+      "tmdb_1419406",
+      "tmdb_1472951",
+      "tmdb_1519168",
+      "tmdb_1526650",
+      "tmdb_1582770",
+      "tmdb_1630433",
+      "tmdb_1641319"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_467905",
+        "title": "How to Make a Killing"
+      },
+      {
+        "id": "tmdb_604079",
+        "title": "The Long Walk"
+      },
+      {
+        "id": "tmdb_639988",
+        "title": "No Other Choice"
+      },
+      {
+        "id": "tmdb_1010755",
+        "title": "The Strangers: Chapter 3"
+      },
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1088434",
+        "title": "Hellfire"
+      },
+      {
+        "id": "tmdb_1110034",
+        "title": "Kraken"
+      },
+      {
+        "id": "tmdb_1134463",
+        "title": "Dreams"
+      },
+      {
+        "id": "tmdb_1151272",
+        "title": "Sir\u0101t"
+      },
+      {
+        "id": "tmdb_1171145",
+        "title": "Crime 101"
+      },
+      {
+        "id": "tmdb_1194963",
+        "title": "Noise"
+      },
+      {
+        "id": "tmdb_1198994",
+        "title": "Send Help"
+      },
+      {
+        "id": "tmdb_1220522",
+        "title": "Dacoit"
+      },
+      {
+        "id": "tmdb_1242265",
+        "title": "Fuze"
+      },
+      {
+        "id": "tmdb_1242332",
+        "title": "Normal"
+      },
+      {
+        "id": "tmdb_1242501",
+        "title": "Icefall"
+      },
+      {
+        "id": "tmdb_1254135",
+        "title": "13 Days, 13 Nights"
+      },
+      {
+        "id": "tmdb_1263012",
+        "title": "Dead Man's Wire"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1276038",
+        "title": "A Desert"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      },
+      {
+        "id": "tmdb_1290417",
+        "title": "Thrash"
+      },
+      {
+        "id": "tmdb_1290821",
+        "title": "Shelter"
+      },
+      {
+        "id": "tmdb_1297454",
+        "title": "The Death That Awaits"
+      },
+      {
+        "id": "tmdb_1307373",
+        "title": "Wasteman"
+      },
+      {
+        "id": "tmdb_1314786",
+        "title": "Agent Zeta"
+      },
+      {
+        "id": "tmdb_1317288",
+        "title": "Marty Supreme"
+      },
+      {
+        "id": "tmdb_1339876",
+        "title": "Mardaani 3"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      },
+      {
+        "id": "tmdb_1366906",
+        "title": "The Gates"
+      },
+      {
+        "id": "tmdb_1368166",
+        "title": "The Housemaid"
+      },
+      {
+        "id": "tmdb_1381027",
+        "title": "Good Boy"
+      },
+      {
+        "id": "tmdb_1383731",
+        "title": "Protector"
+      },
+      {
+        "id": "tmdb_1387382",
+        "title": "Hunting Season"
+      },
+      {
+        "id": "tmdb_1401778",
+        "title": "Turbulence"
+      },
+      {
+        "id": "tmdb_1412598",
+        "title": "Killer Whale"
+      },
+      {
+        "id": "tmdb_1418657",
+        "title": "The Yeti"
+      },
+      {
+        "id": "tmdb_1419406",
+        "title": "The Shadow's Edge"
+      },
+      {
+        "id": "tmdb_1472951",
+        "title": "Infiltrate"
+      },
+      {
+        "id": "tmdb_1519168",
+        "title": "The Jester 2"
+      },
+      {
+        "id": "tmdb_1526650",
+        "title": "Mudborn"
+      },
+      {
+        "id": "tmdb_1582770",
+        "title": "Dhurandhar: The Revenge"
+      },
+      {
+        "id": "tmdb_1630433",
+        "title": "The Red Line"
+      },
+      {
+        "id": "tmdb_1641319",
+        "title": "Sniper: No Nation"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1084187",
+      "tmdb_1171145",
+      "tmdb_1314786"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1171145",
+        "title": "Crime 101"
+      },
+      {
+        "id": "tmdb_1314786",
+        "title": "Agent Zeta"
+      }
+    ],
+    "user_services": [
+      "Paramount+",
+      "Amazon Prime Video",
+      "HBO Max",
+      "Apple TV+"
+    ]
+  },
+  "task_015": {
+    "constraint_solutions": [
+      "tmdb_1043197",
+      "tmdb_1084187",
+      "tmdb_1084577",
+      "tmdb_1088434",
+      "tmdb_1110034",
+      "tmdb_1119449",
+      "tmdb_1144107",
+      "tmdb_1168190",
+      "tmdb_1218925",
+      "tmdb_1234821",
+      "tmdb_1236153",
+      "tmdb_1241470",
+      "tmdb_1242265",
+      "tmdb_1242332",
+      "tmdb_1242501",
+      "tmdb_1242898",
+      "tmdb_1254135",
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1290821",
+      "tmdb_1292415",
+      "tmdb_1292695",
+      "tmdb_1305781",
+      "tmdb_1339876",
+      "tmdb_1356039",
+      "tmdb_1383731",
+      "tmdb_1387382",
+      "tmdb_1401778",
+      "tmdb_1406657",
+      "tmdb_1412598",
+      "tmdb_1472951",
+      "tmdb_1539104",
+      "tmdb_1545621",
+      "tmdb_1641319"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_1043197",
+        "title": "Dust Bunny"
+      },
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1084577",
+        "title": "Balls Up"
+      },
+      {
+        "id": "tmdb_1088434",
+        "title": "Hellfire"
+      },
+      {
+        "id": "tmdb_1110034",
+        "title": "Kraken"
+      },
+      {
+        "id": "tmdb_1119449",
+        "title": "Good Luck, Have Fun, Don't Die"
+      },
+      {
+        "id": "tmdb_1144107",
+        "title": "The Legend of Hei 2"
+      },
+      {
+        "id": "tmdb_1168190",
+        "title": "The Wrecking Crew"
+      },
+      {
+        "id": "tmdb_1218925",
+        "title": "Chainsaw Man - The Movie: Reze Arc"
+      },
+      {
+        "id": "tmdb_1234821",
+        "title": "Jurassic World Rebirth"
+      },
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242265",
+        "title": "Fuze"
+      },
+      {
+        "id": "tmdb_1242332",
+        "title": "Normal"
+      },
+      {
+        "id": "tmdb_1242501",
+        "title": "Icefall"
+      },
+      {
+        "id": "tmdb_1242898",
+        "title": "Predator: Badlands"
+      },
+      {
+        "id": "tmdb_1254135",
+        "title": "13 Days, 13 Nights"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1290821",
+        "title": "Shelter"
+      },
+      {
+        "id": "tmdb_1292415",
+        "title": "Beast"
+      },
+      {
+        "id": "tmdb_1292695",
+        "title": "They Will Kill You"
+      },
+      {
+        "id": "tmdb_1305781",
+        "title": "Blades of the Guardians: Wind Rises in the Desert"
+      },
+      {
+        "id": "tmdb_1339876",
+        "title": "Mardaani 3"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      },
+      {
+        "id": "tmdb_1383731",
+        "title": "Protector"
+      },
+      {
+        "id": "tmdb_1387382",
+        "title": "Hunting Season"
+      },
+      {
+        "id": "tmdb_1401778",
+        "title": "Turbulence"
+      },
+      {
+        "id": "tmdb_1406657",
+        "title": "Scarlet"
+      },
+      {
+        "id": "tmdb_1412598",
+        "title": "Killer Whale"
+      },
+      {
+        "id": "tmdb_1472951",
+        "title": "Infiltrate"
+      },
+      {
+        "id": "tmdb_1539104",
+        "title": "JUJUTSU KAISEN: Execution"
+      },
+      {
+        "id": "tmdb_1545621",
+        "title": "Detective Conan: Fallen Angel of the Highway"
+      },
+      {
+        "id": "tmdb_1641319",
+        "title": "Sniper: No Nation"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1084187",
+      "tmdb_1084577",
+      "tmdb_1168190",
+      "tmdb_1236153",
+      "tmdb_1241470",
+      "tmdb_1242898"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1084577",
+        "title": "Balls Up"
+      },
+      {
+        "id": "tmdb_1168190",
+        "title": "The Wrecking Crew"
+      },
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242898",
+        "title": "Predator: Badlands"
+      }
+    ],
+    "user_services": [
+      "Hulu",
+      "Amazon Prime Video",
+      "Peacock",
+      "Paramount+"
+    ]
+  },
+  "task_016": {
+    "constraint_solutions": [
+      "tmdb_875828",
+      "tmdb_1214931",
+      "tmdb_1268127",
+      "tmdb_1487320",
+      "tmdb_1630433"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_875828",
+        "title": "Peaky Blinders: The Immortal Man"
+      },
+      {
+        "id": "tmdb_1214931",
+        "title": "Nuremberg"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1487320",
+        "title": "The Giant Falls"
+      },
+      {
+        "id": "tmdb_1630433",
+        "title": "The Red Line"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_875828",
+      "tmdb_1214931",
+      "tmdb_1268127",
+      "tmdb_1487320",
+      "tmdb_1630433"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_875828",
+        "title": "Peaky Blinders: The Immortal Man"
+      },
+      {
+        "id": "tmdb_1214931",
+        "title": "Nuremberg"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1487320",
+        "title": "The Giant Falls"
+      },
+      {
+        "id": "tmdb_1630433",
+        "title": "The Red Line"
+      }
+    ],
+    "user_services": [
+      "Netflix",
+      "Disney+",
+      "Hulu",
+      "Peacock"
+    ]
+  },
+  "task_017": {
+    "constraint_solutions": [
+      "tmdb_467905",
+      "tmdb_696393",
+      "tmdb_1049471",
+      "tmdb_1084577",
+      "tmdb_1115544",
+      "tmdb_1154538",
+      "tmdb_1198994",
+      "tmdb_1234731",
+      "tmdb_1262815",
+      "tmdb_1266127",
+      "tmdb_1292695",
+      "tmdb_1325734",
+      "tmdb_1450527",
+      "tmdb_1455079",
+      "tmdb_1493859",
+      "tmdb_1620551",
+      "tmdb_1635276"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_467905",
+        "title": "How to Make a Killing"
+      },
+      {
+        "id": "tmdb_696393",
+        "title": "Cold Storage"
+      },
+      {
+        "id": "tmdb_1049471",
+        "title": "Outcome"
+      },
+      {
+        "id": "tmdb_1084577",
+        "title": "Balls Up"
+      },
+      {
+        "id": "tmdb_1115544",
+        "title": "Mike & Nick & Nick & Alice"
+      },
+      {
+        "id": "tmdb_1154538",
+        "title": "Nirvanna the Band the Show the Movie"
+      },
+      {
+        "id": "tmdb_1198994",
+        "title": "Send Help"
+      },
+      {
+        "id": "tmdb_1234731",
+        "title": "Anaconda"
+      },
+      {
+        "id": "tmdb_1262815",
+        "title": "The Choral"
+      },
+      {
+        "id": "tmdb_1266127",
+        "title": "Ready or Not: Here I Come"
+      },
+      {
+        "id": "tmdb_1292695",
+        "title": "They Will Kill You"
+      },
+      {
+        "id": "tmdb_1325734",
+        "title": "The Drama"
+      },
+      {
+        "id": "tmdb_1450527",
+        "title": "Forbidden Fruits"
+      },
+      {
+        "id": "tmdb_1455079",
+        "title": "You, Me & Tuscany"
+      },
+      {
+        "id": "tmdb_1493859",
+        "title": "Pizza Movie"
+      },
+      {
+        "id": "tmdb_1620551",
+        "title": "Feel My Voice"
+      },
+      {
+        "id": "tmdb_1635276",
+        "title": "Eat Pray Bark"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1049471",
+      "tmdb_1234731",
+      "tmdb_1620551",
+      "tmdb_1635276"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1049471",
+        "title": "Outcome"
+      },
+      {
+        "id": "tmdb_1234731",
+        "title": "Anaconda"
+      },
+      {
+        "id": "tmdb_1620551",
+        "title": "Feel My Voice"
+      },
+      {
+        "id": "tmdb_1635276",
+        "title": "Eat Pray Bark"
+      }
+    ],
+    "user_services": [
+      "Disney+",
+      "Netflix",
+      "Apple TV+",
+      "Paramount+"
+    ]
+  },
+  "task_018": {
+    "constraint_solutions": [
+      "tmdb_604079",
+      "tmdb_680493",
+      "tmdb_696393",
+      "tmdb_999136",
+      "tmdb_1010755",
+      "tmdb_1043197",
+      "tmdb_1084187",
+      "tmdb_1110034",
+      "tmdb_1193501",
+      "tmdb_1194963",
+      "tmdb_1241470",
+      "tmdb_1242937",
+      "tmdb_1266127",
+      "tmdb_1276038",
+      "tmdb_1285965",
+      "tmdb_1290417",
+      "tmdb_1292695",
+      "tmdb_1297454",
+      "tmdb_1309083",
+      "tmdb_1370814",
+      "tmdb_1412598",
+      "tmdb_1418657",
+      "tmdb_1450527",
+      "tmdb_1470130",
+      "tmdb_1480387",
+      "tmdb_1519168",
+      "tmdb_1572073",
+      "tmdb_1610418"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_604079",
+        "title": "The Long Walk"
+      },
+      {
+        "id": "tmdb_680493",
+        "title": "Return to Silent Hill"
+      },
+      {
+        "id": "tmdb_696393",
+        "title": "Cold Storage"
+      },
+      {
+        "id": "tmdb_999136",
+        "title": "Do Not Enter"
+      },
+      {
+        "id": "tmdb_1010755",
+        "title": "The Strangers: Chapter 3"
+      },
+      {
+        "id": "tmdb_1043197",
+        "title": "Dust Bunny"
+      },
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1110034",
+        "title": "Kraken"
+      },
+      {
+        "id": "tmdb_1193501",
+        "title": "Whistle"
+      },
+      {
+        "id": "tmdb_1194963",
+        "title": "Noise"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242937",
+        "title": "The Dreadful"
+      },
+      {
+        "id": "tmdb_1266127",
+        "title": "Ready or Not: Here I Come"
+      },
+      {
+        "id": "tmdb_1276038",
+        "title": "A Desert"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      },
+      {
+        "id": "tmdb_1290417",
+        "title": "Thrash"
+      },
+      {
+        "id": "tmdb_1292695",
+        "title": "They Will Kill You"
+      },
+      {
+        "id": "tmdb_1297454",
+        "title": "The Death That Awaits"
+      },
+      {
+        "id": "tmdb_1309083",
+        "title": "Dolly"
+      },
+      {
+        "id": "tmdb_1370814",
+        "title": "The Plague"
+      },
+      {
+        "id": "tmdb_1412598",
+        "title": "Killer Whale"
+      },
+      {
+        "id": "tmdb_1418657",
+        "title": "The Yeti"
+      },
+      {
+        "id": "tmdb_1450527",
+        "title": "Forbidden Fruits"
+      },
+      {
+        "id": "tmdb_1470130",
+        "title": "The Mortuary Assistant"
+      },
+      {
+        "id": "tmdb_1480387",
+        "title": "undertone"
+      },
+      {
+        "id": "tmdb_1519168",
+        "title": "The Jester 2"
+      },
+      {
+        "id": "tmdb_1572073",
+        "title": "The Deadly Little Mermaid"
+      },
+      {
+        "id": "tmdb_1610418",
+        "title": "The House on Haunted Grounds"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1084187",
+      "tmdb_1241470",
+      "tmdb_1242937",
+      "tmdb_1285965",
+      "tmdb_1290417"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242937",
+        "title": "The Dreadful"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      },
+      {
+        "id": "tmdb_1290417",
+        "title": "Thrash"
+      }
+    ],
+    "user_services": [
+      "Hulu",
+      "HBO Max",
+      "Netflix",
+      "Amazon Prime Video"
+    ]
+  },
+  "task_019": {
+    "constraint_solutions": [
+      "tmdb_1043197",
+      "tmdb_1084187",
+      "tmdb_1088434",
+      "tmdb_1110034",
+      "tmdb_1119449",
+      "tmdb_1144107",
+      "tmdb_1168190",
+      "tmdb_1218925",
+      "tmdb_1234821",
+      "tmdb_1236153",
+      "tmdb_1241470",
+      "tmdb_1242265",
+      "tmdb_1242332",
+      "tmdb_1242501",
+      "tmdb_1242898",
+      "tmdb_1254135",
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1290821",
+      "tmdb_1292415",
+      "tmdb_1292695",
+      "tmdb_1305781",
+      "tmdb_1339876",
+      "tmdb_1356039",
+      "tmdb_1383731",
+      "tmdb_1387382",
+      "tmdb_1401778",
+      "tmdb_1406657",
+      "tmdb_1545621",
+      "tmdb_1641319"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_1043197",
+        "title": "Dust Bunny"
+      },
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1088434",
+        "title": "Hellfire"
+      },
+      {
+        "id": "tmdb_1110034",
+        "title": "Kraken"
+      },
+      {
+        "id": "tmdb_1119449",
+        "title": "Good Luck, Have Fun, Don't Die"
+      },
+      {
+        "id": "tmdb_1144107",
+        "title": "The Legend of Hei 2"
+      },
+      {
+        "id": "tmdb_1168190",
+        "title": "The Wrecking Crew"
+      },
+      {
+        "id": "tmdb_1218925",
+        "title": "Chainsaw Man - The Movie: Reze Arc"
+      },
+      {
+        "id": "tmdb_1234821",
+        "title": "Jurassic World Rebirth"
+      },
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242265",
+        "title": "Fuze"
+      },
+      {
+        "id": "tmdb_1242332",
+        "title": "Normal"
+      },
+      {
+        "id": "tmdb_1242501",
+        "title": "Icefall"
+      },
+      {
+        "id": "tmdb_1242898",
+        "title": "Predator: Badlands"
+      },
+      {
+        "id": "tmdb_1254135",
+        "title": "13 Days, 13 Nights"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1290821",
+        "title": "Shelter"
+      },
+      {
+        "id": "tmdb_1292415",
+        "title": "Beast"
+      },
+      {
+        "id": "tmdb_1292695",
+        "title": "They Will Kill You"
+      },
+      {
+        "id": "tmdb_1305781",
+        "title": "Blades of the Guardians: Wind Rises in the Desert"
+      },
+      {
+        "id": "tmdb_1339876",
+        "title": "Mardaani 3"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      },
+      {
+        "id": "tmdb_1383731",
+        "title": "Protector"
+      },
+      {
+        "id": "tmdb_1387382",
+        "title": "Hunting Season"
+      },
+      {
+        "id": "tmdb_1401778",
+        "title": "Turbulence"
+      },
+      {
+        "id": "tmdb_1406657",
+        "title": "Scarlet"
+      },
+      {
+        "id": "tmdb_1545621",
+        "title": "Detective Conan: Fallen Angel of the Highway"
+      },
+      {
+        "id": "tmdb_1641319",
+        "title": "Sniper: No Nation"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1084187",
+      "tmdb_1168190",
+      "tmdb_1234821",
+      "tmdb_1236153",
+      "tmdb_1241470",
+      "tmdb_1242898",
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1339876",
+      "tmdb_1356039"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1168190",
+        "title": "The Wrecking Crew"
+      },
+      {
+        "id": "tmdb_1234821",
+        "title": "Jurassic World Rebirth"
+      },
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242898",
+        "title": "Predator: Badlands"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1339876",
+        "title": "Mardaani 3"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      }
+    ],
+    "user_services": [
+      "Amazon Prime Video",
+      "Netflix",
+      "Hulu",
+      "Peacock"
+    ]
+  },
+  "task_020": {
+    "constraint_solutions": [
+      "tmdb_1086260",
+      "tmdb_1285965"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_1086260",
+        "title": "The Astronaut"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1086260",
+      "tmdb_1285965"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1086260",
+        "title": "The Astronaut"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      }
+    ],
+    "user_services": [
+      "Hulu",
+      "Paramount+"
+    ]
+  },
+  "task_021": {
+    "constraint_solutions": [
+      "tmdb_682012",
+      "tmdb_804370",
+      "tmdb_991494",
+      "tmdb_1117857",
+      "tmdb_1146058"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_682012",
+        "title": "Little Am\u00e9lie or the Character of Rain"
+      },
+      {
+        "id": "tmdb_804370",
+        "title": "Arco"
+      },
+      {
+        "id": "tmdb_991494",
+        "title": "The SpongeBob Movie: Search for SquarePants"
+      },
+      {
+        "id": "tmdb_1117857",
+        "title": "In Your Dreams"
+      },
+      {
+        "id": "tmdb_1146058",
+        "title": "The Pout-Pout Fish"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_991494",
+      "tmdb_1117857"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_991494",
+        "title": "The SpongeBob Movie: Search for SquarePants"
+      },
+      {
+        "id": "tmdb_1117857",
+        "title": "In Your Dreams"
+      }
+    ],
+    "user_services": [
+      "Hulu",
+      "Netflix",
+      "Paramount+"
+    ]
+  },
+  "task_022": {
+    "constraint_solutions": [
+      "tmdb_604079",
+      "tmdb_696393",
+      "tmdb_804370",
+      "tmdb_840464",
+      "tmdb_1086260",
+      "tmdb_1115544",
+      "tmdb_1119449",
+      "tmdb_1154538",
+      "tmdb_1159831",
+      "tmdb_1234821",
+      "tmdb_1236153",
+      "tmdb_1241470",
+      "tmdb_1242898",
+      "tmdb_1265609",
+      "tmdb_1284460",
+      "tmdb_1327819",
+      "tmdb_1406657",
+      "tmdb_1575337"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_604079",
+        "title": "The Long Walk"
+      },
+      {
+        "id": "tmdb_696393",
+        "title": "Cold Storage"
+      },
+      {
+        "id": "tmdb_804370",
+        "title": "Arco"
+      },
+      {
+        "id": "tmdb_840464",
+        "title": "Greenland 2: Migration"
+      },
+      {
+        "id": "tmdb_1086260",
+        "title": "The Astronaut"
+      },
+      {
+        "id": "tmdb_1115544",
+        "title": "Mike & Nick & Nick & Alice"
+      },
+      {
+        "id": "tmdb_1119449",
+        "title": "Good Luck, Have Fun, Don't Die"
+      },
+      {
+        "id": "tmdb_1154538",
+        "title": "Nirvanna the Band the Show the Movie"
+      },
+      {
+        "id": "tmdb_1159831",
+        "title": "The Bride!"
+      },
+      {
+        "id": "tmdb_1234821",
+        "title": "Jurassic World Rebirth"
+      },
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242898",
+        "title": "Predator: Badlands"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1284460",
+        "title": "Alpha"
+      },
+      {
+        "id": "tmdb_1327819",
+        "title": "Hoppers"
+      },
+      {
+        "id": "tmdb_1406657",
+        "title": "Scarlet"
+      },
+      {
+        "id": "tmdb_1575337",
+        "title": "Cosmic Princess Kaguya!"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1236153"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      }
+    ],
+    "user_services": [
+      "Amazon Prime Video"
+    ]
+  },
+  "task_023": {
+    "constraint_solutions": [
+      "tmdb_1086260",
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1285965",
+      "tmdb_1290417",
+      "tmdb_1356039",
+      "tmdb_1456349",
+      "tmdb_1526650"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_1086260",
+        "title": "The Astronaut"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      },
+      {
+        "id": "tmdb_1290417",
+        "title": "Thrash"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      },
+      {
+        "id": "tmdb_1456349",
+        "title": "It Was Just an Accident"
+      },
+      {
+        "id": "tmdb_1526650",
+        "title": "Mudborn"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1086260",
+      "tmdb_1285965",
+      "tmdb_1456349"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1086260",
+        "title": "The Astronaut"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      },
+      {
+        "id": "tmdb_1456349",
+        "title": "It Was Just an Accident"
+      }
+    ],
+    "user_services": [
+      "Hulu",
+      "Amazon Prime Video"
+    ]
+  },
+  "task_024": {
+    "constraint_solutions": [
+      "tmdb_682012",
+      "tmdb_842924",
+      "tmdb_858024",
+      "tmdb_875828",
+      "tmdb_936075",
+      "tmdb_1124566",
+      "tmdb_1151272",
+      "tmdb_1167307",
+      "tmdb_1268127",
+      "tmdb_1305781",
+      "tmdb_1307373",
+      "tmdb_1314786",
+      "tmdb_1316092",
+      "tmdb_1317149",
+      "tmdb_1321179",
+      "tmdb_1325734",
+      "tmdb_1341137",
+      "tmdb_1367642",
+      "tmdb_1381027",
+      "tmdb_1387382",
+      "tmdb_1406657",
+      "tmdb_1429348",
+      "tmdb_1432605",
+      "tmdb_1443576",
+      "tmdb_1456349",
+      "tmdb_1465563",
+      "tmdb_1480382",
+      "tmdb_1487320",
+      "tmdb_1523145",
+      "tmdb_1630433"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_682012",
+        "title": "Little Am\u00e9lie or the Character of Rain"
+      },
+      {
+        "id": "tmdb_842924",
+        "title": "The Life of Chuck"
+      },
+      {
+        "id": "tmdb_858024",
+        "title": "Hamnet"
+      },
+      {
+        "id": "tmdb_875828",
+        "title": "Peaky Blinders: The Immortal Man"
+      },
+      {
+        "id": "tmdb_936075",
+        "title": "Michael"
+      },
+      {
+        "id": "tmdb_1124566",
+        "title": "Sentimental Value"
+      },
+      {
+        "id": "tmdb_1151272",
+        "title": "Sir\u0101t"
+      },
+      {
+        "id": "tmdb_1167307",
+        "title": "David"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1305781",
+        "title": "Blades of the Guardians: Wind Rises in the Desert"
+      },
+      {
+        "id": "tmdb_1307373",
+        "title": "Wasteman"
+      },
+      {
+        "id": "tmdb_1314786",
+        "title": "Agent Zeta"
+      },
+      {
+        "id": "tmdb_1316092",
+        "title": "\"Wuthering Heights\""
+      },
+      {
+        "id": "tmdb_1317149",
+        "title": "I Swear"
+      },
+      {
+        "id": "tmdb_1321179",
+        "title": "The King's Warden"
+      },
+      {
+        "id": "tmdb_1325734",
+        "title": "The Drama"
+      },
+      {
+        "id": "tmdb_1341137",
+        "title": "A Great Awakening"
+      },
+      {
+        "id": "tmdb_1367642",
+        "title": "Reminders of Him"
+      },
+      {
+        "id": "tmdb_1381027",
+        "title": "Good Boy"
+      },
+      {
+        "id": "tmdb_1387382",
+        "title": "Hunting Season"
+      },
+      {
+        "id": "tmdb_1406657",
+        "title": "Scarlet"
+      },
+      {
+        "id": "tmdb_1429348",
+        "title": "The Stranger"
+      },
+      {
+        "id": "tmdb_1432605",
+        "title": "My Father's Shadow"
+      },
+      {
+        "id": "tmdb_1443576",
+        "title": "Sundays"
+      },
+      {
+        "id": "tmdb_1456349",
+        "title": "It Was Just an Accident"
+      },
+      {
+        "id": "tmdb_1465563",
+        "title": "A Poet"
+      },
+      {
+        "id": "tmdb_1480382",
+        "title": "The Voice of Hind Rajab"
+      },
+      {
+        "id": "tmdb_1487320",
+        "title": "The Giant Falls"
+      },
+      {
+        "id": "tmdb_1523145",
+        "title": "Your Heart Will Be Broken"
+      },
+      {
+        "id": "tmdb_1630433",
+        "title": "The Red Line"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_842924",
+      "tmdb_875828",
+      "tmdb_1124566",
+      "tmdb_1268127",
+      "tmdb_1456349",
+      "tmdb_1480382",
+      "tmdb_1487320",
+      "tmdb_1630433"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_842924",
+        "title": "The Life of Chuck"
+      },
+      {
+        "id": "tmdb_875828",
+        "title": "Peaky Blinders: The Immortal Man"
+      },
+      {
+        "id": "tmdb_1124566",
+        "title": "Sentimental Value"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1456349",
+        "title": "It Was Just an Accident"
+      },
+      {
+        "id": "tmdb_1480382",
+        "title": "The Voice of Hind Rajab"
+      },
+      {
+        "id": "tmdb_1487320",
+        "title": "The Giant Falls"
+      },
+      {
+        "id": "tmdb_1630433",
+        "title": "The Red Line"
+      }
+    ],
+    "user_services": [
+      "Netflix",
+      "Hulu"
+    ]
+  },
+  "task_025": {
+    "constraint_solutions": [
+      "tmdb_604079",
+      "tmdb_696393",
+      "tmdb_1043197",
+      "tmdb_1084187",
+      "tmdb_1110034",
+      "tmdb_1159559",
+      "tmdb_1193501",
+      "tmdb_1194963",
+      "tmdb_1198994",
+      "tmdb_1241470",
+      "tmdb_1242937",
+      "tmdb_1266127",
+      "tmdb_1276038",
+      "tmdb_1285965",
+      "tmdb_1292695",
+      "tmdb_1297454",
+      "tmdb_1309083",
+      "tmdb_1370814",
+      "tmdb_1418657",
+      "tmdb_1450527",
+      "tmdb_1480387",
+      "tmdb_1519168",
+      "tmdb_1526650"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_604079",
+        "title": "The Long Walk"
+      },
+      {
+        "id": "tmdb_696393",
+        "title": "Cold Storage"
+      },
+      {
+        "id": "tmdb_1043197",
+        "title": "Dust Bunny"
+      },
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1110034",
+        "title": "Kraken"
+      },
+      {
+        "id": "tmdb_1159559",
+        "title": "Scream 7"
+      },
+      {
+        "id": "tmdb_1193501",
+        "title": "Whistle"
+      },
+      {
+        "id": "tmdb_1194963",
+        "title": "Noise"
+      },
+      {
+        "id": "tmdb_1198994",
+        "title": "Send Help"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242937",
+        "title": "The Dreadful"
+      },
+      {
+        "id": "tmdb_1266127",
+        "title": "Ready or Not: Here I Come"
+      },
+      {
+        "id": "tmdb_1276038",
+        "title": "A Desert"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      },
+      {
+        "id": "tmdb_1292695",
+        "title": "They Will Kill You"
+      },
+      {
+        "id": "tmdb_1297454",
+        "title": "The Death That Awaits"
+      },
+      {
+        "id": "tmdb_1309083",
+        "title": "Dolly"
+      },
+      {
+        "id": "tmdb_1370814",
+        "title": "The Plague"
+      },
+      {
+        "id": "tmdb_1418657",
+        "title": "The Yeti"
+      },
+      {
+        "id": "tmdb_1450527",
+        "title": "Forbidden Fruits"
+      },
+      {
+        "id": "tmdb_1480387",
+        "title": "undertone"
+      },
+      {
+        "id": "tmdb_1519168",
+        "title": "The Jester 2"
+      },
+      {
+        "id": "tmdb_1526650",
+        "title": "Mudborn"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1241470",
+      "tmdb_1276038",
+      "tmdb_1285965",
+      "tmdb_1370814",
+      "tmdb_1519168"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1276038",
+        "title": "A Desert"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      },
+      {
+        "id": "tmdb_1370814",
+        "title": "The Plague"
+      },
+      {
+        "id": "tmdb_1519168",
+        "title": "The Jester 2"
+      }
+    ],
+    "user_services": [
+      "AMC+",
+      "Hulu",
+      "Apple TV+"
+    ]
+  },
+  "task_026": {
+    "constraint_solutions": [
+      "tmdb_803796",
+      "tmdb_1117857",
+      "tmdb_1234731",
+      "tmdb_1416391",
+      "tmdb_1620551",
+      "tmdb_1635276"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_803796",
+        "title": "KPop Demon Hunters"
+      },
+      {
+        "id": "tmdb_1117857",
+        "title": "In Your Dreams"
+      },
+      {
+        "id": "tmdb_1234731",
+        "title": "Anaconda"
+      },
+      {
+        "id": "tmdb_1416391",
+        "title": "Toaster"
+      },
+      {
+        "id": "tmdb_1620551",
+        "title": "Feel My Voice"
+      },
+      {
+        "id": "tmdb_1635276",
+        "title": "Eat Pray Bark"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_803796",
+      "tmdb_1117857",
+      "tmdb_1234731",
+      "tmdb_1416391",
+      "tmdb_1620551",
+      "tmdb_1635276"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_803796",
+        "title": "KPop Demon Hunters"
+      },
+      {
+        "id": "tmdb_1117857",
+        "title": "In Your Dreams"
+      },
+      {
+        "id": "tmdb_1234731",
+        "title": "Anaconda"
+      },
+      {
+        "id": "tmdb_1416391",
+        "title": "Toaster"
+      },
+      {
+        "id": "tmdb_1620551",
+        "title": "Feel My Voice"
+      },
+      {
+        "id": "tmdb_1635276",
+        "title": "Eat Pray Bark"
+      }
+    ],
+    "user_services": [
+      "Netflix"
+    ]
+  },
+  "task_027": {
+    "constraint_solutions": [
+      "tmdb_662707",
+      "tmdb_1043197",
+      "tmdb_1119449",
+      "tmdb_1144107",
+      "tmdb_1168190",
+      "tmdb_1220522",
+      "tmdb_1234821",
+      "tmdb_1241470",
+      "tmdb_1242898",
+      "tmdb_1254135",
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1290821",
+      "tmdb_1292415",
+      "tmdb_1305781",
+      "tmdb_1311031",
+      "tmdb_1336770",
+      "tmdb_1339876",
+      "tmdb_1406657",
+      "tmdb_1419406",
+      "tmdb_1545621",
+      "tmdb_1582770"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_662707",
+        "title": "Starbright"
+      },
+      {
+        "id": "tmdb_1043197",
+        "title": "Dust Bunny"
+      },
+      {
+        "id": "tmdb_1119449",
+        "title": "Good Luck, Have Fun, Don't Die"
+      },
+      {
+        "id": "tmdb_1144107",
+        "title": "The Legend of Hei 2"
+      },
+      {
+        "id": "tmdb_1168190",
+        "title": "The Wrecking Crew"
+      },
+      {
+        "id": "tmdb_1220522",
+        "title": "Dacoit"
+      },
+      {
+        "id": "tmdb_1234821",
+        "title": "Jurassic World Rebirth"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242898",
+        "title": "Predator: Badlands"
+      },
+      {
+        "id": "tmdb_1254135",
+        "title": "13 Days, 13 Nights"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1290821",
+        "title": "Shelter"
+      },
+      {
+        "id": "tmdb_1292415",
+        "title": "Beast"
+      },
+      {
+        "id": "tmdb_1305781",
+        "title": "Blades of the Guardians: Wind Rises in the Desert"
+      },
+      {
+        "id": "tmdb_1311031",
+        "title": "Demon Slayer: Kimetsu no Yaiba Infinity Castle"
+      },
+      {
+        "id": "tmdb_1336770",
+        "title": "Vaazha II"
+      },
+      {
+        "id": "tmdb_1339876",
+        "title": "Mardaani 3"
+      },
+      {
+        "id": "tmdb_1406657",
+        "title": "Scarlet"
+      },
+      {
+        "id": "tmdb_1419406",
+        "title": "The Shadow's Edge"
+      },
+      {
+        "id": "tmdb_1545621",
+        "title": "Detective Conan: Fallen Angel of the Highway"
+      },
+      {
+        "id": "tmdb_1582770",
+        "title": "Dhurandhar: The Revenge"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1234821",
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1339876"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1234821",
+        "title": "Jurassic World Rebirth"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1339876",
+        "title": "Mardaani 3"
+      }
+    ],
+    "user_services": [
+      "Netflix"
+    ]
+  },
+  "task_028": {
+    "constraint_solutions": [
+      "tmdb_755898",
+      "tmdb_1236153"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_755898",
+        "title": "War of the Worlds"
+      },
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_755898",
+      "tmdb_1236153"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_755898",
+        "title": "War of the Worlds"
+      },
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      }
+    ],
+    "user_services": [
+      "Amazon Prime Video"
+    ]
+  },
+  "task_029": {
+    "constraint_solutions": [
+      "tmdb_875828",
+      "tmdb_1115544",
+      "tmdb_1159559",
+      "tmdb_1168190",
+      "tmdb_1242265",
+      "tmdb_1242332",
+      "tmdb_1242501",
+      "tmdb_1263012",
+      "tmdb_1290432",
+      "tmdb_1290821",
+      "tmdb_1307373",
+      "tmdb_1429348",
+      "tmdb_1519168",
+      "tmdb_1545621"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_875828",
+        "title": "Peaky Blinders: The Immortal Man"
+      },
+      {
+        "id": "tmdb_1115544",
+        "title": "Mike & Nick & Nick & Alice"
+      },
+      {
+        "id": "tmdb_1159559",
+        "title": "Scream 7"
+      },
+      {
+        "id": "tmdb_1168190",
+        "title": "The Wrecking Crew"
+      },
+      {
+        "id": "tmdb_1242265",
+        "title": "Fuze"
+      },
+      {
+        "id": "tmdb_1242332",
+        "title": "Normal"
+      },
+      {
+        "id": "tmdb_1242501",
+        "title": "Icefall"
+      },
+      {
+        "id": "tmdb_1263012",
+        "title": "Dead Man's Wire"
+      },
+      {
+        "id": "tmdb_1290432",
+        "title": "A Private Life"
+      },
+      {
+        "id": "tmdb_1290821",
+        "title": "Shelter"
+      },
+      {
+        "id": "tmdb_1307373",
+        "title": "Wasteman"
+      },
+      {
+        "id": "tmdb_1429348",
+        "title": "The Stranger"
+      },
+      {
+        "id": "tmdb_1519168",
+        "title": "The Jester 2"
+      },
+      {
+        "id": "tmdb_1545621",
+        "title": "Detective Conan: Fallen Angel of the Highway"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [],
+    "reachable_solutions_with_titles": [],
+    "user_services": []
+  },
+  "task_030": {
+    "constraint_solutions": [
+      "tmdb_1129104",
+      "tmdb_1159559",
+      "tmdb_1168190",
+      "tmdb_1193501",
+      "tmdb_1381027",
+      "tmdb_1408208",
+      "tmdb_1456349",
+      "tmdb_1480387",
+      "tmdb_1545621"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_1129104",
+        "title": "Flavia"
+      },
+      {
+        "id": "tmdb_1159559",
+        "title": "Scream 7"
+      },
+      {
+        "id": "tmdb_1168190",
+        "title": "The Wrecking Crew"
+      },
+      {
+        "id": "tmdb_1193501",
+        "title": "Whistle"
+      },
+      {
+        "id": "tmdb_1381027",
+        "title": "Good Boy"
+      },
+      {
+        "id": "tmdb_1408208",
+        "title": "Exit 8"
+      },
+      {
+        "id": "tmdb_1456349",
+        "title": "It Was Just an Accident"
+      },
+      {
+        "id": "tmdb_1480387",
+        "title": "undertone"
+      },
+      {
+        "id": "tmdb_1545621",
+        "title": "Detective Conan: Fallen Angel of the Highway"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [],
+    "reachable_solutions_with_titles": [],
+    "user_services": []
+  },
+  "task_031": {
+    "constraint_solutions": [
+      "tmdb_467905",
+      "tmdb_604079",
+      "tmdb_1084187",
+      "tmdb_1088434",
+      "tmdb_1151272",
+      "tmdb_1194963",
+      "tmdb_1198994",
+      "tmdb_1242332",
+      "tmdb_1254135",
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1290821",
+      "tmdb_1307373",
+      "tmdb_1356039",
+      "tmdb_1381027",
+      "tmdb_1383731",
+      "tmdb_1387382",
+      "tmdb_1418657",
+      "tmdb_1526650"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_467905",
+        "title": "How to Make a Killing"
+      },
+      {
+        "id": "tmdb_604079",
+        "title": "The Long Walk"
+      },
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1088434",
+        "title": "Hellfire"
+      },
+      {
+        "id": "tmdb_1151272",
+        "title": "Sir\u0101t"
+      },
+      {
+        "id": "tmdb_1194963",
+        "title": "Noise"
+      },
+      {
+        "id": "tmdb_1198994",
+        "title": "Send Help"
+      },
+      {
+        "id": "tmdb_1242332",
+        "title": "Normal"
+      },
+      {
+        "id": "tmdb_1254135",
+        "title": "13 Days, 13 Nights"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1290821",
+        "title": "Shelter"
+      },
+      {
+        "id": "tmdb_1307373",
+        "title": "Wasteman"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      },
+      {
+        "id": "tmdb_1381027",
+        "title": "Good Boy"
+      },
+      {
+        "id": "tmdb_1383731",
+        "title": "Protector"
+      },
+      {
+        "id": "tmdb_1387382",
+        "title": "Hunting Season"
+      },
+      {
+        "id": "tmdb_1418657",
+        "title": "The Yeti"
+      },
+      {
+        "id": "tmdb_1526650",
+        "title": "Mudborn"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1084187",
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1356039",
+      "tmdb_1526650"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      },
+      {
+        "id": "tmdb_1526650",
+        "title": "Mudborn"
+      }
+    ],
+    "user_services": [
+      "Netflix",
+      "Amazon Prime Video"
+    ]
+  },
+  "task_032": {
+    "constraint_solutions": [
+      "tmdb_842924",
+      "tmdb_875828",
+      "tmdb_878608",
+      "tmdb_1124566",
+      "tmdb_1151272",
+      "tmdb_1168719",
+      "tmdb_1268127",
+      "tmdb_1305781",
+      "tmdb_1314786",
+      "tmdb_1316092",
+      "tmdb_1317149",
+      "tmdb_1317288",
+      "tmdb_1321179",
+      "tmdb_1325734",
+      "tmdb_1379266",
+      "tmdb_1381027",
+      "tmdb_1419406",
+      "tmdb_1429348",
+      "tmdb_1465563",
+      "tmdb_1487320",
+      "tmdb_1523145",
+      "tmdb_1630433"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_842924",
+        "title": "The Life of Chuck"
+      },
+      {
+        "id": "tmdb_875828",
+        "title": "Peaky Blinders: The Immortal Man"
+      },
+      {
+        "id": "tmdb_878608",
+        "title": "Resurrection"
+      },
+      {
+        "id": "tmdb_1124566",
+        "title": "Sentimental Value"
+      },
+      {
+        "id": "tmdb_1151272",
+        "title": "Sir\u0101t"
+      },
+      {
+        "id": "tmdb_1168719",
+        "title": "Silent Friend"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1305781",
+        "title": "Blades of the Guardians: Wind Rises in the Desert"
+      },
+      {
+        "id": "tmdb_1314786",
+        "title": "Agent Zeta"
+      },
+      {
+        "id": "tmdb_1316092",
+        "title": "\"Wuthering Heights\""
+      },
+      {
+        "id": "tmdb_1317149",
+        "title": "I Swear"
+      },
+      {
+        "id": "tmdb_1317288",
+        "title": "Marty Supreme"
+      },
+      {
+        "id": "tmdb_1321179",
+        "title": "The King's Warden"
+      },
+      {
+        "id": "tmdb_1325734",
+        "title": "The Drama"
+      },
+      {
+        "id": "tmdb_1379266",
+        "title": "Kokuho"
+      },
+      {
+        "id": "tmdb_1381027",
+        "title": "Good Boy"
+      },
+      {
+        "id": "tmdb_1419406",
+        "title": "The Shadow's Edge"
+      },
+      {
+        "id": "tmdb_1429348",
+        "title": "The Stranger"
+      },
+      {
+        "id": "tmdb_1465563",
+        "title": "A Poet"
+      },
+      {
+        "id": "tmdb_1487320",
+        "title": "The Giant Falls"
+      },
+      {
+        "id": "tmdb_1523145",
+        "title": "Your Heart Will Be Broken"
+      },
+      {
+        "id": "tmdb_1630433",
+        "title": "The Red Line"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_842924",
+      "tmdb_875828",
+      "tmdb_1124566",
+      "tmdb_1268127",
+      "tmdb_1487320",
+      "tmdb_1630433"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_842924",
+        "title": "The Life of Chuck"
+      },
+      {
+        "id": "tmdb_875828",
+        "title": "Peaky Blinders: The Immortal Man"
+      },
+      {
+        "id": "tmdb_1124566",
+        "title": "Sentimental Value"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1487320",
+        "title": "The Giant Falls"
+      },
+      {
+        "id": "tmdb_1630433",
+        "title": "The Red Line"
+      }
+    ],
+    "user_services": [
+      "Netflix",
+      "Hulu"
+    ]
+  },
+  "task_033": {
+    "constraint_solutions": [
+      "tmdb_1086260",
+      "tmdb_1234731",
+      "tmdb_1241470",
+      "tmdb_1285965",
+      "tmdb_1290417"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_1086260",
+        "title": "The Astronaut"
+      },
+      {
+        "id": "tmdb_1234731",
+        "title": "Anaconda"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      },
+      {
+        "id": "tmdb_1290417",
+        "title": "Thrash"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1234731",
+      "tmdb_1290417"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1234731",
+        "title": "Anaconda"
+      },
+      {
+        "id": "tmdb_1290417",
+        "title": "Thrash"
+      }
+    ],
+    "user_services": [
+      "Netflix"
+    ]
+  },
+  "task_034": {
+    "constraint_solutions": [
+      "tmdb_467905",
+      "tmdb_696393",
+      "tmdb_1084577",
+      "tmdb_1115544",
+      "tmdb_1154538",
+      "tmdb_1234731",
+      "tmdb_1266127",
+      "tmdb_1292695",
+      "tmdb_1325734",
+      "tmdb_1450527",
+      "tmdb_1455079",
+      "tmdb_1493859",
+      "tmdb_1620551",
+      "tmdb_1635276"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_467905",
+        "title": "How to Make a Killing"
+      },
+      {
+        "id": "tmdb_696393",
+        "title": "Cold Storage"
+      },
+      {
+        "id": "tmdb_1084577",
+        "title": "Balls Up"
+      },
+      {
+        "id": "tmdb_1115544",
+        "title": "Mike & Nick & Nick & Alice"
+      },
+      {
+        "id": "tmdb_1154538",
+        "title": "Nirvanna the Band the Show the Movie"
+      },
+      {
+        "id": "tmdb_1234731",
+        "title": "Anaconda"
+      },
+      {
+        "id": "tmdb_1266127",
+        "title": "Ready or Not: Here I Come"
+      },
+      {
+        "id": "tmdb_1292695",
+        "title": "They Will Kill You"
+      },
+      {
+        "id": "tmdb_1325734",
+        "title": "The Drama"
+      },
+      {
+        "id": "tmdb_1450527",
+        "title": "Forbidden Fruits"
+      },
+      {
+        "id": "tmdb_1455079",
+        "title": "You, Me & Tuscany"
+      },
+      {
+        "id": "tmdb_1493859",
+        "title": "Pizza Movie"
+      },
+      {
+        "id": "tmdb_1620551",
+        "title": "Feel My Voice"
+      },
+      {
+        "id": "tmdb_1635276",
+        "title": "Eat Pray Bark"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1234731",
+      "tmdb_1620551",
+      "tmdb_1635276"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1234731",
+        "title": "Anaconda"
+      },
+      {
+        "id": "tmdb_1620551",
+        "title": "Feel My Voice"
+      },
+      {
+        "id": "tmdb_1635276",
+        "title": "Eat Pray Bark"
+      }
+    ],
+    "user_services": [
+      "Netflix"
+    ]
+  },
+  "task_035": {
+    "constraint_solutions": [
+      "tmdb_1234821",
+      "tmdb_1241470",
+      "tmdb_1242898",
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1339876",
+      "tmdb_1356039"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_1234821",
+        "title": "Jurassic World Rebirth"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242898",
+        "title": "Predator: Badlands"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1339876",
+        "title": "Mardaani 3"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1234821",
+      "tmdb_1241470",
+      "tmdb_1242898",
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1339876",
+      "tmdb_1356039"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1234821",
+        "title": "Jurassic World Rebirth"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242898",
+        "title": "Predator: Badlands"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1339876",
+        "title": "Mardaani 3"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      }
+    ],
+    "user_services": [
+      "Hulu",
+      "Peacock",
+      "Disney+",
+      "Netflix"
+    ]
+  },
+  "task_036": {
+    "constraint_solutions": [
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1285965",
+      "tmdb_1356039",
+      "tmdb_1526650"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      },
+      {
+        "id": "tmdb_1526650",
+        "title": "Mudborn"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1285965"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      }
+    ],
+    "user_services": [
+      "Hulu"
+    ]
+  },
+  "task_037": {
+    "constraint_solutions": [
+      "tmdb_524635",
+      "tmdb_842924",
+      "tmdb_875828",
+      "tmdb_1033148",
+      "tmdb_1124566",
+      "tmdb_1151272",
+      "tmdb_1160360",
+      "tmdb_1168719",
+      "tmdb_1262815",
+      "tmdb_1263012",
+      "tmdb_1268127",
+      "tmdb_1284460",
+      "tmdb_1287141",
+      "tmdb_1292415",
+      "tmdb_1305781",
+      "tmdb_1314786",
+      "tmdb_1316092",
+      "tmdb_1317149",
+      "tmdb_1317288",
+      "tmdb_1321179",
+      "tmdb_1325734",
+      "tmdb_1381027",
+      "tmdb_1419406",
+      "tmdb_1429348",
+      "tmdb_1465563",
+      "tmdb_1487320",
+      "tmdb_1523145",
+      "tmdb_1620551",
+      "tmdb_1630433",
+      "tmdb_1631917"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_524635",
+        "title": "The Chronology of Water"
+      },
+      {
+        "id": "tmdb_842924",
+        "title": "The Life of Chuck"
+      },
+      {
+        "id": "tmdb_875828",
+        "title": "Peaky Blinders: The Immortal Man"
+      },
+      {
+        "id": "tmdb_1033148",
+        "title": "Die My Love"
+      },
+      {
+        "id": "tmdb_1124566",
+        "title": "Sentimental Value"
+      },
+      {
+        "id": "tmdb_1151272",
+        "title": "Sir\u0101t"
+      },
+      {
+        "id": "tmdb_1160360",
+        "title": "If I Had Legs I'd Kick You"
+      },
+      {
+        "id": "tmdb_1168719",
+        "title": "Silent Friend"
+      },
+      {
+        "id": "tmdb_1262815",
+        "title": "The Choral"
+      },
+      {
+        "id": "tmdb_1263012",
+        "title": "Dead Man's Wire"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1284460",
+        "title": "Alpha"
+      },
+      {
+        "id": "tmdb_1287141",
+        "title": "Pillion"
+      },
+      {
+        "id": "tmdb_1292415",
+        "title": "Beast"
+      },
+      {
+        "id": "tmdb_1305781",
+        "title": "Blades of the Guardians: Wind Rises in the Desert"
+      },
+      {
+        "id": "tmdb_1314786",
+        "title": "Agent Zeta"
+      },
+      {
+        "id": "tmdb_1316092",
+        "title": "\"Wuthering Heights\""
+      },
+      {
+        "id": "tmdb_1317149",
+        "title": "I Swear"
+      },
+      {
+        "id": "tmdb_1317288",
+        "title": "Marty Supreme"
+      },
+      {
+        "id": "tmdb_1321179",
+        "title": "The King's Warden"
+      },
+      {
+        "id": "tmdb_1325734",
+        "title": "The Drama"
+      },
+      {
+        "id": "tmdb_1381027",
+        "title": "Good Boy"
+      },
+      {
+        "id": "tmdb_1419406",
+        "title": "The Shadow's Edge"
+      },
+      {
+        "id": "tmdb_1429348",
+        "title": "The Stranger"
+      },
+      {
+        "id": "tmdb_1465563",
+        "title": "A Poet"
+      },
+      {
+        "id": "tmdb_1487320",
+        "title": "The Giant Falls"
+      },
+      {
+        "id": "tmdb_1523145",
+        "title": "Your Heart Will Be Broken"
+      },
+      {
+        "id": "tmdb_1620551",
+        "title": "Feel My Voice"
+      },
+      {
+        "id": "tmdb_1630433",
+        "title": "The Red Line"
+      },
+      {
+        "id": "tmdb_1631917",
+        "title": "18th Rose"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_875828",
+      "tmdb_1160360",
+      "tmdb_1268127",
+      "tmdb_1487320",
+      "tmdb_1620551",
+      "tmdb_1630433",
+      "tmdb_1631917"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_875828",
+        "title": "Peaky Blinders: The Immortal Man"
+      },
+      {
+        "id": "tmdb_1160360",
+        "title": "If I Had Legs I'd Kick You"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1487320",
+        "title": "The Giant Falls"
+      },
+      {
+        "id": "tmdb_1620551",
+        "title": "Feel My Voice"
+      },
+      {
+        "id": "tmdb_1630433",
+        "title": "The Red Line"
+      },
+      {
+        "id": "tmdb_1631917",
+        "title": "18th Rose"
+      }
+    ],
+    "user_services": [
+      "Netflix",
+      "Peacock",
+      "Disney+",
+      "HBO Max"
+    ]
+  },
+  "task_038": {
+    "constraint_solutions": [
+      "tmdb_1234821",
+      "tmdb_1236153",
+      "tmdb_1242898"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_1234821",
+        "title": "Jurassic World Rebirth"
+      },
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      },
+      {
+        "id": "tmdb_1242898",
+        "title": "Predator: Badlands"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1234821"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1234821",
+        "title": "Jurassic World Rebirth"
+      }
+    ],
+    "user_services": [
+      "Netflix"
+    ]
+  },
+  "task_039": {
+    "constraint_solutions": [
+      "tmdb_1236153",
+      "tmdb_1265609"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1236153"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      }
+    ],
+    "user_services": [
+      "Amazon Prime Video",
+      "Hulu"
+    ]
+  },
+  "task_040": {
+    "constraint_solutions": [
+      "tmdb_1241470",
+      "tmdb_1285965",
+      "tmdb_1290417",
+      "tmdb_1526650"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      },
+      {
+        "id": "tmdb_1290417",
+        "title": "Thrash"
+      },
+      {
+        "id": "tmdb_1526650",
+        "title": "Mudborn"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1241470",
+      "tmdb_1285965"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      }
+    ],
+    "user_services": [
+      "Hulu"
+    ]
+  },
+  "task_041": {
+    "constraint_solutions": [
+      "tmdb_858024",
+      "tmdb_936075",
+      "tmdb_1341137",
+      "tmdb_1367642",
+      "tmdb_1406657",
+      "tmdb_1443576",
+      "tmdb_1456349"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_858024",
+        "title": "Hamnet"
+      },
+      {
+        "id": "tmdb_936075",
+        "title": "Michael"
+      },
+      {
+        "id": "tmdb_1341137",
+        "title": "A Great Awakening"
+      },
+      {
+        "id": "tmdb_1367642",
+        "title": "Reminders of Him"
+      },
+      {
+        "id": "tmdb_1406657",
+        "title": "Scarlet"
+      },
+      {
+        "id": "tmdb_1443576",
+        "title": "Sundays"
+      },
+      {
+        "id": "tmdb_1456349",
+        "title": "It Was Just an Accident"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [],
+    "reachable_solutions_with_titles": [],
+    "user_services": []
+  },
+  "task_042": {
+    "constraint_solutions": [
+      "tmdb_1236153",
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1356039",
+      "tmdb_1456349"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      },
+      {
+        "id": "tmdb_1456349",
+        "title": "It Was Just an Accident"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1236153",
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1356039"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      }
+    ],
+    "user_services": [
+      "Netflix",
+      "Amazon Prime Video"
+    ]
+  },
+  "task_043": {
+    "constraint_solutions": [
+      "tmdb_467905",
+      "tmdb_696393",
+      "tmdb_1084577",
+      "tmdb_1115544",
+      "tmdb_1154538",
+      "tmdb_1198994",
+      "tmdb_1234731",
+      "tmdb_1262815",
+      "tmdb_1266127",
+      "tmdb_1292695",
+      "tmdb_1450527",
+      "tmdb_1493859",
+      "tmdb_1620551",
+      "tmdb_1635276"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_467905",
+        "title": "How to Make a Killing"
+      },
+      {
+        "id": "tmdb_696393",
+        "title": "Cold Storage"
+      },
+      {
+        "id": "tmdb_1084577",
+        "title": "Balls Up"
+      },
+      {
+        "id": "tmdb_1115544",
+        "title": "Mike & Nick & Nick & Alice"
+      },
+      {
+        "id": "tmdb_1154538",
+        "title": "Nirvanna the Band the Show the Movie"
+      },
+      {
+        "id": "tmdb_1198994",
+        "title": "Send Help"
+      },
+      {
+        "id": "tmdb_1234731",
+        "title": "Anaconda"
+      },
+      {
+        "id": "tmdb_1262815",
+        "title": "The Choral"
+      },
+      {
+        "id": "tmdb_1266127",
+        "title": "Ready or Not: Here I Come"
+      },
+      {
+        "id": "tmdb_1292695",
+        "title": "They Will Kill You"
+      },
+      {
+        "id": "tmdb_1450527",
+        "title": "Forbidden Fruits"
+      },
+      {
+        "id": "tmdb_1493859",
+        "title": "Pizza Movie"
+      },
+      {
+        "id": "tmdb_1620551",
+        "title": "Feel My Voice"
+      },
+      {
+        "id": "tmdb_1635276",
+        "title": "Eat Pray Bark"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1234731",
+      "tmdb_1620551",
+      "tmdb_1635276"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1234731",
+        "title": "Anaconda"
+      },
+      {
+        "id": "tmdb_1620551",
+        "title": "Feel My Voice"
+      },
+      {
+        "id": "tmdb_1635276",
+        "title": "Eat Pray Bark"
+      }
+    ],
+    "user_services": [
+      "Netflix"
+    ]
+  },
+  "task_044": {
+    "constraint_solutions": [
+      "tmdb_1234821",
+      "tmdb_1242898"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_1234821",
+        "title": "Jurassic World Rebirth"
+      },
+      {
+        "id": "tmdb_1242898",
+        "title": "Predator: Badlands"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [],
+    "reachable_solutions_with_titles": [],
+    "user_services": []
+  },
+  "task_045": {
+    "constraint_solutions": [
+      "tmdb_1242265",
+      "tmdb_1242332",
+      "tmdb_1242501",
+      "tmdb_1263012",
+      "tmdb_1290821",
+      "tmdb_1307373",
+      "tmdb_1519168"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_1242265",
+        "title": "Fuze"
+      },
+      {
+        "id": "tmdb_1242332",
+        "title": "Normal"
+      },
+      {
+        "id": "tmdb_1242501",
+        "title": "Icefall"
+      },
+      {
+        "id": "tmdb_1263012",
+        "title": "Dead Man's Wire"
+      },
+      {
+        "id": "tmdb_1290821",
+        "title": "Shelter"
+      },
+      {
+        "id": "tmdb_1307373",
+        "title": "Wasteman"
+      },
+      {
+        "id": "tmdb_1519168",
+        "title": "The Jester 2"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [],
+    "reachable_solutions_with_titles": [],
+    "user_services": []
+  },
+  "task_046": {
+    "constraint_solutions": [
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1356039",
+      "tmdb_1526650"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      },
+      {
+        "id": "tmdb_1526650",
+        "title": "Mudborn"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1356039",
+      "tmdb_1526650"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      },
+      {
+        "id": "tmdb_1526650",
+        "title": "Mudborn"
+      }
+    ],
+    "user_services": [
+      "Netflix",
+      "Disney+",
+      "HBO Max"
+    ]
+  },
+  "task_047": {
+    "constraint_solutions": [
+      "tmdb_842924",
+      "tmdb_875828",
+      "tmdb_878608",
+      "tmdb_1124566",
+      "tmdb_1151272",
+      "tmdb_1168719",
+      "tmdb_1268127",
+      "tmdb_1305781",
+      "tmdb_1314786",
+      "tmdb_1316092",
+      "tmdb_1317149",
+      "tmdb_1317288",
+      "tmdb_1321179",
+      "tmdb_1379266",
+      "tmdb_1381027",
+      "tmdb_1419406",
+      "tmdb_1429348",
+      "tmdb_1523145",
+      "tmdb_1630433"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_842924",
+        "title": "The Life of Chuck"
+      },
+      {
+        "id": "tmdb_875828",
+        "title": "Peaky Blinders: The Immortal Man"
+      },
+      {
+        "id": "tmdb_878608",
+        "title": "Resurrection"
+      },
+      {
+        "id": "tmdb_1124566",
+        "title": "Sentimental Value"
+      },
+      {
+        "id": "tmdb_1151272",
+        "title": "Sir\u0101t"
+      },
+      {
+        "id": "tmdb_1168719",
+        "title": "Silent Friend"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1305781",
+        "title": "Blades of the Guardians: Wind Rises in the Desert"
+      },
+      {
+        "id": "tmdb_1314786",
+        "title": "Agent Zeta"
+      },
+      {
+        "id": "tmdb_1316092",
+        "title": "\"Wuthering Heights\""
+      },
+      {
+        "id": "tmdb_1317149",
+        "title": "I Swear"
+      },
+      {
+        "id": "tmdb_1317288",
+        "title": "Marty Supreme"
+      },
+      {
+        "id": "tmdb_1321179",
+        "title": "The King's Warden"
+      },
+      {
+        "id": "tmdb_1379266",
+        "title": "Kokuho"
+      },
+      {
+        "id": "tmdb_1381027",
+        "title": "Good Boy"
+      },
+      {
+        "id": "tmdb_1419406",
+        "title": "The Shadow's Edge"
+      },
+      {
+        "id": "tmdb_1429348",
+        "title": "The Stranger"
+      },
+      {
+        "id": "tmdb_1523145",
+        "title": "Your Heart Will Be Broken"
+      },
+      {
+        "id": "tmdb_1630433",
+        "title": "The Red Line"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_842924",
+      "tmdb_875828",
+      "tmdb_1124566",
+      "tmdb_1268127",
+      "tmdb_1630433"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_842924",
+        "title": "The Life of Chuck"
+      },
+      {
+        "id": "tmdb_875828",
+        "title": "Peaky Blinders: The Immortal Man"
+      },
+      {
+        "id": "tmdb_1124566",
+        "title": "Sentimental Value"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1630433",
+        "title": "The Red Line"
+      }
+    ],
+    "user_services": [
+      "Netflix",
+      "Hulu"
+    ]
+  },
+  "task_048": {
+    "constraint_solutions": [
+      "tmdb_604079",
+      "tmdb_1010755",
+      "tmdb_1043197",
+      "tmdb_1084187",
+      "tmdb_1110034",
+      "tmdb_1193501",
+      "tmdb_1194963",
+      "tmdb_1241470",
+      "tmdb_1242937",
+      "tmdb_1276038",
+      "tmdb_1285965",
+      "tmdb_1290417",
+      "tmdb_1297454",
+      "tmdb_1309083",
+      "tmdb_1370814",
+      "tmdb_1412598",
+      "tmdb_1418657",
+      "tmdb_1470130",
+      "tmdb_1480387",
+      "tmdb_1519168",
+      "tmdb_1610418"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_604079",
+        "title": "The Long Walk"
+      },
+      {
+        "id": "tmdb_1010755",
+        "title": "The Strangers: Chapter 3"
+      },
+      {
+        "id": "tmdb_1043197",
+        "title": "Dust Bunny"
+      },
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1110034",
+        "title": "Kraken"
+      },
+      {
+        "id": "tmdb_1193501",
+        "title": "Whistle"
+      },
+      {
+        "id": "tmdb_1194963",
+        "title": "Noise"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242937",
+        "title": "The Dreadful"
+      },
+      {
+        "id": "tmdb_1276038",
+        "title": "A Desert"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      },
+      {
+        "id": "tmdb_1290417",
+        "title": "Thrash"
+      },
+      {
+        "id": "tmdb_1297454",
+        "title": "The Death That Awaits"
+      },
+      {
+        "id": "tmdb_1309083",
+        "title": "Dolly"
+      },
+      {
+        "id": "tmdb_1370814",
+        "title": "The Plague"
+      },
+      {
+        "id": "tmdb_1412598",
+        "title": "Killer Whale"
+      },
+      {
+        "id": "tmdb_1418657",
+        "title": "The Yeti"
+      },
+      {
+        "id": "tmdb_1470130",
+        "title": "The Mortuary Assistant"
+      },
+      {
+        "id": "tmdb_1480387",
+        "title": "undertone"
+      },
+      {
+        "id": "tmdb_1519168",
+        "title": "The Jester 2"
+      },
+      {
+        "id": "tmdb_1610418",
+        "title": "The House on Haunted Grounds"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1084187",
+      "tmdb_1241470",
+      "tmdb_1242937",
+      "tmdb_1285965"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242937",
+        "title": "The Dreadful"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      }
+    ],
+    "user_services": [
+      "Hulu",
+      "Amazon Prime Video"
+    ]
+  },
+  "task_049": {
+    "constraint_solutions": [
+      "tmdb_1168190",
+      "tmdb_1234821",
+      "tmdb_1241470",
+      "tmdb_1242898",
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1339876"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_1168190",
+        "title": "The Wrecking Crew"
+      },
+      {
+        "id": "tmdb_1234821",
+        "title": "Jurassic World Rebirth"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242898",
+        "title": "Predator: Badlands"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1339876",
+        "title": "Mardaani 3"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1241470",
+      "tmdb_1242898"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242898",
+        "title": "Predator: Badlands"
+      }
+    ],
+    "user_services": [
+      "Hulu",
+      "Apple TV+",
+      "Disney+",
+      "Paramount+"
+    ]
+  },
+  "task_050": {
+    "constraint_solutions": [],
+    "constraint_solutions_with_titles": [],
+    "no_valid_recommendation": true,
+    "reachable_solutions": [],
+    "reachable_solutions_with_titles": [],
+    "user_services": []
+  },
+  "task_051": {
+    "constraint_solutions": [],
+    "constraint_solutions_with_titles": [],
+    "no_valid_recommendation": true,
+    "reachable_solutions": [],
+    "reachable_solutions_with_titles": [],
+    "user_services": []
+  },
+  "task_052": {
+    "constraint_solutions": [],
+    "constraint_solutions_with_titles": [],
+    "no_valid_recommendation": true,
+    "reachable_solutions": [],
+    "reachable_solutions_with_titles": [],
+    "user_services": []
+  },
+  "task_053": {
+    "constraint_solutions": [],
+    "constraint_solutions_with_titles": [],
+    "no_valid_recommendation": true,
+    "reachable_solutions": [],
+    "reachable_solutions_with_titles": [],
+    "user_services": []
+  },
+  "task_054": {
+    "constraint_solutions": [],
+    "constraint_solutions_with_titles": [],
+    "no_valid_recommendation": true,
+    "reachable_solutions": [],
+    "reachable_solutions_with_titles": [],
+    "user_services": []
+  },
+  "task_055": {
+    "constraint_solutions": [
+      "tmdb_425274",
+      "tmdb_467905",
+      "tmdb_604079",
+      "tmdb_639988",
+      "tmdb_755898",
+      "tmdb_840464",
+      "tmdb_1010755",
+      "tmdb_1084187",
+      "tmdb_1086260",
+      "tmdb_1088434",
+      "tmdb_1110034",
+      "tmdb_1134463",
+      "tmdb_1151272",
+      "tmdb_1194963",
+      "tmdb_1198994",
+      "tmdb_1236153",
+      "tmdb_1242265",
+      "tmdb_1242332",
+      "tmdb_1242501",
+      "tmdb_1254135",
+      "tmdb_1263012",
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1276038",
+      "tmdb_1285965",
+      "tmdb_1290417",
+      "tmdb_1290821",
+      "tmdb_1297454",
+      "tmdb_1307373",
+      "tmdb_1314786",
+      "tmdb_1339876",
+      "tmdb_1356039",
+      "tmdb_1366906",
+      "tmdb_1368166",
+      "tmdb_1381027",
+      "tmdb_1383731",
+      "tmdb_1387382",
+      "tmdb_1401778",
+      "tmdb_1412598",
+      "tmdb_1418657",
+      "tmdb_1456349",
+      "tmdb_1472951",
+      "tmdb_1519168",
+      "tmdb_1526650",
+      "tmdb_1630433",
+      "tmdb_1641319"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_425274",
+        "title": "Now You See Me: Now You Don't"
+      },
+      {
+        "id": "tmdb_467905",
+        "title": "How to Make a Killing"
+      },
+      {
+        "id": "tmdb_604079",
+        "title": "The Long Walk"
+      },
+      {
+        "id": "tmdb_639988",
+        "title": "No Other Choice"
+      },
+      {
+        "id": "tmdb_755898",
+        "title": "War of the Worlds"
+      },
+      {
+        "id": "tmdb_840464",
+        "title": "Greenland 2: Migration"
+      },
+      {
+        "id": "tmdb_1010755",
+        "title": "The Strangers: Chapter 3"
+      },
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1086260",
+        "title": "The Astronaut"
+      },
+      {
+        "id": "tmdb_1088434",
+        "title": "Hellfire"
+      },
+      {
+        "id": "tmdb_1110034",
+        "title": "Kraken"
+      },
+      {
+        "id": "tmdb_1134463",
+        "title": "Dreams"
+      },
+      {
+        "id": "tmdb_1151272",
+        "title": "Sir\u0101t"
+      },
+      {
+        "id": "tmdb_1194963",
+        "title": "Noise"
+      },
+      {
+        "id": "tmdb_1198994",
+        "title": "Send Help"
+      },
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      },
+      {
+        "id": "tmdb_1242265",
+        "title": "Fuze"
+      },
+      {
+        "id": "tmdb_1242332",
+        "title": "Normal"
+      },
+      {
+        "id": "tmdb_1242501",
+        "title": "Icefall"
+      },
+      {
+        "id": "tmdb_1254135",
+        "title": "13 Days, 13 Nights"
+      },
+      {
+        "id": "tmdb_1263012",
+        "title": "Dead Man's Wire"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1276038",
+        "title": "A Desert"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      },
+      {
+        "id": "tmdb_1290417",
+        "title": "Thrash"
+      },
+      {
+        "id": "tmdb_1290821",
+        "title": "Shelter"
+      },
+      {
+        "id": "tmdb_1297454",
+        "title": "The Death That Awaits"
+      },
+      {
+        "id": "tmdb_1307373",
+        "title": "Wasteman"
+      },
+      {
+        "id": "tmdb_1314786",
+        "title": "Agent Zeta"
+      },
+      {
+        "id": "tmdb_1339876",
+        "title": "Mardaani 3"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      },
+      {
+        "id": "tmdb_1366906",
+        "title": "The Gates"
+      },
+      {
+        "id": "tmdb_1368166",
+        "title": "The Housemaid"
+      },
+      {
+        "id": "tmdb_1381027",
+        "title": "Good Boy"
+      },
+      {
+        "id": "tmdb_1383731",
+        "title": "Protector"
+      },
+      {
+        "id": "tmdb_1387382",
+        "title": "Hunting Season"
+      },
+      {
+        "id": "tmdb_1401778",
+        "title": "Turbulence"
+      },
+      {
+        "id": "tmdb_1412598",
+        "title": "Killer Whale"
+      },
+      {
+        "id": "tmdb_1418657",
+        "title": "The Yeti"
+      },
+      {
+        "id": "tmdb_1456349",
+        "title": "It Was Just an Accident"
+      },
+      {
+        "id": "tmdb_1472951",
+        "title": "Infiltrate"
+      },
+      {
+        "id": "tmdb_1519168",
+        "title": "The Jester 2"
+      },
+      {
+        "id": "tmdb_1526650",
+        "title": "Mudborn"
+      },
+      {
+        "id": "tmdb_1630433",
+        "title": "The Red Line"
+      },
+      {
+        "id": "tmdb_1641319",
+        "title": "Sniper: No Nation"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_755898",
+      "tmdb_1084187",
+      "tmdb_1236153",
+      "tmdb_1314786"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_755898",
+        "title": "War of the Worlds"
+      },
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      },
+      {
+        "id": "tmdb_1314786",
+        "title": "Agent Zeta"
+      }
+    ],
+    "user_services": [
+      "Disney+",
+      "Amazon Prime Video"
+    ]
+  },
+  "task_056": {
+    "constraint_solutions": [
+      "tmdb_682012",
+      "tmdb_842924",
+      "tmdb_858024",
+      "tmdb_875828",
+      "tmdb_936075",
+      "tmdb_1124566",
+      "tmdb_1167307",
+      "tmdb_1168719",
+      "tmdb_1214931",
+      "tmdb_1268127",
+      "tmdb_1305781",
+      "tmdb_1307373",
+      "tmdb_1317149",
+      "tmdb_1317288",
+      "tmdb_1325734",
+      "tmdb_1341137",
+      "tmdb_1367642",
+      "tmdb_1379266",
+      "tmdb_1381027",
+      "tmdb_1406657",
+      "tmdb_1419406",
+      "tmdb_1432605",
+      "tmdb_1443576",
+      "tmdb_1456349",
+      "tmdb_1465563",
+      "tmdb_1480382",
+      "tmdb_1523145"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_682012",
+        "title": "Little Am\u00e9lie or the Character of Rain"
+      },
+      {
+        "id": "tmdb_842924",
+        "title": "The Life of Chuck"
+      },
+      {
+        "id": "tmdb_858024",
+        "title": "Hamnet"
+      },
+      {
+        "id": "tmdb_875828",
+        "title": "Peaky Blinders: The Immortal Man"
+      },
+      {
+        "id": "tmdb_936075",
+        "title": "Michael"
+      },
+      {
+        "id": "tmdb_1124566",
+        "title": "Sentimental Value"
+      },
+      {
+        "id": "tmdb_1167307",
+        "title": "David"
+      },
+      {
+        "id": "tmdb_1168719",
+        "title": "Silent Friend"
+      },
+      {
+        "id": "tmdb_1214931",
+        "title": "Nuremberg"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1305781",
+        "title": "Blades of the Guardians: Wind Rises in the Desert"
+      },
+      {
+        "id": "tmdb_1307373",
+        "title": "Wasteman"
+      },
+      {
+        "id": "tmdb_1317149",
+        "title": "I Swear"
+      },
+      {
+        "id": "tmdb_1317288",
+        "title": "Marty Supreme"
+      },
+      {
+        "id": "tmdb_1325734",
+        "title": "The Drama"
+      },
+      {
+        "id": "tmdb_1341137",
+        "title": "A Great Awakening"
+      },
+      {
+        "id": "tmdb_1367642",
+        "title": "Reminders of Him"
+      },
+      {
+        "id": "tmdb_1379266",
+        "title": "Kokuho"
+      },
+      {
+        "id": "tmdb_1381027",
+        "title": "Good Boy"
+      },
+      {
+        "id": "tmdb_1406657",
+        "title": "Scarlet"
+      },
+      {
+        "id": "tmdb_1419406",
+        "title": "The Shadow's Edge"
+      },
+      {
+        "id": "tmdb_1432605",
+        "title": "My Father's Shadow"
+      },
+      {
+        "id": "tmdb_1443576",
+        "title": "Sundays"
+      },
+      {
+        "id": "tmdb_1456349",
+        "title": "It Was Just an Accident"
+      },
+      {
+        "id": "tmdb_1465563",
+        "title": "A Poet"
+      },
+      {
+        "id": "tmdb_1480382",
+        "title": "The Voice of Hind Rajab"
+      },
+      {
+        "id": "tmdb_1523145",
+        "title": "Your Heart Will Be Broken"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1432605"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1432605",
+        "title": "My Father's Shadow"
+      }
+    ],
+    "user_services": [
+      "MUBI"
+    ]
+  },
+  "task_057": {
+    "constraint_solutions": [
+      "tmdb_1043197",
+      "tmdb_1084187",
+      "tmdb_1088434",
+      "tmdb_1110034",
+      "tmdb_1144107",
+      "tmdb_1218925",
+      "tmdb_1236153",
+      "tmdb_1241470",
+      "tmdb_1242265",
+      "tmdb_1242332",
+      "tmdb_1242501",
+      "tmdb_1242898",
+      "tmdb_1254135",
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1290821",
+      "tmdb_1292415",
+      "tmdb_1292695",
+      "tmdb_1356039",
+      "tmdb_1383731",
+      "tmdb_1387382",
+      "tmdb_1401778",
+      "tmdb_1406657",
+      "tmdb_1545621",
+      "tmdb_1641319"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_1043197",
+        "title": "Dust Bunny"
+      },
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1088434",
+        "title": "Hellfire"
+      },
+      {
+        "id": "tmdb_1110034",
+        "title": "Kraken"
+      },
+      {
+        "id": "tmdb_1144107",
+        "title": "The Legend of Hei 2"
+      },
+      {
+        "id": "tmdb_1218925",
+        "title": "Chainsaw Man - The Movie: Reze Arc"
+      },
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242265",
+        "title": "Fuze"
+      },
+      {
+        "id": "tmdb_1242332",
+        "title": "Normal"
+      },
+      {
+        "id": "tmdb_1242501",
+        "title": "Icefall"
+      },
+      {
+        "id": "tmdb_1242898",
+        "title": "Predator: Badlands"
+      },
+      {
+        "id": "tmdb_1254135",
+        "title": "13 Days, 13 Nights"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1290821",
+        "title": "Shelter"
+      },
+      {
+        "id": "tmdb_1292415",
+        "title": "Beast"
+      },
+      {
+        "id": "tmdb_1292695",
+        "title": "They Will Kill You"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      },
+      {
+        "id": "tmdb_1383731",
+        "title": "Protector"
+      },
+      {
+        "id": "tmdb_1387382",
+        "title": "Hunting Season"
+      },
+      {
+        "id": "tmdb_1401778",
+        "title": "Turbulence"
+      },
+      {
+        "id": "tmdb_1406657",
+        "title": "Scarlet"
+      },
+      {
+        "id": "tmdb_1545621",
+        "title": "Detective Conan: Fallen Angel of the Highway"
+      },
+      {
+        "id": "tmdb_1641319",
+        "title": "Sniper: No Nation"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1241470",
+      "tmdb_1242898",
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1356039"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242898",
+        "title": "Predator: Badlands"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      }
+    ],
+    "user_services": [
+      "Netflix",
+      "Hulu"
+    ]
+  },
+  "task_058": {
+    "constraint_solutions": [
+      "tmdb_467905",
+      "tmdb_696393",
+      "tmdb_803796",
+      "tmdb_991494",
+      "tmdb_1049471",
+      "tmdb_1084242",
+      "tmdb_1084577",
+      "tmdb_1115544",
+      "tmdb_1117857",
+      "tmdb_1129104",
+      "tmdb_1145899",
+      "tmdb_1146058",
+      "tmdb_1154538",
+      "tmdb_1198994",
+      "tmdb_1226863",
+      "tmdb_1234731",
+      "tmdb_1262815",
+      "tmdb_1266127",
+      "tmdb_1287141",
+      "tmdb_1291335",
+      "tmdb_1292695",
+      "tmdb_1297842",
+      "tmdb_1325734",
+      "tmdb_1327819",
+      "tmdb_1450527",
+      "tmdb_1455079",
+      "tmdb_1493859",
+      "tmdb_1497970",
+      "tmdb_1620551",
+      "tmdb_1635276"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_467905",
+        "title": "How to Make a Killing"
+      },
+      {
+        "id": "tmdb_696393",
+        "title": "Cold Storage"
+      },
+      {
+        "id": "tmdb_803796",
+        "title": "KPop Demon Hunters"
+      },
+      {
+        "id": "tmdb_991494",
+        "title": "The SpongeBob Movie: Search for SquarePants"
+      },
+      {
+        "id": "tmdb_1049471",
+        "title": "Outcome"
+      },
+      {
+        "id": "tmdb_1084242",
+        "title": "Zootopia 2"
+      },
+      {
+        "id": "tmdb_1084577",
+        "title": "Balls Up"
+      },
+      {
+        "id": "tmdb_1115544",
+        "title": "Mike & Nick & Nick & Alice"
+      },
+      {
+        "id": "tmdb_1117857",
+        "title": "In Your Dreams"
+      },
+      {
+        "id": "tmdb_1129104",
+        "title": "Flavia"
+      },
+      {
+        "id": "tmdb_1145899",
+        "title": "Marsupilami"
+      },
+      {
+        "id": "tmdb_1146058",
+        "title": "The Pout-Pout Fish"
+      },
+      {
+        "id": "tmdb_1154538",
+        "title": "Nirvanna the Band the Show the Movie"
+      },
+      {
+        "id": "tmdb_1198994",
+        "title": "Send Help"
+      },
+      {
+        "id": "tmdb_1226863",
+        "title": "The Super Mario Galaxy Movie"
+      },
+      {
+        "id": "tmdb_1234731",
+        "title": "Anaconda"
+      },
+      {
+        "id": "tmdb_1262815",
+        "title": "The Choral"
+      },
+      {
+        "id": "tmdb_1266127",
+        "title": "Ready or Not: Here I Come"
+      },
+      {
+        "id": "tmdb_1287141",
+        "title": "Pillion"
+      },
+      {
+        "id": "tmdb_1291335",
+        "title": "Solo Mio"
+      },
+      {
+        "id": "tmdb_1292695",
+        "title": "They Will Kill You"
+      },
+      {
+        "id": "tmdb_1297842",
+        "title": "GOAT"
+      },
+      {
+        "id": "tmdb_1325734",
+        "title": "The Drama"
+      },
+      {
+        "id": "tmdb_1327819",
+        "title": "Hoppers"
+      },
+      {
+        "id": "tmdb_1450527",
+        "title": "Forbidden Fruits"
+      },
+      {
+        "id": "tmdb_1455079",
+        "title": "You, Me & Tuscany"
+      },
+      {
+        "id": "tmdb_1493859",
+        "title": "Pizza Movie"
+      },
+      {
+        "id": "tmdb_1497970",
+        "title": "Tom and Jerry: Forbidden Compass"
+      },
+      {
+        "id": "tmdb_1620551",
+        "title": "Feel My Voice"
+      },
+      {
+        "id": "tmdb_1635276",
+        "title": "Eat Pray Bark"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_803796",
+      "tmdb_1115544",
+      "tmdb_1117857",
+      "tmdb_1234731",
+      "tmdb_1493859",
+      "tmdb_1620551",
+      "tmdb_1635276"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_803796",
+        "title": "KPop Demon Hunters"
+      },
+      {
+        "id": "tmdb_1115544",
+        "title": "Mike & Nick & Nick & Alice"
+      },
+      {
+        "id": "tmdb_1117857",
+        "title": "In Your Dreams"
+      },
+      {
+        "id": "tmdb_1234731",
+        "title": "Anaconda"
+      },
+      {
+        "id": "tmdb_1493859",
+        "title": "Pizza Movie"
+      },
+      {
+        "id": "tmdb_1620551",
+        "title": "Feel My Voice"
+      },
+      {
+        "id": "tmdb_1635276",
+        "title": "Eat Pray Bark"
+      }
+    ],
+    "user_services": [
+      "Netflix",
+      "Hulu"
+    ]
+  },
+  "task_059": {
+    "constraint_solutions": [
+      "tmdb_425274",
+      "tmdb_467905",
+      "tmdb_604079",
+      "tmdb_639988",
+      "tmdb_1084187",
+      "tmdb_1088434",
+      "tmdb_1151272",
+      "tmdb_1171145",
+      "tmdb_1194963",
+      "tmdb_1198994",
+      "tmdb_1220522",
+      "tmdb_1236153",
+      "tmdb_1242332",
+      "tmdb_1254135",
+      "tmdb_1265609",
+      "tmdb_1268127",
+      "tmdb_1290821",
+      "tmdb_1307373",
+      "tmdb_1314786",
+      "tmdb_1317288",
+      "tmdb_1339876",
+      "tmdb_1356039",
+      "tmdb_1368166",
+      "tmdb_1381027",
+      "tmdb_1383731",
+      "tmdb_1387382",
+      "tmdb_1418657",
+      "tmdb_1419406",
+      "tmdb_1456349",
+      "tmdb_1526650",
+      "tmdb_1582770",
+      "tmdb_1630433"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_425274",
+        "title": "Now You See Me: Now You Don't"
+      },
+      {
+        "id": "tmdb_467905",
+        "title": "How to Make a Killing"
+      },
+      {
+        "id": "tmdb_604079",
+        "title": "The Long Walk"
+      },
+      {
+        "id": "tmdb_639988",
+        "title": "No Other Choice"
+      },
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1088434",
+        "title": "Hellfire"
+      },
+      {
+        "id": "tmdb_1151272",
+        "title": "Sir\u0101t"
+      },
+      {
+        "id": "tmdb_1171145",
+        "title": "Crime 101"
+      },
+      {
+        "id": "tmdb_1194963",
+        "title": "Noise"
+      },
+      {
+        "id": "tmdb_1198994",
+        "title": "Send Help"
+      },
+      {
+        "id": "tmdb_1220522",
+        "title": "Dacoit"
+      },
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      },
+      {
+        "id": "tmdb_1242332",
+        "title": "Normal"
+      },
+      {
+        "id": "tmdb_1254135",
+        "title": "13 Days, 13 Nights"
+      },
+      {
+        "id": "tmdb_1265609",
+        "title": "War Machine"
+      },
+      {
+        "id": "tmdb_1268127",
+        "title": "Humint"
+      },
+      {
+        "id": "tmdb_1290821",
+        "title": "Shelter"
+      },
+      {
+        "id": "tmdb_1307373",
+        "title": "Wasteman"
+      },
+      {
+        "id": "tmdb_1314786",
+        "title": "Agent Zeta"
+      },
+      {
+        "id": "tmdb_1317288",
+        "title": "Marty Supreme"
+      },
+      {
+        "id": "tmdb_1339876",
+        "title": "Mardaani 3"
+      },
+      {
+        "id": "tmdb_1356039",
+        "title": "Counterattack"
+      },
+      {
+        "id": "tmdb_1368166",
+        "title": "The Housemaid"
+      },
+      {
+        "id": "tmdb_1381027",
+        "title": "Good Boy"
+      },
+      {
+        "id": "tmdb_1383731",
+        "title": "Protector"
+      },
+      {
+        "id": "tmdb_1387382",
+        "title": "Hunting Season"
+      },
+      {
+        "id": "tmdb_1418657",
+        "title": "The Yeti"
+      },
+      {
+        "id": "tmdb_1419406",
+        "title": "The Shadow's Edge"
+      },
+      {
+        "id": "tmdb_1456349",
+        "title": "It Was Just an Accident"
+      },
+      {
+        "id": "tmdb_1526650",
+        "title": "Mudborn"
+      },
+      {
+        "id": "tmdb_1582770",
+        "title": "Dhurandhar: The Revenge"
+      },
+      {
+        "id": "tmdb_1630433",
+        "title": "The Red Line"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_425274",
+      "tmdb_604079",
+      "tmdb_1236153",
+      "tmdb_1368166"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_425274",
+        "title": "Now You See Me: Now You Don't"
+      },
+      {
+        "id": "tmdb_604079",
+        "title": "The Long Walk"
+      },
+      {
+        "id": "tmdb_1236153",
+        "title": "Mercy"
+      },
+      {
+        "id": "tmdb_1368166",
+        "title": "The Housemaid"
+      }
+    ],
+    "user_services": [
+      "fuboTV",
+      "Philo",
+      "Apple TV+",
+      "HBO Max"
+    ]
+  },
+  "task_060": {
+    "constraint_solutions": [
+      "tmdb_604079",
+      "tmdb_696393",
+      "tmdb_1043197",
+      "tmdb_1084187",
+      "tmdb_1086260",
+      "tmdb_1110034",
+      "tmdb_1159559",
+      "tmdb_1193501",
+      "tmdb_1194963",
+      "tmdb_1198994",
+      "tmdb_1241470",
+      "tmdb_1242937",
+      "tmdb_1266127",
+      "tmdb_1276038",
+      "tmdb_1285965",
+      "tmdb_1292695",
+      "tmdb_1297454",
+      "tmdb_1309083",
+      "tmdb_1370814",
+      "tmdb_1408208",
+      "tmdb_1418657",
+      "tmdb_1450527",
+      "tmdb_1480387",
+      "tmdb_1519168",
+      "tmdb_1526650"
+    ],
+    "constraint_solutions_with_titles": [
+      {
+        "id": "tmdb_604079",
+        "title": "The Long Walk"
+      },
+      {
+        "id": "tmdb_696393",
+        "title": "Cold Storage"
+      },
+      {
+        "id": "tmdb_1043197",
+        "title": "Dust Bunny"
+      },
+      {
+        "id": "tmdb_1084187",
+        "title": "Pretty Lethal"
+      },
+      {
+        "id": "tmdb_1086260",
+        "title": "The Astronaut"
+      },
+      {
+        "id": "tmdb_1110034",
+        "title": "Kraken"
+      },
+      {
+        "id": "tmdb_1159559",
+        "title": "Scream 7"
+      },
+      {
+        "id": "tmdb_1193501",
+        "title": "Whistle"
+      },
+      {
+        "id": "tmdb_1194963",
+        "title": "Noise"
+      },
+      {
+        "id": "tmdb_1198994",
+        "title": "Send Help"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1242937",
+        "title": "The Dreadful"
+      },
+      {
+        "id": "tmdb_1266127",
+        "title": "Ready or Not: Here I Come"
+      },
+      {
+        "id": "tmdb_1276038",
+        "title": "A Desert"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      },
+      {
+        "id": "tmdb_1292695",
+        "title": "They Will Kill You"
+      },
+      {
+        "id": "tmdb_1297454",
+        "title": "The Death That Awaits"
+      },
+      {
+        "id": "tmdb_1309083",
+        "title": "Dolly"
+      },
+      {
+        "id": "tmdb_1370814",
+        "title": "The Plague"
+      },
+      {
+        "id": "tmdb_1408208",
+        "title": "Exit 8"
+      },
+      {
+        "id": "tmdb_1418657",
+        "title": "The Yeti"
+      },
+      {
+        "id": "tmdb_1450527",
+        "title": "Forbidden Fruits"
+      },
+      {
+        "id": "tmdb_1480387",
+        "title": "undertone"
+      },
+      {
+        "id": "tmdb_1519168",
+        "title": "The Jester 2"
+      },
+      {
+        "id": "tmdb_1526650",
+        "title": "Mudborn"
+      }
+    ],
+    "no_valid_recommendation": false,
+    "reachable_solutions": [
+      "tmdb_1086260",
+      "tmdb_1241470",
+      "tmdb_1285965",
+      "tmdb_1526650"
+    ],
+    "reachable_solutions_with_titles": [
+      {
+        "id": "tmdb_1086260",
+        "title": "The Astronaut"
+      },
+      {
+        "id": "tmdb_1241470",
+        "title": "Osiris"
+      },
+      {
+        "id": "tmdb_1285965",
+        "title": "Dangerous Animals"
+      },
+      {
+        "id": "tmdb_1526650",
+        "title": "Mudborn"
+      }
+    ],
+    "user_services": [
+      "Netflix",
+      "HBO Max",
+      "Hulu"
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "task_042",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Thriller"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "not_contains",
+        "value": "Horror"
+      },
+      "reveal": "on_ask"
+    },
+    {
+      "constraint": {
+        "field": "runtime",
+        "op": "<=",
+        "value": 130
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "rating",
+        "op": ">=",
+        "value": 6.0
+      },
+      "reveal": "on_ask"
+    },
+    {
+      "constraint": {
+        "field": "streaming_services",
+        "op": "contains_any",
+        "value": [
+          "Netflix",
+          "Hulu",
+          "Amazon Prime Video"
+        ]
+      },
+      "reveal": "on_ask"
+    }
+  ],
+  "persona": "You are someone going through a breakup. You want something cathartic but not a romance. You might cry and that's okay.",
+  "soft_preferences": [
+    "wants conspiracy or political thriller"
+  ],
+  "policy_flags": [
+    "watch_history",
+    "availability",
+    "recommend_tool"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "complex",
+  "reveal_difficulty": "mixed",
+  "user_id": "user_1",
+  "user_history": {
+    "user_1": {
+      "watched": [
+        "tmdb_1356039"
+      ],
+      "ratings": {
+        "tmdb_1356039": 7.5
+      }
+    }
+  },
+  "user_services": [
+    "Netflix",
+    "Amazon Prime Video"
+  ]
+}

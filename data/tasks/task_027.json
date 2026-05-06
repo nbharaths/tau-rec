@@ -1,0 +1,50 @@
+{
+  "id": "task_027",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Action"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "runtime",
+        "op": ">=",
+        "value": 100
+      },
+      "reveal": "on_ask"
+    },
+    {
+      "constraint": {
+        "field": "rating",
+        "op": ">=",
+        "value": 6.0
+      },
+      "reveal": "volunteer"
+    }
+  ],
+  "persona": "You are a sci-fi nerd who reads Asimov and watches everything with spaceships. You care about scientific plausibility.",
+  "soft_preferences": [
+    "wants something with car chases or explosions"
+  ],
+  "policy_flags": [
+    "recommend_tool",
+    "availability"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "medium",
+  "reveal_difficulty": "mixed",
+  "user_id": "user_1",
+  "user_history": {
+    "user_1": {
+      "watched": [],
+      "ratings": {}
+    }
+  },
+  "user_services": [
+    "Netflix"
+  ]
+}

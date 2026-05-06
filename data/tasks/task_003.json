@@ -1,0 +1,38 @@
+{
+  "id": "task_003",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Action"
+      },
+      "reveal": "volunteer"
+    }
+  ],
+  "persona": "You are a busy parent with exactly 2 hours after the kids go to bed. You need something you can enjoy without full attention. You're direct and efficient.",
+  "soft_preferences": [
+    "prefers practical stunts over CGI",
+    "likes strong female leads"
+  ],
+  "policy_flags": [
+    "recommend_tool",
+    "availability"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "simple",
+  "reveal_difficulty": "volunteer",
+  "user_id": "user_1",
+  "user_history": {
+    "user_1": {
+      "watched": [],
+      "ratings": {}
+    }
+  },
+  "user_services": [
+    "Hulu",
+    "Paramount+",
+    "HBO Max",
+    "Amazon Prime Video"
+  ]
+}

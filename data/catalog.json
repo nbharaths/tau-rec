@@ -1,0 +1,3891 @@
+[
+  {
+    "id": "tmdb_83533",
+    "title": "Avatar: Fire and Ash",
+    "release_date": "2025-12-17",
+    "runtime": 198,
+    "genres": [
+      "Science Fiction",
+      "Adventure",
+      "Fantasy"
+    ],
+    "overview": "In the wake of the devastating war against the RDA and the loss of their eldest son, Jake Sully and Neytiri face a new threat on Pandora: the Ash People, a violent and power-hungry Na'vi tribe led by the ruthless Varang. Jake's family must fight for their survival and the future of Pandora in a conflict that pushes them to their emotional and physical limits.",
+    "cast": [
+      "Sam Worthington",
+      "Zoe Salda\u00f1a",
+      "Sigourney Weaver",
+      "Stephen Lang",
+      "Oona Chaplin"
+    ],
+    "director": "James Cameron",
+    "rating": 7.375,
+    "vote_count": 2593,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "PG-13"
+  },
+  {
+    "id": "tmdb_425274",
+    "title": "Now You See Me: Now You Don't",
+    "release_date": "2025-11-12",
+    "runtime": 113,
+    "genres": [
+      "Crime",
+      "Thriller"
+    ],
+    "overview": "The original Four Horsemen reunite with a new generation of illusionists to take on powerful diamond heiress Veronika Vanderberg, who leads a criminal empire built on money laundering and trafficking. The new and old magicians must overcome their differences to work together on their most ambitious heist yet.",
+    "cast": [
+      "Jesse Eisenberg",
+      "Dominic Sessa",
+      "Ariana Greenblatt",
+      "Justice Smith",
+      "Rosamund Pike"
+    ],
+    "director": "Ruben Fleischer",
+    "rating": 6.51,
+    "vote_count": 1374,
+    "streaming_services": [
+      "Starz",
+      "Philo"
+    ],
+    "sponsored": false,
+    "content_rating": "PG-13"
+  },
+  {
+    "id": "tmdb_467905",
+    "title": "How to Make a Killing",
+    "release_date": "2026-02-19",
+    "runtime": 105,
+    "genres": [
+      "Comedy",
+      "Thriller"
+    ],
+    "overview": "Disowned at birth by his obscenely wealthy family, blue-collar Becket Redfellow will stop at nothing to reclaim his inheritance, no matter how many relatives stand in his way.",
+    "cast": [
+      "Glen Powell",
+      "Margaret Qualley",
+      "Jessica Henwick",
+      "Bill Camp",
+      "Zach Woods"
+    ],
+    "director": "John Patton Ford",
+    "rating": 6.975,
+    "vote_count": 255,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_524635",
+    "title": "The Chronology of Water",
+    "release_date": "2025-10-15",
+    "runtime": 129,
+    "genres": [
+      "Drama"
+    ],
+    "overview": "Plagued by an abusive childhood, a woman finds escape in competitive swimming, sexual experimentation, toxic relationships, and addiction before ultimately finding her voice through writing.",
+    "cast": [
+      "Imogen Poots",
+      "Thora Birch",
+      "Jim Belushi",
+      "Tom Sturridge",
+      "Earl Cave"
+    ],
+    "director": "Kristen Stewart",
+    "rating": 6.4,
+    "vote_count": 40,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_604079",
+    "title": "The Long Walk",
+    "release_date": "2025-09-10",
+    "runtime": 108,
+    "genres": [
+      "Science Fiction",
+      "Thriller",
+      "Horror"
+    ],
+    "overview": "In a dystopian 1970s America, fifty teenage boys take part in a deadly annual walking contest, forced to maintain a minimum pace or be executed, until only one survivor remains.",
+    "cast": [
+      "Cooper Hoffman",
+      "David Jonsson",
+      "Garrett Wareing",
+      "Tut Nyuot",
+      "Charlie Plummer"
+    ],
+    "director": "Francis Lawrence",
+    "rating": 6.923,
+    "vote_count": 1319,
+    "streaming_services": [
+      "Starz",
+      "Philo"
+    ],
+    "sponsored": true,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_639988",
+    "title": "No Other Choice",
+    "release_date": "2025-09-24",
+    "runtime": 140,
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Thriller"
+    ],
+    "overview": "After being laid off and humiliated by a ruthless job market, a veteran paper mill manager descends into violence in a desperate bid to reclaim his dignity.",
+    "cast": [
+      "Lee Byung-hun",
+      "Son Ye-jin",
+      "Park Hee-soon",
+      "Lee Sung-min",
+      "Yeom Hye-ran"
+    ],
+    "director": "Park Chan-wook",
+    "rating": 7.54,
+    "vote_count": 933,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_662707",
+    "title": "Starbright",
+    "release_date": "2026-02-27",
+    "runtime": 148,
+    "genres": [
+      "Adventure",
+      "Action"
+    ],
+    "overview": "A young woman becomes the guardian of a fallen star, which she must protect from dangerous forces with the help of a brave stranger.",
+    "cast": [
+      "John Rhys-Davies",
+      "Ted Levine",
+      "Elisabeth R\u00f6hm",
+      "Diego Boneta",
+      "Alexandra Dowling"
+    ],
+    "director": "Francesco Lucente",
+    "rating": 7.318,
+    "vote_count": 11,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_680493",
+    "title": "Return to Silent Hill",
+    "release_date": "2026-01-21",
+    "runtime": 106,
+    "genres": [
+      "Mystery",
+      "Drama",
+      "Horror"
+    ],
+    "overview": "When James receives a mysterious letter from his lost love Mary, he is drawn to Silent Hill\u2014a once-familiar town now consumed by darkness. As he searches for her, James faces monstrous creatures and unravels a terrifying truth that will push him to the edge of his sanity.",
+    "cast": [
+      "Jeremy Irvine",
+      "Hannah Emily Anderson",
+      "Evie Templeton",
+      "Pearse Egan",
+      "Nicola Alexis"
+    ],
+    "director": "Christophe Gans",
+    "rating": 5.0,
+    "vote_count": 334,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_682012",
+    "title": "Little Am\u00e9lie or the Character of Rain",
+    "release_date": "2025-06-25",
+    "runtime": 78,
+    "genres": [
+      "Animation",
+      "Drama",
+      "Family"
+    ],
+    "overview": "The world is a perplexing, peaceful mystery to Am\u00e9lie until a miraculous encounter with chocolate ignites her wild sense of curiosity. As she develops a deep attachment to her family's housekeeper, Nishio-san, Am\u00e9lie discovers the wonders of nature as well as the emotional truths hidden beneath the surface of her family's idyllic life as foreigners in post-war Japan.",
+    "cast": [
+      "Lo\u00efse Charpentier",
+      "Victoria Grobois",
+      "Yumi Fujimori",
+      "Cathy Cerda",
+      "Marc Arnaud"
+    ],
+    "director": "Ma\u00eflys Vallade",
+    "rating": 7.997,
+    "vote_count": 150,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "PG"
+  },
+  {
+    "id": "tmdb_687163",
+    "title": "Project Hail Mary",
+    "release_date": "2026-03-15",
+    "runtime": 157,
+    "genres": [
+      "Science Fiction",
+      "Adventure"
+    ],
+    "overview": "Science teacher Ryland Grace wakes up on a spaceship light years from home with no recollection of who he is or how he got there. As his memory returns, he begins to uncover his mission: solve the riddle of the mysterious substance causing the sun to die out. He must call on his scientific knowledge and unorthodox ideas to save everything on Earth from extinction\u2026 but an unexpected friendship means he may not have to do it alone.",
+    "cast": [
+      "Ryan Gosling",
+      "James Ortiz",
+      "Sandra H\u00fcller",
+      "Lionel Boyce",
+      "Milana Vayntrub"
+    ],
+    "director": "Phil Lord",
+    "rating": 8.2,
+    "vote_count": 1448,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "PG-13"
+  },
+  {
+    "id": "tmdb_696393",
+    "title": "Cold Storage",
+    "release_date": "2026-01-22",
+    "runtime": 99,
+    "genres": [
+      "Horror",
+      "Science Fiction",
+      "Comedy"
+    ],
+    "overview": "When a mutating, highly contagious fungus escapes a sealed facility, two employees \u2013 joined by a grizzled bioterror operative \u2013 must survive the wildest night shift ever to save humanity from extinction.",
+    "cast": [
+      "Joe Keery",
+      "Georgina Campbell",
+      "Liam Neeson",
+      "Lesley Manville",
+      "Sosie Bacon"
+    ],
+    "director": "Jonny Campbell",
+    "rating": 6.7,
+    "vote_count": 309,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_755898",
+    "title": "War of the Worlds",
+    "release_date": "2025-07-29",
+    "runtime": 91,
+    "genres": [
+      "Science Fiction",
+      "Thriller"
+    ],
+    "overview": "Will Radford is a top analyst for Homeland Security who tracks potential threats through a mass surveillance program, until one day an attack by an unknown entity leads him to question whether the government is hiding something from him... and from the rest of the world.",
+    "cast": [
+      "Ice Cube",
+      "Eva Longoria",
+      "Clark Gregg",
+      "Iman Benson",
+      "Henry Hunter Hall"
+    ],
+    "director": "Rich Lee",
+    "rating": 4.145,
+    "vote_count": 953,
+    "streaming_services": [
+      "Amazon Prime Video"
+    ],
+    "sponsored": false,
+    "content_rating": "PG-13"
+  },
+  {
+    "id": "tmdb_803796",
+    "title": "KPop Demon Hunters",
+    "release_date": "2025-06-20",
+    "runtime": 96,
+    "genres": [
+      "Fantasy",
+      "Music",
+      "Comedy",
+      "Animation"
+    ],
+    "overview": "When K-pop superstars Rumi, Mira and Zoey aren't selling out stadiums, they're using their secret powers to protect their fans from supernatural threats.",
+    "cast": [
+      "Arden Cho",
+      "May Hong",
+      "Ji-young Yoo",
+      "Ahn Hyo-seop",
+      "Yunjin Kim"
+    ],
+    "director": "Chris Appelhans",
+    "rating": 8.0,
+    "vote_count": 2636,
+    "streaming_services": [
+      "Netflix"
+    ],
+    "sponsored": false,
+    "content_rating": "PG"
+  },
+  {
+    "id": "tmdb_804370",
+    "title": "Arco",
+    "release_date": "2025-10-22",
+    "runtime": 89,
+    "genres": [
+      "Animation",
+      "Adventure",
+      "Fantasy",
+      "Family",
+      "Science Fiction"
+    ],
+    "overview": "10-year-old Arco lives in a far future. During his first flight in his rainbow suit, he loses control and falls into the past. Iris, a girl his age from 2075, comes to his rescue and tries by all means to help send him back to his era.",
+    "cast": [
+      "Margot Ringard Oldra",
+      "Oscar Tresanini",
+      "Nathana\u00ebl Perrot",
+      "Alma Jodorowsky",
+      "Swann Arlaud"
+    ],
+    "director": "Ugo Bienvenu",
+    "rating": 7.471,
+    "vote_count": 174,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "PG"
+  },
+  {
+    "id": "tmdb_840464",
+    "title": "Greenland 2: Migration",
+    "release_date": "2026-01-07",
+    "runtime": 98,
+    "genres": [
+      "Adventure",
+      "Thriller",
+      "Science Fiction"
+    ],
+    "overview": "Having found the safety of the Greenland bunker after the comet Clarke decimated the Earth, the Garrity family must now risk everything to embark on a perilous journey across the wasteland of Europe to find a new home.",
+    "cast": [
+      "Gerard Butler",
+      "Morena Baccarin",
+      "Roman Griffin Davis",
+      "Tommie Earl Jenkins",
+      "Trond Fausa Aurv\u00e5g"
+    ],
+    "director": "Ric Roman Waugh",
+    "rating": 6.494,
+    "vote_count": 864,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "PG-13"
+  },
+  {
+    "id": "tmdb_842924",
+    "title": "The Life of Chuck",
+    "release_date": "2025-06-05",
+    "runtime": 111,
+    "genres": [
+      "Fantasy",
+      "Drama"
+    ],
+    "overview": "In this extraordinary story of an ordinary man, Charles 'Chuck' Krantz experiences the wonder of love, the heartbreak of loss, and the multitudes contained in all of us.",
+    "cast": [
+      "Tom Hiddleston",
+      "Benjamin Pajak",
+      "Nick Offerman",
+      "Chiwetel Ejiofor",
+      "Karen Gillan"
+    ],
+    "director": "Mike Flanagan",
+    "rating": 7.278,
+    "vote_count": 998,
+    "streaming_services": [
+      "Hulu"
+    ],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_858024",
+    "title": "Hamnet",
+    "release_date": "2025-11-26",
+    "runtime": 126,
+    "genres": [
+      "Drama",
+      "Romance",
+      "History"
+    ],
+    "overview": "The powerful story of love and loss that inspired the creation of Shakespeare's timeless masterpiece, Hamlet.",
+    "cast": [
+      "Jessie Buckley",
+      "Paul Mescal",
+      "Emily Watson",
+      "Joe Alwyn",
+      "Jacobi Jupe"
+    ],
+    "director": "Chlo\u00e9 Zhao",
+    "rating": 7.727,
+    "vote_count": 1226,
+    "streaming_services": [
+      "Peacock"
+    ],
+    "sponsored": false,
+    "content_rating": "PG-13"
+  },
+  {
+    "id": "tmdb_875828",
+    "title": "Peaky Blinders: The Immortal Man",
+    "release_date": "2026-03-05",
+    "runtime": 112,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "overview": "After his estranged son gets embroiled in a Nazi plot, self-exiled gangster Tommy Shelby must return to Birmingham to save his family \u2014 and his nation.",
+    "cast": [
+      "Cillian Murphy",
+      "Barry Keoghan",
+      "Rebecca Ferguson",
+      "Tim Roth",
+      "Stephen Graham"
+    ],
+    "director": "Tom Harper",
+    "rating": 7.236,
+    "vote_count": 775,
+    "streaming_services": [
+      "Netflix"
+    ],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_878608",
+    "title": "Resurrection",
+    "release_date": "2025-11-22",
+    "runtime": 159,
+    "genres": [
+      "Science Fiction",
+      "Drama"
+    ],
+    "overview": "In a future where humanity has surrendered its ability to dream in exchange for immortality, an outcast finds illusion, nightmarish visions, and beauty in an intoxicating world of his own making.",
+    "cast": [
+      "Jackson Yee",
+      "Shu Qi",
+      "Mark Chao You-Ting",
+      "Li Gengxi",
+      "Huang Jue"
+    ],
+    "director": "Bi Gan",
+    "rating": 6.8,
+    "vote_count": 53,
+    "streaming_services": [
+      "Criterion Channel"
+    ],
+    "sponsored": true,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_936075",
+    "title": "Michael",
+    "release_date": "2026-04-22",
+    "runtime": 127,
+    "genres": [
+      "Music",
+      "Drama"
+    ],
+    "overview": "Discover the story of Michael Jackson, one of the most influential artists the world has ever known, and his life beyond the music, tracing his journey from the discovery of his extraordinary talent as the lead of the Jackson Five, to the visionary artist whose creative ambition fueled a relentless pursuit to become the biggest entertainer in the world, highlighting both his life off-stage and some of the most iconic performances from his early solo career.",
+    "cast": [
+      "Jaafar Jackson",
+      "Colman Domingo",
+      "Nia Long",
+      "Kendrick Sampson",
+      "Miles Teller"
+    ],
+    "director": "Antoine Fuqua",
+    "rating": 8.2,
+    "vote_count": 2,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "PG-13"
+  },
+  {
+    "id": "tmdb_991494",
+    "title": "The SpongeBob Movie: Search for SquarePants",
+    "release_date": "2025-12-16",
+    "runtime": 88,
+    "genres": [
+      "Animation",
+      "Family",
+      "Comedy",
+      "Adventure",
+      "Fantasy"
+    ],
+    "overview": "Desperate to be a big guy, SpongeBob sets out to prove his bravery to Mr. Krabs by following The Flying Dutchman \u2013 a mysterious swashbuckling ghost pirate \u2013 on a seafaring adventure that takes him to the deepest depths of the deep sea, where no Sponge has gone before.",
+    "cast": [
+      "Tom Kenny",
+      "Clancy Brown",
+      "Rodger Bumpass",
+      "Bill Fagerbakke",
+      "Carolyn Lawrence"
+    ],
+    "director": "Derek Drymon",
+    "rating": 6.76,
+    "vote_count": 263,
+    "streaming_services": [
+      "Paramount+"
+    ],
+    "sponsored": true,
+    "content_rating": "PG"
+  },
+  {
+    "id": "tmdb_999136",
+    "title": "Do Not Enter",
+    "release_date": "2026-03-19",
+    "runtime": 91,
+    "genres": [
+      "Horror"
+    ],
+    "overview": "A group of young explorers investigates an old abandoned hotel, only to encounter a strange supernatural being and a competing group looking for a legendary hidden treasure.",
+    "cast": [
+      "Francesca Reale",
+      "Nicholas Hamilton",
+      "Adeline Rudolph",
+      "Jake Manley",
+      "Shane Paul McGhie"
+    ],
+    "director": "Marc Klasfeld",
+    "rating": 5.385,
+    "vote_count": 61,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1010755",
+    "title": "The Strangers: Chapter 3",
+    "release_date": "2026-02-05",
+    "runtime": 92,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "overview": "Tethered by a frightening conclusion, Maya and the Strangers are locked on an unavoidable, unforgiving collision course \u2014 a showdown that proves they\u2019re far from strangers now.",
+    "cast": [
+      "Madelaine Petsch",
+      "Richard Brake",
+      "Ema Horvath",
+      "Gabriel Basso",
+      "Pedro Leandro"
+    ],
+    "director": "Renny Harlin",
+    "rating": 5.682,
+    "vote_count": 110,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1033148",
+    "title": "Die My Love",
+    "release_date": "2025-10-06",
+    "runtime": 119,
+    "genres": [
+      "Drama"
+    ],
+    "overview": "After inheriting a remote Montana house, Jackson moves there from New York with his partner Grace, and the couple soon welcome a child. As Jackson becomes increasingly absent and rural isolation sets in, Grace struggles with loneliness, creative frustration, and unresolved emotional wounds. What begins as an attempt at renewal gradually turns into an intense psychological descent, placing strain on their relationship and exposing the fragile balance between love, identity, and motherhood.",
+    "cast": [
+      "Jennifer Lawrence",
+      "Robert Pattinson",
+      "Sissy Spacek",
+      "LaKeith Stanfield",
+      "Nick Nolte"
+    ],
+    "director": "Lynne Ramsay",
+    "rating": 6.178,
+    "vote_count": 473,
+    "streaming_services": [
+      "MUBI"
+    ],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1043197",
+    "title": "Dust Bunny",
+    "release_date": "2025-12-11",
+    "runtime": 106,
+    "genres": [
+      "Fantasy",
+      "Action",
+      "Horror"
+    ],
+    "overview": "Ten-year-old Aurora asks her hitman neighbor to kill the monster under her bed that she claims ate her family. To protect her, he must battle an onslaught of assassins while accepting that some monsters are real.",
+    "cast": [
+      "Mads Mikkelsen",
+      "Sophie Sloan",
+      "Sigourney Weaver",
+      "David Dastmalchian",
+      "Sheila Atim"
+    ],
+    "director": "Bryan Fuller",
+    "rating": 6.578,
+    "vote_count": 228,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1049471",
+    "title": "Outcome",
+    "release_date": "2026-04-06",
+    "runtime": 84,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "overview": "Reef Hawk, Hollywood's poster child since age six, is not okay. When he learns about an extortion plot tied to a mysterious video, Reef preemptively sets out on a redemption tour to make amends, confront his demons, and avoid getting canceled.",
+    "cast": [
+      "Keanu Reeves",
+      "Jonah Hill",
+      "Cameron Diaz",
+      "Matt Bomer",
+      "Susan Lucci"
+    ],
+    "director": "Jonah Hill",
+    "rating": 5.314,
+    "vote_count": 86,
+    "streaming_services": [
+      "Apple TV+"
+    ],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1084187",
+    "title": "Pretty Lethal",
+    "release_date": "2026-03-13",
+    "runtime": 89,
+    "genres": [
+      "Music",
+      "Thriller",
+      "Action",
+      "Horror"
+    ],
+    "overview": "A troupe of ballerinas find themselves fighting for survival as they attempt to escape from a remote inn after their bus breaks down on the way to a dance competition.",
+    "cast": [
+      "Maddie Ziegler",
+      "Lana Condor",
+      "Iris Apatow",
+      "Millicent Simmonds",
+      "Avantika"
+    ],
+    "director": "Vicky Jewson",
+    "rating": 6.853,
+    "vote_count": 269,
+    "streaming_services": [
+      "Amazon Prime Video"
+    ],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1084242",
+    "title": "Zootopia 2",
+    "release_date": "2025-11-26",
+    "runtime": 108,
+    "genres": [
+      "Animation",
+      "Family",
+      "Mystery",
+      "Adventure",
+      "Comedy"
+    ],
+    "overview": "After cracking the biggest case in Zootopia's history, rookie cops Judy Hopps and Nick Wilde find themselves on the twisting trail of a great mystery when Gary De'Snake arrives and turns the animal metropolis upside down. To crack the case, Judy and Nick must go undercover to unexpected new parts of town, where their growing partnership is tested like never before.",
+    "cast": [
+      "Ginnifer Goodwin",
+      "Jason Bateman",
+      "Ke Huy Quan",
+      "Fortune Feimster",
+      "Andy Samberg"
+    ],
+    "director": "Jared Bush",
+    "rating": 7.6,
+    "vote_count": 2556,
+    "streaming_services": [
+      "Disney+"
+    ],
+    "sponsored": false,
+    "content_rating": "PG"
+  },
+  {
+    "id": "tmdb_1084577",
+    "title": "Balls Up",
+    "release_date": "2026-04-15",
+    "runtime": 104,
+    "genres": [
+      "Comedy",
+      "Action"
+    ],
+    "overview": "Two marketing executives go \"balls out\" and pitch a bold full\u2011coverage condom sponsorship with the World Cup. After their drunken celebration in Brazil sparks a global scandal, they must outrun furious fans, criminals, and power-hungry officials to salvage their careers and make it home alive.",
+    "cast": [
+      "Mark Wahlberg",
+      "Paul Walter Hauser",
+      "Sacha Baron Cohen",
+      "Benjamin Bratt",
+      "Luciano Szafir"
+    ],
+    "director": "Peter Farrelly",
+    "rating": 5.794,
+    "vote_count": 17,
+    "streaming_services": [
+      "Amazon Prime Video"
+    ],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1086260",
+    "title": "The Astronaut",
+    "release_date": "2025-09-26",
+    "runtime": 90,
+    "genres": [
+      "Science Fiction",
+      "Horror",
+      "Thriller"
+    ],
+    "overview": "After returning from her first space mission, astronaut Sam Walker is placed under NASA\u2019s care at a high security house for rehabilitation and medical testing. However, when disturbing occurrences begin happening around the property, she fears that something extraterrestrial has followed her back to Earth",
+    "cast": [
+      "Kate Mara",
+      "Laurence Fishburne",
+      "Gabriel Luna",
+      "Ivana Mili\u010devi\u0107",
+      "Scarlett Holmes"
+    ],
+    "director": "Jess Varley",
+    "rating": 6.1,
+    "vote_count": 296,
+    "streaming_services": [
+      "Hulu"
+    ],
+    "sponsored": true,
+    "content_rating": "PG-13"
+  },
+  {
+    "id": "tmdb_1088434",
+    "title": "Hellfire",
+    "release_date": "2026-02-05",
+    "runtime": 94,
+    "genres": [
+      "Action",
+      "Thriller"
+    ],
+    "overview": "A drifter with a mysterious past arrives in a small town and finds the residents in the grip of a ruthless crime boss and realizes he has to help them.",
+    "cast": [
+      "Stephen Lang",
+      "Harvey Keitel",
+      "Scottie Thompson",
+      "Dolph Lundgren",
+      "Chris Mullinax"
+    ],
+    "director": "Isaac Florentine",
+    "rating": 6.9,
+    "vote_count": 71,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1110034",
+    "title": "Kraken",
+    "release_date": "2026-02-06",
+    "runtime": 94,
+    "genres": [
+      "Horror",
+      "Action",
+      "Thriller"
+    ],
+    "overview": "Marine biologist Johanne is doing research on a fish farm in Vangsnes, a rural community located by the fjord, when she encounters several strange occurrences. Along with the brutal deaths of two local teenagers, all signs point to the deep fjord; can there be more to the depths than the eye can see? At the bottom of the deepest fjord rests a mythical monster as large as a mountain, with a myriad of arms ready to crush and devour anything they can grab.",
+    "cast": [
+      "Sara Khorami",
+      "Mikkel Bratt Silset",
+      "Ingvild Holthe Bygdnes",
+      "\u00d8yvind Brandtz\u00e6g",
+      "Jenny Evensen"
+    ],
+    "director": "P\u00e5l \u00d8ie",
+    "rating": 6.0,
+    "vote_count": 11,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1115544",
+    "title": "Mike & Nick & Nick & Alice",
+    "release_date": "2026-03-14",
+    "runtime": 107,
+    "genres": [
+      "Comedy",
+      "Science Fiction",
+      "Crime"
+    ],
+    "overview": "Two gangsters and the woman they love try to survive the most dangerous night of their lives. As if that wasn\u2019t enough, there\u2019s one wild ingredient added to the mix: a time machine.",
+    "cast": [
+      "James Marsden",
+      "Vince Vaughn",
+      "Eiza Gonz\u00e1lez",
+      "Keith David",
+      "Jimmy Tatro"
+    ],
+    "director": "BenDavid Grabinski",
+    "rating": 6.759,
+    "vote_count": 234,
+    "streaming_services": [
+      "Hulu"
+    ],
+    "sponsored": true,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1117857",
+    "title": "In Your Dreams",
+    "release_date": "2025-11-07",
+    "runtime": 87,
+    "genres": [
+      "Animation",
+      "Family",
+      "Comedy",
+      "Adventure",
+      "Fantasy"
+    ],
+    "overview": "Stevie and her little brother Elliot journey into the wildly absurd landscape of their own dreams to ask the Sandman to grant them the perfect family.",
+    "cast": [
+      "Jolie Hoang-Rappaport",
+      "Elias Janssen",
+      "Simu Liu",
+      "Craig Robinson",
+      "Cristin Milioti"
+    ],
+    "director": "Alexander Woo",
+    "rating": 7.0,
+    "vote_count": 203,
+    "streaming_services": [
+      "Netflix"
+    ],
+    "sponsored": false,
+    "content_rating": "PG"
+  },
+  {
+    "id": "tmdb_1119449",
+    "title": "Good Luck, Have Fun, Don't Die",
+    "release_date": "2026-02-13",
+    "runtime": 134,
+    "genres": [
+      "Science Fiction",
+      "Action",
+      "Comedy"
+    ],
+    "overview": "A 'Man from the Future' arrives at an LA diner where he must recruit the precise combination of disgruntled patrons to join him on a one-night quest to save the world from the terminal threat of a rogue artificial intelligence.",
+    "cast": [
+      "Sam Rockwell",
+      "Juno Temple",
+      "Haley Lu Richardson",
+      "Michael Pe\u00f1a",
+      "Zazie Beetz"
+    ],
+    "director": "Gore Verbinski",
+    "rating": 6.909,
+    "vote_count": 341,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1124566",
+    "title": "Sentimental Value",
+    "release_date": "2025-08-20",
+    "runtime": 133,
+    "genres": [
+      "Drama"
+    ],
+    "overview": "Sisters Nora and Agnes reunite with their estranged father, the charismatic Gustav, a once-renowned director who offers stage actress Nora a role in what he hopes will be his comeback film. When Nora turns it down, she soon discovers he has given her part to an eager young Hollywood star.",
+    "cast": [
+      "Renate Reinsve",
+      "Stellan Skarsg\u00e5rd",
+      "Inga Ibsdotter Lilleaas",
+      "Elle Fanning",
+      "Anders Danielsen Lie"
+    ],
+    "director": "Joachim Trier",
+    "rating": 7.493,
+    "vote_count": 821,
+    "streaming_services": [
+      "Hulu"
+    ],
+    "sponsored": true,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1129104",
+    "title": "Flavia",
+    "release_date": "2026-04-12",
+    "runtime": 92,
+    "genres": [
+      "Family",
+      "Adventure",
+      "Mystery",
+      "Comedy"
+    ],
+    "overview": "The adventures of 11-year-old Flavia de Luce, who is both an amateur detective and a master poisoner. When she discovers a dead body in her family\u2019s decaying British manor house and her father is accused of the murder, Flavia launches her own investigation to uncover family secrets and bring the true murderer to justice.",
+    "cast": [
+      "Molly Belle Wright",
+      "Martin Freeman",
+      "Toby Jones",
+      "Jonathan Pryce",
+      "Annette Badland"
+    ],
+    "director": "Bharat Nalluri",
+    "rating": 6.0,
+    "vote_count": 2,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1134463",
+    "title": "Dreams",
+    "release_date": "2025-07-10",
+    "runtime": 98,
+    "genres": [
+      "Romance",
+      "Thriller",
+      "Drama"
+    ],
+    "overview": "A powerful socialite and a promising ballet dancer begin a dangerous affair. When he secretly crosses the US-Mexico border, she takes desperate measures to protect their future together.",
+    "cast": [
+      "Jessica Chastain",
+      "Isaac Hern\u00e1ndez",
+      "Rupert Friend",
+      "Marshall Bell",
+      "Eligio Mel\u00e9ndez"
+    ],
+    "director": "Michel Franco",
+    "rating": 6.297,
+    "vote_count": 64,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1140521",
+    "title": "The Magic Faraway Tree",
+    "release_date": "2026-03-26",
+    "runtime": 110,
+    "genres": [
+      "Family",
+      "Fantasy",
+      "Adventure"
+    ],
+    "overview": "A modern family relocates to the countryside where the children discover a magical tree with eccentric residents. They're transported to fantastical lands, rekindling their family bond through adventures.",
+    "cast": [
+      "Andrew Garfield",
+      "Claire Foy",
+      "Nicola Coughlan",
+      "Jessica Gunning",
+      "Rebecca Ferguson"
+    ],
+    "director": "Ben Gregor",
+    "rating": 6.6,
+    "vote_count": 8,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1144107",
+    "title": "The Legend of Hei 2",
+    "release_date": "2025-07-18",
+    "runtime": 119,
+    "genres": [
+      "Animation",
+      "Fantasy",
+      "Action"
+    ],
+    "overview": "When an attack shatters the fragile peace between the spirit world and humanity, Hei teams up with Luye, the last disciple of his Shifu Wuxian, to expose a conspiracy that threatens both realms - and the bond they've sworn to protect.",
+    "cast": [
+      "Shan Xin",
+      "Liu Mingyue",
+      "Zhu Jing",
+      "Luan Lisheng",
+      "Fu Chen Yang"
+    ],
+    "director": "Gu Jie",
+    "rating": 8.5,
+    "vote_count": 46,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1145899",
+    "title": "Marsupilami",
+    "release_date": "2026-02-04",
+    "runtime": 99,
+    "genres": [
+      "Adventure",
+      "Comedy"
+    ],
+    "overview": "David is tasked to deliver a mysterious package from South America, only to find out he is carrying a baby Marsupilami!",
+    "cast": [
+      "Philippe Lacheau",
+      "Jamel Debbouze",
+      "Tarek Boudali",
+      "\u00c9lodie Fontan",
+      "Julien Arruti"
+    ],
+    "director": "Philippe Lacheau",
+    "rating": 6.586,
+    "vote_count": 70,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1146058",
+    "title": "The Pout-Pout Fish",
+    "release_date": "2026-01-01",
+    "runtime": 92,
+    "genres": [
+      "Animation",
+      "Family",
+      "Adventure",
+      "Comedy"
+    ],
+    "overview": "Living on a rundown shipwreck, Mr. Fish one day discovers a hyperactive young sea dragon Pip \u2013 who had mistaken his home for a junkyard \u2013 pilfering his belongings. The heated argument that ensues leaves both their houses in ruin. But there is hope! Embarking on a seemingly impossible quest in search of the mythical 'Shimmer' to grant them a wish, there\u2019s only one problem: someone else is on the hunt...",
+    "cast": [
+      "Nick Offerman",
+      "Nina Oyama",
+      "Miranda Otto",
+      "Amy Sedaris",
+      "Jordin Sparks"
+    ],
+    "director": "Ricard Cuss\u00f3",
+    "rating": 6.5,
+    "vote_count": 4,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "PG"
+  },
+  {
+    "id": "tmdb_1151272",
+    "title": "Sir\u0101t",
+    "release_date": "2025-06-06",
+    "runtime": 115,
+    "genres": [
+      "Drama",
+      "Thriller"
+    ],
+    "overview": "A man and his son arrive at a rave lost in the mountains of Morocco. They are looking for Marina, their daughter and sister, who disappeared months ago at another rave. Driven by fate, they decide to follow a group of ravers in search of one last party, in hopes Marina will be there.",
+    "cast": [
+      "Sergi L\u00f3pez",
+      "Bruno N\u00fa\u00f1ez",
+      "Stefania Gadda",
+      "Joshua Liam Henderson",
+      "Richard Bellamy"
+    ],
+    "director": "Oliver Laxe",
+    "rating": 6.8,
+    "vote_count": 602,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1154538",
+    "title": "Nirvanna the Band the Show the Movie",
+    "release_date": "2026-02-13",
+    "runtime": 100,
+    "genres": [
+      "Comedy",
+      "Science Fiction",
+      "Adventure"
+    ],
+    "overview": "When their plan to book a show at the Rivoli goes horribly wrong, Matt and Jay accidentally travel back to the year 2008.",
+    "cast": [
+      "Matt Johnson",
+      "Jay McCarrol",
+      "Ben Petrie",
+      "Ethan Eng",
+      "Michael Scott"
+    ],
+    "director": "Matt Johnson",
+    "rating": 7.7,
+    "vote_count": 38,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1159559",
+    "title": "Scream 7",
+    "release_date": "2026-02-25",
+    "runtime": 114,
+    "genres": [
+      "Horror",
+      "Mystery",
+      "Crime"
+    ],
+    "overview": "When a new Ghostface killer emerges in the quiet town where Sidney Prescott has built a new life, her darkest fears are realized as her daughter becomes the next target. Determined to protect her family, Sidney must face the horrors of her past to put an end to the bloodshed once and for all.",
+    "cast": [
+      "Neve Campbell",
+      "Courteney Cox",
+      "Isabel May",
+      "Jasmin Savoy Brown",
+      "Mason Gooding"
+    ],
+    "director": "Kevin Williamson",
+    "rating": 6.034,
+    "vote_count": 747,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1159831",
+    "title": "The Bride!",
+    "release_date": "2026-03-04",
+    "runtime": 127,
+    "genres": [
+      "Science Fiction",
+      "Horror",
+      "Fantasy"
+    ],
+    "overview": "A lonely Frankenstein travels to 1930s Chicago to ask groundbreaking scientist Dr. Euphronious to create a companion for him. The two revive a murdered young woman and The Bride is born. But what ensues is beyond what either of them imagined.",
+    "cast": [
+      "Jessie Buckley",
+      "Christian Bale",
+      "Peter Sarsgaard",
+      "John Magaro",
+      "Jeannie Berlin"
+    ],
+    "director": "Maggie Gyllenhaal",
+    "rating": 6.246,
+    "vote_count": 315,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1160360",
+    "title": "If I Had Legs I'd Kick You",
+    "release_date": "2025-10-10",
+    "runtime": 113,
+    "genres": [
+      "Drama"
+    ],
+    "overview": "With her life crashing down around her, Linda attempts to navigate her child's mysterious illness, her absent husband, a missing person, and an increasingly hostile relationship with her therapist.",
+    "cast": [
+      "Rose Byrne",
+      "Conan O'Brien",
+      "A$AP Rocky",
+      "Danielle Macdonald",
+      "Delaney Quinn"
+    ],
+    "director": "Mary Bronstein",
+    "rating": 6.348,
+    "vote_count": 283,
+    "streaming_services": [
+      "HBO Max"
+    ],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1167307",
+    "title": "David",
+    "release_date": "2025-12-14",
+    "runtime": 109,
+    "genres": [
+      "Animation",
+      "Family",
+      "Drama",
+      "Music"
+    ],
+    "overview": "From the songs of his mother\u2019s heart to the whispers of a faithful God, David\u2019s story begins in quiet devotion. When the giant Goliath rises to terrorize a nation, a young shepherd armed with only a sling, a few stones, and unshakable faith steps forward. Pursued by power and driven by purpose, his journey tests the limits of loyalty, love, and courage\u2014culminating in a battle not just for a crown, but for the soul of a kingdom.",
+    "cast": [
+      "Brandon Engman",
+      "Brian Stivale",
+      "Shahar Taboch",
+      "Aaron Tavaler",
+      "Hector"
+    ],
+    "director": "Phil Cunningham",
+    "rating": 8.1,
+    "vote_count": 126,
+    "streaming_services": [
+      "Angel Studios"
+    ],
+    "sponsored": false,
+    "content_rating": "PG"
+  },
+  {
+    "id": "tmdb_1168190",
+    "title": "The Wrecking Crew",
+    "release_date": "2026-01-28",
+    "runtime": 125,
+    "genres": [
+      "Action",
+      "Comedy",
+      "Crime",
+      "Mystery"
+    ],
+    "overview": "Estranged half-brothers Jonny and James reunite after their father's mysterious death. As they search for the truth, buried secrets reveal a conspiracy threatening to tear their family apart.",
+    "cast": [
+      "Dave Bautista",
+      "Jason Momoa",
+      "Temuera Morrison",
+      "Morena Baccarin",
+      "Roimata Fox"
+    ],
+    "director": "\u00c1ngel Manuel Soto",
+    "rating": 6.899,
+    "vote_count": 891,
+    "streaming_services": [
+      "Amazon Prime Video"
+    ],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1168719",
+    "title": "Silent Friend",
+    "release_date": "2026-01-15",
+    "runtime": 147,
+    "genres": [
+      "Drama"
+    ],
+    "overview": "On the grounds of a medieval German university town looms an imposing Ginkgo biloba, a tree whose longevity stands in marked contrast to three intimate, human-scaled stories. In 1908, the university\u2019s first female student gains admission into the prestigious botany department, confronting the sexism of both professors and peers. In 1972, amidst counterculture movements, a reserved student finds his attention captured by a fellow housemate and the geranium plant she studies. In 2020, during the COVID-19 pandemic, a neuroscientist from Hong Kong secures the help of a renowned botanist for an experiment on the old ginkgo tree.",
+    "cast": [
+      "Tony Leung Chiu-wai",
+      "L\u00e9a Seydoux",
+      "Luna Wedler",
+      "Enzo Brumm",
+      "Sylvester Groth"
+    ],
+    "director": "Ildik\u00f3 Enyedi",
+    "rating": 8.2,
+    "vote_count": 11,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1171145",
+    "title": "Crime 101",
+    "release_date": "2026-02-11",
+    "runtime": 141,
+    "genres": [
+      "Crime",
+      "Thriller"
+    ],
+    "overview": "When an elusive thief whose high-stakes heists unfold along the iconic 101 freeway in Los Angeles eyes the score of a lifetime, with hopes of this being his final job, his path collides with a disillusioned insurance broker who is facing her own crossroads. Determined to crack the case, a relentless detective closes in on the operation, raising the stakes even higher.",
+    "cast": [
+      "Chris Hemsworth",
+      "Mark Ruffalo",
+      "Halle Berry",
+      "Barry Keoghan",
+      "Monica Barbaro"
+    ],
+    "director": "Bart Layton",
+    "rating": 7.004,
+    "vote_count": 695,
+    "streaming_services": [
+      "Amazon Prime Video"
+    ],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1193501",
+    "title": "Whistle",
+    "release_date": "2026-01-20",
+    "runtime": 100,
+    "genres": [
+      "Horror",
+      "Mystery"
+    ],
+    "overview": "A misfit group of unwitting high school students stumble upon a cursed object, an ancient Aztec Death Whistle. They discover that blowing the whistle and the terrifying sound it emits will summon their future deaths to hunt them down.",
+    "cast": [
+      "Dafne Keen",
+      "Sophie N\u00e9lisse",
+      "Sky Yang",
+      "Jhaleil Swaby",
+      "Alissa Skovbye"
+    ],
+    "director": "Corin Hardy",
+    "rating": 6.035,
+    "vote_count": 240,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1194963",
+    "title": "Noise",
+    "release_date": "2025-06-25",
+    "runtime": 95,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "overview": "Ju-young is a young woman with a hearing impediment who decides to investigate her sister's inexplicable disappearance, last seen in her apartment. Feeling more and more cornered, Ju-young begins to hear strange sounds and sense an evil presence in the apartment.",
+    "cast": [
+      "Lee Sun-bin",
+      "Kim Min-seok",
+      "Jeon Ik-ryoung",
+      "Ryu Kyung-soo",
+      "Han Su-ah"
+    ],
+    "director": "Kim Soo-jin",
+    "rating": 6.7,
+    "vote_count": 66,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1198994",
+    "title": "Send Help",
+    "release_date": "2026-01-22",
+    "runtime": 113,
+    "genres": [
+      "Horror",
+      "Thriller",
+      "Comedy"
+    ],
+    "overview": "Two colleagues become stranded on a deserted island, the only survivors of a plane crash. On the island, they must overcome past grievances and work together to survive, but ultimately, it's a battle of wills and wits to make it out alive.",
+    "cast": [
+      "Rachel McAdams",
+      "Dylan O'Brien",
+      "Edyll Ismail",
+      "Dennis Haysbert",
+      "Xavier Samuel"
+    ],
+    "director": "Sam Raimi",
+    "rating": 7.027,
+    "vote_count": 980,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1209511",
+    "title": "Love Insurance Kompany",
+    "release_date": "2026-04-10",
+    "runtime": 157,
+    "genres": [
+      "Romance",
+      "Science Fiction",
+      "Comedy"
+    ],
+    "overview": "In 2040, an app premised on ensuring romance for all is used widely by the population. When the voice behind the app's AI realizes its misconception to true love, he embarks on a quest to prove that love does not come from a screen.",
+    "cast": [
+      "Pradeep Ranganathan",
+      "Krithi Shetty",
+      "S. J. Suryah",
+      "Yogi Babu",
+      "Gouri G Kishan"
+    ],
+    "director": "Vignesh Shivan",
+    "rating": 6.0,
+    "vote_count": 3,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1214931",
+    "title": "Nuremberg",
+    "release_date": "2025-11-06",
+    "runtime": 149,
+    "genres": [
+      "History",
+      "Drama"
+    ],
+    "overview": "In postwar Germany, an American psychiatrist must determine whether Nazi prisoners are fit to go on trial for war crimes, and finds himself in a complex battle of intellect and ethics with Hermann G\u00f6ring, Hitler's right-hand man.",
+    "cast": [
+      "Russell Crowe",
+      "Rami Malek",
+      "Michael Shannon",
+      "Leo Woodall",
+      "John Slattery"
+    ],
+    "director": "James Vanderbilt",
+    "rating": 7.4,
+    "vote_count": 837,
+    "streaming_services": [
+      "Netflix"
+    ],
+    "sponsored": false,
+    "content_rating": "PG-13"
+  },
+  {
+    "id": "tmdb_1218925",
+    "title": "Chainsaw Man - The Movie: Reze Arc",
+    "release_date": "2025-09-19",
+    "runtime": 99,
+    "genres": [
+      "Animation",
+      "Action",
+      "Romance",
+      "Fantasy"
+    ],
+    "overview": "In a brutal war between devils, hunters, and secret enemies, a mysterious girl named Reze has stepped into Denji's world, and he faces his deadliest battle yet, fueled by love in a world where survival knows no rules.",
+    "cast": [
+      "Kikunosuke Toya",
+      "Reina Ueda",
+      "Tomori Kusunoki",
+      "Shogo Sakata",
+      "Maaya Uchida"
+    ],
+    "director": "Tatsuya Yoshihara",
+    "rating": 8.323,
+    "vote_count": 795,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1220522",
+    "title": "Dacoit",
+    "release_date": "2026-04-10",
+    "runtime": 150,
+    "genres": [
+      "Action",
+      "Romance",
+      "Thriller"
+    ],
+    "overview": "Betrayed by his better half, a man is convicted for a crime he didn't commit. Once free, he hunts her down in pursuit of vengeance, as their stories intertwine with a series of robberies.",
+    "cast": [
+      "Adivi Sesh",
+      "Mrunal Thakur",
+      "Anurag Kashyap",
+      "Prakash Raj",
+      "Sunil Varma"
+    ],
+    "director": "Shaneil Deo",
+    "rating": 6.5,
+    "vote_count": 2,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1226863",
+    "title": "The Super Mario Galaxy Movie",
+    "release_date": "2026-04-01",
+    "runtime": 98,
+    "genres": [
+      "Family",
+      "Comedy",
+      "Adventure",
+      "Fantasy",
+      "Animation"
+    ],
+    "overview": "Having thwarted Bowser's previous plot to marry Princess Peach, Mario and Luigi now face a fresh threat in Bowser Jr., who is determined to liberate his father from captivity and restore the family legacy. Alongside companions new and old, the brothers travel across the stars to stop the young heir's crusade.",
+    "cast": [
+      "Chris Pratt",
+      "Charlie Day",
+      "Anya Taylor-Joy",
+      "Jack Black",
+      "Keegan-Michael Key"
+    ],
+    "director": "Aaron Horvath",
+    "rating": 6.8,
+    "vote_count": 464,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "PG"
+  },
+  {
+    "id": "tmdb_1234731",
+    "title": "Anaconda",
+    "release_date": "2025-12-24",
+    "runtime": 100,
+    "genres": [
+      "Adventure",
+      "Comedy",
+      "Horror"
+    ],
+    "overview": "A group of friends facing mid-life crises head to the rainforest with the intention of remaking their favorite movie from their youth, only to find themselves in a fight for their lives against natural disasters, giant snakes and violent criminals.",
+    "cast": [
+      "Jack Black",
+      "Paul Rudd",
+      "Steve Zahn",
+      "Thandiwe Newton",
+      "Daniela Melchior"
+    ],
+    "director": "Tom Gormican",
+    "rating": 5.875,
+    "vote_count": 1002,
+    "streaming_services": [
+      "Netflix"
+    ],
+    "sponsored": false,
+    "content_rating": "PG-13"
+  },
+  {
+    "id": "tmdb_1234821",
+    "title": "Jurassic World Rebirth",
+    "release_date": "2025-07-01",
+    "runtime": 134,
+    "genres": [
+      "Science Fiction",
+      "Adventure",
+      "Action"
+    ],
+    "overview": "Five years after the events of Jurassic World Dominion, covert operations expert Zora Bennett is contracted to lead a skilled team on a top-secret mission to secure genetic material from the world's three most massive dinosaurs. When Zora's operation intersects with a civilian family whose boating expedition was capsized, they all find themselves stranded on an island where they come face-to-face with a sinister, shocking discovery that's been hidden from the world for decades.",
+    "cast": [
+      "Scarlett Johansson",
+      "Mahershala Ali",
+      "Jonathan Bailey",
+      "Rupert Friend",
+      "Manuel Garcia-Rulfo"
+    ],
+    "director": "Gareth Edwards",
+    "rating": 6.276,
+    "vote_count": 3209,
+    "streaming_services": [
+      "Netflix"
+    ],
+    "sponsored": false,
+    "content_rating": "PG-13"
+  },
+  {
+    "id": "tmdb_1236153",
+    "title": "Mercy",
+    "release_date": "2026-01-20",
+    "runtime": 99,
+    "genres": [
+      "Science Fiction",
+      "Action",
+      "Thriller",
+      "Crime"
+    ],
+    "overview": "In the near future, a detective stands on trial accused of murdering his wife. He has ninety minutes to prove his innocence to the advanced AI Judge he once championed, before it determines his fate.",
+    "cast": [
+      "Chris Pratt",
+      "Rebecca Ferguson",
+      "Kali Reis",
+      "Kylie Rogers",
+      "Chris Sullivan"
+    ],
+    "director": "Timur Bekmambetov",
+    "rating": 6.976,
+    "vote_count": 1092,
+    "streaming_services": [
+      "Amazon Prime Video",
+      "fuboTV",
+      "MGM+",
+      "Philo"
+    ],
+    "sponsored": false,
+    "content_rating": "PG-13"
+  },
+  {
+    "id": "tmdb_1241470",
+    "title": "Osiris",
+    "release_date": "2025-07-25",
+    "runtime": 108,
+    "genres": [
+      "Science Fiction",
+      "Action",
+      "Horror"
+    ],
+    "overview": "Special Forces commandos on a mission are abducted mid-operation by a mysterious spacecraft. Upon waking aboard, they find themselves prey to a relentless alien race in a fight for survival.",
+    "cast": [
+      "Max Martini",
+      "Brianna Hildebrand",
+      "LaMonica Garrett",
+      "Michael Irby",
+      "Linda Hamilton"
+    ],
+    "director": "William Kaufman",
+    "rating": 6.0,
+    "vote_count": 221,
+    "streaming_services": [
+      "Hulu"
+    ],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1242265",
+    "title": "Fuze",
+    "release_date": "2026-03-23",
+    "runtime": 96,
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "overview": "An unexploded WWII bomb is discovered on a busy construction site in the centre of London. Chaos ensues as the military and police begin a mass evacuation against a ticking clock.",
+    "cast": [
+      "Aaron Taylor-Johnson",
+      "Theo James",
+      "Gugu Mbatha-Raw",
+      "Elham Ehsas",
+      "Sam Worthington"
+    ],
+    "director": "David Mackenzie",
+    "rating": 6.0,
+    "vote_count": 8,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1242332",
+    "title": "Normal",
+    "release_date": "2026-04-16",
+    "runtime": 90,
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "overview": "Interim sheriff Ulysses, called to the snowbound town of Normal, MN, uncovers an international criminal conspiracy at the heart of the seemingly quaint whistle-stop when he comes to the aid of a bank-robbing couple caught up in a deadly mess.",
+    "cast": [
+      "Bob Odenkirk",
+      "Henry Winkler",
+      "Lena Headey",
+      "Ryan Allen",
+      "Billy MacLellan"
+    ],
+    "director": "Ben Wheatley",
+    "rating": 6.857,
+    "vote_count": 7,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1242501",
+    "title": "Icefall",
+    "release_date": "2025-10-16",
+    "runtime": 99,
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "overview": "A young Indigenous game warden arrests an infamous poacher only to discover that the poacher knows the location of a plane carrying millions of dollars that has crashed in a frozen lake. When a group of criminals and dirty cops are alerted to the poacher\u2019s whereabouts, the warden and the poacher team up to fight back and escape across the treacherous lake before the ice melts.",
+    "cast": [
+      "Joel Kinnaman",
+      "Cara Jade Myers",
+      "Danny Huston",
+      "Graham Greene",
+      "Martin Sensmeier"
+    ],
+    "director": "Stefan Ruzowitzky",
+    "rating": 6.396,
+    "vote_count": 149,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1242898",
+    "title": "Predator: Badlands",
+    "release_date": "2025-11-05",
+    "runtime": 107,
+    "genres": [
+      "Action",
+      "Science Fiction",
+      "Adventure"
+    ],
+    "overview": "Cast out from his clan, a young Predator finds an unlikely ally in a damaged android and embarks on a treacherous journey in search of the ultimate adversary.",
+    "cast": [
+      "Elle Fanning",
+      "Dimitrius Schuster-Koloamatangi",
+      "Ravi Narayan",
+      "Michael Homick",
+      "Stefan Grube"
+    ],
+    "director": "Dan Trachtenberg",
+    "rating": 7.696,
+    "vote_count": 2611,
+    "streaming_services": [
+      "Hulu"
+    ],
+    "sponsored": false,
+    "content_rating": "PG-13"
+  },
+  {
+    "id": "tmdb_1242937",
+    "title": "The Dreadful",
+    "release_date": "2026-02-20",
+    "runtime": 94,
+    "genres": [
+      "Horror"
+    ],
+    "overview": "In medieval England, Anne and her domineering mother-in-law Morwen struggle to survive on the outskirts of society. But when a man from Anne's past returns from war, a curse begins to take shape through a mysterious knight and threatens to destroy them all.",
+    "cast": [
+      "Sophie Turner",
+      "Kit Harington",
+      "Marcia Gay Harden",
+      "Laurence O'Fuarain",
+      "Jonathan Howard"
+    ],
+    "director": "Natasha Kermani",
+    "rating": 6.2,
+    "vote_count": 60,
+    "streaming_services": [
+      "Amazon Prime Video"
+    ],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1246049",
+    "title": "Dracula",
+    "release_date": "2025-07-30",
+    "runtime": 130,
+    "genres": [
+      "Horror",
+      "Fantasy",
+      "Romance"
+    ],
+    "overview": "In late 15th-century Eastern Europe, Prince Vlad II\u2019s bride is brutally murdered. As a result, he renounces God and damns Heaven itself. Cursed with eternal life, Vlad is reborn as Dracula, an immortal warlord who defies fate in a blood-soaked crusade to wrench his lost love back from death.",
+    "cast": [
+      "Caleb Landry Jones",
+      "Zo\u00eb Bleu Sidel",
+      "Christoph Waltz",
+      "Matilda De Angelis",
+      "Ewens Abid"
+    ],
+    "director": "Luc Besson",
+    "rating": 7.075,
+    "vote_count": 1080,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1254135",
+    "title": "13 Days, 13 Nights",
+    "release_date": "2025-06-27",
+    "runtime": 111,
+    "genres": [
+      "War",
+      "Action",
+      "Thriller"
+    ],
+    "overview": "Kabul, August 15, 2021. US troops are preparing to withdraw from Afghanistan, while the Taliban are marching on the capital to seize power. Amid the chaos, Commander Mohamed Bida and his men are in charge of security at the French embassy, the last Western mission to remain open. Trapped along with 500 people, left to their own devices, the team must reach the airport at all costs. A perilous mission with no guarantee of success to flee the hell of Kabul and rescue what remains of humanity.",
+    "cast": [
+      "Roschdy Zem",
+      "Lyna Khoudri",
+      "Sidse Babett Knudsen",
+      "Christophe Montenez",
+      "Sina Parvaneh"
+    ],
+    "director": "Martin Bourboulon",
+    "rating": 6.665,
+    "vote_count": 209,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1262815",
+    "title": "The Choral",
+    "release_date": "2025-11-07",
+    "runtime": 113,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Music"
+    ],
+    "overview": "As World War I rages on, Dr. Henry Guthrie takes over a British choral society that's lost most of its men to the army. The community soon discovers that the best response to the chaos of war is to make beautiful music together.",
+    "cast": [
+      "Ralph Fiennes",
+      "Roger Allam",
+      "Mark Addy",
+      "Alun Armstrong",
+      "Simon Russell Beale"
+    ],
+    "director": "Nicholas Hytner",
+    "rating": 6.2,
+    "vote_count": 25,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1263012",
+    "title": "Dead Man's Wire",
+    "release_date": "2026-01-09",
+    "runtime": 105,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "overview": "In 1977, former real estate developer Tony Kiritsis puts a dead man's switch on himself and the mortgage banker who did him wrong, demanding $5 million and a personal apology.",
+    "cast": [
+      "Bill Skarsg\u00e5rd",
+      "Colman Domingo",
+      "Al Pacino",
+      "Dacre Montgomery",
+      "Myha'la"
+    ],
+    "director": "Gus Van Sant",
+    "rating": 6.348,
+    "vote_count": 92,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1265609",
+    "title": "War Machine",
+    "release_date": "2026-02-12",
+    "runtime": 110,
+    "genres": [
+      "Action",
+      "Science Fiction",
+      "Thriller"
+    ],
+    "overview": "On one last grueling mission during Army Ranger training, a combat engineer must lead his unit in a fight against a giant otherworldly killing machine.",
+    "cast": [
+      "Alan Ritchson",
+      "Dennis Quaid",
+      "Stephan James",
+      "Jai Courtney",
+      "Esai Morales"
+    ],
+    "director": "Patrick Hughes",
+    "rating": 7.245,
+    "vote_count": 1439,
+    "streaming_services": [
+      "Netflix"
+    ],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1266127",
+    "title": "Ready or Not: Here I Come",
+    "release_date": "2026-03-19",
+    "runtime": 108,
+    "genres": [
+      "Horror",
+      "Comedy"
+    ],
+    "overview": "Moments after surviving an all-out attack from the Le Domas family, Grace discovers she\u2019s reached the next level of the nightmarish game \u2014 and this time with her estranged sister Faith at her side. Grace has one chance to survive, keep her sister alive, and claim the High Seat of the Council that controls the world. Four rival families are hunting her for the throne, and whoever wins rules it all.",
+    "cast": [
+      "Samara Weaving",
+      "Kathryn Newton",
+      "Elijah Wood",
+      "Sarah Michelle Gellar",
+      "Shawn Hatosy"
+    ],
+    "director": "Matt Bettinelli-Olpin",
+    "rating": 7.053,
+    "vote_count": 198,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1268127",
+    "title": "Humint",
+    "release_date": "2026-02-11",
+    "runtime": 120,
+    "genres": [
+      "Thriller",
+      "Action",
+      "Drama"
+    ],
+    "overview": "A South Korean agent hunts a drug ring in Russia and goes head-to-head with a North Korean operative \u2014 pulling both into peril and tangled secrets.",
+    "cast": [
+      "Zo In-sung",
+      "Park Jeong-min",
+      "Park Hae-joon",
+      "Shin Sae-kyeong",
+      "Robert Maaser"
+    ],
+    "director": "Ryoo Seung-wan",
+    "rating": 7.275,
+    "vote_count": 89,
+    "streaming_services": [
+      "Netflix"
+    ],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1276038",
+    "title": "A Desert",
+    "release_date": "2025-05-02",
+    "runtime": 103,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "overview": "A photographer\u2019s road trip takes a dark turn when he befriends a reckless couple, plunging him into a nightmarish neo-noir spiral of unpredictable horror.",
+    "cast": [
+      "David Yow",
+      "Kai Lennox",
+      "Sarah Lind",
+      "Zachary Ray Sherman",
+      "Ashley B. Smith"
+    ],
+    "director": "Joshua Erkman",
+    "rating": 6.1,
+    "vote_count": 24,
+    "streaming_services": [
+      "AMC+",
+      "Philo",
+      "Shudder"
+    ],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1284460",
+    "title": "Alpha",
+    "release_date": "2025-08-20",
+    "runtime": 128,
+    "genres": [
+      "Horror",
+      "Drama",
+      "Science Fiction"
+    ],
+    "overview": "Alpha, a troubled 13-year-old lives with her single mom. Their world collapses the day she returns from school with a tattoo on her arm.",
+    "cast": [
+      "M\u00e9lissa Boros",
+      "Tahar Rahim",
+      "Golshifteh Farahani",
+      "Emma Mackey",
+      "Finnegan Oldfield"
+    ],
+    "director": "Julia Ducournau",
+    "rating": 6.4,
+    "vote_count": 106,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1285965",
+    "title": "Dangerous Animals",
+    "release_date": "2025-06-05",
+    "runtime": 98,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "overview": "A savvy and free-spirited surfer is abducted by a shark-obsessed serial killer. Held captive on his boat, she must figure out how to escape before he carries out a ritualistic feeding to the sharks below.",
+    "cast": [
+      "Hassie Harrison",
+      "Jai Courtney",
+      "Josh Heuston",
+      "Rob Carlton",
+      "Ella Newton"
+    ],
+    "director": "Sean Byrne",
+    "rating": 6.4,
+    "vote_count": 527,
+    "streaming_services": [
+      "Hulu",
+      "AMC+",
+      "Philo",
+      "Shudder"
+    ],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1287141",
+    "title": "Pillion",
+    "release_date": "2025-11-28",
+    "runtime": 107,
+    "genres": [
+      "Romance",
+      "Drama",
+      "Comedy"
+    ],
+    "overview": "Colin, a timid gay man, is swept off his feet when Ray, an enigmatic and impossibly handsome biker, takes him on as his submissive in a crazy and erotic BDSM-focused relationship.",
+    "cast": [
+      "Harry Melling",
+      "Alexander Skarsg\u00e5rd",
+      "Lesley Sharp",
+      "Douglas Hodge",
+      "Jake Shears"
+    ],
+    "director": "Harry Lighton",
+    "rating": 6.4,
+    "vote_count": 158,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1290417",
+    "title": "Thrash",
+    "release_date": "2026-04-10",
+    "runtime": 84,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "overview": "When a Category 5 hurricane decimates a coastal town, the storm surge brings devastation, chaos, and something far more frightening onto shore: hungry sharks.",
+    "cast": [
+      "Phoebe Dynevor",
+      "Whitney Peak",
+      "Djimon Hounsou",
+      "Matt Nable",
+      "Andrew Lees"
+    ],
+    "director": "Tommy Wirkola",
+    "rating": 5.929,
+    "vote_count": 260,
+    "streaming_services": [
+      "Netflix"
+    ],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1290432",
+    "title": "A Private Life",
+    "release_date": "2025-09-27",
+    "runtime": 108,
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Crime"
+    ],
+    "overview": "When renowned psychiatrist Lilian Steiner learns of the sudden death of a patient, she suspects murder. She mounts a private investigation, enlisting an odd assortment of quirky characters.",
+    "cast": [
+      "Jodie Foster",
+      "Daniel Auteuil",
+      "Virginie Efira",
+      "Mathieu Amalric",
+      "Vincent Lacoste"
+    ],
+    "director": "Rebecca Zlotowski",
+    "rating": 5.7,
+    "vote_count": 134,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1290821",
+    "title": "Shelter",
+    "release_date": "2026-01-28",
+    "runtime": 107,
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "overview": "A man living in self-imposed exile on a remote island rescues a young girl from a violent storm, setting off a chain of events that forces him out of seclusion to protect her from enemies tied to his past.",
+    "cast": [
+      "Jason Statham",
+      "Bodhi Rae Breathnach",
+      "Michael Shaeffer",
+      "Anna Crilly",
+      "Bill Nighy"
+    ],
+    "director": "Ric Roman Waugh",
+    "rating": 6.794,
+    "vote_count": 546,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1291335",
+    "title": "Solo Mio",
+    "release_date": "2026-02-05",
+    "runtime": 96,
+    "genres": [
+      "Romance",
+      "Comedy"
+    ],
+    "overview": "After Matt's dreams of a picturesque Italian wedding are shattered when his fianc\u00e9e leaves him at the altar, he embarks on his planned honeymoon across Italy alone, immersing himself in the country's vibrant culture, food, and beauty, meeting Gia along the way.",
+    "cast": [
+      "Kevin James",
+      "Nicole Grimaudo",
+      "Kim Coates",
+      "Jonathan Roumie",
+      "Alyson Hannigan"
+    ],
+    "director": "Daniel Kinnane",
+    "rating": 7.091,
+    "vote_count": 115,
+    "streaming_services": [
+      "Angel Studios"
+    ],
+    "sponsored": false,
+    "content_rating": "PG"
+  },
+  {
+    "id": "tmdb_1291659",
+    "title": "The Wizard of the Kremlin",
+    "release_date": "2026-01-21",
+    "runtime": 156,
+    "genres": [
+      "Drama"
+    ],
+    "overview": "Russia, early 1990s. Amid post-Soviet chaos, a brilliant young man, Vadim Baranov, charts his path. First an artist, then a reality TV producer, he becomes the spin doctor to a rising KGB agent: Vladimir Putin. At the heart of power, Baranov shapes the new Russia, blurring the boundaries between truth and lies, belief and manipulation. Only the magnetic Ksenia is beyond his control, tempting him away from this dangerous game. Years later, after retreating into silence and shrouded in mystery, Baranov finally opens up, revealing the dark secrets of the regime he helped build.",
+    "cast": [
+      "Paul Dano",
+      "Jude Law",
+      "Alicia Vikander",
+      "Tom Sturridge",
+      "Will Keen"
+    ],
+    "director": "Olivier Assayas",
+    "rating": 6.4,
+    "vote_count": 111,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1292415",
+    "title": "Beast",
+    "release_date": "2026-04-10",
+    "runtime": 114,
+    "genres": [
+      "Action",
+      "Drama"
+    ],
+    "overview": "MMA legend Patton James, now a commercial fisherman, is pulled back into the cage when his brother is in danger. Reuniting with his old coach Sammy, he commits to one final fight in one championship against it's brutal champion Xavier Grau.",
+    "cast": [
+      "Daniel MacPherson",
+      "Luke Hemsworth",
+      "Russell Crowe",
+      "Mojean Aria",
+      "Kelly Gale"
+    ],
+    "director": "Tyler Atkins",
+    "rating": 6.0,
+    "vote_count": 2,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1292695",
+    "title": "They Will Kill You",
+    "release_date": "2026-03-25",
+    "runtime": 94,
+    "genres": [
+      "Action",
+      "Horror",
+      "Comedy"
+    ],
+    "overview": "A woman answers a help wanted ad to be a housekeeper in a mysterious New York City high-rise, unaware that she is entering a community that has seen a number of disappearances over the years and may be under the grip of a Satanic cult.",
+    "cast": [
+      "Zazie Beetz",
+      "Patricia Arquette",
+      "Myha'la",
+      "Paterson Joseph",
+      "Tom Felton"
+    ],
+    "director": "Kirill Sokolov",
+    "rating": 6.553,
+    "vote_count": 133,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1297454",
+    "title": "The Death That Awaits",
+    "release_date": "2025-02-06",
+    "runtime": 102,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "overview": "A drifter searching for answers to a mystery from her past takes on a job looking after a sick teen who is undergoing a mysterious transformation her family will do anything to stop.",
+    "cast": [
+      "Katya Mart\u00edn",
+      "Megan Lawless",
+      "Allison Paige",
+      "Tim Gabriel",
+      "Sharon Gardner"
+    ],
+    "director": "Richard J. Lee",
+    "rating": 6.029,
+    "vote_count": 17,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1297842",
+    "title": "GOAT",
+    "release_date": "2026-02-11",
+    "runtime": 100,
+    "genres": [
+      "Animation",
+      "Comedy",
+      "Family"
+    ],
+    "overview": "A small goat with big dreams gets a once-in-a-lifetime shot to join the pros and play roarball, a high-intensity, co-ed, full-contact sport dominated by the fastest, fiercest animals in the world.",
+    "cast": [
+      "Caleb McLaughlin",
+      "Gabrielle Union",
+      "Stephen Curry",
+      "Aaron Pierre",
+      "Nicola Coughlan"
+    ],
+    "director": "Tyree Dillihay",
+    "rating": 7.941,
+    "vote_count": 395,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "PG"
+  },
+  {
+    "id": "tmdb_1304313",
+    "title": "Lee Cronin's The Mummy",
+    "release_date": "2026-04-07",
+    "runtime": 133,
+    "genres": [
+      "Horror",
+      "Mystery"
+    ],
+    "overview": "The young daughter of a journalist disappears into the desert without a trace\u2014eight years later, the broken family is shocked when she is returned to them, as what should be a joyful reunion turns into a living nightmare.",
+    "cast": [
+      "Jack Reynor",
+      "Laia Costa",
+      "May Calamawy",
+      "Natalie Grace",
+      "Shylo Molina"
+    ],
+    "director": "Lee Cronin",
+    "rating": 7.9,
+    "vote_count": 17,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1305781",
+    "title": "Blades of the Guardians: Wind Rises in the Desert",
+    "release_date": "2026-02-17",
+    "runtime": 126,
+    "genres": [
+      "Action",
+      "Drama",
+      "History"
+    ],
+    "overview": "Dao Ma, the \"second most wanted fugitive,\" is entrusted by his benefactor, the chief of Mo family clan, to take on a mysterious escort mission-escorting the \"most wanted fugitive\" to Chang'an.",
+    "cast": [
+      "Wu Jing",
+      "Nicholas Tse Ting-Fung",
+      "Yu Shi",
+      "Chen Lijun",
+      "Sun Yizhou"
+    ],
+    "director": "Yuen Woo-Ping",
+    "rating": 7.1,
+    "vote_count": 34,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1307373",
+    "title": "Wasteman",
+    "release_date": "2026-02-20",
+    "runtime": 90,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "overview": "Taylor's hopes for a fresh start post-parole are jeopardised by cellmate Dee's arrival. As Dee takes Taylor under his wing, a vicious attack tests their bond, forcing Taylor to choose between protecting Dee and his own chances at freedom.",
+    "cast": [
+      "David Jonsson",
+      "Tom Blyth",
+      "Alex Hassell",
+      "Neil Linpow",
+      "Paul Hilton"
+    ],
+    "director": "Cal McMau",
+    "rating": 7.524,
+    "vote_count": 21,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1309083",
+    "title": "Dolly",
+    "release_date": "2026-03-06",
+    "runtime": 83,
+    "genres": [
+      "Horror"
+    ],
+    "overview": "Young Macy is abducted by a deranged, monstrous figure who wants to raise her as its child.",
+    "cast": [
+      "Max Lindsey",
+      "Fabianne Therese",
+      "Seann William Scott",
+      "Ethan Suplee",
+      "Russ Tiller"
+    ],
+    "director": "Rod Blackhurst",
+    "rating": 6.24,
+    "vote_count": 25,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1311031",
+    "title": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+    "release_date": "2025-07-18",
+    "runtime": 156,
+    "genres": [
+      "Animation",
+      "Action",
+      "Fantasy"
+    ],
+    "overview": "The Demon Slayer Corps are drawn into the Infinity Castle, where Tanjiro, Nezuko, and the Hashira face terrifying Upper Rank demons in a desperate fight as the final battle against Muzan Kibutsuji begins.",
+    "cast": [
+      "Natsuki Hanae",
+      "Takahiro Sakurai",
+      "Akira Ishida",
+      "Hiro Shimono",
+      "Yoshimasa Hosoya"
+    ],
+    "director": "Haruo Sotozaki",
+    "rating": 7.688,
+    "vote_count": 792,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1314786",
+    "title": "Agent Zeta",
+    "release_date": "2026-03-20",
+    "runtime": 133,
+    "genres": [
+      "Drama",
+      "Thriller"
+    ],
+    "overview": "Four Spanish ex-intelligence officers are assassinated simultaneously worldwide. The CNI discovers all participated in the covert \"Operation Ci\u00e9naga\" decades ago in Colombia. Zeta, the CNI's best operative, must hunt and protect the sole survivor, facing his deadliest global mission yet. Top Colombian agent Alfa will join Zeta, seemingly knowing more about \"Ci\u00e9naga\"'s secrets than him.",
+    "cast": [
+      "Mario Casas",
+      "Mariela Garriga",
+      "Luis Zahera",
+      "Nora Navas",
+      "Christian Tapp\u00e1n"
+    ],
+    "director": "Dani de la Torre",
+    "rating": 6.697,
+    "vote_count": 119,
+    "streaming_services": [
+      "Amazon Prime Video"
+    ],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1316092",
+    "title": "\"Wuthering Heights\"",
+    "release_date": "2026-02-11",
+    "runtime": 136,
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "overview": "Tragedy strikes when Heathcliff falls in love with Catherine Earnshaw, a woman from a wealthy family in 18th-century England.",
+    "cast": [
+      "Margot Robbie",
+      "Jacob Elordi",
+      "Hong Chau",
+      "Alison Oliver",
+      "Shazad Latif"
+    ],
+    "director": "Emerald Fennell",
+    "rating": 6.528,
+    "vote_count": 767,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1317149",
+    "title": "I Swear",
+    "release_date": "2025-09-22",
+    "runtime": 121,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "overview": "Diagnosed with Tourette Syndrome at 15, John Davidson navigates his way against the odds through troubled teenage years and into adulthood, finding inspiration in the kindness of others to discover his true purpose in life.",
+    "cast": [
+      "Robert Aramayo",
+      "Maxine Peake",
+      "Peter Mullan",
+      "Shirley Henderson",
+      "Scott Ellis Watson"
+    ],
+    "director": "Kirk Jones",
+    "rating": 8.343,
+    "vote_count": 198,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1317288",
+    "title": "Marty Supreme",
+    "release_date": "2025-12-19",
+    "runtime": 150,
+    "genres": [
+      "Drama",
+      "Thriller"
+    ],
+    "overview": "Marty Mauser, a young man with a dream no one respects, goes to hell and back in pursuit of greatness.",
+    "cast": [
+      "Timoth\u00e9e Chalamet",
+      "Gwyneth Paltrow",
+      "Odessa A'zion",
+      "Kevin O'Leary",
+      "Tyler, The Creator"
+    ],
+    "director": "Josh Safdie",
+    "rating": 7.4,
+    "vote_count": 1570,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1321179",
+    "title": "The King's Warden",
+    "release_date": "2026-02-04",
+    "runtime": 117,
+    "genres": [
+      "History",
+      "Drama"
+    ],
+    "overview": "In a remote mountain village of 15th-century Joseon, humble headman Heung-do hears a rumor that any village hosting an exiled nobleman will be blessed with abundance and fortune. Hoping to bring prosperity to his impoverished community, he eagerly submits a petition to host one\u2014unaware that his guest is none other than the fallen monarch, deposed boy-king Danjong.",
+    "cast": [
+      "Yoo Hai-jin",
+      "Park Ji-hoon",
+      "Yoo Ji-tae",
+      "Jeon Mi-do",
+      "Kim Min"
+    ],
+    "director": "Chang Hang-jun",
+    "rating": 6.9,
+    "vote_count": 10,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1325734",
+    "title": "The Drama",
+    "release_date": "2026-03-26",
+    "runtime": 105,
+    "genres": [
+      "Romance",
+      "Comedy",
+      "Drama"
+    ],
+    "overview": "A happily engaged couple is put to the test when an unexpected turn sends their wedding week off the rails.",
+    "cast": [
+      "Robert Pattinson",
+      "Zendaya",
+      "Mamoudou Athie",
+      "Alana Haim",
+      "Jordyn Curet"
+    ],
+    "director": "Kristoffer Borgli",
+    "rating": 7.126,
+    "vote_count": 382,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1327819",
+    "title": "Hoppers",
+    "release_date": "2026-03-04",
+    "runtime": 105,
+    "genres": [
+      "Animation",
+      "Family",
+      "Science Fiction",
+      "Comedy",
+      "Adventure"
+    ],
+    "overview": "Scientists have discovered how to 'hop' human consciousness into lifelike robotic animals, allowing people to communicate with animals as animals. Animal lover Mabel seizes an opportunity to use the technology, uncovering mysteries within the animal world beyond anything she could have imagined.",
+    "cast": [
+      "Piper Curda",
+      "Bobby Moynihan",
+      "Jon Hamm",
+      "Kathy Najimy",
+      "Dave Franco"
+    ],
+    "director": "Daniel Chong",
+    "rating": 7.581,
+    "vote_count": 467,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "PG"
+  },
+  {
+    "id": "tmdb_1336770",
+    "title": "Vaazha II",
+    "release_date": "2026-04-02",
+    "runtime": 162,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Action"
+    ],
+    "overview": "Four friends \u2013 Hashir, Alan, Ajin and Vinayak \u2013 are considered losers and troublemakers by parents, family and the school management. They face immense social pressure as they reach adulthood, embarking them on an emotional journey of self discovery and acceptance, where they finally learn to take up their responsibilities and find success",
+    "cast": [
+      "Hashir",
+      "Alan Bin Siraj",
+      "Ajin Joy",
+      "Vinayak V",
+      "Alphonse Puthren"
+    ],
+    "director": "Savin Sa",
+    "rating": 6.0,
+    "vote_count": 1,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1339876",
+    "title": "Mardaani 3",
+    "release_date": "2026-01-30",
+    "runtime": 131,
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "overview": "Officer Shivani Shivaji Roy returns to hunt down those behind the disappearance of young girls, risking everything to bring them back alive.",
+    "cast": [
+      "Rani Mukerji",
+      "Mallika Prasad",
+      "Janki Bodiwala",
+      "Jisshu Sengupta",
+      "Mikhail Yawalkar"
+    ],
+    "director": "Abhiraj Minawala",
+    "rating": 7.26,
+    "vote_count": 25,
+    "streaming_services": [
+      "Netflix"
+    ],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1341137",
+    "title": "A Great Awakening",
+    "release_date": "2026-04-03",
+    "runtime": 129,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "overview": "One of the most defining moments in American history is the story of an unlikely friendship between the Reverend George Whitefield and Benjamin Franklin.",
+    "cast": [
+      "John Paul Sneed",
+      "Jonathan Blair",
+      "JT Schaeffer",
+      "Josh Bates",
+      "Joe Dignoti"
+    ],
+    "director": "Joshua Enck",
+    "rating": 8.0,
+    "vote_count": 2,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "PG-13"
+  },
+  {
+    "id": "tmdb_1356039",
+    "title": "Counterattack",
+    "release_date": "2025-02-27",
+    "runtime": 85,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Thriller"
+    ],
+    "overview": "When a hostage rescue mission creates a new enemy, Capt. Guerrero and his elite soldiers must face an ambush by a criminal group.",
+    "cast": [
+      "Luis Alberti",
+      "No\u00e9 Hern\u00e1ndez",
+      "Leonardo Alonso",
+      "Luis Curiel",
+      "Guillermo Nava"
+    ],
+    "director": "Chava Cartas",
+    "rating": 8.238,
+    "vote_count": 803,
+    "streaming_services": [
+      "Netflix"
+    ],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1366906",
+    "title": "The Gates",
+    "release_date": "2026-03-13",
+    "runtime": 99,
+    "genres": [
+      "Thriller"
+    ],
+    "overview": "Three friends' road trip turns terrifying when they witness a murder in a gated community. Trapped inside, hunted by residents who blame them, their bond fractures as a charismatic yet sinister patriarch closes in.",
+    "cast": [
+      "Mason Gooding",
+      "Algee Smith",
+      "Keith Powers",
+      "James Van Der Beek",
+      "Brad Leland"
+    ],
+    "director": "John Burr",
+    "rating": 5.5,
+    "vote_count": 4,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1367642",
+    "title": "Reminders of Him",
+    "release_date": "2026-03-11",
+    "runtime": 114,
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "overview": "When Diem's custodial grandparents adamantly refuse Kenna's attempts to see her daughter, Kenna discovers unexpected compassion, and then something truer and deeper, with former NFL player and local bar owner Ledger. As their secret romance develops, so do the dangers for both of them, leading Kenna toward heartbreak and, ultimately, the hope for a second chance.",
+    "cast": [
+      "Maika Monroe",
+      "Tyriq Withers",
+      "Rudy Pankow",
+      "Bradley Whitford",
+      "Lauren Graham"
+    ],
+    "director": "Vanessa Caswill",
+    "rating": 7.039,
+    "vote_count": 114,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "PG-13"
+  },
+  {
+    "id": "tmdb_1368166",
+    "title": "The Housemaid",
+    "release_date": "2025-12-18",
+    "runtime": 131,
+    "genres": [
+      "Mystery",
+      "Thriller"
+    ],
+    "overview": "Trying to escape her past, Millie Calloway accepts a job as a live-in housemaid for the wealthy Nina and Andrew Winchester. But what begins as a dream job quickly unravels into something far more dangerous\u2014a sexy, seductive game of secrets, scandal, and power.",
+    "cast": [
+      "Sydney Sweeney",
+      "Amanda Seyfried",
+      "Brandon Sklenar",
+      "Michele Morrone",
+      "Elizabeth Perkins"
+    ],
+    "director": "Paul Feig",
+    "rating": 7.196,
+    "vote_count": 1824,
+    "streaming_services": [
+      "Starz",
+      "Philo"
+    ],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1370814",
+    "title": "The Plague",
+    "release_date": "2025-12-24",
+    "runtime": 98,
+    "genres": [
+      "Drama",
+      "Horror"
+    ],
+    "overview": "A socially awkward tween endures the ruthless hierarchy at a water polo camp, his anxiety spiraling into psychological turmoil over the summer.",
+    "cast": [
+      "Everett Blunck",
+      "Kayo Martin",
+      "Joel Edgerton",
+      "Kenny Rasmussen",
+      "Lucas Adler"
+    ],
+    "director": "Charlie Polinger",
+    "rating": 6.4,
+    "vote_count": 76,
+    "streaming_services": [
+      "AMC+",
+      "Philo",
+      "Sundance Now"
+    ],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1379266",
+    "title": "Kokuho",
+    "release_date": "2025-06-06",
+    "runtime": 174,
+    "genres": [
+      "Drama"
+    ],
+    "overview": "Nagasaki, 1964: Following the death of his yakuza father, 15-year-old Kikuo is taken under the wing of a famous kabuki actor. Alongside Shunsuke, the actor\u2019s only son, he decides to dedicate himself to this traditional form of theatre. For decades, the two young men grow and evolve together \u2013 and one will become the greatest Japanese master of the art of kabuki.",
+    "cast": [
+      "Ryo Yoshizawa",
+      "Ryusei Yokohama",
+      "Mitsuki Takahata",
+      "Shinobu Terajima",
+      "Soya Kurokawa"
+    ],
+    "director": "Sang-il Lee",
+    "rating": 7.927,
+    "vote_count": 55,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1381027",
+    "title": "Good Boy",
+    "release_date": "2026-03-06",
+    "runtime": 110,
+    "genres": [
+      "Thriller",
+      "Drama",
+      "Mystery"
+    ],
+    "overview": "Tommy, a volatile 19-year-old, revels in drugs, parties and violence. After getting separated from his friends on a drunken bender, he is abducted by a shadowy figure. He wakes to find himself imprisoned in the basement of a remote Yorkshire house, inhabited by a very strange family. But what unfolds is not what he could possibly expect.",
+    "cast": [
+      "Stephen Graham",
+      "Andrea Riseborough",
+      "Anson Boon",
+      "Kit Rakusen",
+      "Monika Frajczyk"
+    ],
+    "director": "Jan Komasa",
+    "rating": 7.3,
+    "vote_count": 69,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1383731",
+    "title": "Protector",
+    "release_date": "2026-03-05",
+    "runtime": 90,
+    "genres": [
+      "Action",
+      "Thriller"
+    ],
+    "overview": "Former war hero Nikki's peaceful life is shattered when her daughter is kidnapped. Thrust into the criminal underworld while hunted by cops and military, she must fight to rescue her child.",
+    "cast": [
+      "Milla Jovovich",
+      "Matthew Modine",
+      "Isabel Myers",
+      "D. B. Sweeney",
+      "Don Harvey"
+    ],
+    "director": "Adrian Gr\u00fcnberg",
+    "rating": 7.2,
+    "vote_count": 14,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1387382",
+    "title": "Hunting Season",
+    "release_date": "2025-12-05",
+    "runtime": 93,
+    "genres": [
+      "Action",
+      "Drama",
+      "Thriller"
+    ],
+    "overview": "When a reclusive survivalist and his daughter rescue a mysterious, wounded woman from a river, they become entangled in a deadly web of violence and revenge, forcing them to confront a brutal criminal to survive.",
+    "cast": [
+      "Mel Gibson",
+      "Shelley Hennig",
+      "Jordi Moll\u00e0",
+      "Sofia Hublitz",
+      "A.J. Buckley"
+    ],
+    "director": "Raja Collins",
+    "rating": 6.94,
+    "vote_count": 183,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1401778",
+    "title": "Turbulence",
+    "release_date": "2025-11-26",
+    "runtime": 91,
+    "genres": [
+      "Thriller",
+      "Action",
+      "Adventure",
+      "Drama",
+      "Fantasy"
+    ],
+    "overview": "Young married couple Zach and Emmy decide to take a hot air balloon trip across the Italian Dolomites to rekindle their relationship. When they and pilot Harry are joined by a third passenger, Julia, events unfold in ways they could never imagine five thousand meters in the air.",
+    "cast": [
+      "Jeremy Irvine",
+      "Olga Kurylenko",
+      "Kelsey Grammer",
+      "Hera Hilmar",
+      "Lionel Robert Blanc"
+    ],
+    "director": "Claudio F\u00e4h",
+    "rating": 6.385,
+    "vote_count": 100,
+    "streaming_services": [
+      "Starz",
+      "Philo"
+    ],
+    "sponsored": true,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1406657",
+    "title": "Scarlet",
+    "release_date": "2025-11-21",
+    "runtime": 112,
+    "genres": [
+      "Animation",
+      "Action",
+      "Drama",
+      "Science Fiction"
+    ],
+    "overview": "After failing to avenge her father's murder, Princess Scarlet, wakes up in the \"Land of the Dead.\" In this world filled with madness, if she does not achieve her revenge against her nemesis and reach the \"No End Place,\" she will become \"Void\" and cease to exist. Can Scarlet find a way to live at the end of her endless journey?",
+    "cast": [
+      "Mana Ashida",
+      "Masaki Okada",
+      "Yutaka Matsushige",
+      "Kotaro Yoshida",
+      "Koji Yakusho"
+    ],
+    "director": "Mamoru Hosoda",
+    "rating": 7.212,
+    "vote_count": 73,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "PG-13"
+  },
+  {
+    "id": "tmdb_1408208",
+    "title": "Exit 8",
+    "release_date": "2025-08-28",
+    "runtime": 95,
+    "genres": [
+      "Horror",
+      "Mystery"
+    ],
+    "overview": "A man trapped in an endless sterile subway passageway sets out to find Exit 8. The rules of his quest are simple: do not overlook anything out of the ordinary. If you discover an anomaly, turn back immediately. If you don\u2019t, carry on. Then leave from Exit 8. But even a single oversight will send him back to the beginning. Will he ever reach his goal and escape this infinite corridor?",
+    "cast": [
+      "Kazunari Ninomiya",
+      "Yamato Kochi",
+      "Nana Komatsu",
+      "Naru Asanuma",
+      "Kotone Hanase"
+    ],
+    "director": "Genki Kawamura",
+    "rating": 6.6,
+    "vote_count": 271,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "PG-13"
+  },
+  {
+    "id": "tmdb_1412598",
+    "title": "Killer Whale",
+    "release_date": "2026-01-16",
+    "runtime": 89,
+    "genres": [
+      "Thriller",
+      "Horror",
+      "Action",
+      "Mystery",
+      "Science Fiction"
+    ],
+    "overview": "Follows best friends Maddie and Trish as they find themselves trapped in a remote lagoon with the dangerous killer whale named Ceto.",
+    "cast": [
+      "Virginia Gardner",
+      "Mel Jarnson",
+      "Mitchell Hope",
+      "Isaac Crawley",
+      "Scott James George"
+    ],
+    "director": "Jo-Anne Brechin",
+    "rating": 5.678,
+    "vote_count": 76,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1416391",
+    "title": "Toaster",
+    "release_date": "2026-04-15",
+    "runtime": 126,
+    "genres": [
+      "Comedy"
+    ],
+    "overview": "Murder and chaos erupt when a miser becomes obsessed with a toaster he gave as a wedding gift.",
+    "cast": [
+      "Rajkummar Rao",
+      "Sanya Malhotra",
+      "Abhishek Banerjee",
+      "Upendra Limaye",
+      "Seema Pahwa"
+    ],
+    "director": "Vivek Daschaudary",
+    "rating": 7.0,
+    "vote_count": 2,
+    "streaming_services": [
+      "Netflix"
+    ],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1418657",
+    "title": "The Yeti",
+    "release_date": "2026-04-04",
+    "runtime": 93,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "overview": "When an oil tycoon and a famous adventurer vanish into the harsh winter of remote northern Alaska, a hand-picked rescue team endeavors to bring them home. What they don\u2019t know is that they are trespassing on The Yeti\u2019s territory, and the elements are the least of their worries.",
+    "cast": [
+      "Brittany Allen",
+      "Eric Nelsen",
+      "Corbin Bernsen",
+      "William Sadler",
+      "Heather Lind"
+    ],
+    "director": "Gene Gallerano",
+    "rating": 6.7,
+    "vote_count": 25,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1419406",
+    "title": "The Shadow's Edge",
+    "release_date": "2025-08-16",
+    "runtime": 142,
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "overview": "Macau Police brings the tracking expert police officer out of retirement to help catch a dangerous group of professional thieves.",
+    "cast": [
+      "Jackie Chan",
+      "Zhang Zifeng",
+      "Tony Leung Ka-fai",
+      "Ci Sha",
+      "Jun"
+    ],
+    "director": "Larry Yang",
+    "rating": 7.235,
+    "vote_count": 572,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1429348",
+    "title": "The Stranger",
+    "release_date": "2025-10-29",
+    "runtime": 122,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "overview": "Algiers, 1938. Meursault, a quiet and unassuming employee in his early thirties, attends his mother's funeral without shedding a tear. The next day, he begins a casual affair with Marie, a work colleague. He quickly slips back into his usual routine.",
+    "cast": [
+      "Benjamin Voisin",
+      "Rebecca Marder",
+      "Pierre Lottin",
+      "Denis Lavant",
+      "Swann Arlaud"
+    ],
+    "director": "Fran\u00e7ois Ozon",
+    "rating": 6.8,
+    "vote_count": 140,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1432605",
+    "title": "My Father's Shadow",
+    "release_date": "2025-09-19",
+    "runtime": 93,
+    "genres": [
+      "Drama"
+    ],
+    "overview": "Two young brothers explore Lagos with their estranged father during the 1993 Nigerian election crisis, witnessing both the city's magnitude and their father's daily struggles as political unrest threatens their journey home.",
+    "cast": [
+      "\u1e62\u1ecdp\u1eb9\u0301 D\u00ecr\u00eds\u00f9",
+      "Efon Wini",
+      "Godwin Egbo",
+      "Chibuike Marvellous Egbo",
+      "Tosin Adeyemi"
+    ],
+    "director": "Akinola Davies Jr.",
+    "rating": 7.8,
+    "vote_count": 27,
+    "streaming_services": [
+      "MUBI"
+    ],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1443576",
+    "title": "Sundays",
+    "release_date": "2025-10-17",
+    "runtime": 112,
+    "genres": [
+      "Drama"
+    ],
+    "overview": "17-year-old Ainara is a student at a Catholic secondary school, and is about to take her final year exams and choose her future university course. To everyone\u2019s surprise, this brilliant young girl announces to her family that she wants to take part in an induction period at a convent in order to embrace the religious life. Nobody was expecting this. While her father seems to be won over by his daughter\u2019s aspirations, for Maite, Ainara\u2019s aunt, this unexpected vocation is the manifestation of a deeper problem.",
+    "cast": [
+      "Blanca Soroa",
+      "Patricia L\u00f3pez Arnaiz",
+      "Miguel Garc\u00e9s",
+      "Juan Minuj\u00edn",
+      "Mabel Rivera"
+    ],
+    "director": "Alauda Ruiz de Az\u00faa",
+    "rating": 7.116,
+    "vote_count": 112,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "PG-13"
+  },
+  {
+    "id": "tmdb_1450257",
+    "title": "Clika",
+    "release_date": "2026-01-22",
+    "runtime": 79,
+    "genres": [
+      "Music",
+      "Drama"
+    ],
+    "overview": "Aspiring small-town musician Chito is determined to make it big. When a clip of him performing one of his songs goes viral, he seizes the opportunity and pushes to carve out a place for himself in the new wave of Mexican-American music... and ultimately gets caught in a game more dangerous than anticipated.",
+    "cast": [
+      "Jay Dee",
+      "Cristian E. Gutierrez",
+      "Daniel 'DoKnows' Lopez",
+      "Laura Lopez",
+      "Nana Ponceleon"
+    ],
+    "director": "Michael Greene",
+    "rating": 5.813,
+    "vote_count": 16,
+    "streaming_services": [
+      "Netflix"
+    ],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1450527",
+    "title": "Forbidden Fruits",
+    "release_date": "2026-03-26",
+    "runtime": 104,
+    "genres": [
+      "Horror",
+      "Comedy"
+    ],
+    "overview": "Free Eden employee Apple secretly runs a witchy femme cult in the basement of the mall store after hours \u2013 with fellow fruits Cherry and Fig. But, when new hire Pumpkin challenges their performative sisterhood, the women are forced to face their own poisons or succumb to a bloody fate.",
+    "cast": [
+      "Lili Reinhart",
+      "Lola Tung",
+      "Victoria Pedretti",
+      "Alexandra Shipp",
+      "Emma Chamberlain"
+    ],
+    "director": "Meredith Alloway",
+    "rating": 7.0,
+    "vote_count": 12,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1455079",
+    "title": "You, Me & Tuscany",
+    "release_date": "2026-04-09",
+    "runtime": 105,
+    "genres": [
+      "Romance",
+      "Comedy"
+    ],
+    "overview": "When a woman crashes at an empty Italian villa, posing as the owner's fianc\u00e9e, she discovers an unexpected romance that could transform her life.",
+    "cast": [
+      "Halle Bailey",
+      "Reg\u00e9-Jean Page",
+      "Marco Calvani",
+      "Lorenzo de Moor",
+      "Aziza Scott"
+    ],
+    "director": "Kat Coiro",
+    "rating": 5.5,
+    "vote_count": 8,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "PG-13"
+  },
+  {
+    "id": "tmdb_1456349",
+    "title": "It Was Just an Accident",
+    "release_date": "2025-10-01",
+    "runtime": 103,
+    "genres": [
+      "Drama",
+      "Thriller",
+      "Crime",
+      "Mystery"
+    ],
+    "overview": "An unassuming mechanic is reminded of his time in an Iranian prison when he encounters a man he suspects to be his sadistic jailhouse captor.",
+    "cast": [
+      "Vahid Mobasseri",
+      "Mariam Afshari",
+      "Ebrahim Azizi",
+      "Hadis Pakbaten",
+      "Majid Panahi"
+    ],
+    "director": "Jafar Panahi",
+    "rating": 7.147,
+    "vote_count": 515,
+    "streaming_services": [
+      "Hulu"
+    ],
+    "sponsored": false,
+    "content_rating": "PG-13"
+  },
+  {
+    "id": "tmdb_1465563",
+    "title": "A Poet",
+    "release_date": "2025-08-28",
+    "runtime": 123,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "overview": "An aging poet finds purpose mentoring Yurlady, a talented teen, though exposing her to the poetry scene might be unwise. His own poetic pursuits led nowhere, leaving him a stereotypical obscure writer.",
+    "cast": [
+      "Ubeimar Rios",
+      "Rebeca Andrade",
+      "Guillermo Cardona",
+      "Alisson Correa",
+      "Margarita Soto"
+    ],
+    "director": "Sim\u00f3n Mesa Soto",
+    "rating": 7.519,
+    "vote_count": 26,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1470130",
+    "title": "The Mortuary Assistant",
+    "release_date": "2026-02-13",
+    "runtime": 91,
+    "genres": [
+      "Horror",
+      "Mystery"
+    ],
+    "overview": "Rebecca Owens, a recent mortuary science graduate takes a night shift job at River Fields Mortuary. Initially, the job seems straightforward \u2014 embalming bodies, completing paperwork, and keeping things tidy. But once Rebecca starts working the night shift, things take a dark turn.",
+    "cast": [
+      "Willa Holland",
+      "Paul Sparks",
+      "John Adams",
+      "Mark Steger",
+      "Shelly Gibson"
+    ],
+    "director": "Jeremiah Kipp",
+    "rating": 5.515,
+    "vote_count": 67,
+    "streaming_services": [
+      "AMC+",
+      "Philo",
+      "Shudder"
+    ],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1472951",
+    "title": "Infiltrate",
+    "release_date": "2026-04-10",
+    "runtime": 93,
+    "genres": [
+      "Action",
+      "Thriller"
+    ],
+    "overview": "In a city overrun by crime, government Agent Lily Chen is forced to choose between her duty and her family when her husband is kidnapped, and she\u2019s blackmailed into assassinating high-level criminals to save him. As she delves deeper into the criminal underworld, Lily\u2019s relentless pursuit of justice unravels a web of corruption, leading to a final, life-altering decision that will change her world forever.",
+    "cast": [
+      "Orph\u00e9e Ladouceur-Nguyen",
+      "Alain Moussi",
+      "Tim Rozon",
+      "Finn McCager Higgins",
+      "Lisa Berry"
+    ],
+    "director": "James Mark",
+    "rating": 5.313,
+    "vote_count": 8,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1480382",
+    "title": "The Voice of Hind Rajab",
+    "release_date": "2025-09-10",
+    "runtime": 89,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "overview": "January 29, 2024. Red Crescent volunteers receive an emergency call. A five-year old girl is trapped in a car under fire in Gaza, pleading for rescue. While trying to keep her on the line, they do everything they can to get an ambulance to her. Her name was Hind Rajab.",
+    "cast": [
+      "Hind Rajab",
+      "Motaz Malhees",
+      "Saja Kilani",
+      "Amer Hlehel",
+      "Clara Khoury"
+    ],
+    "director": "Kaouther Ben Hania",
+    "rating": 8.0,
+    "vote_count": 261,
+    "streaming_services": [
+      "Hulu"
+    ],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1480387",
+    "title": "undertone",
+    "release_date": "2026-03-12",
+    "runtime": 94,
+    "genres": [
+      "Horror",
+      "Mystery"
+    ],
+    "overview": "The host of a popular paranormal podcast becomes haunted by terrifying recordings mysteriously sent her way.",
+    "cast": [
+      "Nina Kiri",
+      "Adam DiMarco",
+      "Mich\u00e8le Duquet",
+      "Keana Bastidas",
+      "Jeff Yung"
+    ],
+    "director": "Ian Tuason",
+    "rating": 6.8,
+    "vote_count": 47,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1487320",
+    "title": "The Giant Falls",
+    "release_date": "2026-04-01",
+    "runtime": 100,
+    "genres": [
+      "Drama"
+    ],
+    "overview": "Follows Boris, a charismatic tour guide who unexpectedly reunites with his estranged father Juli\u00e1n. Their tense and emotional encounters explore past wounds and the possibility of forgiveness.",
+    "cast": [
+      "Oscar Mart\u00ednez",
+      "Mat\u00edas Mayer",
+      "In\u00e9s Est\u00e9vez",
+      "Luis Luque",
+      "Silvia Kutika"
+    ],
+    "director": "Marcos Carnevale",
+    "rating": 6.8,
+    "vote_count": 16,
+    "streaming_services": [
+      "Netflix"
+    ],
+    "sponsored": true,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1493859",
+    "title": "Pizza Movie",
+    "release_date": "2026-03-13",
+    "runtime": 98,
+    "genres": [
+      "Comedy"
+    ],
+    "overview": "A group of college students go downstairs to their dorm lobby to get a delivery pizza. There's only one issue: They're insanely high on a homemade drug, turning their simple journey down two sets of stairs into a mind-bendingly transformative quest.",
+    "cast": [
+      "Gaten Matarazzo",
+      "Sean Giambrone",
+      "Lulu Wilson",
+      "Jack Martin",
+      "Peyton Elizabeth Lee"
+    ],
+    "director": "Nick Kocher",
+    "rating": 6.4,
+    "vote_count": 69,
+    "streaming_services": [
+      "Hulu"
+    ],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1497970",
+    "title": "Tom and Jerry: Forbidden Compass",
+    "release_date": "2025-08-02",
+    "runtime": 104,
+    "genres": [
+      "Animation",
+      "Comedy",
+      "Family",
+      "Fantasy",
+      "Adventure"
+    ],
+    "overview": "During a chase inside a museum, Tom and Jerry find a magical object and end up being transported through time. Lost in a distant era, they will need to work together to find a way back home.",
+    "cast": [
+      "Jiang Wen",
+      "Shun Zi",
+      "Lan Long",
+      "Tu Xiongfei",
+      "Li Baixin"
+    ],
+    "director": "Zhang Gang",
+    "rating": 6.2,
+    "vote_count": 32,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "PG"
+  },
+  {
+    "id": "tmdb_1519168",
+    "title": "The Jester 2",
+    "release_date": "2025-09-15",
+    "runtime": 87,
+    "genres": [
+      "Horror",
+      "Thriller",
+      "Crime"
+    ],
+    "overview": "When teen magician Max crosses paths with the sinister Jester on Halloween night, she must outsmart a supernatural killer whose magic is all too real and whose tricks always end up in blood.",
+    "cast": [
+      "Michael Sheffield",
+      "Kaitlyn Trentham",
+      "Dingani Beza",
+      "Hassen Kacem",
+      "Jessica Ambuehl"
+    ],
+    "director": "Colin Krawchuk",
+    "rating": 6.246,
+    "vote_count": 61,
+    "streaming_services": [
+      "AMC+",
+      "Philo",
+      "Shudder"
+    ],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1523145",
+    "title": "Your Heart Will Be Broken",
+    "release_date": "2026-03-26",
+    "runtime": 134,
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "overview": "High school student Polina is saved from bullying at her new school and makes a deal with the main bully Bars: he must pretend to be her boyfriend and protect her, and she must do everything he says. During this game, the couple develops real feelings, but her family and classmates have reasons to separate the lovers.",
+    "cast": [
+      "Daniel Vegas",
+      "Veronika Zhuravleva",
+      "Ivan Trushin",
+      "Maksim Saprykin",
+      "Alya Mayer"
+    ],
+    "director": "Mikhail Vaynberg",
+    "rating": 7.213,
+    "vote_count": 61,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1526650",
+    "title": "Mudborn",
+    "release_date": "2025-10-09",
+    "runtime": 111,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "overview": "Hsu-Chuan, who works at a game company, accidentally brings home a broken clay doll from a haunted house while developing a new horror VR game. Unexpectedly, his pregnant wife, Mu-Hua, a cultural relic restorer, develops an obsession with the doll and relentlessly tries to repair it. As strange things begin to happen in the house, Mu-Hua's condition deteriorates, and Hsu-Chuan, at his wits' end, seeks help from a spiritual medium, Ah-Sheng. Meanwhile, the horrifying secret hidden behind the clay doll begins to surface.",
+    "cast": [
+      "Tony Yang",
+      "Cecilia Choi",
+      "Derek Chang",
+      "Tracy Chou",
+      "Puff Kuo"
+    ],
+    "director": "Shieh Meng-ju",
+    "rating": 6.786,
+    "vote_count": 21,
+    "streaming_services": [
+      "Netflix"
+    ],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1539104",
+    "title": "JUJUTSU KAISEN: Execution",
+    "release_date": "2025-11-07",
+    "runtime": 88,
+    "genres": [
+      "Animation",
+      "Action",
+      "Fantasy"
+    ],
+    "overview": "A veil abruptly descends over the busy Shibuya area amid the bustling Halloween crowds, trapping countless civilians inside. Satoru Gojo, the strongest jujutsu sorcerer, steps into the chaos. But lying in wait are curse users and spirits scheming to seal him away. Yuji Itadori, accompanied by his classmates and other top-tier jujutsu sorcerers, enters the fray in an unprecedented clash of curses \u2014 the Shibuya Incident. In the aftermath, ten colonies across Japan are transformed into dens of curses in a plan orchestrated by Noritoshi Kamo. As the deadly Culling Game starts, Special Grade sorcerer Yuta Okkotsu is assigned to carry out Yuji's execution for his perceived crimes. A compilation movie of Shibuya Incident including the first two episodes of the Culling Games arc.",
+    "cast": [
+      "Junya Enoki",
+      "Megumi Ogata",
+      "Koji Yusa",
+      "Daisuke Namikawa",
+      "Yuma Uchida"
+    ],
+    "director": "Shota Goshozono",
+    "rating": 5.9,
+    "vote_count": 92,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1545621",
+    "title": "Detective Conan: Fallen Angel of the Highway",
+    "release_date": "2026-04-10",
+    "runtime": 109,
+    "genres": [
+      "Animation",
+      "Action",
+      "Mystery",
+      "Crime"
+    ],
+    "overview": "The 29th Detective Conan film will center on Chihaya Hagiwara, a member of the Kanagawa Prefectural Police and the leader of its motorcycle division.",
+    "cast": [
+      "Minami Takayama",
+      "Wakana Yamazaki",
+      "Rikiya Koyama",
+      "Megumi Hayashibara",
+      "Miyuki Sawashiro"
+    ],
+    "director": "Takahiro Hasui",
+    "rating": 8.8,
+    "vote_count": 5,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1572073",
+    "title": "The Deadly Little Mermaid",
+    "release_date": "2026-03-06",
+    "runtime": 80,
+    "genres": [
+      "Horror"
+    ],
+    "overview": "Some secrets are better left at the bottom of the ocean. Once she's in your house, there is no escape. When a struggling artist pulls a beautiful, unconscious woman from the freezing coastal waters, he thinks he\u2019s performed a miracle. But as she recovers within the walls of his secluded home, a series of unsettling events leads him to a terrifying realization: her presence is no coincidence. She is inextricably linked to the same watery grave that claimed his family years ago.",
+    "cast": [
+      "Elliott Eason",
+      "Sophia Carroll",
+      "Eleanor Mackenzie",
+      "Anastasia Nikolaeva",
+      "Maddy Baskerville"
+    ],
+    "director": "Cameron Uzoka",
+    "rating": 4.717,
+    "vote_count": 23,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1575337",
+    "title": "Cosmic Princess Kaguya!",
+    "release_date": "2026-01-22",
+    "runtime": 141,
+    "genres": [
+      "Animation",
+      "Fantasy",
+      "Music",
+      "Science Fiction"
+    ],
+    "overview": "Iroha's life gets knocked off its orbit when Kaguya, a carefree runaway from the Moon, moves in and convinces her to perform in a virtual world together.",
+    "cast": [
+      "Yuko Natsuyoshi",
+      "Anna Nagase",
+      "Saori Hayami",
+      "Miyu Irino",
+      "Yuma Uchida"
+    ],
+    "director": "Shingo Yamashita",
+    "rating": 8.493,
+    "vote_count": 68,
+    "streaming_services": [
+      "Netflix"
+    ],
+    "sponsored": false,
+    "content_rating": "PG"
+  },
+  {
+    "id": "tmdb_1582770",
+    "title": "Dhurandhar: The Revenge",
+    "release_date": "2026-03-18",
+    "runtime": 229,
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "overview": "As rival gangs, corrupt officials and a ruthless Major Iqbal close in, Hamza's mission for his country spirals into a bloody personal war where the line between patriot and monster disappears in the streets of Lyari.",
+    "cast": [
+      "Ranveer Singh",
+      "Arjun Rampal",
+      "R. Madhavan",
+      "Sanjay Dutt",
+      "Sara Arjun"
+    ],
+    "director": "Aditya Dhar",
+    "rating": 7.8,
+    "vote_count": 58,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1610418",
+    "title": "The House on Haunted Grounds",
+    "release_date": "2026-01-09",
+    "runtime": 69,
+    "genres": [
+      "Horror"
+    ],
+    "overview": "They walked into a haunted house with a history of possession and murder. The victims never came out, but the footage did.",
+    "cast": [
+      "Logan Wallace",
+      "Andrew Thomas",
+      "Stuart Maxheimer",
+      "Cashmere Moniqu\u00e9",
+      "Dylan DeVane"
+    ],
+    "director": "Brendan Rudnicki",
+    "rating": 5.583,
+    "vote_count": 6,
+    "streaming_services": [
+      "Bloodstream"
+    ],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1620551",
+    "title": "Feel My Voice",
+    "release_date": "2026-04-03",
+    "runtime": 105,
+    "genres": [
+      "Music",
+      "Drama",
+      "Comedy"
+    ],
+    "overview": "A teenager, the only hearing member of a deaf family, finds her voice and learns to believe in herself through her passion for singing.",
+    "cast": [
+      "Sarah Toscano",
+      "Serena Rossi",
+      "Carola Insolera",
+      "Emilio Insolera",
+      "Antonio Iorillo"
+    ],
+    "director": "Luca Ribuoli",
+    "rating": 6.486,
+    "vote_count": 72,
+    "streaming_services": [
+      "Netflix"
+    ],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1630433",
+    "title": "The Red Line",
+    "release_date": "2026-03-22",
+    "runtime": 135,
+    "genres": [
+      "Thriller",
+      "Crime",
+      "Drama"
+    ],
+    "overview": "Three women fall prey to a ruthless phone scam. To settle the score, they'll take on the criminal network that stole their money \u2014 and their dignity.",
+    "cast": [
+      "Nittha Jirayungyurn",
+      "Esther Supreeleela",
+      "Chutima Maholakul",
+      "Todsapol Maisuk",
+      "Tonhon Tantivejakul"
+    ],
+    "director": "Sitisiri Mongkolsiri",
+    "rating": 6.9,
+    "vote_count": 48,
+    "streaming_services": [
+      "Netflix"
+    ],
+    "sponsored": true,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1631917",
+    "title": "18th Rose",
+    "release_date": "2026-04-09",
+    "runtime": 131,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "overview": "A spirited teen dreaming of the perfect debut makes a deal with a lonely newcomer, but unexpected feelings and revelations may shatter their plans.",
+    "cast": [
+      "Xyriel Manabat",
+      "Kyle Echarri",
+      "Yayo Aguila",
+      "Cris Villanueva",
+      "Nikki Valdez"
+    ],
+    "director": "Dolly Dulu",
+    "rating": 6.0,
+    "vote_count": 10,
+    "streaming_services": [
+      "Netflix"
+    ],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1635276",
+    "title": "Eat Pray Bark",
+    "release_date": "2026-04-01",
+    "runtime": 91,
+    "genres": [
+      "Comedy"
+    ],
+    "overview": "In this tumultuous comedy, five eccentric dog owners seek help in dealing with their four-legged friends. Their last hope: an intensive course with the charismatic and legendary dog trainer Nodon in the Tyrolean mountains.",
+    "cast": [
+      "Alexandra Maria Lara",
+      "R\u00farik G\u00edslason",
+      "Devid Striesow",
+      "Anna Herrmann",
+      "Do\u011fa G\u00fcrer"
+    ],
+    "director": "Marco Petry",
+    "rating": 5.7,
+    "vote_count": 69,
+    "streaming_services": [
+      "Netflix"
+    ],
+    "sponsored": false,
+    "content_rating": "PG-13"
+  },
+  {
+    "id": "tmdb_1641319",
+    "title": "Sniper: No Nation",
+    "release_date": "2026-04-07",
+    "runtime": 96,
+    "genres": [
+      "Action",
+      "Thriller"
+    ],
+    "overview": "Brandon Beckett and Agent Zero lead a rescue mission in Venezuela when their friends are taken hostage.",
+    "cast": [
+      "Chad Michael Collins",
+      "Ryan Robbins",
+      "Manuel Rodriguez-Saenz",
+      "Josh Brener",
+      "Tom Berenger"
+    ],
+    "director": "Trevor Calverley",
+    "rating": 6.155,
+    "vote_count": 29,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "R"
+  },
+  {
+    "id": "tmdb_1646787",
+    "title": "Sundutan",
+    "release_date": "2026-03-06",
+    "runtime": 70,
+    "genres": [
+      "Drama"
+    ],
+    "overview": "A hole on the wall accidentally connects two women emotionally and physically. Forbidden love, greed, betrayal... what lies beyond the hole? And for how long can they keep covering it up?",
+    "cast": [
+      "Allison Ross",
+      "Jade Esguerra",
+      "Mark Dionisio",
+      "Zia Zamora",
+      "Primo Angeles"
+    ],
+    "director": "Rodante Pajemna Jr.",
+    "rating": 4.0,
+    "vote_count": 1,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1650558",
+    "title": "Abot Langit",
+    "release_date": "2026-03-13",
+    "runtime": 70,
+    "genres": [
+      "Romance"
+    ],
+    "overview": "The relationship of a couple is tested when the girl\u2019s first official flight pairs her with a confident senior pilot, jealousy and power dynamics surface in the training ground. The girl is now torn between her present relationship and new temptation she can\u2019t resist.",
+    "cast": [
+      "Aliya Raymundo",
+      "JC Tan",
+      "Jio Yoshida",
+      "Zel Fernandez",
+      "Jetleline Esquivel"
+    ],
+    "director": "Topel Lee",
+    "rating": 5.0,
+    "vote_count": 1,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1658216",
+    "title": "Stepdaddy",
+    "release_date": "2026-04-04",
+    "runtime": 70,
+    "genres": [
+      "Drama"
+    ],
+    "overview": "Emotions and intrigue run high in this titillating taboo family affair. Chloe and Nica are sisters who both find themselves in their own passionate love affairs with their stepdad Carl.",
+    "cast": [
+      "Astrid Lee",
+      "Christy Imperial",
+      "Jamilla Obispo",
+      "Marlon Marcia"
+    ],
+    "director": "Christopher Novabos",
+    "rating": 5.0,
+    "vote_count": 2,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1658217",
+    "title": "Sawsawan",
+    "release_date": "2026-04-10",
+    "runtime": 72,
+    "genres": [
+      "Drama"
+    ],
+    "overview": "Karen plays Dolor, a street food vendor with big dreams. Men flock Dolor's stall not just for her dipping sauce but for the secret pleasure that comes with it.",
+    "cast": [
+      "Karen Lopez",
+      "Rhian Rivera",
+      "Amor Lapus",
+      "Allen Legazpi",
+      "Jio Yoshida"
+    ],
+    "director": "Rodante Pajemna Jr.",
+    "rating": 5.0,
+    "vote_count": 1,
+    "streaming_services": [],
+    "sponsored": false,
+    "content_rating": "NR"
+  },
+  {
+    "id": "tmdb_1662432",
+    "title": "Finding Harry: The Craft Behind the Magic",
+    "release_date": "2026-04-05",
+    "runtime": 26,
+    "genres": [
+      "Documentary"
+    ],
+    "overview": "Featuring interviews from members of the casting, production design, costume design, and creature effects teams, follow the behind-the-scenes journey of bringing the Harry Potter books to the small screen. Find out how the new Golden Trio were found, and celebrate the commitment to detail of the artists, craftspeople, and technicians who have come together to bring the wizarding world to life.",
+    "cast": [
+      "Nick Frost",
+      "Dominic McLaughlin",
+      "Arabella Stanton",
+      "Alastair Stout",
+      "John Lithgow"
+    ],
+    "director": "Eliot Rausch",
+    "rating": 7.8,
+    "vote_count": 25,
+    "streaming_services": [
+      "HBO Max"
+    ],
+    "sponsored": false,
+    "content_rating": "PG"
+  }
+]

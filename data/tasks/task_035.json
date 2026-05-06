@@ -1,0 +1,61 @@
+{
+  "id": "task_035",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Action"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "rating",
+        "op": ">=",
+        "value": 6.0
+      },
+      "reveal": "hidden"
+    },
+    {
+      "constraint": {
+        "field": "streaming_services",
+        "op": "contains_any",
+        "value": [
+          "Hulu",
+          "Netflix"
+        ]
+      },
+      "reveal": "hidden"
+    }
+  ],
+  "persona": "You are a picky eater of movies. You'll reject anything that doesn't match exactly what you're in the mood for tonight.",
+  "soft_preferences": [
+    "loves martial arts and choreographed fights"
+  ],
+  "policy_flags": [
+    "availability",
+    "watch_history",
+    "recommend_tool"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "medium",
+  "reveal_difficulty": "hidden",
+  "user_id": "user_1",
+  "user_history": {
+    "user_1": {
+      "watched": [
+        "tmdb_1234821"
+      ],
+      "ratings": {
+        "tmdb_1234821": 7.0
+      }
+    }
+  },
+  "user_services": [
+    "Hulu",
+    "Peacock",
+    "Disney+",
+    "Netflix"
+  ]
+}

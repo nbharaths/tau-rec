@@ -1,0 +1,52 @@
+{
+  "id": "task_024",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Drama"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "rating",
+        "op": ">=",
+        "value": 6.5
+      },
+      "reveal": "on_ask"
+    },
+    {
+      "constraint": {
+        "field": "runtime",
+        "op": "<=",
+        "value": 140
+      },
+      "reveal": "volunteer"
+    }
+  ],
+  "persona": "You are a thriller junkie. You've read all the Patterson novels and want the movie equivalent. Plot twists are your currency.",
+  "soft_preferences": [
+    "prefers stories about ordinary people"
+  ],
+  "policy_flags": [
+    "sponsored",
+    "recommend_tool",
+    "availability"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "medium",
+  "reveal_difficulty": "mixed",
+  "user_id": "user_1",
+  "user_history": {
+    "user_1": {
+      "watched": [],
+      "ratings": {}
+    }
+  },
+  "user_services": [
+    "Netflix",
+    "Hulu"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "task_014",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Thriller"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "content_rating",
+        "op": "in",
+        "value": [
+          "R",
+          "NR"
+        ]
+      },
+      "reveal": "hidden"
+    }
+  ],
+  "persona": "You are a thriller junkie. You've read all the Patterson novels and want the movie equivalent. Plot twists are your currency.",
+  "soft_preferences": [
+    "wants intensity and edge"
+  ],
+  "policy_flags": [
+    "age_restricted",
+    "recommend_tool",
+    "availability"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "simple",
+  "reveal_difficulty": "hidden",
+  "user_id": "user_1",
+  "user_history": {
+    "user_1": {
+      "watched": [],
+      "ratings": {}
+    }
+  },
+  "user_services": [
+    "Paramount+",
+    "Amazon Prime Video",
+    "HBO Max",
+    "Apple TV+"
+  ]
+}

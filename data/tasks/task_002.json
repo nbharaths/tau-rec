@@ -1,0 +1,42 @@
+{
+  "id": "task_002",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Horror"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "runtime",
+        "op": "<=",
+        "value": 120
+      },
+      "reveal": "volunteer"
+    }
+  ],
+  "persona": "You are a retired literature professor. You value storytelling craft above all else. You speak in complete, thoughtful sentences and aren't in a rush.",
+  "soft_preferences": [
+    "likes supernatural horror over slashers"
+  ],
+  "policy_flags": [
+    "recommend_tool",
+    "availability"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "simple",
+  "reveal_difficulty": "volunteer",
+  "user_id": "user_1",
+  "user_history": {
+    "user_1": {
+      "watched": [],
+      "ratings": {}
+    }
+  },
+  "user_services": [
+    "Hulu"
+  ]
+}

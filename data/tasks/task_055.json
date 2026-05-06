@@ -1,0 +1,43 @@
+{
+  "id": "task_055",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Thriller"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "runtime",
+        "op": "<=",
+        "value": 140
+      },
+      "reveal": "volunteer"
+    }
+  ],
+  "persona": "You want a thriller. On your first rejection, mention clearly that you dislike Horror crossovers and do not want any Horror element in the next suggestion. You remain firm about this throughout.",
+  "soft_preferences": [
+    "prefers psychological over violent"
+  ],
+  "policy_flags": [
+    "recommend_tool",
+    "availability"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "simple",
+  "reveal_difficulty": "volunteer",
+  "user_id": "user_1",
+  "user_history": {
+    "user_1": {
+      "watched": [],
+      "ratings": {}
+    }
+  },
+  "user_services": [
+    "Disney+",
+    "Amazon Prime Video"
+  ]
+}

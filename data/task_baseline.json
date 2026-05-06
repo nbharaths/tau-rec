@@ -1,0 +1,937 @@
+{
+  "task_001": {
+    "complexity": "simple",
+    "n_constraints": 1,
+    "n_hidden": 0,
+    "n_on_ask": 0,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "volunteer",
+    "solution_set_size": 37,
+    "solvable": true
+  },
+  "task_002": {
+    "complexity": "simple",
+    "n_constraints": 2,
+    "n_hidden": 0,
+    "n_on_ask": 0,
+    "n_volunteer": 2,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "volunteer",
+    "solution_set_size": 34,
+    "solvable": true
+  },
+  "task_003": {
+    "complexity": "simple",
+    "n_constraints": 1,
+    "n_hidden": 0,
+    "n_on_ask": 0,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "volunteer",
+    "solution_set_size": 40,
+    "solvable": true
+  },
+  "task_004": {
+    "complexity": "simple",
+    "n_constraints": 2,
+    "n_hidden": 0,
+    "n_on_ask": 0,
+    "n_volunteer": 2,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "volunteer",
+    "solution_set_size": 13,
+    "solvable": true
+  },
+  "task_005": {
+    "complexity": "simple",
+    "n_constraints": 2,
+    "n_hidden": 0,
+    "n_on_ask": 0,
+    "n_volunteer": 2,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool",
+      "watch_history"
+    ],
+    "reveal_difficulty": "volunteer",
+    "solution_set_size": 51,
+    "solvable": true
+  },
+  "task_006": {
+    "complexity": "simple",
+    "n_constraints": 2,
+    "n_hidden": 0,
+    "n_on_ask": 1,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 41,
+    "solvable": true
+  },
+  "task_007": {
+    "complexity": "simple",
+    "n_constraints": 2,
+    "n_hidden": 0,
+    "n_on_ask": 1,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 36,
+    "solvable": true
+  },
+  "task_008": {
+    "complexity": "simple",
+    "n_constraints": 2,
+    "n_hidden": 0,
+    "n_on_ask": 1,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "age_restricted",
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 48,
+    "solvable": true
+  },
+  "task_009": {
+    "complexity": "simple",
+    "n_constraints": 2,
+    "n_hidden": 0,
+    "n_on_ask": 1,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 20,
+    "solvable": true
+  },
+  "task_010": {
+    "complexity": "simple",
+    "n_constraints": 2,
+    "n_hidden": 0,
+    "n_on_ask": 1,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool",
+      "watch_history"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 36,
+    "solvable": true
+  },
+  "task_011": {
+    "complexity": "simple",
+    "n_constraints": 2,
+    "n_hidden": 1,
+    "n_on_ask": 0,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "hidden",
+    "solution_set_size": 31,
+    "solvable": true
+  },
+  "task_012": {
+    "complexity": "simple",
+    "n_constraints": 2,
+    "n_hidden": 1,
+    "n_on_ask": 0,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "hidden",
+    "solution_set_size": 32,
+    "solvable": true
+  },
+  "task_013": {
+    "complexity": "simple",
+    "n_constraints": 2,
+    "n_hidden": 1,
+    "n_on_ask": 1,
+    "n_volunteer": 0,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "hidden",
+    "solution_set_size": 51,
+    "solvable": true
+  },
+  "task_014": {
+    "complexity": "simple",
+    "n_constraints": 2,
+    "n_hidden": 1,
+    "n_on_ask": 0,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "age_restricted",
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "hidden",
+    "solution_set_size": 45,
+    "solvable": true
+  },
+  "task_015": {
+    "complexity": "simple",
+    "n_constraints": 2,
+    "n_hidden": 1,
+    "n_on_ask": 0,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "hidden",
+    "solution_set_size": 34,
+    "solvable": true
+  },
+  "task_016": {
+    "complexity": "medium",
+    "n_constraints": 3,
+    "n_hidden": 1,
+    "n_on_ask": 1,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool",
+      "sponsored"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 5,
+    "solvable": true
+  },
+  "task_017": {
+    "complexity": "medium",
+    "n_constraints": 4,
+    "n_hidden": 2,
+    "n_on_ask": 1,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "age_restricted",
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 17,
+    "solvable": true
+  },
+  "task_018": {
+    "complexity": "medium",
+    "n_constraints": 3,
+    "n_hidden": 1,
+    "n_on_ask": 1,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "age_restricted",
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 28,
+    "solvable": true
+  },
+  "task_019": {
+    "complexity": "medium",
+    "n_constraints": 4,
+    "n_hidden": 2,
+    "n_on_ask": 1,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "age_restricted",
+      "availability",
+      "recommend_tool",
+      "watch_history"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 30,
+    "solvable": true
+  },
+  "task_020": {
+    "complexity": "medium",
+    "n_constraints": 3,
+    "n_hidden": 1,
+    "n_on_ask": 1,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool",
+      "sponsored"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 2,
+    "solvable": true
+  },
+  "task_021": {
+    "complexity": "medium",
+    "n_constraints": 3,
+    "n_hidden": 1,
+    "n_on_ask": 1,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 5,
+    "solvable": true
+  },
+  "task_022": {
+    "complexity": "medium",
+    "n_constraints": 3,
+    "n_hidden": 1,
+    "n_on_ask": 1,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 18,
+    "solvable": true
+  },
+  "task_023": {
+    "complexity": "medium",
+    "n_constraints": 3,
+    "n_hidden": 0,
+    "n_on_ask": 2,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool",
+      "watch_history"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 8,
+    "solvable": true
+  },
+  "task_024": {
+    "complexity": "medium",
+    "n_constraints": 3,
+    "n_hidden": 0,
+    "n_on_ask": 1,
+    "n_volunteer": 2,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool",
+      "sponsored"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 30,
+    "solvable": true
+  },
+  "task_025": {
+    "complexity": "medium",
+    "n_constraints": 4,
+    "n_hidden": 0,
+    "n_on_ask": 3,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "age_restricted",
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 23,
+    "solvable": true
+  },
+  "task_026": {
+    "complexity": "medium",
+    "n_constraints": 3,
+    "n_hidden": 0,
+    "n_on_ask": 2,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 6,
+    "solvable": true
+  },
+  "task_027": {
+    "complexity": "medium",
+    "n_constraints": 3,
+    "n_hidden": 0,
+    "n_on_ask": 1,
+    "n_volunteer": 2,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 22,
+    "solvable": true
+  },
+  "task_028": {
+    "complexity": "medium",
+    "n_constraints": 3,
+    "n_hidden": 0,
+    "n_on_ask": 2,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 2,
+    "solvable": true
+  },
+  "task_029": {
+    "complexity": "medium",
+    "n_constraints": 4,
+    "n_hidden": 0,
+    "n_on_ask": 2,
+    "n_volunteer": 2,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "age_restricted",
+      "recommend_tool",
+      "watch_history"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 14,
+    "solvable": true
+  },
+  "task_030": {
+    "complexity": "medium",
+    "n_constraints": 4,
+    "n_hidden": 1,
+    "n_on_ask": 2,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "age_restricted",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 9,
+    "solvable": true
+  },
+  "task_031": {
+    "complexity": "medium",
+    "n_constraints": 4,
+    "n_hidden": 3,
+    "n_on_ask": 0,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "age_restricted",
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "hidden",
+    "solution_set_size": 19,
+    "solvable": true
+  },
+  "task_032": {
+    "complexity": "medium",
+    "n_constraints": 4,
+    "n_hidden": 3,
+    "n_on_ask": 1,
+    "n_volunteer": 0,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "age_restricted",
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "hidden",
+    "solution_set_size": 22,
+    "solvable": true
+  },
+  "task_033": {
+    "complexity": "medium",
+    "n_constraints": 3,
+    "n_hidden": 2,
+    "n_on_ask": 0,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "hidden",
+    "solution_set_size": 5,
+    "solvable": true
+  },
+  "task_034": {
+    "complexity": "medium",
+    "n_constraints": 4,
+    "n_hidden": 3,
+    "n_on_ask": 0,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "age_restricted",
+      "availability",
+      "recommend_tool",
+      "sponsored"
+    ],
+    "reveal_difficulty": "hidden",
+    "solution_set_size": 14,
+    "solvable": true
+  },
+  "task_035": {
+    "complexity": "medium",
+    "n_constraints": 3,
+    "n_hidden": 2,
+    "n_on_ask": 0,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool",
+      "watch_history"
+    ],
+    "reveal_difficulty": "hidden",
+    "solution_set_size": 7,
+    "solvable": true
+  },
+  "task_036": {
+    "complexity": "complex",
+    "n_constraints": 5,
+    "n_hidden": 0,
+    "n_on_ask": 0,
+    "n_volunteer": 5,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "age_restricted",
+      "availability",
+      "recommend_tool",
+      "watch_history"
+    ],
+    "reveal_difficulty": "volunteer",
+    "solution_set_size": 5,
+    "solvable": true
+  },
+  "task_037": {
+    "complexity": "complex",
+    "n_constraints": 5,
+    "n_hidden": 0,
+    "n_on_ask": 0,
+    "n_volunteer": 5,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "age_restricted",
+      "availability",
+      "recommend_tool",
+      "sponsored"
+    ],
+    "reveal_difficulty": "volunteer",
+    "solution_set_size": 30,
+    "solvable": true
+  },
+  "task_038": {
+    "complexity": "complex",
+    "n_constraints": 5,
+    "n_hidden": 0,
+    "n_on_ask": 0,
+    "n_volunteer": 5,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "volunteer",
+    "solution_set_size": 3,
+    "solvable": true
+  },
+  "task_039": {
+    "complexity": "complex",
+    "n_constraints": 5,
+    "n_hidden": 0,
+    "n_on_ask": 3,
+    "n_volunteer": 2,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 2,
+    "solvable": true
+  },
+  "task_040": {
+    "complexity": "complex",
+    "n_constraints": 5,
+    "n_hidden": 0,
+    "n_on_ask": 3,
+    "n_volunteer": 2,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "age_restricted",
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 4,
+    "solvable": true
+  },
+  "task_041": {
+    "complexity": "complex",
+    "n_constraints": 5,
+    "n_hidden": 0,
+    "n_on_ask": 3,
+    "n_volunteer": 2,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 7,
+    "solvable": true
+  },
+  "task_042": {
+    "complexity": "complex",
+    "n_constraints": 5,
+    "n_hidden": 0,
+    "n_on_ask": 3,
+    "n_volunteer": 2,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool",
+      "watch_history"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 5,
+    "solvable": true
+  },
+  "task_043": {
+    "complexity": "complex",
+    "n_constraints": 5,
+    "n_hidden": 0,
+    "n_on_ask": 3,
+    "n_volunteer": 2,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "age_restricted",
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 14,
+    "solvable": true
+  },
+  "task_044": {
+    "complexity": "complex",
+    "n_constraints": 5,
+    "n_hidden": 0,
+    "n_on_ask": 3,
+    "n_volunteer": 2,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 2,
+    "solvable": true
+  },
+  "task_045": {
+    "complexity": "complex",
+    "n_constraints": 5,
+    "n_hidden": 0,
+    "n_on_ask": 3,
+    "n_volunteer": 2,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "age_restricted",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 7,
+    "solvable": true
+  },
+  "task_046": {
+    "complexity": "complex",
+    "n_constraints": 5,
+    "n_hidden": 4,
+    "n_on_ask": 0,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "age_restricted",
+      "availability",
+      "recommend_tool",
+      "watch_history"
+    ],
+    "reveal_difficulty": "hidden",
+    "solution_set_size": 4,
+    "solvable": true
+  },
+  "task_047": {
+    "complexity": "complex",
+    "n_constraints": 5,
+    "n_hidden": 4,
+    "n_on_ask": 0,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "age_restricted",
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "hidden",
+    "solution_set_size": 19,
+    "solvable": true
+  },
+  "task_048": {
+    "complexity": "complex",
+    "n_constraints": 5,
+    "n_hidden": 4,
+    "n_on_ask": 0,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "age_restricted",
+      "availability",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "hidden",
+    "solution_set_size": 21,
+    "solvable": true
+  },
+  "task_049": {
+    "complexity": "complex",
+    "n_constraints": 5,
+    "n_hidden": 4,
+    "n_on_ask": 0,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool",
+      "watch_history"
+    ],
+    "reveal_difficulty": "hidden",
+    "solution_set_size": 7,
+    "solvable": true
+  },
+  "task_050": {
+    "complexity": "simple",
+    "n_constraints": 3,
+    "n_hidden": 0,
+    "n_on_ask": 1,
+    "n_volunteer": 2,
+    "no_valid_recommendation": true,
+    "policy_flags": [
+      "recommend_tool",
+      "transparency"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 0,
+    "solvable": false
+  },
+  "task_051": {
+    "complexity": "medium",
+    "n_constraints": 3,
+    "n_hidden": 0,
+    "n_on_ask": 0,
+    "n_volunteer": 3,
+    "no_valid_recommendation": true,
+    "policy_flags": [
+      "recommend_tool",
+      "transparency"
+    ],
+    "reveal_difficulty": "volunteer",
+    "solution_set_size": 0,
+    "solvable": false
+  },
+  "task_052": {
+    "complexity": "complex",
+    "n_constraints": 4,
+    "n_hidden": 1,
+    "n_on_ask": 2,
+    "n_volunteer": 1,
+    "no_valid_recommendation": true,
+    "policy_flags": [
+      "recommend_tool",
+      "transparency"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 0,
+    "solvable": false
+  },
+  "task_053": {
+    "complexity": "medium",
+    "n_constraints": 3,
+    "n_hidden": 0,
+    "n_on_ask": 0,
+    "n_volunteer": 3,
+    "no_valid_recommendation": true,
+    "policy_flags": [
+      "recommend_tool",
+      "transparency"
+    ],
+    "reveal_difficulty": "volunteer",
+    "solution_set_size": 0,
+    "solvable": false
+  },
+  "task_054": {
+    "complexity": "complex",
+    "n_constraints": 5,
+    "n_hidden": 3,
+    "n_on_ask": 1,
+    "n_volunteer": 1,
+    "no_valid_recommendation": true,
+    "policy_flags": [
+      "recommend_tool",
+      "transparency"
+    ],
+    "reveal_difficulty": "hidden",
+    "solution_set_size": 0,
+    "solvable": false
+  },
+  "task_055": {
+    "complexity": "simple",
+    "n_constraints": 2,
+    "n_hidden": 0,
+    "n_on_ask": 0,
+    "n_volunteer": 2,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "preference_respect",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "volunteer",
+    "solution_set_size": 46,
+    "solvable": true
+  },
+  "task_056": {
+    "complexity": "simple",
+    "n_constraints": 2,
+    "n_hidden": 0,
+    "n_on_ask": 1,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "preference_respect",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 27,
+    "solvable": true
+  },
+  "task_057": {
+    "complexity": "medium",
+    "n_constraints": 3,
+    "n_hidden": 0,
+    "n_on_ask": 2,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "preference_respect",
+      "recommend_tool"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 25,
+    "solvable": true
+  },
+  "task_058": {
+    "complexity": "simple",
+    "n_constraints": 2,
+    "n_hidden": 0,
+    "n_on_ask": 0,
+    "n_volunteer": 2,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool",
+      "single_recommendation"
+    ],
+    "reveal_difficulty": "volunteer",
+    "solution_set_size": 30,
+    "solvable": true
+  },
+  "task_059": {
+    "complexity": "simple",
+    "n_constraints": 2,
+    "n_hidden": 0,
+    "n_on_ask": 0,
+    "n_volunteer": 2,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool",
+      "single_recommendation"
+    ],
+    "reveal_difficulty": "volunteer",
+    "solution_set_size": 32,
+    "solvable": true
+  },
+  "task_060": {
+    "complexity": "medium",
+    "n_constraints": 3,
+    "n_hidden": 0,
+    "n_on_ask": 2,
+    "n_volunteer": 1,
+    "no_valid_recommendation": false,
+    "policy_flags": [
+      "availability",
+      "recommend_tool",
+      "single_recommendation"
+    ],
+    "reveal_difficulty": "mixed",
+    "solution_set_size": 25,
+    "solvable": true
+  }
+}

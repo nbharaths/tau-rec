@@ -1,0 +1,34 @@
+[project]
+name = "tau-rec"
+version = "0.1.0"
+description = "A verifiable benchmark for LLM-based conversational recommender systems"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Bharath Sivaram Narasimhan", email = "nbharaths@gmail.com"},
+    {name = "Karthik R Narasimhan", email = "karthikn@princeton.edu"},
+]
+requires-python = ">=3.12"
+dependencies = [
+    "litellm>=1.40.0",
+    "click>=8.1",
+    "rank-bm25>=0.2.2",
+    "scipy>=1.12",
+    "numpy>=1.26",
+    "httpx>=0.27",
+    "pydantic>=2.6",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23"]
+
+[project.scripts]
+tau-rec = "tau_rec.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
