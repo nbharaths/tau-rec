@@ -1,5 +1,9 @@
 # τ-Rec
 
+[![Dataset on Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue)](https://huggingface.co/datasets/nbharaths/tau-rec)
+[![Paper](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Paper-yellow)](https://huggingface.co/papers/2606.10156)
+[![arXiv](https://img.shields.io/badge/arXiv-2606.10156-b31b1b)](https://arxiv.org/abs/2606.10156)
+
 A verifiable benchmark for LLM-based conversational recommender systems.
 
 τ-Rec measures whether an agent-under-test can hold a multi-turn conversation with a simulated user, use catalog tools to gather information, respect a written policy, and ultimately recommend a movie that satisfies all of the user's constraints. Success is checked programmatically against the catalog — not by an LLM judge — so scores are reproducible and cheap to compute.
@@ -14,6 +18,20 @@ A verifiable benchmark for LLM-based conversational recommender systems.
 - **Parallel execution.** `asyncio.gather` + semaphore runs trials concurrently (default 16).
 - **Ablation support.** `--no-tools` mode disables all tools so you can measure how much the agent is leaning on retrieval vs. memorization.
 - **Model-agnostic.** Any LiteLLM-supported model works as the agent or the simulator.
+
+## Dataset
+
+The catalog, tasks, and answer key are hosted on Hugging Face:
+
+```python
+from datasets import load_dataset
+
+catalog = load_dataset("nbharaths/tau-rec", "catalog")
+tasks   = load_dataset("nbharaths/tau-rec", "tasks")
+answers = load_dataset("nbharaths/tau-rec", "answers")
+```
+
+The JSON files in `data/` are the same data — use whichever is more convenient.
 
 ## Install
 
@@ -176,14 +194,16 @@ uv run pytest tests/test_orchestrator.py -k name   # single test
 
 ## Citation
 
-If you use τ-Rec in your work, please cite this repository. A peer-reviewed
-publication will be added here when available.
+If you use τ-Rec in your work, please cite:
 
 ```bibtex
-@misc{taurec2026,
-  author = {Narasimhan, Bharath Sivaram and Narasimhan, Karthik R},
-  title  = {{τ-Rec}: A Verifiable Benchmark for Agentic Recommender Systems},
-  year   = 2026,
-  url    = {https://github.com/nbharaths/tau-rec}
+@misc{narasimhan2026taurec,
+  title         = {{$\tau$-Rec}: A Verifiable Benchmark for Agentic Recommender Systems},
+  author        = {Narasimhan, Bharath Sivaram and Narasimhan, Karthik R},
+  year          = {2026},
+  eprint        = {2606.10156},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.IR},
+  url           = {https://arxiv.org/abs/2606.10156}
 }
 ```
