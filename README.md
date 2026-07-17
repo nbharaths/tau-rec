@@ -8,6 +8,8 @@ A verifiable benchmark for LLM-based conversational recommender systems.
 
 τ-Rec measures whether an agent-under-test can hold a multi-turn conversation with a simulated user, use catalog tools to gather information, respect a written policy, and ultimately recommend a movie that satisfies all of the user's constraints. Success is checked programmatically against the catalog — not by an LLM judge — so scores are reproducible and cheap to compute.
 
+Accepted at ACM Recsys 2026 (Reproducibility and Resource Track)
+
 ## Highlights
 
 - **Verifiable rewards.** Each task declares constraints as structured predicates (`runtime <= 120`, `genres contains Comedy`, …) that are evaluated directly against the catalog.
