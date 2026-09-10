@@ -21,6 +21,20 @@ Accepted at ACM Recsys 2026 (Reproducibility and Resource Track)
 - **Ablation support.** `--no-tools` mode disables all tools so you can measure how much the agent is leaning on retrieval vs. memorization.
 - **Model-agnostic.** Any LiteLLM-supported model works as the agent or the simulator.
 
+## Leaderboard
+
+**[LEADERBOARD.md](LEADERBOARD.md)** — current standings, seeded with the nine configurations from the paper.
+
+| # | Model | pass^1 | pass^2 | pass^4 |
+|---|-------|--------|--------|--------|
+| 1 | DeepSeek V4 Flash (high thinking) | 0.560 | 0.461 | **0.383** |
+| 2 | DeepSeek V4 Flash (max thinking) | 0.571 | 0.461 | 0.350 |
+| 3 | GPT-5.4 (medium thinking) | 0.551 | 0.450 | 0.350 |
+
+The board is a generated file. Submissions are JSON entries in `leaderboard/entries/` holding only raw per-task `{n, c}` counts — every published number, including confidence intervals, is derived at render time. That means the whole board can be recomputed when the evaluator changes, which is not hypothetical: closing a scoring exploit is what let these numbers be reproduced from traces at all.
+
+To submit a run, see **[leaderboard/CONTRIBUTING.md](leaderboard/CONTRIBUTING.md)**. For what makes two entries comparable, see **[leaderboard/GENERATIONS.md](leaderboard/GENERATIONS.md)**.
+
 ## Dataset
 
 The catalog, tasks, and answer key are hosted on Hugging Face:
@@ -177,6 +191,7 @@ src/tau_rec/
   catalog/        # BM25 search, TMDB pipeline, task validator
   evaluator/      # constraint, policy, efficiency scorers
   metrics/        # pass^k + bootstrap CI
+  leaderboard/    # submission schema, content digests, board renderer
   data_model/     # Pydantic schemas
   cli.py          # `tau-rec` entry point
 data/
@@ -184,6 +199,10 @@ data/
   policy.md
   tasks/*.json
   answers.json   # pre-computed solution sets per task (analysis-only)
+leaderboard/
+  entries/*.json # one submission each; raw per-task {n, c} only
+  GENERATIONS.md # what makes two entries comparable
+LEADERBOARD.md   # generated — do not edit by hand
 tests/            # pytest suite (asyncio-auto)
 ```
 

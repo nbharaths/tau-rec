@@ -591,3 +591,66 @@ def health(catalog: str, tasks: str, results: str | None, trials: str | None):
         click.echo(f"  REVIEW {len(non_nvr_hard)} non-NVR tasks with 0% pass rate.")
     if not struct_errors and not untested:
         click.echo(f"  All tasks structurally valid and empirically tested.")
+
+
+# ----------------------------------------------------------------------
+# Leaderboard
+# ----------------------------------------------------------------------
+@main.group()
+def leaderboard():
+    """Validate submissions and render LEADERBOARD.md."""
+
+
+_ENTRIES = click.option("--entries", default="leaderboard/entries",
+                        type=click.Path(exists=True), show_default=True,
+                        help="Directory of submission JSON files")
+_OUT = click.option("--out", default="LEADERBOARD.md", type=click.Path(),
+                    show_default=True, help="Rendered board path")
+
+
+@leaderboard.command("validate")
+@_ENTRIES
+def leaderboard_validate(entries: str):
+    """Check every entry parses and satisfies the submission rules."""
+    from pydantic import ValidationError
+    from tau_rec.leaderboard.entry import LeaderboardEntry
+
+    paths = sorted(Path(entries).glob("*.json"))
+    if not paths:
+        raise click.ClickException(f"no entries found in {entries}")
+
+    failures = 0
+    for path in paths:
+        try:
+            entry = LeaderboardEntry.model_validate_json(path.read_text())
+        except ValidationError as exc:
+            failures += 1
+            click.echo(f"  FAIL {path.name}: {exc.error_count()} error(s)")
+            for err in exc.errors():
+                click.echo(f"        {'.'.join(str(p) for p in err['loc'])}: {err['msg']}")
+            continue
+        n_trials = sum(tc.n for tc in entry.per_task.values())
+        click.echo(f"  OK   {path.name}: {entry.n_tasks} tasks, {n_trials} trials")
+
+    click.echo(f"\n{len(paths)} entries checked, {failures} invalid.")
+    if failures:
+        raise SystemExit(1)
+
+
+@leaderboard.command("render")
+@_ENTRIES
+@_OUT
+@click.option("--check", "check_only", is_flag=True,
+              help="Exit 1 if the rendered board is stale instead of writing it")
+def leaderboard_render(entries: str, out: str, check_only: bool):
+    """Render LEADERBOARD.md from the committed entries."""
+    from tau_rec.leaderboard import render as render_mod
+
+    if check_only:
+        if render_mod.check(entries, out):
+            click.echo(f"{out} is up to date.")
+            return
+        raise click.ClickException(f"{out} is stale — run `tau-rec leaderboard render`.")
+
+    render_mod.write(entries, out)
+    click.echo(f"Wrote {out} from {len(list(Path(entries).glob('*.json')))} entries.")
