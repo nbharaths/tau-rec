@@ -73,6 +73,20 @@ def test_constraint_no_valid_rec_incorrect():
     trace.stop_reason = StopReason.RECOMMENDED
     assert ConstraintEvaluator(_catalog()).evaluate(task, trace).score == 0.0
 
+def test_constraint_no_valid_rec_rec_then_abstain():
+    """Batched [recommend(X), recommend()] must not earn NVR credit.
+
+    The orchestrator runs every tool call in a response and lets the last one
+    win, so this shape leaves a concrete recommendation on the trace alongside
+    stop_reason == ABSTAINED. That is not an abstention.
+    """
+    task = Task(id="t2", constraints=[], persona="test", complexity="simple",
+                reveal_difficulty="volunteer", no_valid_recommendation=True)
+    trace = ConversationTrace(task_id="t2", model="m", trial=0)
+    trace.add_recommendation("tt001")
+    trace.stop_reason = StopReason.ABSTAINED
+    assert ConstraintEvaluator(_catalog()).evaluate(task, trace).score == 0.0
+
 # --- POLICY tests ---
 def test_policy_watch_history_violation():
     trace = ConversationTrace(task_id="t1", model="m", trial=0)
@@ -158,6 +172,17 @@ def test_policy_transparency_abstain_passes():
     task = Task(id="t2", constraints=[], persona="test", policy_flags=["transparency"],
                 complexity="simple", reveal_difficulty="volunteer", no_valid_recommendation=True)
     assert PolicyEvaluator().evaluate(task, trace).score == 1.0
+
+def test_policy_transparency_rec_then_abstain_violates():
+    """Batched [recommend(X), recommend()] is not a transparent abstention."""
+    trace = ConversationTrace(task_id="t2", model="m", trial=0)
+    trace.add_recommendation("tt001")
+    trace.stop_reason = StopReason.ABSTAINED
+    task = Task(id="t2", constraints=[], persona="test", policy_flags=["transparency"],
+                complexity="simple", reveal_difficulty="volunteer", no_valid_recommendation=True)
+    result = PolicyEvaluator().evaluate(task, trace)
+    assert result.score == 0.0
+    assert "transparency" in result.violations
 
 def test_policy_transparency_timeout_fails():
     """Timed-out agent on NVR task fails transparency — timeout != deliberate abstention."""

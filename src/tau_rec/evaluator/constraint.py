@@ -19,7 +19,12 @@ class ConstraintEvaluator:
 
     def evaluate(self, task: Task, trace: ConversationTrace) -> ConstraintResult:
         if task.no_valid_recommendation:
-            if trace.stop_reason == StopReason.ABSTAINED:
+            # An abstention only counts if the agent abstained and did not also
+            # register a concrete recommendation. The orchestrator executes every
+            # tool call in a response and lets the last one win, so a batched
+            # [recommend(X), recommend()] leaves stop_reason == ABSTAINED with a
+            # non-empty recommendation list. That is not an abstention.
+            if trace.stop_reason == StopReason.ABSTAINED and not trace.recommendations:
                 return ConstraintResult(score=1.0)
             else:
                 return ConstraintResult(score=0.0)

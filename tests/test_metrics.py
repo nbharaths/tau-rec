@@ -44,3 +44,14 @@ def test_bootstrap_ci_returns_tuple():
     result = bootstrap_ci(scores, confidence=0.95, n_resamples=1000)
     assert len(result) == 2
     assert result[0] <= result[1]
+
+def test_bootstrap_ci_is_deterministic():
+    """Repeated calls must agree, or the leaderboard cannot re-render byte-identically."""
+    data = [1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0,
+            0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0]
+    assert bootstrap_ci(data) == bootstrap_ci(data)
+
+def test_bootstrap_ci_seed_changes_result():
+    """Different seeds may differ; the default must simply be fixed."""
+    data = [1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0]
+    assert bootstrap_ci(data, seed=1) == bootstrap_ci(data, seed=1)

@@ -847,7 +847,6 @@
     "no_valid_recommendation": false,
     "policy_flags": [
       "availability",
-      "preference_respect",
       "recommend_tool"
     ],
     "reveal_difficulty": "volunteer",
@@ -863,7 +862,6 @@
     "no_valid_recommendation": false,
     "policy_flags": [
       "availability",
-      "preference_respect",
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
@@ -879,7 +877,6 @@
     "no_valid_recommendation": false,
     "policy_flags": [
       "availability",
-      "preference_respect",
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",

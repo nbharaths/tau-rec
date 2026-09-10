@@ -183,6 +183,77 @@ async def test_orchestrator_stops_on_recommend():
 
 
 @pytest.mark.asyncio
+async def test_orchestrator_null_string_item_id_is_abstention():
+    """recommend(item_id="null") is an abstention, not a recommendation.
+
+    The policy documents abstention as recommend(null). In JSON that is None
+    and works, but a model emitting the *string* "null" would otherwise be
+    truthy and silently register "null" as a recommended item.
+    """
+    agent = AsyncMock()
+    agent.respond = AsyncMock(side_effect=[
+        AgentResponse(message=None, tool_calls=[
+            {"id": "tc1", "name": "recommend", "arguments": {"item_id": "null"}},
+        ]),
+        AgentResponse(message="Nothing in the catalog fits."),
+    ])
+    agent.reset = MagicMock()
+    agent.add_user_message = MagicMock()
+    agent.add_assistant_message = MagicMock()
+
+    simulator = AsyncMock()
+    simulator.respond = AsyncMock(side_effect=[
+        Message(role=Role.USER, content="I want a 3-hour silent comedy."),
+    ])
+
+    toolkit = MagicMock()
+    toolkit.call = MagicMock(return_value='{"status": "abstained"}')
+
+    orch = Orchestrator(agent=agent, simulator=simulator, toolkit=toolkit, max_turns=20)
+    trace = await orch.run(task_id="t1", model="test", trial=0)
+    assert trace.stop_reason == StopReason.ABSTAINED
+    assert trace.recommendations == []
+
+
+@pytest.mark.asyncio
+async def test_orchestrator_batched_recommend_then_abstain_keeps_both():
+    """Batched [recommend(X), recommend()] keeps X on the trace AND abstains.
+
+    Every tool call in a response is executed and the last terminal one wins,
+    so this shape yields a non-empty recommendation list with an ABSTAINED
+    stop reason. That is deliberate: the recommendation list must stay intact
+    for _check_single_recommendation, which reads the same list via
+    all_recommendations. The evaluator is what refuses to award NVR credit for
+    this shape (see test_constraint_no_valid_rec_rec_then_abstain).
+    """
+    agent = AsyncMock()
+    agent.respond = AsyncMock(side_effect=[
+        AgentResponse(message=None, tool_calls=[
+            {"id": "tc1", "name": "recommend", "arguments": {"item_id": "tt001"}},
+            {"id": "tc2", "name": "recommend", "arguments": {}},
+        ]),
+        AgentResponse(message="Actually, nothing fits."),
+    ])
+    agent.reset = MagicMock()
+    agent.add_user_message = MagicMock()
+    agent.add_assistant_message = MagicMock()
+
+    simulator = AsyncMock()
+    simulator.respond = AsyncMock(side_effect=[
+        Message(role=Role.USER, content="Something short."),
+    ])
+
+    toolkit = MagicMock()
+    toolkit.call = MagicMock(return_value='{"status": "ok"}')
+
+    orch = Orchestrator(agent=agent, simulator=simulator, toolkit=toolkit, max_turns=20)
+    trace = await orch.run(task_id="t1", model="test", trial=0)
+    assert trace.stop_reason == StopReason.ABSTAINED
+    assert trace.recommendations == ["tt001"]
+    assert len(trace.all_recommendations) == 1
+
+
+@pytest.mark.asyncio
 async def test_orchestrator_empty_response():
     """Agent returns empty response (no message, no tools) -- turn is skipped."""
     call_count = 0

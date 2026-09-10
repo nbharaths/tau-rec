@@ -12,6 +12,11 @@ OPENING_GREETING = (
     "What kind of movie are you in the mood for?"
 )
 
+# recommend(null) is the documented abstention. In JSON that arrives as None,
+# but models routinely emit the literal string instead, which would otherwise
+# be truthy and register a bogus item id as a recommendation.
+ABSTAIN_SENTINELS = {"", "null", "none", "n/a", "nil"}
+
 
 class Orchestrator:
     def __init__(
@@ -78,7 +83,8 @@ class Orchestrator:
                     # calling with no/null item_id is an explicit abstention.
                     if tc["name"] == "recommend":
                         item_id = tc["arguments"].get("item_id")
-                        if item_id:
+                        normalized = "" if item_id is None else str(item_id).strip().lower()
+                        if normalized and normalized not in ABSTAIN_SENTINELS:
                             trace.add_recommendation(item_id)
                             recommended_this_turn = "recommended"
                         else:
