@@ -38,8 +38,12 @@ uv run tau-rec leaderboard make-entry \
   --submission-id g1-my-model \
   --display-name "My Model (medium thinking)" \
   --submitted-by "your name or org" \
-  --run-date 2026-09-01
+  --run-date 2026-09-01 \
+  --traces-url https://example.org/my-traces.tar.gz
 ```
+
+`--traces-url` is optional but recommended — it becomes the **Traces** link on
+the board. See step 4.
 
 This re-scores your traces with the current evaluator rather than copying the
 run's `task_results.json`, which is how the board will check the entry later.
@@ -110,10 +114,13 @@ of the entry files.
 
 ## 4. Open a pull request
 
-Include the model, the configuration, and where the traces live. Traces are not
-required, but an entry with a `traces_url` can be re-derived by anyone, and
-re-derived numbers are the ones that count. An entry without traces is taken on
-trust and labelled as such.
+The pull request template asks for the model, the configuration, and where the
+traces live. Traces are not required, but an entry with a `traces_url` can be
+re-derived by anyone, and re-derived numbers are the ones that count. An entry
+without traces is taken on trust and shows `—` in the board's **Traces**
+column. Host them anywhere durable and publicly readable; pin the URL to a
+fixed path rather than a "latest" alias, so the evidence behind a published row
+cannot change under it.
 
 We re-derive submitted entries from traces where they are available. If
 re-derivation disagrees with your counts, the re-derived numbers win and we

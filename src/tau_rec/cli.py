@@ -693,7 +693,9 @@ def leaderboard_render(entries: str, out: str, check_only: bool):
 @click.option("--reasoning-effort", default=None)
 @click.option("--pinned/--not-pinned", default=False, show_default=True)
 @click.option("--run-date", required=True, help="YYYY-MM-DD")
-@click.option("--traces-url", default=None)
+@click.option("--traces-url", default=None,
+              help="Public URL of this run's traces. Becomes the board's Traces link; "
+                   "pin it to a fixed path, not a 'latest' alias.")
 @click.option("--catalog", default="data/catalog.json", show_default=True,
               type=click.Path(exists=True))
 @click.option("--tasks", default="data/tasks", show_default=True,
