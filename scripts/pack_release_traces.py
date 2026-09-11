@@ -1,24 +1,14 @@
 """Build the trace tarballs attached to a GitHub release.
 
-Packing the run directories as they sit on disk leaks three things that have
-nothing to do with the benchmark, and ships one file that is actively wrong:
+One directory per run, holding the traces, the trial rows and the task
+results behind one leaderboard entry.
 
-  - macOS extended attributes. The g0 tree carries `com.apple.quarantine` on
-    2271 files, each recording the downloading application, a timestamp, and a
-    UUID that keys into the author's local LSQuarantineEventsV2 database. tar
-    stores these as AppleDouble `._*` members that `tar -tzf` does not show on
-    macOS, so they survive a casual inspection.
-  - The `._*` members are 212-byte binary blobs wearing a `.json` extension.
-    On GNU tar they extract as real files, so any consumer globbing
-    `traces/*.json` tries to parse them.
-  - tar headers embed `uname`/`uid` of whoever packed the archive.
-
-The wrong file is `trial_results.json`. Three g1 runs were interrupted and
-resumed, and the first-pass directories still hold rows for trials that were
-later re-run, so concatenating them double-counts (259/275/299 rows against a
-real n=240). `tau-rec report` reads that file, so a reader re-deriving a
-published number would get a different one. The traces are authoritative:
-rows are kept only where a matching trace exists.
+Two things need care. Archives are packed without extended attributes or
+owner metadata, because macOS xattrs travel as AppleDouble `._*` members
+that carry local filesystem state and extract on GNU tar as binary files
+wearing a `.json` extension. And a resumed run leaves superseded rows in the
+`trial_results.json` of its earlier passes, so rows are kept only where a
+matching trace exists — traces are authoritative.
 
     uv run python scripts/pack_release_traces.py
 """
@@ -35,10 +25,7 @@ ROOT = Path(__file__).resolve().parent.parent
 STAGE = Path("/tmp/tau-rec-release/stage")
 OUT = Path("/tmp/tau-rec-release")
 
-# g0 ships the nine directories behind the nine board entries. `llama33-paper`
-# is deliberately excluded: 68 of 240 trials over 40 of 60 tasks, referenced by
-# no entry and cut from the paper. Shipping an abandoned partial run beside the
-# published cohort invites it to be read as a tenth result.
+# The nine directories behind the nine g0 board entries.
 G0_RUNS = {
     "[final]run-gemini25flash": "gemini-25-flash",
     "[final]run-gpt54-medthink": "gpt54-medium-thinking",

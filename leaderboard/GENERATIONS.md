@@ -50,10 +50,8 @@ carried its flag.
 
 **This is measured, not assumed.** `scripts/rederive_seed_cohort.py` re-scores
 every archived trace with the HEAD evaluator and diffs per-task `{n, c}` against
-each run's stored `task_results.json`. Across all ten archived run directories —
-the nine board entries plus an abandoned partial Llama-3.3 run that never
-reached the paper — the result is **zero task-level deltas**, tasks 055–057
-included. The removed
+each run's stored `task_results.json`. Across every archived run directory the
+result is **zero task-level deltas**, tasks 055–057 included. The removed
 check never changed an outcome on any archived trial, and
 `ds-v4-flash-4t-gpt5mini` re-derives to `pass^1/2/4 = 0.546 / 0.433 / 0.333`,
 matching the paper exactly.
