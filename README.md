@@ -46,7 +46,7 @@ Accepted at ACM Recsys 2026 (Reproducibility and Resource Track)
 [GENERATIONS.md](leaderboard/GENERATIONS.md) records exactly what differs and
 which changes were measured to be score-neutral.
 
-The board is a generated file. Submissions are JSON entries in `leaderboard/entries/` holding only raw per-task `{n, c}` counts — every published number, including confidence intervals, is derived at render time. That means the whole board can be recomputed when the evaluator changes, which is not hypothetical: closing a scoring exploit is what let these numbers be reproduced from traces at all.
+The board is a generated file. Submissions are JSON entries in `leaderboard/entries/` holding only raw per-task `{n, c}` counts — every published number, including confidence intervals, is derived at render time, so the whole board can be recomputed when the evaluator changes. Full traces for both cohorts are attached to the [latest release](https://github.com/nbharaths/tau-rec/releases/latest).
 
 To submit a run, see **[leaderboard/CONTRIBUTING.md](leaderboard/CONTRIBUTING.md)**. For what makes two entries comparable, see **[leaderboard/GENERATIONS.md](leaderboard/GENERATIONS.md)**.
 

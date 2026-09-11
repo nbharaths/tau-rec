@@ -84,9 +84,8 @@ be checked for comparability and is marked `content_digests_unrecorded` on the
 board.
 
 `run_manifest.json` is written at the start of every run, before the first
-trial, so it survives a run you had to kill. Keep it: nothing else on disk
-records `reasoning_effort`, and a finished run without it cannot be labelled
-afterwards without guessing.
+trial, so it survives a run you had to kill. Keep it — nothing else on disk
+records `reasoning_effort`.
 
 **`model_id` must not end in a floating tag** (`-latest`, `:latest`,
 `-preview`, `@latest`). Those silently re-point at a different model and make
