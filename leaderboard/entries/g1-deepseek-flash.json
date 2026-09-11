@@ -9,7 +9,7 @@
   "no_tools": false,
   "simulator_model": "gpt-5-mini",
   "harness_generation": "g1",
-  "tau_rec_version": "0.1.0",
+  "tau_rec_version": "1.1.0",
   "trials_per_task": 4,
   "policy_sha256": "9199737dfa34f4975a66ed5188d6e774191f4c00a2f5c6a1970a9a2a70553064",
   "tasks_sha256": "aa671830eb79e2896dd1b0388fe19fd126b4c44d70fad26feefceaded6700736",

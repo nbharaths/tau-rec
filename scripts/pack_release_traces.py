@@ -8,7 +8,9 @@ owner metadata, because macOS xattrs travel as AppleDouble `._*` members
 that carry local filesystem state and extract on GNU tar as binary files
 wearing a `.json` extension. And a resumed run leaves superseded rows in the
 `trial_results.json` of its earlier passes, so rows are kept only where a
-matching trace exists — traces are authoritative.
+matching trace exists — traces are authoritative. A pass killed partway leaves
+the opposite gap, traces with no rows at all, because that file is written only
+once a run finishes; those rows are recovered by re-scoring the trace.
 
     uv run python scripts/pack_release_traces.py
 """
@@ -44,7 +46,41 @@ G1_RUNS = {
     "luna": "gpt56-luna-medium",
     "mistral": "mistral-small-3",
     "grok": "grok-43",
+    "minimax": "minimax-m3",
+    "kimi": "kimi-k25",
 }
+
+
+_EVAL: dict[str, object] = {}
+
+
+def rescore(paths: list[Path]) -> list[dict]:
+    """Rebuild trial rows from traces.
+
+    Every field in a row is a deterministic function of the trace and the
+    evaluator, so this reproduces what the run would have written had it not
+    been interrupted. Verified against runs that recorded both.
+    """
+    if not _EVAL:
+        from tau_rec.data_model.catalog import Catalog
+        from tau_rec.data_model.task import Task
+        from tau_rec.evaluator.evaluator import CombinedEvaluator
+
+        cat = Catalog.from_json(str(ROOT / "data" / "catalog.json"))
+        _EVAL["ev"] = CombinedEvaluator(cat)
+        _EVAL["tasks"] = {
+            p.stem: Task.model_validate_json(p.read_text())
+            for p in (ROOT / "data" / "tasks").glob("*.json")
+        }
+
+    from tau_rec.data_model.conversation import ConversationTrace
+
+    out = []
+    for p in paths:
+        trace = ConversationTrace.model_validate_json(p.read_text())
+        result = _EVAL["ev"].evaluate(task=_EVAL["tasks"][trace.task_id], trace=trace)
+        out.append(json.loads(json.dumps(result.model_dump(), default=str)))
+    return out
 
 
 def collect(run_dir: Path, dest: Path) -> tuple[int, int]:
@@ -77,6 +113,9 @@ def collect(run_dir: Path, dest: Path) -> tuple[int, int]:
             if key in kept and key not in seen:
                 seen.add(key)
                 rows.append(row)
+    gap = sorted(kept - seen)
+    if gap:
+        rows += rescore([dest / "traces" / f"{t}_trial{n}.json" for t, n in gap])
     rows.sort(key=lambda r: (r["task_id"], r["trial"]))
     (dest / "trial_results.json").write_text(json.dumps(rows, indent=2) + "\n")
     return len(kept), len(rows)

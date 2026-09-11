@@ -264,6 +264,19 @@ def test_make_entry_rejects_run_whose_tasks_changed(tmp_path):
     assert "tasks changed since this run" in result.output
 
 
+def test_make_entry_supersedes_reran_trials(tmp_path):
+    """A top-up pass writes the same trial filename into a new timestamp
+    directory. Counting both copies would inflate n, and pass^k reads n."""
+    run = _run_dir(tmp_path)
+    later = run / "20260910_010000" / "traces"
+    later.mkdir(parents=True)
+    shutil.copy(FIXTURE_TRACE, later / "task_001_trial1.json")
+    result, path = _make_entry(tmp_path, run)
+    assert result.exit_code == 0, result.output
+    per_task = json.loads(path.read_text())["per_task"]
+    assert [row["n"] for row in per_task.values()] == [1]
+
+
 def test_make_entry_falls_back_to_flags_without_manifest(tmp_path):
     run = _run_dir(tmp_path)
     (run / "20260910_000000" / "run_manifest.json").unlink()

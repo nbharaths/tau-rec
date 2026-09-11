@@ -25,13 +25,13 @@ Accepted at ACM Recsys 2026 (Reproducibility and Resource Track)
 
 **[LEADERBOARD.md](LEADERBOARD.md)** — current standings across two harness generations.
 
-`g1`, the current harness (top 3 of 5):
+`g1`, the current harness (top 3 of 7):
 
 | # | Model | pass^1 | pass^2 | pass^4 |
 |---|-------|--------|--------|--------|
 | 1 | GLM-5.3 Flash | 0.525 | 0.419 | **0.333** |
 | 2 | DeepSeek Flash | 0.479 | 0.389 | 0.300 |
-| 3 | GPT-5.6 Luna (medium thinking) | 0.471 | 0.358 | 0.250 |
+| 3 | Kimi K2.5 | 0.487 | 0.367 | 0.283 |
 
 `g0`, the paper cohort (top 3 of 9):
 

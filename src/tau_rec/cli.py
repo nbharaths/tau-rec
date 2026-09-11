@@ -725,7 +725,12 @@ def leaderboard_make_entry(run_dir: str, submission_id: str, display_name: str,
     trace_dirs = sorted(p for p in root.rglob("traces") if p.is_dir())
     if not trace_dirs:
         raise click.ClickException(f"no traces/ directory under {run_dir}")
-    trace_paths = sorted(p for d in trace_dirs for p in d.glob("*.json"))
+    # A top-up pass re-runs a task into a fresh timestamp directory under the
+    # same run, writing <task>_trial<N>.json a second time. Counting both
+    # copies inflates n and silently corrupts pass^k, so the later pass
+    # supersedes the earlier one — timestamp directory names sort in order.
+    by_name = {p.name: p for d in trace_dirs for p in sorted(d.glob("*.json"))}
+    trace_paths = [by_name[name] for name in sorted(by_name)]
     if not trace_paths:
         raise click.ClickException(f"no trace files under {trace_dirs[0]}")
 
