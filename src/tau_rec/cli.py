@@ -149,14 +149,20 @@ def _diff_signatures(prev: dict, curr: dict) -> dict[str, dict]:
 @click.option("--tasks-filter", default=None, type=str, help="Comma-separated list of task IDs to run (e.g. task_002,task_004)")
 @click.option("--dry-run", is_flag=True, default=False,
               help="Estimate experiment cost: runs a small calibration sample, measures tokens, extrapolates. No artifacts written.")
-@click.option("--dry-run-samples", default=3, type=int,
-              help="Number of trials to run for calibration under --dry-run (default 3).")
-@click.option("--reasoning-effort", default=None, type=click.Choice(["minimal", "low", "medium", "high", "xhigh"]),
-              help="Reasoning effort for the agent model. Passed through to litellm. DeepSeek v4 maps low/medium→high and xhigh→max in thinking mode.")
+@click.option("--dry-run-samples", default=9, type=int,
+              help="Number of trials to run for calibration under --dry-run (default 9). "
+                   "Per-trial cost varies ~18x across the task set, so small samples give "
+                   "wide intervals; the estimate reports its own 95% interval.")
+@click.option("--reasoning-effort", default=None, type=click.Choice(["minimal", "low", "medium", "high", "xhigh", "max"]),
+              help="Reasoning effort for the agent model. Passed through to litellm, or via "
+                   "OpenRouter's `reasoning` field for models that reject the parameter. "
+                   "DeepSeek v4 maps low/medium→high and xhigh→max in thinking mode. Not every "
+                   "model honours every level — some ignore an unrecognised one and run at their "
+                   "default, so verify a level changes behaviour before labelling a run with it.")
 def run(model: str, catalog: str, tasks: str, policy: str, trials: int, output: str, simulator_model: str, max_turns: int, concurrency: int, no_tools: bool, tasks_limit: int | None, tasks_filter: str | None, dry_run: bool, dry_run_samples: int, reasoning_effort: str | None):
     """Run benchmark evaluation."""
     if dry_run:
-        asyncio.run(_dry_run_estimate(model, catalog, tasks, policy, simulator_model, max_turns, no_tools, tasks_limit, trials, dry_run_samples))
+        asyncio.run(_dry_run_estimate(model, catalog, tasks, policy, simulator_model, max_turns, no_tools, tasks_limit, trials, dry_run_samples, reasoning_effort))
         return
     asyncio.run(_run_benchmark(model, catalog, tasks, policy, trials, output, simulator_model, max_turns, concurrency, no_tools, tasks_limit, tasks_filter, reasoning_effort))
 
@@ -164,7 +170,7 @@ def run(model: str, catalog: str, tasks: str, policy: str, trials: int, output: 
 async def _dry_run_estimate(
     model: str, catalog_path: str, tasks_path: str, policy_path: str,
     simulator_model: str, max_turns: int, no_tools: bool, tasks_limit: int | None,
-    full_trials: int, sample_size: int,
+    full_trials: int, sample_size: int, reasoning_effort: str | None = None,
 ) -> None:
     """Run `sample_size` trials (one per randomly selected task) to measure token
     usage, then extrapolate to the full experiment and print a cost estimate.
@@ -189,16 +195,35 @@ async def _dry_run_estimate(
 
     total_trials_full = len(all_tasks) * full_trials
     sample_size = min(sample_size, len(all_tasks))
+    # Sample stratified by complexity. Trial cost spans roughly 18x across the
+    # task set and grows faster than conversation length, because every call
+    # resends the history — so a sample that lands on light tasks understates
+    # the run badly, and a fixed seed would make that bias permanent rather
+    # than something that averages out over repeated estimates.
     rng = random.Random("dry-run")
-    sampled = rng.sample(all_tasks, sample_size)
+    by_complexity: dict[str, list] = {}
+    for t in all_tasks:
+        by_complexity.setdefault(getattr(t, "complexity", "unknown"), []).append(t)
+    for group in by_complexity.values():
+        rng.shuffle(group)
+    sampled = []
+    for i in range(sample_size):
+        # Round-robin across strata, weighted by how many tasks each holds.
+        strata = sorted(by_complexity, key=lambda k: -len(by_complexity[k]))
+        group = by_complexity[strata[i % len(strata)]]
+        if group:
+            sampled.append(group.pop())
+    sample_size = len(sampled)
 
     click.echo(f"Dry run: calibrating on {sample_size} trials...")
-    click.echo(f"  agent:     {model}")
+    click.echo(f"  agent:     {model}" + (f" (reasoning_effort={reasoning_effort})" if reasoning_effort else ""))
     click.echo(f"  simulator: {simulator_model}")
+    click.echo(f"  sample:    {', '.join(f'{t.id}({getattr(t, 'complexity', '?')})' for t in sampled)}")
 
     costlib.reset()
 
     completed = 0
+    per_trial_tokens: list[dict[str, int]] = []
 
     async def run_one(task):
         nonlocal completed
@@ -207,31 +232,47 @@ async def _dry_run_estimate(
         prompt_template = AGENT_NO_TOOLS_SYSTEM_PROMPT_TEMPLATE if no_tools else AGENT_SYSTEM_PROMPT_TEMPLATE
         system_prompt = prompt_template.format(policy=policy_text, user_id_instruction=user_id_instruction)
         tool_defs = [] if no_tools else toolkit.tool_definitions()
-        agent = LiteLLMAgent(model=model, system_prompt=system_prompt, tool_definitions=tool_defs)
+        agent = LiteLLMAgent(model=model, system_prompt=system_prompt, tool_definitions=tool_defs, reasoning_effort=reasoning_effort)
         simulator = UserSimulator(model=simulator_model, task=task)
         orch = Orchestrator(agent=agent, simulator=simulator, toolkit=toolkit, max_turns=max_turns)
+        before = costlib.snapshot()
+        failure = None
         try:
             await orch.run(task_id=task.id, model=model, trial=0)
-            completed += 1
-            click.echo(f"  [{completed}/{sample_size}] {task.id}")
-        except Exception as e:
-            completed += 1
-            click.echo(f"  [{completed}/{sample_size}] {task.id} FAILED: {type(e).__name__}: {e!s:.80s}")
+        except Exception as e:  # noqa: BLE001 - reported, not swallowed
+            failure = e
+        after = costlib.snapshot()
+        delta = {k: after[k] - before[k] for k in after}
+        completed += 1
+        if failure is None:
+            per_trial_tokens.append(delta)
+            hit = 100 * delta["agent_cached"] / delta["agent_input"] if delta["agent_input"] else 0
+            click.echo(f"  [{completed}/{sample_size}] {task.id}  agent tokens in={delta['agent_input']:,} "
+                       f"({hit:.0f}% cached) out={delta['agent_output']:,}")
+        else:
+            click.echo(f"  [{completed}/{sample_size}] {task.id} FAILED: {type(failure).__name__}: {failure!s:.80s}")
 
-    await asyncio.gather(*(run_one(t) for t in sampled))
+    # Sequentially, so each trial's token delta is attributable to that trial.
+    # A concurrent sample can only give an average, which hides the spread that
+    # makes a small sample untrustworthy in the first place.
+    for task in sampled:
+        await run_one(task)
 
     est = costlib.estimate_cost(model, simulator_model, sample_size, total_trials_full)
 
     click.echo()
     click.echo("=== Per-trial averages (from calibration) ===")
     p = est["per_trial"]
-    click.echo(f"  agent     input={p['agent_input']:>8.0f}  output={p['agent_output']:>8.0f}  tokens")
+    click.echo(f"  agent     input={p['agent_input']:>8.0f}  output={p['agent_output']:>8.0f}  tokens"
+               f"  (cached input={p['agent_cached']:>8.0f})")
     click.echo(f"  simulator input={p['sim_input']:>8.0f}  output={p['sim_output']:>8.0f}  tokens")
 
     click.echo()
     click.echo(f"=== Full experiment extrapolation ({len(all_tasks)} tasks × {full_trials} trials = {total_trials_full} trials) ===")
     t = est["estimated_total_tokens"]
-    click.echo(f"  agent     input={t['agent_input']:>10.0f}  output={t['agent_output']:>10.0f}  tokens")
+    hit = 100 * t["agent_cached"] / t["agent_input"] if t["agent_input"] else 0
+    click.echo(f"  agent     input={t['agent_input']:>10.0f}  output={t['agent_output']:>10.0f}  tokens"
+               f"  ({hit:.0f}% of input served from cache)")
     click.echo(f"  simulator input={t['sim_input']:>10.0f}  output={t['sim_output']:>10.0f}  tokens")
 
     click.echo()
@@ -252,10 +293,28 @@ async def _dry_run_estimate(
     else:
         click.secho("  TOTAL: n/a (see missing pricing above)", fg="yellow")
 
+    # A single number invites more confidence than a handful of trials can
+    # support. Per-trial cost is heavy-tailed here, so report the spread and a
+    # 95% interval on the mean and let the reader see how loose it really is.
+    costs = [costlib.price_tokens(model, simulator_model, d)["total"] for d in per_trial_tokens]
+    costs = [x for x in costs if x is not None]
+    if len(costs) >= 2:
+        import statistics
+        mean = statistics.mean(costs)
+        sem = statistics.stdev(costs) / (len(costs) ** 0.5)
+        lo, hi = (mean - 1.96 * sem) * total_trials_full, (mean + 1.96 * sem) * total_trials_full
+        click.echo()
+        click.echo(f"  per-trial cost: min ${min(costs):.3f}  median ${statistics.median(costs):.3f}  max ${max(costs):.3f}")
+        click.secho(f"  95% interval on the full run: ${max(lo, 0):.2f} – ${hi:.2f}", fg="yellow")
+        if hi > 0 and hi / max(lo, 1e-9) > 2:
+            click.echo("  Interval spans more than 2x. Raise --dry-run-samples before trusting the midpoint.")
+
     click.echo()
     click.echo(
-        f"Note: estimate is based on {sample_size} sampled trial(s). "
-        f"Actual cost can vary ±30% depending on task difficulty and conversation length."
+        f"Note: estimate is based on {sample_size} sampled trial(s) of "
+        f"{total_trials_full}. Per-task cost spans roughly 18x across the task "
+        f"set, so trust the interval above rather than the midpoint. A completed "
+        f"run writes its real usage to usage.json — calibrate against that."
     )
 
 
@@ -394,6 +453,26 @@ async def _run_benchmark(
 
     (run_dir / "trial_results.json").write_text(json.dumps(all_trial_results, indent=2, default=str))
     (run_dir / "task_results.json").write_text(json.dumps(task_results, indent=2))
+
+    # Every agent and simulator response already reports its token usage, and
+    # until now the run threw the totals away at exit — leaving `--dry-run`
+    # extrapolations with nothing to be checked against. Record what the run
+    # actually consumed so the next estimate can be calibrated against it.
+    from tau_rec import cost as costlib
+    usage = costlib.snapshot()
+    trials_done = len(all_trial_results)
+    priced = costlib.price_tokens(model, simulator_model, usage)
+    (run_dir / "usage.json").write_text(json.dumps({
+        "agent_model": model,
+        "simulator_model": simulator_model,
+        "trials_completed": trials_done,
+        "tokens": usage,
+        "per_trial": {k: (v / trials_done if trials_done else 0) for k, v in usage.items()},
+        "cost_usd": priced,
+    }, indent=2))
+    if priced.get("total") is not None:
+        click.echo(f"actual cost = ${priced['total']:.2f} over {trials_done} trials")
+
     click.echo(f"\nRun artifacts saved to {run_dir}")
     import os as _os
     _os._exit(0)  # litellm httpx connection pools don't close cleanly; force exit after files are written
@@ -669,18 +748,23 @@ def leaderboard_validate(entries: str):
 @_OUT
 @click.option("--check", "check_only", is_flag=True,
               help="Exit 1 if the rendered board is stale instead of writing it")
-def leaderboard_render(entries: str, out: str, check_only: bool):
+@click.option("--readme", default="README.md", type=click.Path(),
+              help="README whose generated top-N region is kept in sync. "
+                   "Skipped if the file has no LEADERBOARD:BEGIN marker.")
+def leaderboard_render(entries: str, out: str, check_only: bool, readme: str):
     """Render LEADERBOARD.md from the committed entries."""
     from tau_rec.leaderboard import render as render_mod
 
     if check_only:
-        if render_mod.check(entries, out):
+        if render_mod.check(entries, out, readme):
             click.echo(f"{out} is up to date.")
             return
         raise click.ClickException(f"{out} is stale — run `tau-rec leaderboard render`.")
 
     render_mod.write(entries, out)
     click.echo(f"Wrote {out} from {len(list(Path(entries).glob('*.json')))} entries.")
+    if render_mod.sync_readme(entries, readme):
+        click.echo(f"Updated the generated top-{render_mod.README_TOP_N} region of {readme}.")
 
 
 @leaderboard.command("make-entry")

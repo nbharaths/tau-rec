@@ -40,19 +40,27 @@ G0_RUNS = {
     "qwen3-32b-paper": "qwen3-32b",
 }
 
+# Keyed by path under out/, because the later runs were written alongside
+# out/g1/ rather than inside it. Normalizing the local layout would mean moving
+# a directory a live run was still writing to, which is not worth it — the
+# archive layout is what readers see, and that is set by the values here.
 G1_RUNS = {
-    "dsflash": "deepseek-flash",
-    "glm": "glm-53-flash",
-    "luna": "gpt56-luna-medium",
-    "mistral": "mistral-small-3",
-    "grok": "grok-43",
-    "minimax": "minimax-m3",
-    "kimi": "kimi-k25",
-    "qwen3-32b": "qwen3-32b",
-    "gemini25flash": "gemini-25-flash",
-    "gpt5mini": "gpt5-mini",
-    "dsv4flash": "dsv4-flash",
-    "dsv4flash-high": "dsv4-flash-high",
+    "g1/dsflash": "deepseek-flash",
+    "g1/glm": "glm-53-flash",
+    "g1/luna": "gpt56-luna-medium",
+    "g1/mistral": "mistral-small-3",
+    "g1/grok": "grok-43",
+    "g1/minimax": "minimax-m3",
+    "g1/kimi": "kimi-k25",
+    "g1/qwen3-32b": "qwen3-32b",
+    "g1/gemini25flash": "gemini-25-flash",
+    "g1/gpt5mini": "gpt5-mini",
+    "g1/dsv4flash": "dsv4-flash",
+    "g1/dsv4flash-high": "dsv4-flash-high",
+    "g1/sol": "gpt56-sol-medium",
+    "g1-gpt54-medium": "gpt54-medium-thinking",
+    "g1-gpt54": "gpt54-no-thinking",
+    "g1-dsv4-flash-max": "dsv4-flash-max",
 }
 
 
@@ -100,7 +108,10 @@ def collect(run_dir: Path, dest: Path) -> tuple[int, int]:
             if trace.name.startswith("._"):
                 continue
             shutil.copy2(trace, dest / "traces" / trace.name)
-        for name in ("task_results.json", "run_manifest.json"):
+        # usage.json is the measured token and dollar cost of the run. Only the
+        # later runs recorded it; where it exists it ships, because a cost
+        # figure nobody can check is the weakest kind of claim.
+        for name in ("task_results.json", "run_manifest.json", "usage.json"):
             if (ts / name).exists():
                 shutil.copy2(ts / name, dest / name)
 
@@ -145,7 +156,7 @@ def main() -> int:
 
     for label, runs, src_root in (
         ("tau-rec-g0-traces", G0_RUNS, ROOT / "results" / "final-traces"),
-        ("tau-rec-g1-traces", G1_RUNS, ROOT / "out" / "g1"),
+        ("tau-rec-g1-traces", G1_RUNS, ROOT / "out"),
     ):
         stage_root = STAGE / label
         for src, clean in runs.items():

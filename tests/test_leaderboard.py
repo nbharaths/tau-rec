@@ -284,3 +284,74 @@ def test_make_entry_falls_back_to_flags_without_manifest(tmp_path):
     assert result.exit_code == 0, result.output
     assert "no run_manifest.json" in result.output
     assert json.loads(path.read_text())["reasoning_effort"] == "high"
+
+
+def _readme(d, body: str = "") -> Path:
+    """A README carrying the generated markers with `body` between them."""
+    path = d / "README.md"
+    path.write_text(
+        "# Project\n\nintro\n\n"
+        f"{render_mod.README_BEGIN}\n{body}{render_mod.README_END}\n\nouter text\n"
+    )
+    return path
+
+
+def test_sync_readme_replaces_only_the_marked_region(tmp_path):
+    _write_entry(tmp_path, submission_id="a", display_name="Alpha")
+    readme = _readme(tmp_path, "stale junk\n")
+    assert render_mod.sync_readme(tmp_path, readme) is True
+    text = readme.read_text()
+    assert "stale junk" not in text
+    assert "Alpha" in text
+    # Prose on either side of the markers is untouched.
+    assert text.startswith("# Project\n\nintro\n")
+    assert text.endswith("outer text\n")
+
+
+def test_sync_readme_is_idempotent(tmp_path):
+    _write_entry(tmp_path, submission_id="a")
+    readme = _readme(tmp_path)
+    assert render_mod.sync_readme(tmp_path, readme) is True
+    assert render_mod.sync_readme(tmp_path, readme) is False
+
+
+def test_sync_readme_skips_a_file_without_markers(tmp_path):
+    """A fork that dropped the region keeps its own README verbatim."""
+    _write_entry(tmp_path, submission_id="a")
+    readme = tmp_path / "README.md"
+    readme.write_text("# Mine\n\nhand-written\n")
+    assert render_mod.sync_readme(tmp_path, readme) is False
+    assert readme.read_text() == "# Mine\n\nhand-written\n"
+
+
+def test_readme_block_counts_entries_not_rows_shown(tmp_path):
+    """'top N of M' must report the full field, which is what went stale."""
+    for i in range(5):
+        _write_entry(tmp_path, submission_id=f"e{i}", display_name=f"M{i}",
+                     per_task={"t1": {"n": 4, "c": i}})
+    block = render_mod.readme_block(tmp_path, top=3)
+    assert "(top 3 of 5)" in block
+    assert block.count("\n| ") == 3 + 1  # three ranked rows plus the header rule
+
+
+def test_readme_block_excludes_nonstandard_simulator(tmp_path):
+    """Rows the main board segregates must not leak into the summary."""
+    _write_entry(tmp_path, submission_id="std", display_name="Standard")
+    _write_entry(tmp_path, submission_id="odd", display_name="OddSim",
+                 simulator_model="some-other-model")
+    block = render_mod.readme_block(tmp_path)
+    assert "Standard" in block
+    assert "OddSim" not in block
+    assert "(top 1 of 1)" in block
+
+
+def test_render_check_detects_stale_readme(tmp_path):
+    """The board can be current while the README summary is not."""
+    _write_entry(tmp_path, submission_id="a", display_name="Alpha")
+    out = tmp_path / "BOARD.md"
+    render_mod.write(tmp_path, out)
+    readme = _readme(tmp_path, "stale\n")
+    assert render_mod.check(tmp_path, out) is True       # board alone is fine
+    assert render_mod.check(tmp_path, out, readme) is False
+    render_mod.sync_readme(tmp_path, readme)
+    assert render_mod.check(tmp_path, out, readme) is True

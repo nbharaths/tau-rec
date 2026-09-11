@@ -16,18 +16,22 @@ Simulator: `gpt-5-mini`, 60 tasks.
 
 | # | Model | pass^1 | pass^2 | pass^4 | Trials | Gen | Notes | Traces |
 |---|-------|--------|--------|--------|--------|-----|-------|--------|
-| 1 | DeepSeek V4 Flash (high thinking) | 0.604 <sub>[0.50, 0.70]</sub> | 0.494 <sub>[0.38, 0.60]</sub> | 0.383 <sub>[0.27, 0.52]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
-| 2 | GLM-5.3 Flash | 0.525 <sub>[0.42, 0.63]</sub> | 0.419 <sub>[0.31, 0.54]</sub> | 0.333 <sub>[0.23, 0.47]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
-| 3 | DeepSeek Flash | 0.479 <sub>[0.38, 0.59]</sub> | 0.389 <sub>[0.29, 0.51]</sub> | 0.300 <sub>[0.20, 0.43]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
-| 4 | DeepSeek V4 Flash | 0.567 <sub>[0.47, 0.65]</sub> | 0.419 <sub>[0.32, 0.52]</sub> | 0.283 <sub>[0.18, 0.40]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
-| 5 | Kimi K2.5 | 0.487 <sub>[0.39, 0.59]</sub> | 0.367 <sub>[0.26, 0.48]</sub> | 0.283 <sub>[0.18, 0.40]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
-| 6 | GPT-5.6 Luna (medium thinking) | 0.471 <sub>[0.37, 0.57]</sub> | 0.358 <sub>[0.26, 0.47]</sub> | 0.250 <sub>[0.15, 0.37]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
-| 7 | MiniMax M3 | 0.467 <sub>[0.38, 0.57]</sub> | 0.331 <sub>[0.24, 0.44]</sub> | 0.250 <sub>[0.15, 0.37]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
-| 8 | GPT-5 mini | 0.396 <sub>[0.30, 0.50]</sub> | 0.289 <sub>[0.20, 0.39]</sub> | 0.183 <sub>[0.10, 0.30]</sub> | 4 | g1 | `same_model_as_simulator` | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
-| 9 | Gemini 2.5 Flash | 0.308 <sub>[0.22, 0.41]</sub> | 0.219 <sub>[0.14, 0.32]</sub> | 0.150 <sub>[0.08, 0.27]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
-| 10 | Qwen3-32B | 0.350 <sub>[0.26, 0.45]</sub> | 0.242 <sub>[0.17, 0.34]</sub> | 0.133 <sub>[0.07, 0.23]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
-| 11 | Mistral Small 3 | 0.362 <sub>[0.27, 0.46]</sub> | 0.233 <sub>[0.16, 0.33]</sub> | 0.117 <sub>[0.05, 0.22]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
-| 12 | Grok 4.3 | 0.221 <sub>[0.14, 0.32]</sub> | 0.156 <sub>[0.08, 0.26]</sub> | 0.117 <sub>[0.05, 0.22]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
+| 1 | GPT-5.4 (medium thinking) | 0.533 <sub>[0.42, 0.64]</sub> | 0.450 <sub>[0.33, 0.57]</sub> | 0.400 <sub>[0.28, 0.53]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.3.0/tau-rec-g1-traces.tar.gz) |
+| 2 | DeepSeek V4 Flash (high thinking) | 0.604 <sub>[0.50, 0.70]</sub> | 0.494 <sub>[0.38, 0.60]</sub> | 0.383 <sub>[0.27, 0.52]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
+| 3 | GPT-5.6 Sol (medium thinking) | 0.571 <sub>[0.47, 0.66]</sub> | 0.442 <sub>[0.34, 0.56]</sub> | 0.350 <sub>[0.23, 0.48]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.3.0/tau-rec-g1-traces.tar.gz) |
+| 4 | DeepSeek V4 Flash (max thinking) | 0.592 <sub>[0.49, 0.68]</sub> | 0.456 <sub>[0.35, 0.56]</sub> | 0.333 <sub>[0.22, 0.47]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.3.0/tau-rec-g1-traces.tar.gz) |
+| 5 | GLM-5.3 Flash | 0.525 <sub>[0.42, 0.63]</sub> | 0.419 <sub>[0.31, 0.54]</sub> | 0.333 <sub>[0.23, 0.47]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
+| 6 | DeepSeek Flash | 0.479 <sub>[0.38, 0.59]</sub> | 0.389 <sub>[0.29, 0.51]</sub> | 0.300 <sub>[0.20, 0.43]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
+| 7 | DeepSeek V4 Flash | 0.567 <sub>[0.47, 0.65]</sub> | 0.419 <sub>[0.32, 0.52]</sub> | 0.283 <sub>[0.18, 0.40]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
+| 8 | Kimi K2.5 | 0.487 <sub>[0.39, 0.59]</sub> | 0.367 <sub>[0.26, 0.48]</sub> | 0.283 <sub>[0.18, 0.40]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
+| 9 | GPT-5.4 (no thinking) | 0.433 <sub>[0.33, 0.54]</sub> | 0.328 <sub>[0.23, 0.45]</sub> | 0.267 <sub>[0.17, 0.40]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.3.0/tau-rec-g1-traces.tar.gz) |
+| 10 | GPT-5.6 Luna (medium thinking) | 0.471 <sub>[0.37, 0.57]</sub> | 0.358 <sub>[0.26, 0.47]</sub> | 0.250 <sub>[0.15, 0.37]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
+| 11 | MiniMax M3 | 0.467 <sub>[0.38, 0.57]</sub> | 0.331 <sub>[0.24, 0.44]</sub> | 0.250 <sub>[0.15, 0.37]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
+| 12 | GPT-5 mini | 0.396 <sub>[0.30, 0.50]</sub> | 0.289 <sub>[0.20, 0.39]</sub> | 0.183 <sub>[0.10, 0.30]</sub> | 4 | g1 | `same_model_as_simulator` | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
+| 13 | Gemini 2.5 Flash | 0.308 <sub>[0.22, 0.41]</sub> | 0.219 <sub>[0.14, 0.32]</sub> | 0.150 <sub>[0.08, 0.27]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
+| 14 | Qwen3-32B | 0.350 <sub>[0.26, 0.45]</sub> | 0.242 <sub>[0.17, 0.34]</sub> | 0.133 <sub>[0.07, 0.23]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
+| 15 | Mistral Small 3 | 0.362 <sub>[0.27, 0.46]</sub> | 0.233 <sub>[0.16, 0.33]</sub> | 0.117 <sub>[0.05, 0.22]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
+| 16 | Grok 4.3 | 0.221 <sub>[0.14, 0.32]</sub> | 0.156 <sub>[0.08, 0.26]</sub> | 0.117 <sub>[0.05, 0.22]</sub> | 4 | g1 | — | [archive](https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz) |
 
 ## Generation `g0`
 

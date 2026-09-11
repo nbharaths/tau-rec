@@ -1,5 +1,66 @@
 # Changelog
 
+## v1.3.0 — 2026-09-11
+
+Leaderboard and cost-accounting release. The task set, catalog, policy prompt,
+and evaluator are unchanged, so `g1` remains one generation and no published
+number moved. The agent-side changes here — prompt caching and reasoning-effort
+steering — alter what a run costs and how it is configured, not what the
+evaluator reads, so they do not open a new generation.
+
+### Added
+
+- **Four more `g1` entries**, taking the current-harness table to sixteen:
+  GPT-5.6 Sol (medium thinking), GPT-5.4 at medium thinking and at no
+  thinking, and DeepSeek V4 Flash (max thinking). GPT-5.4 (medium thinking)
+  takes the top of `g1` at `pass^4` 0.400.
+
+  The useful result is an inversion rather than the ranking. DeepSeek V4 Flash
+  (max thinking) is the better model on a single attempt — `pass^1` 0.592
+  against GPT-5.4's 0.533 — and the worse one across four, `pass^4` 0.333
+  against 0.400. A model can be more capable per try and less reliable in
+  aggregate, which is the distinction `pass^k` exists to surface and a plain
+  success rate hides.
+- **Prompt caching on Anthropic models.** OpenAI and OpenRouter cache a repeated
+  prefix automatically; Anthropic caches only what the request marks, so the
+  agent's static prefix went uncached and was re-billed at the full input rate
+  on every step of every tool loop. `LiteLLMAgent` now sets a `cache_control`
+  breakpoint on the system block, which covers the tool schemas too because
+  Anthropic orders the prompt tools → system → messages. Measured against the
+  live API: 88% of input served from cache, 2.6× cheaper across a three-step
+  loop, and more on the 11–25-call loops a real trial runs.
+- **`--reasoning-effort` steering** for model families that reject the
+  parameter outright, so a thinking mode can be selected rather than inferred.
+- **`usage.json` per run**, recording measured token counts and dollar cost.
+  It ships inside the trace archives, so a cost figure in a paper or a
+  changelog can be checked rather than taken on trust. The three runs new to
+  this release cost $34.97, $11.34, and $5.56 at 74%, 61%, and 91% of agent
+  input served from cache.
+- **`scripts/verify_thinking_labels.py`.** Three `g0` rows share a model string
+  and differ only by thinking mode, which no trace records. The labels rest on
+  per-step agent latency separating the three in the order the labels predict,
+  and that evidence previously had no script behind it. This recomputes every
+  figure from the traces and fails if the medians stop separating.
+- A **generated top-3 region in `README.md`**, owned by `leaderboard render`
+  and checked by `render --check`. It was maintained by hand and had drifted
+  twice, still advertising "top 3 of 12" against a board of sixteen and naming
+  a leader that had been displaced.
+
+### Fixed
+
+- **Cached input was billed at the full input rate.** Anthropic and OpenAI
+  serve cache reads at a tenth of the input price, and cache writes at 1.25×,
+  but the estimator priced every prompt token the same. Runs with a high cache
+  rate were overstated by several times. Cost estimates are now split across
+  fresh, cached, and written input at their respective rates.
+- **Token usage was estimated where the provider had already reported it.**
+  Runs now record the counts the API returns. `--dry-run` also claimed a ±30%
+  accuracy it had never demonstrated; it now reports what was measured.
+- Cost estimates for Claude 4.7+ and for thinking-model pricing tiers.
+- GPT-5.6 Sol shipped in v1.2.0 with no **Traces** link, because the published
+  archives are pinned to v1.2.0 and its run postdated that tag. Its traces are
+  in this release's `g1` archive and the row links to them.
+
 ## v1.2.0 — 2026-09-11
 
 Leaderboard release. The task set, catalog, policy prompt, and evaluator are

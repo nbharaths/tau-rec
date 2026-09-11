@@ -32,6 +32,20 @@ BANNER = """<!-- GENERATED FILE — DO NOT EDIT BY HAND.
      Source of truth: leaderboard/entries/*.json -->
 """
 
+# README carries its own top-N summary, which is the first thing most readers
+# see and so the worst thing to leave stale -- it had drifted twice, still
+# advertising "top 3 of 12" against a board of 16 and naming a leader that had
+# been displaced. The renderer owns the region between these markers, and
+# `render --check` fails on drift the same way it does for the board itself.
+README_BEGIN = "<!-- LEADERBOARD:BEGIN — generated, do not edit by hand -->"
+README_END = "<!-- LEADERBOARD:END -->"
+
+README_TOP_N = 3
+
+# Short descriptors for the README tables. An unlisted generation falls back to
+# the bare label, so adding g2 changes the board without touching this file.
+GENERATION_BLURBS = {"g1": "the current harness", "g0": "the paper cohort"}
+
 
 def load_entries(entries_dir: str | Path) -> list[LeaderboardEntry]:
     paths = sorted(Path(entries_dir).glob("*.json"), key=lambda p: p.name)
@@ -166,13 +180,85 @@ def render(entries_dir: str | Path) -> str:
     return "\n".join(parts).rstrip() + "\n"
 
 
+def _readme_table(rows: list[dict], top: int) -> str:
+    header = ("| # | Model | pass^1 | pass^2 | pass^4 |\n"
+              "|---|-------|--------|--------|--------|")
+    lines = []
+    for rank, row in enumerate(rows[:top], start=1):
+        # The board ranks on pass^4, so bold it on the leader to show which
+        # column the ordering came from.
+        p4 = f"{row['pass_4']:.3f}"
+        cells = [str(rank), row["entry"].display_name,
+                 f"{row['pass_1']:.3f}", f"{row['pass_2']:.3f}",
+                 f"**{p4}**" if rank == 1 else p4]
+        lines.append("| " + " | ".join(cells) + " |")
+    return header + "\n" + "\n".join(lines)
+
+
+def readme_block(entries_dir: str | Path, top: int = README_TOP_N) -> str:
+    """The generated region of README.md: one top-N table per generation."""
+    rows = [summarize(e) for e in load_entries(entries_dir)]
+    by_generation: dict[str, list[dict]] = {}
+    for row in rows:
+        # Non-standard-simulator entries are not comparable with the rest, so
+        # they are excluded here exactly as they are on the main board.
+        if row["entry"].simulator_model != STANDARD_SIMULATOR:
+            continue
+        by_generation.setdefault(row["entry"].harness_generation, []).append(row)
+
+    parts = [README_BEGIN, ""]
+    for label in sorted(by_generation, key=_generation_sort_key):
+        ranked = sorted(by_generation[label], key=_sort_key)
+        blurb = GENERATION_BLURBS.get(label)
+        name = f"`{label}`, {blurb}" if blurb else f"`{label}`"
+        shown = min(top, len(ranked))
+        parts += [f"{name} (top {shown} of {len(ranked)}):", "",
+                  _readme_table(ranked, top), ""]
+    parts.append(README_END)
+    return "\n".join(parts)
+
+
+def sync_readme(entries_dir: str | Path, readme_path: str | Path,
+                top: int = README_TOP_N) -> bool:
+    """Rewrite README's generated region. True if the file changed.
+
+    A README without the markers is left alone rather than rewritten: the
+    region is opt-in, so this stays a no-op for forks that dropped it.
+    """
+    path = Path(readme_path)
+    if not path.exists():
+        return False
+    text = path.read_text()
+    if README_BEGIN not in text or README_END not in text:
+        return False
+    head, _, rest = text.partition(README_BEGIN)
+    _, _, tail = rest.partition(README_END)
+    updated = head + readme_block(entries_dir, top) + tail
+    if updated == text:
+        return False
+    path.write_text(updated)
+    return True
+
+
 def write(entries_dir: str | Path, out_path: str | Path) -> str:
     text = render(entries_dir)
     Path(out_path).write_text(text)
     return text
 
 
-def check(entries_dir: str | Path, out_path: str | Path) -> bool:
-    """True if out_path already matches a fresh render."""
+def check(entries_dir: str | Path, out_path: str | Path,
+          readme_path: str | Path | None = None) -> bool:
+    """True if the generated files already match a fresh render."""
     path = Path(out_path)
-    return path.exists() and path.read_text() == render(entries_dir)
+    if not path.exists() or path.read_text() != render(entries_dir):
+        return False
+    if readme_path is None:
+        return True
+    readme = Path(readme_path)
+    if not readme.exists():
+        return True
+    text = readme.read_text()
+    if README_BEGIN not in text or README_END not in text:
+        return True
+    current = README_BEGIN + text.partition(README_BEGIN)[2].partition(README_END)[0]
+    return current + README_END == readme_block(entries_dir)

@@ -25,13 +25,15 @@ Accepted at ACM Recsys 2026 (Reproducibility and Resource Track)
 
 **[LEADERBOARD.md](LEADERBOARD.md)** — current standings across two harness generations.
 
-`g1`, the current harness (top 3 of 12):
+<!-- LEADERBOARD:BEGIN — generated, do not edit by hand -->
+
+`g1`, the current harness (top 3 of 16):
 
 | # | Model | pass^1 | pass^2 | pass^4 |
 |---|-------|--------|--------|--------|
-| 1 | DeepSeek V4 Flash (high thinking) | 0.604 | 0.494 | **0.383** |
-| 2 | GLM-5.3 Flash | 0.525 | 0.419 | 0.333 |
-| 3 | DeepSeek Flash | 0.479 | 0.389 | 0.300 |
+| 1 | GPT-5.4 (medium thinking) | 0.533 | 0.450 | **0.400** |
+| 2 | DeepSeek V4 Flash (high thinking) | 0.604 | 0.494 | 0.383 |
+| 3 | GPT-5.6 Sol (medium thinking) | 0.571 | 0.442 | 0.350 |
 
 `g0`, the paper cohort (top 3 of 9):
 
@@ -40,6 +42,8 @@ Accepted at ACM Recsys 2026 (Reproducibility and Resource Track)
 | 1 | DeepSeek V4 Flash (high thinking) | 0.560 | 0.461 | **0.383** |
 | 2 | DeepSeek V4 Flash (max thinking) | 0.571 | 0.461 | 0.350 |
 | 3 | GPT-5.4 (medium thinking) | 0.551 | 0.450 | 0.350 |
+
+<!-- LEADERBOARD:END -->
 
 **The two tables are not comparable.** `g0` ran against an 8-policy prompt that
 `g1` no longer uses, so the agents read different instructions. Five

@@ -1,10 +1,109 @@
 from __future__ import annotations
 import asyncio
+import functools
 import json
+import re
 from tau_rec.agents.base import BaseAgent, AgentResponse
 
 MAX_RETRIES = 8
 RETRY_DELAY = 30  # seconds
+
+# Anthropic deprecated `temperature` at Claude Opus 4.7 — 4.6 and earlier still
+# accept it, later models reject the request outright. Match on the version
+# number rather than a list of names: the same model reaches us as
+# `claude-opus-4-8` direct and `anthropic/claude-opus-4.8` via OpenRouter, and
+# the 5 family omits the minor version entirely (`claude-opus-5`).
+_CLAUDE_VERSION = re.compile(r"claude-[a-z]+-(\d+)(?:[-.](\d+))?")
+_TEMPERATURE_DEPRECATED_FROM = (4, 7)
+
+
+@functools.lru_cache(maxsize=None)
+def _supports_reasoning_effort(model: str) -> bool:
+    """Whether litellm will forward `reasoning_effort` for this model.
+
+    Some models reason unconditionally and have no `reasoning_effort` in their
+    param map; litellm raises before the request leaves rather than dropping
+    it, which would fail every trial in a run.
+    """
+    import litellm
+
+    provider = "openrouter" if model.startswith("openrouter/") else None
+    name = model.split("/", 1)[1] if provider else model
+    try:
+        params = litellm.get_supported_openai_params(model=name, custom_llm_provider=provider)
+    except Exception:
+        params = None
+    if params is None:
+        # litellm knows nothing about this model. Send the parameter and let the
+        # provider decide, which is what this code did before there was a check.
+        return True
+    # Otherwise the param map is authoritative. An OpenRouter model litellm does
+    # not recognise lands here too, reported as unsupported — which is the right
+    # answer regardless, since litellm would refuse to forward the parameter.
+    return "reasoning_effort" in params
+
+
+# Anthropic is the only provider here that does not cache on its own: OpenAI and
+# OpenRouter serve a repeated prefix from cache automatically (82-89% of input on
+# measured runs), while Anthropic caches only what you mark and otherwise bills
+# every resend at full rate. That difference cost a Sonnet 4.6 calibration 4x
+# what the same token volume cost on gpt-5.4.
+#
+# This is a billing and latency change only. Caching reuses the prefill state for
+# an identical prefix; generation still samples fresh on every call, so it does
+# not make trials agree with each other. Trial variance here comes from the
+# simulator, which runs at temperature 1.0.
+def _marks_cache_explicitly(model: str) -> bool:
+    return "claude" in model.lower()
+
+
+def _cache_mark(message: dict) -> dict:
+    """Copy `message` with a cache breakpoint on its final content block."""
+    out = dict(message)
+    content = out.get("content")
+    if isinstance(content, str):
+        if not content:
+            # An assistant turn carrying only tool_calls has empty content, and
+            # an empty text block is rejected outright.
+            return out
+        out["content"] = [{"type": "text", "text": content,
+                           "cache_control": {"type": "ephemeral"}}]
+    elif isinstance(content, list) and content:
+        blocks = [dict(b) for b in content]
+        blocks[-1] = {**blocks[-1], "cache_control": {"type": "ephemeral"}}
+        out["content"] = blocks
+    return out
+
+
+def _with_cache_breakpoints(messages: list[dict]) -> list[dict]:
+    """Mark the cacheable prefix for providers that cache only on request.
+
+    Two breakpoints of the four Anthropic allows. The first is the system block,
+    which covers the tool definitions too because Anthropic orders tools ahead
+    of system — that matters, since the system prompt alone is under the
+    1024-token floor for caching and the two together clear it. The second is
+    the newest message, which absorbs the tool loop: it resends the whole
+    conversation on every call, so the prefix is read back 10-25 times a trial.
+    """
+    out = [dict(m) for m in messages]
+    if out and out[0].get("role") == "system":
+        out[0] = _cache_mark(out[0])
+    for i in range(len(out) - 1, 0, -1):
+        if out[i].get("content"):
+            out[i] = _cache_mark(out[i])
+            break
+    return out
+
+
+def _rejects_temperature(model: str) -> bool:
+    name = model.lower()
+    if any(tag in name for tag in ("o1", "o3", "o4", "gpt-5")):
+        return True
+    match = _CLAUDE_VERSION.search(name)
+    if match is None:
+        return False
+    major, minor = int(match.group(1)), int(match.group(2) or 0)
+    return (major, minor) >= _TEMPERATURE_DEPRECATED_FROM
 
 AGENT_SYSTEM_PROMPT_TEMPLATE = """\
 You are a movie recommendation assistant. Your goal is to help the user find
@@ -97,9 +196,12 @@ class LiteLLMAgent(BaseAgent):
             self._message_history.extend(tool_results)
             messages.extend(tool_results)
 
+        if _marks_cache_explicitly(self.model):
+            messages = _with_cache_breakpoints(messages)
+
         kwargs = {"model": self.model, "messages": messages}
-        # Some models (o-series, gpt-5) don't support temperature
-        if not any(tag in self.model for tag in ["o1", "o3", "o4", "gpt-5"]):
+        # Some models (o-series, gpt-5, Claude 4.7+) don't support temperature
+        if not _rejects_temperature(self.model):
             kwargs["temperature"] = 0.0
         if self._tool_definitions:
             kwargs["tools"] = self._tool_definitions
@@ -111,7 +213,16 @@ class LiteLLMAgent(BaseAgent):
         if "openrouter" in self.model and "qwen3" in self.model.lower():
             kwargs["extra_body"] = {"thinking": {"type": "disabled"}}
         if self._reasoning_effort:
-            kwargs["reasoning_effort"] = self._reasoning_effort
+            if _supports_reasoning_effort(self.model):
+                kwargs["reasoning_effort"] = self._reasoning_effort
+            else:
+                # OpenRouter's own `reasoning` field is the only way to steer
+                # these. litellm forwards extra_body verbatim. A model may
+                # accept a level it does not actually honour, and single
+                # requests are far too noisy to tell the difference — reasoning
+                # length varies severalfold on identical input. Compare token
+                # totals across whole runs before labelling one with a level.
+                kwargs.setdefault("extra_body", {})["reasoning"] = {"effort": self._reasoning_effort}
         # Per-request timeout to prevent hung OpenRouter requests
         kwargs["timeout"] = 120
 

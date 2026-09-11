@@ -47,7 +47,11 @@ results. The result is zero task-level deltas, tasks 055–057 included.
 Three `g0` rows share a model string and differ only by thinking mode, which no
 trace records. The labels are supported by per-step agent latency, which
 separates the three in the order the labels predict (medians 14.9s / 19.7s /
-24.4s; Mann-Whitney `p = 2.4e-9` and `p = 1.2e-3`).
+24.4s; Mann-Whitney `p = 2.4e-9` and `p = 1.2e-3`, one-sided against the
+directional hypothesis that more thinking is slower).
+`scripts/verify_thinking_labels.py` recomputes all of it from the traces, and
+prints the two-sided values alongside — scipy tests two-sided by default, which
+is exactly twice each figure quoted here.
 
 ## g1 — the 7-policy harness
 
