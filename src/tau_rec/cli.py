@@ -20,6 +20,7 @@ def main():
     pass
 
 
+from tau_rec import __version__
 from tau_rec.play import play as _play_cmd
 main.add_command(_play_cmd, name="play")
 
@@ -784,7 +785,7 @@ def leaderboard_make_entry(run_dir: str, submission_id: str, display_name: str,
         reasoning_effort=reasoning_effort,
         simulator_model=simulator,
         harness_generation=generation,
-        tau_rec_version="0.1.0",
+        tau_rec_version=__version__,
         trials_per_task=max(row["n"] for row in per_task.values()),
         policy_sha256=hash_file(policy),
         tasks_sha256=hash_task_dir(tasks),

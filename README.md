@@ -105,7 +105,7 @@ Options:
 | Flag | Default | Purpose |
 | --- | --- | --- |
 | `--model` | — | Agent-under-test (LiteLLM model string) |
-| `--simulator-model` | `gemini/gemini-2.5-pro` | Model powering the user simulator |
+| `--simulator-model` | `gpt-5-mini` | Model powering the user simulator |
 | `--trials` | `16` | Independent trials per task |
 | `--max-turns` | `20` | Hard cap on agent↔user turns per trial |
 | `--concurrency` | `16` | Trials to run in parallel |

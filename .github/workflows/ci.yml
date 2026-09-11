@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - run: uv sync --extra dev
+      - run: uv run pytest
+
+      # The board is a generated file. Without this, a submitter can hand-edit
+      # LEADERBOARD.md and have it disagree with the entries it claims to
+      # summarise. leaderboard/CONTRIBUTING.md promises this check runs.
+      - name: Validate leaderboard entries
+        run: uv run tau-rec leaderboard validate
+      - name: Check LEADERBOARD.md matches a fresh render
+        run: uv run tau-rec leaderboard render --check
+
+      # Tasks are only scoreable if every one has a satisfying item in the
+      # catalog (or none, for no_valid_recommendation tasks).
+      - name: Validate tasks against catalog
+        run: uv run tau-rec validate --catalog data/catalog.json --tasks data/tasks

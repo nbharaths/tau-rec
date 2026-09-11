@@ -24,7 +24,12 @@ label is a human judgement about whether a scoring change could move a number.
 ## g0 — the RecSys paper cohort
 
 Nine configurations, run 2026-05-02 to 2026-05-03, 60 tasks × 4 trials,
-simulator `gpt-5-mini`. This is the cohort behind the paper's Table 3.
+simulator `gpt-5-mini`. This is the cohort behind the paper's main results
+table (Table 2).
+
+Commit identifiers cited below refer to the authors' development history. This
+repository is published as a curated squash, so they will not resolve here;
+they are recorded for provenance, not as clickable references.
 
 `g0` entries carry the `content_digests_unrecorded` caveat: they predate
 `run_manifest.json`, so no policy/task/catalog digest was recorded at run time
@@ -45,8 +50,10 @@ carried its flag.
 
 **This is measured, not assumed.** `scripts/rederive_seed_cohort.py` re-scores
 every archived trace with the HEAD evaluator and diffs per-task `{n, c}` against
-each run's stored `task_results.json`. Across all ten archived run directories
-the result is **zero task-level deltas**, tasks 055–057 included. The removed
+each run's stored `task_results.json`. Across all ten archived run directories —
+the nine board entries plus an abandoned partial Llama-3.3 run that never
+reached the paper — the result is **zero task-level deltas**, tasks 055–057
+included. The removed
 check never changed an outcome on any archived trial, and
 `ds-v4-flash-4t-gpt5mini` re-derives to `pass^1/2/4 = 0.546 / 0.433 / 0.333`,
 matching the paper exactly.
