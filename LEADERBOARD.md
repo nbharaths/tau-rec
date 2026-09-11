@@ -8,7 +8,21 @@
 
 Entries store only raw per-task `{n, c}`. Every number below is derived at render time, so the whole board moves when the evaluator does.
 
-## Standard configuration
+**Generations are ranked separately and cannot be compared across tables.** Each was scored against different policy, task, or evaluator content; `leaderboard/GENERATIONS.md` records exactly what differs.
+
+## Generation `g1` — most recent
+
+Simulator: `gpt-5-mini`, 60 tasks.
+
+| # | Model | pass^1 | pass^2 | pass^4 | Trials | Gen | Notes |
+|---|-------|--------|--------|--------|--------|-----|-------|
+| 1 | GLM-5.3 Flash | 0.525 <sub>[0.42, 0.63]</sub> | 0.419 <sub>[0.31, 0.54]</sub> | 0.333 <sub>[0.22, 0.47]</sub> | 4 | g1 | — |
+| 2 | DeepSeek Flash | 0.479 <sub>[0.38, 0.59]</sub> | 0.389 <sub>[0.29, 0.51]</sub> | 0.300 <sub>[0.20, 0.43]</sub> | 4 | g1 | — |
+| 3 | GPT-5.6 Luna (medium thinking) | 0.471 <sub>[0.37, 0.57]</sub> | 0.358 <sub>[0.26, 0.47]</sub> | 0.250 <sub>[0.15, 0.37]</sub> | 4 | g1 | — |
+| 4 | Mistral Small 3 | 0.362 <sub>[0.28, 0.46]</sub> | 0.233 <sub>[0.16, 0.33]</sub> | 0.117 <sub>[0.05, 0.22]</sub> | 4 | g1 | — |
+| 5 | Grok 4.3 | 0.221 <sub>[0.14, 0.32]</sub> | 0.156 <sub>[0.09, 0.26]</sub> | 0.117 <sub>[0.05, 0.22]</sub> | 4 | g1 | — |
+
+## Generation `g0`
 
 Simulator: `gpt-5-mini`, 60 tasks.
 
@@ -23,6 +37,7 @@ Simulator: `gpt-5-mini`, 60 tasks.
 | 7 | GPT-5 mini | 0.417 <sub>[0.31, 0.53]</sub> | 0.333 <sub>[0.23, 0.45]</sub> | 0.250 <sub>[0.15, 0.37]</sub> | 4 | g0 | `same_model_as_simulator` |
 | 8 | Gemini 2.5 Flash | 0.275 <sub>[0.19, 0.38]</sub> | 0.189 <sub>[0.11, 0.29]</sub> | 0.133 <sub>[0.07, 0.23]</sub> | 4 | g0 | — |
 | 9 | Qwen3-32B | 0.271 <sub>[0.19, 0.37]</sub> | 0.181 <sub>[0.11, 0.28]</sub> | 0.117 <sub>[0.05, 0.22]</sub> | 4 | g0 | — |
+
 
 ## Columns
 

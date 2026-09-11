@@ -285,6 +285,32 @@ async def _run_benchmark(
 
     policy_text = Path(policy_path).read_text()
 
+    # Written before any trial runs, so a killed run still records what it was.
+    # Nothing else on disk captures reasoning_effort: a run without this is
+    # unlabelable after the fact and has to be thrown away.
+    from tau_rec.leaderboard.hashing import hash_file, hash_task_dir
+
+    (run_dir / "run_manifest.json").write_text(
+        json.dumps(
+            {
+                "model": model,
+                "reasoning_effort": reasoning_effort,
+                "simulator_model": simulator_model,
+                "trials_per_task": trials,
+                "max_turns": max_turns,
+                "no_tools": no_tools,
+                "tasks_filter": tasks_filter,
+                "tasks_limit": tasks_limit,
+                "started_at": datetime.now().isoformat(timespec="seconds"),
+                "policy_sha256": hash_file(policy_path),
+                "tasks_sha256": hash_task_dir(tasks_path),
+                "catalog_sha256": hash_file(catalog_path),
+            },
+            indent=2,
+        )
+        + "\n"
+    )
+
     task_dir = Path(tasks_path)
     task_files = sorted(task_dir.glob("*.json"))
     all_tasks = [Task.from_json(str(tf)) for tf in task_files]
@@ -654,3 +680,123 @@ def leaderboard_render(entries: str, out: str, check_only: bool):
 
     render_mod.write(entries, out)
     click.echo(f"Wrote {out} from {len(list(Path(entries).glob('*.json')))} entries.")
+
+
+@leaderboard.command("make-entry")
+@click.option("--run-dir", required=True, type=click.Path(exists=True),
+              help="Run output directory containing traces/")
+@click.option("--submission-id", required=True, help="Slug, e.g. g1-my-model")
+@click.option("--display-name", required=True, help="Name shown on the board")
+@click.option("--submitted-by", required=True)
+@click.option("--generation", default="g1", show_default=True)
+@click.option("--reasoning-effort", default=None)
+@click.option("--pinned/--not-pinned", default=False, show_default=True)
+@click.option("--run-date", required=True, help="YYYY-MM-DD")
+@click.option("--traces-url", default=None)
+@click.option("--catalog", default="data/catalog.json", show_default=True,
+              type=click.Path(exists=True))
+@click.option("--tasks", default="data/tasks", show_default=True,
+              type=click.Path(exists=True))
+@click.option("--policy", default="data/policy.md", show_default=True,
+              type=click.Path(exists=True))
+@click.option("--entries", default="leaderboard/entries", show_default=True,
+              type=click.Path(exists=True))
+def leaderboard_make_entry(run_dir: str, submission_id: str, display_name: str,
+                           submitted_by: str, generation: str, reasoning_effort: str | None,
+                           pinned: bool, run_date: str, traces_url: str | None,
+                           catalog: str, tasks: str, policy: str, entries: str):
+    """Build a submission entry by re-scoring a run's traces.
+
+    Counts come from re-scoring the traces with the current evaluator, never
+    from the run's stored task_results.json — re-derived is what the board
+    publishes, so an entry is built the same way it will later be checked.
+    """
+    import json
+
+    from tau_rec.data_model.catalog import Catalog
+    from tau_rec.data_model.conversation import ConversationTrace
+    from tau_rec.data_model.task import Task
+    from tau_rec.evaluator.evaluator import CombinedEvaluator
+    from tau_rec.leaderboard.entry import LeaderboardEntry
+    from tau_rec.leaderboard.hashing import hash_file, hash_task_dir
+
+    root = Path(run_dir)
+    trace_dirs = sorted(p for p in root.rglob("traces") if p.is_dir())
+    if not trace_dirs:
+        raise click.ClickException(f"no traces/ directory under {run_dir}")
+    trace_paths = sorted(p for d in trace_dirs for p in d.glob("*.json"))
+    if not trace_paths:
+        raise click.ClickException(f"no trace files under {trace_dirs[0]}")
+
+    # The manifest is what the run actually did; the flags are what someone
+    # typed afterwards. Where they disagree the manifest wins, because a
+    # mistyped reasoning_effort is indistinguishable from a real one on the
+    # board. Runs predating the manifest fall back to the flags.
+    manifests = sorted(root.rglob("run_manifest.json"))
+    manifest = json.loads(manifests[0].read_text()) if manifests else {}
+    if manifest:
+        reasoning_effort = manifest.get("reasoning_effort")
+        simulator = manifest.get("simulator_model", "gpt-5-mini")
+        drifted = [
+            name
+            for name, recorded, current in (
+                ("policy", manifest.get("policy_sha256"), hash_file(policy)),
+                ("tasks", manifest.get("tasks_sha256"), hash_task_dir(tasks)),
+                ("catalog", manifest.get("catalog_sha256"), hash_file(catalog)),
+            )
+            if recorded and recorded != current
+        ]
+        if drifted:
+            raise click.ClickException(
+                f"{', '.join(drifted)} changed since this run; its scores are not "
+                f"comparable to entries built from the current content. Re-run, or "
+                f"submit under a new harness generation."
+            )
+    else:
+        simulator = "gpt-5-mini"
+        click.echo("  no run_manifest.json: reasoning_effort/digests taken from flags.")
+
+    cat = Catalog.from_json(catalog)
+    task_map = {p.stem: Task.model_validate_json(p.read_text())
+                for p in sorted(Path(tasks).glob("*.json"))}
+    evaluator = CombinedEvaluator(cat)
+
+    per_task: dict[str, dict[str, int]] = {}
+    models: set[str] = set()
+    for path in trace_paths:
+        trace = ConversationTrace.model_validate_json(path.read_text())
+        models.add(trace.model)
+        result = evaluator.evaluate(task=task_map[trace.task_id], trace=trace)
+        row = per_task.setdefault(trace.task_id, {"n": 0, "c": 0})
+        row["n"] += 1
+        row["c"] += 1 if result.primary_reward == 1.0 else 0
+
+    if len(models) != 1:
+        raise click.ClickException(f"traces mix model ids: {sorted(models)}")
+
+    entry = LeaderboardEntry(
+        submission_id=submission_id,
+        display_name=display_name,
+        submitted_by=submitted_by,
+        model_id=models.pop(),
+        pinned=pinned,
+        run_date=run_date,
+        reasoning_effort=reasoning_effort,
+        simulator_model=simulator,
+        harness_generation=generation,
+        tau_rec_version="0.1.0",
+        trials_per_task=max(row["n"] for row in per_task.values()),
+        policy_sha256=hash_file(policy),
+        tasks_sha256=hash_task_dir(tasks),
+        catalog_sha256=hash_file(catalog),
+        per_task=per_task,
+        traces_url=traces_url,
+    )
+
+    out_path = Path(entries) / f"{submission_id}.json"
+    out_path.write_text(json.dumps(json.loads(entry.model_dump_json()), indent=2) + "\n")
+    total = sum(row["n"] for row in per_task.values())
+    solved = sum(row["c"] for row in per_task.values())
+    click.echo(f"Wrote {out_path}: {len(per_task)} tasks, {total} trials, {solved} solved.")
+    if entry.caveats:
+        click.echo(f"  caveats: {', '.join(entry.caveats)}")

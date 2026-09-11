@@ -80,14 +80,44 @@ def _table(rows: list[dict]) -> str:
     return f"{header}\n{body}" if body else f"{header}\n| — | _no entries_ | | | | | | |"
 
 
-def render(entries_dir: str | Path) -> str:
-    rows = [summarize(e) for e in load_entries(entries_dir)]
+def _generation_sort_key(label: str) -> tuple:
+    """Newest generation first. 'g10' must sort above 'g9', so compare the
+    numeric suffix rather than the string."""
+    digits = "".join(c for c in label if c.isdigit())
+    return (-int(digits) if digits else 0, label)
+
+
+def _generation_block(label: str, rows: list[dict], is_newest: bool) -> list[str]:
     standard = sorted(
         [r for r in rows if r["entry"].simulator_model == STANDARD_SIMULATOR], key=_sort_key
     )
     nonstandard = sorted(
         [r for r in rows if r["entry"].simulator_model != STANDARD_SIMULATOR], key=_sort_key
     )
+
+    # "most recent" is a claim about this board only. It deliberately does not
+    # say "current harness": the newest entries on the board may still predate
+    # HEAD, which is the whole reason generations are labelled.
+    heading = f"## Generation `{label}`" + (" — most recent" if is_newest else "")
+    parts = [f"{heading}\n", f"Simulator: `{STANDARD_SIMULATOR}`, 60 tasks.\n", _table(standard)]
+
+    if nonstandard:
+        parts += [
+            f"\n### `{label}`, non-standard simulator\n",
+            "Not comparable with the table above — the user simulator is worth roughly "
+            "13.7 pass^1 points across models, against a board span of ~28 points.\n",
+            _table(nonstandard),
+        ]
+    return parts
+
+
+def render(entries_dir: str | Path) -> str:
+    rows = [summarize(e) for e in load_entries(entries_dir)]
+
+    by_generation: dict[str, list[dict]] = {}
+    for row in rows:
+        by_generation.setdefault(row["entry"].harness_generation, []).append(row)
+    labels = sorted(by_generation, key=_generation_sort_key)
 
     parts = [
         BANNER,
@@ -98,17 +128,20 @@ def render(entries_dir: str | Path) -> str:
         "as zero. Brackets are 95% BCa bootstrap intervals over per-task scores.\n",
         "Entries store only raw per-task `{n, c}`. Every number below is derived at "
         "render time, so the whole board moves when the evaluator does.\n",
-        f"## Standard configuration\n\nSimulator: `{STANDARD_SIMULATOR}`, 60 tasks.\n",
-        _table(standard),
     ]
 
-    if nonstandard:
-        parts += [
-            "\n## Non-standard simulator\n",
-            "Not comparable with the table above — the user simulator is worth roughly "
-            "13.7 pass^1 points across models, against a board span of ~28 points.\n",
-            _table(nonstandard),
-        ]
+    if len(labels) > 1:
+        parts.append(
+            "**Generations are ranked separately and cannot be compared across tables.** "
+            "Each was scored against different policy, task, or evaluator content; "
+            "`leaderboard/GENERATIONS.md` records exactly what differs.\n"
+        )
+
+    for i, label in enumerate(labels):
+        parts += _generation_block(
+            label, by_generation[label], is_newest=(i == 0 and len(labels) > 1)
+        )
+        parts.append("")
 
     parts += [
         "\n## Columns\n",

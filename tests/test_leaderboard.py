@@ -136,13 +136,41 @@ def test_render_separates_nonstandard_simulator(tmp_path):
     _write_entry(tmp_path, submission_id="odd", display_name="Odd",
                  simulator_model="some/other-sim")
     out = render_mod.render(tmp_path)
-    assert "## Non-standard simulator" in out
-    assert out.index("## Non-standard simulator") < out.index("Odd")
+    assert "non-standard simulator" in out
+    assert out.index("non-standard simulator") < out.index("Odd")
 
 
 def test_render_omits_nonstandard_section_when_all_standard(tmp_path):
     _write_entry(tmp_path, submission_id="std")
-    assert "## Non-standard simulator" not in render_mod.render(tmp_path)
+    assert "non-standard simulator" not in render_mod.render(tmp_path)
+
+
+def test_render_ranks_generations_in_separate_tables(tmp_path):
+    """A g0 row must never share a ranking with a g1 row."""
+    _write_entry(tmp_path, submission_id="old", display_name="OldGen",
+                 harness_generation="g0",
+                 per_task={"t1": {"n": 4, "c": 4}, "t2": {"n": 4, "c": 4}})
+    _write_entry(tmp_path, submission_id="new", display_name="NewGen",
+                 harness_generation="g1",
+                 per_task={"t1": {"n": 4, "c": 0}, "t2": {"n": 4, "c": 0}})
+    out = render_mod.render(tmp_path)
+    # Newest generation leads, even though its scores are worse.
+    assert out.index("Generation `g1`") < out.index("Generation `g0`")
+    assert out.index("NewGen") < out.index("OldGen")
+    assert "most recent" in out
+    assert "cannot be compared across tables" in out
+
+
+def test_render_omits_cross_generation_warning_for_single_generation(tmp_path):
+    _write_entry(tmp_path, submission_id="only", harness_generation="g0")
+    out = render_mod.render(tmp_path)
+    assert "cannot be compared across tables" not in out
+    # A lone generation must not be labelled the newest — it may predate HEAD.
+    assert "most recent" not in out
+
+
+def test_generation_sort_is_numeric_not_lexicographic(tmp_path):
+    assert render_mod._generation_sort_key("g10") < render_mod._generation_sort_key("g9")
 
 
 def test_render_check_detects_staleness(tmp_path):
@@ -162,3 +190,84 @@ def test_render_matches_paper_for_seed_cohort():
     e = next(x for x in render_mod.load_entries(entries) if x.submission_id == "g0-dsv4-flash")
     s = render_mod.summarize(e)
     assert (round(s["pass_1"], 3), round(s["pass_2"], 3), round(s["pass_4"], 3)) == (0.546, 0.433, 0.333)
+
+
+# --- make-entry reads the run manifest -------------------------------------
+#
+# Nothing in traces/ or task_results.json records reasoning_effort, so a run
+# without a manifest cannot be labelled after the fact. These pin the two rules
+# that make a manifest worth having: it beats the CLI flag, and it refuses to
+# certify a run whose content has since changed.
+
+import json
+import shutil
+
+from click.testing import CliRunner
+
+from tau_rec.cli import main as cli
+from tau_rec.leaderboard.hashing import hash_file as _hash_file
+from tau_rec.leaderboard.hashing import hash_task_dir as _hash_task_dir
+
+FIXTURE_TRACE = Path(__file__).parent / "fixtures" / "sample_trace.json"
+
+
+def _run_dir(tmp_path, **manifest_overrides):
+    run = tmp_path / "run" / "20260910_000000"
+    (run / "traces").mkdir(parents=True)
+    shutil.copy(FIXTURE_TRACE, run / "traces" / "task_001_trial1.json")
+    manifest = {
+        "model": json.loads(FIXTURE_TRACE.read_text())["model"],
+        "reasoning_effort": "low",
+        "simulator_model": "gpt-5-mini",
+        "policy_sha256": _hash_file("data/policy.md"),
+        "tasks_sha256": _hash_task_dir("data/tasks"),
+        "catalog_sha256": _hash_file("data/catalog.json"),
+    }
+    manifest.update(manifest_overrides)
+    (run / "run_manifest.json").write_text(json.dumps(manifest))
+    return run.parent
+
+
+def _make_entry(tmp_path, run_root, *extra):
+    entries = tmp_path / "entries"
+    entries.mkdir(exist_ok=True)
+    result = CliRunner().invoke(cli, [
+        "leaderboard", "make-entry",
+        "--run-dir", str(run_root),
+        "--submission-id", "t1", "--display-name", "T", "--submitted-by", "T",
+        "--run-date", "2026-09-10", "--entries", str(entries), *extra,
+    ])
+    return result, entries / "t1.json"
+
+
+def test_make_entry_prefers_manifest_effort_over_flag(tmp_path):
+    result, path = _make_entry(
+        tmp_path, _run_dir(tmp_path), "--reasoning-effort", "xhigh"
+    )
+    assert result.exit_code == 0, result.output
+    assert json.loads(path.read_text())["reasoning_effort"] == "low"
+
+
+def test_make_entry_records_null_effort_from_manifest(tmp_path):
+    """A manifest saying 'no effort set' must override a flag, not be treated
+    as absent — otherwise the fallback silently reinstates the typed value."""
+    run = _run_dir(tmp_path, reasoning_effort=None)
+    result, path = _make_entry(tmp_path, run, "--reasoning-effort", "high")
+    assert result.exit_code == 0, result.output
+    assert json.loads(path.read_text())["reasoning_effort"] is None
+
+
+def test_make_entry_rejects_run_whose_tasks_changed(tmp_path):
+    run = _run_dir(tmp_path, tasks_sha256="0" * 64)
+    result, _ = _make_entry(tmp_path, run)
+    assert result.exit_code != 0
+    assert "tasks changed since this run" in result.output
+
+
+def test_make_entry_falls_back_to_flags_without_manifest(tmp_path):
+    run = _run_dir(tmp_path)
+    (run / "20260910_000000" / "run_manifest.json").unlink()
+    result, path = _make_entry(tmp_path, run, "--reasoning-effort", "high")
+    assert result.exit_code == 0, result.output
+    assert "no run_manifest.json" in result.output
+    assert json.loads(path.read_text())["reasoning_effort"] == "high"

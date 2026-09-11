@@ -28,7 +28,27 @@ those entries are ranked in a separate section — the simulator is worth roughl
 13.7 `pass^1` points against a board span of about 28, so it would be the
 largest uncontrolled variable on the page.
 
-## 2. Write the entry
+## 2. Build the entry
+
+Don't write the JSON by hand — generate it from the run:
+
+```bash
+uv run tau-rec leaderboard make-entry \
+  --run-dir out/ \
+  --submission-id g1-my-model \
+  --display-name "My Model (medium thinking)" \
+  --submitted-by "your name or org" \
+  --run-date 2026-09-01
+```
+
+This re-scores your traces with the current evaluator rather than copying the
+run's `task_results.json`, which is how the board will check the entry later.
+Configuration — reasoning effort, simulator, content digests — is read from the
+run's `run_manifest.json`, so it reflects what the run did rather than what you
+remember it doing. If the policy, tasks, or catalog have changed since the run,
+the command refuses rather than stamping today's digests onto older scores.
+
+The result looks like this:
 
 ```json
 {
@@ -62,6 +82,11 @@ The three digests come from your run's `run_manifest.json`. They pin the exact
 policy, task set, and catalog you scored against; without them an entry cannot
 be checked for comparability and is marked `content_digests_unrecorded` on the
 board.
+
+`run_manifest.json` is written at the start of every run, before the first
+trial, so it survives a run you had to kill. Keep it: nothing else on disk
+records `reasoning_effort`, and a finished run without it cannot be labelled
+afterwards without guessing.
 
 **`model_id` must not end in a floating tag** (`-latest`, `:latest`,
 `-preview`, `@latest`). Those silently re-point at a different model and make

@@ -15,6 +15,7 @@ venv/
 # Secrets
 .env
 *.env
+.env.*
 
 # Run outputs (regenerated per run)
 results/
