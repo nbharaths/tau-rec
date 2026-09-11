@@ -1,5 +1,29 @@
 # Changelog
 
+## v1.2.0 — 2026-09-11
+
+Leaderboard release. The task set, catalog, policy prompt, and evaluator are
+unchanged, so `g1` remains one generation and no published number moved.
+
+### Added
+
+- **Seven more `g1` entries**, taking the current-harness table to twelve:
+  MiniMax M3, Kimi K2.5, and five paper-cohort configurations re-run under
+  `g1` — Qwen3-32B, Gemini 2.5 Flash, GPT-5 mini, DeepSeek V4 Flash, and
+  DeepSeek V4 Flash (high thinking). Those five appear in both tables; across
+  the shared pairs `pass^1` moves by at most 0.08. The tables are still ranked
+  separately — `leaderboard/GENERATIONS.md` explains why a shared row is an
+  observation rather than a controlled ablation.
+- A **Traces** column linking each row to the archive behind it.
+
+### Fixed
+
+- `tau-rec leaderboard make-entry` counted a re-run trial twice. A top-up pass
+  writes `<task>_trial<N>.json` into a fresh timestamp directory under the same
+  run, and both copies were collected, inflating `n` and corrupting `pass^k`.
+  The later pass now supersedes the earlier. No published entry was affected;
+  all were rebuilt to confirm.
+
 ## v1.1.0 — 2026-09-10
 
 Additive release. The task set, catalog, and policy prompt are byte-identical

@@ -21,6 +21,13 @@ ROOT = Path(__file__).resolve().parent.parent
 TRACE_ROOT = ROOT / "results" / "final-traces"
 OUT_DIR = ROOT / "leaderboard" / "entries"
 
+# Where the cohort's traces are published. Pinned to a tag, never to
+# /releases/latest/, for the same reason model_id may not end in `-latest`.
+# Bump alongside scripts/make_g1_entries.py when a release supersedes it.
+TRACES_URL = (
+    "https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g0-traces.tar.gz"
+)
+
 # run directory -> (submission_id, display name, reasoning effort, run date)
 # llama33-paper is deliberately absent: 68 trials across 60 tasks, an aborted
 # run rather than a ninth configuration.
@@ -81,6 +88,7 @@ def main() -> int:
             tasks_sha256=None,
             catalog_sha256=None,
             per_task=per_task,
+            traces_url=TRACES_URL,
         )
         path = OUT_DIR / f"{sub_id}.json"
         path.write_text(json.dumps(json.loads(entry.model_dump_json()), indent=2) + "\n")

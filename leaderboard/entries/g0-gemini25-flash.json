@@ -256,7 +256,7 @@
       "c": 2
     }
   },
-  "traces_url": null,
+  "traces_url": "https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g0-traces.tar.gz",
   "caveats": [
     "content_digests_unrecorded"
   ]

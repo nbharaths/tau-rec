@@ -25,13 +25,13 @@ Accepted at ACM Recsys 2026 (Reproducibility and Resource Track)
 
 **[LEADERBOARD.md](LEADERBOARD.md)** — current standings across two harness generations.
 
-`g1`, the current harness (top 3 of 7):
+`g1`, the current harness (top 3 of 12):
 
 | # | Model | pass^1 | pass^2 | pass^4 |
 |---|-------|--------|--------|--------|
-| 1 | GLM-5.3 Flash | 0.525 | 0.419 | **0.333** |
-| 2 | DeepSeek Flash | 0.479 | 0.389 | 0.300 |
-| 3 | Kimi K2.5 | 0.487 | 0.367 | 0.283 |
+| 1 | DeepSeek V4 Flash (high thinking) | 0.604 | 0.494 | **0.383** |
+| 2 | GLM-5.3 Flash | 0.525 | 0.419 | 0.333 |
+| 3 | DeepSeek Flash | 0.479 | 0.389 | 0.300 |
 
 `g0`, the paper cohort (top 3 of 9):
 
@@ -42,7 +42,9 @@ Accepted at ACM Recsys 2026 (Reproducibility and Resource Track)
 | 3 | GPT-5.4 (medium thinking) | 0.551 | 0.450 | 0.350 |
 
 **The two tables are not comparable.** `g0` ran against an 8-policy prompt that
-`g1` no longer uses, so the agents read different instructions.
+`g1` no longer uses, so the agents read different instructions. Five
+configurations were re-run under `g1` and appear in both tables; across those
+pairs `pass^1` moves by at most 0.08.
 [GENERATIONS.md](leaderboard/GENERATIONS.md) records exactly what differs and
 which changes were measured to be score-neutral.
 

@@ -30,9 +30,21 @@ RUNS = {
     "minimax": ("g1-minimax-m3", "MiniMax M3", None),
     "kimi": ("g1-kimi-k25", "Kimi K2.5", None),
     "grok": ("g1-grok-43", "Grok 4.3", None),
+    # Cheaper g0 configurations re-run under g1, so the paper cohort is not
+    # stranded in a table nothing new can be compared against.
+    "qwen3-32b": ("g1-qwen3-32b", "Qwen3-32B", None),
+    "gemini25flash": ("g1-gemini25-flash", "Gemini 2.5 Flash", None),
+    "gpt5mini": ("g1-gpt5-mini", "GPT-5 mini", None),
+    "dsv4flash": ("g1-dsv4-flash", "DeepSeek V4 Flash", None),
+    "dsv4flash-high": ("g1-dsv4-flash-high", "DeepSeek V4 Flash (high thinking)", "high"),
 }
 
 RUN_DATE = "2026-09-10"
+
+# See the note in scripts/seed_leaderboard.py: pinned to a tag, bump together.
+TRACES_URL = (
+    "https://github.com/nbharaths/tau-rec/releases/download/v1.2.0/tau-rec-g1-traces.tar.gz"
+)
 
 
 def main() -> int:
@@ -72,6 +84,7 @@ def main() -> int:
             "--submitted-by", "tau-rec authors",
             "--generation", "g1",
             "--run-date", RUN_DATE,
+            "--traces-url", TRACES_URL,
         ]
         if effort:
             cmd += ["--reasoning-effort", effort]

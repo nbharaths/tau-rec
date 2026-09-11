@@ -48,6 +48,11 @@ G1_RUNS = {
     "grok": "grok-43",
     "minimax": "minimax-m3",
     "kimi": "kimi-k25",
+    "qwen3-32b": "qwen3-32b",
+    "gemini25flash": "gemini-25-flash",
+    "gpt5mini": "gpt5-mini",
+    "dsv4flash": "dsv4-flash",
+    "dsv4flash-high": "dsv4-flash-high",
 }
 
 

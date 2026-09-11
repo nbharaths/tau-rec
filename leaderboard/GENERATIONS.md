@@ -97,6 +97,12 @@ been run against 8, so cloning v1.0 never reproduced g0 conditions. `g1` is the
 first generation whose published content is the content its numbers were
 produced under.
 
+**Some g0 configurations were re-run under g1** and appear in both tables, so a
+reader is not stuck comparing two disjoint model sets. Treat a shared row as an
+observation, not a controlled ablation: the policy prompt, the evaluator, and
+the provider's weights behind an unpinned model alias may all have moved
+between the two run dates.
+
 ## Opening the next generation
 
 1. Bump the label and add a section here: what changed, and whether

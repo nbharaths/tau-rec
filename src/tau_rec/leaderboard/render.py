@@ -68,16 +68,19 @@ def _fmt_row(rank: int, row: dict) -> str:
     # table rather than repeated on every row.
     shown = sorted(set(e.caveats) - GENERATION_WIDE_CAVEATS)
     cells.append(", ".join(f"`{c}`" for c in shown) or "—")
+    # The row and the evidence for it should be one click apart; an entry
+    # nobody can re-derive is a different kind of claim and says so here.
+    cells.append(f"[archive]({e.traces_url})" if e.traces_url else "—")
     return "| " + " | ".join(cells) + " |"
 
 
 def _table(rows: list[dict]) -> str:
     header = (
-        "| # | Model | pass^1 | pass^2 | pass^4 | Trials | Gen | Notes |\n"
-        "|---|-------|--------|--------|--------|--------|-----|-------|"
+        "| # | Model | pass^1 | pass^2 | pass^4 | Trials | Gen | Notes | Traces |\n"
+        "|---|-------|--------|--------|--------|--------|-----|-------|--------|"
     )
     body = "\n".join(_fmt_row(i, r) for i, r in enumerate(rows, start=1))
-    return f"{header}\n{body}" if body else f"{header}\n| — | _no entries_ | | | | | | |"
+    return f"{header}\n{body}" if body else f"{header}\n| — | _no entries_ | | | | | | | |"
 
 
 def _generation_sort_key(label: str) -> tuple:
@@ -149,7 +152,9 @@ def render(entries_dir: str | Path) -> str:
         "- **Gen** — harness generation. Entries from different generations were scored "
         "against different policy/task/evaluator content; see `leaderboard/GENERATIONS.md`.\n"
         f"- **Notes** — `{SAME_MODEL_AS_SIMULATOR}` means the agent was graded by a "
-        "simulator running the same model, which is a confound.\n",
+        "simulator running the same model, which is a confound.\n"
+        "- **Traces** — every conversation behind the row, so the numbers can be "
+        "re-derived rather than taken on trust. `—` means the entry ships no traces.\n",
     ]
 
     if any(CONTENT_DIGESTS_UNRECORDED in r["entry"].caveats for r in rows):
