@@ -1,15 +1,14 @@
 cff-version: 1.2.0
-message: "If you use τ-Rec, please cite the following work."
+message: "If you use τ-Rec, please cite the paper in preferred-citation."
 title: "τ-Rec: A Verifiable Benchmark for Agentic Recommender Systems"
 authors:
   - family-names: "Narasimhan"
     given-names: "Bharath Sivaram"
     affiliation: "Independent Researcher"
-    email: "nbharaths@gmail.com"
+    orcid: "https://orcid.org/0009-0003-2444-7157"
   - family-names: "Narasimhan"
     given-names: "Karthik R"
     affiliation: "Princeton University"
-    email: "karthikn@princeton.edu"
 version: "1.3.0"
 date-released: "2026-09-11"
 license: "MIT"
@@ -21,3 +20,25 @@ keywords:
   - "benchmark"
   - "user simulation"
   - "multi-turn interaction"
+preferred-citation:
+  type: conference-paper
+  authors:
+    - family-names: "Narasimhan"
+      given-names: "Bharath Sivaram"
+      affiliation: "Independent Researcher"
+      orcid: "https://orcid.org/0009-0003-2444-7157"
+    - family-names: "Narasimhan"
+      given-names: "Karthik R"
+      affiliation: "Princeton University"
+  title: "τ-Rec: A Verifiable Benchmark for Agentic Recommender Systems"
+  collection-title: "Proceedings of the 20th ACM Conference on Recommender Systems"
+  conference:
+    name: "20th ACM Conference on Recommender Systems"
+  publisher:
+    name: "Association for Computing Machinery"
+  year: 2026
+  month: 9
+  start: 915
+  end: 919
+  doi: "10.1145/3773078.3831847"
+  url: "https://doi.org/10.1145/3773078.3831847"

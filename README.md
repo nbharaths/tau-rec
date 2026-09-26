@@ -2,13 +2,14 @@
 
 [![Dataset on Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue)](https://huggingface.co/datasets/nbharaths/tau-rec)
 [![Paper](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Paper-yellow)](https://huggingface.co/papers/2606.10156)
+[![DOI](https://img.shields.io/badge/DOI-10.1145%2F3773078.3831847-blue)](https://doi.org/10.1145/3773078.3831847)
 [![arXiv](https://img.shields.io/badge/arXiv-2606.10156-b31b1b)](https://arxiv.org/abs/2606.10156)
 
 A verifiable benchmark for LLM-based conversational recommender systems.
 
 τ-Rec measures whether an agent-under-test can hold a multi-turn conversation with a simulated user, use catalog tools to gather information, respect a written policy, and ultimately recommend a movie that satisfies all of the user's constraints. Success is checked programmatically against the catalog — not by an LLM judge — so scores are reproducible and cheap to compute.
 
-Accepted at ACM Recsys 2026 (Reproducibility and Resource Track)
+Published at [ACM RecSys 2026](https://doi.org/10.1145/3773078.3831847) (Reproducibility and Resource Track).
 
 ## Highlights
 
@@ -239,13 +240,15 @@ uv run pytest tests/test_orchestrator.py -k name   # single test
 If you use τ-Rec in your work, please cite:
 
 ```bibtex
-@misc{narasimhan2026taurec,
-  title         = {{$\tau$-Rec}: A Verifiable Benchmark for Agentic Recommender Systems},
-  author        = {Narasimhan, Bharath Sivaram and Narasimhan, Karthik R},
-  year          = {2026},
-  eprint        = {2606.10156},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.IR},
-  url           = {https://arxiv.org/abs/2606.10156}
+@inproceedings{narasimhan2026taurec,
+  author    = {Narasimhan, Bharath Sivaram and Narasimhan, Karthik R},
+  title     = {{$\tau$-Rec}: A Verifiable Benchmark for Agentic Recommender Systems},
+  booktitle = {Proceedings of the 20th ACM Conference on Recommender Systems},
+  series    = {RecSys '26},
+  year      = {2026},
+  pages     = {915--919},
+  publisher = {Association for Computing Machinery},
+  doi       = {10.1145/3773078.3831847},
+  url       = {https://doi.org/10.1145/3773078.3831847}
 }
 ```

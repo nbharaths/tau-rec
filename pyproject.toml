@@ -5,8 +5,8 @@ description = "A verifiable benchmark for LLM-based conversational recommender s
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
-    {name = "Bharath Sivaram Narasimhan", email = "nbharaths@gmail.com"},
-    {name = "Karthik R Narasimhan", email = "karthikn@princeton.edu"},
+    {name = "Bharath Sivaram Narasimhan"},
+    {name = "Karthik R Narasimhan"},
 ]
 requires-python = ">=3.12"
 dependencies = [
