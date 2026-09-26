@@ -18,8 +18,6 @@ Published at [ACM RecSys 2026](https://doi.org/10.1145/3773078.3831847) (Reprodu
 - **Policy compliance scoring.** A natural-language policy (`data/policy.md`) is shown to the agent; per-task `policy_flags` enable programmatic checks for watch-history, availability, sponsored-content disclosure, age gating, and more.
 - **`pass^k` metric.** Uses the unbiased combinatoric estimator `C(c,k)/C(n,k)` across multiple trials per task — rewarding agents that succeed consistently, not just once.
 - **Real catalog, stratified tasks.** 153-movie TMDB catalog with 60 tasks stratified across `complexity` × `reveal_difficulty` cells.
-- **Parallel execution.** `asyncio.gather` + semaphore runs trials concurrently (default 16).
-- **Ablation support.** `--no-tools` mode disables all tools so you can measure how much the agent is leaning on retrieval vs. memorization.
 - **Model-agnostic.** Any LiteLLM-supported model works as the agent or the simulator.
 
 ## Leaderboard
@@ -46,16 +44,13 @@ Published at [ACM RecSys 2026](https://doi.org/10.1145/3773078.3831847) (Reprodu
 
 <!-- LEADERBOARD:END -->
 
-**The two tables are not comparable.** `g0` ran against an 8-policy prompt that
-`g1` no longer uses, so the agents read different instructions. Five
-configurations were re-run under `g1` and appear in both tables; across those
-pairs `pass^1` moves by at most 0.08.
-[GENERATIONS.md](leaderboard/GENERATIONS.md) records exactly what differs and
-which changes were measured to be score-neutral.
+**The two tables are not comparable:** `g0` and `g1` use different policy
+prompts. [GENERATIONS.md](leaderboard/GENERATIONS.md) records the differences.
 
-The board is a generated file. Submissions are JSON entries in `leaderboard/entries/` holding only raw per-task `{n, c}` counts — every published number, including confidence intervals, is derived at render time, so the whole board can be recomputed when the evaluator changes. Full traces for both cohorts are attached to the [latest release](https://github.com/nbharaths/tau-rec/releases/latest).
+The board is generated from raw per-task `{n, c}` counts, and full traces are
+attached to the [latest release](https://github.com/nbharaths/tau-rec/releases/latest).
 
-To submit a run, see **[leaderboard/CONTRIBUTING.md](leaderboard/CONTRIBUTING.md)**. For what makes two entries comparable, see **[leaderboard/GENERATIONS.md](leaderboard/GENERATIONS.md)**.
+To submit a run, see **[leaderboard/CONTRIBUTING.md](leaderboard/CONTRIBUTING.md)**.
 
 ## Dataset
 
@@ -71,28 +66,24 @@ answers = load_dataset("nbharaths/tau-rec", "answers")
 
 The JSON files in `data/` are the same data — use whichever is more convenient.
 
-## Install
+## Quickstart
 
-Requires Python 3.12+. Dependencies are managed with [uv](https://docs.astral.sh/uv/).
+Requires Python 3.12+ and [uv](https://docs.astral.sh/uv/).
 
 ```bash
-uv sync --extra dev
+uv sync
 ```
-
-## Usage
 
 Provide credentials for whichever model providers you use via the standard environment variables (`OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`, …) — LiteLLM routes based on the model string.
 
-You can put these in a `.env` file at the repo root; the CLI loads it automatically on startup (shell env vars take precedence over `.env`). See `.env.example` for the expected keys.
+The CLI also reads a root `.env`; see `.env.example`.
 
 ### Validate tasks
 
 Checks every task has at least one satisfying movie in the catalog (or zero, for `no_valid_recommendation` tasks):
 
 ```bash
-uv run tau-rec validate \
-  --catalog data/catalog.json \
-  --tasks data/tasks
+uv run tau-rec validate --catalog data/catalog.json --tasks data/tasks
 ```
 
 ### Run the benchmark
@@ -103,24 +94,18 @@ uv run tau-rec run \
   --catalog data/catalog.json \
   --tasks data/tasks \
   --policy data/policy.md \
-  --trials 16 \
+  --trials 4 \
   --output out/
 ```
 
-Options:
+Use `--tasks-limit N` for a smoke test, or add `--dry-run` to estimate the cost
+of a full run. See `uv run tau-rec run --help` for all options.
 
-| Flag | Default | Purpose |
-| --- | --- | --- |
-| `--model` | — | Agent-under-test (LiteLLM model string) |
-| `--simulator-model` | `gpt-5-mini` | Model powering the user simulator |
-| `--trials` | `16` | Independent trials per task |
-| `--max-turns` | `20` | Hard cap on agent↔user turns per trial |
-| `--concurrency` | `16` | Trials to run in parallel |
-| `--no-tools` | off | Ablation mode: disable all tools |
-| `--tasks-limit` | — | Run only the first N tasks (smoke test) |
-| `--output` | — | Directory for `trial_results.json`, `task_results.json`, and `traces/` |
+> **Do not use `--no-tools` for scored runs.** The legacy flag removes the
+> mandatory `recommend()` tool, so satisfiable tasks cannot receive credit.
 
-Each trial's full `ConversationTrace` (messages + tool calls interleaved) is written to `<output>/traces/<task_id>_trial<N>.json` for debugging.
+Artifacts are written under `<output>/<timestamp>/`, including traces,
+per-trial results, task counts, the run manifest, and token/cost usage.
 
 ### Report metrics
 
@@ -128,8 +113,8 @@ Each trial's full `ConversationTrace` (messages + tool calls interleaved) is wri
 
 ```bash
 uv run tau-rec report \
-  --results out/task_results.json \
-  --trials out/trial_results.json \
+  --results out/TIMESTAMP/task_results.json \
+  --trials out/TIMESTAMP/trial_results.json \
   --tasks data/tasks
 ```
 
@@ -144,9 +129,14 @@ Orchestrator
                             emits ###ACCEPTED### / ###REJECTED###
 ```
 
-Each conversation is seeded with a fixed agent greeting so the simulator opens by stating the user's request. The orchestrator then alternates turns, executes tool calls inline, and records every message and tool invocation into a `ConversationTrace`. Tools available to the agent: `search_catalog`, `get_metadata`, `check_availability`, `get_user_history`, `check_content_preference`, and `recommend(item_id)`. **A recommendation is registered only when the agent calls `recommend(item_id)`** — naming a title in chat is not enough. Policy 7 makes calling this tool mandatory.
+The orchestrator records messages and tool calls in chronological order. The
+agent can search the catalog, inspect metadata, check availability and user
+history, and check content preferences. Calling `recommend(item_id)` registers
+the final recommendation; calling it without an item ID records abstention.
+Either ends the trial. Simulator `###ACCEPTED###` / `###REJECTED###` tokens are
+feedback, not stop signals.
 
-Once the simulator emits a stop token (or `--max-turns` is reached), the trace is scored:
+The trace is then scored:
 
 - **Constraint score** — 1.0 if the final recommendation satisfies every task constraint, else 0.0 (inverted for `no_valid_recommendation` tasks).
 - **Policy score** — 1.0 if no flag is violated, else 0.0. Individual violations are also recorded for failure-mode analysis.
@@ -161,17 +151,18 @@ Each file under `data/tasks/` defines one scenario:
 {
   "id": "task_002",
   "constraints": [
-    {"constraint": {"field": "runtime", "op": "<=", "value": 120}, "reveal": "volunteer"},
-    {"constraint": {"field": "genres", "op": "contains", "value": "Comedy"}, "reveal": "on_ask"}
+    {"constraint": {"field": "genres", "op": "contains", "value": "Horror"}, "reveal": "volunteer"},
+    {"constraint": {"field": "runtime", "op": "<=", "value": 120}, "reveal": "volunteer"}
   ],
-  "persona": "You are a tired parent looking for something light after the kids go to bed.",
-  "soft_preferences": ["prefers feel-good endings"],
-  "policy_flags": ["watch_history", "availability"],
+  "persona": "You are a retired literature professor. You value storytelling craft above all else. You speak in complete, thoughtful sentences and aren't in a rush.",
+  "soft_preferences": ["likes supernatural horror over slashers"],
+  "policy_flags": ["recommend_tool", "availability"],
   "no_valid_recommendation": false,
   "complexity": "simple",
-  "reveal_difficulty": "mixed",
+  "reveal_difficulty": "volunteer",
   "user_id": "user_1",
-  "user_history": {"user_1": {"watched": ["tmdb_123"], "ratings": {}}}
+  "user_history": {"user_1": {"watched": [], "ratings": {}}},
+  "user_services": ["Hulu"]
 }
 ```
 
@@ -185,22 +176,9 @@ Supported policy flags (each implemented as `_check_<flag>` in `evaluator/policy
 
 ## Answer key
 
-`data/answers.json` is a pre-computed reference: for each task, it lists every catalog movie that satisfies all constraints, plus the subset that is actually streamable on the task's `user_services`. NVR tasks report empty lists.
-
-```json
-"task_012": {
-  "no_valid_recommendation": false,
-  "user_services": ["HBO Max", "Paramount+"],
-  "constraint_solutions": ["tmdb_467905", ...],          // 32 movies
-  "reachable_solutions": ["tmdb_991494"],                 // 1 streamable
-  "reachable_solutions_with_titles": [
-    {"id": "tmdb_991494",
-     "title": "The SpongeBob Movie: Search for SquarePants"}
-  ]
-}
-```
-
-**The answer key is not consumed by the evaluator today** — it's an analysis artifact. Use it to audit which tasks are effectively unsolvable given `user_services`, to spot-check agent failures, or to gauge task difficulty. It is regenerated by running `CatalogValidator` over all tasks; re-run any time the catalog or task constraints change.
+`data/answers.json` lists every constraint-satisfying and streamable item for
+each task. It is an analysis artifact; the evaluator scores the final
+recommendation directly against the catalog and does not read this file.
 
 ## Repository layout
 
