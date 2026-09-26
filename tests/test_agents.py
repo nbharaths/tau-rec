@@ -29,17 +29,32 @@ def test_temperature_accepted(model):
     assert _rejects_temperature(model) is False
 
 
-def test_reasoning_effort_routed_by_param_support():
+def test_reasoning_effort_routed_by_param_support(monkeypatch):
     """Models that reject `reasoning_effort` get OpenRouter's `reasoning` field.
 
     litellm raises rather than dropping the unsupported parameter, so sending it
     to such a model fails every trial in the run.
     """
+    import litellm
     from tau_rec.agents.litellm_agent import _supports_reasoning_effort
 
-    assert _supports_reasoning_effort("gpt-5.6-sol") is True
-    assert _supports_reasoning_effort("openrouter/deepseek/deepseek-v4-flash") is True
-    assert _supports_reasoning_effort("openrouter/meta/muse-spark-1.3") is False
+    capabilities = {
+        ("supported-direct", None): ["reasoning_effort"],
+        ("vendor/supported", "openrouter"): ["reasoning_effort"],
+        ("vendor/unsupported", "openrouter"): ["temperature"],
+        ("not-a-real-model-xyz", None): None,
+        ("vendor/not-a-real-model-xyz", "openrouter"): ["temperature"],
+    }
+
+    def fake_supported_params(model, custom_llm_provider=None):
+        return capabilities[(model, custom_llm_provider)]
+
+    monkeypatch.setattr(litellm, "get_supported_openai_params", fake_supported_params)
+    _supports_reasoning_effort.cache_clear()
+
+    assert _supports_reasoning_effort("supported-direct") is True
+    assert _supports_reasoning_effort("openrouter/vendor/supported") is True
+    assert _supports_reasoning_effort("openrouter/vendor/unsupported") is False
     # A model litellm knows nothing about keeps the old behaviour: send it and
     # let the provider decide, rather than silently switching transport.
     assert _supports_reasoning_effort("not-a-real-model-xyz") is True
