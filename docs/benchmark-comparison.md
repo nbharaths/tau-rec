@@ -51,7 +51,7 @@ service rather than recommendation.
   [public benchmark data](https://huggingface.co/datasets/SGJQovo/AgentRecBench),
   and [challenge leaderboard](https://tsinghua-fib-lab.github.io/AgentSocietyChallenge/pages/overview.html).
 - **CRS Arena:** [paper](https://doi.org/10.1145/3701551.3704120),
-  [live arena and Elo ranking](https://iai-group-crsarena.hf.space/), and
+  [public arena and Elo ranking](https://huggingface.co/spaces/iai-group/CRSArena), and
   [CRSArena-Dial](https://github.com/iai-group/crsarena-dial).
 - **RecToM:** [paper](https://arxiv.org/abs/2511.22275) and
   [dataset/evaluation scripts](https://github.com/CGCL-codes/RecToM).
