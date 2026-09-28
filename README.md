@@ -1,4 +1,4 @@
-# τ-Rec
+# τ-Rec (Tau-Rec)
 
 [![Dataset on Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue)](https://huggingface.co/datasets/nbharaths/tau-rec)
 [![Paper](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Paper-yellow)](https://huggingface.co/papers/2606.10156)
