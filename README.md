@@ -22,26 +22,21 @@ Published at [ACM RecSys 2026](https://doi.org/10.1145/3773078.3831847) (Reprodu
 
 ## Benchmark comparison
 
-This comparison separates live interaction from static dialogue-context
-evaluation and end-to-end verification from deterministic proxy metrics.
-**✓** = supported, **◐** = limited/proxy, **—** = not part of the benchmark;
-the final column is **public tasks / public leaderboard**.
+Comparison of CRS evaluation resources from the paper. **✅** = fully
+supported; **◐** = partially supported.
 
-| Benchmark | Live multi-turn dialogue | Tool use | User simulation | Programmatic verification | Public tasks / leaderboard |
-|---|:---:|:---:|:---:|---|:---:|
-| **τ-Rec** | ✓ | ✓ | ✓ | ✓ Catalog predicates + policy checks | ✓ / ✓ |
-| [AgentRecBench](https://arxiv.org/abs/2505.19623) | — | ✓ | — | ◐ Ground-truth HR@*N* | ✓ / ✓ |
-| [CRS Arena](https://doi.org/10.1145/3701551.3704120) | ✓ Human | — | — | — Human vote + Elo | — / ✓ |
-| [RecToM](https://arxiv.org/abs/2511.22275) | — Fixed transcripts | — | — | ◐ Answer-key accuracy | ✓ / — |
-| [UserSimCRS v2](https://arxiv.org/abs/2512.04588) | ✓ | — | ✓ | ◐ Intent metrics + LLM judge | — / — |
-| [iEvaLM](https://doi.org/10.18653/v1/2023.emnlp-main.621) | ✓ | — | ✓ | ◐ Target-item metrics | ✓ / — |
-| [RecBench+](https://arxiv.org/abs/2503.09382) | — | — | — | ✓ Recall + condition matching | ✓ / — |
-| [τ-bench](https://arxiv.org/abs/2406.12045) | ✓ | ✓ | ✓ | ✓ Final database state | ✓ / ✓ |
-| [τ²-bench](https://arxiv.org/abs/2506.07982) | ✓ | ✓ Agent + user | ✓ | ✓ State + action assertions | ✓ / ✓ |
+| Resource | VR | MT | TU | PC | FC | `pass^k` | HI |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| CRSLab | — | ◐ | — | — | — | — | — |
+| iEvaLM | — | ✅ | — | — | — | — | ◐ |
+| UserSimCRS v2 | ◐ | ✅ | — | — | — | — | ◐ |
+| AgentRecBench | ◐ | — | ✅ | — | — | — | — |
+| InteRecAgent | — | ✅ | ✅ | — | — | — | ◐ |
+| MATCHA | — | ✅ | ✅ | ◐ | — | — | — |
+| **τ-Rec** | **✅** | **✅** | **✅** | **✅** | **✅** | **✅** | **✅** |
 
-τ-Rec is the only recommendation-specific benchmark in this comparison that
-combines all six capabilities. See the
-**[source-backed definitions and row-by-row evidence](docs/benchmark-comparison.md)**.
+VR = verifiable rewards; MT = multi-turn dialogue; TU = tool use; PC = policy
+checks; FC = fresh catalog; HI = hidden-intent simulation.
 
 ## Leaderboard
 
