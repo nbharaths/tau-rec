@@ -1,0 +1,277 @@
+{
+  "description": "Family-level audit sample: five satisfiable and one NVR family per complexity; inspect all reveal variants together",
+  "families": [
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Nonfiction|languages:contains:German",
+      "family_id": "books_simple_001",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "44250e502e0609106803b81227364b642c388b8a9a73c6cadb3858520cf4f56d",
+      "task_ids": {
+        "hidden": "task_101_h",
+        "mixed": "task_101_m",
+        "volunteer": "task_101_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Horror|countries:contains:United Kingdom",
+      "family_id": "books_simple_002",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "7e87d3aca30902910d86fc9e990537057f004ff2e2e23695b55cf31adbe644ea",
+      "task_ids": {
+        "hidden": "task_102_h",
+        "mixed": "task_102_m",
+        "volunteer": "task_102_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Adventure|publication_year:>=:1988",
+      "family_id": "books_simple_003",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "3ab289451d1cbf9947fb1ce91bf0ee8367311cd100381133e075ca9787c79295",
+      "task_ids": {
+        "hidden": "task_103_h",
+        "mixed": "task_103_m",
+        "volunteer": "task_103_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Crime|languages:contains:French",
+      "family_id": "books_simple_004",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "14bf769a6da1bed7ab0389986593b67d2d6b0a0cdd95210ad0f7f926fb22de67",
+      "task_ids": {
+        "hidden": "task_104_h",
+        "mixed": "task_104_m",
+        "volunteer": "task_104_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Science Fiction|countries:contains:United Kingdom",
+      "family_id": "books_simple_005",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "3557c98ceaa9de38b18528702eb093afb0bc65199e68f9a5c344edc9d6b73325",
+      "task_ids": {
+        "hidden": "task_105_h",
+        "mixed": "task_105_m",
+        "volunteer": "task_105_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Graphic Novel|genres:contains:Poetry",
+      "family_id": "books_simple_018",
+      "no_valid_recommendation": true,
+      "solution_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "task_ids": {
+        "hidden": "task_118_h",
+        "mixed": "task_118_m",
+        "volunteer": "task_118_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Biography|publication_year:>=:2013|publication_year:<=:2021",
+      "family_id": "books_medium_001",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "ccc040cb6ed762afdd02b8cc663d4c43ebaedda3fb1c40f83af2c04fce71c296",
+      "task_ids": {
+        "hidden": "task_051_h",
+        "mixed": "task_051_m",
+        "volunteer": "task_051_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Children|genres:contains:Fantasy|publication_year:<=:2000",
+      "family_id": "books_medium_002",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "8a91e88e0bde917b0c49c37524c01c8ffdd4bfada68829ceff477e318011f0e7",
+      "task_ids": {
+        "hidden": "task_052_h",
+        "mixed": "task_052_m",
+        "volunteer": "task_052_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Fantasy|genres:contains:Romance|publication_year:>=:2002",
+      "family_id": "books_medium_003",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "4125c5cbdb589c75e19f6417ddb6c2e6e51f0ea5915a085e0a6edc7c38a8f6b0",
+      "task_ids": {
+        "hidden": "task_053_h",
+        "mixed": "task_053_m",
+        "volunteer": "task_053_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Science Fiction|genres:contains:Young Adult|publication_year:<=:2013",
+      "family_id": "books_medium_004",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "86037edb56e7e7b32e13b75ba0d7f06518c675ceb48abe26c0197274e0c99f45",
+      "task_ids": {
+        "hidden": "task_054_h",
+        "mixed": "task_054_m",
+        "volunteer": "task_054_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Science Fiction|countries:contains:Australia|publication_year:<=:2012",
+      "family_id": "books_medium_005",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "8cc902d9d9bb8a12eeaee97c306860a6932f127d27fd9fad8a62bcaea6665a0d",
+      "task_ids": {
+        "hidden": "task_055_h",
+        "mixed": "task_055_m",
+        "volunteer": "task_055_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Poetry|languages:contains:Russian|publication_year:>=:2020",
+      "family_id": "books_medium_007",
+      "no_valid_recommendation": true,
+      "solution_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "task_ids": {
+        "hidden": "task_057_h",
+        "mixed": "task_057_m",
+        "volunteer": "task_057_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Nonfiction|languages:contains:Italian|countries:contains:Italy|publication_year:>=:1920|publication_year:<=:2020",
+      "family_id": "books_complex_001",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "ea52f9fdb95b186ef5e63b58a9e96ea1b7ca0ea227c822da87f0e255bb7285fb",
+      "task_ids": {
+        "hidden": "task_001_h",
+        "mixed": "task_001_m",
+        "volunteer": "task_001_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Crime|genres:contains:Science Fiction|languages:contains:English|publication_year:>=:1991|publication_year:<=:2011",
+      "family_id": "books_complex_002",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "bbaf0c7b856afcb3826c3b2facd467599fa13b772deb71676b5b729925e81689",
+      "task_ids": {
+        "hidden": "task_002_h",
+        "mixed": "task_002_m",
+        "volunteer": "task_002_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Adventure|genres:contains:Young Adult|countries:contains:United States|publication_year:>=:2008|publication_year:<=:2009",
+      "family_id": "books_complex_003",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "da94f50335fcebdf919b6176f067e9f213bacca9738cd848925d640920cbb02c",
+      "task_ids": {
+        "hidden": "task_003_h",
+        "mixed": "task_003_m",
+        "volunteer": "task_003_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Children|genres:contains:Young Adult|languages:contains:English|publication_year:>=:1960|publication_year:<=:2006",
+      "family_id": "books_complex_004",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "20fc2a09c4309e0b8a326d8792fe42c9765f24f7478915ace4ce51d31f47d6da",
+      "task_ids": {
+        "hidden": "task_004_h",
+        "mixed": "task_004_m",
+        "volunteer": "task_004_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Adventure|genres:contains:Mystery|languages:contains:English|publication_year:>=:1960|publication_year:<=:2010",
+      "family_id": "books_complex_005",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "99f4064d85f81ee42ecd99b0f2fe33de7fadf4235032f24268ead275b4143927",
+      "task_ids": {
+        "hidden": "task_005_h",
+        "mixed": "task_005_m",
+        "volunteer": "task_005_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Fantasy|genres:contains:Science Fiction|languages:contains:French|publication_year:>=:1910|publication_year:<=:1970",
+      "family_id": "books_complex_006",
+      "no_valid_recommendation": true,
+      "solution_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "task_ids": {
+        "hidden": "task_006_h",
+        "mixed": "task_006_m",
+        "volunteer": "task_006_v"
+      }
+    }
+  ],
+  "task_sha256": {
+    "task_001_h": "9671633edc5cc0ed13024c45a7b69327b4a86a8cf17d256eefea2135d0e0f531",
+    "task_001_m": "5ce97559be6b6cf915cabc89ccf9a11c63f36469754e6e9c0dc75d35a3ac4304",
+    "task_001_v": "1d911cfefe64bf144eee05ea60f4d7b2d19060232aef40d5cb1b09b33ff79a19",
+    "task_002_h": "2ae1c20f1510ab4938393fd5e73af649b54c663a2407875ad1ce87dfbf0a02a7",
+    "task_002_m": "a2424dd762ede84ccbb832a0e62b17900d9ae7f90b60fa56bffdb51eefff5f62",
+    "task_002_v": "6cb5280cd435034cdf57a59a51de4e59f00a250e5f3969a95bdbbfb0a99b9cc2",
+    "task_003_h": "91b8fbd368547ead605a831ec603c313dba9265481ede4af40d3a7183ed1aefe",
+    "task_003_m": "611d038c0e9d29eef2ed427eed194ebec5da78dfbce35a2bcad8e1f1039b6130",
+    "task_003_v": "32ec0c4ba3695e7aa18f35d417788503d5a73f1d1804e04b0573f8cd887127ff",
+    "task_004_h": "6335f0c881cca011c7471723bb9353b76f46abeaa5afaaf24b155dbed8249e99",
+    "task_004_m": "78f04c52a8ebf1724c474259286cef3bcb9e8967c671ea9a60c67be57d497476",
+    "task_004_v": "508c160c9153edb84f760f4ed13e7911fa3c8d5fb698396e8b85e6966b7d3b3f",
+    "task_005_h": "291e041d1b5dc780be93d4248c21adb4f0e91507c11911bf1e9fe00bea9b52f2",
+    "task_005_m": "943e6cf8ba1447ab32e533e114d93b84409f734eb4bfd39c355486c8c41d53b3",
+    "task_005_v": "b1db5f435001b6ab06e7d40ce366fd5c960e53ab64ef75b0fd07235f756a5ecc",
+    "task_006_h": "2cbb7b3d79a7f59d2e2b6ec5d9281c0b3565e72bd2909407495c159a9d7386d1",
+    "task_006_m": "947a1abee33a2168b7eb8e068644f00a515043fafaa17c53f16fc56a631190d2",
+    "task_006_v": "f68a7b585f7b12a47cb5041d7c6c842b99b9e1102196b7d97f432638b6aef00c",
+    "task_051_h": "a6db9d348fb57f5a183f70d80b33a511388a8c6bc6d52f6740a13cfa3c14ed74",
+    "task_051_m": "551a389a9ed1458058d2d24f0a0b7810af49889c2737e45d6ac0208386f7730c",
+    "task_051_v": "99abdf6fdd77ba3edffb0cb76b8da1c9363f4282eb391c33637220a455759624",
+    "task_052_h": "72be827805359a5684a58cc0971b0960ca85d191f6ad38bc16a5b4bb760faa18",
+    "task_052_m": "aa961dc9bfccb262da08facea6ffe126cb8a7af1d4097a5946ebc6f7e73f1cca",
+    "task_052_v": "10b9d4682dd106f59335be07c0f3d29dbe661545a149bf4769478b8088a785a7",
+    "task_053_h": "a9f5c87971ac743ac472378458bfafd8bbeaf4a543fe1ca12e9b124d7564bb7f",
+    "task_053_m": "e26771166564f1d1e51a38e422a50a41bf530231c604328f68d43eb21f05fe93",
+    "task_053_v": "257d3a6fba5313d3ec8dbaa6ed848e4fe02277e853ef476ad11ca003446250ce",
+    "task_054_h": "1e412323c89ee23d46dc2939979f7d763e05171db9fc156fae02ebbe447ef9dd",
+    "task_054_m": "5f3c33089eadef47a634f471baf2b7bd030dc7f9352318f37f0bbcb05c3fa3f0",
+    "task_054_v": "929ad7f3b376ec9ce541abb5d594ea509c4e65334f829e2c345ddff66260a85b",
+    "task_055_h": "e2c5bd2851d919a1dbd7bdd4867c28eb4c9e857a6d3ef4a3cc58576d3944a465",
+    "task_055_m": "a7d52296ebf0ab29176036e2cd11bb4d648cc881a0322abeba225475c717ff0d",
+    "task_055_v": "818f1c12b2b9437ecef78df40823e938fb2272ae91925f2197c95447a5126166",
+    "task_057_h": "4210450bca0cd367205e968f3311758cd03b6c32092eb811e79427a7bfde4f81",
+    "task_057_m": "f9f0acb46261696432f3ef60b124d0ab15800b6c746a9120efee07dbefd4bb33",
+    "task_057_v": "aaa0e8a969ac084a1919c099866db666e84b0ab2f982ca286d11229fa4cfc627",
+    "task_101_h": "de9ef94b1c9b42e867a0551c8a884534c3e98a61f1018f2eb371a777692e2236",
+    "task_101_m": "03db0cab64fdc359103d7420bc23db0112bcc9a0e733f7c1268cb95913edb684",
+    "task_101_v": "074d52ad3c61b671fe1769e1d6f226de5d5d917d56f599e839826a6fcd9c6169",
+    "task_102_h": "c9527ed0301b7515c832bf206f6b68ca67926e002b2f0488a2354317d8feecde",
+    "task_102_m": "7d876c4713462258af084a19d13390901ce05b30d5506b3a786f96a6b7d1bfd4",
+    "task_102_v": "84f6c95ff8a629487ec9960161067adeb8b98dca52cd4726c9790f7b4407fde7",
+    "task_103_h": "3bd865ee8e31e074a3e83c4f21ebc8625aa08a78912dc933bcf711ca51538aef",
+    "task_103_m": "ae774ffa09da90bce5ed240774e844441fb3bf997b8a9c3dfdeae1abaac1f0ee",
+    "task_103_v": "8cc474c3744e9261ddd82e84e1b232cb3d0a5b361b3d66df2b6b7f4bd036d80c",
+    "task_104_h": "0063b0679688d94dbce22edac6d406f93f4c9aa43ba22f2e5ec21481f33ef65e",
+    "task_104_m": "061051810d07cb5f2cb446cef37c46ca96d7d8c261e90dd9927420e3d9acf3ae",
+    "task_104_v": "2cc3ecc3eba7b083520ac8fb2d0e160be3a6213f7863b7fdf2d9fb601b9bc40e",
+    "task_105_h": "ea1b1fc06eb7abcf5ee9a0e72b734858b895f7343d3d3b96ee17968163bc259f",
+    "task_105_m": "b226244cac008126536b99a120e2772d1570a39c98a9463ea533e6a3e3752be1",
+    "task_105_v": "6a35822d74bb5709a05ad5e2e2404415ec6e967e3735dccc822ded36e21a4bf1",
+    "task_118_h": "7a1490fb3ee823e15923221e17e03569c2a13b0236235818b4af022d05ec7a8c",
+    "task_118_m": "2b54cdca232b48907611bd284e928217d3acb3b9411bb2c53b4b4e0041df0bd0",
+    "task_118_v": "ba7bf90a49d8c464823b5581df3aae5d258cba82bb2d3afd5a59dfe4d8b74e00"
+  }
+}

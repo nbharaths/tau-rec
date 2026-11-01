@@ -1,0 +1,369 @@
+{
+  "contrasts": {
+    "ablation/deepseek_v41_flash_high/field_list/all/pass^1": {
+      "estimate": 0.0462962962962963,
+      "families": 18,
+      "family_ci95": [
+        0.004629629629629629,
+        0.10185185185185185
+      ],
+      "family_p": 0.026697330266973303,
+      "tasks": 54,
+      "template_ci95": [
+        0.005952380952380952,
+        0.1130952380952381
+      ],
+      "template_p": 0.0124987501249875,
+      "template_sign_flip_p": 0.09375
+    },
+    "ablation/deepseek_v41_flash_high/field_list/hidden/pass^1": {
+      "estimate": 0.0625,
+      "families": 18,
+      "family_ci95": [
+        -0.01406249999999984,
+        0.1597222222222222
+      ],
+      "family_p": 0.16848315168483152,
+      "tasks": 18,
+      "template_ci95": [
+        -0.006578947368421052,
+        0.1796875
+      ],
+      "template_p": 0.1136886311368863,
+      "template_sign_flip_p": 0.25
+    },
+    "ablation/deepseek_v41_flash_high/field_list/mixed/pass^1": {
+      "estimate": 0.034722222222222224,
+      "families": 18,
+      "family_ci95": [
+        -0.027777777777777776,
+        0.1111111111111111
+      ],
+      "family_p": 0.3768623137686231,
+      "tasks": 18,
+      "template_ci95": [
+        -0.0390625,
+        0.13125
+      ],
+      "template_p": 0.4674532546745325,
+      "template_sign_flip_p": 0.59375
+    },
+    "ablation/deepseek_v41_flash_high/field_list/volunteer/pass^1": {
+      "estimate": 0.041666666666666664,
+      "families": 18,
+      "family_ci95": [
+        0.0,
+        0.125
+      ],
+      "family_p": 0.7150284971502849,
+      "tasks": 18,
+      "template_ci95": [
+        0.0,
+        0.1323529411764706
+      ],
+      "template_p": 0.6836316368363163,
+      "template_sign_flip_p": 1.0
+    },
+    "ablation/deepseek_v41_flash_high/retrieval_with_field_list/all/pass^1": {
+      "estimate": 0.013888888888888888,
+      "families": 18,
+      "family_ci95": [
+        -0.016203703703703703,
+        0.05092592592592592
+      ],
+      "family_p": 0.4550544945505449,
+      "tasks": 54,
+      "template_ci95": [
+        -0.016666666666666666,
+        0.04166666666666667
+      ],
+      "template_p": 0.41105889411058893,
+      "template_sign_flip_p": 0.59375
+    },
+    "ablation/deepseek_v41_flash_high/retrieval_with_field_list/hidden/pass^1": {
+      "estimate": 0.006944444444444444,
+      "families": 18,
+      "family_ci95": [
+        -0.1111111111111111,
+        0.14583333333333334
+      ],
+      "family_p": 0.975002499750025,
+      "tasks": 18,
+      "template_ci95": [
+        -0.13392857142857142,
+        0.13125
+      ],
+      "template_p": 0.9944005599440056,
+      "template_sign_flip_p": 1.0
+    },
+    "ablation/deepseek_v41_flash_high/retrieval_with_field_list/mixed/pass^1": {
+      "estimate": 0.034722222222222224,
+      "families": 18,
+      "family_ci95": [
+        -0.04861111111111111,
+        0.1111111111111111
+      ],
+      "family_p": 0.42585741425857415,
+      "tasks": 18,
+      "template_ci95": [
+        -0.034722222222222224,
+        0.10294117647058823
+      ],
+      "template_p": 0.3458654134586541,
+      "template_sign_flip_p": 0.4375
+    },
+    "ablation/deepseek_v41_flash_high/retrieval_with_field_list/volunteer/pass^1": {
+      "estimate": 0.0,
+      "families": 18,
+      "family_ci95": [
+        0.0,
+        0.0
+      ],
+      "family_p": 1.0,
+      "tasks": 18,
+      "template_ci95": [
+        0.0,
+        0.0
+      ],
+      "template_p": 1.0,
+      "template_sign_flip_p": 1.0
+    },
+    "ablation/qwen38_27b_high/field_list/all/pass^1": {
+      "estimate": 0.0023148148148148156,
+      "families": 18,
+      "family_ci95": [
+        -0.0625,
+        0.06944444444444445
+      ],
+      "family_p": 0.9294070592940706,
+      "tasks": 54,
+      "template_ci95": [
+        -0.06372549019607843,
+        0.057539682539682536
+      ],
+      "template_p": 0.9516048395160484,
+      "template_sign_flip_p": 1.0
+    },
+    "ablation/qwen38_27b_high/field_list/hidden/pass^1": {
+      "estimate": -0.041666666666666664,
+      "families": 18,
+      "family_ci95": [
+        -0.14583333333333334,
+        0.0625
+      ],
+      "family_p": 0.47385261473852613,
+      "tasks": 18,
+      "template_ci95": [
+        -0.16666666666666666,
+        0.051470588235294115
+      ],
+      "template_p": 0.43885611438856115,
+      "template_sign_flip_p": 0.53125
+    },
+    "ablation/qwen38_27b_high/field_list/mixed/pass^1": {
+      "estimate": 0.020833333333333332,
+      "families": 18,
+      "family_ci95": [
+        -0.09027777777777778,
+        0.1388888888888889
+      ],
+      "family_p": 0.7744225577442255,
+      "tasks": 18,
+      "template_ci95": [
+        -0.0875,
+        0.11363636363636363
+      ],
+      "template_p": 0.7570242975702429,
+      "template_sign_flip_p": 0.8125
+    },
+    "ablation/qwen38_27b_high/field_list/volunteer/pass^1": {
+      "estimate": 0.027777777777777776,
+      "families": 18,
+      "family_ci95": [
+        -0.013888888888888888,
+        0.08333333333333333
+      ],
+      "family_p": 0.33726627337266274,
+      "tasks": 18,
+      "template_ci95": [
+        -0.013888888888888888,
+        0.08552631578947369
+      ],
+      "template_p": 0.3240675932406759,
+      "template_sign_flip_p": 0.5
+    },
+    "ablation/qwen38_27b_high/retrieval_with_field_list/all/pass^1": {
+      "estimate": 0.19444444444444445,
+      "families": 18,
+      "family_ci95": [
+        0.06018518518518518,
+        0.32407407407407407
+      ],
+      "family_p": 0.0052994700529947,
+      "tasks": 54,
+      "template_ci95": [
+        0.05769230769230768,
+        0.30882863562091495
+      ],
+      "template_p": 0.0028997100289971,
+      "template_sign_flip_p": 0.0546875
+    },
+    "ablation/qwen38_27b_high/retrieval_with_field_list/hidden/pass^1": {
+      "estimate": -0.006944444444444444,
+      "families": 18,
+      "family_ci95": [
+        -0.1388888888888889,
+        0.13194444444444445
+      ],
+      "family_p": 0.97000299970003,
+      "tasks": 18,
+      "template_ci95": [
+        -0.1527777777777778,
+        0.11608630952380931
+      ],
+      "template_p": 0.9754024597540246,
+      "template_sign_flip_p": 1.0
+    },
+    "ablation/qwen38_27b_high/retrieval_with_field_list/mixed/pass^1": {
+      "estimate": 0.3819444444444444,
+      "families": 18,
+      "family_ci95": [
+        0.1597222222222222,
+        0.5972222222222222
+      ],
+      "family_p": 0.0004999500049995,
+      "tasks": 18,
+      "template_ci95": [
+        0.17708333333333334,
+        0.5714285714285714
+      ],
+      "template_p": 9.999000099990002e-05,
+      "template_sign_flip_p": 0.015625
+    },
+    "ablation/qwen38_27b_high/retrieval_with_field_list/volunteer/pass^1": {
+      "estimate": 0.20833333333333334,
+      "families": 18,
+      "family_ci95": [
+        0.06944444444444445,
+        0.3680555555555556
+      ],
+      "family_p": 0.0004999500049995,
+      "tasks": 18,
+      "template_ci95": [
+        0.05555555555555555,
+        0.34868421052631576
+      ],
+      "template_p": 0.0020997900209979003,
+      "template_sign_flip_p": 0.0625
+    }
+  },
+  "iterations": 10000,
+  "levels": {
+    "ablation/deepseek_v41_flash_high/keyword": {
+      "mixed_complete_elicitation": 0.5902777777777778,
+      "pass^1": 0.6759259259259259,
+      "pass^1/hidden": 0.2152777777777778,
+      "pass^1/mixed": 0.8541666666666666,
+      "pass^1/volunteer": 0.9583333333333334,
+      "searches_per_trial": 15.881944444444445,
+      "stop_classes": {
+        "abstained": 33,
+        "recommended": 329,
+        "wall_cap": 70
+      },
+      "success_uncapped": 0.8066298342541437,
+      "trials": 432
+    },
+    "ablation/deepseek_v41_flash_high/keyword_field_list": {
+      "mixed_complete_elicitation": 0.6597222222222222,
+      "pass^1": 0.7222222222222222,
+      "pass^1/hidden": 0.2777777777777778,
+      "pass^1/mixed": 0.8888888888888888,
+      "pass^1/volunteer": 1.0,
+      "searches_per_trial": 15.9375,
+      "stop_classes": {
+        "abstained": 42,
+        "recommended": 346,
+        "wall_cap": 44
+      },
+      "success_uncapped": 0.8041237113402062,
+      "trials": 432
+    },
+    "ablation/deepseek_v41_flash_high/structured": {
+      "mixed_complete_elicitation": 0.8472222222222222,
+      "pass^1": 0.7361111111111112,
+      "pass^1/hidden": 0.2847222222222222,
+      "pass^1/mixed": 0.9236111111111112,
+      "pass^1/volunteer": 1.0,
+      "searches_per_trial": 3.5347222222222223,
+      "stop_classes": {
+        "abstained": 45,
+        "recommended": 353,
+        "wall_cap": 34
+      },
+      "success_uncapped": 0.7989949748743719,
+      "trials": 432
+    },
+    "ablation/qwen38_27b_high/keyword": {
+      "mixed_complete_elicitation": 0.4375,
+      "pass^1": 0.5115740740740741,
+      "pass^1/hidden": 0.2777777777777778,
+      "pass^1/mixed": 0.4930555555555556,
+      "pass^1/volunteer": 0.7638888888888888,
+      "searches_per_trial": 15.872685185185185,
+      "stop_classes": {
+        "abstained": 70,
+        "context_overflow": 3,
+        "recommended": 331,
+        "tool_budget": 5,
+        "turn_limit": 5,
+        "wall_cap": 18
+      },
+      "success_uncapped": 0.533816425120773,
+      "trials": 432
+    },
+    "ablation/qwen38_27b_high/keyword_field_list": {
+      "mixed_complete_elicitation": 0.375,
+      "pass^1": 0.5138888888888888,
+      "pass^1/hidden": 0.2361111111111111,
+      "pass^1/mixed": 0.5138888888888888,
+      "pass^1/volunteer": 0.7916666666666666,
+      "searches_per_trial": 15.456018518518519,
+      "stop_classes": {
+        "abstained": 71,
+        "context_overflow": 3,
+        "recommended": 327,
+        "tool_budget": 3,
+        "turn_limit": 11,
+        "wall_cap": 17
+      },
+      "success_uncapped": 0.5349397590361445,
+      "trials": 432
+    },
+    "ablation/qwen38_27b_high/structured": {
+      "mixed_complete_elicitation": 0.6111111111111112,
+      "pass^1": 0.7083333333333334,
+      "pass^1/hidden": 0.22916666666666666,
+      "pass^1/mixed": 0.8958333333333334,
+      "pass^1/volunteer": 1.0,
+      "searches_per_trial": 2.1203703703703702,
+      "stop_classes": {
+        "abstained": 45,
+        "recommended": 362,
+        "turn_limit": 19,
+        "wall_cap": 6
+      },
+      "success_uncapped": 0.7183098591549296,
+      "trials": 432
+    }
+  },
+  "plan_version": "books-wikidata-v4-ablation-v1",
+  "run_accounting": {
+    "git_commit": "ddcd2ee2dab630d1a5e0ab26599d1e38eb729cca",
+    "plan_sha256": "845742df747a3f6a7f2fd1128f90112fc0de70b3d5a12918d0982564f7511e6c",
+    "provider_spend_usd": 14.227698115199994,
+    "trials": 864
+  },
+  "seed": 20261014,
+  "status": "exploratory; unadjusted; not time-matched"
+}

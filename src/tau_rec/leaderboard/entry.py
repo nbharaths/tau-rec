@@ -8,11 +8,16 @@ fix moved a published number.
 """
 from __future__ import annotations
 
-from typing import Annotated
+from typing import Annotated, Literal
 
 from pydantic import BaseModel, Field, model_validator
 
 Sha256 = Annotated[str, Field(pattern=r"^[0-9a-f]{64}$")]
+
+# Every entry that predates tracks and modes was a tooled run on movies-v1,
+# so those are the defaults and the 25 archived entries need no edit.
+DEFAULT_TRACK = "movies-v1"
+Mode = Literal["tools", "memory"]
 
 # Model ids ending in a floating tag are refused: they silently re-point at a
 # different model and make an entry unreproducible. An unpinned dated alias
@@ -21,6 +26,11 @@ FLOATING_SUFFIXES = ("-latest", ":latest", "-preview", "@latest")
 
 SAME_MODEL_AS_SIMULATOR = "same_model_as_simulator"
 CONTENT_DIGESTS_UNRECORDED = "content_digests_unrecorded"
+# Tasks in the entry do not all have the same n, or some have fewer than the
+# standard 4. pass^k is 0 for any task with n < k, so an entry built from a
+# run that lost trials to rate limits silently under-reports unless it says so.
+UNEVEN_TRIALS = "uneven_trials"
+STANDARD_TRIALS = 4
 
 
 class TaskCount(BaseModel):
@@ -45,7 +55,15 @@ class LeaderboardEntry(BaseModel):
     pinned: bool
     run_date: str
     reasoning_effort: str | None = None
+    # Superseded by `mode`. Kept so old entry files still parse; an entry
+    # claiming no_tools=True is the vacuous ablation and is refused below.
     no_tools: bool = False
+
+    # Which scored content set (track) and which agent configuration (mode)
+    # produced the counts. `memory` entries score constraints only and are
+    # rendered in their own table; they never rank against tooled entries.
+    track: str = DEFAULT_TRACK
+    mode: Mode = "tools"
 
     simulator_model: str
     harness_generation: str
@@ -73,6 +91,18 @@ class LeaderboardEntry(BaseModel):
                     f"model_id {self.model_id!r} ends in floating tag {suffix!r}; "
                     "pin a dated snapshot or record the alias with pinned=false"
                 )
+        return self
+
+    @model_validator(mode="after")
+    def _refuse_no_tools_ablation(self) -> "LeaderboardEntry":
+        """`--no-tools` removed recommend() along with everything else, so no
+        recommendation could ever register and every satisfiable task scored 0
+        by construction. Those runs measure nothing; memory mode replaces them."""
+        if self.no_tools:
+            raise ValueError(
+                "no_tools=True is the vacuous ablation (no recommend() tool, so no "
+                "recommendation can register); re-run under mode='memory' instead"
+            )
         return self
 
     @model_validator(mode="after")

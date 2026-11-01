@@ -1,0 +1,1821 @@
+{
+  "fields": [
+    "genres",
+    "languages",
+    "countries",
+    "publication_year",
+    "formats"
+  ],
+  "labeler": "LLM labeller, blind to recogniser output; not a human annotation",
+  "labeling_rules": [
+    "Label from the agent text alone, blind to classifier outputs and stratum.",
+    "A field is asked when the turn requests the user's preference or requirement on it, explicitly ('what genre?') or as a choice ('fantasy or mystery?', 'classic or modern?', 'something more recent?').",
+    "Describing books (titles, years, genres or origin of candidates or search results) does not count.",
+    "Questions attached to a candidate proposal count, including conditional requests ('if this is rejected, I need a format, language, or era').",
+    "Field mapping: genre, subgenre, kind, topic or theme of a book, fiction/nonfiction, and genre names offered as options -> genres; language, translation -> languages; country of origin, nationality, region -> countries; publication era, decade, classic vs modern, recent, time period -> publication_year; format, ebook, audiobook, print -> formats.",
+    "Story setting is not a field: 'setting/era -- Napoleonic Europe, WWI' or 'historical period or setting' are not publication_year or countries; a bare 'era' or 'time period' is publication_year.",
+    "Not fields: author, tone, mood, style without genre options, length, the subject of a biography, reading history.",
+    "generic = the turn requests unspecified further requirements ('anything else?', 'any other preferences?', 'what's missing?', 'what didn't work?', 'tell me more about what you're looking for / in the mood for'), even when examples follow. A purpose clause ('to narrow it down') alone, a verdict request ('does this work?'), an offer ('should I try another?'), or 'tell me a bit more:' followed only by specific field questions is not generic.",
+    "Recency -> publication_year; a question about a book's subject ('a particular era or place' a history book covers, who a biography is about) is not a field; 'classic' is publication_year only against modern/recent or offered alone, while 'a classic whodunit' or 'a children's classic' is a genre; check-ins ('does this sound more like what you're after?'), offers ('I'd like to suggest ...') and 'what kind of book are you in the mood for?' are not generic; offering alternative titles asks about the titles, not a field."
+  ],
+  "sets": {
+    "final": {
+      "description": "50 answered turns per agent model, labelled after the recogniser was frozen; held out from recogniser development",
+      "items": [
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "Here's my next single pick:\n\n**In the Line of Fire: A Memoir** by Pervez Musharraf (2006) [[candidate_id:wd_Q6012446]]\n\nA memoir published in 2006 (meeting your post-1999 requirement), by the former President of Pakistan, covering his military career and time in power. Available in paperback.\n\nDoes this one meet your requirements?",
+          "uid": 0
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Here's a new candidate that fits all your requirements:\n\n**An Inheritance of Ashes** by Leah Bobet (2015) — [[candidate_id:wd_Q41663590]]\n\nIt's a Young Adult fantasy — published in 2015 (well after 1982), it includes the Young Adult genre you asked for, and it's not in your reading history. It's recorded as available in hardcover and paperback, and it matches the YA-fantasy feel of *The Raven Boys* and *Beasts of Prey*.\n\nDoes this one work for you, or would you like me to try a different YA title?",
+          "uid": 1
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nNow I've got it — Australian origin. Here's a strong pick: **Oceanic** by Greg Egan (1998) [[candidate_id:wd_Q7076198]] — a well-regarded Australian science fiction novel about a young man who discovers a mysterious device that lets him travel through time. It's pure Science Fiction, in English, from Australia, and well before 2016.\n\nDoes this one work for you?",
+          "uid": 2
+        },
+        {
+          "fields": [
+            "formats",
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Good news — your reading history is empty, so there's nothing to rule out.\n\nDo you have a preference for a specific genre within Young Adult (for example, fantasy, science fiction, romance, or mystery), or a particular format like ebook or audiobook? If you're open to anything, I can just pick a strong, well-known title for you.",
+          "uid": 3
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "One option is **The Great Bridge**[[candidate_id:wd_Q60741554]] by David McCullough, a nonfiction account of the building of the Brooklyn Bridge. Its catalog country of origin is **United States**.\n\nDoes a real-life history interest you, or would you prefer fiction?",
+          "uid": 4
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "note": "'prefer a different direction' = check-in, not generic",
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Good news — I found books that hit all three of your criteria (Historical Fiction + Romance, published no later than 2009, and available as an audiobook).\n\nHere's my top pick for you to consider:\n\n**Green Darkness** by Anya Seton [[candidate_id:wd_Q5602464]] — published in 1972, it's a dual-timeline historical romance that weaves between Tudor-era England and the 20th century, built around a story of reincarnation and a love that spans centuries. It's recorded in both the Historical Fiction and Romance genres, and an audiobook edition is available.\n\nWould you like to go with this one, or would you prefer a different direction?",
+          "uid": 5
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "How about *I'll Give You The Sun* [[candidate_id:wd_Q20850750]] by Jandy Nelson? It’s a Young Adult novel about twins, family secrets, art, and first love.\n\nDoes that sound appealing, or would you prefer a more adventure-focused story?",
+          "uid": 6
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nI'd like to suggest **Killers of the Flower Moon** by David Grann [[candidate_id:wd_Q42309957]] — a gripping 2017 Nonfiction work published by Doubleday. It's available in ebook, hardcover, and paperback formats. It's a widely acclaimed true-crime narrative that's been a bestseller and was even adapted into a major film.\n\nWould you like me to go ahead and recommend this one, or would you prefer a different pick from the list?",
+          "uid": 7
+        },
+        {
+          "fields": [
+            "formats",
+            "genres",
+            "publication_year"
+          ],
+          "generic": true,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Great news — your reading history is empty, so there are no books to avoid. I found quite a few adventure titles in the catalog. To help me narrow it down, could you tell me a bit about what you're in the mood for? For example:\n\n- Do you prefer classic, older adventures (like H. Rider Haggard or Jack London) or more modern ones?\n- Any preferred format (e.g., hardcover, paperback, ebook, audiobook)?\n- Any other genres you'd like mixed in (fantasy, thriller, mystery)?\n\nOr if you'd like, I can just suggest a strong pick right away.",
+          "uid": 8
+        },
+        {
+          "fields": [
+            "formats",
+            "genres"
+          ],
+          "generic": false,
+          "note": "era/region of a history book = subject; 'topics you enjoy' -> genres; 'tell me a bit more:' + specific questions",
+          "stratum": "deepseek_v41_flash_high",
+          "text": "I found quite a few history books in the catalog. To narrow things down, could you tell me a bit more:\n\n1. Is there a particular era or region you're interested in (e.g., American history, European history, ancient world)?\n2. Do you have a preferred format (e.g., hardcover, paperback, ebook, audiobook)?\n3. Any authors or topics you especially enjoy — or want to avoid?\n\nThat'll help me pick the best match for you.",
+          "uid": 9
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "note": "'a children's fantasy' offered as option",
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nGreat, you haven't read any of these yet. There are plenty of fantasy options. A standout classic is **A Wizard of Earthsea** by Ursula K. Le Guin [[candidate_id:wd_Q1771810]] — a beloved, award-winning fantasy about a young wizard's coming of age in a world of magic and dragons.\n\nWould you like to go with that, or would you prefer something else (e.g., a series like *A Dance with Dragons*, a lighter read like *Good Omens*, or a children's fantasy)?",
+          "uid": 10
+        },
+        {
+          "fields": [
+            "formats",
+            "languages",
+            "publication_year"
+          ],
+          "generic": true,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "I found a number of poetry books in the catalog. To help narrow it down, could you tell me a bit more about what you're looking for? For example:\n\n- Do you have a preferred **language** (English, Spanish, French, etc.)?\n- Any preference for a **time period** (classic vs. modern)?\n- A particular **format** (hardcover, paperback, ebook, audiobook)?\n\nOr if you'd like, I can just pick a well-regarded poetry collection for you.",
+          "uid": 11
+        },
+        {
+          "fields": [
+            "formats",
+            "genres"
+          ],
+          "generic": true,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nI want to make sure I'm heading in the right direction. The only title in the catalog tagged with **both** Adventure and Young Adult is the Indiana Jones book you already rejected, so let me check whether I'm understanding your requirements correctly.\n\nCould you tell me what specifically didn't work with *Indiana Jones and the Mystery of Mount Sinai*? For example:\n- Was it the franchise/tie-in nature of the book?\n- A particular format you need (paperback, ebook, etc.)?\n- Or you'd prefer a different kind of adventure (fantasy, sci-fi, historical)?\n\nIn the meantime, here's a genuine young-adult adventure novel as an alternative:\n\n**Blood Red Road** [[candidate_id:wd_Q4927681]] by Moira Young (2011) — a dystopian adventure for young adults, available in audiobook, hardcover, and paperback. (Note: it's cataloged under Science Fiction + Young Adult rather than the Adventure genre.)\n\nLet me know which direction you'd like, and I'll lock in a recommendation.",
+          "uid": 12
+        },
+        {
+          "fields": [
+            "publication_year"
+          ],
+          "generic": false,
+          "note": "ambiguous: 'sweeping, plot-driven classic like this' read as classic offered on its own; could be a plain verdict request",
+          "stratum": "gpt61_sol_high",
+          "text": "How about **The Count of Monte Cristo** [[candidate_id:wd_Q191838]] by Alexandre Dumas? It blends historical fiction with adventure and romance, following a wrongfully imprisoned man’s elaborate quest for revenge in nineteenth-century France.\n\nWould you enjoy a sweeping, plot-driven classic like this?",
+          "uid": 13
+        },
+        {
+          "fields": [
+            "genres",
+            "publication_year"
+          ],
+          "generic": false,
+          "note": "'classic whodunit' = genre; 'something more modern' = publication_year",
+          "stratum": "gpt61_sol_high",
+          "text": "Would you enjoy a classic whodunit? **Murder on the Orient Express** [[candidate_id:wd_Q845889]] by Agatha Christie follows Hercule Poirot investigating a murder aboard a snowbound train, with a carriage full of suspects.\n\nIt’s listed as Mystery and isn’t in your recorded reading history. Does that sound appealing, or would you prefer something more modern?",
+          "uid": 14
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "note": "'different historical period' of a history book = subject",
+          "stratum": "gpt61_sol_high",
+          "text": "Would **The Longest Day** [[candidate_id:wd_Q3410561]] by Cornelius Ryan interest you? It’s nonfiction history about the D-Day landings, drawing on accounts from people involved. Or would you prefer a different historical period?",
+          "uid": 15
+        },
+        {
+          "fields": [
+            "languages"
+          ],
+          "generic": false,
+          "note": "Dutch novel: question is about translation/English-language, not country",
+          "stratum": "glm53_flash_high",
+          "text": "I found a strong match. Here's what I checked:\n\n- **Montezuma's Daughter** by H. Rider Haggard (Adventure + Historical Fiction) — unfortunately, it's only recorded as hardcover in the catalog, so it doesn't meet your paperback requirement.\n- **Ferdinand Huyck** by Jacob van Lennep — this one fits both criteria: it's an Adventure/Historical Fiction novel (originally published 1840, a classic Dutch historical adventure), and it **is available in paperback**.\n\nOne thing to note: *Ferdinand Huyck* is a Dutch novel. If you're open to that (translations or reading in Dutch), I'd be happy to recommend it. Would you like me to go ahead? If you'd prefer an English-language title, let me know and I'll keep searching.\n\n**Ferdinand Huyck** [[candidate_id:wd_Q2797122]]",
+          "uid": 16
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "note": "'less dark' = tone",
+          "stratum": "gpt61_sol_high",
+          "text": "How about **Fahrenheit 451**[[candidate_id:wd_Q202009]] by Ray Bradbury? Its catalog lists the United States as its country of origin, and it isn’t in your recorded reading history.\n\nIt’s a thought-provoking dystopian novel about a society that burns books. Does that sound appealing, or would you prefer something less dark?",
+          "uid": 17
+        },
+        {
+          "fields": [
+            "formats"
+          ],
+          "generic": false,
+          "note": "'setting/era' = story setting",
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Great news — there are several historical fiction titles in the catalog. Here's one I think stands out:\n\n**Caballero: A Historical Novel** by Jovita González [[candidate_id:wd_Q5015197]] — an English-language historical novel set along the Texas-Mexico border, available in hardcover and paperback.\n\nWould you like to go with this one, or do you have a preferred format (ebook, audiobook, print) or a particular setting/era in mind? That'll help me lock in the best pick for you.",
+          "uid": 18
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "One option is *After Atlas* [[candidate_id:wd_Q85740021]] by Emma Newman, a science-fiction novel published in **2016**, which meets your 1986-or-later requirement.\n\nWould science fiction appeal to you, or would you prefer another genre?",
+          "uid": 19
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "How about **Born a Crime**[[candidate_id:wd_Q29831237]] by Trevor Noah? Published in **2016**, it’s cataloged as both **Biography** and **Memoir**. His account of growing up in South Africa blends humor with reflections on family, identity, and apartheid.\n\nDoes that sound like a good fit?",
+          "uid": 20
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "I found a great match for you:\n\n**Charlie and the Great Glass Elevator** by Roald Dahl [[candidate_id:wd_Q530406]]\n- Published: 1972 (within your 1970–2002 range)\n- Genres: Adventure, Children\n- Country: United Kingdom\n- Formats available: ebook, hardcover, paperback\n\nThis is the sequel to *Charlie and the Chocolate Factory*, continuing Charlie Bucket's wild adventures aboard the Great Glass Elevator. It fits all your criteria perfectly.\n\nWould you like me to go ahead with this one?",
+          "uid": 21
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "note": "'a different era or setting' = story setting",
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nGot it — historical fiction published 2014 or later. Here's a strong pick:\n\n**The Mirror and the Light** by Hilary Mantel [[candidate_id:wd_Q7751674]] — the acclaimed 2020 conclusion to her Thomas Cromwell trilogy, set in Tudor England. It's a masterful work of historical fiction and won the Booker Prize.\n\nWould this work for you, or would you prefer a different era or setting?",
+          "uid": 22
+        },
+        {
+          "fields": [
+            "formats",
+            "genres"
+          ],
+          "generic": true,
+          "note": "ambiguous: tone options 'literary, sweeping epic, thriller-ish' treated as genre options; era/setting = story setting",
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Great — I found a solid set of Historical Fiction titles in the catalog. Your reading history is empty, so there's nothing to exclude on that front.\n\nTo narrow it down, could you tell me a bit more about what you're in the mood for?\n\n- Any particular **era or setting** (e.g., Tudor England, ancient Rome, colonial Asia)?\n- Do you have a **preferred format** (e.g., paperback, ebook, audiobook)?\n- Any authors you already love, or a tone you prefer (literary, sweeping epic, thriller-ish)?\n\nIf you'd rather leave it open, I can just pick a standout for you.",
+          "uid": 23
+        },
+        {
+          "fields": [
+            "genres",
+            "languages"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "I’ve checked your reading history so I can avoid books you’ve already read. Do you prefer fiction or nonfiction? Also, should the catalog explicitly list “American English,” or is a book written in American-style English sufficient?",
+          "uid": 24
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "note": "kind-of-book question attached to candidate",
+          "stratum": "gpt61_sol_high",
+          "text": "Would you enjoy a philosophical adventure? *The Alchemist* [[candidate_id:wd_Q179021]] by Paulo Coelho, published in **1988**, follows a young shepherd’s search for treasure and purpose. It meets your publication-date requirement—does that sound appealing?",
+          "uid": 25
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "note": "question is about the title",
+          "stratum": "gpt61_sol_high",
+          "text": "Would you enjoy **Five Children and It** [[candidate_id:wd_Q651866]] by Edith Nesbit? It’s a children’s fantasy about five siblings who discover a wish-granting creature—and find that their wishes lead to unexpected adventures.",
+          "uid": 26
+        },
+        {
+          "fields": [
+            "genres",
+            "languages"
+          ],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nGreat, you haven't read anything in the catalog yet, so I have a wide field to work with. Since your only requirement is a publication year of 1988 or later, let me suggest a strong, widely-loved option.\n\nHow about **The Alchemist** by Paulo Coelho [[candidate_id:wd_Q179021]]? It's an adventure/fantasy novel published in 1988, originally in Portuguese, and it's one of the most popular titles in the catalog.\n\nWould that work for you, or would you prefer a different genre or language?",
+          "uid": 27
+        },
+        {
+          "fields": [
+            "genres",
+            "publication_year"
+          ],
+          "generic": false,
+          "note": "ambiguous: 'a modern horror' -> publication_year; 'an anthology' read as a kind -> genres",
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nHere's a strong pick for you: **The Amityville Horror** [[candidate_id:wd_Q2572480]] by Jay Anson (1977). It's a classic horror novel about a family who moves into a house with a dark past and experiences terrifying events. It's available in ebook, hardcover, and paperback.\n\nWant me to go with this one, or would you prefer something else from the list (e.g., a Lovecraft collection, a modern horror, or an anthology)?",
+          "uid": 28
+        },
+        {
+          "fields": [
+            "formats",
+            "genres",
+            "publication_year"
+          ],
+          "generic": true,
+          "note": "bare 'era' -> publication_year",
+          "stratum": "glm53_flash_high",
+          "text": "There are lots of options! To narrow it down, could you tell me a bit more about what you enjoy? For example:\n\n- **Genre** — I see science fiction, fantasy, crime/thriller, historical fiction, memoir, and children's books in the catalog.\n- **Format** — do you prefer print, ebook, audiobook?\n- Any other preferences, like a favorite author or era?\n\nThat will help me pick the right book for you.",
+          "uid": 29
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nThat's the missing piece — thank you. I found historical fiction that's also Young Adult and published by 2018.\n\n**Revolution** by Jennifer Donnelly [[candidate_id:wd_Q7318655]] — a Young Adult historical novel set during the French Revolution, published in 2010. It follows a young woman who joins the revolutionary cause, blending historical detail with a coming-of-age story.\n\nDoes this one work for you?",
+          "uid": 30
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "Got it — Horror **and** Thriller, published no later than 2004.\n\nBased on that, my single pick is **Carrie** by Stephen King (1974) [[candidate_id:wd_Q623394]] — a landmark debut that blends supernatural horror with psychological thriller tension, telling the story of a bullied teenager with devastating telekinetic powers. It's widely regarded as one of King's best and sits at the top of the catalog's horror-thriller titles within your year range.\n\nHow does that sound to you?",
+          "uid": 31
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "Would you enjoy a fast-paced dystopian adventure? **The Hunger Games** [[candidate_id:wd_Q11678]] by Suzanne Collins was published in **2008**, meeting your date requirement. It follows a teenager forced into a televised survival competition.",
+          "uid": 32
+        },
+        {
+          "fields": [
+            "formats",
+            "genres",
+            "publication_year"
+          ],
+          "generic": true,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Interesting — that one is also UK-origin and children's. Let me try another well-known British children's book:\n\n**The Lion, the Witch and the Wardrobe** by C. S. Lewis (1950) — the classic UK children's fantasy, recorded with United Kingdom as its country of origin. [[candidate_id:wd_Q485093]]\n\nAlso, to help me narrow this down: aside from \"UK origin\" and \"includes Children,\" do you have any other requirements (a specific format, era, or theme)? That would help me find the right match.",
+          "uid": 33
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Thanks — that adds a new constraint: published **no later than 2004** (so the window is 1960–2004). Let me offer another single option that fits:\n\n**A Monetary History of the United States** [[candidate_id:wd_Q4658341]] — by Milton Friedman and Anna Schwartz, published 1963. A landmark economic history of American money and banking.\n\nDoes this one satisfy your requirements?",
+          "uid": 34
+        },
+        {
+          "fields": [
+            "genres",
+            "publication_year"
+          ],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Here's a strong pick for you:\n\n**The Long Ships** by Frans G. Bengtsson [[candidate_id:wd_Q1210846]] — a beloved Viking adventure novel (1941) following the exploits of Red Orm, full of raiding, treasure, and far-flung voyages. It's available in paperback.\n\nDoes this sound like the kind of adventure you're after, or would you prefer something more modern (e.g., a thriller-style adventure) or a classic exploration tale?",
+          "uid": 35
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nGreat — I checked your reading history (Resurrectionist, Leven Thumps and the Gateway to Foo, You Sexy Thing) and none of these UK titles are in it, so you're clear.\n\nHere's a strong candidate to consider: **Brave New World** by Aldous Huxley (1932), a classic science fiction novel set in a dystopian future society. [[candidate_id:wd_Q191949]]\n\nWould you like to go with this one, or would you prefer a different genre (mystery, fantasy, romance, etc.)?",
+          "uid": 36
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "note": "'that kind of survival adventure' asked as a kind",
+          "stratum": "gpt61_sol_high",
+          "text": "How about **The Poseidon Adventure**[[candidate_id:wd_Q1821318]] by Paul Gallico? Published in **1969**, it’s cataloged as **Adventure** and **Thriller**, following passengers fighting to survive aboard a capsized ocean liner.\n\nDoes that kind of survival adventure appeal to you?",
+          "uid": 37
+        },
+        {
+          "fields": [
+            "genres",
+            "publication_year"
+          ],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nGreat, I found a solid list of mysteries. None of them overlap with the three books you've already read.\n\nHere's a strong pick: **Murder on the Orient Express** by Agatha Christie (1934) [[candidate_id:wd_Q845889]] — a classic locked-room-style whodunit set aboard a snowbound train, with Hercule Poirot unraveling a murder among a cast of international passengers. It's a pure Mystery, in English.\n\nWant me to go with this one, or would you prefer something more modern, a different author, or a different flavor (e.g., a sci-fi mystery like *The Naked Sun*)?",
+          "uid": 38
+        },
+        {
+          "fields": [
+            "genres",
+            "languages",
+            "publication_year"
+          ],
+          "generic": false,
+          "note": "ambiguous generic: 'which of these matters most' over a closed list of fields -> not generic",
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nLet me try a more recent German nonfiction title.\n\n**Die Wikipedia-Story** by Pavel Richter (2020) [[candidate_id:wd_Q102314853]] — a recent German nonfiction work about the history of Wikipedia, published in 2020 (before your 2021 cutoff).\n\nI've now tried several German nonfiction books across different eras and topics, so I want to make sure I'm not missing a key detail. Could you tell me which of these matters most to you?\n- **Topic** (history, philosophy, politics, science, memoir, technology)?\n- **Language** (German, English, or both)?\n- **Era** (older classic vs. recent)?\n\nThat should help me zero in on the exact book you have in mind.",
+          "uid": 39
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nLet me try another:\n\n**Amazon Magic: The Life Story of Ayahuasquero and Shaman Don Agustin Rivas Vasquez** by Agustín Rivas Vásquez and Jaya Bear [[candidate_id:wd_Q111669979]] — published in 1999, a biography of the shaman Don Agustin Rivas Vásquez. Available in hardcover and paperback.",
+          "uid": 40
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "note": "'a different area of nonfiction' = topic -> genres",
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Here's a different option:\n\n**The Science of Interstellar** by Kip S. Thorne [[candidate_id:wd_Q19961406]] — a nonfiction book (in English, available as an ebook) about the real physics behind the film *Interstellar*, written by the Nobel Prize–winning physicist who consulted on it.\n\nWould this work for you, or would you like me to try a different area of nonfiction?",
+          "uid": 41
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "Filtering to American English historical fiction published 1930–2012 leaves three candidates:\n\n1. **Memoirs of a Geisha** (Arthur Golden, 1997) — a sweeping novel set in mid-20th-century Japan, following a young girl's rise as a geisha. A bestseller known for its lush, immersive storytelling. [[candidate_id:wd_Q829130]]\n2. **The Curse of the Pharaohs** (Barbara Mertz, 1981) — a crime/historical romp set in Egyptology-era Egypt.\n3. **Time Patrol** (Poul Anderson, 1991) — a sci-fi/historical hybrid about time travelers safeguarding history.\n\nMy leading pick is **Memoirs of a Geisha** [[candidate_id:wd_Q829130]] — it's the most acclaimed and popular of the three, and a genuinely memorable historical novel. Does that appeal to you, or would you rather explore one of the others?",
+          "uid": 42
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "My new candidate is **The Broker** by John Grisham, published 2005 — a Crime/Thriller about a lawyer given a new identity, and you haven't read it [[candidate_id:wd_Q922621]].",
+          "uid": 43
+        },
+        {
+          "fields": [
+            "formats",
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "What sounds most appealing: a sweeping family saga, a wartime story, or historical fiction with mystery or romance? Also, do you need a particular format, and should I avoid books you’ve already read?",
+          "uid": 44
+        },
+        {
+          "fields": [],
+          "generic": true,
+          "note": "conditional 'requirement I'm still missing'",
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nI found several well-known memoirs in the catalog. Let me try:\n\n**The Year of Magical Thinking** by Joan Didion (2005) [[candidate_id:wd_Q993664]] — a landmark memoir about grief after the sudden death of her husband.\n\nIf this isn't the one, I'll need a hint about the specific requirement I'm still missing.",
+          "uid": 45
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "Got it—published in 1997 or later. Do you have a preferred genre, or would you like me to choose?",
+          "uid": 46
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Here's another option:\n\n**The Body Keeps the Score** by Bessel van der Kolk [[candidate_id:wd_Q85806607]] — a 2014 nonfiction work exploring how trauma affects the body and brain, and paths toward healing. It's a bestseller and highly regarded. Confirmed available as an ebook and within your date range.\n\nWould this one work for you, or shall I keep looking?",
+          "uid": 47
+        },
+        {
+          "fields": [
+            "formats",
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Happy to help! Just to narrow things down a bit: do you have a preferred genre or topic in mind (e.g., mystery, sci-fi, romance, nonfiction), or are you open to anything? And do you have a preferred format, like paperback, ebook, or audiobook?",
+          "uid": 48
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "note": "alternative offered as a specific title",
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nGot it — horror published between 2010 and 2011. A great pick is **The Passage** by Justin Cronin (2010) [[candidate_id:wd_Q1199882]] — a gripping post-apocalyptic horror novel that was a major bestseller.\n\nWould you like to go with this one, or would you prefer a different title (e.g., a Stephen King horror like *1922*)?",
+          "uid": 49
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nGreat news — you haven't read any of these yet! Here are the Historical Fiction options I found:\n\n1. **Caballero: A Historical Novel** by Jovita González (1996) — English, available in hardcover and paperback.\n2. **Christy** by Catherine Marshall (1967) — English, available in ebook, hardcover, and paperback.\n3. **The Return** by Dulce Maria Cardoso (2017) — Portuguese, available in audiobook, ebook, and hardcover.\n\n**Christy** by Catherine Marshall is a classic historical fiction novel set during the American Civil War era, following a young woman's journey from a sheltered life to independence. It's available in multiple formats (ebook, hardcover, paperback) and is a well-loved read.\n\nWould you like me to go with **Christy** [[candidate_id:wd_Q5113620]], or would you prefer one of the other options?",
+          "uid": 50
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "I’ve checked your reading history so I can avoid books you’ve already read. Would you prefer fiction or nonfiction, or are you open to either?",
+          "uid": 51
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "How about *The Alchemist*[[candidate_id:wd_Q179021]] by Paulo Coelho? Published in **1988**, it meets your cutoff. It’s a short, fable-like adventure about a shepherd searching for treasure and finding his purpose.\n\nDoes that appeal to you, or would you prefer a different genre?",
+          "uid": 52
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "Great — with the 1982+ cutoff, here are the strongest fantasy options in the catalog:\n\n- **Good Omens** (Neil Gaiman & Terry Pratchett, 1990) — hilarious apocalyptic fantasy\n- **The Name of the Wind** (Patrick Rothfuss, 2007) — acclaimed modern epic fantasy\n- **A Dance with Dragons** (George R. R. Martin, 2011) — gritty epic fantasy\n- **Stardust** (Neil Gaiman, 1999) — fairy-tale fantasy adventure\n- **The Mists of Avalon** (Marion Zimmer Bradley, 1983) — Arthurian legend retold\n\nDo any of these jump out at you? If you're not sure, my top pick would be **Good Omens** [[candidate_id:wd_Q1052459]] — it's witty, inventive, and widely loved, a great standalone entry point into fantasy.",
+          "uid": 53
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Here's another option to consider:\n\n**Revelation Space** [[candidate_id:wd_Q1759977]] by Alastair Reynolds (2000)\n\nA well-regarded science fiction space opera — the first in the Revelation Space series — set in a universe of ancient alien ruins and a crew racing to uncover a galaxy-spanning mystery. It's available in ebook, hardcover, and paperback, and it's not in your reading history.\n\nDoes this one work for you, or would you like me to suggest something different?",
+          "uid": 54
+        },
+        {
+          "fields": [
+            "formats",
+            "genres",
+            "languages"
+          ],
+          "generic": true,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nI want to make sure I nail this. Both of my picks were English-language, published before 2001, and not in your history — so there may be another requirement I'm missing.\n\nCould you tell me a bit more about what you're after? For example:\n- A particular **genre** (thriller, romance, sci-fi, historical, mystery, etc.)?\n- A specific **language**?\n- A particular **format** you need (e.g., ebook, audiobook, print)?\n- Any other constraints?\n\nThat way I can find the right book rather than guessing.",
+          "uid": 55
+        },
+        {
+          "fields": [
+            "genres",
+            "publication_year"
+          ],
+          "generic": false,
+          "note": "ambiguous: 'if you'd prefer something brand new' (with a title) counted as recency choice",
+          "stratum": "glm53_flash_high",
+          "text": "I checked your reading history — you've read *Rod Serling's Triple W*, *Starling House*, and *Force of the Past*, and none of my candidates overlap with those.\n\nThere's a solid catalog of horror options here, including a few well-regarded recent titles. One that stands out is **Don't Fear the Reaper** by Stephen Graham Jones (2023) [[candidate_id:wd_Q118904094]] — it's the acclaimed second book in his Indian Lake trilogy, a slasher-infused horror novel with strong reviews. Another option would be *The Night Birds* by Christopher Golden (2025) if you'd prefer something brand new.\n\nWould *Don't Fear the Reaper* appeal to you, or would you like me to look for something different — say, gothic horror, haunted houses, or anthologies?",
+          "uid": 56
+        },
+        {
+          "fields": [
+            "formats",
+            "genres",
+            "publication_year"
+          ],
+          "generic": true,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Great news — your reading history is empty, so there's no risk of recommending something you've already read. I found quite a few science fiction titles in the catalog.\n\nTo help me narrow it down, could you tell me a bit more about what you're looking for?\n\n- Do you have a preferred **format** (e.g., hardcover, paperback, ebook, audiobook)?\n- Any particular **subgenre or theme** you enjoy (space opera, time travel, dystopia, short stories/anthologies, etc.)?\n- Any preference on **era** (classic vs. modern) or **length**?\n\nLet me know and I'll find the best fit for you!",
+          "uid": 57
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "I notice a distinctive profile I haven't tried yet: a translated, non-English classic. Let me go with:\n\n**Solaris** [[candidate_id:wd_Q261281]]\n- **Published:** 1961 — within your 2005 cutoff\n- **Author:** Stanisław Lem\n- **Genre:** Science Fiction\n- **Language:** Polish (the original of the famous translation)\n- **Why it's a great choice:** The towering masterpiece of Polish SF — scientists studying a sentient ocean on a distant planet confront manifestations of their own guilt and memory. It's one of the most philosophically profound SF novels ever written, and unlike every book I've offered so far, it's a non-English-language work — a genuinely different profile.\n\nIs this closer to what you're looking for?",
+          "uid": 58
+        },
+        {
+          "fields": [
+            "formats",
+            "genres",
+            "languages"
+          ],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "Got it — anything from 1920 onward. Do you have any preferences for genre, language, or format (e.g., ebook, audiobook, print)? If you'd rather not specify, I can just pull up popular options from that period.",
+          "uid": 59
+        },
+        {
+          "fields": [
+            "formats",
+            "genres",
+            "publication_year"
+          ],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "There are quite a few matches that include both Horror and Thriller published since 2010. A few standouts:\n\n- **The Bazaar of Bad Dreams** — Stephen King (2015)\n- **The Year of the Locust** — Terry Hayes (2023)\n- **What the Night Knows** — Dean Koontz (2010)\n- **Mr. Monster** — Dan Wells (2010)\n\nDo you have a preferred format (hardcover, paperback, ebook, audiobook)? And is there a particular era or style you lean toward — classic horror-thriller, modern, supernatural, etc.?",
+          "uid": 60
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nLet me try **New Moon** by Stephenie Meyer [[candidate_id:wd_Q191540]] — a 2006 fantasy/horror/romance/young adult sequel to Twilight.\n\nWould this work, or should I keep looking?",
+          "uid": 61
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "I found a few romance options published after 2006. My top pick is:\n\n**After You** by Jojo Moyes (2015) [[candidate_id:wd_Q39488500]] — a contemporary romance novel from the UK, available in ebook, hardcover, and paperback. It's a sequel to *Me Before You*, following Louisa Clark as she picks up the pieces of her life and opens herself to new love.\n\nWould you like me to go with this one, or would you prefer one of the other matches I found (like *Rumors: A Luxe Novel* by Anna Godbersen, a 2008 YA historical romance, or *Saaya* by Subin Bhattarai, a 2014 Nepali romance)?",
+          "uid": 62
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nGot it — published no later than 2009. Here's a classic that fits: **The Killer Inside Me** by Jim Thompson [[candidate_id:wd_Q2275587]] — a 1952 crime novel, available in paperback, and not in your reading history.\n\nShall I go with this one?",
+          "uid": 63
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nLet me try a classic spy thriller.\n\nHow about **From Russia, with Love** by Ian Fleming [[candidate_id:wd_Q1165753]]? It's a 1957 James Bond thriller — a taut, espionage-driven story of a British agent sent to recover a dangerous device from the Soviets. It's a pure, tightly-plotted thriller.\n\nDoes this one work for you?",
+          "uid": 64
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "Two new Historical Fiction titles surfaced. My new candidate is **The Gods of War** [[candidate_id:wd_Q6960416]] by Conn Iggulden:\n\n- **Genre:** Historical Fiction\n- **Published:** 2006 (satisfies your 1910+ requirement)\n- **Language:** English\n- **Country:** United Kingdom\n\nIt's the fourth book in Iggulden's bestselling Emperor series, dramatizing the life of Julius Caesar — his wars, politics, and the road toward civil war. A gripping, fast-paced historical epic from one of the most popular historical novelists working today.",
+          "uid": 65
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "My candidate is **Adventure** by Jack London [[candidate_id:wd_Q3202732]] — a classic seafaring adventure novel published in 1911, well within your cutoff of 1991. I've also confirmed it's available in hardcover, and it's not in your reading history.\n\nJack London is known for vivid action and survival themes, and this novel follows a sailor's journey through the South Pacific — a strong pick if you enjoy classic adventure tales.\n\nDoes this work for you, or would you like me to look at a different candidate?",
+          "uid": 66
+        },
+        {
+          "fields": [
+            "formats",
+            "genres",
+            "languages"
+          ],
+          "generic": true,
+          "note": "ambiguous: 'classic anthology, short stories, or a full novel' read as kinds -> genres",
+          "stratum": "glm53_flash_high",
+          "text": "I found several science fiction options in the catalog. Since you have no prior reading history with us, I can pick freely — but let me ask a couple of quick things:\n\n1. **Language preference?** Some of the sci-fi titles are in French or Italian, while others are in English (e.g., anthologies edited by Groff Conklin or Donald Wollheim, and a novel by Charles Yu).\n2. **Any preferred format** (e.g., paperback, ebook, audiobook)?\n3. **Any taste preference** — classic anthology, short stories, or a full novel?\n\nIf you'd like, I can suggest a good starting point: **How to Live Safely in a Science Fictional Universe** by Charles Yu [[candidate_id:wd_Q5918654]] — a clever, well-reviewed sci-fi novel about a time-machine repairman stuck in a minor universe. Would you like me to check its availability, or tell me more about your preferences?",
+          "uid": 67
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nLet me try another one: **First Man: The Life of Neil A. Armstrong** by James R. Hansen [[candidate_id:wd_Q5453247]] — a 2005 English-language biography of the first man on the Moon, available in **ebook** format.\n\nDoes that one work for you?",
+          "uid": 68
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nLet me try another romance option.\n\n**Gabriel's Inferno** by Sylvain Reynard [[candidate_id:wd_Q5515499]] — a 2012 romance in English. It's a popular, well-known contemporary romance and not in your reading history.\n\nWould this work for you?",
+          "uid": 69
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "I have a match for you:\n\n**Cuckoo no Tamako wa Dare no Mono** [[candidate_id:wd_Q17224387]] by Keigo Higashino (2010)\n\n- ✅ **Country of origin:** Japan\n- ✅ **Genre:** Mystery\n- ✅ **Format:** Audiobook (also available in hardcover and paperback)\n- ✅ **Not in your reading history** — you haven't read this one\n\nIt's by Keigo Higashino, one of Japan's most celebrated mystery writers. Would you like me to go ahead with this one?",
+          "uid": 70
+        },
+        {
+          "fields": [
+            "formats",
+            "genres",
+            "publication_year"
+          ],
+          "generic": true,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Great news — I found plenty of nonfiction in the catalog, and I see you don't have any reading history with us yet, so everything is fair game. \n\nTo help narrow it down, could you tell me a bit more about what you're in the mood for? For example:\n\n- **Topic or genre**: memoir, science, history, economics, self-improvement, true crime, philosophy, etc.?\n- **Format**: are you looking for a physical book, ebook, audiobook, or does it not matter?\n- **Length or era**: any preference for something modern vs. a classic?\n\nOr if you'd like, I can just suggest a standout nonfiction title based on what's most popular. What sounds good?",
+          "uid": 71
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nHere's another German nonfiction title available in ebook:\n\n**Towards a Transformation of Philosophy** by Karl-Otto Apel [[candidate_id:wd_Q137449592]]\n\nThis is a 1973 nonfiction work, published in Germany, written in German, and available in ebook format. It meets all your requirements: nonfiction, German country of origin, and ebook availability.\n\nDoes this one work for you?",
+          "uid": 72
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Here's my current pick for you:\n\n**Killers of the Flower Moon** by David Grann [[candidate_id:wd_Q42309957]]\n\nIt's a gripping work of narrative nonfiction about the FBI's investigation into the murders of wealthy Osage Nation members in 1920s Oklahoma. It reads like a true-crime thriller but is meticulously researched history.\n\nWould you like to go with this one, or should I suggest something else?",
+          "uid": 73
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "note": "ambiguous: alternatives are specific titles ('a classic golden-age anthology like X or Y'); could be read as genres or publication_year",
+          "stratum": "glm53_flash_high",
+          "text": "This one looks like a great fit for your criteria:\n\n**The Collected Short Fiction of C. J. Cherryh** [[candidate_id:wd_Q7726662]]\n- **Author:** C. J. Cherryh — one of the most acclaimed voices in science fiction (multiple Hugo and Campbell Award winner)\n- **Published:** 2004 ✓ (within your no-later-than-2005 requirement)\n- **Genres:** Science Fiction and Fantasy\n- **Language:** English\n- **Available formats:** ebook and paperback\n- **Content rating:** General\n\nDoes this appeal to you, or would you prefer I look at other options — for example, a classic golden-age anthology like *Science-Fiction Adventures in Dimension* (1953) or *The Golden Age of Science Fiction* (1981)?",
+          "uid": 74
+        },
+        {
+          "fields": [
+            "formats",
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "Got it — anything published in 2001 or later. To help me narrow things down:\n\n1. What genres do you enjoy (e.g., mystery, sci-fi, fantasy, literary fiction, nonfiction)?\n2. Do you have a preferred format (hardcover, paperback, ebook, audiobook)?\n3. Any authors or recent reads you've loved?",
+          "uid": 75
+        },
+        {
+          "fields": [
+            "formats"
+          ],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "All four qualify. Let me focus on one I think you'll like:\n\n**Atlantis Found** by Clive Cussler [[candidate_id:wd_Q862948]] — a 1999 Dirk Pitt adventure/thriller (also tagged Crime). It's available in hardcover and paperback.\n\nBefore I lock it in: do you have a format you need (paperback, hardcover, ebook, audiobook)? And does this one sound good, or would you prefer one of the others (e.g., *The Moses Expedition*, which is also available as an ebook)?",
+          "uid": 76
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nLet me try another.\n\n**The Bad Beginning** [[candidate_id:wd_Q678277]] by Daniel Handler (Lemony Snicket) (1999) — a Young Adult novel in English, the first book in A Series of Unfortunate Events, following the Baudelaire orphans as they face a series of misfortunes. Not in your reading history.\n\nDoes this one work?",
+          "uid": 77
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "The ebook is confirmed available. Here's the pick:\n\n**Killers of the Flower Moon** by David Grann [[candidate_id:wd_Q42309957]] — a #1 bestseller that reads like a thriller but is meticulously reported history: the serial murders of wealthy Osage Nation members in the 1920s, the investigation that exposed a conspiracy, and the founding of the modern FBI. It meets all your criteria — Nonfiction, English, ebook format — and is widely considered one of the best narrative nonfiction books of the past decade.\n\nWould you like me to go ahead with this recommendation?",
+          "uid": 78
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "Would you be interested in a crime story with horror elements? *Later* [[candidate_id:wd_Q105044058]] by Stephen King was published in 2021 and isn’t in your recorded reading history. Does that sound appealing, or would you prefer a different genre?",
+          "uid": 79
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "note": "subject of a biography",
+          "stratum": "glm53_flash_high",
+          "text": "Your history is empty, so there's nothing to rule out from past reads. The catalog has several strong English-language biographies, including works on Kafka, Mandela, the Beatles, Douglas Adams, and Elizabeth Barrett Browning.\n\nSince you didn't connect with the Napoleon option, I'd like to offer a different kind of subject: ***Mandela: The Authorised Biography*** by Anthony Sampson [[candidate_id:wd_Q6747947]]. It's a definitive, English-language account of Nelson Mandela's life, written with his cooperation — widely regarded as one of the best political biographies of the past few decades.\n\nDoes that appeal to you, or would you prefer a different subject (arts, literature, music, etc.)?",
+          "uid": 80
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nLet me try a science nonfiction:\n\n**Bad Science** by Ben Goldacre (2008) [[candidate_id:wd_Q4840428]]\n\nThis is a well-known science nonfiction book by the British journalist Ben Goldacre, examining how science is often misrepresented in media and public discourse. Available in ebook, hardcover, and paperback.\n\nDoes this one work for you?",
+          "uid": 81
+        },
+        {
+          "fields": [
+            "publication_year"
+          ],
+          "generic": false,
+          "note": "'a more recent collection'; 'different style' not a field",
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Here's a candidate that fits your criteria:\n\n**Portrait of the Alcoholic** by Kaveh Akbar [[candidate_id:wd_Q137567581]] — a poetry collection published in 2017. It's in English and available in audiobook, hardcover, and paperback. It's not among the books you've already read.\n\nDoes this sound like something you'd enjoy? If you'd prefer a different style or a more recent collection, let me know and I can suggest another.",
+          "uid": 82
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Thanks — that explains it. The Time Traveler's Wife isn't available as an ebook, so it doesn't meet your format requirement.\n\nHere's another that does:\n\n**Me Before You** by Jojo Moyes [[candidate_id:wd_Q20657314]] — a 2016 contemporary Romance, and it's available in ebook format.\n\nWould you like to go with this one, or should I keep looking?",
+          "uid": 83
+        },
+        {
+          "fields": [
+            "formats",
+            "genres",
+            "publication_year"
+          ],
+          "generic": true,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nHere's a science fiction novel from 1997: **Illegal Alien** [[candidate_id:wd_Q5998865]] by Robert J. Sawyer, published by Ace Books, available in hardcover and paperback.\n\nI've now tried a number of science fiction titles published before 2005, so I'd really like to understand what's still missing. Could you tell me specifically what requirement isn't being met — for example, a particular format, a specific sub-genre, a certain author, or a publication year range? That will let me find exactly the right book.",
+          "uid": 84
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nHere's a great pick: **Code Name Verity** [[candidate_id:wd_Q5140033]] by Elizabeth E. Wein\n\n- **Genres:** Historical Fiction, Thriller, Young Adult\n- **Published:** 2012 (before your 2018 cutoff)\n- **Language:** English\n- **Available formats:** Ebook, Paperback\n- **Setting:** World War II — a young female pilot and her radio operator are stranded behind enemy lines after their plane is shot down over France\n\nIt's a gripping, emotionally powerful story told through letters and logs. Would you like me to go ahead and recommend this one?",
+          "uid": 85
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nYou have no reading history on file, so I'm free to pick from the full catalog. Since your only requirement is a publication year of 1960 or later, there are many options.\n\nMy top pick is **The Godfather** by Mario Puzo (1969) [[candidate_id:wd_Q243556]] — a classic crime novel that's the most popular title in the catalog.\n\nWould you like to go with that, or would you prefer a different genre (sci-fi, fantasy, thriller, etc.)?",
+          "uid": 86
+        },
+        {
+          "fields": [
+            "countries",
+            "formats",
+            "genres"
+          ],
+          "generic": true,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nLet me try: **I Am Number Four** by James Frey and Jobie Hughes [[candidate_id:wd_Q459983]] — a 2010 English-language Young Adult science fiction novel about an alien who has fled to Earth and is being hunted by monsters.\n\nI've tried seventeen titles now, all of which meet the four requirements you've stated. I'm confident the catalog has your book, so I must be missing a fifth requirement. If you'll name it — a genre, country, format, or content rating — I'll commit to the right book right away.",
+          "uid": 87
+        },
+        {
+          "fields": [
+            "formats",
+            "genres"
+          ],
+          "generic": false,
+          "note": "ambiguous: 'something more along the lines of a historical mystery like <title>' counted as genre choice",
+          "stratum": "deepseek_v41_flash_high",
+          "text": "I found two books in the catalog that match your criteria (Historical Fiction, American English, United States origin, published between 1930 and 2012):\n\n1. **Memoirs of a Geisha** by Arthur Golden (1997)\n2. **The Curse of the Pharaohs** by Barbara Mertz (1981)\n\nOne candidate that stands out is **Memoirs of a Geisha** [[candidate_id:wd_Q829130]] — a widely loved work of historical fiction set in pre- and post-war Japan, following the life of a young geisha.\n\nWould you like to go with this one, or would you prefer something more along the lines of a historical mystery like *The Curse of the Pharaohs*? Let me know if you have a preferred format (print, ebook, audiobook) as well.",
+          "uid": 88
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "How about **After Atlas**[[candidate_id:wd_Q85740021]] by Emma Newman? It’s a science-fiction novel published in **2016**, and it isn’t in your recorded reading history.\n\nDoes science fiction appeal to you, or would you prefer another genre?",
+          "uid": 89
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "Thank you — that's very helpful. Here's a candidate meeting all stated requirements (Nonfiction, unread by you, English language, published between 1900 and 2018):\n\n**Find Your Why: A Practical Guide for Discovering Purpose for You and Your Team** by Simon Sinek — published 2017, in English, listed as Nonfiction, and not in your reading history. It's available in ebook and paperback formats [[candidate_id:wd_Q118140601]]\n\nDoes this one satisfy your requirements?",
+          "uid": 90
+        },
+        {
+          "fields": [
+            "genres",
+            "languages",
+            "publication_year"
+          ],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nGreat, you haven't read any books yet, so I have a wide range to choose from! Here are some popular Children's books in the catalog:\n\n- **Anne of Green Gables** by Lucy Maud Montgomery (1908)\n- **The Secret Garden** by Frances Hodgson Burnett (1912)\n- **The Wind in the Willows** by Kenneth Grahame (1908)\n- **Pippi Longstocking** by Astrid Lindgren (1945)\n- **Fantastic Mr Fox** by Roald Dahl (1970)\n- **Momo** by Michael Ende (1973)\n\nDo any of these catch your eye, or would you like me to narrow it down further (e.g., by language, era, or sub-genre like fantasy or adventure)?",
+          "uid": 91
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "Okay, let's try another one: *Five Children and It* by Edith Nesbit [[candidate_id:wd_Q651866]] — a classic children's fantasy in which five siblings discover a grumpy sand fairy who grants wishes that never quite go as planned. Does this one work better for you?",
+          "uid": 92
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "Here's my new suggestion, meeting your 2002-or-later requirement:\n\n**Inferno** [[candidate_id:wd_Q4845793]] by Dan Brown (2013) — a crime/mystery/thriller in which Harvard symbologist Robert Langdon races across Europe to solve a puzzle hidden in Dante's *Inferno* before a deadly plan unfolds. It's in English, and it's available in **hardcover, paperback, and ebook**.\n\nOther options in that window include *The Girl with the Dragon Tattoo* (2005), *Shutter Island* (2003), *The Lincoln Lawyer* (2005), and Stephen King's *Billy Summers* (2021) — just let me know if you'd rather try one of those. Does *Inferno* work for you?",
+          "uid": 93
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "note": "'another nonfiction subject' = topic -> genres",
+          "stratum": "gpt61_sol_high",
+          "text": "How about **Bad Blood: Secrets and Lies in a Silicon Valley Startup** [[candidate_id:wd_Q53870138]] by John Carreyrou? It’s investigative nonfiction about Theranos and the deception behind its blood-testing claims, and it isn’t in your recorded reading history.\n\nDoes a real-life business scandal appeal to you, or would you prefer another nonfiction subject?",
+          "uid": 94
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nI've searched the catalog thoroughly. The only title tagged with both Young Adult and Mystery was the Blyton book you rejected. The closest remaining match is a Young Adult novel that is a mystery: **The Mystery of the Haunted House** by Ruby Yayra Goka [[candidate_id:wd_Q121463814]].\n\nIt's a 2015 Young Adult novel, available in audiobook, ebook, hardcover, and paperback, and it's not in your reading history. It's a mystery story aimed at a young adult audience.\n\nWould you like me to go with this one?",
+          "uid": 95
+        },
+        {
+          "fields": [
+            "languages"
+          ],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "There are quite a few poetry collections published since 2017. I notice one of them — *Purple Harmattan* — is already in your reading history, so I'll leave that out.\n\nThe options span many languages (English, Hebrew, Polish, Uzbek, Spanish, Armenian, French, and more). Do you have a language preference? If you'd like English, a well-known recent pick is *The Sun and Her Flowers* by Rupi Kaur (2017).\n\nLet me know your language preference and I'll narrow it down.",
+          "uid": 96
+        },
+        {
+          "fields": [
+            "formats",
+            "genres"
+          ],
+          "generic": false,
+          "note": "'I'd love a bit more to go on:' + specific questions: not generic",
+          "stratum": "glm53_flash_high",
+          "text": "Got it — anything published 1987 or earlier works for you. Your reading history is empty on our side, so I'd love a bit more to go on:\n\n- Any genres you enjoy (or want to avoid)?\n- Any preferred formats (print, ebook, audiobook)?\n- A favorite author or book to point me in the right direction?",
+          "uid": 97
+        },
+        {
+          "fields": [
+            "formats",
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Thanks! Good news — there are plenty of fantasy options, and your reading history is empty, so nothing to rule out there.\n\nTo narrow it down: do you have a preferred format (e.g., hardcover, paperback, ebook, audiobook)? And any flavor of fantasy you lean toward — epic, urban, YA, sword-and-sorcery, etc.?\n\nIf you'd like a starting point, one well-regarded pick is **Foundryside** by Robert Jackson Bennett, a fast-paced fantasy with a magic-industrial heist vibe. [[candidate_id:wd_Q106570605]]\n\nLet me know your preferences and I'll lock in the best match!",
+          "uid": 98
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "All seven of the remaining matches are available in paperback. Here's the shortlist:\n\n- **Bloodsucking Fiends** – Christopher Moore (1995) — comedic vampire love story\n- **The Vampire Diaries: Dark Reunion** – L. J. Smith (1992)\n- **Dead as a Doornail** – Charlaine Harris (2005) — though this is book 5 of the Sookie Stackhouse series\n- **Dark Desire** – Christine Feehan (1999)\n- **Tempting Danger** – Eileen Wilks (2004)\n- **Undead and Uneasy** – MaryJanice Davidson (2007)\n- **Undead and Unwed** – MaryJanice Davidson (2004)\n\nMy top pick is **Undead and Unwed** [[candidate_id:wd_Q7883004]] — it's the first book in its series, so no catching-up required, it's a fun blend of horror, romance, and mystery (vampire wakes up dead, must solve her own murder), and it's confirmed available in paperback.\n\nWould you like to go with that one, or does another title on the list appeal to you more?",
+          "uid": 99
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "Would you enjoy thought-provoking science fiction? *Mockingbird*[[candidate_id:wd_Q3204463]] by Walter Tevis was published in **1980**, so it meets your date requirement. It explores a declining future society and the importance of reading and human connection.",
+          "uid": 100
+        },
+        {
+          "fields": [
+            "genres",
+            "publication_year"
+          ],
+          "generic": false,
+          "note": "'or a classic' offered on its own -> publication_year",
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nGreat — you haven't read any of these yet, so I have a wide field to choose from. Since your main requirement is a book from the United States, here's a strong, widely-loved pick:\n\n**Jurassic Park** by Michael Crichton (1990) [[candidate_id:wd_Q756866]] — a science-fiction thriller about a theme park of cloned dinosaurs that goes catastrophically wrong. It's a fast-paced, iconic American novel.\n\nWould you like to go with this one, or would you prefer a different genre (e.g., romance, mystery, historical fiction, or a classic)?",
+          "uid": 101
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nGreat, there are plenty of Young Adult titles. Since you haven't read any of these yet, let me suggest a standout.\n\n**The Fault in Our Stars** [[candidate_id:wd_Q658375]] by John Green (2012) is a widely loved Young Adult novel — a moving romance about two teenagers navigating life and love. It's a great pick if you want an emotionally resonant YA story.\n\nWould you like to go with this one, or would you prefer a different flavor (fantasy, sci-fi, adventure, etc.)?",
+          "uid": 102
+        },
+        {
+          "fields": [
+            "formats",
+            "genres",
+            "publication_year"
+          ],
+          "generic": true,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "I appreciate your patience — let me offer another option from that window:\n\n**The Firm** by John Grisham (1991) — a crime/thriller novel. [[candidate_id:wd_Q1212467]]\n\nBefore I lock anything in, could you help me pin down one thing I might be missing? For example:\n- Do you need a **specific format** (audiobook, ebook, hardcover, paperback)?\n- Any preference for **sub-genre** (legal thriller, noir, forensic, detective) or a **particular year** within 1988–1995?\n\nThat'll help me zero in on exactly the right book.",
+          "uid": 103
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "Would you enjoy an atmospheric mystery? **The Shadow of the Wind**[[candidate_id:wd_Q52910]] by Carlos Ruiz Zafón follows a young reader in Barcelona uncovering secrets surrounding a mysterious author. Its catalog country of origin is Spain.",
+          "uid": 104
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "One option is **After Atlas**[[candidate_id:wd_Q85740021]] by Emma Newman, published in **2016**, which meets your date requirement. Would science fiction appeal to you, or would you prefer another genre?",
+          "uid": 105
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Here's another option that fits: **The Naked Sun** [[candidate_id:wd_Q469862]] by Isaac Asimov — a science-fiction murder mystery (a \"detective story set on a Spacer world\"), and it's not in your reading history.\n\nDoes this one work for you, or would you prefer a different title?",
+          "uid": 106
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "Would **Life of Pi**[[candidate_id:wd_Q374204]] by Yann Martel appeal to you? Published in **2001**, it meets your date requirement. It’s an imaginative survival adventure about a boy stranded at sea with a Bengal tiger, with plenty to ponder about faith and storytelling.",
+          "uid": 107
+        },
+        {
+          "fields": [
+            "formats",
+            "genres",
+            "publication_year"
+          ],
+          "generic": true,
+          "note": "mood options 'psychological, supernatural, classic gothic' treated as subgenre options",
+          "stratum": "deepseek_v41_flash_high",
+          "text": "I found plenty of horror in the catalog. Before I lock in a pick, is there anything else you'd like — a particular era, a specific format (ebook, paperback, audiobook), or a mood (psychological, supernatural, classic gothic)?\n\nIn the meantime, here's one strong option to consider: **Carrie** by Stephen King [[candidate_id:wd_Q623394]] — a classic supernatural horror about a bullied teen with telekinetic powers. Would you like me to go with this, or would you prefer something else?",
+          "uid": 108
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "Would **Anya’s Ghost** [[candidate_id:wd_Q13341464]] by Vera Brosgol appeal to you? It’s a graphic novel blending teenage friendship, humor, and a ghost story that takes a sinister turn.",
+          "uid": 109
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "Would **Bad Blood: Secrets and Lies in a Silicon Valley Startup** [[candidate_id:wd_Q53870138]] by John Carreyrou interest you? It’s investigative nonfiction about Theranos and the deception behind its blood-testing promises—a good fit if you enjoy real-life scandals and corporate intrigue.",
+          "uid": 110
+        },
+        {
+          "fields": [
+            "formats",
+            "genres",
+            "languages"
+          ],
+          "generic": true,
+          "stratum": "glm53_flash_high",
+          "text": "That year constraint still leaves a lot of options! To narrow it down, could you tell me a bit more about what you're in the mood for? For example:\n\n- **Genres** — fantasy, mystery/thriller, romance, sci-fi, adventure?\n- **Format** — paperback, e-book, audiobook?\n- **Language** — English only, or open to translations?\n\nAny other details (favorite authors, length preferences, etc.) would help me find the right one.",
+          "uid": 111
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nHere's a great pick for you: **All You Need Is Kill** [[candidate_id:wd_Q4729904]] by Hiroshi Sakurazaka (2004).\n\nIt's a Japanese science fiction light novel — the story that later inspired the film *Edge of Tomorrow*. It's set in Japan, and it's not in your reading history. It's available in hardcover and paperback.\n\nDoes this sound like something you'd enjoy, or would you prefer a different genre (mystery, romance, fantasy, etc.)?",
+          "uid": 112
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Here's a strong option that fits your criteria:\n\n**Catch-22** by Joseph Heller [[candidate_id:wd_Q278208]] — published 1961, available as an ebook. It's a classic satirical war novel (Historical Fiction) set among American bomber crews in WWII, famous for its dark humor and its paradoxical \"Catch-22\" logic.\n\nWould you like this one, or do you have a genre preference that might point somewhere else?",
+          "uid": 113
+        },
+        {
+          "fields": [
+            "countries",
+            "formats",
+            "genres",
+            "languages",
+            "publication_year"
+          ],
+          "generic": true,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "I found a good range of fantasy titles. To help me narrow it down, could you tell me a bit more about what you're looking for? For example:\n\n- Any preferred **language** or **country of origin**?\n- A particular **time period** (newer or older books)?\n- Any **format** preference (e.g., paperback, ebook, hardcover, audiobook)?\n- Are there other **genres** you'd like mixed in (e.g., adventure, romance, horror)?\n- Anything you've read recently that you'd want me to avoid recommending again?\n\nLet me know and I'll find the best match!",
+          "uid": 114
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "note": "subject of a biography",
+          "stratum": "glm53_flash_high",
+          "text": "Great — biography it is! I found several candidates in the catalog published in 2001 or earlier, in a range of subjects:\n\n- **Mandela: The Authorised Biography** by Anthony Sampson (1999) — English, on Nelson Mandela\n- **K: A Biography of Kafka** by Ronald Hayman (1982) — English\n- **Anne Frank: The Biography** by Melissa Müller (1998) — German\n- **Alexandra Kollontai: A Biography** by Cathy Porter (1980) — English\n- **Napoleon Bonaparte: An Intimate Biography** by Vincent Cronin (1971) — English\n- **Elizabeth Barrett Browning: A Biography** by Margaret Forster (1988) — English\n- **Pierre-Joseph Proudhon: A Biography** by George Woodcock (1956) — English\n- Plus a few others (a Virginia Woolf biography of Roger Fry, a biography of Ernst Toller, Carmen Miranda, etc.)\n\nNone of these appear in your reading history, so you're clear on that front. Do any of these subjects appeal to you — or would you prefer someone in a different field (e.g., science, music, politics)? If you don't have a preference, my leading pick would be Anthony Sampson's authoritative Mandela biography [[candidate_id:wd_Q6747947]], which was fully authorized and widely praised when it came out in 1999.",
+          "uid": 115
+        },
+        {
+          "fields": [
+            "formats",
+            "genres"
+          ],
+          "generic": false,
+          "note": "'era or setting' = story setting",
+          "stratum": "glm53_flash_high",
+          "text": "Great news — the catalog has a solid set of historical fiction options! A few standouts:\n\n- **War and Peace** by Leo Tolstoy (1869) — the epic of the Napoleonic wars, blending historical fiction with romance\n- **Caballero: A Historical Novel** by Jovita González — set during the U.S.-Mexico War era in Texas\n- **The Novel** by James A. Michener — classic sweeping historical storytelling\n- **Fearless: A Novel of Sarah Bowman** by Lucia St. Clair Robson — frontier-era historical adventure\n- **Christy** by Catherine Marshall — early 20th-century Appalachia\n\nTo help me narrow it down to the perfect pick for you:\n\n1. **What era or setting** appeals to you — e.g., Napoleonic Europe, the American frontier, the American Southwest?\n2. **Do you want something with romance** mixed in, or more of an epic/adventure focus?\n3. **Any format preference** — physical book, e-book, or audiobook?\n\nYour answers will help me pick the best match!",
+          "uid": 116
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "How does a science-fiction thriller sound? **Japan Sinks** [[candidate_id:wd_Q1202156]] by Sakyo Komatsu imagines a catastrophe threatening Japan. Its catalog record lists Japan as its country of origin, and it isn’t in your reading history.",
+          "uid": 117
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "note": "'classic mystery' = genre",
+          "stratum": "gpt61_sol_high",
+          "text": "Would a classic mystery appeal to you? *Before Midnight* [[candidate_id:wd_Q4003933]] by Rex Stout was published in 1955 and isn’t in your recorded reading history. Or would you prefer a different genre?",
+          "uid": 118
+        },
+        {
+          "fields": [
+            "formats",
+            "genres"
+          ],
+          "generic": true,
+          "note": "ambiguous generic: 'What are you in the mood for?' with examples",
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Your reading history is empty, so we've got a clean slate — no risk of repeats!\n\nWhat are you in the mood for? For example:\n- A genre (mystery, sci-fi, romance, fantasy, literary fiction, etc.)\n- A vibe (cozy, fast-paced, thought-provoking)\n- A format (print, ebook, audiobook)\n\nEven a rough idea helps me zero in.",
+          "uid": 119
+        },
+        {
+          "fields": [
+            "formats",
+            "genres"
+          ],
+          "generic": true,
+          "stratum": "glm53_flash_high",
+          "text": "Got it — published 2022 or earlier. Any preferences beyond that? For example:\n\n- A favorite genre (mystery, fantasy, sci-fi, literary fiction, nonfiction, etc.)?\n- Format you need (ebook, audiobook, print)?\n- A recent book you loved, so I can find something similar?",
+          "uid": 120
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "Sure—published in 1988 or later. Do you have a preferred genre, or would you like me to choose?",
+          "uid": 121
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "note": "ambiguous: 'adventure-focused biography ... or a different subject' read as biography subject",
+          "stratum": "gpt61_sol_high",
+          "text": "How about **Into the Wild** [[candidate_id:wd_Q1235125]] by Jon Krakauer? It’s a biography of Christopher McCandless, a young man who left conventional life behind to seek adventure in the wilderness.\n\nDoes an adventure-focused biography appeal to you, or would you prefer a different subject?",
+          "uid": 122
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "Would a crime-and-horror novel appeal to you? **Later** [[candidate_id:wd_Q105044058]] by Stephen King was published in **2021**, and it isn’t in your recorded reading history. Or would you prefer a different genre?",
+          "uid": 123
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nLet me try **The Other Nineteenth Century** by Avram Davidson [[candidate_id:wd_Q135094105]], a 2001 English collection blending Fantasy and Historical Fiction, available in ebook, hardcover, and paperback.\n\nWould this one work for you?",
+          "uid": 124
+        },
+        {
+          "fields": [
+            "formats",
+            "genres",
+            "languages",
+            "publication_year"
+          ],
+          "generic": true,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Great — the catalog has plenty of books from Japan. To narrow things down, could you tell me a bit more about what you're in the mood for? For example:\n\n- Any preferred **genre** (mystery, science fiction, historical fiction, fantasy, horror, etc.)?\n- A **language** you want to read in?\n- A **format** (e.g., paperback, ebook, audiobook)?\n- Any preference on **publication era**?\n\nLet me know and I'll find a great match.",
+          "uid": 125
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Here's my current candidate for you:\n\n**Blood Red Road** by Moira Young [[candidate_id:wd_Q4927681]]\n\n- Genre: Science Fiction / Young Adult (dystopian)\n- Country of origin: United Kingdom\n- Published: 2011\n- Formats available: audiobook, hardcover, paperback\n\nWould you like to go with this one, or should I consider another?",
+          "uid": 126
+        },
+        {
+          "fields": [
+            "countries",
+            "formats",
+            "genres",
+            "languages",
+            "publication_year"
+          ],
+          "generic": true,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "I want to make sure I match your requirements. So far I only know you want a book that includes **Thriller**. Could you tell me a bit more about what else matters to you? For example:\n\n- A specific format you need (paperback, hardcover, ebook, audiobook)?\n- A sub-genre preference (crime/mystery, psychological, sci-fi/techno, spy, etc.)?\n- A language or country of origin?\n- A publication era (recent vs. classic)?\n\nOnce I know these, I can find a much better fit.",
+          "uid": 127
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "note": "setting and tone are not fields",
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nThanks for the extra details. Here's a great fit: **Code Name Verity** by Elizabeth E. Wein [[candidate_id:wd_Q5140033]] — a Young Adult historical fiction thriller set in World War II, published in 2012 (well before 2018). It's a critically acclaimed, emotionally gripping story about two young women serving as spies in the war.\n\nWould you like to go with this one, or would you prefer a different setting or tone?",
+          "uid": 128
+        },
+        {
+          "fields": [
+            "formats"
+          ],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "Plenty of great pre-1987 thrillers to choose from. Based on popularity, the standout English-language option is **The Shining** by Stephen King (1977) [[candidate_id:wd_Q470937]] — a psychological horror-thriller about a winter caretaker at an isolated hotel, widely considered a classic of the genre.\n\nOther strong contenders if you'd like something different: *Red Dragon* (1981), *The Spy Who Came in from the Cold* (1963), *Casino Royale* (1953), or *The A.B.C. Murders* (1936).\n\nWould you like to go with The Shining, or would one of the others suit you better? Also, do you have a format preference (print, e-book, audiobook)?",
+          "uid": 129
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "Would you enjoy a crime thriller? **The Gypsy Bride** [[candidate_id:wd_Q114454376]] by Carmen Mola has Spain listed as its country of origin and could be a good fit.",
+          "uid": 130
+        },
+        {
+          "fields": [
+            "countries",
+            "formats",
+            "genres",
+            "languages"
+          ],
+          "generic": true,
+          "stratum": "glm53_flash_high",
+          "text": "I want to make sure I get this right — could you help me understand what didn't fit? For example, are you looking for:\n\n- A specific **language** or **country of origin** (e.g., a translated European crime novel)?\n- A particular **sub-style** — police procedural, noir, courtroom, cozy mystery?\n- A specific **format** you need (ebook, audiobook, print)?\n\nKnowing what's off about the previous two picks will help me pinpoint the right book.",
+          "uid": 131
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "note": "ambiguous: 'if you'd prefer a different topic' with two titles; topic -> genres, could be history-book subject",
+          "stratum": "glm53_flash_high",
+          "text": "Here's my top pick that satisfies all your requirements:\n\n**A History of Fascism 1914–1945** by Stanley G. Payne [[candidate_id:wd_Q138620186]]\n- **Published:** 1995 (well after your 1981 cutoff)\n- **Genres:** History and Nonfiction — exactly what you asked for\n- **Format:** Available in hardcover (also ebook, paperback, audiobook)\n- **Language:** English\n\nIt's a widely regarded scholarly survey of fascist movements across Europe between the World Wars — a definitive single-volume history from one of the field's leading experts.\n\nWould this work for you? If you'd prefer a different topic, I also have two other hardcover-available options: *A History of Opera: The Last Four Hundred Years* (2012) and *The Myth of Jewish Communism: A Historical Interpretation* (2009).",
+          "uid": 132
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "Would you enjoy a mystery thriller? **The Traitor's Emblem**[[candidate_id:wd_Q7769912]] by Juan Gómez-Jurado lists Spain as its country of origin. It could be a good fit if you’re in the mood for suspense.",
+          "uid": 133
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "Here's my next candidate:\n\n**Chance Survivor** by Andrew Karpati Kennedy (2012) [[candidate_id:wd_Q28195297]]\n\n- **Published:** 2012 — within your 1999–2017 window\n- **Genre:** Memoir\n- **Language:** English\n- **Content rating:** General\n- **Formats recorded:** ebook and paperback\n\nIt's a memoir of the author's childhood and youth — a story of survival against the odds. Does this one satisfy all your requirements?",
+          "uid": 134
+        },
+        {
+          "fields": [
+            "publication_year"
+          ],
+          "generic": true,
+          "note": "bare 'the era'",
+          "stratum": "glm53_flash_high",
+          "text": "No problem — let me try a different one. How about **The Siamese Twin Mystery** [[candidate_id:wd_Q748705]] by Ellery Queen (1933)? It's a classic locked-circle mystery in which detective Ellery Queen is stranded on a mountain estate where a murder occurs, with a small cast of suspects and a clever puzzle-box plot. It's widely regarded as one of the better Golden Age mysteries.\n\nDoes that appeal to you, or is there something specific about the previous pick that didn't work — the author, the era, or the style?",
+          "uid": 135
+        },
+        {
+          "fields": [
+            "formats",
+            "genres"
+          ],
+          "generic": false,
+          "note": "'themes' -> genres",
+          "stratum": "glm53_flash_high",
+          "text": "Here's the list of English-language nonfiction titles you haven't read:\n\n**Narrative / storytelling style:**\n- **In Cold Blood** (1966) – Truman Capote's true crime masterpiece\n- **Ten Days that Shook the World** (1919) – John Reed's firsthand account of the Russian Revolution\n- **The Second World War** (1948) – Winston Churchill's sweeping history\n- **The World Without Us** (2007) – Alan Weisman imagines how nature would reclaim Earth\n- **Autobiography of a Yogi** (1946) – a spiritual memoir\n\n**Politics / economics / history:**\n- **Why Nations Fail** (2012) – Acemoğlu & Robinson on prosperity and poverty\n- **The End of History and the Last Man** (1992) – Fukuyama\n- **On Liberty** (1859) – John Stuart Mill's classic on freedom\n- **The Road to Serfdom** (1944) – Hayek\n- Plus older works by Keynes, Engels, Henry George, and others\n\n**Self-help / practical:**\n- **The 48 Laws of Power** (2000)\n- **12 Rules for Life** (2018)\n\nDo any of these themes stand out to you? For example, do you prefer narrative-driven nonfiction, or more analytical work? Also, is a particular format (ebook, audiobook, print) important?",
+          "uid": 136
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "Would you enjoy a thriller with a science-fiction twist? **Jurassic Park** [[candidate_id:wd_Q756866]] by Michael Crichton combines suspense and action as a dinosaur theme park spirals out of control. It’s cataloged as Thriller, Science Fiction, and Horror.",
+          "uid": 137
+        },
+        {
+          "fields": [],
+          "generic": true,
+          "note": "ambiguous generic: 'is there something specific I should adjust?' read as asking what is missing",
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nLet me try a different direction. How about **Why Nations Fail: The Origins of Power, Prosperity, and Poverty** by Daron Acemoglu and James A. Robinson (2012) [[candidate_id:wd_Q7997840]]? It's a bestselling nonfiction work exploring why some nations thrive while others struggle, drawing on economics, history, and political science.\n\nDoes this one work for you, or is there something specific I should adjust?",
+          "uid": 138
+        },
+        {
+          "fields": [
+            "formats"
+          ],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Here are some Adventure books from the United States published in 1984 or earlier. A standout is **Congo** by Michael Crichton (1980) — a techno-thriller adventure set in the Congo jungle. Another strong pick is **Pacific Vortex!** by Clive Cussler (1983).\n\nBefore I commit, do you have a preferred format (print, ebook, audiobook)? And does **Congo** [[candidate_id:wd_Q1125771]] sound appealing, or would you like a different direction?",
+          "uid": 139
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "One option is **In Cold Blood**[[candidate_id:wd_Q1142887]] by Truman Capote, a nonfiction account of a Kansas family’s murder and the investigation, told with the momentum of a novel. It isn’t in your recorded reading history.\n\nWould you enjoy a dark, true-crime book, or would you prefer a different nonfiction subject?",
+          "uid": 140
+        },
+        {
+          "fields": [
+            "publication_year"
+          ],
+          "generic": false,
+          "note": "'If you'd prefer a classic instead' (+ title) -> publication_year",
+          "stratum": "glm53_flash_high",
+          "text": "Let me try a different approach. Here's another option: **The Magic Thief** by Sarah Prineas [[candidate_id:wd_Q2154240]].\n\n- **Genres:** Children and Fantasy — both of your requirements\n- **Language:** English\n- **Published:** 2008 by HarperCollins\n- **Formats available:** ebook, hardcover, and paperback\n\nIt's a charming children's fantasy about a young pickpocket named Conn who becomes the apprentice of a powerful wizard. If you'd prefer a classic instead, **Prince Caspian** by C.S. Lewis also matches both genres — just let me know your thoughts!",
+          "uid": 141
+        },
+        {
+          "fields": [
+            "formats",
+            "publication_year"
+          ],
+          "generic": false,
+          "note": "ambiguous: memoir 'subject matter' read as biography subject, not genres; tone not a field",
+          "stratum": "glm53_flash_high",
+          "text": "Happy to! A few questions to help me pick the right one:\n\n1. **Tone**: Do you want something humorous and light-hearted (e.g., Bill Bryson, Ozzy Osbourne), or more serious and reflective (e.g., Jimmy Carter, Corrie ten Boom)?\n\n2. **Subject matter**: Any particular world that interests you — science (Feynman), politics (Carter, Rhodes, Omarosa), spirituality (Yogananda, Castaneda), music/celebrity (Ozzy, Mike Oldfield, Nancy Cartwright), spy/crime (Robert Baer, Kent Whitaker), or everyday life (Bukowski, Durrell)?\n\n3. **Format**: Do you have a preference — print, ebook, or audiobook? I can verify availability before recommending.\n\n4. **Length/era**: Do you prefer something classic/older (1940s–70s) or more recent (2000s–2010s)?\n\n5. **Reading history**: Have you read (or would you rather avoid) any of the books I listed already? I can also check your reading history on file to make sure I don't recommend something you've read.\n\nAnswer whichever of these you care about, and I'll narrow it to one strong pick.",
+          "uid": 142
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nLet me try **Lean In** by Sheryl Sandberg (2013) [[candidate_id:wd_Q16927702]] — a widely discussed nonfiction book about women in the workplace, drawing on Sandberg's experience as COO of Facebook. It's nonfiction, published in 2013, available in hardcover, and you haven't read it.\n\nDoes this one fit?",
+          "uid": 143
+        },
+        {
+          "fields": [
+            "formats",
+            "genres",
+            "publication_year"
+          ],
+          "generic": true,
+          "note": "ambiguous: 'just to confirm ... published in 1998 or later, correct?' counted as asking publication_year",
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Happy to help! To narrow things down, could you tell me a bit more about what you're looking for? For example:\n\n- Any preferred genre or themes (e.g., sci-fi, mystery, literary fiction, nonfiction)?\n- Do you have a preferred format (hardcover, paperback, e-book, audiobook)?\n- Any books or authors you've enjoyed recently that I could use as a reference?\n\nAnd just to confirm — you'd like something published in 1998 or later, correct?",
+          "uid": 144
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "No problem. Let me offer the other match:\n\n**Ace of Spades** by Faridah Àbíké-Íyímídé [[candidate_id:wd_Q110064191]] — a 2021 contemporary YA thriller described as *Get Out* meets *Gossip Girl*, following two students at an elite academy targeted by an anonymous bully. It has United Kingdom among its countries of origin and is Young Adult.\n\nDoes this one work for you?",
+          "uid": 145
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "Would a tense, fast-paced dystopian adventure appeal to you? **The Hunger Games**[[candidate_id:wd_Q11678]] by Suzanne Collins was published in **2008** and isn’t in your recorded reading history. It follows a teenager forced into a televised survival contest, blending suspense with loyalty and moral dilemmas.",
+          "uid": 146
+        },
+        {
+          "fields": [
+            "countries",
+            "formats",
+            "genres",
+            "publication_year"
+          ],
+          "generic": true,
+          "note": "'anything you'd like to avoid?' -> generic",
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Great! I'd love to narrow it down. A few questions to help me find the best match:\n\n1. Any particular genre or themes you enjoy (e.g., mystery, sci-fi, romance, historical)?\n2. Do you have a preferred format (e.g., hardcover, paperback, ebook, audiobook)?\n3. Any preference on when the book was published, or a country of origin?\n4. Is there anything you'd like to avoid?\n\nAlso, would you like me to make sure it's something you haven't already read?",
+          "uid": 147
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "Thanks for your patience. Among the catalog's thrillers published in 1983 or later, here's my next suggestion:\n\n**A Simple Plan** by Scott Smith [[candidate_id:wd_Q4659527]] — a 1993 psychological thriller (and modern classic) about two brothers and a friend who discover $4 million in a downed plane and watch their lives spiral into paranoia and betrayal. It's a lean, relentlessly gripping read with an unforgettable, chilling ending.\n\nWould this one work for you?",
+          "uid": 148
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nHere's a candidate that fits: **The Doors of Eden** [[candidate_id:wd_Q117479942]] by Adrian Tchaikovsky, published in 2020. It's a science fiction novel available in hardcover and paperback.\n\nDoes that sound like something you'd enjoy, or would you prefer a different genre?",
+          "uid": 149
+        },
+        {
+          "fields": [
+            "countries",
+            "formats",
+            "genres"
+          ],
+          "generic": true,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Another candidate that fits Young Adult, English, and 1992-or-later:\n\n- **Twilight** by Stephenie Meyer [[candidate_id:wd_Q189378]] — a YA fantasy/horror/romance (2005), not in your reading history.\n\nDoes this one work, or can you tell me which specific attribute is falling short (genre, country, format, length)?",
+          "uid": 150
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "Would you enjoy historical fiction? **The Last Kingdom** [[candidate_id:wd_Q1171438]] by Bernard Cornwell is set amid the struggles between Saxons and Vikings, and its catalog country of origin is **United Kingdom**.",
+          "uid": 151
+        },
+        {
+          "fields": [
+            "formats",
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "Great — plenty of options from 1991 onward. To narrow it down, what kind of genres or moods do you enjoy? For example, fantasy, sci-fi, mystery/thriller, romance, or something literary? And do you have a preferred format (e-book, audiobook, print)?",
+          "uid": 152
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "Here's my new pick: **The Amityville Horror** by Jay Anson [[candidate_id:wd_Q2572480]] — the classic 1977 horror novel about the alleged haunting of the Lutz family home, and it's not in your reading history. It's available in ebook, hardcover, and paperback.\n\nShall I go ahead and recommend this one?",
+          "uid": 153
+        },
+        {
+          "fields": [
+            "formats",
+            "languages"
+          ],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "There are quite a few horror-thriller titles from 2010 onward. A couple of quick questions to zero in:\n\n- Any **format** preference — print, ebook, or audiobook?\n- Do you care about **language**? (There's at least one Filipino-language option in the mix.)\n- Any preference for a **well-known author** like Stephen King or Dean Koontz, versus a lesser-known pick?\n\nLet me know and I'll narrow it down to a single strong suggestion.",
+          "uid": 154
+        },
+        {
+          "fields": [
+            "formats",
+            "genres"
+          ],
+          "generic": false,
+          "note": "ambiguous: biography subject types, but 'personal memoirs' offered as a genre option",
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Thanks! Good news — there are quite a few biographies in the catalog, and your reading history is empty, so nothing is off-limits.\n\nTo help me narrow it down, a couple of quick questions:\n\n- Is there a particular **type of subject** you're drawn to — e.g., tech/business innovators, historical or political figures, scientists, musicians, or personal memoirs?\n- Do you have a **format preference** (physical, ebook, audiobook)?\n\nIf you'd rather I just pick, I can suggest a popular one to start — just let me know!",
+          "uid": 155
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "How about **The Fellowship of the Ring**[[candidate_id:wd_Q208002]] by J. R. R. Tolkien? Published in **1954**, it meets your cutoff and is cataloged as **Fantasy**. It follows a perilous quest through Middle-earth and begins *The Lord of the Rings*.\n\nDoes an epic adventure that opens a longer story appeal to you?",
+          "uid": 156
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "Sure—I'll choose a book whose catalog lists the United States as a country of origin. Do you prefer fiction or nonfiction, or is either fine?",
+          "uid": 157
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "note": "'military history' -> genres; 'period or subject' = history-book subject",
+          "stratum": "gpt61_sol_high",
+          "text": "Would you enjoy military history? **The Longest Day**[[candidate_id:wd_Q3410561]] by Cornelius Ryan recounts the D-Day landings through the experiences of soldiers and civilians. Or would you prefer a different period or subject?",
+          "uid": 158
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nLet me try another UK Young Adult title:\n\n**When Hitler Stole Pink Rabbit** by Judith Kerr (1971) [[candidate_id:wd_Q1406564]] — a classic British Young Adult novel following a Jewish family fleeing Nazi Germany. It's from the United Kingdom and tagged Young Adult.\n\nWould this one work for you?",
+          "uid": 159
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nHere's a book I think you might enjoy:\n\n**The Novel** by James A. Michener [[candidate_id:wd_Q7754447]]\n\n- **Published:** 1991\n- **Genre:** Historical Fiction\n- **Publisher:** Random House\n- **Formats:** Hardcover and Paperback\n- **Language:** English\n\nJames A. Michener was a celebrated American author known for sweeping historical narratives. This is a well-regarded work from his later period. It's available in both hardcover and paperback, and it's not in your reading history.\n\nDoes this sound like something you'd be interested in, or would you prefer a different genre?",
+          "uid": 160
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "note": "'survival story' asked as a kind",
+          "stratum": "gpt61_sol_high",
+          "text": "How about **The Poseidon Adventure** [[candidate_id:wd_Q1821318]] by Paul Gallico? It combines adventure and thriller elements as survivors struggle to escape a capsized ocean liner.\n\nDoes a high-stakes survival story appeal to you?",
+          "uid": 161
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "note": "ambiguous: 'a more realistic thriller' (vs SF/horror blend) read as genre choice",
+          "stratum": "gpt61_sol_high",
+          "text": "How about **Jurassic Park** [[candidate_id:wd_Q756866]] by Michael Crichton? It blends thriller, science fiction, and horror as a dinosaur theme park spirals out of control.\n\nDoes that sound appealing, or would you prefer a more realistic thriller?",
+          "uid": 162
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nHere's another English Historical Fiction option: **Century** by Fred Mustard Stewart [[candidate_id:wd_Q5063120]].\n\nIt's a 1981 historical novel set in 19th-century America, following a family's journey through the era's social and political changes. It's available in hardcover and paperback.\n\nWould this one work for you?",
+          "uid": 163
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "What kind of nonfiction appeals to you most—history, science, true crime, personal stories, or practical advice? Or would you like me to choose?",
+          "uid": 164
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "How about **Life of Pi** [[candidate_id:wd_Q374204]] by Yann Martel? Published in **2001**, it meets your date requirement. It’s an imaginative survival adventure about a boy stranded at sea with a Bengal tiger.\n\nDoes that sound appealing, or would you prefer a different genre?",
+          "uid": 165
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "Would you enjoy reflective nonfiction about nature and simpler living? **Walden** [[candidate_id:wd_Q863534]] by Henry David Thoreau explores both through his time living beside Walden Pond. It’s listed as Nonfiction and isn’t in your recorded reading history.",
+          "uid": 166
+        },
+        {
+          "fields": [
+            "formats",
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "I found plenty of options published 2017 or later, and none of them are in your reading history (which lists *Purple Harmattan*, *Red Alert*, and *To Hell and Back*).\n\nA few popular candidates include:\n- **Project Hail Mary** by Andy Weir (2021, science fiction)\n- **Klara and the Sun** by Kazuo Ishiguro (2021, science fiction)\n- **The Midnight Library** by Matt Haig (2020, fantasy)\n- **Fire & Blood** by George R. R. Martin (2018, fantasy)\n- **Killers of the Flower Moon** by David Grann (2017, nonfiction)\n\nTo narrow it down: do you have a preferred genre, or a specific format (print, e-book, audiobook) you'd like?",
+          "uid": 167
+        },
+        {
+          "fields": [
+            "countries",
+            "formats",
+            "genres",
+            "languages",
+            "publication_year"
+          ],
+          "generic": true,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "I found plenty of science fiction in the catalog. To narrow things down, do you have any other preferences — for example:\n\n- A particular **format** (eBook, paperback, audiobook, etc.)?\n- An **era** or publication period you prefer (classic vs. modern)?\n- Any additional **genre** you'd like it to blend with (e.g., thriller, horror, adventure)?\n- A preferred **language** or country of origin?\n\nLet me know what matters to you, and I'll pick the best match.",
+          "uid": 168
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nLet me try another YA mystery.\n\n**The Maze of Bones** [[candidate_id:wd_Q2649025]] by Rick Riordan (2008) — an Adventure/Mystery/Young Adult novel where siblings Percy and Sophie discover a secret society of modern-day magicians and a deadly puzzle hidden in the city. It's a fun, fast-paced YA mystery and not in your reading history.\n\nWould this work for you?",
+          "uid": 169
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "note": "'classic literature' = genre",
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nGreat, I've checked your reading history (Neon, The Alienist, Foundryside) and found plenty of pre-1993 options you haven't read.\n\nA strong pick: **The Handmaid's Tale** [[candidate_id:wd_Q1541914]] by Margaret Atwood (1985) — a dystopian science fiction/historical novel set in a theocratic regime. It's widely acclaimed and a great read.\n\nWould you like me to go with this, or would you prefer a different genre (mystery, fantasy, classic literature, etc.)?",
+          "uid": 170
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "Sure—1960 or later. Do you prefer fiction or nonfiction, and is there a genre or topic you enjoy?",
+          "uid": 171
+        },
+        {
+          "fields": [
+            "formats",
+            "genres",
+            "languages",
+            "publication_year"
+          ],
+          "generic": true,
+          "note": "ambiguous: 'classic detective mysteries ... or modern thrillers' read as classic vs modern -> publication_year",
+          "stratum": "glm53_flash_high",
+          "text": "Great news — there are plenty of crime books in the catalog! To narrow it down, can you tell me a bit more about what you're looking for? For example:\n\n- **Style**: classic detective mysteries (Sherlock Holmes, Agatha Christie), noir (The Big Sleep, The Godfather), or modern thrillers (The Girl with the Dragon Tattoo, Dan Brown)?\n- **Language**: English only, or are you open to translations (e.g., Italian or Swedish)?\n- **Format**: do you need a specific format like ebook, audiobook, or print?\n- Any books you've read recently that you loved (or hated)?\n\nLet me know your preferences and I'll find the best match!",
+          "uid": 172
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nLet me try another option.\n\n**Darwin's Children** by Greg Bear (2003) [[candidate_id:wd_Q3790816]]\n\nIt's a Science Fiction novel in English, published in 2003, available in ebook, hardcover, and paperback. It's a sequel to *Eon* and follows the story of a group of children who are the last of their kind on a distant world.\n\nDoes this one work for you?",
+          "uid": 173
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "note": "ambiguous: 'If language hasn't been a stated constraint' is a remark, not a request",
+          "stratum": "glm53_flash_high",
+          "text": "Here's my next single candidate:\n\n**El príncipe de los Cuatro Vientos** [[candidate_id:wd_Q92203087]] by Exequiel Monge (2016) — a fantasy published well after 1988 (Chilean, Spanish-language). If language hasn't been a stated constraint, this could be an option; it's one of the few remaining fantasy titles in the catalog from 1988 or later that I haven't yet tried.\n\nDoes this one work for you?",
+          "uid": 174
+        },
+        {
+          "fields": [
+            "formats"
+          ],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Here are some Young Adult options published no later than 2000 that you haven't read. A standout is:\n\n**The Giver** by Lois Lowry (1993) [[candidate_id:wd_Q258953]] — a Science Fiction / Young Adult classic about a boy who discovers the dark truth behind his seemingly perfect community.\n\nA few other strong candidates:\n- *The Perks of Being a Wallflower* — Stephen Chbosky (1999)\n- *The Chocolate War* — Robert Cormier (1974)\n- *When Hitler Stole Pink Rabbit* — Judith Kerr (1971)\n- *Castle in the Air* — Diana Wynne Jones (1990)\n\nHow does *The Giver* sound? And do you have a preferred format (e.g., paperback, ebook, audiobook)? That way I can verify availability before I finalize.",
+          "uid": 175
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "How about **Crime** [[candidate_id:wd_Q3002602]] by **Irvine Welsh**? Published in **2008**, it meets your date requirement and is cataloged in the **Crime** genre. Would that work for you?",
+          "uid": 176
+        },
+        {
+          "fields": [
+            "formats",
+            "genres"
+          ],
+          "generic": true,
+          "stratum": "glm53_flash_high",
+          "text": "Great news — there are quite a few books in the catalog with the United States as a country of origin. To help me narrow it down to something you'll actually enjoy, could you tell me a bit more about your preferences?\n\nFor example:\n- Do you have a favorite genre (fiction, mystery/thriller, fantasy, nonfiction, biography, memoir...)?\n- Any topics or themes that interest you?\n- Do you care about format (e.g., ebook, audiobook, print)?\n\nHere are a few U.S.-origin examples from the catalog to spark ideas:\n\n- **American Prometheus** by Martin J. Sherwin & Kai Bird — a biography of J. Robert Oppenheimer [[candidate_id:wd_Q4744748]]\n- **American Tabloid** by James Ellroy — a crime novel set in the JFK era [[candidate_id:wd_Q959045]]\n- **American Psycho** by Bret Easton Ellis — a satirical thriller [[candidate_id:wd_Q466504]]\n- **The Novel** by James A. Michener — historical fiction about publishing [[candidate_id:wd_Q7754447]]\n\nDo any of these appeal to you, or would you like me to search for something else?",
+          "uid": 177
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Here's a strong match that satisfies all three of your requirements (American English, includes Crime, published no later than 1999):\n\n**Glitz** [[candidate_id:wd_Q5569989]] by Elmore Leonard (1985) — a Crime novel, language recorded as American English, available in ebook, hardcover, and paperback.\n\nFor context, the catalog has several Crime titles tagged American English from before 1999 (e.g., Ed McBain/Evan Hunter's *Cop Hater*, *The Mugger*, *Killer's Payoff*, *Shotgun*, and others). Does **Glitz** work for you, or would you like me to go with a different one of these?",
+          "uid": 178
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "Alright, let me step away from Sherlock Holmes entirely.\n\n**No Name** (1862) by Wilkie Collins [[candidate_id:wd_Q7044605]] — a gripping Victorian mystery about two sisters who lose their inheritance upon discovering a devastating family secret, and set out to reclaim what is legally theirs. It's tagged with the Mystery genre, published in 1862 — comfortably within your 1920 cutoff.\n\nDoes this one satisfy your requirements?",
+          "uid": 179
+        },
+        {
+          "fields": [
+            "formats",
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Great — there are quite a few horror titles from 1986 onward. Before I settle on one, a couple of quick things:\n\n- **Format preference?** (hardcover, paperback, ebook, audiobook — or no preference?)\n- Any **sub-genre lean** — psychological, supernatural/ghost stories, slasher, folk horror, short-story collections?\n\nIf you don't have a strong preference, I can just pick a standout from the list.",
+          "uid": 180
+        },
+        {
+          "fields": [
+            "genres",
+            "publication_year"
+          ],
+          "generic": false,
+          "note": "ambiguous: 'classic' offered on its own in a mood list -> publication_year",
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nGreat — you haven't read any of these yet, so there's plenty to choose from. I found many books published no later than 1985, spanning a range of genres:\n\n- **Science Fiction** — *Brave New World* (1932), *A Clockwork Orange* (1962), *The Handmaid's Tale* (1985)\n- **Mystery/Crime** — *The Hound of the Baskervilles* (1902), *Murder on the Orient Express* (1934)\n- **Fantasy/Adventure** — *Gulliver's Travels* (1726), *A Journey to the Centre of the Earth* (1864)\n- **Historical Fiction** — *All Quiet on the Western Front* (1928), *Heart of Darkness* (1899)\n- **Romance** — *Emma* (1815)\n\nDo you have a preferred genre, or a particular mood (light, dark, classic, etc.)? That'll help me narrow it down to the one book that's right for you.",
+          "uid": 181
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "Great news — all three historical fiction titles in the catalog were published after 1910, so they all meet that constraint. Comparing the English-language options:\n\n- **Caballero: A Historical Novel** (1996) — available in hardcover and paperback\n- **Christy** (1967) — available in ebook, hardcover, and paperback\n\n**Christy** [[candidate_id:wd_Q5113620]] stands out to me: it's the more widely accessible option (including ebook), and it's a beloved story about a young woman who leaves her comfortable life in 1912 to teach school in the isolated Appalachian cove of Cutter Gap — which nicely straddles your 1910 publication requirement's era, too.\n\nDoes **Christy** sound good to you, or would you prefer the frontier Texas story of **Caballero**?",
+          "uid": 182
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nLet me try another. How about **Hating America: The New World Sport** by John Gibson [[candidate_id:wd_Q5681635]] — a nonfiction book examining the phenomenon of anti-American sentiment around the world.\n\nDoes that sound like what you're after?",
+          "uid": 183
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "note": "'less intense' = tone",
+          "stratum": "gpt61_sol_high",
+          "text": "Would you enjoy science fiction with suspense and horror? *Jurassic Park* [[candidate_id:wd_Q756866]] by Michael Crichton follows a dinosaur theme park where genetic engineering goes disastrously wrong. Or would you prefer something less intense?",
+          "uid": 184
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "Here's my next candidate: **The Peaceable Kingdom: An American Saga** [[candidate_id:wd_Q7756420]] by Jan de Hartog (1971) — a historical fiction epic following three generations of Quakers in Texas, exploring their struggle between pacifist faith and the violent realities of the American frontier. It's available in hardcover and paperback, written in English.\n\nCould this be the book for you?",
+          "uid": 185
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "gpt61_sol_high",
+          "text": "I’ll look for a book published in 1982 or later and exclude the books in your reading history. Would you prefer fantasy or adventure, like some of your past reads, or are you open to any genre?",
+          "uid": 186
+        },
+        {
+          "fields": [
+            "genres",
+            "publication_year"
+          ],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "Here's my pick:\n\n**A Simple Plan** by Scott Smith (1993) [[candidate_id:wd_Q4659527]]\n\n- **Genre:** Thriller\n- **Publisher:** Alfred A. Knopf\n- **Available formats:** ebook, hardcover, paperback\n- **Plot:** When two brothers and a friend discover a crashed plane containing over $4 million in the snowy Minnesota woods, they make a simple plan to keep the money. What follows is a tense, morally gripping spiral of paranoia, cover-ups, and escalating violence — widely praised as one of the great psychological thrillers of the '90s (it was also adapted into an Oscar-nominated film).\n\nDoes this sound appealing? If you'd prefer something different — say, an espionage thriller, a more recent title like *Pieces of Her* by Karin Slaughter, or a classic like *Ice Station Zebra* — just let me know and I'll dig further.",
+          "uid": 187
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "note": "'period or region' of a history book = subject",
+          "stratum": "gpt61_sol_high",
+          "text": "Would **The Longest Day**[[candidate_id:wd_Q3410561]] by Cornelius Ryan interest you? It’s a nonfiction history of D-Day, told through the experiences of soldiers and civilians. Or would you prefer a different period or region?",
+          "uid": 188
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nLet me try **Avalon** by Anya Seton (1965) — a Historical Fiction and Romance novel, well within your 2009 cutoff, available in audiobook, ebook, and paperback. [[candidate_id:wd_Q4827557]]\n\nDoes this one work for you?",
+          "uid": 189
+        },
+        {
+          "fields": [
+            "genres"
+          ],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nYou've read *Five Times Dizzy*, *Opération Odyssée*, and *Escape from Raven Castle* — none of which are in my results. \n\nHere's a strong pick: **The Alchemist** by Paulo Coelho [[candidate_id:wd_Q179021]] — an adventure/fantasy novel originally published in 1988, one of the most popular books in the catalog. It's a story about a young shepherd who sets out on a journey to fulfill his personal legend.\n\nWould you like to go with this one, or would you prefer a different genre (mystery, sci-fi, romance, etc.)?",
+          "uid": 190
+        },
+        {
+          "fields": [
+            "genres",
+            "publication_year"
+          ],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Here's the one I'd put forward:\n\n**The Hellbound Heart** — Clive Barker (1986) [[candidate_id:wd_Q3521239]]\n\n- **Genre:** Horror (with a fantasy edge)\n- **Country:** United Kingdom\n- **Published:** 1986 — right at your cutoff\n- **Formats:** hardcover, paperback\n- **Why it fits:** This is the novella that inspired *Hellraiser* — a landmark of British horror, and it hits every one of your criteria.\n\nHow does that sound? If you're happy with it, I'll lock it in as my recommendation. If you'd rather have something different (e.g., a more recent title like *The Ritual*, or straight horror without the fantasy blend), just say the word.",
+          "uid": 191
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Let me look at another option with a multi-country origin.\n\n**The Regatta Mystery** by Agatha Christie [[candidate_id:wd_Q2575387]]\n\n- Genres: Crime, Mystery\n- Countries of origin: United Kingdom, **United States** (includes US)\n- First published: 1939\n- Formats: ebook, hardcover, paperback\n\nThis is a classic Crime/Mystery collection whose country of origin includes the United States, and it's not in your reading history. How does this one look?",
+          "uid": 192
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "Here's another candidate with verified metadata: **The Oregon Trail: A New American Journey** by Rinker Buck (2015) — an English-language nonfiction travel memoir about the author's modern-day covered-wagon crossing of the Oregon Trail. Published in 2015 (within your 2007–2021 range), and the catalog confirms \"ebook\" is among its recorded formats.\n\nThe Oregon Trail: A New American Journey [[candidate_id:wd_Q20648896]]\n\nDoes this one satisfy all of your requirements?",
+          "uid": 193
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nHere's another Crime-genre option: **Critique of Criminal Reason** [[candidate_id:wd_Q5186895]] by Michael Gregorio (2006). It's a novel in the Crime genre, published after 2000, and available in ebook, hardcover, and paperback.\n\nDoes this work for you?",
+          "uid": 194
+        },
+        {
+          "fields": [
+            "genres",
+            "publication_year"
+          ],
+          "generic": false,
+          "note": "bare 'era'",
+          "stratum": "qwen38_27b_high",
+          "text": "\n\nLet me try a different one. How about **The Shadow of the Wind** [[candidate_id:wd_Q52910]] by Carlos Ruiz Zafón (2001)? It's a hugely popular Spanish novel blending mystery, thriller, and adventure, set in post-war Barcelona. It's a modern, gripping read.\n\nDoes this one appeal to you, or would you like to steer me toward a specific genre or era?",
+          "uid": 195
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "glm53_flash_high",
+          "text": "Let me try again — this time with an Agatha Christie classic: **Death on the Nile** by Agatha Christie [[candidate_id:wd_Q381756]] — published 1937, pure Crime genre, in English, from the UK. Could this be the one?",
+          "uid": 196
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Here's another option that meets all your criteria:\n\n**In a Closed Snowy Mountain Villa** by Keigo Higashino (1996) [[candidate_id:wd_Q123290910]] — a standalone Japanese locked-room Mystery, published well before 2022, and recorded in audiobook, hardcover, and paperback formats.\n\nWould you like this one, or should I try a different title?",
+          "uid": 197
+        },
+        {
+          "fields": [],
+          "generic": false,
+          "stratum": "deepseek_v41_flash_high",
+          "text": "Thanks for the feedback. Here's another option that fits — a pure science fiction title:\n\n**The Road** by Cormac McCarthy (2006) — a Pulitzer Prize–winning post-apocalyptic science fiction novel, available in hardcover.\n\n[[candidate_id:wd_Q1140295]]\n\nWould this one work for you, or shall I keep looking?",
+          "uid": 198
+        },
+        {
+          "fields": [
+            "formats",
+            "genres"
+          ],
+          "generic": false,
+          "note": "'classic realism' = genre",
+          "stratum": "glm53_flash_high",
+          "text": "Great — there are plenty of children's books in the catalog! Here are some highlights:\n\n- **Alice's Adventures in Wonderland** – Lewis Carroll\n- **The Lion, the Witch, and the Wardrobe** – C. S. Lewis\n- **Heidi** – Johanna Spyri\n- **Anne of Green Gables** – Lucy Maud Montgomery\n- **The Secret Garden** – Frances Hodgson Burnett\n- **Watership Down** – Richard Adams\n- **Momo** – Michael Ende\n\nTo narrow it down a bit: do you have a preference for genre (e.g., fantasy vs. classic realism), format (paperback, ebook, audiobook), or anything you've read recently that you loved?",
+          "uid": 199
+        }
+      ],
+      "seed": 20261016
+    }
+  },
+  "source": "answered agent turns after the first, from development runs with the symbolic user on mixed and hidden variants",
+  "version": "books-controller-eval-labels-v4"
+}

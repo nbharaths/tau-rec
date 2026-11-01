@@ -1,0 +1,40 @@
+{
+  "id": "task_146_v",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Horror"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Self-Help"
+      },
+      "reveal": "volunteer"
+    }
+  ],
+  "persona": "You are planning a trip and want one book that suits both your taste and practical constraints.",
+  "soft_preferences": [],
+  "policy_flags": [
+    "single_recommendation",
+    "transparency",
+    "recommend_tool"
+  ],
+  "no_valid_recommendation": true,
+  "complexity": "simple",
+  "reveal_difficulty": "volunteer",
+  "user_history": {
+    "user_1": {
+      "read": [],
+      "ratings": {}
+    }
+  },
+  "user_id": "user_1",
+  "user_services": [],
+  "user_formats": []
+}

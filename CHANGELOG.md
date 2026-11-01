@@ -1,5 +1,55 @@
 # Changelog
 
+## v2.0.0 — books track
+
+Adds a controlled books track. The movie track (`data/`), its catalog, tasks,
+policy prompt, and evaluator are unchanged: CI re-derives every published
+leaderboard entry from its archived traces and requires each per-task
+`{n, c}` to match.
+
+### Added
+
+- **`books-wikidata-v2` track** (`data/tracks/books-wikidata-v2/`). 20,000
+  Wikidata works (CC0) in nested 5k/10k/20k catalogs; 150 request families
+  with two to five hard requirements on genre, language, country, and
+  publication year, each in matched `volunteer`, `mixed`, and `hidden`
+  variants (450 tasks, 15 families with no catalog answer). The catalog,
+  tasks, and answer key rebuild byte for byte, offline, from the published
+  source snapshot.
+- **Tracks.** `--track` on `run` and `validate` resolves a track directory's
+  catalog, tasks, policy, and `track.json`; a catalog without a `track.json`
+  is the movie track.
+- **Rule-based user** (`--simulator-mode symbolic`): a deterministic disclosure
+  controller for the books track. Candidate verdicts come from catalog
+  identifiers the agent marks with `[[candidate_id:ID]]`.
+- **Structured retrieval** (`--retrieval-mode structured`) and nested catalogs
+  (`--catalog-size`).
+- **Harness profiles.** `books-v4` caps agent time, budgets tool calls per
+  turn, classifies stops, and logs finish reasons; the movie track keeps the
+  legacy profile.
+- **Run controls.** `--resume`, `--provider-order` (pinned OpenRouter
+  upstreams, no fallbacks), `--max-provider-cost-usd` (fails closed),
+  `--trial-timeout-seconds`, and the opt-in prompt variants
+  `--agent-prompt-variant ask-requirements-v1`, `ask-and-verify-v1`,
+  `ask-verify-protocol-v1`, and `keyword-field-list-v1`.
+- **Claude agents.** For Claude 4.7 and later on the Anthropic API, the
+  reasoning effort is sent as `output_config.effort` and thinking blocks are
+  replayed with the history; Claude Opus 5.5 and Sonnet 5.5 are pinned in the
+  local model map.
+- **Books tooling.** `scripts/run_books_protocol.py` runs the reportable
+  protocol and `scripts/report_books_run.py` reports a run; catalog export,
+  task generation, and an independent validator rebuild and check the track;
+  `analysis/books-controlled/` holds the analysis code, and the GitHub release
+  carries every trace behind the reported numbers, which
+  `scripts/verify_books_archive.py` replays against the code.
+- **Zero-movement gate.** `scripts/rederive_archive.py` re-scores the archived
+  traces of every published entry; CI runs it.
+
+### Changed
+
+- `--no-tools` is deprecated and now means `--mode memory`; see
+  `leaderboard/GENERATIONS.md`.
+
 ## v1.3.0 — 2026-09-11
 
 Leaderboard and cost-accounting release. The task set, catalog, policy prompt,

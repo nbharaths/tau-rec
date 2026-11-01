@@ -27,4 +27,20 @@ jobs:
       # Tasks are only scoreable if every one has a satisfying item in the
       # catalog (or none, for no_valid_recommendation tasks).
       - name: Validate tasks against catalog
-        run: uv run tau-rec validate --catalog data/catalog.json --tasks data/tasks
+        run: uv run tau-rec validate --catalog data/catalog.json --tasks data/tasks --baseline data/task_baseline.json
+      - name: Validate the books track against its catalog and baseline
+        run: uv run tau-rec validate --track data/tracks/books-wikidata-v2 --baseline data/tracks/books-wikidata-v2/task_baseline.json
+      - name: Check matched families and independently recompute books answers
+        run: uv run python scripts/validate_books_controlled.py --catalog data/tracks/books-wikidata-v2/catalog.json --artifact data/tracks/books-wikidata-v2
+
+      # Every published number must reproduce from its traces under the current
+      # evaluator. The archives are pinned by sha256 in leaderboard/archives.json
+      # and cached on that digest, so a harness change that moves a score fails
+      # here rather than on the board.
+      - name: Cache trace archives
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/tau-rec-archives
+          key: tau-rec-archives-${{ hashFiles('leaderboard/archives.json') }}
+      - name: Re-derive every published entry from its archived traces
+        run: uv run python scripts/rederive_archive.py --fetch ${{ runner.temp }}/tau-rec-archives

@@ -1,0 +1,92 @@
+{
+  "by_agent": {
+    "deepseek_v41_flash_high": {
+      "pass1_drop": 0.0453,
+      "share_fp": 0.0505
+    },
+    "glm53_flash_high": {
+      "pass1_drop": 0.058,
+      "share_fp": 0.0648
+    },
+    "gpt61_sol_high": {
+      "pass1_drop": 0.0181,
+      "share_fp": 0.0439
+    },
+    "qwen38_27b_high": {
+      "pass1_drop": 0.0362,
+      "share_fp": 0.0501
+    }
+  },
+  "by_cell": {
+    "deepseek_v41_flash_high/keyword": {
+      "mixed_successes": 232,
+      "mixed_trials": 276,
+      "pass1": 0.8406,
+      "pass1_lower_bound": 0.7754,
+      "share_fp": 0.0776,
+      "successes_with_fp_disclosure": 18
+    },
+    "deepseek_v41_flash_high/structured": {
+      "mixed_successes": 263,
+      "mixed_trials": 276,
+      "pass1": 0.9529,
+      "pass1_lower_bound": 0.9275,
+      "share_fp": 0.0266,
+      "successes_with_fp_disclosure": 7
+    },
+    "glm53_flash_high/keyword": {
+      "mixed_successes": 237,
+      "mixed_trials": 276,
+      "pass1": 0.8587,
+      "pass1_lower_bound": 0.7572,
+      "share_fp": 0.1181,
+      "successes_with_fp_disclosure": 28
+    },
+    "glm53_flash_high/structured": {
+      "mixed_successes": 257,
+      "mixed_trials": 276,
+      "pass1": 0.9312,
+      "pass1_lower_bound": 0.9167,
+      "share_fp": 0.0156,
+      "successes_with_fp_disclosure": 4
+    },
+    "gpt61_sol_high/keyword": {
+      "mixed_successes": 123,
+      "mixed_trials": 276,
+      "pass1": 0.4457,
+      "pass1_lower_bound": 0.4239,
+      "share_fp": 0.0488,
+      "successes_with_fp_disclosure": 6
+    },
+    "gpt61_sol_high/structured": {
+      "mixed_successes": 105,
+      "mixed_trials": 276,
+      "pass1": 0.3804,
+      "pass1_lower_bound": 0.3659,
+      "share_fp": 0.0381,
+      "successes_with_fp_disclosure": 4
+    },
+    "qwen38_27b_high/keyword": {
+      "mixed_successes": 146,
+      "mixed_trials": 276,
+      "pass1": 0.529,
+      "pass1_lower_bound": 0.5036,
+      "share_fp": 0.0479,
+      "successes_with_fp_disclosure": 7
+    },
+    "qwen38_27b_high/structured": {
+      "mixed_successes": 253,
+      "mixed_trials": 276,
+      "pass1": 0.9167,
+      "pass1_lower_bound": 0.8696,
+      "share_fp": 0.0514,
+      "successes_with_fp_disclosure": 13
+    }
+  },
+  "disclosures": 1920,
+  "false_positive_disclosures": 106,
+  "model_averaged": {
+    "pass1_drop": 0.0394,
+    "share_fp": 0.0538
+  }
+}

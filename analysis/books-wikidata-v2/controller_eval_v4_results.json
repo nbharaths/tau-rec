@@ -1,0 +1,92 @@
+{
+  "controller_version": "book-disclosure-v4",
+  "sets": {
+    "final": {
+      "all_model_strata": {
+        "turns": 200,
+        "field_precision": 0.898,
+        "field_recall": 0.944,
+        "exact_field_set": 0.87,
+        "generic_precision": 1.0,
+        "generic_recall": 0.767,
+        "counts": {
+          "exact": 174,
+          "fn": 12,
+          "fp": 23,
+          "generic_fn": 7,
+          "generic_fp": 0,
+          "generic_tp": 23,
+          "tp": 203
+        }
+      },
+      "deepseek_v41_flash_high": {
+        "turns": 50,
+        "field_precision": 0.931,
+        "field_recall": 0.953,
+        "exact_field_set": 0.88,
+        "generic_precision": 1.0,
+        "generic_recall": 0.875,
+        "counts": {
+          "exact": 44,
+          "fn": 4,
+          "fp": 6,
+          "generic_fn": 2,
+          "generic_fp": 0,
+          "generic_tp": 14,
+          "tp": 81
+        }
+      },
+      "glm53_flash_high": {
+        "turns": 50,
+        "field_precision": 0.821,
+        "field_recall": 0.939,
+        "exact_field_set": 0.78,
+        "generic_precision": 1.0,
+        "generic_recall": 0.625,
+        "counts": {
+          "exact": 39,
+          "fn": 3,
+          "fp": 10,
+          "generic_fn": 3,
+          "generic_fp": 0,
+          "generic_tp": 5,
+          "tp": 46
+        }
+      },
+      "gpt61_sol_high": {
+        "turns": 50,
+        "field_precision": 0.894,
+        "field_recall": 0.977,
+        "exact_field_set": 0.9,
+        "generic_precision": "N/A",
+        "generic_recall": "N/A",
+        "counts": {
+          "exact": 45,
+          "fn": 1,
+          "fp": 5,
+          "generic_fn": 0,
+          "generic_fp": 0,
+          "generic_tp": 0,
+          "tp": 42
+        }
+      },
+      "qwen38_27b_high": {
+        "turns": 50,
+        "field_precision": 0.944,
+        "field_recall": 0.895,
+        "exact_field_set": 0.92,
+        "generic_precision": 1.0,
+        "generic_recall": 0.667,
+        "counts": {
+          "exact": 46,
+          "fn": 4,
+          "fp": 2,
+          "generic_fn": 2,
+          "generic_fp": 0,
+          "generic_tp": 4,
+          "tp": 34
+        }
+      }
+    }
+  }
+}

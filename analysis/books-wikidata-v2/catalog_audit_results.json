@@ -1,0 +1,37 @@
+{
+  "catalog_sha256_at_audit": "eae3246846d481f9f07fc46dffb5f22cc8759a471eedd720166c292be1053fe8",
+  "disagreements": {
+    "duplicate_or_edition": 0,
+    "genre_mapping_defensible": 1,
+    "is_recommendable_book": 0,
+    "language_country_correct_or_blank": 2,
+    "title_author_correct": 0
+  },
+  "judgments": 300,
+  "judgments_agreed": 297,
+  "note": "Judged on the pre-release catalog (catalog_sha256_at_audit). The released label_overrides.json omits one sampled correction (Q622400), because the released rules keep Wikidata's country of origin.",
+  "kappa": {
+    "duplicate_or_edition": null,
+    "genre_mapping_defensible": 0.6590909090909087,
+    "is_recommendable_book": 1.0,
+    "language_country_correct_or_blank": 0.6511627906976744,
+    "title_author_correct": null
+  },
+  "records": 60,
+  "records_both_marked_defective": 4,
+  "records_corrected_with_both_endorsing": 6,
+  "records_either_marked_defective": 7,
+  "sampled_overrides": 12,
+  "sampled_overrides_judged_right": [
+    12,
+    12
+  ],
+  "wilson95_both_marked": [
+    0.02622827414319793,
+    0.15925579893767722
+  ],
+  "wilson95_corrected": [
+    0.04664219945723587,
+    0.20149694492511044
+  ]
+}

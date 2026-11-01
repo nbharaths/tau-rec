@@ -1,0 +1,233 @@
+{
+  "contrasts": {
+    "followup/prompt_variant/glm53_flash_high/hidden/pass^1": {
+      "estimate": -0.027777777777777776,
+      "families": 18,
+      "family_ci95": [
+        -0.09027777777777778,
+        0.041666666666666664
+      ],
+      "family_p": 0.48285171482851713,
+      "tasks": 18,
+      "template_ci95": [
+        -0.1015625,
+        0.03573288690476163
+      ],
+      "template_p": 0.5130486951304869,
+      "template_sign_flip_p": 0.625
+    },
+    "followup/prompt_variant/glm53_flash_high/mixed/pass^1": {
+      "estimate": 0.020833333333333332,
+      "families": 18,
+      "family_ci95": [
+        -0.020833333333333332,
+        0.0625
+      ],
+      "family_p": 0.4310568943105689,
+      "tasks": 18,
+      "template_ci95": [
+        -0.020833333333333332,
+        0.07142857142857142
+      ],
+      "template_p": 0.41205879412058793,
+      "template_sign_flip_p": 0.5625
+    },
+    "followup/prompt_variant/glm53_flash_high/pass^1": {
+      "estimate": -0.002314814814814815,
+      "families": 18,
+      "family_ci95": [
+        -0.03009259259259259,
+        0.02546296296296296
+      ],
+      "family_p": 0.8722127787221278,
+      "tasks": 54,
+      "template_ci95": [
+        -0.026960784313725488,
+        0.022727272727272728
+      ],
+      "template_p": 0.8748125187481252,
+      "template_sign_flip_p": 1.0
+    },
+    "followup/prompt_variant/glm53_flash_high/volunteer/pass^1": {
+      "estimate": 0.0,
+      "families": 18,
+      "family_ci95": [
+        0.0,
+        0.0
+      ],
+      "family_p": 1.0,
+      "tasks": 18,
+      "template_ci95": [
+        0.0,
+        0.0
+      ],
+      "template_p": 1.0,
+      "template_sign_flip_p": 1.0
+    },
+    "followup/prompt_variant/qwen38_27b_high/hidden/pass^1": {
+      "estimate": 0.04861111111111111,
+      "families": 18,
+      "family_ci95": [
+        -0.034722222222222224,
+        0.1527777777777778
+      ],
+      "family_p": 0.34226577342265774,
+      "tasks": 18,
+      "template_ci95": [
+        -0.05,
+        0.14375
+      ],
+      "template_p": 0.38166183381661833,
+      "template_sign_flip_p": 0.5
+    },
+    "followup/prompt_variant/qwen38_27b_high/mixed/pass^1": {
+      "estimate": 0.09027777777777778,
+      "families": 18,
+      "family_ci95": [
+        -0.006944444444444444,
+        0.20833333333333334
+      ],
+      "family_p": 0.0816918308169183,
+      "tasks": 18,
+      "template_ci95": [
+        0.0,
+        0.20833333333333334
+      ],
+      "template_p": 0.06229377062293771,
+      "template_sign_flip_p": 0.25
+    },
+    "followup/prompt_variant/qwen38_27b_high/pass^1": {
+      "estimate": 0.0462962962962963,
+      "families": 18,
+      "family_ci95": [
+        -0.0023148148148148147,
+        0.11348379629629544
+      ],
+      "family_p": 0.0744925507449255,
+      "tasks": 54,
+      "template_ci95": [
+        -0.002976190476190475,
+        0.10833333333333332
+      ],
+      "template_p": 0.0680931906809319,
+      "template_sign_flip_p": 0.1875
+    },
+    "followup/prompt_variant/qwen38_27b_high/volunteer/pass^1": {
+      "estimate": 0.0,
+      "families": 18,
+      "family_ci95": [
+        0.0,
+        0.0
+      ],
+      "family_p": 1.0,
+      "tasks": 18,
+      "template_ci95": [
+        0.0,
+        0.0
+      ],
+      "template_p": 1.0,
+      "template_sign_flip_p": 1.0
+    }
+  },
+  "levels": {
+    "followup/prompt_variant/glm53_flash_high/default": {
+      "hidden_rejections_per_success": 4.7368421052631575,
+      "mixed_asked_year_country_or_language": 0.8055555555555556,
+      "mixed_complete_elicitation": 0.6041666666666666,
+      "mixed_no_elicitation": 0.0763888888888889,
+      "pass^1": 0.7245370370370371,
+      "pass^1/hidden": 0.2638888888888889,
+      "pass^1/mixed": 0.9097222222222222,
+      "pass^1/volunteer": 1.0,
+      "pass^4": 0.6103174603174603,
+      "provider_rate_limited_call_share": 0.0004955401387512388,
+      "stop_classes": {
+        "abstained": 50,
+        "recommended": 345,
+        "turn_limit": 17,
+        "wall_cap": 20
+      },
+      "success_uncapped": 0.7597087378640777,
+      "success_uncapped/hidden": 0.3064516129032258,
+      "success_uncapped/mixed": 0.9097222222222222,
+      "success_uncapped/volunteer": 1.0,
+      "trials": 432
+    },
+    "followup/prompt_variant/glm53_flash_high/variant": {
+      "hidden_rejections_per_success": 3.2941176470588234,
+      "mixed_asked_year_country_or_language": 0.8958333333333334,
+      "mixed_complete_elicitation": 0.7222222222222222,
+      "mixed_no_elicitation": 0.04861111111111111,
+      "pass^1": 0.7222222222222222,
+      "pass^1/hidden": 0.2361111111111111,
+      "pass^1/mixed": 0.9305555555555556,
+      "pass^1/volunteer": 1.0,
+      "pass^4": 0.6272486772486773,
+      "provider_rate_limited_call_share": 0.15182987141444115,
+      "stop_classes": {
+        "abstained": 46,
+        "recommended": 340,
+        "turn_limit": 8,
+        "wall_cap": 38
+      },
+      "success_uncapped": 0.7918781725888325,
+      "success_uncapped/hidden": 0.32075471698113206,
+      "success_uncapped/mixed": 0.9305555555555556,
+      "success_uncapped/volunteer": 1.0,
+      "trials": 432
+    },
+    "followup/prompt_variant/qwen38_27b_high/default": {
+      "hidden_rejections_per_success": 4.2727272727272725,
+      "mixed_asked_year_country_or_language": 0.8194444444444444,
+      "mixed_complete_elicitation": 0.6111111111111112,
+      "mixed_no_elicitation": 0.06944444444444445,
+      "pass^1": 0.7083333333333334,
+      "pass^1/hidden": 0.22916666666666666,
+      "pass^1/mixed": 0.8958333333333334,
+      "pass^1/volunteer": 1.0,
+      "pass^4": 0.6407407407407407,
+      "provider_rate_limited_call_share": 0.005865102639296188,
+      "stop_classes": {
+        "abstained": 45,
+        "recommended": 362,
+        "turn_limit": 19,
+        "wall_cap": 6
+      },
+      "success_uncapped": 0.7183098591549296,
+      "success_uncapped/hidden": 0.2391304347826087,
+      "success_uncapped/mixed": 0.8958333333333334,
+      "success_uncapped/volunteer": 1.0,
+      "trials": 432
+    },
+    "followup/prompt_variant/qwen38_27b_high/variant": {
+      "hidden_rejections_per_success": 4.25,
+      "mixed_asked_year_country_or_language": 0.9722222222222222,
+      "mixed_complete_elicitation": 0.8125,
+      "mixed_no_elicitation": 0.0,
+      "pass^1": 0.7546296296296297,
+      "pass^1/hidden": 0.2777777777777778,
+      "pass^1/mixed": 0.9861111111111112,
+      "pass^1/volunteer": 1.0,
+      "pass^4": 0.6880952380952381,
+      "provider_rate_limited_call_share": 0.010342789598108746,
+      "stop_classes": {
+        "abstained": 48,
+        "recommended": 358,
+        "turn_limit": 19,
+        "wall_cap": 7
+      },
+      "success_uncapped": 0.7670588235294118,
+      "success_uncapped/hidden": 0.291970802919708,
+      "success_uncapped/mixed": 0.9861111111111112,
+      "success_uncapped/volunteer": 1.0,
+      "trials": 432
+    }
+  },
+  "plans": [
+    "analysis/books-wikidata-v2/experiment_plan_v4_prompt_open.json"
+  ],
+  "ran": {
+    "prompt_variant": true
+  },
+  "status": "exploratory; unadjusted; comparison cells from the v4 matrix (not time-matched)"
+}

@@ -1,0 +1,5127 @@
+{
+ "version": "books-missed-question-labels-v1",
+ "labeler": "LLM labeller, blind to recogniser output and to the trial each sentence came from; not a human annotation",
+ "source": "unique question sentences (a question mark, outside candidate proposals, in answered agent turns after the seeded greeting) of failed mixed primary-panel trials of the v4 run that left an askable fact undisclosed and asked at least one question (recognizer_bounds.py), shuffled with seed 20261028",
+ "fields": [
+  "genres",
+  "languages",
+  "countries",
+  "publication_year",
+  "formats"
+ ],
+ "labeling_rules": [
+  "Label from the agent text alone, blind to classifier outputs and stratum.",
+  "A field is asked when the turn requests the user's preference or requirement on it, explicitly ('what genre?') or as a choice ('fantasy or mystery?', 'classic or modern?', 'something more recent?').",
+  "Describing books (titles, years, genres or origin of candidates or search results) does not count.",
+  "Questions attached to a candidate proposal count, including conditional requests ('if this is rejected, I need a format, language, or era').",
+  "Field mapping: genre, subgenre, kind, topic or theme of a book, fiction/nonfiction, and genre names offered as options -> genres; language, translation -> languages; country of origin, nationality, region -> countries; publication era, decade, classic vs modern, recent, time period -> publication_year; format, ebook, audiobook, print -> formats.",
+  "Story setting is not a field: 'setting/era -- Napoleonic Europe, WWI' or 'historical period or setting' are not publication_year or countries; a bare 'era' or 'time period' is publication_year.",
+  "Not fields: author, tone, mood, style without genre options, length, the subject of a biography, reading history.",
+  "generic = the turn requests unspecified further requirements ('anything else?', 'any other preferences?', 'what's missing?', 'what didn't work?', 'tell me more about what you're looking for / in the mood for'), even when examples follow. A purpose clause ('to narrow it down') alone, a verdict request ('does this work?'), an offer ('should I try another?'), or 'tell me a bit more:' followed only by specific field questions is not generic.",
+  "v4 additions: recency -> publication_year; a question about a book's subject ('a particular era or place' a history book covers, who a biography is about) is not a field; 'classic' is publication_year only against modern/recent or offered alone, while 'a classic whodunit' or 'a children's classic' is a genre; check-ins ('does this sound more like what you're after?'), offers ('I'd like to suggest ...') and 'what kind of book are you in the mood for?' are not generic; offering alternative titles asks about the titles, not a field (final set).",
+  "Sentence-level application of the turn rules above; a one-option pitch without a proposed book ('Would you enjoy a classic whodunit?') asks about the genre."
+ ],
+ "labels": [
+  {
+   "sentence": "Do you prefer fiction or nonfiction, or is any genre fine as long as the book’s country of origin includes the United States?Do you prefer fiction or nonfiction, or is any genre fine as long as the book’s country of origin includes the United States?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Or are you open to any of those?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "It meets your stated requirements:\n- **Genre:** Nonfiction\n- **Published:** 1996 (between 1920 and 2020)\n- **Formats:** Ebook and hardcover\n\nWould this one work for you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**Era/style** — Do you prefer classic mysteries (Sherlock Holmes, Agatha Christie), modern thrillers (Dan Brown, Stieg Larsson), or something else?",
+   "fields": [
+    "genres",
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**What format works for you?** (e.g., print, ebook, audiobook) — I want to make sure the one I choose is actually available in a format you can use.",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like something light and funny, or a more dramatic romance?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "something else, or any particular setting (sea, jungle, lost worlds)?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Are you in the mood for a particular genre, or are you open to anything?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "How does this one sound?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**Any language preference?** Some of these are originally in Czech, Russian, Swedish, French, etc.",
+   "fields": [
+    "languages"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow it down: do you have a preferred genre (fiction, mystery, sci-fi, literary, non-fiction, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does this sound like something you'd enjoy, or would you prefer a different style or era?",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What nonfiction topics interest you—history, science, memoir, self-improvement, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred **format**?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- **Format** — do you need a specific format (e.g., ebook, audiobook, print)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of book are you in the mood for: mystery, science fiction, historical fiction, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow things down, what genre or subject are you interested in?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred genre or mood — e.g., fantasy, sci-fi, mystery/thriller, romance?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow it down, do you have a preference for the subject?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Language** — Are you okay with non-English works, or do you want English only?",
+   "fields": [
+    "languages"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "A couple of Russian-language options I see:\n- **Old Russian Poems** — Kirsha Danilov (Poetry, 1804)\n- **The Decembrists: The First Russian Revolutionists** — Serge Wolkonsky (History/Nonfiction, 1921)\n\nWhich direction appeals to you, or is there another genre you'd prefer?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow things down, do you have a preferred genre or subject?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What formats work for you (e.g., hardcover, paperback, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer a cozy whodunit, a gritty crime story, or a mystery with speculative twists—or are you open to any of those?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Classic or modern?** I found everything from 1920s–30s golden-age mysteries (Agatha Christie, Ellery Queen) to more recent titles.",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy a witty classic romance?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would this work for you, or should I keep looking?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**Format** — which formats can you use (print, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To help me pick the best one for you, do you have a preferred genre?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- **Format**: do you prefer hardcover, paperback, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does this work for you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Could this be closer to what you have in mind?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer something more realistic?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy a lyrical novel about love, memory, and World War II?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow it down, what kind of book do you enjoy?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Which formats work for you, and should I avoid books you’ve already read?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What sounds good?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow it down to the one you'll enjoy, could you tell me a bit more?",
+   "fields": [],
+   "generic": true
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer a biography focused on music, science, or another subject?Would that appeal to you, or would you prefer a different subject?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Do you mean a children’s book, or a book for adults that features children as characters?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Or would you prefer darker, more absurd humor?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer a cozy mystery, a gritty crime story, or something suspenseful—or are you open to any?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does this fit?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like something **recent**, or are older classics fine?",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow things down, could you tell me what format(s) you can use — for example, ebook, paperback, hardcover, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**What subject interests you?** There's quite a range here — political figures (Mandela, Napoleon, Goebbels), artists and musicians (The Beatles, Tom Jones, Carmen Miranda), literary figures (Kafka, Elizabeth Barrett Browning, Douglas Adams), and more.",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer a different nonfiction subject?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would that interest you, or would you like me to look in a different direction?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "- Anything you'd rather avoid?",
+   "fields": [],
+   "generic": true
+  },
+  {
+   "sentence": "Or would you prefer a different genre?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you mean a book featuring children as characters, or a book written for children?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy a science-fiction thriller?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would this be the right fit?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go with this one, or would you prefer the other match I found — *Five Autobiographies and a Fiction* (also by Lucius Shepard, 2013, tagged Fantasy + Science Fiction)?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go with this one, or would you prefer something in a different subject area?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "How about this one?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer something less intense?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy a sweeping historical novel?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Era**: Are you drawn to classics (pre-1970), or something more recent?",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Anything you've already read that I should skip?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Any preference for genre or format, or should I choose freely as long as the book’s country of origin includes the United Kingdom?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred genre or mood, or would you like me to choose freely within that range?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Format** you can use (hardcover / paperback / ebook / audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Absolutely—would you prefer fiction or nonfiction, or are you open to either?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "For example, the catalog includes:\n\n- **Fantasy/Sci-fi**: Frankenstein, Brave New World, The Fellowship of the Ring, The War of the Worlds\n- **Mystery/Crime**: The Hound of the Baskervilles, A Study in Scarlet\n- **Romance**: Pride and Prejudice, Wuthering Heights, Sense and Sensibility\n- **Adventure**: Treasure Island, Robinson Crusoe, Gulliver's Travels\n- **Horror**: Dracula, Strange Case of Dr Jekyll and Mr Hyde\n\nAlso, do you have any format preferences (e.g., ebook, audiobook, print)?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer one of the others (Werber's short stories or Ebly's novel)?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "And is there a format you need (e.g., ebook, audiobook, print)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Are you in the mood for a particular genre, or would you like me to choose?What genre are you in the mood for—or would you like me to surprise you?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What format works for you, and does any of these styles appeal?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "How does that sound?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy a crime thriller where an unexpected windfall spirals into paranoia and betrayal?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have any format requirements, and should I avoid books you’ve already read?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "It meets your stated requirements:\n- **Genre:** Nonfiction\n- **Published:** 2007 (between 1920 and 2020)\n- **Formats:** Ebook, hardcover, and paperback\n\nWould this one work for you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "For example:\n- Any particular genre or theme (e.g., fantasy, mystery, sci-fi, romance)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer something lighter and more contemporary?",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And which formats can you use—print, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy reflective nonfiction about nature and simple living?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy witty dialogue and farcical mix-ups?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "How does *The Silence of the Lambs* sound?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer a different kind of story?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "A **time period** you're interested in (e.g., newer releases or classics)?",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of story are you in the mood for: mystery, fantasy, romance, adventure, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What kinds of stories or subjects do you enjoy, and do you prefer print, ebook, or audiobook?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that appeal to you, or would you prefer another genre?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And what formats can you use: print, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "For example:\n\n- **Genre**: adventure, romance, science fiction, fantasy, horror, memoir...?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy a classic adventure, or would you prefer something more modern?",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preference for classic whodunits like this, or something more modern?",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What do you think?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "- Any format preferences (hardcover, paperback, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer something less dark?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "And do you have any format preferences (e.g., ebook, audiobook, print)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Before I commit, could you tell me your genre preference and which formats you can use (print, ebook, audiobook)?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like romance to be the main focus, or mixed with another genre, like fantasy or mystery?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does this sound like something you'd enjoy, or would you prefer a different nonfiction topic?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you prefer a funny novel, humorous nonfiction, or either?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred topic or type of person (e.g., tech founders, historical figures, musicians, scientists)?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy a long classic, or would you prefer something shorter?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that appeal to you, and what reading formats can you use?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Any favorite authors or books you've loved in the past?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of book are you in the mood for—fiction or nonfiction, and any favorite genres or topics?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go with The Tree of Possibles, or would you prefer one of the others?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like to go with that, or would you prefer a different genre (thriller, fantasy, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like this one, or shall I keep looking?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Wodehouse?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "You haven't read it, and it's a strong fit for a \"Memoir.\"\n\nWould you like me to go with this one, or would you prefer something with a different theme?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**What formats can you read?** (e.g., ebook, audiobook, print)\n2.",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Also, do you have a preferred format (hardcover, paperback, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "nonfiction, a particular author or era, or formats you prefer (ebook, audiobook, print)?",
+   "fields": [
+    "formats",
+    "genres",
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And just so I can zero in better — is there a particular aspect that's been off (e.g., you'd prefer a specific decade, a standalone rather than a series entry, or a specific author)?",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": true
+  },
+  {
+   "sentence": "Would a real-life investigation into corporate deception appeal to you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**Any particular flavor of memoir you enjoy?** For example, coming-of-age stories, stories about identity and family, political/international figures, etc.",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer a different subject?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like this one, or should I keep looking?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow things down, could you tell me a bit more about what you're in the mood for?",
+   "fields": [],
+   "generic": true
+  },
+  {
+   "sentence": "What kind of mystery sounds good—cozy, a twisty thriller, or a classic whodunit?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you lean toward space adventures, thought-provoking “what if” stories, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a favorite genre or subject in mind (fiction, sci-fi, mystery, non-fiction, history, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would this collection interest you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "What format(s) do you read — print, ebook, audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Any topics you're especially interested in (or want to avoid)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does this one work for you, or should I keep searching?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Do any of these catch your eye, or do you have a preference for a particular style, language, or era?",
+   "fields": [
+    "languages",
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "It’s available in paperback—does that format work for you?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "For example:\n\n- Do you prefer **fiction or nonfiction**?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have any preferences on genre, topic, or mood?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does this one fit?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "What formats work for you — hardcover, paperback, e-book, audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy crime mixed with horror?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would that suit you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "What formats can you use (e.g., paperback, hardcover, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred genre or mood, and which formats can you use: print, ebook, or audiobook?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "For example:\n\n- **Genre or theme** you enjoy (mystery, sci-fi, romance, nonfiction, etc.)\n- **Format** you can use (hardcover, paperback, ebook, audiobook)\n- Any **length** or **era** preferences?",
+   "fields": [
+    "formats",
+    "genres",
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And do you want me to make sure it's **not** something you've already read?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred genre, and which formats can you use: print, ebook, or audiobook?Do you have a preferred genre, and which formats work for you—print, ebook, or audiobook?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Anything you've read recently that you loved (or hated), so I can avoid recommending something you've already read?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy true crime?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does this sound like something you'd enjoy, or would you prefer a different style of poetry (e.g., something more literary, translated, or with fantasy elements like Neil Gaiman's *Smoke and Mirrors*)?",
+   "fields": [
+    "genres",
+    "languages"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow it down, do you have a genre preference — say, fantasy, sci-fi, mystery/thriller, romance, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "When you say \"include Children,\" do you mean:\n- (a) the **genre** list must contain \"Children,\" or\n- (b) the **title** must contain the word \"Children,\" or\n- (c) the book should **feature children** as characters/subject?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And do you need a specific format (e.g., ebook, audiobook, print)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like to go with this one, or would you prefer a different poetry collection?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go with this one, or would you prefer something different?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "To help me narrow things down: are there any genres, languages, or formats (like ebook or audiobook) you'd prefer?",
+   "fields": [
+    "formats",
+    "genres",
+    "languages"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**What kind of biography** appeals to you — a scientist/tech innovator (e.g., Steve Jobs, Elon Musk, American Prometheus), a musician (Heavier Than Heaven), a historical/political figure, or a personal memoir?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What genre or subject are you interested in?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Eliot (English, 1939)\n- **Sonnets to Orpheus** by Rainer Maria Rilke (German, 1923)\n\nDo you have a preference for language, era, or a particular poet?",
+   "fields": [
+    "languages",
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of science fiction sounds good—space adventure, thoughtful “what if” stories, dystopian worlds, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What format do you need — e.g., hardcover, paperback, ebook, audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of story are you in the mood for—mystery, fantasy, romance, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, and do you need a particular format?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To help me pick one you'll actually enjoy, could you tell me a bit more about your preferences?",
+   "fields": [],
+   "generic": true
+  },
+  {
+   "sentence": "Do you prefer contemporary romance, historical romance, or romance mixed with fantasy or mystery?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Also, do you have any preference for setting, length, or a particular style (spy, crime, psychological, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Should I avoid books you've already read?**",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound interesting, or would you prefer another nonfiction subject?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy that, or would you prefer something more grounded?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow things down, do you have a genre in mind — thriller, romance, historical fiction, sci-fi, something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have any format requirements—ebook, print, or audiobook—and should I avoid books you’ve already read?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that appeal to you, or would you prefer something lighter?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "A couple of other matches I found, in case you'd prefer one of them:\n- **The Scarlet Gospels** by Clive Barker (2015) — Fantasy/Horror, UK\n- **Carpe Jugulum** by Terry Pratchett (1998) — Fantasy/Horror, UK\n\nWould you like me to go with *The Graveyard Book*, or would you prefer one of the others?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would that kind of spy thriller appeal to you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to check that one out for you, or do you have a preference for a particular style (classic detective fiction, cozy mystery, thriller, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred genre or topic (e.g., mystery, science fiction, literary fiction, history)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Which format(s) work for you (hardcover, paperback, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred format—print, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Wodehouse, satirical, absurd, essays/memoir-style, etc.)\n- Do you have any preferred formats (hardcover, paperback, ebook, audiobook)?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Style** — any preference?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer another genre?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you prefer a memoir about family, adventure, overcoming hardship, or something else—or are you open to any subject?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Any preferences for setting, language, or publication period?",
+   "fields": [
+    "languages",
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would that appeal to you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "- Genre: **Humor**\n- Published: 1999 — a satirical comedy about marketing and consumer culture\n- Available in: hardcover, paperback, and ebook\n\nDoes this one appeal to you, or would you like me to keep looking?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "What formats can you use — hardcover, paperback, ebook, audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Sure—are you in the mood for space exploration, futuristic technology, time travel, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "It meets your stated requirements:\n- **Genre:** Nonfiction\n- **Published:** 2008 (between 1920 and 2020)\n- **Formats:** Hardcover and paperback\n\nWould this one work for you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy a morally complex spy thriller, or would you prefer psychological suspense, crime, or action?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer a humorous novel or nonfiction?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And are you in the mood for a particular genre?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or have you already read it outside your recorded history?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go with this one, or would you prefer a different topic (true crime, history, science, memoir, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow it down, do you have a preferred genre?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- **Format**: do you prefer print, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And is there any other requirement (genre, language, etc.) I should factor in?",
+   "fields": [
+    "genres",
+    "languages"
+   ],
+   "generic": true
+  },
+  {
+   "sentence": "And are you in the mood for space adventure, big scientific ideas, or something more character-driven?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And do you read print, ebooks, or audiobooks?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer a cozy mystery, a detective story, or a darker thriller—or are you open to any of those?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Also, what formats can you read (e.g., print, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Any preferences about length or format, and should I avoid books you’ve already read?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer a cozy mystery, a darker thriller, or either?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does this sound like something you'd enjoy, or would you prefer I look at a different option?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer something more like Perdido Street Station?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "- Any format you need (e.g., ebook, audiobook, print)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "For example, fiction or non-fiction, mystery, sci-fi, history, romance...?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Or would you like me to check the available formats for either one?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Which **formats** work for you (hardcover, paperback, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Any particular subject or type of person you're interested in — a tech founder, a scientist, a musician, a historical figure?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Any preference for print, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Anything you've read recently that you'd like to avoid repeating?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of mystery are you in the mood for—cozy, detective, historical, or a darker thriller?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Genre or topic** — fiction, non-fiction, sci-fi, mystery, history, self-help, etc.?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Any genre, author, or topic you're drawn to?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Format** — do you prefer print, ebook, audiobook, or a mix?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like to go with this one?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a genre or subject in mind (fiction, non-fiction, sci-fi, history, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Or would you prefer a different style of humor?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "- Any formats you need (ebook, audiobook, print)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And what formats can you read (e.g., print, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "It’s a long, immersive read—does that appeal to you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**Do you prefer novels or short story collections/anthologies?** (Many of the sci-fi titles here are anthologies, like *The Science Fiction Hall of Fame, Volume One* by Robert Silverberg.)\n2.",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "For example:\n\n- Any preferred genre or subject (fiction, mystery, sci-fi, history, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Have you read any of these before?** I can check your reading history so I don't recommend something you've already read.",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Or should I just pick something popular published after 1988?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**Format** — do you read in a particular format (e.g., ebook, print, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go ahead and recommend this one?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does a puzzle-focused whodunit appeal to you, or would you prefer something grittier?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**Topic** — any subject you're drawn to?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound like something you'd enjoy, or would you prefer a different topic or style of nonfiction?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would an adventure-focused biography appeal to you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have any preferences among these — for example, a **tech/business figure** (Steve Jobs, Elon Musk, Linus Torvalds), a **scientist/mathematician** (American Prometheus, A Beautiful Mind), an **adventurer** (Into the Wild), or a **historical/political figure** (Mao, Profiles in Courage)?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preference for author or style — e.g., classic whodunits like Agatha Christie or Ellery Queen, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy gothic horror?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Also, do you have a preferred format (hardcover, paperback, ebook, audiobook) or language?",
+   "fields": [
+    "formats",
+    "languages"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Or would you prefer a different kind of thriller?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Or would you prefer sharper satire?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would a political life story interest you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**Topic** — any interests?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "A few quick questions so I can narrow things down:\n\n- What genres or themes are you in the mood for (e.g., mystery, sci-fi, literary fiction, history)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does an emotionally intense migration memoir appeal to you, or would you prefer a lighter subject?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer another genre?Is historical fiction a good fit for you?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Any genre, author, or subject you're drawn to?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound like your kind of thing, or would you prefer a different flavor (e.g., more personal/quirky, travel, or a specific topic)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow it down, do you have a genre in mind?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "For example, fiction or non-fiction, mystery, sci-fi, history, self-help...?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Any theme or mood you're drawn to — e.g., contemporary/personal, nature, love, political, or something playful?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a genre preference — fiction, nonfiction, poetry, thriller, etc.?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would a thriller about family secrets and a hidden past appeal to you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Are you interested in true crime, or would you prefer another nonfiction topic?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And do you have a preferred format (e.g., ebook, audiobook, print)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred genre, or are you open to anything?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do any of these catch your eye, or do you have a particular theme, tone, or subject matter you'd prefer?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**What format do you read in** — e.g., hardcover, paperback, ebook, audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Any preference for the kind of mystery—cozy, historical, or twisty and suspenseful?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does a life story centered on adventure and self-discovery appeal to you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of science fiction appeals to you—space adventures, thought-provoking future societies, time travel, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow things down, what kind of book are you in the mood for?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And do you need a particular format, such as print, ebook, or audiobook?Do you have a preferred subject—adventure, science and technology, arts and music, or something else?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer space adventures, thought-provoking ideas, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go with this one, or would you prefer a different style of memoir?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "A few options:\n\n- **The Railway Children** by Edith Nesbit (1906) — a classic about a family whose lives change when their father is mysteriously taken away\n- **Five Children and It** by Edith Nesbit (1902) — children discover a wish-granting creature\n- **Cautionary Tales for Children** by Hilaire Belloc (1907) — humorous verse with a wicked sense of humor\n- **The Story of the Root Children** by Sibylle von Olfers (1906) — a gentle nature story (in German)\n\nDo any of these appeal to you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you rather go with the true-crime route of In Cold Blood?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Or would you prefer something more focused on spies and action?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "For example:\n\n- **Narrative/investigative nonfiction** — like *Bad Blood* (Silicon Valley scandal) or *Killers of the Flower Moon* (true crime/history)\n- **Memoir** — like *When Breath Becomes Air*\n- **Science/social science** — like *Delusions of Gender*\n- **Self-help/practical** — like *Find Your Why*\n\nAlso, do you have any format requirements (e.g., ebook, audiobook, print)?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**What formats** can you use?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Any particular topic or theme** you're drawn to — history, science, economics, memoir, current affairs?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow it down, could you tell me a bit more about what you enjoy?",
+   "fields": [],
+   "generic": true
+  },
+  {
+   "sentence": "Would you like to go with this one, or shall I keep looking?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would this be a better fit?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Are you in the mood for any particular genre, or open to anything?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- **Tone**: classic essays, modern narrative journalism, practical guides?",
+   "fields": [
+    "genres",
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What formats can you use: print, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy a gripping, unsettling true-crime story?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you prefer a detective mystery, a fast-paced crime thriller, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And do you need a particular format, such as paperback, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preference for a particular style of humor (classic literary, essay collection, graphic novel, etc.), or should I just go with a pick?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Anything you've already read** that you'd like me to avoid?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "I’ll avoid the books in your reading history.What sounds most appealing: a gripping true story, history and society, or nature and everyday life?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- What **format(s)** can you use — e.g., paperback, hardcover, ebook, audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer space exploration, dystopian futures, or science-driven thrillers—or are you open to any kind of science fiction?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer another genre?Would that suit your mood, or would you prefer a different genre?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that appeal to you, or would you prefer something shorter or more contemporary?",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Sure—any preferred genre or mood, or are you open to any book whose listed languages include English?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go with this one, or would you prefer a different style of poetry?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "What formats you can read (e.g., ebook, audiobook, print)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Any particular themes or topics you enjoy?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy a whimsical fantasy?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And what formats work for you—print, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer a more realistic story?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "What formats can you use (ebook, hardcover, paperback)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer a memoir about family, travel and migration, the arts, or something else—or are you open to any subject?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have any preferences on genre, topic, or author?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "For example, classic whodunits (Agatha Christie, Ellery Queen), cozy mysteries (Carolyn Keene), or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "nonfiction, or any particular setting?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Any favorite authors or subgenres (space opera, time travel, dystopia, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "It meets your stated requirements:\n- **Genre:** Nonfiction\n- **Published:** 2020 (between 1920 and 2020)\n- **Formats:** Hardcover and paperback\n\nWould this one work for you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow it down, could you tell me a bit more about what you'd enjoy?",
+   "fields": [],
+   "generic": true
+  },
+  {
+   "sentence": "- Do you have a preferred format (hardcover, paperback, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And what format do you read in — print, ebook, audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would this one work for you, or would you like me to keep looking?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow it down, a couple of quick questions:\n- What kind of subject appeals to you?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What genres or topics are you interested in?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Want me to go with this one, or would you prefer a different flavor of humor (e.g., Wodehouse's classic comedy, or something more satirical)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And would you prefer fiction or nonfiction?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Topic**: Which appeals most — true crime, history/politics, economics, science/environment, psychology/philosophy, or memoir?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Non-fiction (history, science, biography, self-help)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does this one work for you, or shall I try another?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that appeal to you, or would you prefer a memoir focused on family, creativity, or another subject?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of science fiction are you in the mood for—space adventure, first contact, dystopian, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer a different genre?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What genre or mood are you looking for—for example, a mystery, an uplifting story, science fiction, or nonfiction?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer another subject?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have any preferences on genre, topic, or style?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "For example:\n- Do you mean a book that is **purely** poetry, or one that **mixes** poetry with other genres (e.g., a novel, essays, or an anthology that contains poetry)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**What formats can you use?** (e.g., print, ebook, audiobook) so I can make sure whatever I pick is actually available to you.",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would this one work for you, or shall I suggest something else?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of mystery are you in the mood for—cozy, historical, dark and twisty, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does this one fit what you're looking for?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "What sort of life story appeals to you—adventure, science and technology, arts and music, or something else?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Any particular flavor of sci-fi you enjoy (space opera, cyberpunk, dystopian, time travel, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What genre or mood would you enjoy, and do you prefer print, ebook, or audiobook?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you prefer fiction or nonfiction, or are you open to either?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer lighthearted, cozy humor, sharp satire, or something absurd?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go ahead and recommend **Dead Reckoning**?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would this be a good match for you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like to go with this one, or should I consider the remaining option (Ebly's *The Wanderer from Beyond*)?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer a darker, more modern mystery?",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Should I rule out books you’ve already read?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Do any of these catch your eye, or would you like me to narrow things down by topic, tone, or format?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Any style preference?** For example:\n   - Classic satire (Mark Twain's *Letters from the Earth*, Voltaire)\n   - Modern comedic novels (*The Hundred-Year-Old Man Who Climbed Out the Window and Disappeared*, *Whisky Galore*)\n   - Light/illustrated humor (*Diary of a Wimpy Kid*, *The Book of Bunny Suicides*)\n   - Something with a genre twist (*The Heart of a Dog* — sci-fi satire, or *Orlando* — fantasy)\n\nLet me know what appeals to you!",
+   "fields": [
+    "genres",
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "For example:\n\n- Is there a specific **topic** you're interested in (history, science, biography, true crime, self-help, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have any preferred genres (e.g., mystery, sci-fi, romance, literary fiction)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Sherwin (2005)\n- **A Beautiful Mind** by Sylvia Nasar (1998)\n\nDo you have a preference for subject matter (tech figures, science, adventure, history) or a format you need (hardcover, paperback, ebook, audiobook)?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And what formats work for you: print, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy historical fiction?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer a different style of humor?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Cronin (Historical Fiction, 1941)\n- **The Kingdom of the Wicked** by Anthony Burgess (Historical Fiction, 1985)\n\nDo you have any other preferences to narrow it down — a favorite genre, or a particular format you need (e.g., print, ebook, audiobook)?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": true
+  },
+  {
+   "sentence": "Would you enjoy a classic detective mystery?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you prefer a cozy mystery, a darker thriller, or something in between?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow it down, a couple of questions:\n- Do you have a preferred format (e.g., hardcover, paperback, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Any preferred genre or mood, or are you open to anything published in 1990 or later?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "It meets your stated requirements:\n- **Genre:** Nonfiction\n- **Published:** 2006 (between 1920 and 2020)\n- **Formats:** Ebook, hardcover, and paperback\n\nWould this one work for you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer something in a different vein (history, science, memoir, current affairs)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To help me pick the right one for you, could you tell me a bit more?",
+   "fields": [],
+   "generic": true
+  },
+  {
+   "sentence": "Does that sound like the kind of book you want?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "It meets your stated requirements:\n- **Genre:** Nonfiction\n- **Published:** 2009 (between 1920 and 2020)\n- **Formats:** Hardcover and paperback\n\nWould this one work for you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy a memoir centered on history and resilience?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "A few highlights from the catalog:\n\n- **Bad Blood** by John Carreyrou — the gripping exposé of the Theranos scandal\n- **Killers of the Flower Moon** by David Grann — true crime about the Osage murders\n- **The Creation of Patriarchy** by Gerda Lerner — a classic work of feminist history\n- **Delusions of Gender** by Cordelia Fine — science writing debunking gender myths\n- **When Breath Becomes Air** by Paul Kalanithi — a moving memoir\n\nDo any of these topics appeal to you — true crime, history, science, memoir — or is there another subject you'd prefer?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Any format requirements (e.g., paperback, ebook, hardcover, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And do you need a particular format, such as print, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And which formats work for you: print, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred genre, or would you like me to choose freely within that range?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer novels or short story collections/anthologies?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would an investigative story appeal to you?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Also, do you have a preferred format (e.g., ebook, audiobook, print)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred genre or mood, and do you need a particular format, such as print, ebook, or audiobook?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Any preferences for language or format, and should I avoid books you’ve already read?",
+   "fields": [
+    "formats",
+    "languages"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that appeal, or would you prefer a spy or legal thriller?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "So far I have:\n- Published 1988 or later\n- Not already in your reading history\n- Genres should **include Poetry**\n- No format preference\n\nCould you help me narrow it down further?",
+   "fields": [],
+   "generic": true
+  },
+  {
+   "sentence": "Would that subject interest you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Could you give me a bit more guidance?",
+   "fields": [],
+   "generic": true
+  },
+  {
+   "sentence": "A few standouts across different styles:\n\n- **Walden** by Henry David Thoreau — classic reflections on simple living\n- **In Cold Blood** by Truman Capote — gripping true crime\n- **Why Nations Fail** by Acemoglu & Robinson — modern economics/history\n- **Voices from Chernobyl** by Svetlana Alexievich — oral history of the disaster\n- **The 48 Laws of Power** by Robert Greene — strategy and human nature\n\nDo any of these directions appeal to you — history, true crime, economics, memoir?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Any particular genre or subject you're in the mood for?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a genre or topic in mind (fiction, mystery, sci-fi, history, etc.), or any other preferences like length or format?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": true
+  },
+  {
+   "sentence": "Would you like me to go with this one?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like to go with this one, or would you prefer a different flavor of mystery (e.g., a cozy mystery, a hardboiled detective, or a more modern story)?",
+   "fields": [
+    "genres",
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that kind of suspense appeal to you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "What genre and format would you like?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of humor do you enjoy—lighthearted, satirical, dark, or absurd?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Also, what reading formats work for you: print, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer space adventures, first-contact stories, dystopias, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go ahead and recommend *Dracula*, or would you prefer the children's title instead?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Sure—any preferred genre or mood, or are you open to any book from the United Kingdom?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**What format(s) can you use?** (hardcover, paperback, ebook, audiobook)\n2.",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "For example:\n\n- **Classic sci-fi** (e.g., *Fahrenheit 451*, *I, Robot*, *The War of the Worlds*)\n- **Dystopian** (e.g., *Brave New World*, *The Handmaid's Tale*, *We*)\n- **Thriller-paced** (e.g., *Jurassic Park*, *Deception Point*)\n- **Philosophical/mind-bending** (e.g., *Solaris*, *Do Androids Dream of Electric Sheep?*)\n\nAlso, do you have a preferred format (hardcover, paperback, ebook, audiobook)?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And are there any formats you need it in (e.g., ebook, audiobook, print)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow things down, could you tell me:\n\n- Any preferred **genre** (or genres to avoid)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does this one suit you, or would you like me to keep looking?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Any preferences about tone, length, or format?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would a classic children’s novel appeal to you?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preference between the two, or a particular format you'd like (ebook, paperback, audiobook, etc.)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Shall I go with this one?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "And does this pick sound good, or would you prefer the Old Russian Poems collection?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that appeal to you, or would you prefer a different genre?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Before I pick one, could you tell me which formats you can use (for example, hardcover, paperback, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "It meets all your requirements:\n- **Genre:** Nonfiction\n- **Published:** 1964 (between 1920 and 2020)\n- **Formats:** Audiobook, ebook, hardcover, and paperback\n\nWould this one work for you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**What format(s) can you use?** (e.g., print, ebook, audiobook) — I want to make sure the book is actually available in a format that works for you.",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred genre or mood, and do you read print, ebooks, or audiobooks?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go with this one, or would you prefer a different memoir from the list?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Do any of these catch your eye, or do you have a preferred format (ebook, paperback, audiobook, etc.)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Is there a particular **theme, era, author, or language** you have in mind?",
+   "fields": [
+    "genres",
+    "languages",
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go with this one, or would you prefer a different \"Children\" title (e.g., *Five Children and It*, also by Nesbit, or *Cautionary Tales for Children*)?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Do you enjoy absurd adventures?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Is there another requirement I should account for?",
+   "fields": [],
+   "generic": true
+  },
+  {
+   "sentence": "Do you want me to avoid anything you've already read?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would a classic whodunit appeal to you?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Do you want to avoid books you've already read?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "- A particular author or mood you're drawn to?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Shall I go ahead and recommend this one?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**Any style preference?** For example:\n   - Classic satire (Mark Twain's *Letters from the Earth*, Voltaire)\n   - Modern comedic novels (*The Hundred-Year-Old Man Who Climbed Out the Window and Disappeared*, *Whisky Galore*)\n   - Light/quirky reads (*Diary of a Wimpy Kid*, *The Book of Bunny Suicides*)\n   - Something with a bit of fantasy or sci-fi mixed in (*The Heart of a Dog*, *Orlando*)\n\nLet me know what appeals to you!",
+   "fields": [
+    "genres",
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And do you want something you haven't read before?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of humor do you enjoy—witty satire, absurd comedy, or something warm and lighthearted?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a favorite genre or subject in mind (fiction, non-fiction, sci-fi, mystery, history, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Do you have a format preference — e.g., physical, ebook, audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "For example, print, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Which formats** can you use?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would a music biography interest you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you prefer a lighthearted contemporary romance, a historical romance, or romance mixed with fantasy or suspense?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Or would you like me to choose?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**Format** — do you read physical books, ebooks, audiobooks, or any of these?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Any particular topic or theme** you're drawn to?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow it down, do you have a preferred genre — fiction, nonfiction, mystery, sci-fi, poetry, etc.?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Anything you'd like to avoid?",
+   "fields": [],
+   "generic": true
+  },
+  {
+   "sentence": "Does that appeal, or would you prefer a different kind of mystery?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer a detective mystery, a psychological thriller, or a story told from the criminal’s point of view—or are you open to any kind of crime book?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Here's why it fits everything you asked for:\n- **Genres:** Fantasy, Horror, and Romance — hits both your required Horror and Romance elements\n- **Published:** 2000 (well after your 1993 cutoff)\n- **Format:** Available as an **audiobook**\n- **New to you:** Not in your reading history (*New Moon*, *Vittorio the Vampire*, *Hidden*)\n\nWould you like me to go ahead and recommend **Dark Gold**, or would you prefer I look at something else?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy a tense, morally complex spy thriller?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Any preferences for tone or format?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And is there a particular format you need (e.g., ebook, audiobook, print)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And which formats can you use: print, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Are you in the mood for any particular genre or tone, or would you like me to surprise you?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Cronin (Historical Fiction, 1941)\n- **The Kingdom of the Wicked** by Anthony Burgess (Historical Fiction, 1985)\n- **United Kingdom Election Results** by David Boothroyd (Nonfiction, 1994)\n\nTo narrow it down, could you tell me what genres you enjoy, and which formats you can use (hardcover, paperback, ebook, audiobook)?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Any preferred genre or topic (fiction, mystery, sci-fi, history, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And do you have a preferred genre or format, such as print, ebook, or audiobook?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Format** — which formats work for you (hardcover, paperback, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- A particular author or series you've enjoyed?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy a children’s classic, or would you prefer a book for adults?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "(e.g., tech figures, historical figures, artists, scientists, explorers)\n- Any format preference (print, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of humor do you enjoy—lighthearted, absurd, satirical, or dark?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Any language or country-of-origin preference?",
+   "fields": [
+    "countries",
+    "languages"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would this one satisfy your requirements?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer a different kind of life story?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer spy intrigue, psychological suspense, or a mystery-driven thriller—or are you open to any of those?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Anything you've read recently that you loved (so I can avoid repeats)?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow it down, do you have a preference for topic or style?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer nonfiction that tells a gripping true story, explores history or society, or reflects on nature and everyday life?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go with that, or do you have a preferred genre (fantasy, thriller, historical, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does this sound like something you'd like, or would you prefer a different angle (e.g., family and loss, cultural identity, politics)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy witty British comedy?",
+   "fields": [
+    "countries",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "modern, a particular style of humor)?",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go with this one, or would you prefer a different pick (e.g., Clive Barker's *Cabal* or *The Hellbound Heart*, which also fit)?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "If not, could you clarify a bit more about what \"include Children\" means to you (e.g., the genre list should contain \"Children\" alongside other genres, a specific genre pairing, or something else)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- What **genre** do you like (e.g., fantasy, science fiction, historical fiction, memoir, crime)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**What kind of memoir appeals to you?** For example:\n   - Literary/reflective (e.g., *Negroland* by Margo Jefferson)\n   - Humorous/coming-of-age (e.g., *Fresh Off the Boat* by Eddie Huang)\n   - Personal struggle/identity (e.g., *Boy Erased* by Garrard Conley)\n   - Historical/political (e.g., *Hope Against Hope* by Nadezhda Mandelstam)\n\n2.",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy that kind of offbeat adventure, or would you prefer sharper satire?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go with that one, or would you prefer something else like *Voices from Chernobyl* or *Walden*?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of adventure sounds appealing—fantasy, science fiction, historical, or real-world?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you prefer a detective mystery, a gritty thriller, or either?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What formats can you use (e.g., hardcover, paperback, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a genre or theme in mind (e.g., literary fiction, mystery/thriller, sci-fi, nonfiction)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go with this one, or would you prefer a different genre (fantasy, thriller, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer something lighter?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of science fiction are you in the mood for—space exploration, time travel, dystopian worlds, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To help me narrow things down, do you have any preferences on genre, language, or format (like hardcover, paperback, ebook, or audiobook)?",
+   "fields": [
+    "formats",
+    "genres",
+    "languages"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow it down, could you tell me a bit more?",
+   "fields": [],
+   "generic": true
+  },
+  {
+   "sentence": "Any preferred **language** or **country of origin**?",
+   "fields": [
+    "countries",
+    "languages"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Any topic preferences** within nonfiction?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Tone**: Do you prefer gripping narrative storytelling, or more analytical/idea-driven writing?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "- Any preference on **language** or **country of origin**?",
+   "fields": [
+    "countries",
+    "languages"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do any of these catch your eye, or do you have a preference for a particular style, era, or language?",
+   "fields": [
+    "languages",
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "How does an imaginative survival adventure sound?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does this sound good, or would you like me to consider a different direction (e.g., true crime like *Killers of the Flower Moon*, politics like *Peril*, or memoir like *When Breath Becomes Air*)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would this be a good fit?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "It meets your stated requirements:\n- **Genre:** Nonfiction\n- **Published:** 2002 (between 1920 and 2020)\n- **Formats:** Ebook, hardcover, and paperback\n\nWould this one work for you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "It meets your stated requirements:\n- **Genre:** Nonfiction\n- **Published:** 2014 (between 1920 and 2020)\n- **Formats:** Audiobook, hardcover, and paperback\n\nWould this one work for you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "It meets your stated requirements:\n- **Genre:** Nonfiction\n- **Published:** 2016 (between 1920 and 2020)\n- **Formats:** Hardcover and paperback\n\nWould this one work for you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does this one work for you, or shall I keep looking?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would a classic Gothic vampire story appeal to you?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Robinson — big-picture economics and history\n- **In Cold Blood** by Truman Capote — the classic true-crime narrative\n- **Voices from Chernobyl** by Svetlana Alexievich — oral histories from the nuclear disaster\n- **The Origins of Totalitarianism** by Hannah Arendt — political philosophy\n- **Walden** by Henry David Thoreau — nature and simple living\n\nDo any of these topics appeal to you?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go ahead and recommend it, or would you prefer something different in tone (for example, Walden by Thoreau is another hardcover-available nonfiction option)?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**What format** works for you (e.g., print, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Anything that appeals to you, or a topic you'd rather avoid?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Or would you like me to just pick a standout nonfiction title?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "- What kind of humor do you enjoy?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go ahead and recommend this one, or would you prefer something on a different topic?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go with that, or do you have a preference (era, author, tone)?",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer a different style of mystery?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "And do you have a preferred format—print, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "For example:\n\n- **Topic**: history, economics, politics, memoir, true crime, self-help?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Any particular theme or style you're drawn to?** For example, coming-of-age stories, political/international memoirs, stories about family and loss, or something humorous.",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And are there any formats you need (e.g., ebook, audiobook, print)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "For example, the catalog includes classics like:\n\n- **Fantasy/Sci-fi**: Frankenstein, Brave New World, The Fellowship of the Ring, The War of the Worlds\n- **Mystery/Crime**: The Hound of the Baskervilles, A Study in Scarlet\n- **Romance**: Pride and Prejudice, Wuthering Heights\n- **Adventure**: Treasure Island, Robinson Crusoe, Gulliver's Travels\n\nAlso, do you have a preferred format (e.g., ebook, audiobook, print)?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "For example:\n\n- **Genre**: fiction, history, science fiction, romance, etc.?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow things down: do you have any particular genre or theme in mind, and what formats can you use (e.g., hardcover, paperback, ebook, audiobook)?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy a thought-provoking dystopian novel?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does this one satisfy your requirements?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Any language preference (English, or something else)?",
+   "fields": [
+    "languages"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does *Killers of the Flower Moon* sound good, or would you like me to go a different direction?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**What genres or themes** are you in the mood for?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And do you have a preferred format, like ebook, audiobook, or print?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And are there any format preferences, such as print, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would this appeal to you, and do you need a particular reading format?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like to go with this one, or would you prefer something else (e.g., a different author, a more modern title, or a specific sub-genre)?",
+   "fields": [
+    "genres",
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Do you prefer a certain **tone** (serious, humorous, academic, conversational)?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of science fiction appeals to you—adventure, dystopia, or thought-provoking questions about technology?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred genre or mood, and which formats work for you—print, ebook, or audiobook?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy an investigative story about corporate deception?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you prefer a cozy puzzle, a darker mystery, or either?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go ahead and recommend it, or would you prefer something else from the list (e.g., *Voices from Chernobyl*, *The Origins of Totalitarianism*, or *The World Without Us*)?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "It meets your stated requirements:\n- **Genre:** Nonfiction\n- **Published:** 2005 (between 1920 and 2020)\n- **Formats:** Ebook, hardcover, and paperback\n\nWould this one work for you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer another nonfiction subject?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**What formats can you use?** (e.g., hardcover, paperback, ebook, audiobook)\n\nA couple of the titles that came up include *Bad Blood: Secrets and Lies in a Silicon Valley Startup*, *Killers of the Flower Moon*, and *Delusions of Gender* — but let me know your preferences and I'll tailor it.",
+   "fields": [
+    "formats"
+   ],
+   "generic": true
+  },
+  {
+   "sentence": "Are you in the mood for a particular genre or tone, and what formats work for you: print, ebook, or audiobook?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound like your kind of book?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does this sound like something you'd enjoy?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like to go with that, or would you prefer a different style (e.g., a hard-boiled detective, a modern mystery, or a different author)?",
+   "fields": [
+    "genres",
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy witty, lighthearted comedy?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer a cozy, historical, gritty, or twisty mystery—or are you open to any?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow things down: do you have a preferred genre (e.g., thriller, romance, sci-fi, historical fiction), and which formats can you use (hardcover, paperback, ebook, audiobook)?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And are there any language or format requirements I should keep in mind?",
+   "fields": [
+    "formats",
+    "languages"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And are you open to any genre (fantasy, sci-fi, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or are there other preferences I should factor in?",
+   "fields": [],
+   "generic": true
+  },
+  {
+   "sentence": "Do you prefer fiction or nonfiction, or are you open to either?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you mean a book in the Children genre, or a story featuring children as characters?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go with this one, or would you prefer a different style of mystery?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Also, are there any formats you need (e.g., ebook, audiobook, print)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like to go with this one, or would you prefer a different genre (mystery, nonfiction, fantasy, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Could you also let me know if there's a specific aspect of the previous recommendations that didn't work for you?",
+   "fields": [],
+   "generic": true
+  },
+  {
+   "sentence": "For example:\n\n- A particular genre or topic (fiction, mystery, sci-fi, history, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Format** — do you read in a specific format (e.g., print, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy a twisty spy thriller?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "For example:\n\n- **Investigative journalism / true stories** — like *Bad Blood* (the Theranos scandal) or *Killers of the Flower Moon*\n- **History** — like *The Creation of Patriarchy*\n- **Science / psychology** — like *Delusions of Gender*\n- **Self-help / purpose** — like *Find Your Why*\n- **Memoir-style** — like *When Breath Becomes Air*\n\nAlso, do you have a preferred format (e.g., ebook, audiobook, print)?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does this one work for you, or would you like me to suggest something else?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy a serious historical novel?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that reflective style appeal to you, or would you prefer something more factual or story-driven?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**Any preferred format?** For example, print, ebook, or audiobook — I can check availability for you.",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would historical fiction appeal to you?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer psychological suspense, crime, or espionage—or are you open to any thriller?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer a funny novel, humorous nonfiction, or either?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "(1978)\n\nDoes the pirates book appeal to you, or would you prefer one of the others?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that subject and format appeal to you, or would you prefer a different kind of life story?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What format(s) can you use (e.g., hardcover, paperback, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound like your kind of read?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "And would you like a book you haven't read before?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy a graphic novel, or would you prefer prose?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that appeal, or would you prefer someone from the arts, science, or another field?Which format works best for you: ebook, paperback, hardcover, or audio?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of mystery are you in the mood for—cozy, classic whodunit, or dark and suspenseful?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "I can see you've already read:\n- *New Moon*\n- *Vittorio the Vampire*\n- *Hidden*\n\nTo narrow things down, could you tell me a bit more about what you're in the mood for?",
+   "fields": [],
+   "generic": true
+  },
+  {
+   "sentence": "And do you have a preferred format, such as print, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Are you in the mood for a particular genre, or open to anything?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred genre or mood, or are you open to anything published in 1910 or later?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preference for genre — poetry or history?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you mean a children’s book, or a book featuring children as characters?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does this sound appealing, or would you like me to look at other poetry collections?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow things down, what genre or subject are you in the mood for?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that adventurous, thought-provoking direction appeal to you, or would you prefer a different kind of life story?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy that atmospheric detective story, or prefer something more modern?",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And do you need print, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Also, do you want something you *haven't* already read?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer a detective mystery, a psychological crime thriller, or true crime—or are you open to any of those?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy investigative nonfiction?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of story are you in the mood for, and do you prefer print, ebook, or audiobook?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of science fiction appeals to you—space adventures, dystopian futures, first-contact stories, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What genre or subject are you in the mood for?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "For example:\n\n- Any particular genre or subject (fiction, sci-fi, mystery, non-fiction, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you want a **Children's genre** book specifically, or just one with \"Children\" in the title?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go with this one, or would you prefer a different subject (e.g., an adventurer like *Into the Wild*, a scientist like *A Beautiful Mind*, or a memoir like *The Glass Castle*)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And do you prefer print, ebook, or audiobook?Do you have a preferred subject—music and the arts, politics and history, or something else—and a preferred format: print, ebook, or audiobook?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**What formats can you use?** (e.g., print, ebook, audiobook) — I want to make sure the book is available in a format that works for you.",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow it down, do you have any preferences on topic — for example, history, economics, memoir, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To help me find the right fit: do you have a preferred genre or topic in mind (e.g., mystery, sci-fi, romance, nonfiction)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred genre or mood, or would you like me to surprise you?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "For context, here are some strong candidates matching your criteria (nonfiction, ≤2019, hardcover, not yet read by you):\n\n- **In Cold Blood** — Truman Capote (1966): true-crime narrative classic\n- **Voices from Chernobyl** — Svetlana Alexievich (1997): haunting oral history of the nuclear disaster\n- **The Origins of Totalitarianism** — Hannah Arendt (1951): landmark political analysis\n- **The World Without Us** — Alan Weisman (2007): thought experiment on Earth after humans\n- **The Second World War** — Winston Churchill (1948): epic firsthand history\n- **12 Rules for Life** — Jordan Peterson (2018): modern self-help/philosophy\n\nWhich of these directions sounds most appealing?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "It meets your stated requirements:\n- **Genre:** Nonfiction\n- **Published:** 1998 (between 1920 and 2020)\n- **Formats:** Hardcover and paperback\n\nWould this one work for you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, and do you have a preferred reading format?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Do you have a preferred **format** (e.g., ebook, paperback, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "It meets your stated requirements:\n- **Genre:** Nonfiction\n- **Published:** 2004 (between 1920 and 2020)\n- **Formats:** Hardcover and paperback\n\nWould this one work for you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does Napoleon interest you, or would you prefer a different subject?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer witty satire, lighthearted comedy, or something absurd?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have any preferences on language, era, or style?",
+   "fields": [
+    "languages",
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What format works best for you — hardcover, paperback, ebook, audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And do you have a preferred format (e.g., print, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow it down to the one you'll enjoy most, could you tell me a bit more?",
+   "fields": [],
+   "generic": true
+  },
+  {
+   "sentence": "Does that sound appealing, or would you like me to go with a different one from the list?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**Topic** — any preference?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- What **format** can you read (print, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Anything you've read recently that you loved (so I can avoid recommending something you've already read)?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound like your kind of humor, or would you prefer something darker or more contemporary?",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have any preferences on genre or topic?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What **format(s)** you can use (ebook, paperback, hardcover, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound interesting, or would you prefer a different subject?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would that appeal to you, or would you prefer something lighter?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "- **Mood** — something light and fun, or something darker and more serious?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Also, do you have a preferred format (like ebook, audiobook, or print)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would a graphic novel appeal to you?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Any format needs, and should I avoid books you’ve already read?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Any particular **author** or **time period** you'd like?",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer a cozy mystery, a dark thriller, or something in between?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- What genre or subject are you interested in (fiction, non-fiction, sci-fi, mystery, history, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Robert Oppenheimer\n- **Into the Wild** by Jon Krakauer (1996) — the haunting true story of Christopher McCandless\n- **A Beautiful Mind** by Sylvia Nasar (1998) — the life of mathematician John Nash\n\nDo any of these catch your eye?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**What topics interest you?** (e.g., history, science, memoir, true crime, business/tech, current affairs)\n2.",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "It’s an English-language fantasy full of playful wordplay and surreal adventures—or would you prefer a different kind of story?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred genre or mood, or are you open to anything?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does an investigation into corporate deception appeal to you, or would you prefer another subject?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "The catalog records it in paperback—would that work for you?Would that suit you, or would you prefer a biography about a different subject?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "How does that sound to you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy witty dialogue and farcical misunderstandings?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "What genres you enjoy (or want to avoid)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Rider Haggard (1887)\n\nDo any of these catch your eye, or do you have a preference for a particular era, author, or sub-genre?",
+   "fields": [
+    "genres",
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that appeal, or would you prefer a thriller without horror?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does *The Hundred-Year-Old Man Who Climbed Out the Window and Disappeared* sound like your kind of read?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**What format do you read in?** (e.g., print, ebook, audiobook) — I'll make sure the book is available in a format you can use.",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of thriller sounds best: a twisty crime mystery, a spy story, or something with horror or science fiction?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And are there any format preferences or books you’ve already read that I should avoid?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Anything you've already read** that you loved (or disliked)?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Shall I recommend this one?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "It meets your stated requirements:\n- **Genre:** Nonfiction\n- **Published:** 2014 (between 1920 and 2020)\n- **Formats:** Ebook, hardcover, and paperback\n\nWould this one work for you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**What format works for you?** (e.g., print, ebook, audiobook)\n2.",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer a whodunit, a gritty detective story, or a psychological crime thriller—or are you open to any of those?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "It checks all your boxes:\n- ✅ Historical Fiction\n- ✅ Young Adult\n- ✅ Published 2010 (no earlier than 1990)\n- ✅ Paperback available\n- ✅ Not in your reading history\n\nWould you like me to go ahead and recommend this one?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "And what language and formats do you prefer?",
+   "fields": [
+    "formats",
+    "languages"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of nonfiction appeals to you most—history, science, true crime, or reflective writing about nature and everyday life?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And what formats do you read in (e.g., print, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would that interest you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Or would you like me to surprise you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that premise appeal to you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**Any style preference?** Cozy amateur sleuth, hard-boiled detective, classic whodunit, etc.",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And do you need a particular format, such as ebook, audiobook, or print?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Any genre preferences** or other things you're in the mood for?",
+   "fields": [
+    "genres"
+   ],
+   "generic": true
+  },
+  {
+   "sentence": "Any preference on style — classic whodunit, cozy mystery, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like this one, or shall I suggest something else?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "What kinds of books do you enjoy, and do you prefer print, ebook, or audiobook?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To help me pick the right one for you, do you have any preferences — like a favorite genre (fantasy, sci-fi, historical fiction, memoir...), a language, or a format you prefer (print, ebook, audiobook)?",
+   "fields": [
+    "formats",
+    "genres",
+    "languages"
+   ],
+   "generic": true
+  },
+  {
+   "sentence": "Would you like to go with this one, or would you prefer something on a different topic?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that appeal to you, or would you prefer a different kind of book?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow things down, do you have any preferences on genre?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And which formats work for you—print, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Any genres you love (history, science fiction, romance, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Are you more interested in someone from music and the arts, politics and history, or another field?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Any **language** preference?",
+   "fields": [
+    "languages"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow things down, could you tell me a bit more about what you'd like?",
+   "fields": [],
+   "generic": true
+  },
+  {
+   "sentence": "Would you enjoy an absurd comic adventure?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of adventure appeals to you—fantasy, science fiction, historical, or real-world?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "For example:\n- **Genre** — fantasy, mystery/thriller, romance, sci-fi, literary fiction, young adult?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "One more thing I do need: **what formats can you use?** For example, print, ebook, or audiobook.",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would that interest you, or would you prefer a memoir focused on another subject?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Also, do you have any format requirements (e.g., ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred format, and should I avoid books you’ve already read?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Also, do you have a preferred format (e.g., ebook, print, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Do you have a preferred format (e.g., ebook, audiobook, print)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "(e.g., tech figures, historical figures, artists, scientists, explorers)\n- Any format you can read in (print, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go ahead and recommend this one, or would you prefer something else?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow it down, do you have a preference for a topic or style?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Any style preference?** For example:\n   - Classic satire (Mark Twain's *Letters from the Earth*, Voltaire)\n   - Modern comedic novels (*The Hundred-Year-Old Man Who Climbed Out the Window and Disappeared*, *Whisky Galore*)\n   - Light/illustrated humor (*Diary of a Wimpy Kid*, *The Book of Bunny Suicides*)\n   - Something with a genre twist (*The Heart of a Dog* — sci-fi satire, or *Hag-Seed* by Margaret Atwood)\n\nLet me know what appeals to you!",
+   "fields": [
+    "genres",
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like this one, or should I look at other memoirs?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like this one, or should I suggest something else (e.g., true crime like *Killers of the Flower Moon*, science like *Delusions of Gender*, or history like *The Creation of Patriarchy*)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred genre or mood, and which formats can you use—print, ebook, or audiobook?Any genre or mood you’d prefer?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Any language or country-of-origin preferences?",
+   "fields": [
+    "countries",
+    "languages"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Any preferences on **topic, era, or length**?",
+   "fields": [
+    "genres",
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And do you have a preferred reading format?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you mean a children’s book, or a book for adults that features children?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Do you have a preferred **language** or **format** (e.g., English, paperback, ebook)?",
+   "fields": [
+    "formats",
+    "languages"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer something without magic?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**Any favorite authors or eras?** I see classics from H.G.",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow things down, could you tell me a bit more about what you're looking for?",
+   "fields": [],
+   "generic": true
+  },
+  {
+   "sentence": "To help me narrow things down, could you tell me a bit more?",
+   "fields": [],
+   "generic": true
+  },
+  {
+   "sentence": "Would you enjoy a children’s classic?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer fiction, poetry, or nonfiction, or are you open to any genre?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Anything you've read recently that you loved or hated?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "- What **genre** do you like (fantasy, sci-fi, historical fiction, memoir, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you prefer a cozy mystery, a classic whodunit, or something darker and suspenseful—or are you open to any of those?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Could this be the one you're looking for?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer the Bulgakov?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Tolkien (Fantasy, 1954)\n- **Brave New World** — Aldous Huxley (Sci-Fi, 1932)\n- **The Hound of the Baskervilles** — Arthur Conan Doyle (Mystery, 1902)\n- **Treasure Island** — Robert Louis Stevenson (Adventure, 1883)\n\nDo any of these catch your eye?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Also, what formats can you use, and should I avoid books you’ve already read?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred format (e.g., hardcover, paperback, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "in an Adventure with the Romantics** by Gideon Defoe — absurd pirate comedy\n\nDo you have a preference — fiction or essays, classic or contemporary?",
+   "fields": [
+    "genres",
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "For example:\n- Fiction (literary, sci-fi, fantasy, mystery, romance, thriller)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred genre, or would you like me to choose?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound more your speed, or is there a particular topic or style you're drawn to?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred reading format?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would a music biography interest you, or would you prefer a different subject?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy a classic whodunit?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Any preferences for language or format, and should I avoid books you’ve already read?Would you like a cozy whodunit, a gritty detective story, or a suspenseful mystery—or are you open to any style?",
+   "fields": [
+    "formats",
+    "genres",
+    "languages"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy a reflective memoir about creativity and discipline?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of nonfiction interests you—history, science, memoir, practical advice, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Any authors you love or want to avoid?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**What kind of nonfiction are you in the mood for?** For example:\n   - True crime / investigative (e.g., *Killers of the Flower Moon*, *Bad Blood*)\n   - History (e.g., *The Creation of Patriarchy*)\n   - Science / popular science (e.g., *Delusions of Gender*)\n   - Memoir\n   - Politics / current affairs\n\nLet me know your preferences and I'll narrow it down!",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow it down, do you have a preferred genre (fiction, mystery, sci-fi, non-fiction, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- What formats can you use (e.g., hardcover, paperback, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**What formats work for you?** (e.g., hardcover, paperback, ebook, audiobook) — I'll need to verify availability before recommending.",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like romance to be the main focus, or part of another genre, such as fantasy or mystery?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of humor do you enjoy—witty dialogue, absurd situations, satire, or something cozy and lighthearted?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy something reflective like that, or prefer more story-driven nonfiction?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "A few standouts from the catalog:\n\n- **Bad Blood: Secrets and Lies in a Silicon Valley Startup** by John Carreyrou (2018) — the gripping exposé of the Theranos fraud\n- **Killers of the Flower Moon** by David Grann (2017) — true crime about the Osage murders\n- **When Breath Becomes Air** by Paul Kalanithi (2016) — a moving memoir by a neurosurgeon facing terminal illness\n- **Delusions of Gender** by Cordelia Fine (2010) — a science-based takedown of gender myths\n- **The Creation of Patriarchy** by Gerda Lerner (1986) — a classic work of feminist history\n\nDo any of these topics appeal to you — true crime, science, history, memoir?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "How does **The Graveyard Book** sound to you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound like your kind of humor?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "And do you have any formats you prefer (e.g., ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that kind of playful humor appeal to you, or would you prefer something more modern?",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Any particular topics or themes** you're drawn to — history, science, memoir, current affairs, etc.?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And do you have any format preferences, such as print, ebook, or audiobook?If you’re open to anything within science fiction, just say so and I’ll choose one.",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would a classic mystery appeal to you?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that appeal, or would you prefer something more action-driven?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Anything you've read recently that you loved — so I can avoid recommending something you've already read?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Which formats work for you (e.g., hardcover, paperback, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred genre, or are you happy for me to choose?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow things down, could you tell me:\n\n- Any genres you're in the mood for (or want to avoid)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer something less fantastical?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy a long, plot-driven classic, or would you prefer something shorter or more modern?",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What format(s) can you use (e.g., paperback, hardcover, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you want romance to be the main focus, or would you enjoy it mixed with fantasy, mystery, or another genre?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does this sound like something you'd enjoy, or would you prefer a different angle (e.g., history, science, memoir, current affairs)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does this fit better?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred format (e.g., ebook, audiobook, print)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- What formats work for you (e.g., hardcover, paperback, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Any preferences on theme or style?** For example, I see options like *Solito* (a migration memoir), *Boy Erased* (a coming-of-age/identity memoir), *Fresh Off the Boat* (a food-and-family memoir), and *Negroland* (a reflection on race and class).",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you mean a children’s book, or a story featuring children?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Also, would you like me to avoid books you've already read?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that blend of fantasy and absurd comedy sound right?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow it down, a few quick questions:\n- Any genres you're drawn to (adventure, romance, sci-fi, fantasy, etc.)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And would you prefer a novel or short stories?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer a classic whodunit, a cozy mystery, or something darker and more suspenseful—or are you open to any mystery?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Format** — What format do you read in (e.g., ebook, paperback, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would a music biography appeal to you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**What formats can you read?** (e.g., print, ebook, audiobook)\n2.",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Also, what formats do you read (e.g., ebook, audiobook, print)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would that appeal to you, or would you prefer something more grounded in everyday life?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer a cozy whodunit, a gritty detective story, or a twisty thriller—or are you open to any mystery?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Sure—would you prefer a mystery to solve, a gritty thriller, or no particular crime subgenre?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Shall I go ahead and recommend it?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Or would you prefer a memoir focused on family, history, or adventure?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- **Format**: do you prefer ebook, audiobook, or print?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "A few classics stand out:\n\n- **The Railway Children** by Edith Nesbit (1906)\n- **Five Children and It** by Edith Nesbit (1902)\n- **Cautionary Tales for Children** by Hilaire Belloc (1907)\n\nBefore I settle on one, do you have any preferences — for example, a preferred format (ebook, audiobook, print) or language?",
+   "fields": [
+    "formats",
+    "languages"
+   ],
+   "generic": true
+  },
+  {
+   "sentence": "Does this one work for you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Or would you like me to just go ahead and pick one for you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does a real-life story of ambition, deception, and corporate fraud appeal to you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "- Do you prefer a classic or something more recent (closer to 1989)?",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does a classic detective story appeal to you, or would you prefer something more modern?",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Before I lock in a pick, what formats can you use?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And do you prefer print, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer a different kind of thriller?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy something mysterious and philosophical, or prefer a faster-paced adventure?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Do you prefer a cozy whodunit, a gritty detective story, or something more suspenseful?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does this sound like something you'd enjoy, or would you like me to suggest an alternative?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would a real-world investigation appeal to you?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound appealing, or would you prefer something more grounded in everyday life?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have any preferred genres or themes (e.g., sci-fi, mystery, literary fiction, history)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Could this be the one?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "And is there anything you'd like to avoid?",
+   "fields": [],
+   "generic": true
+  },
+  {
+   "sentence": "Or would you prefer a memoir focused on a different subject?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do any of these catch your eye, or would you like me to narrow things down by topic, tone, or length?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And what formats can you use—print, ebook, or audiobook?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go with this one, or would you prefer I look at the other two matches (The Horde of Counterwind by Alain Damasio, or The Wanderer from Beyond by Philippe Ebly)?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does that sound like a good fit?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "And are there any language or format requirements, or books you’ve already read that I should avoid?",
+   "fields": [
+    "formats",
+    "languages"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go with this one, or would you prefer a different style or era?",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And do you have any particular theme or subject you're drawn to — for example, coming-of-age stories, family and loss, cultural identity, politics?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that appeal, or would you prefer a more story-driven nonfiction book?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow it down, what genre or subject are you interested in?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would this one work for you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**What formats can you use?** (e.g., hardcover, paperback, ebook, audiobook) — I'll want to verify availability before recommending.",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Or would you like me to just pick a well-regarded one?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Any particular author, tone, or format (e.g., ebook, audiobook, print) you prefer?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Any particular **language** you'd like to read in?",
+   "fields": [
+    "languages"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy an imaginative survival story?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you prefer a mystery to solve, a fast-paced thriller, or a gritty crime story?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Any preferences on format (ebook, audiobook, print) too?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What kinds of nonfiction interest you—history, science, memoir, practical advice, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "- Any preference for **language** or **country of origin**?",
+   "fields": [
+    "countries",
+    "languages"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "It meets all your stated requirements:\n- **Genre:** Nonfiction\n- **Published:** 2004 (between 1920 and 2020)\n- **Formats:** Ebook, hardcover, and paperback\n\nWould this one work for you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Any preferred subject or tone—family, adventure, personal growth, something funny?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Any preferences about length or format?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy a children’s fantasy classic?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you prefer contemporary romance, historical romance, or romance mixed with fantasy or suspense?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Does that catch your interest, or would you like something in a different direction?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Does this one meet your requirements?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you prefer a cozy whodunit, a historical mystery, or a darker, twisty mystery?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you prefer a novel or short stories?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "(e.g., fiction, sci-fi, mystery, non-fiction, etc.) And is there a particular format you need it in—print, ebook, audiobook?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of book are you in the mood for (genre, theme, mood)?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Genre or mood** — e.g., a novel, history, poetry, something thrilling?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like to go with that one, or would you prefer something else — for example a more recent title like *Behind Her Eyes* or *Pieces of Her*?",
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would this work for you?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of adventure sounds most appealing—fantasy quests, real-world survival, historical journeys, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Any topic or theme you prefer?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of nonfiction appeals to you most—history, science, true crime, memoir, or something reflective about nature and life?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Before I narrow it down: what format do you need the book in (e.g., print, ebook, audiobook)?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "If this still isn't right, it would really help me to know: when you say \"include Children,\" do you mean the **book's genre** should be Children, or that the **title** should contain the word \"Children\"?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**Any language preferences?** Some of these are originally in Czech, Russian, Swedish, French, etc.",
+   "fields": [
+    "languages"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Do you have a preferred format?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "And are there any topics or styles you’d like to avoid?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "To narrow things down, could you tell me a bit more about what appeals to you?",
+   "fields": [],
+   "generic": true
+  },
+  {
+   "sentence": "Robert Oppenheimer\n- **Into the Wild** by Jon Krakauer — the haunting true story of Chris McCandless\n- **A Beautiful Mind** by Sylvia Nasar — the life of mathematician John Nash\n- **The Story of My Life** by Helen Keller — her classic autobiography\n\nDo any of these catch your eye?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "**Length**: Short and punchy, or a long deep-dive?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Any preferred genre (fiction, mystery, sci-fi, historical, etc.) or format (print, ebook, audiobook)?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy dystopian science fiction?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What genres or themes do you enjoy, and do you prefer print, ebook, or audiobook?",
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "**What format do you prefer?** (e.g., hardcover, paperback, ebook, audiobook) — I want to make sure the book is available in a format you can use.",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "What kind of adventure sounds best—fantasy, historical, survival, or something else?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Would you like me to go with this one, or would you prefer the other Russian-language poetry option, **Poems and ringtones** by Andrey Orlov (2008)?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "Would you enjoy reflective nonfiction about nature and simpler living?",
+   "fields": [],
+   "generic": false
+  },
+  {
+   "sentence": "What **genre** are you in the mood for?",
+   "fields": [
+    "genres"
+   ],
+   "generic": false
+  },
+  {
+   "sentence": "Which formats can you use?",
+   "fields": [
+    "formats"
+   ],
+   "generic": false
+  }
+ ]
+}

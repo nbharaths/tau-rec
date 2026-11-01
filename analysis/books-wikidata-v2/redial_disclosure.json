@@ -1,0 +1,35 @@
+{
+  "by_field": {
+    "era": {
+      "after_suggestion": 689,
+      "answered_question": 776,
+      "unprompted": 629
+    },
+    "genre": {
+      "after_suggestion": 458,
+      "answered_question": 4200,
+      "unprompted": 2764
+    },
+    "origin": {
+      "after_suggestion": 39,
+      "answered_question": 56,
+      "unprompted": 55
+    }
+  },
+  "dialogues": 11348,
+  "dialogues_with_a_requirement": 8137,
+  "dialogues_with_a_requirement_after_opening_share": 0.6747,
+  "dialogues_with_a_requirement_only_after_a_suggestion_share": 0.1412,
+  "first_mentions": 9666,
+  "lexicon": {
+    "era": "\\b((19|20)\\d\\d|\\d0'?s|older|oldies|old movies?|classics?|classic movies?|recent|newer|latest|modern|decade|this year|last year)\\b",
+    "genre": "\\b(comed(y|ies)|horror|action|drama|romance|romantic|rom-?com|thriller|sci-?fi|science fiction|animated|animation|cartoon|documentar(y|ies)|musical|mystery|fantasy|western|crime|superhero|adventure|suspense|scary|war movie|family movie|kids movie|disney|chick flick|biopic|anime)\\b",
+    "origin": "\\b(foreign|subtitles?|subtitled|french|spanish|korean|japanese|chinese|indian|bollywood|british|german|italian|swedish|mexican|hindi|language)\\b"
+  },
+  "share_of_first_mentions": {
+    "after_suggestion": 0.1227,
+    "answered_question": 0.5206,
+    "unprompted": 0.3567
+  },
+  "status": "post hoc; external corpus; lexicon-based"
+}

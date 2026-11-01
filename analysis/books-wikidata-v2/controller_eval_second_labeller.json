@@ -1,0 +1,25 @@
+{
+  "agreement": {
+    "exact_field_set": 0.98,
+    "field_agreement": 0.996,
+    "field_kappa": 0.988,
+    "generic_kappa": 0.98,
+    "per_field_kappa": {
+      "countries": 1.0,
+      "formats": 1.0,
+      "genres": 0.99,
+      "languages": 1.0,
+      "publication_year": 0.946
+    },
+    "turns": 200
+  },
+  "recogniser_against_second_labeller": {
+    "exact_field_set": 0.86,
+    "field_precision": 0.889,
+    "field_recall": 0.944,
+    "generic_precision": 0.957,
+    "generic_recall": 0.759,
+    "turns": 200
+  },
+  "status": "post hoc"
+}

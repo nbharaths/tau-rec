@@ -1,0 +1,36 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "recommend",
+      "description": "Make your final decision. This ends the trial. Give the exact title of the movie you are recommending, from memory \u2014 there is no catalog to search. Add the year (and the streaming service, where relevant) if the title alone could be ambiguous. Call with title=null to explicitly abstain when no movie you know of satisfies the user's requirements. You MUST call this tool exactly once per conversation \u2014 either committing to a movie or abstaining.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The exact movie title, or null to abstain."
+          },
+          "year": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Release year, if needed to disambiguate."
+          },
+          "platform": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The streaming service, if needed to disambiguate."
+          }
+        },
+        "required": []
+      }
+    }
+  }
+]

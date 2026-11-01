@@ -1,4 +1,5 @@
 import pytest
+import asyncio
 from unittest.mock import AsyncMock, MagicMock
 from tau_rec.orchestrator.orchestrator import Orchestrator
 from tau_rec.data_model.conversation import Message, Role, StopReason
@@ -58,6 +59,32 @@ async def test_orchestrator_timeout():
 
 
 @pytest.mark.asyncio
+async def test_orchestrator_wall_clock_timeout_keeps_partial_trace():
+    agent = AsyncMock()
+    agent.add_assistant_message = MagicMock()
+    simulator = AsyncMock()
+
+    async def never_responds(*_args, **_kwargs):
+        await asyncio.sleep(60)
+
+    simulator.respond.side_effect = never_responds
+    orch = Orchestrator(
+        agent=agent,
+        simulator=simulator,
+        toolkit=MagicMock(),
+        trial_timeout_seconds=0.01,
+    )
+
+    trace = await orch.run(task_id="t-time", model="test", trial=0)
+
+    assert trace.stop_reason == StopReason.TIMEOUT
+    assert trace.trial_runtime_s < 1
+    assert [message.content for message in trace.messages] == [
+        "Hi! I can help you find a movie to watch. What kind of movie are you in the mood for?"
+    ]
+
+
+@pytest.mark.asyncio
 async def test_orchestrator_tool_calls():
     """Agent makes a tool call, then responds with text."""
     agent = AsyncMock()
@@ -82,6 +109,35 @@ async def test_orchestrator_tool_calls():
     trace = await orch.run(task_id="t1", model="test", trial=0)
     assert trace.tool_call_count == 1
     toolkit.call.assert_called_once_with("search_catalog", {"query": "sci-fi"})
+
+
+@pytest.mark.asyncio
+async def test_orchestrator_keeps_tool_results_from_the_simulator():
+    agent = AsyncMock()
+    agent.respond = AsyncMock(side_effect=[
+        AgentResponse(message=None, tool_calls=[{
+            "id": "tc1", "name": "get_metadata", "arguments": {"item_id": "book_1"},
+        }]),
+        AgentResponse(message="I found one candidate."),
+    ])
+    agent.add_user_message = MagicMock()
+    agent.add_assistant_message = MagicMock()
+
+    simulator = AsyncMock()
+    simulator.catalog_grounding_enabled = True
+    simulator.respond = AsyncMock(side_effect=[
+        Message(role=Role.USER, content="I want a mystery."),
+        Message(role=Role.USER, content="Tell me more."),
+    ])
+    toolkit = MagicMock()
+    toolkit.call.return_value = '{"id":"book_1","title":"A Book"}'
+
+    orch = Orchestrator(agent=agent, simulator=simulator, toolkit=toolkit, max_turns=1)
+    await orch.run(task_id="t1", model="test", trial=0)
+
+    # Verdicts come only from candidate markers, so tool results stay with the agent.
+    seen = [message.content for call in simulator.respond.await_args_list for message in call.args[0]]
+    assert seen and not any("A Book" in content for content in seen)
 
 
 @pytest.mark.asyncio

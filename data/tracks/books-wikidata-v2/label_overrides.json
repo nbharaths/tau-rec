@@ -1,0 +1,229 @@
+{
+  "version": "books-label-overrides-v1",
+  "policy": "Corrects only clear errors in source labels, found on widely known works or in the human audit sample, judged against the work's standard bibliographic description. Removing labels is preferred over adding them. Country follows Wikidata's country of origin, which usually records the country of first publication; corrections never switch it to an author-origin rule. Raw Wikidata statements stay in source_selection.jsonl. A work left with no mapped genre leaves the catalog.",
+  "review": "The human audit reviewed a sample of these corrections (catalog_audit_sample.json).",
+  "overrides": {
+    "Q6511": {
+      "title": "Ulysses",
+      "remove": {
+        "genres": [
+          "Memoir"
+        ]
+      },
+      "reason": "A novel, not a memoir; Wikidata's autobiography statement refers to its autobiographical elements."
+    },
+    "Q127149": {
+      "title": "Lolita",
+      "remove": {
+        "genres": [
+          "Mystery"
+        ]
+      },
+      "reason": "Not a mystery novel."
+    },
+    "Q774233": {
+      "title": "Journey to the End of the Night",
+      "remove": {
+        "genres": [
+          "Memoir"
+        ]
+      },
+      "reason": "A semi-autobiographical novel, not a memoir."
+    },
+    "Q129778": {
+      "title": "Heart of Darkness",
+      "remove": {
+        "genres": [
+          "Historical Fiction"
+        ]
+      },
+      "reason": "Set in the author's present (1890s Congo Free State), so not historical fiction."
+    },
+    "Q271764": {
+      "title": "Lord of the Flies",
+      "remove": {
+        "genres": [
+          "Science Fiction"
+        ]
+      },
+      "reason": "An allegorical survival novel, not science fiction."
+    },
+    "Q1541914": {
+      "title": "The Handmaid's Tale",
+      "remove": {
+        "genres": [
+          "Historical Fiction"
+        ]
+      },
+      "reason": "Set in a speculative future, so not historical fiction."
+    },
+    "Q41542": {
+      "title": "Dracula",
+      "remove": {
+        "genres": [
+          "Romance"
+        ]
+      },
+      "reason": "A Gothic horror novel; 'romance' here is the older literary sense, not the romance genre."
+    },
+    "Q1141032": {
+      "title": "Manon Lescaut",
+      "remove": {
+        "genres": [
+          "Memoir"
+        ]
+      },
+      "reason": "A novel framed as fictional memoirs, not a memoir."
+    },
+    "Q219457": {
+      "title": "A Journey to the Centre of the Earth",
+      "remove": {
+        "languages": [
+          "English"
+        ]
+      },
+      "reason": "Written in French; English is the language of translations."
+    },
+    "Q13912": {
+      "title": "Where the Wild Things Are",
+      "remove": {
+        "languages": [
+          "Spanish"
+        ]
+      },
+      "add": {
+        "languages": [
+          "English"
+        ],
+        "genres": [
+          "Children"
+        ]
+      },
+      "reason": "An American picture book written in English; Spanish is a translation. Children added: a canonical children's picture book."
+    },
+    "Q471005": {
+      "title": "The Mysterious Island",
+      "publication_year": 1875,
+      "reason": "Serialized 1874-1875 and published in book form in 1875, not 1888."
+    },
+    "Q130706737": {
+      "title": "Brainchild",
+      "exclude": true,
+      "reason": "A magazine novella (Analog, 1982) with no book edition; not a recommendable book."
+    },
+    "Q207964": {
+      "title": "Digital Fortress",
+      "remove": {
+        "countries": [
+          "United Kingdom"
+        ]
+      },
+      "reason": "First published in the United States; the United Kingdom statement is spurious."
+    },
+    "Q1657842": {
+      "title": "Igraine the Brave",
+      "publication_year": 1998,
+      "reason": "The German original (Igraine Ohnefurcht) appeared in 1998; 2007 is the English translation."
+    },
+    "Q19358463": {
+      "title": "The Prone Gunman",
+      "publication_year": 1981,
+      "reason": "La Position du tireur couché was published by Gallimard in 1981."
+    },
+    "Q123020418": {
+      "title": "Engineers of the Soul",
+      "publication_year": 2002,
+      "reason": "The Dutch original (Ingenieurs van de ziel) appeared in 2002."
+    },
+    "Q141476772": {
+      "title": "Zed: Volume One",
+      "exclude": true,
+      "reason": "A partial self-published collection superseded by the complete edition; an edition, not the work."
+    },
+    "Q3476505": {
+      "title": "Rainbow Troops",
+      "remove": {
+        "genres": [
+          "Romance"
+        ]
+      },
+      "reason": "A coming-of-age novel about schoolchildren, not a romance."
+    },
+    "Q141551986": {
+      "title": "Tales from the Blue Forest",
+      "remove": {
+        "genres": [
+          "Young Adult"
+        ]
+      },
+      "add": {
+        "genres": [
+          "Children"
+        ]
+      },
+      "reason": "A 16-page picture book for ages 5-6."
+    },
+    "Q7727262": {
+      "title": "The Conan Grimoire",
+      "remove": {
+        "genres": [
+          "Fantasy"
+        ]
+      },
+      "add": {
+        "genres": [
+          "Nonfiction"
+        ]
+      },
+      "reason": "Essays on sword-and-sorcery plus verse; fantasy is the subject, not the genre."
+    },
+    "Q811229": {
+      "title": "A Small Circus",
+      "remove": {
+        "genres": [
+          "Humor"
+        ]
+      },
+      "reason": "A political and social novel about a farmers' revolt; satirical in places, not a humor book."
+    },
+    "Q135928165": {
+      "title": "Ekhan Umal Chadar",
+      "set": {
+        "title": "Ekhani Umal Chadar"
+      },
+      "reason": "The romanization drops the final vowel of the Assamese title (এখনি উমাল চাদৰ, the work's own title statement)."
+    },
+    "Q5505671": {
+      "title": "From the Holy Mountain",
+      "publication_year": 1997,
+      "reason": "First published in 1997 (HarperCollins, London); 1998 is the paperback."
+    },
+    "Q7737801": {
+      "title": "The Great Hydration",
+      "publication_year": 2002,
+      "set": {
+        "description": "2002 novel by Barrington J. Bayley"
+      },
+      "reason": "First published as a print-on-demand edition in 2002; 2005 is a later trade edition. The description repeated the wrong year."
+    },
+    "Q7721796": {
+      "title": "The Cay",
+      "set": {
+        "description": "1969 novel by Theodore Taylor"
+      },
+      "reason": "Published in 1969, as the year field already says; the description's 1974 is the year of the TV film adaptation."
+    }
+  },
+  "exclusion_rules": [
+    {
+      "field": "description",
+      "equals": "Taxation book",
+      "reason": "A bulk import of obscure tax and business textbooks with placeholder descriptions and unreliable country statements (many give Indonesia for books published in London or New York); found in the human audit."
+    },
+    {
+      "field": "title",
+      "startswith": "The Art of training and development",
+      "reason": "Indonesian translation-edition records (one publisher's 2005 series) entered as separate works; found in the human audit."
+    }
+  ]
+}

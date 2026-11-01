@@ -1,0 +1,15 @@
+{
+  "attribution": "Wikidata contributors",
+  "license_id": "CC0-1.0",
+  "license_url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+  "output_catalog_sha256": "19e9fa3a4db03de8f8bb8cdd8f7b231346a44f21cefca18947b7b10485d7093f",
+  "query_transport": "https://qlever.dev/api/wikidata",
+  "redistribution_allowed": true,
+  "reproducibility_note": "The committed catalog is the frozen artifact. The rolling query endpoint may change; catalog_manifest.json pins every query response hash.",
+  "retrieved_at": "2026-10-14T20:57:51.575054+00:00",
+  "source_name": "Wikidata",
+  "source_selection_sha256": "21a17203699645e15f0328644d3afc7fbc88083a9e54e465ac5b83cb09748ca6",
+  "source_url": "https://www.wikidata.org/",
+  "source_version": "frozen-query-snapshot-2026-10-14",
+  "transformation_script": "scripts/export_wikidata_books_catalog.py"
+}

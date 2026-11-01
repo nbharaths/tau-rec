@@ -1,0 +1,1381 @@
+{
+ "fields": [
+  "genres",
+  "languages",
+  "countries",
+  "publication_year",
+  "formats"
+ ],
+ "labeler": "a second independent LLM labeller, blind to recogniser output and to the first labels; not a human annotation",
+ "labeling_rules": [
+  "Label from the agent text alone, blind to classifier outputs and stratum.",
+  "A field is asked when the turn requests the user's preference or requirement on it, explicitly ('what genre?') or as a choice ('fantasy or mystery?', 'classic or modern?', 'something more recent?').",
+  "Describing books (titles, years, genres or origin of candidates or search results) does not count.",
+  "Questions attached to a candidate proposal count, including conditional requests ('if this is rejected, I need a format, language, or era').",
+  "Field mapping: genre, subgenre, kind, topic or theme of a book, fiction/nonfiction, and genre names offered as options -> genres; language, translation -> languages; country of origin, nationality, region -> countries; publication era, decade, classic vs modern, recent, time period -> publication_year; format, ebook, audiobook, print -> formats.",
+  "Story setting is not a field: 'setting/era -- Napoleonic Europe, WWI' or 'historical period or setting' are not publication_year or countries; a bare 'era' or 'time period' is publication_year.",
+  "Not fields: author, tone, mood, style without genre options, length, the subject of a biography, reading history.",
+  "generic = the turn requests unspecified further requirements ('anything else?', 'any other preferences?', 'what's missing?', 'what didn't work?', 'tell me more about what you're looking for / in the mood for'), even when examples follow. A purpose clause ('to narrow it down') alone, a verdict request ('does this work?'), an offer ('should I try another?'), or 'tell me a bit more:' followed only by specific field questions is not generic.",
+  "Recency -> publication_year; a question about a book's subject ('a particular era or place' a history book covers, who a biography is about) is not a field; 'classic' is publication_year only against modern/recent or offered alone, while 'a classic whodunit' or 'a children's classic' is a genre; check-ins ('does this sound more like what you're after?'), offers ('I'd like to suggest ...') and 'what kind of book are you in the mood for?' are not generic; offering alternative titles asks about the titles, not a field."
+ ],
+ "labels": [
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 0
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 1
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 2
+  },
+  {
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false,
+   "uid": 3
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 4
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 5
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 6
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 7
+  },
+  {
+   "fields": [
+    "formats",
+    "genres",
+    "publication_year"
+   ],
+   "generic": true,
+   "uid": 8
+  },
+  {
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false,
+   "note": "era/region of history covered excluded (rule 9); 'authors or topics you especially enjoy' -> genres",
+   "uid": 9
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "note": "'a children's fantasy' offered alongside alternative titles -> genres",
+   "uid": 10
+  },
+  {
+   "fields": [
+    "formats",
+    "languages",
+    "publication_year"
+   ],
+   "generic": true,
+   "uid": 11
+  },
+  {
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": true,
+   "uid": 12
+  },
+  {
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false,
+   "note": "'a sweeping, plot-driven classic like this?' read as classic offered alone -> publication_year",
+   "uid": 13
+  },
+  {
+   "fields": [
+    "genres",
+    "publication_year"
+   ],
+   "generic": false,
+   "uid": 14
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "note": "'a different historical period' refers to the period a history book covers (rule 9), not publication_year",
+   "uid": 15
+  },
+  {
+   "fields": [
+    "languages"
+   ],
+   "generic": false,
+   "uid": 16
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 17
+  },
+  {
+   "fields": [
+    "formats"
+   ],
+   "generic": false,
+   "uid": 18
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 19
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 20
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 21
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "note": "'a different era or setting' for historical fiction read as story setting (rule 6)",
+   "uid": 22
+  },
+  {
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": true,
+   "note": "genres from tone options that are genre names (literary, sweeping epic, thriller-ish); era/setting excluded as story setting",
+   "uid": 23
+  },
+  {
+   "fields": [
+    "genres",
+    "languages"
+   ],
+   "generic": false,
+   "uid": 24
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 25
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 26
+  },
+  {
+   "fields": [
+    "genres",
+    "languages"
+   ],
+   "generic": false,
+   "uid": 27
+  },
+  {
+   "fields": [
+    "genres",
+    "publication_year"
+   ],
+   "generic": false,
+   "note": "'a modern horror' -> publication_year, 'an anthology' -> genres (kind), alongside an author-based option",
+   "uid": 28
+  },
+  {
+   "fields": [
+    "formats",
+    "genres",
+    "publication_year"
+   ],
+   "generic": true,
+   "uid": 29
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 30
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 31
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 32
+  },
+  {
+   "fields": [
+    "formats",
+    "genres",
+    "publication_year"
+   ],
+   "generic": true,
+   "uid": 33
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 34
+  },
+  {
+   "fields": [
+    "genres",
+    "publication_year"
+   ],
+   "generic": false,
+   "uid": 35
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 36
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 37
+  },
+  {
+   "fields": [
+    "genres",
+    "publication_year"
+   ],
+   "generic": false,
+   "uid": 38
+  },
+  {
+   "fields": [
+    "genres",
+    "languages",
+    "publication_year"
+   ],
+   "generic": false,
+   "note": "'make sure I'm not missing a key detail' is a purpose clause; question limited to listed fields -> not generic",
+   "uid": 39
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 40
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 41
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 42
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 43
+  },
+  {
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false,
+   "uid": 44
+  },
+  {
+   "fields": [],
+   "generic": true,
+   "uid": 45
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 46
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 47
+  },
+  {
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false,
+   "uid": 48
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 49
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 50
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 51
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 52
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 53
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 54
+  },
+  {
+   "fields": [
+    "formats",
+    "genres",
+    "languages"
+   ],
+   "generic": true,
+   "uid": 55
+  },
+  {
+   "fields": [
+    "genres",
+    "publication_year"
+   ],
+   "generic": false,
+   "note": "'if you'd prefer something brand new' attached to an alternative title -> publication_year",
+   "uid": 56
+  },
+  {
+   "fields": [
+    "formats",
+    "genres",
+    "publication_year"
+   ],
+   "generic": true,
+   "uid": 57
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 58
+  },
+  {
+   "fields": [
+    "formats",
+    "genres",
+    "languages"
+   ],
+   "generic": false,
+   "uid": 59
+  },
+  {
+   "fields": [
+    "formats",
+    "genres",
+    "publication_year"
+   ],
+   "generic": false,
+   "uid": 60
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 61
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 62
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 63
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 64
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 65
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 66
+  },
+  {
+   "fields": [
+    "formats",
+    "genres",
+    "languages"
+   ],
+   "generic": true,
+   "note": "genres from kind options (anthology, short stories, full novel); generic from 'or tell me more about your preferences?'",
+   "uid": 67
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 68
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 69
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 70
+  },
+  {
+   "fields": [
+    "formats",
+    "genres",
+    "publication_year"
+   ],
+   "generic": true,
+   "uid": 71
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 72
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 73
+  },
+  {
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false,
+   "note": "'a classic golden-age anthology like ...' read as classic offered against the 2004 candidate -> publication_year, though titles are named",
+   "uid": 74
+  },
+  {
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false,
+   "uid": 75
+  },
+  {
+   "fields": [
+    "formats"
+   ],
+   "generic": false,
+   "uid": 76
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 77
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 78
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 79
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 80
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 81
+  },
+  {
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false,
+   "uid": 82
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 83
+  },
+  {
+   "fields": [
+    "formats",
+    "genres",
+    "publication_year"
+   ],
+   "generic": true,
+   "uid": 84
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 85
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 86
+  },
+  {
+   "fields": [
+    "countries",
+    "formats",
+    "genres"
+   ],
+   "generic": true,
+   "uid": 87
+  },
+  {
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false,
+   "note": "alternative framed as 'something more along the lines of a historical mystery' -> genres despite naming a title",
+   "uid": 88
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 89
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 90
+  },
+  {
+   "fields": [
+    "genres",
+    "languages",
+    "publication_year"
+   ],
+   "generic": false,
+   "uid": 91
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 92
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 93
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 94
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 95
+  },
+  {
+   "fields": [
+    "languages"
+   ],
+   "generic": false,
+   "uid": 96
+  },
+  {
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false,
+   "uid": 97
+  },
+  {
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false,
+   "uid": 98
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 99
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 100
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "note": "'or a classic' offered inside a genre list, not against modern or alone -> not publication_year",
+   "uid": 101
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 102
+  },
+  {
+   "fields": [
+    "formats",
+    "genres",
+    "publication_year"
+   ],
+   "generic": true,
+   "uid": 103
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 104
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 105
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 106
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 107
+  },
+  {
+   "fields": [
+    "formats",
+    "genres",
+    "publication_year"
+   ],
+   "generic": true,
+   "note": "genres from mood options that are subgenres (psychological, supernatural, classic gothic)",
+   "uid": 108
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 109
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 110
+  },
+  {
+   "fields": [
+    "formats",
+    "genres",
+    "languages"
+   ],
+   "generic": true,
+   "uid": 111
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 112
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 113
+  },
+  {
+   "fields": [
+    "countries",
+    "formats",
+    "genres",
+    "languages",
+    "publication_year"
+   ],
+   "generic": true,
+   "uid": 114
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 115
+  },
+  {
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false,
+   "uid": 116
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 117
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 118
+  },
+  {
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false,
+   "note": "'What are you in the mood for?' opener read as not generic by analogy to rule 9 ('what kind of book are you in the mood for?'); no 'more/else' wording",
+   "uid": 119
+  },
+  {
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": true,
+   "uid": 120
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 121
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 122
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 123
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 124
+  },
+  {
+   "fields": [
+    "formats",
+    "genres",
+    "languages",
+    "publication_year"
+   ],
+   "generic": true,
+   "uid": 125
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 126
+  },
+  {
+   "fields": [
+    "countries",
+    "formats",
+    "genres",
+    "languages",
+    "publication_year"
+   ],
+   "generic": true,
+   "uid": 127
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 128
+  },
+  {
+   "fields": [
+    "formats"
+   ],
+   "generic": false,
+   "uid": 129
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 130
+  },
+  {
+   "fields": [
+    "countries",
+    "formats",
+    "genres",
+    "languages"
+   ],
+   "generic": true,
+   "uid": 131
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "note": "'a different topic' for history titles treated as the book's subject (rule 9), with alternative titles offered",
+   "uid": 132
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 133
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 134
+  },
+  {
+   "fields": [
+    "publication_year"
+   ],
+   "generic": true,
+   "uid": 135
+  },
+  {
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false,
+   "uid": 136
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 137
+  },
+  {
+   "fields": [],
+   "generic": true,
+   "note": "'is there something specific I should adjust?' read as requesting unspecified requirements",
+   "uid": 138
+  },
+  {
+   "fields": [
+    "formats"
+   ],
+   "generic": false,
+   "uid": 139
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 140
+  },
+  {
+   "fields": [
+    "publication_year"
+   ],
+   "generic": false,
+   "note": "'if you'd prefer a classic instead' (classic offered alone) attached to an alternative title -> publication_year",
+   "uid": 141
+  },
+  {
+   "fields": [
+    "formats",
+    "publication_year"
+   ],
+   "generic": false,
+   "note": "subject-matter question about memoir/biography worlds (science, politics, music...) treated as biography subject, not genres",
+   "uid": 142
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 143
+  },
+  {
+   "fields": [
+    "formats",
+    "genres",
+    "publication_year"
+   ],
+   "generic": true,
+   "note": "publication_year from 'just to confirm - you'd like something published in 1998 or later, correct?'",
+   "uid": 144
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 145
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 146
+  },
+  {
+   "fields": [
+    "countries",
+    "formats",
+    "genres",
+    "publication_year"
+   ],
+   "generic": true,
+   "uid": 147
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 148
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 149
+  },
+  {
+   "fields": [
+    "countries",
+    "formats",
+    "genres"
+   ],
+   "generic": true,
+   "uid": 150
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 151
+  },
+  {
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false,
+   "uid": 152
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 153
+  },
+  {
+   "fields": [
+    "formats",
+    "languages"
+   ],
+   "generic": false,
+   "uid": 154
+  },
+  {
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false,
+   "note": "biography subject question not a field, but 'personal memoirs' offered as an option -> genres",
+   "uid": 155
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 156
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 157
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 158
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 159
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 160
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 161
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 162
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 163
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 164
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 165
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 166
+  },
+  {
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false,
+   "uid": 167
+  },
+  {
+   "fields": [
+    "countries",
+    "formats",
+    "genres",
+    "languages",
+    "publication_year"
+   ],
+   "generic": true,
+   "uid": 168
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 169
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 170
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 171
+  },
+  {
+   "fields": [
+    "formats",
+    "genres",
+    "languages",
+    "publication_year"
+   ],
+   "generic": true,
+   "note": "publication_year from 'classic detective mysteries ... or modern thrillers' (classic against modern) inside subgenre options",
+   "uid": 172
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 173
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 174
+  },
+  {
+   "fields": [
+    "formats"
+   ],
+   "generic": false,
+   "uid": 175
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 176
+  },
+  {
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": true,
+   "uid": 177
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 178
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 179
+  },
+  {
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false,
+   "uid": 180
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "note": "'classic' listed among moods (light, dark), not against modern or alone -> not publication_year",
+   "uid": 181
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 182
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 183
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 184
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 185
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 186
+  },
+  {
+   "fields": [
+    "genres",
+    "publication_year"
+   ],
+   "generic": false,
+   "uid": 187
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "note": "'a different period or region' refers to what a history book covers (rule 9)",
+   "uid": 188
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 189
+  },
+  {
+   "fields": [
+    "genres"
+   ],
+   "generic": false,
+   "uid": 190
+  },
+  {
+   "fields": [
+    "genres",
+    "publication_year"
+   ],
+   "generic": false,
+   "uid": 191
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 192
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 193
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 194
+  },
+  {
+   "fields": [
+    "genres",
+    "publication_year"
+   ],
+   "generic": false,
+   "uid": 195
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 196
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 197
+  },
+  {
+   "fields": [],
+   "generic": false,
+   "uid": 198
+  },
+  {
+   "fields": [
+    "formats",
+    "genres"
+   ],
+   "generic": false,
+   "uid": 199
+  }
+ ],
+ "source": "the 200-turn final set of controller_eval_labels_v4.json, shuffled (seed 20261027)",
+ "version": "books-controller-eval-labels-v4-second"
+}

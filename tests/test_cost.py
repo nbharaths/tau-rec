@@ -11,15 +11,18 @@ from types import SimpleNamespace
 from tau_rec import cost
 
 
-def _usage(prompt, completion, cached=None):
+def _usage(prompt, completion, cached=None, provider_cost=None):
     details = SimpleNamespace(cached_tokens=cached) if cached is not None else None
-    return SimpleNamespace(
+    response = SimpleNamespace(
         usage=SimpleNamespace(
             prompt_tokens=prompt,
             completion_tokens=completion,
             prompt_tokens_details=details,
         )
     )
+    if provider_cost is not None:
+        response._hidden_params = {"response_cost": provider_cost}
+    return response
 
 
 def test_cached_tokens_recorded_as_subset_of_input():
@@ -36,6 +39,78 @@ def test_missing_cache_details_counts_as_zero_cached():
     cost.reset()
     cost.record_usage("agent", _usage(1000, 50))
     assert cost.snapshot()["agent_cached"] == 0
+
+
+def test_provider_cost_is_separate_and_reports_coverage():
+    cost.reset()
+    cost.record_usage("agent", _usage(100, 10, provider_cost=0.0123))
+    cost.record_usage("agent", _usage(50, 5))
+    cost.record_usage("sim", _usage(20, 2, provider_cost=0.004))
+    recorded = cost.provider_cost_snapshot()
+    assert recorded["agent"] == {
+        "usd": 0.0123,
+        "reported_calls": 1,
+        "successful_response_calls": 2,
+        "coverage": 0.5,
+    }
+    assert recorded["simulator"]["usd"] == 0.004
+    assert abs(recorded["total_usd"] - 0.0163) < 1e-12
+    assert recorded["reported_calls"] == 2
+    assert recorded["successful_response_calls"] == 3
+    assert recorded["coverage"] == 2 / 3
+
+
+def test_cost_reset_clears_provider_totals():
+    cost.reset()
+    cost.record_usage("agent", _usage(100, 10, provider_cost=1.0))
+    cost.reset()
+    assert cost.provider_cost_snapshot()["total_usd"] == 0.0
+    assert cost.provider_cost_snapshot()["successful_response_calls"] == 0
+
+
+def test_provider_budget_stops_after_recorded_cost_reaches_ceiling():
+    cost.reset()
+    cost.configure_provider_budget(1.0, already_spent_usd=0.2)
+    cost.record_usage("agent", _usage(100, 10, provider_cost=0.5))
+    assert abs(cost.provider_budget_status()["remaining_usd"] - 0.3) < 1e-12
+    cost.record_usage("agent", _usage(100, 10, provider_cost=0.3))
+    try:
+        cost.check_provider_budget()
+    except cost.ProviderBudgetExceededError:
+        pass
+    else:
+        raise AssertionError("budget guard allowed another provider request")
+
+
+def test_provider_budget_fails_closed_when_cost_is_missing():
+    cost.reset()
+    cost.configure_provider_budget(1.0)
+    try:
+        cost.record_usage("agent", _usage(100, 10))
+    except cost.ProviderCostUnavailableError:
+        pass
+    else:
+        raise AssertionError("hard ceiling accepted a response without provider cost")
+    cost.reset()
+
+
+def test_single_call_usage_and_cost_use_the_aggregate_accounting_rules():
+    usage = cost.response_usage(_usage(1_000, 100, cached=800))
+    assert usage == {"input": 1_000, "cached": 800, "cache_write": 0, "output": 100}
+    expected = 200 * 0.20e-6 + 800 * 0.02e-6 + 100 * 1.20e-6
+    assert cost.call_cost("gpt-5.6-luna", usage) == expected
+
+
+def test_responses_api_usage_names_are_normalized():
+    response = SimpleNamespace(usage=SimpleNamespace(
+        input_tokens=1_000,
+        output_tokens=100,
+        input_tokens_details=SimpleNamespace(cached_tokens=800),
+    ))
+    usage = cost.response_usage(response)
+    assert usage == {"input": 1_000, "cached": 800, "cache_write": 0, "output": 100}
+    expected = 200 * 2.00e-6 + 800 * 0.10e-6 + 100 * 10.00e-6
+    assert cost.call_cost("gpt-6.1-sol", usage) == expected
 
 
 def test_cached_tokens_clamped_to_prompt_total():
@@ -66,6 +141,29 @@ def test_cache_reads_priced_at_the_discounted_rate():
     assert all_cached["agent"] == 0.15
 
 
+def test_luna_override_uses_published_rates():
+    rates = cost._lookup_prices("openai/gpt-5.6-luna")
+    assert rates == cost.Rates(0.20e-6, 1.20e-6, 0.02e-6, 0.20e-6)
+
+
+def test_gpt61_sol_override_uses_published_rates():
+    rates = cost._lookup_prices("gpt-6.1-sol")
+    assert rates == cost.Rates(2.00e-6, 10.00e-6, 0.10e-6, 2.50e-6)
+
+
+def test_open_weight_overrides_use_frozen_route_rates():
+    expected = {
+        "openrouter/deepseek/deepseek-v4.1-flash":
+            cost.Rates(0.30e-6, 1.20e-6, 0.006e-6, 0.30e-6),
+        "openrouter/z-ai/glm-5.3-flash":
+            cost.Rates(0.15e-6, 0.50e-6, 0.03e-6, 0.15e-6),
+        "openrouter/qwen/qwen3.8-27b":
+            cost.Rates(0.425e-6, 2.55e-6, 0.085e-6, 0.53125e-6),
+    }
+    for model, rates in expected.items():
+        assert cost._lookup_prices(model) == rates
+
+
 def test_reproduces_a_real_openrouter_bill():
     """Ground truth: a 9-trial Muse Spark 1.3 calibration billed $3.388.
 
@@ -94,6 +192,26 @@ def test_unknown_model_prices_to_none():
     priced = cost.price_tokens("not-a-real-model-xyz", "gpt-5-mini", cost.snapshot())
     assert priced["agent"] is None
     assert priced["total"] is None
+
+
+def test_symbolic_simulator_cost_is_zero_even_without_a_model_price():
+    priced = cost.price_tokens(
+        "gpt-5.6-luna",
+        "symbolic-controller",
+        {
+            "agent_input": 100,
+            "agent_cached": 0,
+            "agent_cache_write": 0,
+            "agent_output": 10,
+            "sim_input": 0,
+            "sim_cached": 0,
+            "sim_cache_write": 0,
+            "sim_output": 0,
+        },
+        simulator_enabled=False,
+    )
+    assert priced["simulator"] == 0.0
+    assert priced["total"] == priced["agent"]
 
 
 def test_cache_writes_billed_at_the_premium_rate():

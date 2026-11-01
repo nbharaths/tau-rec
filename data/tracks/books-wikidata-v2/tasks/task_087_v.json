@@ -1,0 +1,55 @@
+{
+  "id": "task_087_v",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Mystery"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Science Fiction"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "languages",
+        "op": "contains",
+        "value": "English"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "publication_year",
+        "op": ">=",
+        "value": 1996
+      },
+      "reveal": "volunteer"
+    }
+  ],
+  "persona": "You are returning to reading after a busy stretch and want a book that matches your requirements closely.",
+  "soft_preferences": [],
+  "policy_flags": [
+    "single_recommendation",
+    "recommend_tool"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "medium",
+  "reveal_difficulty": "volunteer",
+  "user_history": {
+    "user_1": {
+      "read": [],
+      "ratings": {}
+    }
+  },
+  "user_id": "user_1",
+  "user_services": [],
+  "user_formats": []
+}

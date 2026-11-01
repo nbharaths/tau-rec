@@ -1,0 +1,3160 @@
+{
+  "summary_primary_panel": {
+    "volunteer": 1.0,
+    "mixed": 0.058823529411764705,
+    "hidden": 0.058823529411764705,
+    "all": 0.37254901960784315
+  },
+  "rows": [
+    {
+      "task_id": "task_001_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_001_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_001_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_002_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_002_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_002_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_003_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_003_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_003_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_004_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_004_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_004_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_005_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_005_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_005_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_006_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_006_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_006_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": true,
+      "success": true
+    },
+    {
+      "task_id": "task_007_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_007_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_007_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_008_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_008_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_008_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_009_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_009_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_009_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_010_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_010_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_010_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_011_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_011_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_011_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_012_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_012_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_012_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_013_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_013_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_013_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_014_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_014_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_014_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_015_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_015_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_015_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_016_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_016_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_016_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_017_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_017_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_017_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_018_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_018_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_018_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_019_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_019_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_019_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_020_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_020_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_020_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": true,
+      "success": true
+    },
+    {
+      "task_id": "task_021_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_021_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_021_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": true,
+      "success": true
+    },
+    {
+      "task_id": "task_022_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_022_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_022_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": true,
+      "success": true
+    },
+    {
+      "task_id": "task_023_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_023_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_023_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_024_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_024_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_024_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_025_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_025_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_025_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_026_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_026_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_026_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_027_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_027_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_027_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_028_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_028_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_028_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": true,
+      "success": true
+    },
+    {
+      "task_id": "task_029_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_029_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_029_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_030_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_030_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_030_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_031_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_031_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_031_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_032_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_032_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_032_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_033_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_033_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_033_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_034_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_034_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_034_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_035_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_035_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_035_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_036_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_036_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_036_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_037_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_037_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_037_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_038_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_038_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_038_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_039_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_039_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_039_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_040_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_040_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_040_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_041_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_041_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_041_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_042_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_042_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_042_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_043_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_043_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_043_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_044_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_044_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_044_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_045_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_045_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_045_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_046_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_046_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_046_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_047_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_047_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_047_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_048_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_048_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_048_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_049_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_049_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_049_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_050_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_050_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_050_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_051_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_051_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_051_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_052_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_052_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_052_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_053_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_053_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_053_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_054_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_054_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_054_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_055_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_055_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_055_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_056_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_056_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_056_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_057_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_057_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_057_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": true,
+      "success": true
+    },
+    {
+      "task_id": "task_058_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_058_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_058_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_059_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_059_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_059_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_060_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_060_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_060_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_061_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_061_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_061_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_062_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_062_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_062_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_063_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_063_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_063_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_064_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_064_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_064_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_065_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_065_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_065_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": true,
+      "success": true
+    },
+    {
+      "task_id": "task_066_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_066_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_066_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_067_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_067_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_067_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_068_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_068_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_068_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_069_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_069_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_069_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_070_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_070_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_070_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_071_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_071_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_071_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_072_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_072_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_072_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_073_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_073_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_073_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_074_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_074_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_074_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_075_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_075_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_075_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_076_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_076_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_076_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_077_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_077_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_077_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_078_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_078_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_078_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_079_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_079_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_079_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_080_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_080_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_080_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_081_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_081_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_081_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_082_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_082_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_082_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": true,
+      "success": true
+    },
+    {
+      "task_id": "task_083_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_083_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_083_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_084_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_084_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_084_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_085_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_085_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_085_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_086_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_086_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_086_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": true,
+      "success": true
+    },
+    {
+      "task_id": "task_087_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_087_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_087_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_088_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_088_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_088_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_089_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_089_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_089_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_090_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_090_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_090_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": true,
+      "success": true
+    },
+    {
+      "task_id": "task_091_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_091_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_091_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_092_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_092_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_092_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_093_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_093_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_093_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_094_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_094_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_094_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_095_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_095_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_095_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_096_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_096_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_096_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_097_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_097_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_097_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_098_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_098_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_098_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_099_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_099_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_099_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_100_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_100_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_100_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_101_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_101_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_101_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_102_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_102_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_102_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_103_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_103_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_103_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_104_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_104_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_104_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_105_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_105_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_105_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_106_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_106_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_106_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_107_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_107_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_107_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_108_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_108_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_108_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_109_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_109_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_109_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_110_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_110_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_110_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_111_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_111_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_111_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_112_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_112_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_112_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_113_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_113_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_113_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_114_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_114_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_114_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_115_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_115_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_115_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_116_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_116_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_116_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_117_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_117_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_117_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_118_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_118_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_118_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": true,
+      "success": true
+    },
+    {
+      "task_id": "task_119_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_119_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_119_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_120_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_120_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_120_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_121_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_121_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_121_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_122_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_122_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_122_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": true,
+      "success": true
+    },
+    {
+      "task_id": "task_123_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_123_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_123_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_124_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_124_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_124_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_125_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_125_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_125_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_126_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_126_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_126_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_127_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_127_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_127_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_128_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_128_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_128_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_129_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_129_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_129_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_130_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_130_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_130_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_131_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_131_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_131_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_132_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_132_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_132_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_133_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_133_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_133_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_134_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_134_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_134_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_135_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_135_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_135_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": true,
+      "success": true
+    },
+    {
+      "task_id": "task_136_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_136_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_136_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_137_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_137_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_137_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_138_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_138_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_138_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_139_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_139_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_139_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_140_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_140_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_140_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_141_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_141_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_141_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": true,
+      "success": true
+    },
+    {
+      "task_id": "task_142_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_142_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_142_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_143_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_143_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_143_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_144_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_144_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_144_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_145_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_145_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_145_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_146_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_146_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": true,
+      "success": false
+    },
+    {
+      "task_id": "task_146_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": true,
+      "success": true
+    },
+    {
+      "task_id": "task_147_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_147_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_147_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_148_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_148_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_148_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_149_h",
+      "reveal": "hidden",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_149_m",
+      "reveal": "mixed",
+      "panel": true,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_149_v",
+      "reveal": "volunteer",
+      "panel": true,
+      "nvr": false,
+      "success": true
+    },
+    {
+      "task_id": "task_150_h",
+      "reveal": "hidden",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_150_m",
+      "reveal": "mixed",
+      "panel": false,
+      "nvr": false,
+      "success": false
+    },
+    {
+      "task_id": "task_150_v",
+      "reveal": "volunteer",
+      "panel": false,
+      "nvr": false,
+      "success": true
+    }
+  ]
+}

@@ -11,6 +11,8 @@ A verifiable benchmark for LLM-based conversational recommender systems.
 
 Published at [ACM RecSys 2026](https://doi.org/10.1145/3773078.3831847) (Reproducibility and Resource Track).
 
+**New in v2.0:** a controlled books track, [`books-wikidata-v2`](#books-track-books-wikidata-v2): 20,000 Wikidata works in nested 5k/10k/20k catalogs, 150 request families in matched volunteer/mixed/hidden variants, a deterministic rule-based user, and keyword versus structured retrieval.
+
 ## Highlights
 
 - **Verifiable rewards.** Each task declares constraints as structured predicates (`runtime <= 120`, `genres contains Comedy`, …) that are evaluated directly against the catalog.
@@ -36,7 +38,9 @@ supported; **◐** = partially supported.
 | **τ-Rec** | **✅** | **✅** | **✅** | **✅** | **✅** | **✅** | **✅** |
 
 VR = verifiable rewards; MT = multi-turn dialogue; TU = tool use; PC = policy
-checks; FC = fresh catalog; HI = hidden-intent simulation.
+checks; FC = fresh catalog; HI = hidden-intent simulation. The table compares
+the movies track; the books track trades the post-cutoff catalog for a CC0
+Wikidata catalog that can be redistributed and scaled.
 
 ## Leaderboard
 
@@ -66,7 +70,7 @@ checks; FC = fresh catalog; HI = hidden-intent simulation.
 prompts. [GENERATIONS.md](leaderboard/GENERATIONS.md) records the differences.
 
 The board is generated from raw per-task `{n, c}` counts, and full traces are
-attached to the [latest release](https://github.com/nbharaths/tau-rec/releases/latest).
+attached to the [v1.3.0 release](https://github.com/nbharaths/tau-rec/releases/tag/v1.3.0).
 
 To submit a run, see **[leaderboard/CONTRIBUTING.md](leaderboard/CONTRIBUTING.md)**.
 
@@ -83,6 +87,42 @@ answers = load_dataset("nbharaths/tau-rec", "answers")
 ```
 
 The JSON files in `data/` are the same data — use whichever is more convenient.
+
+## Books track (`books-wikidata-v2`)
+
+A controlled books benchmark built on τ-Rec's harness. The movie track above is
+unchanged.
+
+- **Catalog.** 20,000 literary works derived from Wikidata (CC0), ordered by a
+  seeded hash; the first 5,000 and 10,000 form nested smaller catalogs.
+- **Tasks.** 150 request families with two to five hard requirements on genre,
+  language, country of origin, and publication year. Each family has three
+  variants with identical requirements: the reader states everything up front
+  (`volunteer`), states one requirement and reveals the rest only when asked
+  (`mixed`), or also withholds some (`hidden`). Fifteen families have no answer
+  in the catalog; the agent should abstain.
+- **Rule-based user.** A deterministic disclosure controller answers field
+  questions and gives accept/reject verdicts; no LLM runs on the user side, so
+  repeated trials measure the agent. LLM users are available as a sensitivity
+  condition (`--simulator-mode llm --simulator-model <model>`).
+- **Two retrieval interfaces.** `keyword` (per-field BM25, top 20) and
+  `structured` (conjunctive filters, pages of 20).
+
+Run one agent under the reportable protocol (primary panel, 20k, rule-based user,
+20 turns, 600 s of agent time, four trials per task):
+
+```bash
+uv run python scripts/run_books_protocol.py \
+  --model openrouter/deepseek/deepseek-v4.1-flash --provider-order deepinfra/fp8 \
+  --retrieval-mode structured --reasoning-effort high --max-provider-cost-usd 20 --execute
+```
+
+Without `--execute` it prints the `tau-rec run` command instead, and
+`scripts/report_books_run.py --run-dir <run>` reports a finished run. The track
+[README](data/tracks/books-wikidata-v2/README.md) covers files, validation, and
+the byte-for-byte rebuild from the source snapshot;
+[`analysis/books-controlled/`](analysis/books-controlled/README.md) reproduces
+the reported run results from the traces attached to the release.
 
 ## Quickstart
 
@@ -119,8 +159,8 @@ uv run tau-rec run \
 Use `--tasks-limit N` for a smoke test, or add `--dry-run` to estimate the cost
 of a full run. See `uv run tau-rec run --help` for all options.
 
-> **Do not use `--no-tools` for scored runs.** The legacy flag removes the
-> mandatory `recommend()` tool, so satisfiable tasks cannot receive credit.
+> **`--no-tools` is deprecated and now means `--mode memory`.** Runs made with
+> the old flag had no `recommend()` tool, so they cannot receive credit.
 
 Artifacts are written under `<output>/<timestamp>/`, including traces,
 per-trial results, task counts, the run manifest, and token/cost usage.
@@ -217,6 +257,12 @@ data/
   policy.md
   tasks/*.json
   answers.json   # pre-computed solution sets per task (analysis-only)
+  tracks/
+    books-wikidata-v2/  # books track: catalog, tasks, answer key, manifests
+analysis/
+  books-controlled/     # books analysis code and the rule-based user's protocol
+  books-wikidata-v2/    # books plans, panels, and results
+scripts/                # catalog/task rebuild, validators, protocol runner
 leaderboard/
   entries/*.json # one submission each; raw per-task {n, c} only
   GENERATIONS.md # what makes two entries comparable
@@ -233,7 +279,9 @@ uv run pytest tests/test_orchestrator.py -k name   # single test
 
 ## Citation
 
-If you use τ-Rec in your work, please cite:
+If you use τ-Rec in your work, please cite the paper below. A companion paper
+describing the books track is forthcoming; until it appears, please cite
+τ-Rec and the release tag.
 
 ```bibtex
 @inproceedings{narasimhan2026taurec,

@@ -34,8 +34,8 @@ from tau_rec.data_model.conversation import (
 from tau_rec.catalog.search import CatalogSearch
 from tau_rec.environment.tools import ToolKit
 from tau_rec.simulator.user_simulator import UserSimulator
-from tau_rec.orchestrator.orchestrator import OPENING_GREETING
 from tau_rec.evaluator.evaluator import CombinedEvaluator
+from tau_rec.track import track_for_catalog
 
 
 def _print_header(title: str) -> None:
@@ -86,15 +86,18 @@ async def _play(
     simulator_model: str,
 ) -> None:
     task = Task.from_json(task_path)
-    catalog = Catalog.from_json(catalog_path)
-    search = CatalogSearch(catalog)
+    track = track_for_catalog(catalog_path)
+    spec = track.spec
+    catalog = Catalog.from_json(catalog_path, spec)
+    search = CatalogSearch(catalog, spec, profile=track.search_profile)
     toolkit = ToolKit(
         catalog=catalog,
         search=search,
         user_histories=task.user_history or {},
+        spec=spec,
     )
-    simulator = UserSimulator(model=simulator_model, task=task)
-    evaluator = CombinedEvaluator(catalog)
+    simulator = UserSimulator(model=simulator_model, task=task, spec=spec, catalog=catalog)
+    evaluator = CombinedEvaluator(catalog, spec)
 
     trace = ConversationTrace(task_id=task.id, model="human", trial=0)
     conversation: list[Message] = []
@@ -102,7 +105,7 @@ async def _play(
     _print_task_brief(task)
 
     # Seed greeting (same as orchestrator)
-    greeting = Message(role=Role.AGENT, content=OPENING_GREETING)
+    greeting = Message(role=Role.AGENT, content=spec.greeting)
     trace.add_message(greeting)
     conversation.append(greeting)
     _print_header("Agent (seeded greeting)")

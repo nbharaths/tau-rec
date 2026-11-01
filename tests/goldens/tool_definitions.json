@@ -1,0 +1,125 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "search_catalog",
+      "description": "Search the movie catalog by keywords. Returns top 20 results.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Free-text search query"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "get_metadata",
+      "description": "Get full metadata for a specific movie by its ID.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "item_id": {
+            "type": "string",
+            "description": "The movie ID"
+          }
+        },
+        "required": [
+          "item_id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "check_availability",
+      "description": "Check if a movie is available on specified streaming services.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "item_id": {
+            "type": "string",
+            "description": "The movie ID"
+          },
+          "services": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of streaming service names to check"
+          }
+        },
+        "required": [
+          "item_id",
+          "services"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "get_user_history",
+      "description": "Get a user's watch history and ratings.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "string",
+            "description": "The user ID"
+          }
+        },
+        "required": [
+          "user_id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "check_content_preference",
+      "description": "Check whether a content rating is age-restricted. You MUST call this before recommending any movie rated R or NC-17. Returns whether the rating is restricted and requires user confirmation.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "content_rating": {
+            "type": "string",
+            "description": "The content rating to check (e.g. 'PG-13', 'R', 'NC-17')."
+          }
+        },
+        "required": [
+          "content_rating"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "recommend",
+      "description": "Make your final decision. This ends the trial. Call with item_id=<movie id> to recommend that movie. Call with no item_id (or item_id=null) to explicitly abstain when no movie in the catalog satisfies the user's requirements. You MUST call this tool exactly once per conversation \u2014 either committing to a movie or abstaining.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "item_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The movie ID to recommend, or null to abstain."
+          }
+        },
+        "required": []
+      }
+    }
+  }
+]

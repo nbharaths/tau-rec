@@ -1,0 +1,64 @@
+{
+  "id": "task_022_h",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Science Fiction"
+      },
+      "reveal": "on_ask"
+    },
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Young Adult"
+      },
+      "reveal": "hidden"
+    },
+    {
+      "constraint": {
+        "field": "countries",
+        "op": "contains",
+        "value": "Australia"
+      },
+      "reveal": "on_ask"
+    },
+    {
+      "constraint": {
+        "field": "publication_year",
+        "op": ">=",
+        "value": 1999
+      },
+      "reveal": "hidden"
+    },
+    {
+      "constraint": {
+        "field": "publication_year",
+        "op": "<=",
+        "value": 2003
+      },
+      "reveal": "volunteer"
+    }
+  ],
+  "persona": "You are an avid reader choosing your next book and care more about fit than hype.",
+  "soft_preferences": [],
+  "policy_flags": [
+    "single_recommendation",
+    "transparency",
+    "recommend_tool"
+  ],
+  "no_valid_recommendation": true,
+  "complexity": "complex",
+  "reveal_difficulty": "hidden",
+  "user_history": {
+    "user_1": {
+      "read": [],
+      "ratings": {}
+    }
+  },
+  "user_id": "user_1",
+  "user_services": [],
+  "user_formats": []
+}

@@ -1,0 +1,478 @@
+{
+  "analysis": {
+    "comparison_cells": "from the v4 matrix, which ran earlier; not time-matched",
+    "gpt_llm_users": "per LLM user, GPT-6.1 Sol with that user minus GPT-6.1 Sol with the symbolic user (v4 reliability cell): pass^1 overall and on mixed tasks; compared descriptively with the DeepSeek contrasts",
+    "prompt_variant": "per agent, variant minus the v4 reliability cell (same agent, structured, 20k, K=8): pass^1 overall and on mixed tasks, and the share of mixed trials with every on_ask fact disclosed; paired family bootstrap, B = 10,000, seed 20261014",
+    "status": "exploratory; specified before the addendum ran; unadjusted"
+  },
+  "api_parameters": {
+    "agents": {
+      "deepseek_v41_flash_high": {
+        "call_timeout_seconds": 300.0,
+        "max_tokens": 32768,
+        "provider_routing": {
+          "allow_fallbacks": false,
+          "data_collection": "deny",
+          "order": [
+            "deepinfra/fp8"
+          ],
+          "require_parameters": true,
+          "zdr": true
+        },
+        "reasoning_effort": "high",
+        "seed": "omitted (provider default)",
+        "temperature": 0.0,
+        "thinking": {
+          "type": "enabled"
+        },
+        "timeout_seconds": 120,
+        "top_p": "omitted (provider default)"
+      },
+      "glm53_flash_high": {
+        "call_timeout_seconds": 300.0,
+        "max_tokens": 32768,
+        "provider_routing": {
+          "allow_fallbacks": false,
+          "data_collection": "deny",
+          "order": [
+            "near-ai/fp8"
+          ],
+          "require_parameters": true,
+          "zdr": true
+        },
+        "reasoning_effort": "high",
+        "seed": "omitted (provider default)",
+        "temperature": 0.0,
+        "timeout_seconds": 120,
+        "top_p": "omitted (provider default)"
+      },
+      "gpt61_sol_high": {
+        "api": "responses",
+        "call_timeout_seconds": 300.0,
+        "max_tokens": 32768,
+        "reasoning_effort": "high",
+        "seed": "omitted (provider default)",
+        "temperature": "omitted (model family rejects it)",
+        "timeout_seconds": 120,
+        "top_p": "omitted (provider default)"
+      },
+      "qwen38_27b_high": {
+        "call_timeout_seconds": 300.0,
+        "max_tokens": 32768,
+        "provider_routing": {
+          "allow_fallbacks": false,
+          "data_collection": "deny",
+          "order": [
+            "near-ai/fp8"
+          ],
+          "require_parameters": true,
+          "zdr": true
+        },
+        "reasoning_effort": "high",
+        "seed": "omitted (provider default)",
+        "temperature": 0.0,
+        "timeout_seconds": 120,
+        "top_p": "omitted (provider default)"
+      }
+    },
+    "llm_simulators": {
+      "sim_glm53_flash": {
+        "proposal_grounding": "candidate-id-v5",
+        "provider_routing": {
+          "allow_fallbacks": false,
+          "data_collection": "deny",
+          "order": [
+            "near-ai/fp8"
+          ],
+          "require_parameters": true,
+          "zdr": true
+        },
+        "seed": "omitted (provider default)",
+        "temperature": 1.0,
+        "timeout_seconds": 120,
+        "top_p": "omitted (provider default)"
+      },
+      "sim_qwen38_27b": {
+        "proposal_grounding": "candidate-id-v5",
+        "provider_routing": {
+          "allow_fallbacks": false,
+          "data_collection": "deny",
+          "order": [
+            "near-ai/fp8"
+          ],
+          "require_parameters": true,
+          "zdr": true
+        },
+        "seed": "omitted (provider default)",
+        "temperature": 1.0,
+        "timeout_seconds": 120,
+        "top_p": "omitted (provider default)"
+      }
+    },
+    "symbolic_simulator": {
+      "disclosure_controller": "book-disclosure-v4",
+      "proposal_grounding": "candidate-id-v5",
+      "rejection_feedback": "generic (no failed-field hint)",
+      "seed": "not applicable",
+      "temperature": "not applicable",
+      "timeout_seconds": "not applicable",
+      "top_p": "not applicable"
+    }
+  },
+  "artifact": {
+    "catalog_sha256": "19e9fa3a4db03de8f8bb8cdd8f7b231346a44f21cefca18947b7b10485d7093f",
+    "family_manifest_sha256": "7a1666ef725d052977af77b1ddfcf2335d8a90029995ac88ce69f74a4c283076",
+    "model_config_sha256": "ecc0464fba37ea776e23a4caa5c4c8d2514a5456c66b2e24c0ad42d7929e0bef",
+    "panels_sha256": "d08fdaa21c4912ad6c095519785896a429540095cb5953c039b88de02cfc3215",
+    "policy_sha256": "02e4acb19551c4a72094a1b1fad5afa1bb033d740c8b4f4dd6aea92b36c51fed",
+    "task_manifest_sha256": "1c019e4287dc2a945ef7b847ebdfa7acc75d34a2b3cc88fd8e13d7661d6e6c2b",
+    "tasks_sha256": "008d8af738b9cb318bebd45e7a4af61f3d3fa4ec9075f23d9fa4181d4faa8035",
+    "track_id": "books-wikidata-v2"
+  },
+  "base_plan_sha256": "0e2e65da7ab76431e00686505cb18ee72ead1af65eef3ebc1a5b8979b7d0b0ad",
+  "budgets_usd": {
+    "v4_hard_ceiling": 20.0
+  },
+  "fixed_runtime": {
+    "concurrency": 8,
+    "max_turns": 20,
+    "trial_timeout_seconds": 600,
+    "trial_timeout_seconds_counts": "agent time only (harness profile books-v4)"
+  },
+  "harness": {
+    "commit_at_freeze": {
+      "dirty": false,
+      "sha": "b8d1c65d3f61e2a85cb0ec2bafea1ef3247f44a5"
+    },
+    "litellm_local_model_cost_map": true,
+    "litellm_version": "1.83.0",
+    "llm_user": {
+      "embedded_answers": "embedded-answer-v2",
+      "proposal_grounding": "candidate-id-v5",
+      "user_prompt": "books-llm-user-v3"
+    },
+    "profile": {
+      "agent_max_tokens": 32768,
+      "budget_errors_before_stop": 10,
+      "call_timeout_seconds": 300.0,
+      "cap_counts_agent_time_only": true,
+      "detailed_stop_reasons": true,
+      "empty_reply_resamples": 3,
+      "id": "books-v4",
+      "log_finish_reason": true,
+      "log_tool_call_text": true,
+      "max_tool_calls_per_step": 150
+    },
+    "reveal_guard": "implied-fact-guard-v1",
+    "scored_policy_flags": [
+      "format_verification_v2",
+      "history",
+      "recommend_tool",
+      "single_recommendation",
+      "transparency"
+    ],
+    "search_profile": "bm25f-v1",
+    "structured_profile": "books-wikidata-core-v3",
+    "symbolic_user": {
+      "disclosure_controller": "book-disclosure-v4",
+      "proposal_grounding": "candidate-id-v5"
+    },
+    "taxonomy": "books-source-parent-labels-v1"
+  },
+  "launch_rules": {
+    "order": "the two smoke stages first, then prompt_variant and gpt_llm_users together"
+  },
+  "models": {
+    "agents": [
+      {
+        "gateway": "openrouter",
+        "label": "deepseek_v41_flash_high",
+        "model": "openrouter/deepseek/deepseek-v4.1-flash",
+        "provider_family": "DeepSeek",
+        "provider_order": [
+          "deepinfra/fp8"
+        ],
+        "reasoning_effort": "high",
+        "role": "high-usage-open-weight"
+      },
+      {
+        "gateway": "openrouter",
+        "label": "glm53_flash_high",
+        "model": "openrouter/z-ai/glm-5.3-flash",
+        "provider_family": "Z.ai",
+        "provider_order": [
+          "near-ai/fp8"
+        ],
+        "reasoning_effort": "high",
+        "role": "cost-efficient-open-weight"
+      },
+      {
+        "gateway": "openrouter",
+        "label": "qwen38_27b_high",
+        "model": "openrouter/qwen/qwen3.8-27b",
+        "provider_family": "Qwen",
+        "provider_order": [
+          "near-ai/fp8"
+        ],
+        "reasoning_effort": "high",
+        "role": "accessible-open-weight"
+      },
+      {
+        "gateway": "openai",
+        "label": "gpt61_sol_high",
+        "model": "gpt-6.1-sol",
+        "provider_family": "OpenAI",
+        "provider_order": null,
+        "reasoning_effort": "high",
+        "role": "closed-frontier"
+      }
+    ],
+    "llm_simulators": [
+      {
+        "gateway": "openrouter",
+        "label": "sim_glm53_flash",
+        "model": "openrouter/z-ai/glm-5.3-flash",
+        "provider_family": "Z.ai",
+        "provider_order": [
+          "near-ai/fp8"
+        ]
+      },
+      {
+        "gateway": "openrouter",
+        "label": "sim_qwen38_27b",
+        "model": "openrouter/qwen/qwen3.8-27b",
+        "provider_family": "Qwen",
+        "provider_order": [
+          "near-ai/fp8"
+        ]
+      }
+    ],
+    "scale_agents": [
+      "deepseek_v41_flash_high",
+      "glm53_flash_high",
+      "qwen38_27b_high"
+    ],
+    "sensitivity_agent": "deepseek_v41_flash_high"
+  },
+  "stages": [
+    {
+      "agent_labels": [
+        "gpt61_sol_high",
+        "deepseek_v41_flash_high"
+      ],
+      "agent_prompt_variant": "ask-requirements-v1",
+      "catalog_sizes": [
+        20000
+      ],
+      "name": "smoke_prompt_variant",
+      "planned_trials": 6,
+      "retrieval_modes": [
+        "structured"
+      ],
+      "role": "wiring check for the prompt variant; excluded from estimates",
+      "simulator_labels": [],
+      "simulator_mode": "symbolic",
+      "task_count": 3,
+      "task_ids": [
+        "task_006_v",
+        "task_006_m",
+        "task_006_h"
+      ],
+      "tasks_filter": "task_006_v,task_006_m,task_006_h",
+      "trials_per_task": 1
+    },
+    {
+      "agent_labels": [
+        "gpt61_sol_high"
+      ],
+      "catalog_sizes": [
+        20000
+      ],
+      "name": "smoke_gpt_llm_users",
+      "planned_trials": 6,
+      "retrieval_modes": [
+        "structured"
+      ],
+      "role": "wiring check for GPT-6.1 Sol with LLM users; excluded from estimates",
+      "simulator_labels": [
+        "sim_glm53_flash",
+        "sim_qwen38_27b"
+      ],
+      "simulator_mode": "llm",
+      "task_count": 3,
+      "task_ids": [
+        "task_006_v",
+        "task_006_m",
+        "task_006_h"
+      ],
+      "tasks_filter": "task_006_v,task_006_m,task_006_h",
+      "trials_per_task": 1
+    },
+    {
+      "agent_labels": [
+        "gpt61_sol_high",
+        "deepseek_v41_flash_high"
+      ],
+      "agent_prompt_variant": "ask-requirements-v1",
+      "catalog_sizes": [
+        20000
+      ],
+      "name": "prompt_variant",
+      "planned_trials": 864,
+      "retrieval_modes": [
+        "structured"
+      ],
+      "role": "reliability block with the ask-requirements prompt variant",
+      "simulator_labels": [],
+      "simulator_mode": "symbolic",
+      "task_count": 54,
+      "task_ids": [
+        "task_006_v",
+        "task_006_m",
+        "task_006_h",
+        "task_014_v",
+        "task_014_m",
+        "task_014_h",
+        "task_025_v",
+        "task_025_m",
+        "task_025_h",
+        "task_036_v",
+        "task_036_m",
+        "task_036_h",
+        "task_039_v",
+        "task_039_m",
+        "task_039_h",
+        "task_050_v",
+        "task_050_m",
+        "task_050_h",
+        "task_060_v",
+        "task_060_m",
+        "task_060_h",
+        "task_064_v",
+        "task_064_m",
+        "task_064_h",
+        "task_065_v",
+        "task_065_m",
+        "task_065_h",
+        "task_071_v",
+        "task_071_m",
+        "task_071_h",
+        "task_084_v",
+        "task_084_m",
+        "task_084_h",
+        "task_100_v",
+        "task_100_m",
+        "task_100_h",
+        "task_101_v",
+        "task_101_m",
+        "task_101_h",
+        "task_106_v",
+        "task_106_m",
+        "task_106_h",
+        "task_116_v",
+        "task_116_m",
+        "task_116_h",
+        "task_133_v",
+        "task_133_m",
+        "task_133_h",
+        "task_141_v",
+        "task_141_m",
+        "task_141_h",
+        "task_142_v",
+        "task_142_m",
+        "task_142_h"
+      ],
+      "tasks_filter": "task_006_v,task_006_m,task_006_h,task_014_v,task_014_m,task_014_h,task_025_v,task_025_m,task_025_h,task_036_v,task_036_m,task_036_h,task_039_v,task_039_m,task_039_h,task_050_v,task_050_m,task_050_h,task_060_v,task_060_m,task_060_h,task_064_v,task_064_m,task_064_h,task_065_v,task_065_m,task_065_h,task_071_v,task_071_m,task_071_h,task_084_v,task_084_m,task_084_h,task_100_v,task_100_m,task_100_h,task_101_v,task_101_m,task_101_h,task_106_v,task_106_m,task_106_h,task_116_v,task_116_m,task_116_h,task_133_v,task_133_m,task_133_h,task_141_v,task_141_m,task_141_h,task_142_v,task_142_m,task_142_h",
+      "trials_per_task": 8
+    },
+    {
+      "agent_labels": [
+        "gpt61_sol_high"
+      ],
+      "catalog_sizes": [
+        20000
+      ],
+      "name": "gpt_llm_users",
+      "planned_trials": 432,
+      "retrieval_modes": [
+        "structured"
+      ],
+      "role": "GPT-6.1 Sol with the two LLM users on the reliability block",
+      "simulator_labels": [
+        "sim_glm53_flash",
+        "sim_qwen38_27b"
+      ],
+      "simulator_mode": "llm",
+      "task_count": 54,
+      "task_ids": [
+        "task_006_v",
+        "task_006_m",
+        "task_006_h",
+        "task_014_v",
+        "task_014_m",
+        "task_014_h",
+        "task_025_v",
+        "task_025_m",
+        "task_025_h",
+        "task_036_v",
+        "task_036_m",
+        "task_036_h",
+        "task_039_v",
+        "task_039_m",
+        "task_039_h",
+        "task_050_v",
+        "task_050_m",
+        "task_050_h",
+        "task_060_v",
+        "task_060_m",
+        "task_060_h",
+        "task_064_v",
+        "task_064_m",
+        "task_064_h",
+        "task_065_v",
+        "task_065_m",
+        "task_065_h",
+        "task_071_v",
+        "task_071_m",
+        "task_071_h",
+        "task_084_v",
+        "task_084_m",
+        "task_084_h",
+        "task_100_v",
+        "task_100_m",
+        "task_100_h",
+        "task_101_v",
+        "task_101_m",
+        "task_101_h",
+        "task_106_v",
+        "task_106_m",
+        "task_106_h",
+        "task_116_v",
+        "task_116_m",
+        "task_116_h",
+        "task_133_v",
+        "task_133_m",
+        "task_133_h",
+        "task_141_v",
+        "task_141_m",
+        "task_141_h",
+        "task_142_v",
+        "task_142_m",
+        "task_142_h"
+      ],
+      "tasks_filter": "task_006_v,task_006_m,task_006_h,task_014_v,task_014_m,task_014_h,task_025_v,task_025_m,task_025_h,task_036_v,task_036_m,task_036_h,task_039_v,task_039_m,task_039_h,task_050_v,task_050_m,task_050_h,task_060_v,task_060_m,task_060_h,task_064_v,task_064_m,task_064_h,task_065_v,task_065_m,task_065_h,task_071_v,task_071_m,task_071_h,task_084_v,task_084_m,task_084_h,task_100_v,task_100_m,task_100_h,task_101_v,task_101_m,task_101_h,task_106_v,task_106_m,task_106_h,task_116_v,task_116_m,task_116_h,task_133_v,task_133_m,task_133_h,task_141_v,task_141_m,task_141_h,task_142_v,task_142_m,task_142_h",
+      "trials_per_task": 4
+    }
+  ],
+  "stall_retry_rule": {
+    "description": "A trial that reaches the wall cap is an infrastructure stall when the time not covered by completed calls plus the time spent in failed calls is at least the threshold. Its trace is quarantined and the trial is re-run once; quarantined traces are kept and counted.",
+    "max_retries": 1,
+    "threshold_seconds": 240
+  },
+  "status": "frozen",
+  "trial_accounting": {
+    "addendum_trials": 1296,
+    "smoke_trials": 12
+  },
+  "version": "books-wikidata-v4-addendum-v1"
+}

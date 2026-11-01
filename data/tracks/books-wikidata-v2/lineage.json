@@ -1,0 +1,18 @@
+{
+  "catalog_path": "data/tracks/books-wikidata-v2/catalog.json",
+  "catalog_sha256": "19e9fa3a4db03de8f8bb8cdd8f7b231346a44f21cefca18947b7b10485d7093f",
+  "catalog_sizes": [
+    5000,
+    10000,
+    20000
+  ],
+  "design_version": "matched-reveal-v1",
+  "family_count": 150,
+  "method": "native deterministic catalog-predicate generation with matched reveal variants",
+  "retrieval_diagnostics_recorded": false,
+  "sampling_mode": "catalog-predicate-v1",
+  "seed": 20260926,
+  "source_provenance_sha256": "d4a670465b21d853ad33df80081ba10da0d15b958fc5ad4e1445b9c6756b4307",
+  "source_status": "public-redistributable",
+  "task_count": 450
+}

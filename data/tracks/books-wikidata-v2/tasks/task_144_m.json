@@ -1,0 +1,43 @@
+{
+  "id": "task_144_m",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Memoir"
+      },
+      "reveal": "on_ask"
+    },
+    {
+      "constraint": {
+        "field": "countries",
+        "op": "contains",
+        "value": "United States"
+      },
+      "reveal": "volunteer"
+    }
+  ],
+  "persona": "You are a regular library user looking for something specific enough to narrow a large catalog. You want a book you have not already read.",
+  "soft_preferences": [],
+  "policy_flags": [
+    "history",
+    "single_recommendation",
+    "recommend_tool"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "simple",
+  "reveal_difficulty": "mixed",
+  "user_history": {
+    "user_1": {
+      "read": [
+        "wd_Q3163506",
+        "wd_Q3790856"
+      ],
+      "ratings": {}
+    }
+  },
+  "user_id": "user_1",
+  "user_services": [],
+  "user_formats": []
+}

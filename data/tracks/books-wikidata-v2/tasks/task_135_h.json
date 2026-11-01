@@ -1,0 +1,40 @@
+{
+  "id": "task_135_h",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Graphic Novel"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "languages",
+        "op": "contains",
+        "value": "Norwegian"
+      },
+      "reveal": "hidden"
+    }
+  ],
+  "persona": "You are an avid reader choosing your next book and care more about fit than hype.",
+  "soft_preferences": [],
+  "policy_flags": [
+    "single_recommendation",
+    "transparency",
+    "recommend_tool"
+  ],
+  "no_valid_recommendation": true,
+  "complexity": "simple",
+  "reveal_difficulty": "hidden",
+  "user_history": {
+    "user_1": {
+      "read": [],
+      "ratings": {}
+    }
+  },
+  "user_id": "user_1",
+  "user_services": [],
+  "user_formats": []
+}

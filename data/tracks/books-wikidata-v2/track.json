@@ -1,0 +1,9 @@
+{
+  "distribution": "catalog",
+  "domain": "books",
+  "harness_profile": "books-v4",
+  "id": "books-wikidata-v2",
+  "release_status": "public",
+  "search_profile": "bm25f-v1",
+  "structured_profile": "books-wikidata-core-v3"
+}

@@ -107,6 +107,31 @@ observation, not a controlled ablation: the policy prompt, the evaluator, and
 the provider's weights behind an unpinned model alias may all have moved
 between the two run dates.
 
+## Tracks
+
+A **track** is the coarser label above generations: which domain and which
+catalog a number came from (`movies-v1`, `books-wikidata-v2`). Entries record
+`track`; entries that predate the field are `movies-v1`. Two entries on
+different tracks are never comparable — the catalogs differ, and on books so
+does the domain — and the renderer gives each track its own section.
+
+Generation labels are scoped to a track. `g0`/`g1` above describe
+`movies-v1`; a new track opens at `g0` with its own content digests and its
+own section here when its first entry lands. `data/track.json` labels the
+existing content `movies-v1` additively — none of the three digests recorded
+above change because a fourth file sits beside them.
+
+## Modes
+
+Entries also record `mode`. `tools` is the harness described in the paper.
+`memory` gives the agent a single `recommend(title)` tool and no catalog
+tools, scores constraints only over the satisfiable tasks (four of the seven
+policies need tools the agent does not have), and is rendered in a separate
+probe table per track — it measures what a model recalls about a catalog,
+not how well it recommends. `--no-tools` runs from before memory mode existed
+removed `recommend()` too, so nothing they ran could register a
+recommendation; `make-entry` refuses them.
+
 ## Opening the next generation
 
 1. Bump the label and add a section here: what changed, and whether

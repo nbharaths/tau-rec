@@ -1,0 +1,71 @@
+{
+  "id": "task_038_v",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Fantasy"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Romance"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "countries",
+        "op": "contains",
+        "value": "United States"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "publication_year",
+        "op": ">=",
+        "value": 1997
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "publication_year",
+        "op": "<=",
+        "value": 2006
+      },
+      "reveal": "volunteer"
+    }
+  ],
+  "persona": "You are browsing for a book for an upcoming quiet weekend and want one confident recommendation. You want a book you have not already read.",
+  "soft_preferences": [],
+  "policy_flags": [
+    "history",
+    "format_verification_v2",
+    "single_recommendation",
+    "recommend_tool"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "complex",
+  "reveal_difficulty": "volunteer",
+  "user_history": {
+    "user_1": {
+      "read": [
+        "wd_Q3865970",
+        "wd_Q16387053",
+        "wd_Q7722666"
+      ],
+      "ratings": {}
+    }
+  },
+  "user_id": "user_1",
+  "user_services": [],
+  "user_formats": [
+    "ebook"
+  ]
+}

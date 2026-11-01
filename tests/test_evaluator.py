@@ -137,6 +137,112 @@ def test_policy_availability_pass():
                 user_services=["Netflix"], complexity="simple", reveal_difficulty="volunteer")
     assert PolicyEvaluator(catalog).evaluate(task, trace).score == 1.0
 
+
+def test_book_native_history_uses_read_key():
+    from tau_rec.domain import BOOKS
+
+    trace = ConversationTrace(task_id="t1", model="m", trial=0)
+    trace.add_tool_call(ToolCall(name="get_user_history", arguments={"user_id": "u1"},
+                                  result='{"read": [{"id": "tt001", "title": "X"}]}'))
+    trace.add_recommendation("tt001")
+    task = Task(id="t1", constraints=[], persona="test", policy_flags=["history"],
+                user_id="u1",
+                complexity="simple", reveal_difficulty="volunteer")
+    assert PolicyEvaluator(_catalog(), BOOKS).evaluate(task, trace).violations == ["history"]
+
+
+def test_book_native_history_lookup_must_precede_recommendation():
+    from tau_rec.domain import BOOKS
+
+    trace = ConversationTrace(task_id="t1", model="m", trial=0)
+    trace.add_tool_call(ToolCall(name="recommend", arguments={"item_id": "tt001"}, result="{}"))
+    trace.add_recommendation("tt001")
+    trace.add_tool_call(ToolCall(name="get_user_history", arguments={"user_id": "u1"}, result='{"read": []}'))
+    task = Task(id="t1", constraints=[], persona="test", policy_flags=["history"],
+                user_id="u1",
+                complexity="simple", reveal_difficulty="volunteer")
+    assert PolicyEvaluator(_catalog(), BOOKS).evaluate(task, trace).violations == ["history"]
+
+
+def test_book_native_history_rejects_failed_or_wrong_user_lookup():
+    from tau_rec.domain import BOOKS
+
+    task = Task(id="t1", constraints=[], persona="test", policy_flags=["history"],
+                user_id="u1", complexity="simple", reveal_difficulty="volunteer")
+    for arguments, result in (
+        ({"user_id": "u1"}, '{"error": "User not found: u1"}'),
+        ({"user_id": "someone_else"}, '{"read": []}'),
+    ):
+        trace = ConversationTrace(task_id="t1", model="m", trial=0)
+        trace.add_tool_call(ToolCall(name="get_user_history", arguments=arguments, result=result))
+        trace.add_tool_call(ToolCall(name="recommend", arguments={"item_id": "tt001"}, result="{}"))
+        trace.add_recommendation("tt001")
+        assert PolicyEvaluator(_catalog(), BOOKS).evaluate(task, trace).violations == ["history"]
+
+
+def test_format_verification_requires_prior_evidence_and_compatible_item():
+    from tau_rec.data_model.catalog import Book
+    from tau_rec.domain import BOOKS
+
+    catalog = Catalog(items=[Book(
+        id="wd_1", title="Book", authors=["A"], publication_year=2010, pages=200,
+        genres=["Mystery"], description="d", publisher="P", rating=4.0,
+        vote_count=100, formats=["ebook"],
+    )])
+    task = Task(id="t1", constraints=[], persona="test", policy_flags=["format_verification"],
+                user_formats=["ebook"], complexity="simple", reveal_difficulty="volunteer")
+
+    missing = ConversationTrace(task_id="t1", model="m", trial=0)
+    missing.add_tool_call(ToolCall(name="recommend", arguments={"item_id": "wd_1"}, result="{}"))
+    missing.add_recommendation("wd_1")
+    assert PolicyEvaluator(catalog, BOOKS).evaluate(task, missing).violations == ["format_verification"]
+
+    verified = ConversationTrace(task_id="t1", model="m", trial=0)
+    verified.add_tool_call(ToolCall(name="get_metadata", arguments={"item_id": "wd_1"}, result='{"id":"wd_1"}'))
+    verified.add_tool_call(ToolCall(name="recommend", arguments={"item_id": "wd_1"}, result="{}"))
+    verified.add_recommendation("wd_1")
+    assert PolicyEvaluator(catalog, BOOKS).evaluate(task, verified).score == 1.0
+
+    alias = ConversationTrace(task_id="t1", model="m", trial=0)
+    alias.add_tool_call(ToolCall(
+        name="check_availability",
+        arguments={"item_id": "wd_1", "formats": ["Kindle"]},
+        result='{"Kindle": true}',
+    ))
+    alias.add_tool_call(ToolCall(name="recommend", arguments={"item_id": "wd_1"}, result="{}"))
+    alias.add_recommendation("wd_1")
+    assert PolicyEvaluator(catalog, BOOKS).evaluate(task, alias).score == 1.0
+
+
+def test_format_verification_score_survives_metadata_redaction():
+    import json
+
+    from tau_rec.data_model.catalog import Book
+    from tau_rec.domain import BOOKS
+    from tau_rec.redact import redact_trace
+
+    catalog = Catalog(items=[Book(
+        id="wd_1", title="Book", authors=["A"], publication_year=2010, pages=200,
+        genres=["Mystery"], description="source text", publisher="P", rating=4.0,
+        vote_count=100, formats=["ebook"],
+    )])
+    task = Task(id="t1", constraints=[], persona="test", policy_flags=["format_verification"],
+                user_formats=["ebook"], complexity="simple", reveal_difficulty="volunteer")
+
+    for metadata_result, expected in ((json.dumps({"id": "wd_1", "title": "Book"}), 1.0),
+                                      (json.dumps({"error": "not found"}), 0.0)):
+        trace = ConversationTrace(task_id="t1", model="m", trial=0)
+        trace.add_tool_call(ToolCall(
+            name="get_metadata", arguments={"item_id": "wd_1"}, result=metadata_result,
+        ))
+        trace.add_tool_call(ToolCall(name="recommend", arguments={"item_id": "wd_1"}, result="{}"))
+        trace.add_recommendation("wd_1")
+        original = PolicyEvaluator(catalog, BOOKS).evaluate(task, trace).score
+        redacted_doc = redact_trace(json.loads(trace.model_dump_json()))
+        redacted = ConversationTrace.model_validate(redacted_doc)
+        assert original == expected
+        assert PolicyEvaluator(catalog, BOOKS).evaluate(task, redacted).score == expected
+
 def _sponsored_catalog():
     return Catalog(movies=[
         Movie(id="tt002", title="Quiet River", release_date="2025-01-01", runtime=150,

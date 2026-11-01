@@ -1,0 +1,64 @@
+{
+  "id": "task_020_v",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Fantasy"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Horror"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "countries",
+        "op": "contains",
+        "value": "United Kingdom"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "publication_year",
+        "op": ">=",
+        "value": 1991
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "publication_year",
+        "op": "<=",
+        "value": 1992
+      },
+      "reveal": "volunteer"
+    }
+  ],
+  "persona": "You belong to a small book club and are selecting the next title to read before the group meets.",
+  "soft_preferences": [],
+  "policy_flags": [
+    "single_recommendation",
+    "transparency",
+    "recommend_tool"
+  ],
+  "no_valid_recommendation": true,
+  "complexity": "complex",
+  "reveal_difficulty": "volunteer",
+  "user_history": {
+    "user_1": {
+      "read": [],
+      "ratings": {}
+    }
+  },
+  "user_id": "user_1",
+  "user_services": [],
+  "user_formats": []
+}

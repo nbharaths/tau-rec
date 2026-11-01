@@ -1,0 +1,213 @@
+{
+  "by_agent": {
+    "deepseek_v41_flash_high": {
+      "no_recommendation": 132,
+      "rejected": 1,
+      "success": 154,
+      "untested": 193
+    },
+    "glm53_flash_high": {
+      "no_recommendation": 91,
+      "rejected": 3,
+      "success": 160,
+      "untested": 226
+    },
+    "gpt61_sol_high": {
+      "no_recommendation": 1,
+      "success": 64,
+      "untested": 415
+    },
+    "qwen38_27b_high": {
+      "accepted": 1,
+      "no_recommendation": 72,
+      "rejected": 5,
+      "success": 146,
+      "untested": 256
+    }
+  },
+  "failures": 1396,
+  "feasibility": {
+    "nvr": {
+      "agents_only": 5,
+      "scripted": 0,
+      "tasks": 6,
+      "unsolved": 1
+    },
+    "satisfiable": {
+      "agents_only": 11,
+      "scripted": 28,
+      "tasks": 45,
+      "unsolved": 6
+    }
+  },
+  "no_recommendation_stops": {
+    "abstained": 9,
+    "context_overflow": 1,
+    "tool_budget": 1,
+    "turn_limit": 94,
+    "wall_cap": 191
+  },
+  "pooled": {
+    "accepted": 1,
+    "no_recommendation": 296,
+    "rejected": 9,
+    "success": 524,
+    "untested": 1090
+  },
+  "proposals_by_agent": {
+    "deepseek_v41_flash_high": {
+      "successes_with_proposal": 150,
+      "successes_without_proposal": 4,
+      "trials": 480,
+      "with_proposal": 429
+    },
+    "glm53_flash_high": {
+      "successes_with_proposal": 151,
+      "successes_without_proposal": 9,
+      "trials": 480,
+      "with_proposal": 289
+    },
+    "gpt61_sol_high": {
+      "successes_with_proposal": 48,
+      "successes_without_proposal": 16,
+      "trials": 480,
+      "with_proposal": 268
+    },
+    "qwen38_27b_high": {
+      "successes_with_proposal": 139,
+      "successes_without_proposal": 7,
+      "trials": 480,
+      "with_proposal": 315
+    }
+  },
+  "proposals_pooled": {
+    "successes_with_proposal": 488,
+    "successes_without_proposal": 36,
+    "trials": 1920,
+    "with_proposal": 1301
+  },
+  "refusal_by_agent": {
+    "deepseek_v41_flash_high": {
+      "never_refused_no_recommendation": 9,
+      "never_refused_success": 40,
+      "never_refused_untested": 27,
+      "refused_no_recommendation": 123,
+      "refused_rejected": 1,
+      "refused_success": 114,
+      "refused_untested": 166
+    },
+    "glm53_flash_high": {
+      "never_refused_no_recommendation": 1,
+      "never_refused_success": 38,
+      "never_refused_untested": 46,
+      "refused_no_recommendation": 90,
+      "refused_rejected": 3,
+      "refused_success": 122,
+      "refused_untested": 180
+    },
+    "gpt61_sol_high": {
+      "never_refused_success": 38,
+      "never_refused_untested": 159,
+      "refused_no_recommendation": 1,
+      "refused_success": 26,
+      "refused_untested": 256
+    },
+    "qwen38_27b_high": {
+      "never_refused_no_recommendation": 1,
+      "never_refused_rejected": 1,
+      "never_refused_success": 39,
+      "never_refused_untested": 60,
+      "refused_accepted": 1,
+      "refused_no_recommendation": 71,
+      "refused_rejected": 4,
+      "refused_success": 107,
+      "refused_untested": 196
+    }
+  },
+  "refusal_pooled": {
+    "never_refused_no_recommendation": 11,
+    "never_refused_rejected": 1,
+    "never_refused_success": 155,
+    "never_refused_untested": 292,
+    "refused_accepted": 1,
+    "refused_no_recommendation": 285,
+    "refused_rejected": 8,
+    "refused_success": 369,
+    "refused_untested": 798
+  },
+  "share_of_failures": {
+    "accepted": 0.0007,
+    "no_recommendation": 0.212,
+    "rejected": 0.0064,
+    "untested": 0.7808
+  },
+  "status": "post hoc",
+  "untagged_acceptable_by_agent": {
+    "deepseek_v41_flash_high": {
+      "failures": 326,
+      "untagged_acceptable": 31
+    },
+    "glm53_flash_high": {
+      "failures": 320,
+      "untagged_acceptable": 47
+    },
+    "gpt61_sol_high": {
+      "failures": 416,
+      "untagged_acceptable": 9
+    },
+    "qwen38_27b_high": {
+      "failures": 334,
+      "untagged_acceptable": 31
+    }
+  },
+  "untagged_acceptable_pooled": {
+    "failures": 1396,
+    "untagged_acceptable": 118
+  },
+  "untested_by_agent": {
+    "deepseek_v41_flash_high": {
+      "named_earlier": 29,
+      "not_named_earlier": 164
+    },
+    "glm53_flash_high": {
+      "named_earlier": 107,
+      "not_named_earlier": 119
+    },
+    "gpt61_sol_high": {
+      "named_earlier": 12,
+      "not_named_earlier": 403
+    },
+    "qwen38_27b_high": {
+      "named_earlier": 79,
+      "not_named_earlier": 177
+    }
+  },
+  "untested_context_by_agent": {
+    "deepseek_v41_flash_high": {
+      "after_rejection": 147,
+      "no_proposal": 46
+    },
+    "glm53_flash_high": {
+      "after_rejection": 43,
+      "no_proposal": 182,
+      "no_rejection": 1
+    },
+    "gpt61_sol_high": {
+      "after_rejection": 219,
+      "no_proposal": 196
+    },
+    "qwen38_27b_high": {
+      "after_rejection": 98,
+      "no_proposal": 158
+    }
+  },
+  "untested_context_pooled": {
+    "after_rejection": 507,
+    "no_proposal": 582,
+    "no_rejection": 1
+  },
+  "untested_pooled": {
+    "named_earlier": 227,
+    "not_named_earlier": 863
+  }
+}

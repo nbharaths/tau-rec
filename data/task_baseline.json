@@ -1,6 +1,12 @@
 {
+  "_meta": {
+    "catalog_sha256": "5f0facd351f3e67e558534814492b5120d324f1921a67f0bdd2952a8373fff52",
+    "tau_rec_version": "1.3.0",
+    "track": "movies-v1"
+  },
   "task_001": {
     "complexity": "simple",
+    "constraints_sha256": "05756fd1f52554533bbd93b7ef14e23320724a7936077f62b1c02be018ffa0a7",
     "n_constraints": 1,
     "n_hidden": 0,
     "n_on_ask": 0,
@@ -11,11 +17,19 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "volunteer",
+    "solution_ids_sha256": "5487a583e4b457fba50a20f944a5ecc10671087af4d1bd537e3312d58cd3fb4f",
     "solution_set_size": 37,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Amazon Prime Video",
+      "HBO Max",
+      "Hulu",
+      "Netflix"
+    ]
   },
   "task_002": {
     "complexity": "simple",
+    "constraints_sha256": "de6d39dacc0e66d899cab31b8eb2cfd7c0f672b7e5ac1d59d80b6d5fcc33e0ab",
     "n_constraints": 2,
     "n_hidden": 0,
     "n_on_ask": 0,
@@ -26,11 +40,16 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "volunteer",
+    "solution_ids_sha256": "e2f93bf3d0b56b02d65940ee7c71bbf5a2e6afa7531991403c030eb0b0bb8194",
     "solution_set_size": 34,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Hulu"
+    ]
   },
   "task_003": {
     "complexity": "simple",
+    "constraints_sha256": "dd6b593ea7346b0d09edb7e68956bf7df8ed9d817a53ca46b4b21a3b4dd8fc55",
     "n_constraints": 1,
     "n_hidden": 0,
     "n_on_ask": 0,
@@ -41,11 +60,19 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "volunteer",
+    "solution_ids_sha256": "194a23e6ec3727d39df3c591689a8e5924d6d2af57752df236fb3b6f7ea94cfb",
     "solution_set_size": 40,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Amazon Prime Video",
+      "HBO Max",
+      "Hulu",
+      "Paramount+"
+    ]
   },
   "task_004": {
     "complexity": "simple",
+    "constraints_sha256": "97c14c54c46e158d05b24dcf7a64ac883ed0518c46e1082d8f48ed363c44f89d",
     "n_constraints": 2,
     "n_hidden": 0,
     "n_on_ask": 0,
@@ -56,11 +83,19 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "volunteer",
+    "solution_ids_sha256": "107e5c6cef13830f7dfdea4225510bd389455b5ed9cd2e73cfe2c8fabd468c89",
     "solution_set_size": 13,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Disney+",
+      "HBO Max",
+      "Netflix",
+      "Paramount+"
+    ]
   },
   "task_005": {
     "complexity": "simple",
+    "constraints_sha256": "4e67dd8ba53027309cd69f8b0dbb032d6f90f9e312cbeaaa750979cafefd0ebd",
     "n_constraints": 2,
     "n_hidden": 0,
     "n_on_ask": 0,
@@ -72,11 +107,18 @@
       "watch_history"
     ],
     "reveal_difficulty": "volunteer",
+    "solution_ids_sha256": "d276e1f1ae383787420c8594960db4cf7eab6c2fb169e74313eca0f2583ddbeb",
     "solution_set_size": 51,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Amazon Prime Video",
+      "Hulu",
+      "Paramount+"
+    ]
   },
   "task_006": {
     "complexity": "simple",
+    "constraints_sha256": "12040f6251d2ad2a49701f687cb9a07290029499418f210523cce49ba9de73c4",
     "n_constraints": 2,
     "n_hidden": 0,
     "n_on_ask": 1,
@@ -87,11 +129,17 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "dc9a111403f5416a867f0f23de2bed59bd7f877b58111f6ff9924240de7c7597",
     "solution_set_size": 41,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Netflix",
+      "Peacock"
+    ]
   },
   "task_007": {
     "complexity": "simple",
+    "constraints_sha256": "0959a51492e78513dbe4c42a919d44e8caa3d09e63cb00596ccdd4ee66c39e27",
     "n_constraints": 2,
     "n_hidden": 0,
     "n_on_ask": 1,
@@ -102,11 +150,17 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "4b2b5a53e6b424ea3c0dfee718c5595ab77788eddca5344e21a4df07accb9c03",
     "solution_set_size": 36,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Amazon Prime Video",
+      "Netflix"
+    ]
   },
   "task_008": {
     "complexity": "simple",
+    "constraints_sha256": "13ec62d26c519821fe6e55e114efe98ea50b1db2251259a4340f6d9c841a877a",
     "n_constraints": 2,
     "n_hidden": 0,
     "n_on_ask": 1,
@@ -118,11 +172,17 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "79ad57ef974698af855a4f4c745549c1048bfc2b6f9df086783ff1abeb1d8252",
     "solution_set_size": 48,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Apple TV+",
+      "Philo"
+    ]
   },
   "task_009": {
     "complexity": "simple",
+    "constraints_sha256": "ba9e936f98d94439359efe32a7d30d2567a789a01b53426c4aaaa79a764b9664",
     "n_constraints": 2,
     "n_hidden": 0,
     "n_on_ask": 1,
@@ -133,11 +193,16 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "fb840244482b32581d1e7db8b9044bc668bbc5e59f66e2fe1d5b04c33ace8351",
     "solution_set_size": 20,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Hulu"
+    ]
   },
   "task_010": {
     "complexity": "simple",
+    "constraints_sha256": "67d614f4a2c6b4208144ea543c9c8ba83862889eb7397668a04b7b9693d4f667",
     "n_constraints": 2,
     "n_hidden": 0,
     "n_on_ask": 1,
@@ -149,11 +214,19 @@
       "watch_history"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "106f7aa2e0a78ff750149d9c5ffa0bb399bd24936fdb4298cf480e43e25f357e",
     "solution_set_size": 36,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Amazon Prime Video",
+      "Disney+",
+      "MGM+",
+      "Starz"
+    ]
   },
   "task_011": {
     "complexity": "simple",
+    "constraints_sha256": "1ae827a467f7fee6783b1f862dddd9b31cad712552b6ae62f31562a62f514a40",
     "n_constraints": 2,
     "n_hidden": 1,
     "n_on_ask": 0,
@@ -164,11 +237,17 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "hidden",
+    "solution_ids_sha256": "25be73e02058d6682c8061d68bdbc202441b52dcc9ff36305ed646f9b5069b55",
     "solution_set_size": 31,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Hulu",
+      "Netflix"
+    ]
   },
   "task_012": {
     "complexity": "simple",
+    "constraints_sha256": "277b4824a8a35d0d1f955b728088e6e6a15e80944f5d8c3e6d56ddf4f33c9270",
     "n_constraints": 2,
     "n_hidden": 1,
     "n_on_ask": 0,
@@ -179,11 +258,17 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "hidden",
+    "solution_ids_sha256": "7a0b5e3b8d0c50e9d5c421a534ac75291460f02b4ef44602ca6d3a76ac3ad208",
     "solution_set_size": 32,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "HBO Max",
+      "Paramount+"
+    ]
   },
   "task_013": {
     "complexity": "simple",
+    "constraints_sha256": "0e2a8051e91ab5e7f98d4653b5a4d37d7d834fa2120cb9ac3e4698000c6e84af",
     "n_constraints": 2,
     "n_hidden": 1,
     "n_on_ask": 1,
@@ -194,11 +279,17 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "hidden",
+    "solution_ids_sha256": "88005e12076f9b7c968208ca2aecb319833cbfbb82316e32208a4a6bd8d3f9d6",
     "solution_set_size": 51,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "HBO Max",
+      "Hulu"
+    ]
   },
   "task_014": {
     "complexity": "simple",
+    "constraints_sha256": "8f2831ef06b6c41efe14c89dd02b385abd71d177261e6edf6eae05a69cf9bfd0",
     "n_constraints": 2,
     "n_hidden": 1,
     "n_on_ask": 0,
@@ -210,11 +301,19 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "hidden",
+    "solution_ids_sha256": "9de309d606612673a559cc51d82b662800ff0f4b85d38cd1c985e69b43f78e1d",
     "solution_set_size": 45,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Amazon Prime Video",
+      "Apple TV+",
+      "HBO Max",
+      "Paramount+"
+    ]
   },
   "task_015": {
     "complexity": "simple",
+    "constraints_sha256": "18350eff06cc6a23f43bfe3373fa4d1d75eab25c02eaef952e9db35ba335a791",
     "n_constraints": 2,
     "n_hidden": 1,
     "n_on_ask": 0,
@@ -225,11 +324,19 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "hidden",
+    "solution_ids_sha256": "b1d8e9548ac8ca29db09c7df4852924aa239c230f73c7e06f20d9c6660234f4f",
     "solution_set_size": 34,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Amazon Prime Video",
+      "Hulu",
+      "Paramount+",
+      "Peacock"
+    ]
   },
   "task_016": {
     "complexity": "medium",
+    "constraints_sha256": "c7f7c225fd5e691ec5d2b8d34d1100c28d2f2b0610d7a9ce77ae3ae3f68d3591",
     "n_constraints": 3,
     "n_hidden": 1,
     "n_on_ask": 1,
@@ -241,11 +348,19 @@
       "sponsored"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "f975fb5aeb0561981a776fb183b2524debd0a64a45b2bdcf38585d056d9fb9c9",
     "solution_set_size": 5,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Disney+",
+      "Hulu",
+      "Netflix",
+      "Peacock"
+    ]
   },
   "task_017": {
     "complexity": "medium",
+    "constraints_sha256": "3b4f5c1da158f3ddae19ae2c47b0da5f4a7cff79e574efc01eca10c0f77244e4",
     "n_constraints": 4,
     "n_hidden": 2,
     "n_on_ask": 1,
@@ -257,11 +372,19 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "09bb684761c5a9227b67323a3d9afd8532ed0e4e40fd7b67a2a9ec132f1eb76c",
     "solution_set_size": 17,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Apple TV+",
+      "Disney+",
+      "Netflix",
+      "Paramount+"
+    ]
   },
   "task_018": {
     "complexity": "medium",
+    "constraints_sha256": "0fb80399f2e472af94c2781fd5d344189c402c48544d1467c3162fc1c1f69b4e",
     "n_constraints": 3,
     "n_hidden": 1,
     "n_on_ask": 1,
@@ -273,11 +396,19 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "3c0807c075f7a4d391038a11334f95b2f2a9dbf97bf230c9f7cec39477bf260b",
     "solution_set_size": 28,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Amazon Prime Video",
+      "HBO Max",
+      "Hulu",
+      "Netflix"
+    ]
   },
   "task_019": {
     "complexity": "medium",
+    "constraints_sha256": "f7d4141690ffd6c84d1ca4b558e94de273851384a4804431406c216e4f0e5632",
     "n_constraints": 4,
     "n_hidden": 2,
     "n_on_ask": 1,
@@ -290,11 +421,19 @@
       "watch_history"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "d37de39781e395c486338fb4b406ef3501fc4fb7bafa3525916dac2f53ef11f9",
     "solution_set_size": 30,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Amazon Prime Video",
+      "Hulu",
+      "Netflix",
+      "Peacock"
+    ]
   },
   "task_020": {
     "complexity": "medium",
+    "constraints_sha256": "f6e72b12643996a67056f2d4a2d0b852fa5ac507571ada5ba70494e8bfd57b7c",
     "n_constraints": 3,
     "n_hidden": 1,
     "n_on_ask": 1,
@@ -306,11 +445,17 @@
       "sponsored"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "8a32fae12b1b74b00dfdb7dd40ae3252373fabb86998ed50b2c51be3f3892456",
     "solution_set_size": 2,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Hulu",
+      "Paramount+"
+    ]
   },
   "task_021": {
     "complexity": "medium",
+    "constraints_sha256": "12af719d1cccdf33a75736e88b4058b49f5b416b6ec70049bb18be5b1e144f68",
     "n_constraints": 3,
     "n_hidden": 1,
     "n_on_ask": 1,
@@ -321,11 +466,18 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "6f9efb4b0ccc449787f6e3820ff3c2b013ac60b908a6bec58746f86ef2e78cc7",
     "solution_set_size": 5,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Hulu",
+      "Netflix",
+      "Paramount+"
+    ]
   },
   "task_022": {
     "complexity": "medium",
+    "constraints_sha256": "a0d3df04ed26578cc391806ad42955d9aec65d8a0e71eee364788dbff87d1655",
     "n_constraints": 3,
     "n_hidden": 1,
     "n_on_ask": 1,
@@ -336,11 +488,16 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "b37a067996d21b6dc274e0c29ec67f38430a02f49b5cdc27070569e8b0fb543e",
     "solution_set_size": 18,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Amazon Prime Video"
+    ]
   },
   "task_023": {
     "complexity": "medium",
+    "constraints_sha256": "446aa8c48b9943a45798124a6412b07c9cdccef8e1c76cf09b4f61c23059b0e6",
     "n_constraints": 3,
     "n_hidden": 0,
     "n_on_ask": 2,
@@ -352,11 +509,17 @@
       "watch_history"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "72415249c6ba2b67d22195ae2b7fa2183ee3a6b248f7edb7c25a2416fa2bd6f3",
     "solution_set_size": 8,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Amazon Prime Video",
+      "Hulu"
+    ]
   },
   "task_024": {
     "complexity": "medium",
+    "constraints_sha256": "c1a850a26f1bb671f5b4631678e370ded7ca99886c36b0f85f339d4ca11f5bd6",
     "n_constraints": 3,
     "n_hidden": 0,
     "n_on_ask": 1,
@@ -368,11 +531,17 @@
       "sponsored"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "8b6629b321f0ebebe5fe6b2d08d741d2c98e5e0f21f758f520d89ead74f31503",
     "solution_set_size": 30,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Hulu",
+      "Netflix"
+    ]
   },
   "task_025": {
     "complexity": "medium",
+    "constraints_sha256": "2b8ba55081b878241ada825e41bcaf4d39fe6a25018d92620c864b39c6fc3787",
     "n_constraints": 4,
     "n_hidden": 0,
     "n_on_ask": 3,
@@ -384,11 +553,18 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "7948df734efde001737bef35dfb669386b92baccfb82645267b4620ebffc6e54",
     "solution_set_size": 23,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "AMC+",
+      "Apple TV+",
+      "Hulu"
+    ]
   },
   "task_026": {
     "complexity": "medium",
+    "constraints_sha256": "5ae9f270393e8868f6a0999e346087b3fb890caf5c9d4d3a621ed1983bfa1fbd",
     "n_constraints": 3,
     "n_hidden": 0,
     "n_on_ask": 2,
@@ -399,11 +575,16 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "eca8b36f554ae2702c490b79c04bad63caa2a62beb0dcc7a921548d1b49f6929",
     "solution_set_size": 6,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Netflix"
+    ]
   },
   "task_027": {
     "complexity": "medium",
+    "constraints_sha256": "f3092e1d60723e50b24bcede0b6e88a41bb60bed7e26d64969ae3e383477105a",
     "n_constraints": 3,
     "n_hidden": 0,
     "n_on_ask": 1,
@@ -414,11 +595,16 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "d34085484d83f452ec46bf0b6bea29c4ada7d2432138e3c9f9e7f49d34f19c4e",
     "solution_set_size": 22,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Netflix"
+    ]
   },
   "task_028": {
     "complexity": "medium",
+    "constraints_sha256": "d20d9c9085dfd8ebf0800ab16640f737f04f696c156a50a860a3f00004731acd",
     "n_constraints": 3,
     "n_hidden": 0,
     "n_on_ask": 2,
@@ -429,11 +615,16 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "3fafc7fc8a65338bbe1698e16bf8b8daeec84c4c15cc86d01b710508d976a31b",
     "solution_set_size": 2,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Amazon Prime Video"
+    ]
   },
   "task_029": {
     "complexity": "medium",
+    "constraints_sha256": "51c7798805a3edd4d812d0e3a96ffac7e8064526378075a2a993cec44229954b",
     "n_constraints": 4,
     "n_hidden": 0,
     "n_on_ask": 2,
@@ -445,11 +636,14 @@
       "watch_history"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "d4616fc433170e079eccc624f780dd7ccb7c0e77ef133c038ea9d9a3f884973c",
     "solution_set_size": 14,
-    "solvable": true
+    "solvable": true,
+    "user_services": []
   },
   "task_030": {
     "complexity": "medium",
+    "constraints_sha256": "3e002120b19bc3925b5c8e63fcf1cb57514e903aedc262b31e5041b2b2cd32f1",
     "n_constraints": 4,
     "n_hidden": 1,
     "n_on_ask": 2,
@@ -460,11 +654,14 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "4ca862bb4db25944aeee7709f39bc4d430bd358f6faaac8d78f694171c9d77c4",
     "solution_set_size": 9,
-    "solvable": true
+    "solvable": true,
+    "user_services": []
   },
   "task_031": {
     "complexity": "medium",
+    "constraints_sha256": "1edfa13b2e40f3cf81be46f2880e58124b9a22aca18723eb9f576387010bc951",
     "n_constraints": 4,
     "n_hidden": 3,
     "n_on_ask": 0,
@@ -476,11 +673,17 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "hidden",
+    "solution_ids_sha256": "ca13ce2521485a504c87d96a64f766efb4a32b96e1aa9b47053ace42e50ed131",
     "solution_set_size": 19,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Amazon Prime Video",
+      "Netflix"
+    ]
   },
   "task_032": {
     "complexity": "medium",
+    "constraints_sha256": "f4f8d51c44542560673ea2762846dea10c2822c56570451843fe4030cc9dc46d",
     "n_constraints": 4,
     "n_hidden": 3,
     "n_on_ask": 1,
@@ -492,11 +695,17 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "hidden",
+    "solution_ids_sha256": "b41b53876013d4301e074e3dce9d8eccfd8b071aaf9ed3a404a542808c3d2b66",
     "solution_set_size": 22,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Hulu",
+      "Netflix"
+    ]
   },
   "task_033": {
     "complexity": "medium",
+    "constraints_sha256": "5b3b2b133bbc7ad6dccf2faa9ec53524542706493939a0cd151ea2d4c53f6b3e",
     "n_constraints": 3,
     "n_hidden": 2,
     "n_on_ask": 0,
@@ -507,11 +716,16 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "hidden",
+    "solution_ids_sha256": "430bdefd6f61ec969f3b24e1e1291042e761447213c00a5edc63bcc9a082d08d",
     "solution_set_size": 5,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Netflix"
+    ]
   },
   "task_034": {
     "complexity": "medium",
+    "constraints_sha256": "b4b3aedf277db563260932dc3f0d6c477137953b8dc4a67d19538ddb53934808",
     "n_constraints": 4,
     "n_hidden": 3,
     "n_on_ask": 0,
@@ -524,11 +738,16 @@
       "sponsored"
     ],
     "reveal_difficulty": "hidden",
+    "solution_ids_sha256": "b60d7924b8ae84e31eaabb049b83e075336d3faf59d1979a3ae77d9504050bbd",
     "solution_set_size": 14,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Netflix"
+    ]
   },
   "task_035": {
     "complexity": "medium",
+    "constraints_sha256": "e9c2aecf322f74500ca5e3eaf22f033a1b6b96539cd4707bf30ff04ec4a7320b",
     "n_constraints": 3,
     "n_hidden": 2,
     "n_on_ask": 0,
@@ -540,11 +759,19 @@
       "watch_history"
     ],
     "reveal_difficulty": "hidden",
+    "solution_ids_sha256": "863788d42ba422347772a4691fe21a820c95a55d99978eea7d1f510037eb9d49",
     "solution_set_size": 7,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Disney+",
+      "Hulu",
+      "Netflix",
+      "Peacock"
+    ]
   },
   "task_036": {
     "complexity": "complex",
+    "constraints_sha256": "0a92e0bb3fc70c6c8a7c95db3a03fabd19aca16e7e9af8543efcef7665b70845",
     "n_constraints": 5,
     "n_hidden": 0,
     "n_on_ask": 0,
@@ -557,11 +784,16 @@
       "watch_history"
     ],
     "reveal_difficulty": "volunteer",
+    "solution_ids_sha256": "2a346ef4910fbd4d228a49d3e1932f66be65a6b78c53fa4676ef873d8cd0f0f7",
     "solution_set_size": 5,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Hulu"
+    ]
   },
   "task_037": {
     "complexity": "complex",
+    "constraints_sha256": "40d4446191ff6e1be7400990a0219e0a71c6a22aefd54b282b5cff83030222b2",
     "n_constraints": 5,
     "n_hidden": 0,
     "n_on_ask": 0,
@@ -574,11 +806,19 @@
       "sponsored"
     ],
     "reveal_difficulty": "volunteer",
+    "solution_ids_sha256": "6d8d6d1478b1675690e5e6a48b4f683f259afe2d8e43ff094dc3f3e3157b9a35",
     "solution_set_size": 30,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Disney+",
+      "HBO Max",
+      "Netflix",
+      "Peacock"
+    ]
   },
   "task_038": {
     "complexity": "complex",
+    "constraints_sha256": "4d2586f5eef0db5794bdab44301f0fea34fde2233c4c829c0850e7a6c517e5da",
     "n_constraints": 5,
     "n_hidden": 0,
     "n_on_ask": 0,
@@ -589,11 +829,16 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "volunteer",
+    "solution_ids_sha256": "d4fde7d7790943aa2abe3bee7f15fdfe141f549e070eead08a6a6b02aa6c00fc",
     "solution_set_size": 3,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Netflix"
+    ]
   },
   "task_039": {
     "complexity": "complex",
+    "constraints_sha256": "0af15f395a01e5272a7de3cb1db73b78bad211bcebc9f962ec7b31ec9dca95a9",
     "n_constraints": 5,
     "n_hidden": 0,
     "n_on_ask": 3,
@@ -604,11 +849,17 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "d7c44b56bd4b4ad078223338dd2e63a5e80adc63562515a6ab50286352bcc9a6",
     "solution_set_size": 2,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Amazon Prime Video",
+      "Hulu"
+    ]
   },
   "task_040": {
     "complexity": "complex",
+    "constraints_sha256": "0521b2efa8e152c2d7fb8a3bce6bccb4e51fca9fb4bf50c2f58ac4b384c15589",
     "n_constraints": 5,
     "n_hidden": 0,
     "n_on_ask": 3,
@@ -620,11 +871,16 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "400e14cbb1f9b4a7d8726e81a4af1d5047d7e4848a6e3b081a01df0d22d0807c",
     "solution_set_size": 4,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Hulu"
+    ]
   },
   "task_041": {
     "complexity": "complex",
+    "constraints_sha256": "a0a81a6f5acc66853bb999057c6d906aa806c5dd26e20cfd4917b64e8ad52ddf",
     "n_constraints": 5,
     "n_hidden": 0,
     "n_on_ask": 3,
@@ -634,11 +890,14 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "ab90ea558df814549cfc6f302fc3263b8e79ff273c0798caf6d0fca08c7e77cc",
     "solution_set_size": 7,
-    "solvable": true
+    "solvable": true,
+    "user_services": []
   },
   "task_042": {
     "complexity": "complex",
+    "constraints_sha256": "e8eea757ef9e0f841f428ec9416ec1bbf39fe999927dc791ad169b692abe50cb",
     "n_constraints": 5,
     "n_hidden": 0,
     "n_on_ask": 3,
@@ -650,11 +909,17 @@
       "watch_history"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "7ae80b63f5709a0a7e0804396554ca50702c2f658c53071c402eaa262812cea0",
     "solution_set_size": 5,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Amazon Prime Video",
+      "Netflix"
+    ]
   },
   "task_043": {
     "complexity": "complex",
+    "constraints_sha256": "57a78e9c1ed8ddcd35652ba0b87f2c90a20e450914cbccb2c3a3455a731e5d16",
     "n_constraints": 5,
     "n_hidden": 0,
     "n_on_ask": 3,
@@ -666,11 +931,16 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "6392a59ae48f91769ced54b6e1de3472ecdaf29fcd31294cbe78a22da568b0d1",
     "solution_set_size": 14,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Netflix"
+    ]
   },
   "task_044": {
     "complexity": "complex",
+    "constraints_sha256": "0f76164df20875887e8864eda335cb5df5741b65f67172d4453cddc219840889",
     "n_constraints": 5,
     "n_hidden": 0,
     "n_on_ask": 3,
@@ -680,11 +950,14 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "e5a7dccde6d3c2b9272348d21a70fa8fe47aa2c7de02e6b9323c680f594ea414",
     "solution_set_size": 2,
-    "solvable": true
+    "solvable": true,
+    "user_services": []
   },
   "task_045": {
     "complexity": "complex",
+    "constraints_sha256": "37e2440d63b97e438bd255967f3dc3192f48ba0bd1655d0a6155570eb76db784",
     "n_constraints": 5,
     "n_hidden": 0,
     "n_on_ask": 3,
@@ -695,11 +968,14 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "9b5780ceb2b4a4fb5de5785d9c05092de4c112876d3c372f32574d8bc7577638",
     "solution_set_size": 7,
-    "solvable": true
+    "solvable": true,
+    "user_services": []
   },
   "task_046": {
     "complexity": "complex",
+    "constraints_sha256": "d4cbf17814a8a933441d2280b14597d94069868e3a4ea216864542fbacb3a1f4",
     "n_constraints": 5,
     "n_hidden": 4,
     "n_on_ask": 0,
@@ -712,11 +988,18 @@
       "watch_history"
     ],
     "reveal_difficulty": "hidden",
+    "solution_ids_sha256": "a643d892cdd3bfd30fd4789575493ae568b50028da47537ee47d0816e887a4bd",
     "solution_set_size": 4,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Disney+",
+      "HBO Max",
+      "Netflix"
+    ]
   },
   "task_047": {
     "complexity": "complex",
+    "constraints_sha256": "d343234398dfe868426299ec6237bc4c8fa898a3c1e3b478bd562926b3548790",
     "n_constraints": 5,
     "n_hidden": 4,
     "n_on_ask": 0,
@@ -728,11 +1011,17 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "hidden",
+    "solution_ids_sha256": "f31b9fb090814c266dc22c1848e5c921c13ec3af3613edc194bd694a00bb1b58",
     "solution_set_size": 19,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Hulu",
+      "Netflix"
+    ]
   },
   "task_048": {
     "complexity": "complex",
+    "constraints_sha256": "f7d0996c85e944631890d58c3a466eb10f5cfedf338f5bcb3959a6038541b7ba",
     "n_constraints": 5,
     "n_hidden": 4,
     "n_on_ask": 0,
@@ -744,11 +1033,17 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "hidden",
+    "solution_ids_sha256": "e38f7e1b2c854da81a7d4f0e98d3d25025005fdcd47dff8fe8404e252695f258",
     "solution_set_size": 21,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Amazon Prime Video",
+      "Hulu"
+    ]
   },
   "task_049": {
     "complexity": "complex",
+    "constraints_sha256": "546cbb65cb8148e47b98d3c3aa44960ee5753baa21b948fb6d80ba8644be8fd1",
     "n_constraints": 5,
     "n_hidden": 4,
     "n_on_ask": 0,
@@ -760,11 +1055,19 @@
       "watch_history"
     ],
     "reveal_difficulty": "hidden",
+    "solution_ids_sha256": "72557ca9430d701f14ce823fcef144e5a5482abfeb64f35565171e79a85a5c0f",
     "solution_set_size": 7,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Apple TV+",
+      "Disney+",
+      "Hulu",
+      "Paramount+"
+    ]
   },
   "task_050": {
     "complexity": "simple",
+    "constraints_sha256": "baf3cf71a97e931c7a5dc82a57bac282eaca7c409b0e3272dd1c33633297b97e",
     "n_constraints": 3,
     "n_hidden": 0,
     "n_on_ask": 1,
@@ -775,11 +1078,14 @@
       "transparency"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
     "solution_set_size": 0,
-    "solvable": false
+    "solvable": false,
+    "user_services": []
   },
   "task_051": {
     "complexity": "medium",
+    "constraints_sha256": "faa2db653545fc16e9b17cdf794a4defce555f042affe5e0f1e41d2041eea3f2",
     "n_constraints": 3,
     "n_hidden": 0,
     "n_on_ask": 0,
@@ -790,11 +1096,14 @@
       "transparency"
     ],
     "reveal_difficulty": "volunteer",
+    "solution_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
     "solution_set_size": 0,
-    "solvable": false
+    "solvable": false,
+    "user_services": []
   },
   "task_052": {
     "complexity": "complex",
+    "constraints_sha256": "fe8a9cc65020e1bd00bd05ae278c87620d562916772f195afc71bdd841cebccb",
     "n_constraints": 4,
     "n_hidden": 1,
     "n_on_ask": 2,
@@ -805,11 +1114,14 @@
       "transparency"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
     "solution_set_size": 0,
-    "solvable": false
+    "solvable": false,
+    "user_services": []
   },
   "task_053": {
     "complexity": "medium",
+    "constraints_sha256": "f20267af7dd667c75bbc2cb581c8bf04d5d0d101aae129b699bc1d4994f5b8c9",
     "n_constraints": 3,
     "n_hidden": 0,
     "n_on_ask": 0,
@@ -820,11 +1132,14 @@
       "transparency"
     ],
     "reveal_difficulty": "volunteer",
+    "solution_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
     "solution_set_size": 0,
-    "solvable": false
+    "solvable": false,
+    "user_services": []
   },
   "task_054": {
     "complexity": "complex",
+    "constraints_sha256": "2759084f0cc29d94cbba5a3de21adff3c2a3b172e4beefb3715ed86cb0d20dce",
     "n_constraints": 5,
     "n_hidden": 3,
     "n_on_ask": 1,
@@ -835,11 +1150,14 @@
       "transparency"
     ],
     "reveal_difficulty": "hidden",
+    "solution_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
     "solution_set_size": 0,
-    "solvable": false
+    "solvable": false,
+    "user_services": []
   },
   "task_055": {
     "complexity": "simple",
+    "constraints_sha256": "a7f9832f0d2a7d80607b14b3763995baf1dbd49e72f5e39021f65e32a042712c",
     "n_constraints": 2,
     "n_hidden": 0,
     "n_on_ask": 0,
@@ -850,11 +1168,17 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "volunteer",
+    "solution_ids_sha256": "d8b196d246d7560e57b8c2064680a505f5cff13e4043b607092e485ca58cf541",
     "solution_set_size": 46,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Amazon Prime Video",
+      "Disney+"
+    ]
   },
   "task_056": {
     "complexity": "simple",
+    "constraints_sha256": "d50dd9423400c6187e753132c65b13d0e05cb32d287da5f470dee3906ff320da",
     "n_constraints": 2,
     "n_hidden": 0,
     "n_on_ask": 1,
@@ -865,11 +1189,16 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "2cf21379e0f1d84fd8c04cc85231e82ab8b76e6db6d595cb1502951f674b25d9",
     "solution_set_size": 27,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "MUBI"
+    ]
   },
   "task_057": {
     "complexity": "medium",
+    "constraints_sha256": "11ec981328162ed83f50cd67b34f8e606d4513aeaea963de3a495ae0a294396c",
     "n_constraints": 3,
     "n_hidden": 0,
     "n_on_ask": 2,
@@ -880,11 +1209,17 @@
       "recommend_tool"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "3b1c0ee2d2a125da961eaa39133a715a3e485552cba1d9b15fdbe8eb417fe241",
     "solution_set_size": 25,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Hulu",
+      "Netflix"
+    ]
   },
   "task_058": {
     "complexity": "simple",
+    "constraints_sha256": "c93d10b3dff082418d9cf9389b6d50a3e682af3971f8287910c1ded0b4e93570",
     "n_constraints": 2,
     "n_hidden": 0,
     "n_on_ask": 0,
@@ -896,11 +1231,17 @@
       "single_recommendation"
     ],
     "reveal_difficulty": "volunteer",
+    "solution_ids_sha256": "ff9b422fe3070e096e7ea878d0931c8810be595f89c89887f71a26d5101b5c2b",
     "solution_set_size": 30,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Hulu",
+      "Netflix"
+    ]
   },
   "task_059": {
     "complexity": "simple",
+    "constraints_sha256": "1d0d3d77f0779dc5c3f65eaca46e1dde0c767c7cc74352141a3bd20474313b17",
     "n_constraints": 2,
     "n_hidden": 0,
     "n_on_ask": 0,
@@ -912,11 +1253,19 @@
       "single_recommendation"
     ],
     "reveal_difficulty": "volunteer",
+    "solution_ids_sha256": "a700d9676ccb172b27750cb61410931cb60287af2cebc8b45f86934c859c53e3",
     "solution_set_size": 32,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "Apple TV+",
+      "HBO Max",
+      "Philo",
+      "fuboTV"
+    ]
   },
   "task_060": {
     "complexity": "medium",
+    "constraints_sha256": "c6357223795bb87e6ecf922c57a6d68ab0fcbf49c1cad6dc1420db450b9f024a",
     "n_constraints": 3,
     "n_hidden": 0,
     "n_on_ask": 2,
@@ -928,7 +1277,13 @@
       "single_recommendation"
     ],
     "reveal_difficulty": "mixed",
+    "solution_ids_sha256": "d7c5b6cdf532ddd3ce57cefbe9c9490ce1171af0942564f9a18307978a34e6d8",
     "solution_set_size": 25,
-    "solvable": true
+    "solvable": true,
+    "user_services": [
+      "HBO Max",
+      "Hulu",
+      "Netflix"
+    ]
   }
 }

@@ -1,0 +1,95 @@
+{
+  "agent_models": [
+    {
+      "gateway": "openrouter",
+      "label": "deepseek_v41_flash_high",
+      "model": "openrouter/deepseek/deepseek-v4.1-flash",
+      "provider_family": "DeepSeek",
+      "provider_order": [
+        "deepinfra/fp8"
+      ],
+      "reasoning_effort": "high",
+      "role": "high-usage-open-weight"
+    },
+    {
+      "gateway": "openrouter",
+      "label": "glm53_flash_high",
+      "model": "openrouter/z-ai/glm-5.3-flash",
+      "provider_family": "Z.ai",
+      "provider_order": [
+        "near-ai/fp8"
+      ],
+      "reasoning_effort": "high",
+      "role": "cost-efficient-open-weight"
+    },
+    {
+      "gateway": "openrouter",
+      "label": "qwen38_27b_high",
+      "model": "openrouter/qwen/qwen3.8-27b",
+      "provider_family": "Qwen",
+      "provider_order": [
+        "near-ai/fp8"
+      ],
+      "reasoning_effort": "high",
+      "role": "accessible-open-weight"
+    },
+    {
+      "gateway": "openai",
+      "label": "gpt61_sol_high",
+      "model": "gpt-6.1-sol",
+      "provider_family": "OpenAI",
+      "provider_order": null,
+      "reasoning_effort": "high",
+      "role": "closed-frontier"
+    }
+  ],
+  "budgets_usd": {
+    "note": "Hard ceilings set by the authors before the run; each counts every provider dollar (OpenRouter and the direct OpenAI API).",
+    "smoke_hard_ceiling": 10.0,
+    "v4_hard_ceiling": 250.0
+  },
+  "fixed_runtime": {
+    "concurrency": 8,
+    "max_turns": 20,
+    "trial_timeout_seconds": 600,
+    "trial_timeout_seconds_counts": "agent time only (harness profile books-v4)"
+  },
+  "litellm": {
+    "local_model_cost_map": true,
+    "reason": "litellm otherwise refreshes its model map from the network at import, so request routing could change mid-run"
+  },
+  "routing_note": "OpenRouter pins disable fallbacks, require every request parameter, and keep the account's zero-retention, no-training policy. GPT-6.1 Sol uses the direct OpenAI API (standard API data retention). GLM 5.3 Flash runs on near-ai/fp8 for both the agent and the LLM user. All three open models run at fp8, two of them on Near AI.",
+  "scale_agent_labels": [
+    "deepseek_v41_flash_high",
+    "glm53_flash_high",
+    "qwen38_27b_high"
+  ],
+  "sensitivity_agent_label": "deepseek_v41_flash_high",
+  "simulator_models": [
+    {
+      "gateway": "openrouter",
+      "label": "sim_glm53_flash",
+      "model": "openrouter/z-ai/glm-5.3-flash",
+      "provider_family": "Z.ai",
+      "provider_order": [
+        "near-ai/fp8"
+      ]
+    },
+    {
+      "gateway": "openrouter",
+      "label": "sim_qwen38_27b",
+      "model": "openrouter/qwen/qwen3.8-27b",
+      "provider_family": "Qwen",
+      "provider_order": [
+        "near-ai/fp8"
+      ]
+    }
+  ],
+  "stall_retry_rule": {
+    "description": "A trial that reaches the wall cap is an infrastructure stall when the time not covered by completed calls plus the time spent in failed calls is at least the threshold. Its trace is quarantined and the trial is re-run once; quarantined traces are kept and counted.",
+    "max_retries": 1,
+    "threshold_seconds": 240
+  },
+  "status": "frozen",
+  "version": "books-wikidata-model-config-v4"
+}

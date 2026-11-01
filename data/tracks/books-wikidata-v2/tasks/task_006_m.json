@@ -1,0 +1,64 @@
+{
+  "id": "task_006_m",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Fantasy"
+      },
+      "reveal": "on_ask"
+    },
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Science Fiction"
+      },
+      "reveal": "on_ask"
+    },
+    {
+      "constraint": {
+        "field": "languages",
+        "op": "contains",
+        "value": "French"
+      },
+      "reveal": "on_ask"
+    },
+    {
+      "constraint": {
+        "field": "publication_year",
+        "op": ">=",
+        "value": 1910
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "publication_year",
+        "op": "<=",
+        "value": 1970
+      },
+      "reveal": "on_ask"
+    }
+  ],
+  "persona": "You are an avid reader choosing your next book and care more about fit than hype.",
+  "soft_preferences": [],
+  "policy_flags": [
+    "single_recommendation",
+    "transparency",
+    "recommend_tool"
+  ],
+  "no_valid_recommendation": true,
+  "complexity": "complex",
+  "reveal_difficulty": "mixed",
+  "user_history": {
+    "user_1": {
+      "read": [],
+      "ratings": {}
+    }
+  },
+  "user_id": "user_1",
+  "user_services": [],
+  "user_formats": []
+}

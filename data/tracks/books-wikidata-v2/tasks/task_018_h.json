@@ -1,0 +1,63 @@
+{
+  "id": "task_018_h",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Crime"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Science Fiction"
+      },
+      "reveal": "hidden"
+    },
+    {
+      "constraint": {
+        "field": "languages",
+        "op": "contains",
+        "value": "English"
+      },
+      "reveal": "hidden"
+    },
+    {
+      "constraint": {
+        "field": "publication_year",
+        "op": ">=",
+        "value": 1940
+      },
+      "reveal": "on_ask"
+    },
+    {
+      "constraint": {
+        "field": "publication_year",
+        "op": "<=",
+        "value": 2011
+      },
+      "reveal": "on_ask"
+    }
+  ],
+  "persona": "You are an avid reader choosing your next book and care more about fit than hype.",
+  "soft_preferences": [],
+  "policy_flags": [
+    "single_recommendation",
+    "recommend_tool"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "complex",
+  "reveal_difficulty": "hidden",
+  "user_history": {
+    "user_1": {
+      "read": [],
+      "ratings": {}
+    }
+  },
+  "user_id": "user_1",
+  "user_services": [],
+  "user_formats": []
+}

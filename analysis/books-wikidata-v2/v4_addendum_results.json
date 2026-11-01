@@ -1,0 +1,295 @@
+{
+  "contrasts": {
+    "addendum/gpt_users/sim_glm53_flash_minus_symbolic/mixed/pass^1": {
+      "estimate": 0.04861111111111111,
+      "families": 18,
+      "family_ci95": [
+        -0.05555555555555555,
+        0.14583333333333334
+      ],
+      "family_p": 0.39086091390860916,
+      "tasks": 18,
+      "template_ci95": [
+        -0.07955681818181817,
+        0.16964285714285715
+      ],
+      "template_p": 0.4550544945505449,
+      "template_sign_flip_p": 0.5625
+    },
+    "addendum/gpt_users/sim_glm53_flash_minus_symbolic/pass^1": {
+      "estimate": 0.011574074074074073,
+      "families": 18,
+      "family_ci95": [
+        -0.03935185185185185,
+        0.06481481481481483
+      ],
+      "family_p": 0.6618338166183382,
+      "tasks": 54,
+      "template_ci95": [
+        -0.0375,
+        0.0744047619047619
+      ],
+      "template_p": 0.6536346365363463,
+      "template_sign_flip_p": 0.765625
+    },
+    "addendum/gpt_users/sim_qwen38_27b_minus_symbolic/mixed/pass^1": {
+      "estimate": -0.006944444444444444,
+      "families": 18,
+      "family_ci95": [
+        -0.1111111111111111,
+        0.09027777777777778
+      ],
+      "family_p": 0.9614038596140386,
+      "tasks": 18,
+      "template_ci95": [
+        -0.11764705882352941,
+        0.11764705882352941
+      ],
+      "template_p": 0.9726027397260274,
+      "template_sign_flip_p": 1.0
+    },
+    "addendum/gpt_users/sim_qwen38_27b_minus_symbolic/pass^1": {
+      "estimate": 0.002314814814814815,
+      "families": 18,
+      "family_ci95": [
+        -0.04861111111111111,
+        0.05555555555555555
+      ],
+      "family_p": 0.9506049395060494,
+      "tasks": 54,
+      "template_ci95": [
+        -0.052094655797101444,
+        0.07238212719298226
+      ],
+      "template_p": 0.944005599440056,
+      "template_sign_flip_p": 1.0
+    },
+    "addendum/prompt_variant/deepseek_v41_flash_high/mixed/pass^1": {
+      "estimate": 0.0763888888888889,
+      "families": 18,
+      "family_ci95": [
+        0.013888888888888888,
+        0.1527777777777778
+      ],
+      "family_p": 0.0206979302069793,
+      "tasks": 18,
+      "template_ci95": [
+        0.020833333333333332,
+        0.14583333333333334
+      ],
+      "template_p": 0.0122987701229877,
+      "template_sign_flip_p": 0.125
+    },
+    "addendum/prompt_variant/deepseek_v41_flash_high/pass^1": {
+      "estimate": 0.05555555555555555,
+      "families": 18,
+      "family_ci95": [
+        0.02546296296296296,
+        0.09259259259259259
+      ],
+      "family_p": 9.999000099990002e-05,
+      "tasks": 54,
+      "template_ci95": [
+        0.03125,
+        0.09294871794871794
+      ],
+      "template_p": 9.999000099990002e-05,
+      "template_sign_flip_p": 0.0078125
+    },
+    "addendum/prompt_variant/gpt61_sol_high/mixed/pass^1": {
+      "estimate": 0.5902777777777778,
+      "families": 18,
+      "family_ci95": [
+        0.4375,
+        0.7361111111111112
+      ],
+      "family_p": 9.999000099990002e-05,
+      "tasks": 18,
+      "template_ci95": [
+        0.5052083333333334,
+        0.7166666666666667
+      ],
+      "template_p": 9.999000099990002e-05,
+      "template_sign_flip_p": 0.00390625
+    },
+    "addendum/prompt_variant/gpt61_sol_high/pass^1": {
+      "estimate": 0.2175925925925926,
+      "families": 18,
+      "family_ci95": [
+        0.1574074074074074,
+        0.2800925925925926
+      ],
+      "family_p": 9.999000099990002e-05,
+      "tasks": 54,
+      "template_ci95": [
+        0.17787828947368423,
+        0.28846153846153844
+      ],
+      "template_p": 9.999000099990002e-05,
+      "template_sign_flip_p": 0.00390625
+    }
+  },
+  "levels": {
+    "addendum/gpt_users/sim_glm53_flash": {
+      "mixed_all_askable_stated_tolerant": 0.125,
+      "mixed_asked_year_country_or_language": null,
+      "mixed_complete_elicitation": null,
+      "mixed_no_elicitation": null,
+      "pass^1": 0.47685185185185186,
+      "pass^1/hidden": 0.08333333333333333,
+      "pass^1/mixed": 0.3888888888888889,
+      "pass^1/volunteer": 0.9583333333333334,
+      "stop_classes": {
+        "abstained": 13,
+        "recommended": 202,
+        "turn_limit": 1
+      },
+      "trials": 216
+    },
+    "addendum/gpt_users/sim_qwen38_27b": {
+      "mixed_all_askable_stated_tolerant": 0.09722222222222222,
+      "mixed_asked_year_country_or_language": null,
+      "mixed_complete_elicitation": null,
+      "mixed_no_elicitation": null,
+      "pass^1": 0.4675925925925926,
+      "pass^1/hidden": 0.09722222222222222,
+      "pass^1/mixed": 0.3333333333333333,
+      "pass^1/volunteer": 0.9722222222222222,
+      "stop_classes": {
+        "abstained": 12,
+        "recommended": 204
+      },
+      "trials": 216
+    },
+    "addendum/gpt_users/symbolic": {
+      "mixed_all_askable_stated_tolerant": 0.1875,
+      "mixed_asked_year_country_or_language": 0.1388888888888889,
+      "mixed_complete_elicitation": 0.1875,
+      "mixed_no_elicitation": 0.5069444444444444,
+      "pass^1": 0.4652777777777778,
+      "pass^1/hidden": 0.05555555555555555,
+      "pass^1/mixed": 0.3402777777777778,
+      "pass^1/volunteer": 1.0,
+      "stop_classes": {
+        "abstained": 32,
+        "recommended": 399,
+        "turn_limit": 1
+      },
+      "trials": 432
+    },
+    "addendum/prompt_variant/deepseek_v41_flash_high/default": {
+      "mixed_all_askable_stated_tolerant": 0.8472222222222222,
+      "mixed_asked_year_country_or_language": 0.9375,
+      "mixed_complete_elicitation": 0.8472222222222222,
+      "mixed_no_elicitation": 0.027777777777777776,
+      "pass^1": 0.7361111111111112,
+      "pass^1/hidden": 0.2847222222222222,
+      "pass^1/mixed": 0.9236111111111112,
+      "pass^1/volunteer": 1.0,
+      "stop_classes": {
+        "abstained": 45,
+        "recommended": 353,
+        "wall_cap": 34
+      },
+      "trials": 432
+    },
+    "addendum/prompt_variant/deepseek_v41_flash_high/variant": {
+      "mixed_all_askable_stated_tolerant": 0.9583333333333334,
+      "mixed_asked_year_country_or_language": 1.0,
+      "mixed_complete_elicitation": 0.9583333333333334,
+      "mixed_no_elicitation": 0.0,
+      "pass^1": 0.7916666666666666,
+      "pass^1/hidden": 0.375,
+      "pass^1/mixed": 1.0,
+      "pass^1/volunteer": 1.0,
+      "stop_classes": {
+        "abstained": 49,
+        "recommended": 329,
+        "wall_cap": 54
+      },
+      "trials": 432
+    },
+    "addendum/prompt_variant/gpt61_sol_high/default": {
+      "mixed_all_askable_stated_tolerant": 0.1875,
+      "mixed_asked_year_country_or_language": 0.1388888888888889,
+      "mixed_complete_elicitation": 0.1875,
+      "mixed_no_elicitation": 0.5069444444444444,
+      "pass^1": 0.4652777777777778,
+      "pass^1/hidden": 0.05555555555555555,
+      "pass^1/mixed": 0.3402777777777778,
+      "pass^1/volunteer": 1.0,
+      "stop_classes": {
+        "abstained": 32,
+        "recommended": 399,
+        "turn_limit": 1
+      },
+      "trials": 432
+    },
+    "addendum/prompt_variant/gpt61_sol_high/variant": {
+      "mixed_all_askable_stated_tolerant": 0.75,
+      "mixed_asked_year_country_or_language": 0.8194444444444444,
+      "mixed_complete_elicitation": 0.75,
+      "mixed_no_elicitation": 0.027777777777777776,
+      "pass^1": 0.6828703703703703,
+      "pass^1/hidden": 0.11805555555555555,
+      "pass^1/mixed": 0.9305555555555556,
+      "pass^1/volunteer": 1.0,
+      "stop_classes": {
+        "abstained": 45,
+        "recommended": 386,
+        "turn_limit": 1
+      },
+      "trials": 432
+    },
+    "addendum/users/sim_glm53_flash/deepseek_v41_flash_high": {
+      "mixed_all_askable_stated_tolerant": 0.4583333333333333,
+      "mixed_asked_year_country_or_language": null,
+      "mixed_complete_elicitation": null,
+      "mixed_no_elicitation": null,
+      "pass^1": 0.6342592592592593,
+      "pass^1/hidden": 0.25,
+      "pass^1/mixed": 0.6805555555555556,
+      "pass^1/volunteer": 0.9722222222222222,
+      "stop_classes": {
+        "abstained": 16,
+        "recommended": 179,
+        "wall_cap": 21
+      },
+      "trials": 216
+    },
+    "addendum/users/sim_qwen38_27b/deepseek_v41_flash_high": {
+      "mixed_all_askable_stated_tolerant": 0.5277777777777778,
+      "mixed_asked_year_country_or_language": null,
+      "mixed_complete_elicitation": null,
+      "mixed_no_elicitation": null,
+      "pass^1": 0.6620370370370371,
+      "pass^1/hidden": 0.2638888888888889,
+      "pass^1/mixed": 0.7361111111111112,
+      "pass^1/volunteer": 0.9861111111111112,
+      "stop_classes": {
+        "abstained": 16,
+        "recommended": 175,
+        "wall_cap": 25
+      },
+      "trials": 216
+    },
+    "addendum/users/symbolic/deepseek_v41_flash_high": {
+      "mixed_all_askable_stated_tolerant": 0.8472222222222222,
+      "mixed_asked_year_country_or_language": 0.9375,
+      "mixed_complete_elicitation": 0.8472222222222222,
+      "mixed_no_elicitation": 0.027777777777777776,
+      "pass^1": 0.7361111111111112,
+      "pass^1/hidden": 0.2847222222222222,
+      "pass^1/mixed": 0.9236111111111112,
+      "pass^1/volunteer": 1.0,
+      "stop_classes": {
+        "abstained": 45,
+        "recommended": 353,
+        "wall_cap": 34
+      },
+      "trials": 432
+    }
+  },
+  "plan": "analysis/books-wikidata-v2/experiment_plan_v4_addendum.json",
+  "status": "exploratory; unadjusted; comparison cells from the v4 matrix (not time-matched)"
+}

@@ -1,0 +1,123 @@
+{
+  "by_agent": {
+    "deepseek_v41_flash_high": {
+      "max_gain": 0.07427536231884058,
+      "max_gain_labelled": 0.012681159420289856
+    },
+    "glm53_flash_high": {
+      "max_gain": 0.028985507246376812,
+      "max_gain_labelled": 0.018115942028985508
+    },
+    "gpt61_sol_high": {
+      "max_gain": 0.15398550724637683,
+      "max_gain_labelled": 0.025362318840579712
+    },
+    "qwen38_27b_high": {
+      "max_gain": 0.06340579710144928,
+      "max_gain_labelled": 0.02355072463768116
+    }
+  },
+  "by_cell": {
+    "deepseek_v41_flash_high/keyword": {
+      "all_disclosed": 1,
+      "failures": 44,
+      "labelled_misses": 7,
+      "max_gain": 0.11956521739130435,
+      "max_gain_labelled": 0.025362318840579712,
+      "no_question": 0,
+      "recognized_only": 10,
+      "trials": 276,
+      "unrecognized_question": 33
+    },
+    "deepseek_v41_flash_high/structured": {
+      "all_disclosed": 0,
+      "failures": 13,
+      "labelled_misses": 0,
+      "max_gain": 0.028985507246376812,
+      "max_gain_labelled": 0.0,
+      "no_question": 0,
+      "recognized_only": 5,
+      "trials": 276,
+      "unrecognized_question": 8
+    },
+    "glm53_flash_high/keyword": {
+      "all_disclosed": 10,
+      "failures": 39,
+      "labelled_misses": 5,
+      "max_gain": 0.021739130434782608,
+      "max_gain_labelled": 0.018115942028985508,
+      "no_question": 3,
+      "recognized_only": 20,
+      "trials": 276,
+      "unrecognized_question": 6
+    },
+    "glm53_flash_high/structured": {
+      "all_disclosed": 0,
+      "failures": 19,
+      "labelled_misses": 5,
+      "max_gain": 0.036231884057971016,
+      "max_gain_labelled": 0.018115942028985508,
+      "no_question": 0,
+      "recognized_only": 9,
+      "trials": 276,
+      "unrecognized_question": 10
+    },
+    "gpt61_sol_high/keyword": {
+      "all_disclosed": 0,
+      "failures": 153,
+      "labelled_misses": 5,
+      "max_gain": 0.15217391304347827,
+      "max_gain_labelled": 0.018115942028985508,
+      "no_question": 26,
+      "recognized_only": 85,
+      "trials": 276,
+      "unrecognized_question": 42
+    },
+    "gpt61_sol_high/structured": {
+      "all_disclosed": 0,
+      "failures": 171,
+      "labelled_misses": 9,
+      "max_gain": 0.15579710144927536,
+      "max_gain_labelled": 0.03260869565217391,
+      "no_question": 46,
+      "recognized_only": 82,
+      "trials": 276,
+      "unrecognized_question": 43
+    },
+    "qwen38_27b_high/keyword": {
+      "all_disclosed": 13,
+      "failures": 130,
+      "labelled_misses": 6,
+      "max_gain": 0.09420289855072464,
+      "max_gain_labelled": 0.021739130434782608,
+      "no_question": 48,
+      "recognized_only": 43,
+      "trials": 276,
+      "unrecognized_question": 26
+    },
+    "qwen38_27b_high/structured": {
+      "all_disclosed": 0,
+      "failures": 23,
+      "labelled_misses": 7,
+      "max_gain": 0.03260869565217391,
+      "max_gain_labelled": 0.025362318840579712,
+      "no_question": 6,
+      "recognized_only": 8,
+      "trials": 276,
+      "unrecognized_question": 9
+    }
+  },
+  "model_averaged": {
+    "max_gain": 0.08016304347826088,
+    "max_gain_labelled": 0.01992753623188406
+  },
+  "pooled_failures": {
+    "all_disclosed": 24,
+    "failures": 592,
+    "labelled_misses": 44,
+    "no_question": 129,
+    "recognized_only": 262,
+    "unrecognized_question": 177
+  },
+  "status": "post hoc"
+}

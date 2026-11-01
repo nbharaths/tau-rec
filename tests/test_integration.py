@@ -1,7 +1,9 @@
+import json
+
 import pytest
 from unittest.mock import AsyncMock, MagicMock
 
-from tau_rec.data_model.catalog import Movie, Catalog
+from tau_rec.data_model.catalog import Book, Movie, Catalog
 from tau_rec.data_model.task import Task, TaskConstraint, Constraint, RevealTag
 from tau_rec.catalog.search import CatalogSearch
 from tau_rec.environment.tools import ToolKit
@@ -10,6 +12,8 @@ from tau_rec.evaluator.evaluator import CombinedEvaluator
 from tau_rec.agents.base import AgentResponse
 from tau_rec.data_model.conversation import Message, Role, StopReason
 from tau_rec.metrics.pass_k import pass_at_k
+from tau_rec.domain import BOOKS
+from tau_rec.simulator.user_simulator import UserSimulator
 
 
 @pytest.fixture
@@ -212,3 +216,142 @@ def test_pass_k_metric():
     p4 = pass_at_k(16, 12, 4)
     assert p1 == 0.75
     assert p1 > p2 > p4 > 0
+
+
+@pytest.mark.asyncio
+async def test_books_symbolic_user_and_structured_retrieval_end_to_end():
+    books = Catalog(items=[
+        Book(
+            id="b1", title="Recent Mystery", authors=["A"], publication_year=2020,
+            pages=None, genres=["Mystery"], description="", publisher="P",
+            rating=None, vote_count=None, sitelink_count=100, formats=["ebook"],
+            languages=["English"],
+        ),
+        Book(
+            id="b2", title="Older Mystery", authors=["B"], publication_year=2005,
+            pages=None, genres=["Mystery"], description="", publisher="P",
+            rating=None, vote_count=None, sitelink_count=200, formats=["ebook"],
+            languages=["English"],
+        ),
+        Book(
+            id="b3", title="Recent Fantasy", authors=["C"], publication_year=2020,
+            pages=None, genres=["Fantasy"], description="", publisher="P",
+            rating=None, vote_count=None, sitelink_count=300, formats=["paperback"],
+            languages=["English"],
+        ),
+    ])
+    book_task = Task(
+        id="books-e2e",
+        constraints=[
+            TaskConstraint(
+                constraint=Constraint(field="genres", op="contains", value="Mystery"),
+                reveal=RevealTag.VOLUNTEER,
+            ),
+            TaskConstraint(
+                constraint=Constraint(field="publication_year", op=">=", value=2015),
+                reveal=RevealTag.ON_ASK,
+            ),
+            TaskConstraint(
+                constraint=Constraint(field="languages", op="contains", value="English"),
+                reveal=RevealTag.HIDDEN,
+            ),
+        ],
+        persona="You want one book.",
+        policy_flags=["single_recommendation", "recommend_tool"],
+        complexity="medium",
+        reveal_difficulty="hidden",
+    )
+    agent = AsyncMock()
+    agent.respond = AsyncMock(side_effect=[
+        AgentResponse(message="Do you have a preferred publication year?"),
+        AgentResponse(message=None, tool_calls=[{
+            "id": "search-1",
+            "name": "search_catalog",
+            "arguments": {"genres": ["Mystery"], "min_publication_year": 2015},
+        }]),
+        AgentResponse(message=None, tool_calls=[{
+            "id": "recommend-1",
+            "name": "recommend",
+            "arguments": {"item_id": "b1"},
+        }]),
+    ])
+    agent.add_user_message = MagicMock()
+    agent.add_assistant_message = MagicMock()
+    toolkit = ToolKit(
+        books,
+        None,
+        {},
+        spec=BOOKS,
+        retrieval_mode="structured",
+    )
+    simulator = UserSimulator(
+        "not-used",
+        book_task,
+        BOOKS,
+        books,
+        interaction_mode="symbolic",
+    )
+
+    trace = await Orchestrator(
+        agent,
+        simulator,
+        toolkit,
+        spec=BOOKS,
+    ).run(task_id=book_task.id, model="scripted", trial=0)
+    result = CombinedEvaluator(books, BOOKS).evaluate(book_task, trace)
+
+    assert trace.final_recommendation == "b1"
+    assert result.primary_reward == 1.0
+    assert simulator.decision_log[0]["action"] == "opening"
+    assert simulator.decision_log[1]["disclosed_fields"] == ["publication_year"]
+    search_result = json.loads(trace.tool_calls[0].result)
+    assert [row["id"] for row in search_result] == ["b1"]
+
+
+@pytest.mark.asyncio
+async def test_books_memory_mode_with_symbolic_user():
+    books = Catalog(items=[
+        Book(
+            id="b1", title="The Exact Book", authors=["A"], publication_year=2020,
+            pages=280, genres=["Mystery"], description="", publisher="P",
+            rating=4.5, vote_count=100, formats=["ebook"],
+        ),
+    ])
+    task = Task(
+        id="books-memory-symbolic",
+        constraints=[
+            TaskConstraint(
+                constraint=Constraint(field="genres", op="contains", value="Mystery"),
+                reveal=RevealTag.VOLUNTEER,
+            ),
+        ],
+        persona="You want one mystery book.",
+        policy_flags=["single_recommendation", "recommend_tool"],
+        complexity="simple",
+        reveal_difficulty="volunteer",
+    )
+    agent = AsyncMock()
+    agent.respond = AsyncMock(return_value=AgentResponse(
+        message=None,
+        tool_calls=[{
+            "id": "recommend-1",
+            "name": "recommend",
+            "arguments": {"title": "The Exact Book"},
+        }],
+    ))
+    agent.add_user_message = MagicMock()
+    agent.add_assistant_message = MagicMock()
+    toolkit = ToolKit(books, None, {}, spec=BOOKS, mode="memory")
+    simulator = UserSimulator(
+        "must-not-be-called", task, BOOKS, books, interaction_mode="symbolic"
+    )
+
+    trace = await Orchestrator(agent, simulator, toolkit, spec=BOOKS).run(
+        task_id=task.id, model="scripted-memory", trial=0
+    )
+
+    assert trace.final_recommendation == "b1"
+    assert trace.resolution is not None
+    assert trace.resolution.resolved_id == "b1"
+    assert simulator.call_log == []
+    assert simulator.decision_log[0]["action"] == "opening"

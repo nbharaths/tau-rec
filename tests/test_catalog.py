@@ -1,5 +1,6 @@
 from tau_rec.catalog.search import CatalogSearch
-from tau_rec.data_model.catalog import Movie, Catalog
+from tau_rec.data_model.catalog import Book, Movie, Catalog
+from tau_rec.domain import BOOKS
 
 def _make_catalog():
     return Catalog(movies=[
@@ -42,6 +43,47 @@ def test_search_result_fields():
     assert "rating" in results[0]
     assert "overview" in results[0]
     assert "cast" not in results[0]
+
+
+def test_bm25f_profile_matches_multiword_genre_and_is_deterministic():
+    def book(i, genre, description):
+        return Book(
+            id=i, title=f"Book {i}", authors=["A Writer"], publication_year=2010,
+            pages=300, genres=[genre], description=description, publisher="P",
+            rating=4.0, vote_count=100, formats=["ebook"],
+        )
+
+    catalog = Catalog(items=[
+        book("wd_1", "Science Fiction", "A journey beyond the stars"),
+        book("wd_2", "Romance", "A relationship in a small town"),
+        book("wd_3", "History", "An account of an ancient empire"),
+        book("wd_4", "Mystery", "A detective follows clues"),
+    ])
+    search = CatalogSearch(catalog, BOOKS, profile="bm25f-v1")
+    first = search.search("science fiction")
+    assert first and first[0]["id"] == "wd_1"
+    assert first == search.search("science fiction")
+
+
+def test_bm25f_searches_public_book_language_and_country_fields():
+    def public_book(item_id, language, country):
+        return Book(
+            id=item_id, title=f"Book {item_id}", authors=["A Writer"],
+            publication_year=2010, pages=None, genres=["Mystery"],
+            description="A catalog description", publisher="", rating=None,
+            vote_count=None, formats=["ebook"], languages=[language],
+            countries=[country], sitelink_count=1,
+        )
+
+    catalog = Catalog(items=[
+        public_book("wd_1", "French", "France"),
+        public_book("wd_2", "English", "Canada"),
+        public_book("wd_3", "Japanese", "Japan"),
+        public_book("wd_4", "German", "Germany"),
+    ])
+    search = CatalogSearch(catalog, BOOKS, profile="bm25f-v1")
+    assert search.search("Japanese")[0]["id"] == "wd_3"
+    assert search.search("Canada")[0]["id"] == "wd_2"
 
 
 # --------------- Validator tests ---------------

@@ -1,0 +1,43 @@
+{
+  "id": "task_126_h",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Thriller"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "publication_year",
+        "op": "<=",
+        "value": 1998
+      },
+      "reveal": "hidden"
+    }
+  ],
+  "persona": "You are choosing a book for a personal reading challenge and need every stated condition to hold. You want a book you have not already read.",
+  "soft_preferences": [],
+  "policy_flags": [
+    "history",
+    "single_recommendation",
+    "recommend_tool"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "simple",
+  "reveal_difficulty": "hidden",
+  "user_history": {
+    "user_1": {
+      "read": [
+        "wd_Q7760515",
+        "wd_Q135478737"
+      ],
+      "ratings": {}
+    }
+  },
+  "user_id": "user_1",
+  "user_services": [],
+  "user_formats": []
+}

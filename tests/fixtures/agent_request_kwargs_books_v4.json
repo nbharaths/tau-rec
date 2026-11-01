@@ -1,0 +1,134 @@
+{
+ "openrouter/deepseek/deepseek-v4.1-flash": {
+  "extra_body": {
+   "provider": {
+    "allow_fallbacks": false,
+    "data_collection": "deny",
+    "order": [
+     "deepinfra/fp8"
+    ],
+    "require_parameters": true,
+    "zdr": true
+   },
+   "reasoning": {
+    "effort": "high"
+   },
+   "thinking": {
+    "type": "enabled"
+   }
+  },
+  "max_tokens": 32768,
+  "messages": [
+   {
+    "content": "sys",
+    "role": "system"
+   },
+   {
+    "content": "hi",
+    "role": "user"
+   }
+  ],
+  "model": "openrouter/deepseek/deepseek-v4.1-flash",
+  "temperature": 0.0,
+  "timeout": 120,
+  "tools": [
+   {
+    "function": {
+     "description": "d",
+     "name": "search_catalog",
+     "parameters": {
+      "properties": {},
+      "type": "object"
+     }
+    },
+    "type": "function"
+   }
+  ]
+ },
+ "openrouter/qwen/qwen3.8-27b": {
+  "extra_body": {
+   "provider": {
+    "allow_fallbacks": false,
+    "data_collection": "deny",
+    "order": [
+     "near-ai/fp8"
+    ],
+    "require_parameters": true,
+    "zdr": true
+   },
+   "reasoning": {
+    "effort": "high"
+   }
+  },
+  "max_tokens": 32768,
+  "messages": [
+   {
+    "content": "sys",
+    "role": "system"
+   },
+   {
+    "content": "hi",
+    "role": "user"
+   }
+  ],
+  "model": "openrouter/qwen/qwen3.8-27b",
+  "temperature": 0.0,
+  "timeout": 120,
+  "tools": [
+   {
+    "function": {
+     "description": "d",
+     "name": "search_catalog",
+     "parameters": {
+      "properties": {},
+      "type": "object"
+     }
+    },
+    "type": "function"
+   }
+  ]
+ },
+ "openrouter/z-ai/glm-5.3-flash": {
+  "extra_body": {
+   "provider": {
+    "allow_fallbacks": false,
+    "data_collection": "deny",
+    "order": [
+     "near-ai/fp8"
+    ],
+    "require_parameters": true,
+    "zdr": true
+   },
+   "reasoning": {
+    "effort": "high"
+   }
+  },
+  "max_tokens": 32768,
+  "messages": [
+   {
+    "content": "sys",
+    "role": "system"
+   },
+   {
+    "content": "hi",
+    "role": "user"
+   }
+  ],
+  "model": "openrouter/z-ai/glm-5.3-flash",
+  "temperature": 0.0,
+  "timeout": 120,
+  "tools": [
+   {
+    "function": {
+     "description": "d",
+     "name": "search_catalog",
+     "parameters": {
+      "properties": {},
+      "type": "object"
+     }
+    },
+    "type": "function"
+   }
+  ]
+ }
+}

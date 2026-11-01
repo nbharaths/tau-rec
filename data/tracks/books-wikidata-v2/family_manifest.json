@@ -1,0 +1,1814 @@
+{
+  "design_version": "matched-reveal-v1",
+  "families": [
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Nonfiction|languages:contains:German",
+      "family_id": "books_simple_001",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "44250e502e0609106803b81227364b642c388b8a9a73c6cadb3858520cf4f56d",
+      "task_ids": {
+        "hidden": "task_101_h",
+        "mixed": "task_101_m",
+        "volunteer": "task_101_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Horror|countries:contains:United Kingdom",
+      "family_id": "books_simple_002",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "7e87d3aca30902910d86fc9e990537057f004ff2e2e23695b55cf31adbe644ea",
+      "task_ids": {
+        "hidden": "task_102_h",
+        "mixed": "task_102_m",
+        "volunteer": "task_102_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Adventure|publication_year:>=:1988",
+      "family_id": "books_simple_003",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "3ab289451d1cbf9947fb1ce91bf0ee8367311cd100381133e075ca9787c79295",
+      "task_ids": {
+        "hidden": "task_103_h",
+        "mixed": "task_103_m",
+        "volunteer": "task_103_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Crime|languages:contains:French",
+      "family_id": "books_simple_004",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "14bf769a6da1bed7ab0389986593b67d2d6b0a0cdd95210ad0f7f926fb22de67",
+      "task_ids": {
+        "hidden": "task_104_h",
+        "mixed": "task_104_m",
+        "volunteer": "task_104_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Science Fiction|countries:contains:United Kingdom",
+      "family_id": "books_simple_005",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "3557c98ceaa9de38b18528702eb093afb0bc65199e68f9a5c344edc9d6b73325",
+      "task_ids": {
+        "hidden": "task_105_h",
+        "mixed": "task_105_m",
+        "volunteer": "task_105_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Poetry|publication_year:>=:1999",
+      "family_id": "books_simple_006",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "08ea62a1fa5733bb1661a2d314df5f4ca46c2c2e0d2168ea423cfd45891032b9",
+      "task_ids": {
+        "hidden": "task_106_h",
+        "mixed": "task_106_m",
+        "volunteer": "task_106_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Science Fiction|countries:contains:France",
+      "family_id": "books_simple_007",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "db2393a8c58ff86a774076eb61ae6120dfcae18f735ab0ba2bc670060f4e69db",
+      "task_ids": {
+        "hidden": "task_107_h",
+        "mixed": "task_107_m",
+        "volunteer": "task_107_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Memoir|publication_year:>=:2005",
+      "family_id": "books_simple_008",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "cd3ffaab11cc74c8b8b73eee189d9ba4c24bd6659a7983c5d26a5b37f2668443",
+      "task_ids": {
+        "hidden": "task_108_h",
+        "mixed": "task_108_m",
+        "volunteer": "task_108_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Biography|publication_year:<=:1984",
+      "family_id": "books_simple_009",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "172528e03ef2faa3bd79cbe8ace4b032479a231a7db41636e484ab1a7a411276",
+      "task_ids": {
+        "hidden": "task_109_h",
+        "mixed": "task_109_m",
+        "volunteer": "task_109_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Biography|publication_year:<=:1981",
+      "family_id": "books_simple_010",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "7d559c8d6c3381a93e94688204ff54e153e7fe8d518c5f115717796cc87cb8df",
+      "task_ids": {
+        "hidden": "task_110_h",
+        "mixed": "task_110_m",
+        "volunteer": "task_110_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Adventure|publication_year:>=:2005",
+      "family_id": "books_simple_011",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "cc2d4c78bae8018d1089170f202afbde8dd08453d533e68098e5d09935d2b579",
+      "task_ids": {
+        "hidden": "task_111_h",
+        "mixed": "task_111_m",
+        "volunteer": "task_111_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Horror|publication_year:>=:2009",
+      "family_id": "books_simple_012",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "d7f1f870c29e7801bc65af9d7d2084c68398036c613ee7902af00c8c4ef995fe",
+      "task_ids": {
+        "hidden": "task_112_h",
+        "mixed": "task_112_m",
+        "volunteer": "task_112_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Young Adult|publication_year:<=:1999",
+      "family_id": "books_simple_013",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "f6bb7ca759e2253d6976c3155d9ea91458a51b14e2ca42024dd303ce14e80ca9",
+      "task_ids": {
+        "hidden": "task_113_h",
+        "mixed": "task_113_m",
+        "volunteer": "task_113_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Children|publication_year:>=:1996",
+      "family_id": "books_simple_014",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "797b12af973d2a093df6e6a670bf1f5e856df8709ba7a20194d1617900da2f65",
+      "task_ids": {
+        "hidden": "task_114_h",
+        "mixed": "task_114_m",
+        "volunteer": "task_114_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Young Adult|publication_year:<=:1995",
+      "family_id": "books_simple_015",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "bbb2badd034458da297071cb3f617b12ef39aaad32a9d81f879e4dfb5e7b4d45",
+      "task_ids": {
+        "hidden": "task_115_h",
+        "mixed": "task_115_m",
+        "volunteer": "task_115_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Children|publication_year:>=:1994",
+      "family_id": "books_simple_016",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "512981363073686a004e858e481073ab5c48b884a727aa127a0df1312edf4f47",
+      "task_ids": {
+        "hidden": "task_116_h",
+        "mixed": "task_116_m",
+        "volunteer": "task_116_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Crime|countries:contains:United Kingdom",
+      "family_id": "books_simple_017",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "2612bb0a2035129f4ad9cb5e45d7a2f704813dc468f4f43f48f35f45e51bc198",
+      "task_ids": {
+        "hidden": "task_117_h",
+        "mixed": "task_117_m",
+        "volunteer": "task_117_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Graphic Novel|genres:contains:Poetry",
+      "family_id": "books_simple_018",
+      "no_valid_recommendation": true,
+      "solution_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "task_ids": {
+        "hidden": "task_118_h",
+        "mixed": "task_118_m",
+        "volunteer": "task_118_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Mystery|publication_year:>=:2011",
+      "family_id": "books_simple_019",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "fc32f639b2cd8cf77e50be85a6acc7b26c564cf729de0253e147e83887bed7c6",
+      "task_ids": {
+        "hidden": "task_119_h",
+        "mixed": "task_119_m",
+        "volunteer": "task_119_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Biography|publication_year:<=:1991",
+      "family_id": "books_simple_020",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "750e0cc90ebec5dd96008a3e48a62d0c5f9180d71e1209c3616e440d3b625f6c",
+      "task_ids": {
+        "hidden": "task_120_h",
+        "mixed": "task_120_m",
+        "volunteer": "task_120_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Mystery|publication_year:>=:2012",
+      "family_id": "books_simple_021",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "d0a803db1943c68ea449f7b3089ccc183629e86250a8c3d86c0e0b734838952d",
+      "task_ids": {
+        "hidden": "task_121_h",
+        "mixed": "task_121_m",
+        "volunteer": "task_121_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Romance|languages:contains:Turkish",
+      "family_id": "books_simple_022",
+      "no_valid_recommendation": true,
+      "solution_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "task_ids": {
+        "hidden": "task_122_h",
+        "mixed": "task_122_m",
+        "volunteer": "task_122_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Nonfiction|countries:contains:United Kingdom",
+      "family_id": "books_simple_023",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "c195cfa07cc637643afb2b0b91e7fe148ccd5c30adbe20a9eae4646c460a548e",
+      "task_ids": {
+        "hidden": "task_123_h",
+        "mixed": "task_123_m",
+        "volunteer": "task_123_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Young Adult|publication_year:<=:2004",
+      "family_id": "books_simple_024",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "2fbf885d052f236afebf3e7730b3fbeb1f8ba2bb3e2f0d7099577b5107049868",
+      "task_ids": {
+        "hidden": "task_124_h",
+        "mixed": "task_124_m",
+        "volunteer": "task_124_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Romance|countries:contains:United States",
+      "family_id": "books_simple_025",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "dcd8136d1c55653cbbc0faea67139a7c7e89c6601ba17fe2ff8733e7a4d82d67",
+      "task_ids": {
+        "hidden": "task_125_h",
+        "mixed": "task_125_m",
+        "volunteer": "task_125_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Thriller|publication_year:<=:1998",
+      "family_id": "books_simple_026",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "d42560cfef09ba23c6cc1021085bf9eb968b2581a6d0faa6db816814cbef1350",
+      "task_ids": {
+        "hidden": "task_126_h",
+        "mixed": "task_126_m",
+        "volunteer": "task_126_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Memoir|publication_year:>=:2011",
+      "family_id": "books_simple_027",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "9e039d739ec05152548021bbd6ed5bf831f8ea2372bb685f844edd40c5d8a1b0",
+      "task_ids": {
+        "hidden": "task_127_h",
+        "mixed": "task_127_m",
+        "volunteer": "task_127_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Historical Fiction|publication_year:>=:2006",
+      "family_id": "books_simple_028",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "911b5ad8c2a66bada0ee475bb84882b29280884b1ab172bc30873754c2a5667c",
+      "task_ids": {
+        "hidden": "task_128_h",
+        "mixed": "task_128_m",
+        "volunteer": "task_128_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Poetry|languages:contains:English",
+      "family_id": "books_simple_029",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "fbb85f88d6a91186bf397fd5ce393fd9df9c6bc39a23d879077cc2b2f46e6122",
+      "task_ids": {
+        "hidden": "task_129_h",
+        "mixed": "task_129_m",
+        "volunteer": "task_129_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Thriller|publication_year:>=:2011",
+      "family_id": "books_simple_030",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "114b9b6fc94dd42f84e98979b52090b2c67fa54bb1ddf2bcb29f32b5deba5cdd",
+      "task_ids": {
+        "hidden": "task_130_h",
+        "mixed": "task_130_m",
+        "volunteer": "task_130_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Fantasy|countries:contains:United Kingdom",
+      "family_id": "books_simple_031",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "d859b345785c96700cfc2ccbe283e077534893b5e891cc1ee5102f7860f32273",
+      "task_ids": {
+        "hidden": "task_131_h",
+        "mixed": "task_131_m",
+        "volunteer": "task_131_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Memoir|publication_year:<=:1992",
+      "family_id": "books_simple_032",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "f7c168ccddfb313c59b0a343fc7f1627a6b5bafc05609aef4154cd0bc40338ff",
+      "task_ids": {
+        "hidden": "task_132_h",
+        "mixed": "task_132_m",
+        "volunteer": "task_132_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Mystery|publication_year:>=:2002",
+      "family_id": "books_simple_033",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "c4b444b76b89c2a721e526af19e62239408ccaba57e551b7fe110a9c13f407ed",
+      "task_ids": {
+        "hidden": "task_133_h",
+        "mixed": "task_133_m",
+        "volunteer": "task_133_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Humor|countries:contains:United States",
+      "family_id": "books_simple_034",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "4970a54be5de8baeb03ddc737af44429adff1c508dc681b83526b06612a7d4cb",
+      "task_ids": {
+        "hidden": "task_134_h",
+        "mixed": "task_134_m",
+        "volunteer": "task_134_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Graphic Novel|languages:contains:Norwegian",
+      "family_id": "books_simple_035",
+      "no_valid_recommendation": true,
+      "solution_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "task_ids": {
+        "hidden": "task_135_h",
+        "mixed": "task_135_m",
+        "volunteer": "task_135_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Memoir|publication_year:<=:1981",
+      "family_id": "books_simple_036",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "d2c29c13975415c1763ea18f12aebf146c426fc026dc5ccad0e8879525f2b309",
+      "task_ids": {
+        "hidden": "task_136_h",
+        "mixed": "task_136_m",
+        "volunteer": "task_136_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Historical Fiction|publication_year:>=:2012",
+      "family_id": "books_simple_037",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "64a88b3697978a1205ac41a12a0ca9a2dde1fc51ee4177e633ed9b24a7dba43f",
+      "task_ids": {
+        "hidden": "task_137_h",
+        "mixed": "task_137_m",
+        "volunteer": "task_137_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Adventure|genres:contains:Fantasy",
+      "family_id": "books_simple_038",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "31802b70f22ee7fadaaf85e4346dd2dddb070a5164f48fa07dda40b4b4e6ad44",
+      "task_ids": {
+        "hidden": "task_138_h",
+        "mixed": "task_138_m",
+        "volunteer": "task_138_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Fantasy|countries:contains:Australia",
+      "family_id": "books_simple_039",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "98ff2661dc8957ef5203514252bf9e30c6d186bc57df5b1ff8cf02fc0e521b23",
+      "task_ids": {
+        "hidden": "task_139_h",
+        "mixed": "task_139_m",
+        "volunteer": "task_139_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Young Adult|publication_year:<=:2002",
+      "family_id": "books_simple_040",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "7c653b71f328be1ae331c6c767c76a2909983ebde80490e8e799c9864f6f7af5",
+      "task_ids": {
+        "hidden": "task_140_h",
+        "mixed": "task_140_m",
+        "volunteer": "task_140_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Graphic Novel|languages:contains:Danish",
+      "family_id": "books_simple_041",
+      "no_valid_recommendation": true,
+      "solution_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "task_ids": {
+        "hidden": "task_141_h",
+        "mixed": "task_141_m",
+        "volunteer": "task_141_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Romance|publication_year:<=:1985",
+      "family_id": "books_simple_042",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "268e9d55ebf781a64c0f1a022d04d1804c3ea713cccc7d489513b41c44c42350",
+      "task_ids": {
+        "hidden": "task_142_h",
+        "mixed": "task_142_m",
+        "volunteer": "task_142_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Humor|publication_year:>=:1991",
+      "family_id": "books_simple_043",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "2bee1b0d1d6b161bb9adfcc2ff133c73cbb981909e0a04d2ba40004210b7f1db",
+      "task_ids": {
+        "hidden": "task_143_h",
+        "mixed": "task_143_m",
+        "volunteer": "task_143_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Memoir|countries:contains:United States",
+      "family_id": "books_simple_044",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "3ecf48dbb103f6f35f5ba0cec00a687a7e4d5285739b3804016cace5896c2e5f",
+      "task_ids": {
+        "hidden": "task_144_h",
+        "mixed": "task_144_m",
+        "volunteer": "task_144_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Science Fiction|publication_year:>=:2017",
+      "family_id": "books_simple_045",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "23794532f867cf737785a64819479739a479e26f6f1751affb2a123bc42bb7d6",
+      "task_ids": {
+        "hidden": "task_145_h",
+        "mixed": "task_145_m",
+        "volunteer": "task_145_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Horror|genres:contains:Self-Help",
+      "family_id": "books_simple_046",
+      "no_valid_recommendation": true,
+      "solution_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "task_ids": {
+        "hidden": "task_146_h",
+        "mixed": "task_146_m",
+        "volunteer": "task_146_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Crime|countries:contains:United States",
+      "family_id": "books_simple_047",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "92a9d9756d91bdd37f10dd9633962b8f1ec166db69a711b3026ed9f3de7b2646",
+      "task_ids": {
+        "hidden": "task_147_h",
+        "mixed": "task_147_m",
+        "volunteer": "task_147_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Adventure|countries:contains:United Kingdom",
+      "family_id": "books_simple_048",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "1e443ee46258454dc299a7c14c21923aade95a789831a395c4507ea6af2c1f71",
+      "task_ids": {
+        "hidden": "task_148_h",
+        "mixed": "task_148_m",
+        "volunteer": "task_148_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Thriller|countries:contains:United Kingdom",
+      "family_id": "books_simple_049",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "22ababca4ddfad8c9d32e81bfa838d2098e9b514397ec1a9e2f8f2747b90fa32",
+      "task_ids": {
+        "hidden": "task_149_h",
+        "mixed": "task_149_m",
+        "volunteer": "task_149_v"
+      }
+    },
+    {
+      "complexity": "simple",
+      "constraint_signature": "genres:contains:Nonfiction|publication_year:>=:2017",
+      "family_id": "books_simple_050",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "5bbd21f9f7e13a56494d99d4b49dcd08cd8db71b72455828b43a429a9953e587",
+      "task_ids": {
+        "hidden": "task_150_h",
+        "mixed": "task_150_m",
+        "volunteer": "task_150_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Biography|publication_year:>=:2013|publication_year:<=:2021",
+      "family_id": "books_medium_001",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "ccc040cb6ed762afdd02b8cc663d4c43ebaedda3fb1c40f83af2c04fce71c296",
+      "task_ids": {
+        "hidden": "task_051_h",
+        "mixed": "task_051_m",
+        "volunteer": "task_051_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Children|genres:contains:Fantasy|publication_year:<=:2000",
+      "family_id": "books_medium_002",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "8a91e88e0bde917b0c49c37524c01c8ffdd4bfada68829ceff477e318011f0e7",
+      "task_ids": {
+        "hidden": "task_052_h",
+        "mixed": "task_052_m",
+        "volunteer": "task_052_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Fantasy|genres:contains:Romance|publication_year:>=:2002",
+      "family_id": "books_medium_003",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "4125c5cbdb589c75e19f6417ddb6c2e6e51f0ea5915a085e0a6edc7c38a8f6b0",
+      "task_ids": {
+        "hidden": "task_053_h",
+        "mixed": "task_053_m",
+        "volunteer": "task_053_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Science Fiction|genres:contains:Young Adult|publication_year:<=:2013",
+      "family_id": "books_medium_004",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "86037edb56e7e7b32e13b75ba0d7f06518c675ceb48abe26c0197274e0c99f45",
+      "task_ids": {
+        "hidden": "task_054_h",
+        "mixed": "task_054_m",
+        "volunteer": "task_054_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Science Fiction|countries:contains:Australia|publication_year:<=:2012",
+      "family_id": "books_medium_005",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "8cc902d9d9bb8a12eeaee97c306860a6932f127d27fd9fad8a62bcaea6665a0d",
+      "task_ids": {
+        "hidden": "task_055_h",
+        "mixed": "task_055_m",
+        "volunteer": "task_055_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Mystery|languages:contains:Japanese|publication_year:>=:1988",
+      "family_id": "books_medium_006",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "376cf91278ff9d57af71613dff290357680c669e3d66d83bdd80e6d6fb731c91",
+      "task_ids": {
+        "hidden": "task_056_h",
+        "mixed": "task_056_m",
+        "volunteer": "task_056_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Poetry|languages:contains:Russian|publication_year:>=:2020",
+      "family_id": "books_medium_007",
+      "no_valid_recommendation": true,
+      "solution_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "task_ids": {
+        "hidden": "task_057_h",
+        "mixed": "task_057_m",
+        "volunteer": "task_057_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Nonfiction|countries:contains:Canada|publication_year:>=:1983",
+      "family_id": "books_medium_008",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "2f370447f73cdafb98864eb4473e9bf8f19acbfd2fea316be1f53f6e68215bd2",
+      "task_ids": {
+        "hidden": "task_058_h",
+        "mixed": "task_058_m",
+        "volunteer": "task_058_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Thriller|countries:contains:United States|publication_year:>=:2013",
+      "family_id": "books_medium_009",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "213b4ab9bf4ccd20a54084988a4f9c1054f196120f8a5c4de6da9a12771afae0",
+      "task_ids": {
+        "hidden": "task_059_h",
+        "mixed": "task_059_m",
+        "volunteer": "task_059_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Science Fiction|genres:contains:Young Adult|publication_year:<=:2001",
+      "family_id": "books_medium_010",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "e52ed11459486263e37885eff297b7c04b9ac84d996c8a9609745e31e6e709af",
+      "task_ids": {
+        "hidden": "task_060_h",
+        "mixed": "task_060_m",
+        "volunteer": "task_060_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Crime|publication_year:>=:2016|publication_year:<=:2023",
+      "family_id": "books_medium_011",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "ddce46a4cf11e44024ed23e516ec6ff91e860a024cfef8fa2ce4d52c080afebe",
+      "task_ids": {
+        "hidden": "task_061_h",
+        "mixed": "task_061_m",
+        "volunteer": "task_061_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Historical Fiction|countries:contains:United States|publication_year:>=:2008",
+      "family_id": "books_medium_012",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "e11800acc87b80cf8da7ea65bcd829270d02f772ed2edaa1999b77c825e926b4",
+      "task_ids": {
+        "hidden": "task_062_h",
+        "mixed": "task_062_m",
+        "volunteer": "task_062_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Horror|genres:contains:Mystery|publication_year:>=:1995",
+      "family_id": "books_medium_013",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "6d13d3b507a182d65bac6936e86f32919b4834dfd26379e8ae53c5ce7f593296",
+      "task_ids": {
+        "hidden": "task_063_h",
+        "mixed": "task_063_m",
+        "volunteer": "task_063_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Humor|countries:contains:United Kingdom|publication_year:>=:1910",
+      "family_id": "books_medium_014",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "45f84c728abe681c250dfc208be0175072393ef9fd91446aebc2924d46800403",
+      "task_ids": {
+        "hidden": "task_064_h",
+        "mixed": "task_064_m",
+        "volunteer": "task_064_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Humor|languages:contains:Russian|publication_year:>=:2007",
+      "family_id": "books_medium_015",
+      "no_valid_recommendation": true,
+      "solution_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "task_ids": {
+        "hidden": "task_065_h",
+        "mixed": "task_065_m",
+        "volunteer": "task_065_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Humor|countries:contains:United Kingdom|publication_year:>=:1993",
+      "family_id": "books_medium_016",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "179a711736c8b46e4b88b245dc674514390d3252f61d8557a385ece29364b45e",
+      "task_ids": {
+        "hidden": "task_066_h",
+        "mixed": "task_066_m",
+        "volunteer": "task_066_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Poetry|languages:contains:English|publication_year:<=:1970",
+      "family_id": "books_medium_017",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "6543764c2a884e693bc0179ac847dc86e930eb6ba4b55b99f4501fffedca7f8d",
+      "task_ids": {
+        "hidden": "task_067_h",
+        "mixed": "task_067_m",
+        "volunteer": "task_067_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Poetry|countries:contains:United Kingdom|publication_year:<=:1970",
+      "family_id": "books_medium_018",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "7fd43c22873e65b7246c83b6d98aa7bed71a428b256e1e1bc2cbf9c54d580285",
+      "task_ids": {
+        "hidden": "task_068_h",
+        "mixed": "task_068_m",
+        "volunteer": "task_068_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Memoir|countries:contains:United States|publication_year:>=:2018",
+      "family_id": "books_medium_019",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "e17eea5b1f12e2b3e3126084de3e6237cd8ce9f914441529a4e5a33804bca0ad",
+      "task_ids": {
+        "hidden": "task_069_h",
+        "mixed": "task_069_m",
+        "volunteer": "task_069_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Biography|countries:contains:United States|publication_year:<=:1990",
+      "family_id": "books_medium_020",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "6cfb9cb10e96200eb594206e09e6d11485075a7f43ecb733e7fa76c110dacea5",
+      "task_ids": {
+        "hidden": "task_070_h",
+        "mixed": "task_070_m",
+        "volunteer": "task_070_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Biography|languages:contains:English|publication_year:>=:2014",
+      "family_id": "books_medium_021",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "95a10efbd9c81be826d29e353c7d4ef9fc9432dff36ef066815039a6b6c50505",
+      "task_ids": {
+        "hidden": "task_071_h",
+        "mixed": "task_071_m",
+        "volunteer": "task_071_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Horror|genres:contains:Romance|countries:contains:United States|publication_year:>=:1993",
+      "family_id": "books_medium_022",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "99d91c2f582acf8773682c5155b48b330f9ea3882fdec2792fe6a7e599496db9",
+      "task_ids": {
+        "hidden": "task_072_h",
+        "mixed": "task_072_m",
+        "volunteer": "task_072_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Adventure|genres:contains:Children|languages:contains:English|publication_year:>=:1997",
+      "family_id": "books_medium_023",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "1334103dd5ef4c0a7a575c4c9e62d40c13e3d91d8ea18dd348832c2777abe792",
+      "task_ids": {
+        "hidden": "task_073_h",
+        "mixed": "task_073_m",
+        "volunteer": "task_073_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Fantasy|languages:contains:Japanese|publication_year:>=:2001",
+      "family_id": "books_medium_024",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "d7140ba6274e5d37010e82c1c7ad0060ef6d5555a932f1e86fcff16076bdf3f7",
+      "task_ids": {
+        "hidden": "task_074_h",
+        "mixed": "task_074_m",
+        "volunteer": "task_074_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Children|genres:contains:Historical Fiction|publication_year:>=:1950",
+      "family_id": "books_medium_025",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "94ce65cf66f4368b68a7fa754ddbf332d5beca92132b2d7284ff9f195ea4851a",
+      "task_ids": {
+        "hidden": "task_075_h",
+        "mixed": "task_075_m",
+        "volunteer": "task_075_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Horror|genres:contains:Thriller|languages:contains:English|publication_year:>=:1995",
+      "family_id": "books_medium_026",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "6fe0d309622efd88c51cacd58deb356bd8fdc8d34c90add9694faa5afdd2d31e",
+      "task_ids": {
+        "hidden": "task_076_h",
+        "mixed": "task_076_m",
+        "volunteer": "task_076_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Poetry|countries:contains:Nigeria|publication_year:>=:1988",
+      "family_id": "books_medium_027",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "388444567813b603c49584308462badb84e721076ea1d7120a8b824378a9258e",
+      "task_ids": {
+        "hidden": "task_077_h",
+        "mixed": "task_077_m",
+        "volunteer": "task_077_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Crime|languages:contains:Italian|publication_year:>=:1995",
+      "family_id": "books_medium_028",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "f4d8fc5cbcabbe4e84ffca950bd3833c8f6689238b5843e3c7c8d3e4cb47357c",
+      "task_ids": {
+        "hidden": "task_078_h",
+        "mixed": "task_078_m",
+        "volunteer": "task_078_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Historical Fiction|countries:contains:United States|publication_year:>=:2012",
+      "family_id": "books_medium_029",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "671e560c44be6fa29443bb2ed3d9b0ddc68afa55437f797b12c1dbbe61fc7cd8",
+      "task_ids": {
+        "hidden": "task_079_h",
+        "mixed": "task_079_m",
+        "volunteer": "task_079_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Biography|countries:contains:United Kingdom|publication_year:>=:1983",
+      "family_id": "books_medium_030",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "18e9459ef9f576a040b8637aba1c7de62c0b5b66d6496ceaaeb7afc7d76e0323",
+      "task_ids": {
+        "hidden": "task_080_h",
+        "mixed": "task_080_m",
+        "volunteer": "task_080_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Fantasy|languages:contains:German|publication_year:<=:2008",
+      "family_id": "books_medium_031",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "c530ff8246165c3ea2816fa420ebc042b0337dfff44652e21e2c2d39d09be292",
+      "task_ids": {
+        "hidden": "task_081_h",
+        "mixed": "task_081_m",
+        "volunteer": "task_081_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Adventure|countries:contains:United Kingdom|publication_year:>=:2020",
+      "family_id": "books_medium_032",
+      "no_valid_recommendation": true,
+      "solution_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "task_ids": {
+        "hidden": "task_082_h",
+        "mixed": "task_082_m",
+        "volunteer": "task_082_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Biography|countries:contains:United Kingdom|publication_year:<=:2005",
+      "family_id": "books_medium_033",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "d2e6bf4787e9ccea9615b842aea443dda9eda729586353fa26058b1a422525bb",
+      "task_ids": {
+        "hidden": "task_083_h",
+        "mixed": "task_083_m",
+        "volunteer": "task_083_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Nonfiction|languages:contains:Spanish|publication_year:<=:2019",
+      "family_id": "books_medium_034",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "b94951cd1f8a84db7dbdf21aa3460a9c0d14e57e62c78aa4cf14342a017c3b7e",
+      "task_ids": {
+        "hidden": "task_084_h",
+        "mixed": "task_084_m",
+        "volunteer": "task_084_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Adventure|countries:contains:United Kingdom|publication_year:<=:1989",
+      "family_id": "books_medium_035",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "f28d0c1376c3ab35c5822d967751610743db6b09cd02cf10b3f04d6b2e2c810a",
+      "task_ids": {
+        "hidden": "task_085_h",
+        "mixed": "task_085_m",
+        "volunteer": "task_085_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Poetry|languages:contains:Russian|publication_year:>=:2011",
+      "family_id": "books_medium_036",
+      "no_valid_recommendation": true,
+      "solution_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "task_ids": {
+        "hidden": "task_086_h",
+        "mixed": "task_086_m",
+        "volunteer": "task_086_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Mystery|genres:contains:Science Fiction|languages:contains:English|publication_year:>=:1996",
+      "family_id": "books_medium_037",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "5f826d55908d98283bc5a1d3c568f61ca63e3eabea76d1c96c9b329fd8877c0a",
+      "task_ids": {
+        "hidden": "task_087_h",
+        "mixed": "task_087_m",
+        "volunteer": "task_087_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Historical Fiction|countries:contains:Canada|publication_year:>=:1992",
+      "family_id": "books_medium_038",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "75650ec90e95da791d95c2a12de06ad37bc15c71b76c4c5d8b57901620fd5420",
+      "task_ids": {
+        "hidden": "task_088_h",
+        "mixed": "task_088_m",
+        "volunteer": "task_088_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Adventure|countries:contains:United States|publication_year:<=:1920",
+      "family_id": "books_medium_039",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "3dff113efa7895c4acddcc6c1fa0cd94ab5e742d5875652d3af0548edcdaccb1",
+      "task_ids": {
+        "hidden": "task_089_h",
+        "mixed": "task_089_m",
+        "volunteer": "task_089_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Science Fiction|languages:contains:Dutch|publication_year:<=:1850",
+      "family_id": "books_medium_040",
+      "no_valid_recommendation": true,
+      "solution_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "task_ids": {
+        "hidden": "task_090_h",
+        "mixed": "task_090_m",
+        "volunteer": "task_090_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Memoir|countries:contains:United Kingdom|publication_year:>=:1982",
+      "family_id": "books_medium_041",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "8f252a05ef385f0ec796328452fc3026dcc1d16966ab4cf017dcfe76e557ca13",
+      "task_ids": {
+        "hidden": "task_091_h",
+        "mixed": "task_091_m",
+        "volunteer": "task_091_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Romance|countries:contains:Japan|publication_year:>=:2010",
+      "family_id": "books_medium_042",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "c6282b9017ae47dfe1bce00c6de6c22c83ba9003c77fce72303bd2d429bab980",
+      "task_ids": {
+        "hidden": "task_092_h",
+        "mixed": "task_092_m",
+        "volunteer": "task_092_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Crime|genres:contains:Thriller|languages:contains:English|publication_year:>=:1987",
+      "family_id": "books_medium_043",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "ca7c4c998d51dd6eac25bfad922ba89d77c21ca8e74ec46bb61d31da4c924427",
+      "task_ids": {
+        "hidden": "task_093_h",
+        "mixed": "task_093_m",
+        "volunteer": "task_093_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:History|languages:contains:German|publication_year:<=:1997",
+      "family_id": "books_medium_044",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "662e1ce3a24069760bed5cbe3cf4fe0f48e339494e5005e9833be2898f8ca86c",
+      "task_ids": {
+        "hidden": "task_094_h",
+        "mixed": "task_094_m",
+        "volunteer": "task_094_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Memoir|countries:contains:France|publication_year:<=:1998",
+      "family_id": "books_medium_045",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "2ed8819414b685ff2389259e32564c21aff2a9cbdb87cb8165affdf6e297c5e1",
+      "task_ids": {
+        "hidden": "task_095_h",
+        "mixed": "task_095_m",
+        "volunteer": "task_095_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Horror|genres:contains:Romance|publication_year:>=:2005",
+      "family_id": "books_medium_046",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "e3bd8021bb21a56db28d4057e60b251ee756f9ab68f4733cb8f5813e764b74f1",
+      "task_ids": {
+        "hidden": "task_096_h",
+        "mixed": "task_096_m",
+        "volunteer": "task_096_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Thriller|countries:contains:United States|publication_year:<=:1981",
+      "family_id": "books_medium_047",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "12052847229c400ace1bffc8bf2202722137e5dd234d78778ced5b954057bffb",
+      "task_ids": {
+        "hidden": "task_097_h",
+        "mixed": "task_097_m",
+        "volunteer": "task_097_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Mystery|countries:contains:Japan|publication_year:<=:1999",
+      "family_id": "books_medium_048",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "9f69276768dd838b436d92e44db8bb6fa4aa8044da8354ce6c021ba0cb192ad5",
+      "task_ids": {
+        "hidden": "task_098_h",
+        "mixed": "task_098_m",
+        "volunteer": "task_098_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Children|countries:contains:United States|publication_year:<=:1920",
+      "family_id": "books_medium_049",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "ba7dc0800f270e86911e5144aa965d73d05f3d9d92f8a01ad1a08e65425d7a62",
+      "task_ids": {
+        "hidden": "task_099_h",
+        "mixed": "task_099_m",
+        "volunteer": "task_099_v"
+      }
+    },
+    {
+      "complexity": "medium",
+      "constraint_signature": "genres:contains:Historical Fiction|countries:contains:Canada|publication_year:<=:2015",
+      "family_id": "books_medium_050",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "bf5bafe08379e8a3a67f2c1a8ba91ffe8db6e8f2fedc770db78f30c0ccbe4720",
+      "task_ids": {
+        "hidden": "task_100_h",
+        "mixed": "task_100_m",
+        "volunteer": "task_100_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Nonfiction|languages:contains:Italian|countries:contains:Italy|publication_year:>=:1920|publication_year:<=:2020",
+      "family_id": "books_complex_001",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "ea52f9fdb95b186ef5e63b58a9e96ea1b7ca0ea227c822da87f0e255bb7285fb",
+      "task_ids": {
+        "hidden": "task_001_h",
+        "mixed": "task_001_m",
+        "volunteer": "task_001_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Crime|genres:contains:Science Fiction|languages:contains:English|publication_year:>=:1991|publication_year:<=:2011",
+      "family_id": "books_complex_002",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "bbaf0c7b856afcb3826c3b2facd467599fa13b772deb71676b5b729925e81689",
+      "task_ids": {
+        "hidden": "task_002_h",
+        "mixed": "task_002_m",
+        "volunteer": "task_002_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Adventure|genres:contains:Young Adult|countries:contains:United States|publication_year:>=:2008|publication_year:<=:2009",
+      "family_id": "books_complex_003",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "da94f50335fcebdf919b6176f067e9f213bacca9738cd848925d640920cbb02c",
+      "task_ids": {
+        "hidden": "task_003_h",
+        "mixed": "task_003_m",
+        "volunteer": "task_003_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Children|genres:contains:Young Adult|languages:contains:English|publication_year:>=:1960|publication_year:<=:2006",
+      "family_id": "books_complex_004",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "20fc2a09c4309e0b8a326d8792fe42c9765f24f7478915ace4ce51d31f47d6da",
+      "task_ids": {
+        "hidden": "task_004_h",
+        "mixed": "task_004_m",
+        "volunteer": "task_004_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Adventure|genres:contains:Mystery|languages:contains:English|publication_year:>=:1960|publication_year:<=:2010",
+      "family_id": "books_complex_005",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "99f4064d85f81ee42ecd99b0f2fe33de7fadf4235032f24268ead275b4143927",
+      "task_ids": {
+        "hidden": "task_005_h",
+        "mixed": "task_005_m",
+        "volunteer": "task_005_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Fantasy|genres:contains:Science Fiction|languages:contains:French|publication_year:>=:1910|publication_year:<=:1970",
+      "family_id": "books_complex_006",
+      "no_valid_recommendation": true,
+      "solution_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "task_ids": {
+        "hidden": "task_006_h",
+        "mixed": "task_006_m",
+        "volunteer": "task_006_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Children|genres:contains:Historical Fiction|countries:contains:United States|publication_year:>=:1960|publication_year:<=:1989",
+      "family_id": "books_complex_007",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "442dad32ce28c2c53f611a99bea50bb86fbacaf6603c3abf81a0c50149ad5945",
+      "task_ids": {
+        "hidden": "task_007_h",
+        "mixed": "task_007_m",
+        "volunteer": "task_007_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Memoir|languages:contains:English|countries:contains:United Kingdom|publication_year:>=:1983|publication_year:<=:1998",
+      "family_id": "books_complex_008",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "bd9ce4c8b1fa08d1077c24c8a0ed6a0744581a6ceb508984d75998be064bc3e4",
+      "task_ids": {
+        "hidden": "task_008_h",
+        "mixed": "task_008_m",
+        "volunteer": "task_008_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Fantasy|genres:contains:Young Adult|countries:contains:United States|publication_year:>=:2015|publication_year:<=:2020",
+      "family_id": "books_complex_009",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "d10c64b622ceca937f8b373078c4bded110aee19ae487814b4b8e7f5f1279c21",
+      "task_ids": {
+        "hidden": "task_009_h",
+        "mixed": "task_009_m",
+        "volunteer": "task_009_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Nonfiction|languages:contains:Dutch|countries:contains:Netherlands|publication_year:>=:1981|publication_year:<=:2010",
+      "family_id": "books_complex_010",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "37ea4bfc513043f511693d22349dc82ab933d9df78fce296bf8f806f476c4ad4",
+      "task_ids": {
+        "hidden": "task_010_h",
+        "mixed": "task_010_m",
+        "volunteer": "task_010_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Children|genres:contains:Historical Fiction|countries:contains:United States|publication_year:>=:1930|publication_year:<=:1995",
+      "family_id": "books_complex_011",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "dccd8d7f57e9dfa96e32b19e5871b0d32145e099c25d50f5fe3710fcc6eb2edf",
+      "task_ids": {
+        "hidden": "task_011_h",
+        "mixed": "task_011_m",
+        "volunteer": "task_011_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:History|languages:contains:English|countries:contains:United States|publication_year:>=:1825|publication_year:<=:1960",
+      "family_id": "books_complex_012",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "a62fb21de428a580bc44367db001a6ccaddf376256049625f599931345f4ad47",
+      "task_ids": {
+        "hidden": "task_012_h",
+        "mixed": "task_012_m",
+        "volunteer": "task_012_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Memoir|languages:contains:English|countries:contains:United Kingdom|publication_year:>=:1982|publication_year:<=:1986",
+      "family_id": "books_complex_013",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "906eb72faf024fbf98b0ac65e0633db68e6bce52d0c46260671470ff2eadc9d3",
+      "task_ids": {
+        "hidden": "task_013_h",
+        "mixed": "task_013_m",
+        "volunteer": "task_013_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Children|genres:contains:Thriller|countries:contains:United Kingdom|publication_year:>=:2003|publication_year:<=:2012",
+      "family_id": "books_complex_014",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "77f0a54fe6e8e0ac83f0093640a9c1b73db224e2820a22df5de8663793e11ead",
+      "task_ids": {
+        "hidden": "task_014_h",
+        "mixed": "task_014_m",
+        "volunteer": "task_014_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Poetry|languages:contains:Italian|countries:contains:Italy|publication_year:>=:1850|publication_year:<=:2011",
+      "family_id": "books_complex_015",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "3d37546b0aa44055bc3961785eec147dbeefb4ad172d204c3852357ed6e07563",
+      "task_ids": {
+        "hidden": "task_015_h",
+        "mixed": "task_015_m",
+        "volunteer": "task_015_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Mystery|genres:contains:Young Adult|languages:contains:English|publication_year:>=:1986|publication_year:<=:2020",
+      "family_id": "books_complex_016",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "4117a6aaec6cb4c522481927a4665d5d060c59ea2a00f20d945c42b7b95d32cc",
+      "task_ids": {
+        "hidden": "task_016_h",
+        "mixed": "task_016_m",
+        "volunteer": "task_016_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Fantasy|genres:contains:Romance|countries:contains:United States|publication_year:>=:2009|publication_year:<=:2009",
+      "family_id": "books_complex_017",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "a3fe0b21cc3ee39d67005e67b714ff653f8e5c7fd4341143cf76942c8b94d43d",
+      "task_ids": {
+        "hidden": "task_017_h",
+        "mixed": "task_017_m",
+        "volunteer": "task_017_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Crime|genres:contains:Science Fiction|languages:contains:English|publication_year:>=:1940|publication_year:<=:2011",
+      "family_id": "books_complex_018",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "f2909310028efd07886f66ea394d0c86f074a486705642b25402c49720d41d7e",
+      "task_ids": {
+        "hidden": "task_018_h",
+        "mixed": "task_018_m",
+        "volunteer": "task_018_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Mystery|genres:contains:Thriller|countries:contains:United States|publication_year:>=:2010|publication_year:<=:2021",
+      "family_id": "books_complex_019",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "0480f93f19db3fe8d5dfdace00fbc047b16dee49976f03d93a41ebcfde228702",
+      "task_ids": {
+        "hidden": "task_019_h",
+        "mixed": "task_019_m",
+        "volunteer": "task_019_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Fantasy|genres:contains:Horror|countries:contains:United Kingdom|publication_year:>=:1991|publication_year:<=:1992",
+      "family_id": "books_complex_020",
+      "no_valid_recommendation": true,
+      "solution_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "task_ids": {
+        "hidden": "task_020_h",
+        "mixed": "task_020_m",
+        "volunteer": "task_020_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Crime|genres:contains:Historical Fiction|countries:contains:United Kingdom|publication_year:>=:1995|publication_year:<=:2000",
+      "family_id": "books_complex_021",
+      "no_valid_recommendation": true,
+      "solution_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "task_ids": {
+        "hidden": "task_021_h",
+        "mixed": "task_021_m",
+        "volunteer": "task_021_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Science Fiction|genres:contains:Young Adult|countries:contains:Australia|publication_year:>=:1999|publication_year:<=:2003",
+      "family_id": "books_complex_022",
+      "no_valid_recommendation": true,
+      "solution_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "task_ids": {
+        "hidden": "task_022_h",
+        "mixed": "task_022_m",
+        "volunteer": "task_022_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Adventure|genres:contains:Historical Fiction|languages:contains:English|publication_year:>=:1875|publication_year:<=:1950",
+      "family_id": "books_complex_023",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "36fa490cef4622d0d7e52ad1a9fc7e97544023d382a671eb44150568f7035385",
+      "task_ids": {
+        "hidden": "task_023_h",
+        "mixed": "task_023_m",
+        "volunteer": "task_023_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Crime|genres:contains:Science Fiction|languages:contains:English|publication_year:>=:1983|publication_year:<=:2011",
+      "family_id": "books_complex_024",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "e46ae34b538712e9abd0d916315e7ea148e1651e137eaa7db8752dcbf41ed046",
+      "task_ids": {
+        "hidden": "task_024_h",
+        "mixed": "task_024_m",
+        "volunteer": "task_024_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Historical Fiction|genres:contains:Young Adult|countries:contains:United States|publication_year:>=:1990|publication_year:<=:2016",
+      "family_id": "books_complex_025",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "6d617f9f9e4d17d3c957413ebb74d6fd2270a611e2a25dd31c5e09567c43d1b8",
+      "task_ids": {
+        "hidden": "task_025_h",
+        "mixed": "task_025_m",
+        "volunteer": "task_025_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Nonfiction|languages:contains:English|countries:contains:India|publication_year:>=:1980|publication_year:<=:2012",
+      "family_id": "books_complex_026",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "c91879044f84c001e45c3b24b5a081ca1086ce299695a58666b0594e9324d9a6",
+      "task_ids": {
+        "hidden": "task_026_h",
+        "mixed": "task_026_m",
+        "volunteer": "task_026_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Children|genres:contains:Historical Fiction|countries:contains:United Kingdom|publication_year:>=:1920|publication_year:<=:1988",
+      "family_id": "books_complex_027",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "4266d862358a7ff6140c58e5cfe2e0f3dee713ced627eedeee140de0fa5189e3",
+      "task_ids": {
+        "hidden": "task_027_h",
+        "mixed": "task_027_m",
+        "volunteer": "task_027_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Adventure|genres:contains:Historical Fiction|countries:contains:United States|publication_year:>=:1950|publication_year:<=:1980",
+      "family_id": "books_complex_028",
+      "no_valid_recommendation": true,
+      "solution_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "task_ids": {
+        "hidden": "task_028_h",
+        "mixed": "task_028_m",
+        "volunteer": "task_028_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Fantasy|genres:contains:Romance|languages:contains:Japanese|publication_year:>=:2017|publication_year:<=:2023",
+      "family_id": "books_complex_029",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "7f814cbf503a3949b385f60f94b953e32f73783cc254409b07f051d0019cc79e",
+      "task_ids": {
+        "hidden": "task_029_h",
+        "mixed": "task_029_m",
+        "volunteer": "task_029_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Crime|genres:contains:Horror|languages:contains:English|publication_year:>=:1930|publication_year:<=:1988",
+      "family_id": "books_complex_030",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "7b149e19eea834821deaab2e458a43f78e9639d19515f86d6d2292615ecfe2c7",
+      "task_ids": {
+        "hidden": "task_030_h",
+        "mixed": "task_030_m",
+        "volunteer": "task_030_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Adventure|genres:contains:Thriller|languages:contains:English|publication_year:>=:1980|publication_year:<=:2012",
+      "family_id": "books_complex_031",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "013902d5161be6a0fbc1dcd4f218ee9193905074ea54320069c3cf90a84f508e",
+      "task_ids": {
+        "hidden": "task_031_h",
+        "mixed": "task_031_m",
+        "volunteer": "task_031_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Horror|genres:contains:Young Adult|languages:contains:English|publication_year:>=:1992|publication_year:<=:2005",
+      "family_id": "books_complex_032",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "8c55c44259a5f8477478ca9e4195f3a223ea4bc6dfb1051633d3be73c72edfbe",
+      "task_ids": {
+        "hidden": "task_032_h",
+        "mixed": "task_032_m",
+        "volunteer": "task_032_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Crime|genres:contains:Mystery|countries:contains:Sweden|publication_year:>=:1994|publication_year:<=:2014",
+      "family_id": "books_complex_033",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "d8506e983aa46c782cc733c0787c05d6da0bc873a66dc81f54ba563caebc29a9",
+      "task_ids": {
+        "hidden": "task_033_h",
+        "mixed": "task_033_m",
+        "volunteer": "task_033_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Adventure|genres:contains:Historical Fiction|countries:contains:United Kingdom|publication_year:>=:1825|publication_year:<=:1940",
+      "family_id": "books_complex_034",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "50a06bd86a95d5e1c981e54724e6cc4964bb37f4560e822487379bd70f687a5b",
+      "task_ids": {
+        "hidden": "task_034_h",
+        "mixed": "task_034_m",
+        "volunteer": "task_034_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Nonfiction|languages:contains:Finnish|countries:contains:Finland|publication_year:>=:2008|publication_year:<=:2013",
+      "family_id": "books_complex_035",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "d5b258a8681fdd64f3ef294df1e6059591cec4f68181a2e07494b37ca2ad201b",
+      "task_ids": {
+        "hidden": "task_035_h",
+        "mixed": "task_035_m",
+        "volunteer": "task_035_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Fantasy|genres:contains:Humor|countries:contains:United States|publication_year:>=:1950|publication_year:<=:2006",
+      "family_id": "books_complex_036",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "9795638774dd190e6277e0c11a31435427582b601f4b069734160a452300a24a",
+      "task_ids": {
+        "hidden": "task_036_h",
+        "mixed": "task_036_m",
+        "volunteer": "task_036_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Children|genres:contains:Fantasy|countries:contains:United States|publication_year:>=:2010|publication_year:<=:2012",
+      "family_id": "books_complex_037",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "28ee08a5541ecbaa904c7ed0ac33cf434e57060ba484ea6b52e63a9f7bbe749e",
+      "task_ids": {
+        "hidden": "task_037_h",
+        "mixed": "task_037_m",
+        "volunteer": "task_037_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Fantasy|genres:contains:Romance|countries:contains:United States|publication_year:>=:1997|publication_year:<=:2006",
+      "family_id": "books_complex_038",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "d1afc2b15578e6a12fb54a48c24b01e45f63a25df9a50c7295e3f5fc64e471d2",
+      "task_ids": {
+        "hidden": "task_038_h",
+        "mixed": "task_038_m",
+        "volunteer": "task_038_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Fantasy|genres:contains:Humor|countries:contains:United States|publication_year:>=:1996|publication_year:<=:2009",
+      "family_id": "books_complex_039",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "221713073cf90c6f85e1d6da537d9006e2b78f62bece2941c3fb54fcfb1584d9",
+      "task_ids": {
+        "hidden": "task_039_h",
+        "mixed": "task_039_m",
+        "volunteer": "task_039_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Horror|genres:contains:Thriller|languages:contains:English|publication_year:>=:2006|publication_year:<=:2011",
+      "family_id": "books_complex_040",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "a5761cda6a8c74f81a88f11512b32203a63a319eb5f0ff86e893ea56b12e8a78",
+      "task_ids": {
+        "hidden": "task_040_h",
+        "mixed": "task_040_m",
+        "volunteer": "task_040_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Horror|genres:contains:Science Fiction|countries:contains:United States|publication_year:>=:1980|publication_year:<=:1990",
+      "family_id": "books_complex_041",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "f544341453a4c6fa7d0715b314759a15843f28b8f2957dfd2ab3a25eacde183a",
+      "task_ids": {
+        "hidden": "task_041_h",
+        "mixed": "task_041_m",
+        "volunteer": "task_041_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Horror|genres:contains:Mystery|languages:contains:English|publication_year:>=:2009|publication_year:<=:2019",
+      "family_id": "books_complex_042",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "11c3572ee501f3f17b457c1782c780f1e8ee068977cbe0ff6c0a9cf39c8d0164",
+      "task_ids": {
+        "hidden": "task_042_h",
+        "mixed": "task_042_m",
+        "volunteer": "task_042_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Mystery|genres:contains:Young Adult|languages:contains:English|publication_year:>=:1983|publication_year:<=:2011",
+      "family_id": "books_complex_043",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "ec42b632eee953245cb0b9b3b7511e6fb585e85fe1ec37384b1f1614052ead92",
+      "task_ids": {
+        "hidden": "task_043_h",
+        "mixed": "task_043_m",
+        "volunteer": "task_043_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Romance|genres:contains:Science Fiction|languages:contains:English|publication_year:>=:1986|publication_year:<=:2008",
+      "family_id": "books_complex_044",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "f1b3c582374360706ea2c38647c7cef99473f551fc0da40e1155a2b9896937aa",
+      "task_ids": {
+        "hidden": "task_044_h",
+        "mixed": "task_044_m",
+        "volunteer": "task_044_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Horror|genres:contains:Romance|countries:contains:United States|publication_year:>=:1993|publication_year:<=:2007",
+      "family_id": "books_complex_045",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "4cd634ee4604638865791601011cbf439df260314e52e0391fde4302f033bd6e",
+      "task_ids": {
+        "hidden": "task_045_h",
+        "mixed": "task_045_m",
+        "volunteer": "task_045_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Crime|genres:contains:Thriller|languages:contains:English|publication_year:>=:2004|publication_year:<=:2006",
+      "family_id": "books_complex_046",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "f5c66c01ca80bde69be73648e35fef810d5d491f76b6151a611b34509938b17c",
+      "task_ids": {
+        "hidden": "task_046_h",
+        "mixed": "task_046_m",
+        "volunteer": "task_046_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Crime|genres:contains:Mystery|countries:contains:United Kingdom|publication_year:>=:2009|publication_year:<=:2017",
+      "family_id": "books_complex_047",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "8babc7f732f8b69e72e1a766a5e5331caf766b7d7ed089844f8c013312bd29a6",
+      "task_ids": {
+        "hidden": "task_047_h",
+        "mixed": "task_047_m",
+        "volunteer": "task_047_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Horror|genres:contains:Thriller|languages:contains:English|publication_year:>=:2010|publication_year:<=:2013",
+      "family_id": "books_complex_048",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "6121c2e10047d0a3d804952dbd00394fe492bbc44d2ce9c433ec36289cef8e73",
+      "task_ids": {
+        "hidden": "task_048_h",
+        "mixed": "task_048_m",
+        "volunteer": "task_048_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Adventure|genres:contains:Science Fiction|languages:contains:English|publication_year:>=:1930|publication_year:<=:2003",
+      "family_id": "books_complex_049",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "418c5d41e50b6cb2ff426b73d4581d5ca848aabcbf38d6aea94ab9421a5530df",
+      "task_ids": {
+        "hidden": "task_049_h",
+        "mixed": "task_049_m",
+        "volunteer": "task_049_v"
+      }
+    },
+    {
+      "complexity": "complex",
+      "constraint_signature": "genres:contains:Crime|genres:contains:Historical Fiction|languages:contains:English|publication_year:>=:1981|publication_year:<=:2008",
+      "family_id": "books_complex_050",
+      "no_valid_recommendation": false,
+      "solution_ids_sha256": "e0a9b35003688c4a364a2e17fcdf42dc28227cb5e72cb41da99ee1da7e9c4016",
+      "task_ids": {
+        "hidden": "task_050_h",
+        "mixed": "task_050_m",
+        "volunteer": "task_050_v"
+      }
+    }
+  ],
+  "family_count": 150,
+  "reveal_assignment_version": "blocked-hash-v1",
+  "reveal_variants": [
+    "volunteer",
+    "mixed",
+    "hidden"
+  ],
+  "sampling_mode": "catalog-predicate-v1",
+  "task_count": 450
+}

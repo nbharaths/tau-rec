@@ -105,6 +105,70 @@ def test_constraint_evaluation():
     assert c3.evaluate(movie) is True
     assert c4.evaluate(movie) is False
 
+def test_constraint_on_missing_attribute_is_unsatisfied():
+    """An item that lacks the attribute satisfies nothing about it.
+
+    Movies carry every field, so this never fired on movies-v1. It matters for
+    tracks whose items have optional fields: an item with no recorded value must
+    not pass a numeric bound, and must not raise TypeError mid-run either.
+    """
+    from types import SimpleNamespace
+    item = SimpleNamespace(publication_year=None, genres=None, content_rating=None)
+    cases = [
+        Constraint(field="publication_year", op="<=", value=2000),
+        Constraint(field="publication_year", op=">=", value=1990),
+        Constraint(field="publication_year", op="==", value=1999),
+        Constraint(field="publication_year", op="!=", value=1999),
+        Constraint(field="genres", op="contains", value="Mystery"),
+        Constraint(field="genres", op="contains_any", value=["Mystery", "Fantasy"]),
+        Constraint(field="genres", op="not_contains", value="Horror"),
+        Constraint(field="content_rating", op="in", value=["Adult"]),
+    ]
+    for c in cases:
+        assert c.evaluate(item) is False, f"{c.field} {c.op} {c.value}"
+
+
+def test_catalog_accepts_items_and_movies_keywords():
+    """`items` is the field; `movies` is an accepted alias and a property.
+
+    Ten call sites and the fixtures in this suite construct Catalog(movies=...),
+    and the on-disk format is a bare list, so widening the field name must not
+    move any of them.
+    """
+    m = Movie(
+        id="tt001", title="X", release_date="2025-01-01", runtime=95,
+        genres=["Drama"], overview="", cast=[], director="D",
+        rating=7.0, vote_count=10, streaming_services=[],
+    )
+    by_items = Catalog(items=[m])
+    by_movies = Catalog(movies=[m])
+    by_dict = Catalog.model_validate({"movies": [m.model_dump()]})
+    for cat in (by_items, by_movies, by_dict):
+        assert cat.items == [m]
+        assert cat.movies == [m]
+        assert len(cat) == 1
+        assert cat.get("tt001") == m
+        assert cat.get("tt999") is None
+
+
+def test_task_rejects_unknown_keys():
+    """A misspelled key fails at load instead of disabling a gate silently."""
+    import glob
+    import pytest
+    from pathlib import Path
+    # Every shipped task still loads under the stricter model.
+    paths = sorted(glob.glob(str(Path(__file__).resolve().parent.parent / "data" / "tasks" / "*.json")))
+    assert len(paths) == 60
+    for p in paths:
+        Task.from_json(p)
+    book_task = Task(id="t", constraints=[], persona="p", complexity="simple",
+                     reveal_difficulty="volunteer", user_formats=["audiobook"])
+    assert book_task.user_formats == ["audiobook"]
+    with pytest.raises(Exception, match="user_formtz"):
+        Task(id="t", constraints=[], persona="p", complexity="simple",
+             reveal_difficulty="volunteer", user_formtz=["audiobook"])
+
+
 def test_task_structure():
     task = Task(
         id="task_001",

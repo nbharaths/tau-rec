@@ -1,0 +1,40 @@
+{
+  "id": "task_141_m",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Graphic Novel"
+      },
+      "reveal": "on_ask"
+    },
+    {
+      "constraint": {
+        "field": "languages",
+        "op": "contains",
+        "value": "Danish"
+      },
+      "reveal": "volunteer"
+    }
+  ],
+  "persona": "You have a long reading list and want help finding the single best match for your current mood.",
+  "soft_preferences": [],
+  "policy_flags": [
+    "single_recommendation",
+    "transparency",
+    "recommend_tool"
+  ],
+  "no_valid_recommendation": true,
+  "complexity": "simple",
+  "reveal_difficulty": "mixed",
+  "user_history": {
+    "user_1": {
+      "read": [],
+      "ratings": {}
+    }
+  },
+  "user_id": "user_1",
+  "user_services": [],
+  "user_formats": []
+}

@@ -1,0 +1,48 @@
+{
+  "id": "task_057_m",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Poetry"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "languages",
+        "op": "contains",
+        "value": "Russian"
+      },
+      "reveal": "on_ask"
+    },
+    {
+      "constraint": {
+        "field": "publication_year",
+        "op": ">=",
+        "value": 2020
+      },
+      "reveal": "on_ask"
+    }
+  ],
+  "persona": "You are browsing for a book for an upcoming quiet weekend and want one confident recommendation.",
+  "soft_preferences": [],
+  "policy_flags": [
+    "single_recommendation",
+    "transparency",
+    "recommend_tool"
+  ],
+  "no_valid_recommendation": true,
+  "complexity": "medium",
+  "reveal_difficulty": "mixed",
+  "user_history": {
+    "user_1": {
+      "read": [],
+      "ratings": {}
+    }
+  },
+  "user_id": "user_1",
+  "user_services": [],
+  "user_formats": []
+}

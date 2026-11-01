@@ -1,0 +1,13 @@
+{
+  "archive_bytes": 2931202,
+  "archive_sha256": "907b242db13382e9504d689a080fb308273ac95f245e992466beedaa154fee21",
+  "catalog_sha256": "19e9fa3a4db03de8f8bb8cdd8f7b231346a44f21cefca18947b7b10485d7093f",
+  "filename": "books-wikidata-v2-source-snapshot.tar.gz",
+  "query_response_file_count": 21,
+  "schema_version": "tau-rec-wikidata-source-snapshot-v1",
+  "snapshot_manifest_sha256": "84ddd380a777a2123794963a9138be8417b3268aeb7371044ba6a4f6b52dc655",
+  "status": "published",
+  "track_id": "books-wikidata-v2",
+  "uncompressed_response_bytes": 30442854,
+  "url": "https://github.com/nbharaths/tau-rec/releases/download/v2.0.0/books-wikidata-v2-source-snapshot.tar.gz"
+}

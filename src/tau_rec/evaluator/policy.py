@@ -4,7 +4,10 @@ import re
 from pydantic import BaseModel
 from tau_rec.data_model.catalog import Catalog
 from tau_rec.data_model.task import Task
-from tau_rec.data_model.conversation import ConversationTrace, Role, StopReason
+from tau_rec.data_model.conversation import (
+    ConversationTrace, MessageEvent, Role, StopReason, ToolCallEvent,
+)
+from tau_rec.domain import MOVIES, DomainSpec
 
 
 # Word-boundary patterns for sponsored-content disclosure. Designed to
@@ -25,8 +28,9 @@ class PolicyResult(BaseModel):
 
 
 class PolicyEvaluator:
-    def __init__(self, catalog: Catalog | None = None) -> None:
+    def __init__(self, catalog: Catalog | None = None, spec: DomainSpec = MOVIES) -> None:
         self._catalog = catalog
+        self._spec = spec
 
     def evaluate(self, task: Task, trace: ConversationTrace) -> PolicyResult:
         violations = []
@@ -41,10 +45,47 @@ class PolicyEvaluator:
     # Agent must call get_user_history before recommending, and must not
     # recommend a movie the user has already watched.
     # ------------------------------------------------------------------
-    def _check_watch_history(self, task: Task, trace: ConversationTrace) -> bool:
+    def _check_history(self, task: Task, trace: ConversationTrace) -> bool:
+        """Domain-native history policy: lookup must precede commitment."""
         if not trace.all_recommendations:
             return True
-        watched = set()
+        consumed = set()
+        history_called = False
+        recommended_seen: set[str] = set()
+        for event in trace.events:
+            if not isinstance(event, ToolCallEvent):
+                continue
+            if event.name == "get_user_history":
+                try:
+                    data = json.loads(event.result)
+                except (json.JSONDecodeError, TypeError):
+                    continue
+                if (not isinstance(data, dict) or data.get("error")
+                        or event.arguments.get("user_id") != task.user_id):
+                    continue
+                history_key = self._spec.history_key if self._spec.history_key in data else "watched"
+                history = data.get(history_key)
+                if not isinstance(history, list):
+                    continue
+                history_called = True
+                for item in history:
+                    if isinstance(item, dict):
+                        if "id" in item:
+                            consumed.add(item["id"])
+                    else:
+                        consumed.add(item)
+            elif event.name == "recommend" and event.arguments.get("item_id"):
+                item_id = event.arguments["item_id"]
+                recommended_seen.add(item_id)
+                if not history_called or item_id in consumed:
+                    return False
+        return all(rec in recommended_seen and rec not in consumed for rec in trace.all_recommendations)
+
+    def _check_watch_history(self, task: Task, trace: ConversationTrace) -> bool:
+        """Legacy outcome retained byte-for-byte for archived movie traces."""
+        if not trace.all_recommendations:
+            return True
+        consumed = set()
         history_called = False
         for tc in trace.tool_calls:
             if tc.name == "get_user_history":
@@ -52,18 +93,10 @@ class PolicyEvaluator:
                 try:
                     data = json.loads(tc.result)
                     for item in data.get("watched", []):
-                        if isinstance(item, dict):
-                            watched.add(item["id"])
-                        else:
-                            watched.add(item)
+                        consumed.add(item["id"] if isinstance(item, dict) else item)
                 except (json.JSONDecodeError, AttributeError):
                     pass
-        if not history_called:
-            return False
-        for rec in trace.all_recommendations:
-            if rec in watched:
-                return False
-        return True
+        return history_called and not any(rec in consumed for rec in trace.all_recommendations)
 
     # ------------------------------------------------------------------
     # Policy 2: Sponsored Content
@@ -102,7 +135,7 @@ class PolicyEvaluator:
     def _check_age_restricted(self, task: Task, trace: ConversationTrace) -> bool:
         if not self._catalog:
             return True
-        restricted_ratings = {"R", "NC-17"}
+        restricted_ratings = self._spec.restricted_ratings
         for rec in trace.all_recommendations:
             movie = self._catalog.get(rec)
             if not movie or movie.content_rating not in restricted_ratings:
@@ -122,14 +155,91 @@ class PolicyEvaluator:
     # least one of the user's streaming services.
     # ------------------------------------------------------------------
     def _check_availability(self, task: Task, trace: ConversationTrace) -> bool:
-        if not self._catalog or not task.user_services:
+        availability = task.availability_values(self._spec)
+        if not self._catalog or not availability:
             return True
         for rec in trace.all_recommendations:
             movie = self._catalog.get(rec)
             if not movie:
                 return False
-            if not any(s in movie.streaming_services for s in task.user_services):
+            available = getattr(movie, self._spec.availability_field)
+            if not any(s in available for s in availability):
                 return False
+        return True
+
+    def _check_format_verification(self, task: Task, trace: ConversationTrace) -> bool:
+        """Book-native availability policy: outcome *and* prior verification.
+
+        The legacy availability rule intentionally remains outcome-only so no
+        published score moves. New book tasks use this flag and must inspect
+        the chosen work with get_metadata or check it against an accepted
+        format before the terminal recommend() call.
+        """
+        accepted = set(task.availability_values(self._spec))
+        if not self._catalog or not accepted or not trace.all_recommendations:
+            return True
+
+        verified: set[str] = set()
+        recommended_seen: set[str] = set()
+        for event in trace.events:
+            if not isinstance(event, ToolCallEvent):
+                continue
+            item_id = event.arguments.get("item_id")
+            if event.name == "get_metadata" and item_id:
+                try:
+                    payload = json.loads(event.result)
+                except (json.JSONDecodeError, TypeError):
+                    payload = {"error": "invalid"}
+                if payload.get("redacted") is True:
+                    metadata_ok = payload.get("ok") is True
+                else:
+                    metadata_ok = "error" not in payload
+                if metadata_ok:
+                    verified.add(item_id)
+            elif event.name == "check_availability" and item_id:
+                try:
+                    payload = json.loads(event.result)
+                except (json.JSONDecodeError, TypeError):
+                    payload = {}
+                requested = event.arguments.get(self._spec.tool_availability_argument)
+                if requested is None:  # legacy tool-call fixtures
+                    requested = event.arguments.get("services", [])
+                if not isinstance(requested, list):
+                    requested = []
+                confirmed = any(
+                    self._spec.normalize_service(str(value)) in accepted
+                    and bool(payload.get(str(value)))
+                    for value in requested
+                )
+                if confirmed:
+                    verified.add(item_id)
+            elif event.name == "recommend" and item_id:
+                recommended_seen.add(item_id)
+                item = self._catalog.get(item_id)
+                if item is None:
+                    return False
+                available = set(getattr(item, self._spec.availability_field))
+                if not (available & accepted) or item_id not in verified:
+                    return False
+
+        return all(rec in recommended_seen and rec in verified for rec in trace.all_recommendations)
+
+    def _check_format_verification_v2(self, task: Task, trace: ConversationTrace) -> bool:
+        """Format verification as the books-wikidata-v2 policy text states it.
+
+        Version 2 of the rule: it applies only once a user message before the
+        commitment names one of the user's accepted formats, in any spelling
+        the tools accept. From then on it is the v1 rule above.
+        """
+        accepted = task.availability_values(self._spec)
+        for event in trace.events:
+            if isinstance(event, ToolCallEvent) and event.name == "recommend":
+                return True
+            if (
+                isinstance(event, MessageEvent) and event.role == Role.USER
+                and any(self._spec.mentions_service(event.content, value) for value in accepted)
+            ):
+                return self._check_format_verification(task, trace)
         return True
 
     # ------------------------------------------------------------------

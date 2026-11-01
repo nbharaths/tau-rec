@@ -1,0 +1,51 @@
+{
+  "id": "task_051_v",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Biography"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "publication_year",
+        "op": ">=",
+        "value": 2013
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "publication_year",
+        "op": "<=",
+        "value": 2021
+      },
+      "reveal": "volunteer"
+    }
+  ],
+  "persona": "You are an occasional reader who wants a straightforward recommendation without a long list of options. You want a book you have not already read.",
+  "soft_preferences": [],
+  "policy_flags": [
+    "history",
+    "single_recommendation",
+    "recommend_tool"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "medium",
+  "reveal_difficulty": "volunteer",
+  "user_history": {
+    "user_1": {
+      "read": [
+        "wd_Q50780099",
+        "wd_Q131466689"
+      ],
+      "ratings": {}
+    }
+  },
+  "user_id": "user_1",
+  "user_services": [],
+  "user_formats": []
+}

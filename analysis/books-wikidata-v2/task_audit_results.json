@@ -1,0 +1,17 @@
+{
+  "applicable_judgments": 150,
+  "families": 30,
+  "families_marked_defective_by_both": 0,
+  "families_marked_defective_by_either": 0,
+  "judgments_agreed": 150,
+  "nvr_families": 15,
+  "satisfiable_families": 15,
+  "wilson95_all_defects": [
+    0.0,
+    0.11351709139047801
+  ],
+  "wilson95_satisfiable_defects": [
+    0.0,
+    0.20388926630434784
+  ]
+}

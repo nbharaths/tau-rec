@@ -1,0 +1,15 @@
+{
+  "_comment": "Published trace archives behind the leaderboard entries. scripts/rederive_archive.py fetches these, checks the digest, and re-scores every trace with the current evaluator; the per-task counts must equal the entries exactly. Pinned to a tag, never a 'latest' alias, so the check cannot drift under a later release.",
+  "archives": [
+    {
+      "name": "tau-rec-g0-traces",
+      "url": "https://github.com/nbharaths/tau-rec/releases/download/v1.3.0/tau-rec-g0-traces.tar.gz",
+      "sha256": "7e9e3806ca476274e931db78b5d891506d7169e29c34f89d5384b7e56836e8c4"
+    },
+    {
+      "name": "tau-rec-g1-traces",
+      "url": "https://github.com/nbharaths/tau-rec/releases/download/v1.3.0/tau-rec-g1-traces.tar.gz",
+      "sha256": "2608c105c05212433edca4deb5236f390c51b15a58900820643aac786b84aa01"
+    }
+  ]
+}

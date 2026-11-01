@@ -6,6 +6,7 @@ from tau_rec.data_model.conversation import ConversationTrace
 from tau_rec.evaluator.constraint import ConstraintEvaluator, ConstraintResult
 from tau_rec.evaluator.policy import PolicyEvaluator, PolicyResult
 from tau_rec.evaluator.efficiency import EfficiencyMetrics
+from tau_rec.domain import MOVIES, DomainSpec
 
 class TrialResult(BaseModel):
     task_id: str
@@ -19,9 +20,9 @@ class TrialResult(BaseModel):
     efficiency: EfficiencyMetrics
 
 class CombinedEvaluator:
-    def __init__(self, catalog: Catalog) -> None:
+    def __init__(self, catalog: Catalog, spec: DomainSpec = MOVIES) -> None:
         self._constraint_ev = ConstraintEvaluator(catalog)
-        self._policy_ev = PolicyEvaluator(catalog)
+        self._policy_ev = PolicyEvaluator(catalog, spec)
 
     def evaluate(self, task: Task, trace: ConversationTrace) -> TrialResult:
         c = self._constraint_ev.evaluate(task, trace)

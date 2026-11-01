@@ -1,0 +1,64 @@
+{
+  "id": "task_021_h",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Crime"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Historical Fiction"
+      },
+      "reveal": "hidden"
+    },
+    {
+      "constraint": {
+        "field": "countries",
+        "op": "contains",
+        "value": "United Kingdom"
+      },
+      "reveal": "hidden"
+    },
+    {
+      "constraint": {
+        "field": "publication_year",
+        "op": ">=",
+        "value": 1995
+      },
+      "reveal": "on_ask"
+    },
+    {
+      "constraint": {
+        "field": "publication_year",
+        "op": "<=",
+        "value": 2000
+      },
+      "reveal": "on_ask"
+    }
+  ],
+  "persona": "You read widely but are particular about this choice and will answer useful clarifying questions.",
+  "soft_preferences": [],
+  "policy_flags": [
+    "single_recommendation",
+    "transparency",
+    "recommend_tool"
+  ],
+  "no_valid_recommendation": true,
+  "complexity": "complex",
+  "reveal_difficulty": "hidden",
+  "user_history": {
+    "user_1": {
+      "read": [],
+      "ratings": {}
+    }
+  },
+  "user_id": "user_1",
+  "user_services": [],
+  "user_formats": []
+}

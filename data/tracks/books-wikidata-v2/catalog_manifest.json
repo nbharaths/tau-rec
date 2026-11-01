@@ -1,0 +1,248 @@
+{
+  "catalog_profile": {
+    "dedupe": "normalized title without part/volume suffix + author set",
+    "derived_parent_labels": "books-derived-parent-labels-v2",
+    "dropped_genre_rules": [
+      "Q15062348",
+      "Q20669641"
+    ],
+    "label_overrides_applied": [
+      "Q1141032",
+      "Q123020418",
+      "Q135928165",
+      "Q13912",
+      "Q141551986",
+      "Q1541914",
+      "Q1657842",
+      "Q19358463",
+      "Q207964",
+      "Q219457",
+      "Q271764",
+      "Q41542",
+      "Q471005",
+      "Q5505671",
+      "Q7721796",
+      "Q7727262",
+      "Q7737801"
+    ],
+    "label_overrides_sha256": "981ab2bf446537911ec2295150e5f1d4d2fcfe09d99969678bf4f56760dcaa1d",
+    "version": "books-wikidata-catalog-v2"
+  },
+  "catalog_sha256": "19e9fa3a4db03de8f8bb8cdd8f7b231346a44f21cefca18947b7b10485d7093f",
+  "catalog_size": 20000,
+  "generated_at": "2026-10-14T20:57:51.575054+00:00",
+  "license": {
+    "id": "CC0-1.0",
+    "url": "https://www.wikidata.org/wiki/Wikidata:Licensing"
+  },
+  "missing_source_fields": {
+    "rating": "null; no comparable Wikidata field",
+    "vote_count": "null; sitelink_count is stored separately and is not called votes"
+  },
+  "schema_version": "wikidata-books-catalog-v1",
+  "selection_diagnostics": {
+    "dedupe": {
+      "duplicate_groups": 71,
+      "duplicate_records_removed": 71,
+      "input_records": 26966,
+      "unique_records": 26895
+    },
+    "profile": {
+      "rejected": {
+        "missing_author": 25,
+        "missing_english_title": 48,
+        "missing_mapped_genre": 93
+      }
+    },
+    "rejected": {
+      "exclusion_rule": 92,
+      "missing_author_label": 656,
+      "override_excluded": 2,
+      "override_removed_all_genres": 6
+    }
+  },
+  "selection_seed": 20260929,
+  "source": {
+    "name": "Wikidata",
+    "query_endpoint": "https://qlever.dev/api/wikidata",
+    "query_response_records": [
+      {
+        "bytes": 1457092,
+        "cache": "sparql-candidate-ids-896f327a0c8b47d1.tsv",
+        "cache_hit": true,
+        "name": "sparql-candidate-ids",
+        "request_sha256": "896f327a0c8b47d1e6f83c800d0b7a50a1233e8b9a3b8fd2c96a779672c9ef28",
+        "response_sha256": "bfd513212c83f6669108eb8614d0811aed844acc499ec9445a3c00d8fd9834ae"
+      },
+      {
+        "bytes": 2365792,
+        "cache": "sparql-titles-90c8da0fbcbc32cb.tsv",
+        "cache_hit": true,
+        "name": "sparql-titles",
+        "request_sha256": "90c8da0fbcbc32cb555e7e4ee78a4bc41e00b0322b3bddd35453d5124ee89f9d",
+        "response_sha256": "78026990c12500d89939079592e60b1e3f2301cfbcd3a52cfd5d310ee3349ee1"
+      },
+      {
+        "bytes": 2695451,
+        "cache": "sparql-descriptions-b14997862650ab1a.tsv",
+        "cache_hit": true,
+        "name": "sparql-descriptions",
+        "request_sha256": "b14997862650ab1a817a8379912e7ed97649c635583d17a9df76cc2f3f54b0f6",
+        "response_sha256": "d94c46415871aaf470ba5f898ea0a4a0047dd42fc955497c10fcb2e9d8cf185f"
+      },
+      {
+        "bytes": 3141958,
+        "cache": "sparql-authors-ceec1a4cf405ed48.tsv",
+        "cache_hit": true,
+        "name": "sparql-authors",
+        "request_sha256": "ceec1a4cf405ed48630289e6e7ce84cc7a4bb089d9416ef88228bb78fd0c91b1",
+        "response_sha256": "4627e5c15d8a9d40cd661e7d6d627291336c9c6a886d5706db1880f5bbc1ea9b"
+      },
+      {
+        "bytes": 2213673,
+        "cache": "sparql-dates-5a589275adfe8ee2.tsv",
+        "cache_hit": true,
+        "name": "sparql-dates",
+        "request_sha256": "5a589275adfe8ee2dcf9102999340bf14bcbf6586d92cb03304127afb3f47d85",
+        "response_sha256": "a5b2e892974c48041ea134ae9832c78eda233be43a249df35a7205cf166d1920"
+      },
+      {
+        "bytes": 3731164,
+        "cache": "sparql-genres-a565922233f787fa.tsv",
+        "cache_hit": true,
+        "name": "sparql-genres",
+        "request_sha256": "a565922233f787fa3b97de202b7c7c8ca9ab3e3d82453acdf9de093330472350",
+        "response_sha256": "1750bc90d2c3492066a4576c5c7ba28041f948074954495aa7ebb6167b3d4178"
+      },
+      {
+        "bytes": 2829080,
+        "cache": "sparql-languages-5af392e20963a1a0.tsv",
+        "cache_hit": true,
+        "name": "sparql-languages",
+        "request_sha256": "5af392e20963a1a0bd33e475ea42a7f46925a38f614541159758d5028aa890cf",
+        "response_sha256": "59a2906855e354421dc8f63e8f63548b12efb8bdc336ee5437ee3e63bd83d2f1"
+      },
+      {
+        "bytes": 1733073,
+        "cache": "sparql-countries-a1580c47d9e3fb6a.tsv",
+        "cache_hit": true,
+        "name": "sparql-countries",
+        "request_sha256": "a1580c47d9e3fb6a6883f4a3a211b798f700fba54c13c730ca0c9ebfd1ca66d7",
+        "response_sha256": "d486a1d230c3df7a18d2763dfbc79bd090dd8791e850cdc48520102f091e7f34"
+      },
+      {
+        "bytes": 693436,
+        "cache": "sparql-series-c190fa80b1f560ee.tsv",
+        "cache_hit": true,
+        "name": "sparql-series",
+        "request_sha256": "c190fa80b1f560ee1b9143c65058f0fdb41543eee1b1e4232ce9d3ff2a1c765c",
+        "response_sha256": "a0e8ed617126179b0c2b4b8b12c1583a51b4bcb8010cc6381375699414393cd3"
+      },
+      {
+        "bytes": 719773,
+        "cache": "sparql-subjects-73ab794fae691662.tsv",
+        "cache_hit": true,
+        "name": "sparql-subjects",
+        "request_sha256": "73ab794fae6916622c08a08d739c1d7d346498585966b920feaf8fa2e9d3d8e3",
+        "response_sha256": "e0040fb6d98ace71f6bba810cd9fcac2b8c5cc127ed1f775dd98835560976f63"
+      },
+      {
+        "bytes": 52676,
+        "cache": "sparql-pages-9525b057e0d152d8.tsv",
+        "cache_hit": true,
+        "name": "sparql-pages",
+        "request_sha256": "9525b057e0d152d8e62ef00b9f402ee048f13f6b34cfdea38b4054e5cc76127a",
+        "response_sha256": "01772458d537d94db6f2329f6586513c7df10073c82a580c84d2b4912f85f422"
+      },
+      {
+        "bytes": 29221,
+        "cache": "sparql-formats-bc99436ca91e0d89.tsv",
+        "cache_hit": true,
+        "name": "sparql-formats",
+        "request_sha256": "bc99436ca91e0d89b4c2b86b364146bea60508478e03d1c6cb022082bfc47544",
+        "response_sha256": "89e8e531e72ebbbf0b541f1c78292a071f63c3f2958f2da8f453470c424c211d"
+      },
+      {
+        "bytes": 36265,
+        "cache": "sparql-isbn13-1a21af882da678cd.tsv",
+        "cache_hit": true,
+        "name": "sparql-isbn13",
+        "request_sha256": "1a21af882da678cdcf4728b12fc22164b8994d9b54eab10a0a48ea2ad3397bce",
+        "response_sha256": "c882c7ea5d0d2a43695f2287ab59c41734bf00918b90d6b4c3c43fced4bd1ec8"
+      },
+      {
+        "bytes": 1222032,
+        "cache": "sparql-publishers-a0ae058a5151e694.tsv",
+        "cache_hit": true,
+        "name": "sparql-publishers",
+        "request_sha256": "a0ae058a5151e69455e1819bc132b30347af605bc2559bd0c59c54adaae67b43",
+        "response_sha256": "b0452f6a8038b4f3bc360a5a2aec5bf139612e347a06f909eefec66aac1cd1cf"
+      },
+      {
+        "bytes": 2952634,
+        "cache": "sparql-instances-232cb2e0ecdfde92.tsv",
+        "cache_hit": true,
+        "name": "sparql-instances",
+        "request_sha256": "232cb2e0ecdfde922929242191e6208c2c13995bc11b427d6bda7d96f3f47e02",
+        "response_sha256": "6de35c7d731aa85ae1b2d34d52fb1b8185b628f97a0387dd80ec8f65c560ad09"
+      },
+      {
+        "bytes": 2056727,
+        "cache": "sparql-forms-b168538718c003db.tsv",
+        "cache_hit": true,
+        "name": "sparql-forms",
+        "request_sha256": "b168538718c003db34872816654e93897f818e469783ec696f56c7c28b4942b2",
+        "response_sha256": "2304354e62670b2f0a1cd0b750cbe3860cdf31f469560e5e431d85ed967923cf"
+      },
+      {
+        "bytes": 842159,
+        "cache": "sparql-labels-authors-56ef7bb91d186d44.tsv",
+        "cache_hit": true,
+        "name": "sparql-labels-authors",
+        "request_sha256": "56ef7bb91d186d441228e9208c2d157a11e99127ed3d938a28bf4142e821abec",
+        "response_sha256": "d529497e67309edcfcd11eea717841d0054504311506f5a947f234ba01b68aa3"
+      },
+      {
+        "bytes": 11309,
+        "cache": "sparql-labels-languages-e71abc677f520617.tsv",
+        "cache_hit": true,
+        "name": "sparql-labels-languages",
+        "request_sha256": "e71abc677f520617fd1e7a16cc4da4724be143658622e911f41238f8a4bc78c0",
+        "response_sha256": "5ffe06d80e30ff62d9374815905dcb54fd3b09783e7f17cf1fe87bb2cb8afd6c"
+      },
+      {
+        "bytes": 11281,
+        "cache": "sparql-labels-countries-5a1bdf6b4896daca.tsv",
+        "cache_hit": true,
+        "name": "sparql-labels-countries",
+        "request_sha256": "5a1bdf6b4896dacafcd32f735b18ca86c15ec2a205314058e4bdeb029e965cfc",
+        "response_sha256": "c6ef08b2a7b6c1bace40a06a4de91ad13642e05a962440a83930519f23da913c"
+      },
+      {
+        "bytes": 120418,
+        "cache": "sparql-labels-publishers-92150febcaa23f28.tsv",
+        "cache_hit": true,
+        "name": "sparql-labels-publishers",
+        "request_sha256": "92150febcaa23f28b6d548ead9ca13255a2ad369c9ddb77003de37f0fa9cb5df",
+        "response_sha256": "6cf4e6bd6bc823cad0eec4ba7934e603726aa3f11e7725f8e20ed09e3a1414c0"
+      },
+      {
+        "bytes": 1527640,
+        "cache": "sparql-sitelinks-1b8b347819d2e955.tsv",
+        "cache_hit": true,
+        "name": "sparql-sitelinks",
+        "request_sha256": "1b8b347819d2e95598b3889a459ce9782a68737933bcc9757a2562c2420cc586",
+        "response_sha256": "6947560c80c682be600c23359a3cda760bd82abbf8b90b0cbf7dfa1e6764fa0d"
+      }
+    ],
+    "retrieval": "frozen query result transformed into a committed catalog"
+  },
+  "source_selection_sha256": "21a17203699645e15f0328644d3afc7fbc88083a9e54e465ac5b83cb09748ca6",
+  "synthetic_environment_state": {
+    "fields": [
+      "formats"
+    ],
+    "version": "book-access-state-v1",
+    "warning": "This field is benchmark state, not a factual claim about a work."
+  }
+}

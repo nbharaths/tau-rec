@@ -131,6 +131,42 @@ def test_render_sorts_best_first(tmp_path):
     assert out.index("Strong") < out.index("Weak")
 
 
+def test_render_single_track_has_no_track_headings(tmp_path):
+    """The published board is one track; its layout must not change."""
+    _write_entry(tmp_path, submission_id="a", display_name="Alpha", harness_generation="g1")
+    out = render_mod.render(tmp_path)
+    assert "## Generation `g1`" in out
+    assert "Track" not in out and "Memorization probe" not in out
+
+
+def test_render_sections_by_track_and_separates_memory_probe(tmp_path):
+    _write_entry(tmp_path, submission_id="m-tools", display_name="MoviesTooled", harness_generation="g1")
+    _write_entry(tmp_path, submission_id="b-tools", display_name="BooksTooled", track="books-wikidata-v2",
+                 harness_generation="g0")
+    _write_entry(tmp_path, submission_id="b-mem", display_name="BooksMemory", track="books-wikidata-v2",
+                 harness_generation="g0", mode="memory")
+    out = render_mod.render(tmp_path)
+
+    # One section per track, generation headings demoted beneath them.
+    assert out.index("## Track `books-wikidata-v2`") < out.index("## Track `movies-v1`")
+    assert "### Generation `g0`" in out and "### Generation `g1`" in out
+    assert "Nothing is comparable across tracks" in out
+
+    # The memory entry sits in its own block, after the tooled table of its
+    # track, and never inside a generation table.
+    books = out[out.index("## Track `books-wikidata-v2`"):out.index("## Track `movies-v1`")]
+    gen_table = books[:books.index("Memorization probe")]
+    assert "BooksTooled" in gen_table and "BooksMemory" not in gen_table
+    assert "BooksMemory" in books[books.index("Memorization probe"):]
+    assert "not ranked" in books
+
+    # The README summary names tracks only when there are several, and
+    # leaves memory rows out just as it leaves non-standard simulators out.
+    readme = render_mod.readme_block(tmp_path)
+    assert "`books-wikidata-v2` g0" in readme and "`movies-v1` g1" in readme
+    assert "BooksMemory" not in readme
+
+
 def test_render_separates_nonstandard_simulator(tmp_path):
     _write_entry(tmp_path, submission_id="std", display_name="Std")
     _write_entry(tmp_path, submission_id="odd", display_name="Odd",
@@ -214,7 +250,11 @@ FIXTURE_TRACE = Path(__file__).parent / "fixtures" / "sample_trace.json"
 def _run_dir(tmp_path, **manifest_overrides):
     run = tmp_path / "run" / "20260910_000000"
     (run / "traces").mkdir(parents=True)
-    shutil.copy(FIXTURE_TRACE, run / "traces" / "task_001_trial1.json")
+    fixture = json.loads(FIXTURE_TRACE.read_text())
+    for task_path in sorted(Path("data/tasks").glob("*.json")):
+        trace = json.loads(json.dumps(fixture))
+        trace["task_id"] = task_path.stem
+        (run / "traces" / f"{task_path.stem}_trial1.json").write_text(json.dumps(trace))
     manifest = {
         "model": json.loads(FIXTURE_TRACE.read_text())["model"],
         "reasoning_effort": "low",
@@ -228,16 +268,64 @@ def _run_dir(tmp_path, **manifest_overrides):
     return run.parent
 
 
-def _make_entry(tmp_path, run_root, *extra):
+def _make_entry(tmp_path, run_root, *extra, allow_uneven: bool = True):
+    # The fixture run has one trial, so every test here would trip the
+    # completeness refusal; they opt out of it unless they are testing it.
     entries = tmp_path / "entries"
     entries.mkdir(exist_ok=True)
     result = CliRunner().invoke(cli, [
         "leaderboard", "make-entry",
         "--run-dir", str(run_root),
         "--submission-id", "t1", "--display-name", "T", "--submitted-by", "T",
-        "--run-date", "2026-09-10", "--entries", str(entries), *extra,
+        "--run-date", "2026-09-10", "--entries", str(entries),
+        *(["--allow-uneven"] if allow_uneven else []), *extra,
     ])
     return result, entries / "t1.json"
+
+
+def test_make_entry_refuses_short_or_uneven_trials(tmp_path):
+    """pass^k is 0 for any task with n < k, so a run that lost trials to rate
+    limits under-reports silently. It is refused unless the caveat is accepted."""
+    run = _run_dir(tmp_path)
+    result, path = _make_entry(tmp_path, run, allow_uneven=False)
+    assert result.exit_code != 0
+    assert "uneven or below 4" in result.output and "--resume" in result.output
+    assert not path.exists()
+
+    result, path = _make_entry(tmp_path, run)
+    assert result.exit_code == 0, result.output
+    entry = json.loads(path.read_text())
+    assert "uneven_trials" in entry["caveats"]
+    # Defaults for a run that predates tracks and modes.
+    assert (entry["track"], entry["mode"]) == ("movies-v1", "tools")
+
+
+def test_make_entry_refuses_a_run_missing_an_entire_task(tmp_path):
+    run = _run_dir(tmp_path)
+    (run / "20260910_000000" / "traces" / "task_060_trial1.json").unlink()
+    result, path = _make_entry(tmp_path, run)
+    assert result.exit_code != 0
+    assert "run is incomplete" in result.output and "task_060" in result.output
+    assert not path.exists()
+
+
+def test_make_entry_refuses_the_old_no_tools_ablation(tmp_path):
+    """--no-tools removed recommend() with everything else; nothing it scored
+    can be published."""
+    run = _run_dir(tmp_path, no_tools=True)
+    result, path = _make_entry(tmp_path, run)
+    assert result.exit_code != 0
+    assert "0 by construction" in result.output and "--mode memory" in result.output
+    assert not path.exists()
+
+
+def test_make_entry_reads_track_and_mode_from_manifest(tmp_path):
+    run = _run_dir(tmp_path, track="movies-v1", mode="tools", no_tools=False)
+    result, path = _make_entry(tmp_path, run, "--mode", "memory")
+    assert result.exit_code == 0, result.output
+    entry = json.loads(path.read_text())
+    # The manifest is what the run did; the flag is what someone typed later.
+    assert (entry["track"], entry["mode"]) == ("movies-v1", "tools")
 
 
 def test_make_entry_prefers_manifest_effort_over_flag(tmp_path):
@@ -274,7 +362,8 @@ def test_make_entry_supersedes_reran_trials(tmp_path):
     result, path = _make_entry(tmp_path, run)
     assert result.exit_code == 0, result.output
     per_task = json.loads(path.read_text())["per_task"]
-    assert [row["n"] for row in per_task.values()] == [1]
+    assert len(per_task) == 60
+    assert set(row["n"] for row in per_task.values()) == {1}
 
 
 def test_make_entry_falls_back_to_flags_without_manifest(tmp_path):

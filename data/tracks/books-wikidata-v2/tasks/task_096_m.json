@@ -1,0 +1,51 @@
+{
+  "id": "task_096_m",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Horror"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Romance"
+      },
+      "reveal": "on_ask"
+    },
+    {
+      "constraint": {
+        "field": "publication_year",
+        "op": ">=",
+        "value": 2005
+      },
+      "reveal": "on_ask"
+    }
+  ],
+  "persona": "You are exploring a part of the catalog you do not know well and want the assistant to search carefully. You want a book you have not already read.",
+  "soft_preferences": [],
+  "policy_flags": [
+    "history",
+    "single_recommendation",
+    "recommend_tool"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "medium",
+  "reveal_difficulty": "mixed",
+  "user_history": {
+    "user_1": {
+      "read": [
+        "wd_Q3865970",
+        "wd_Q17216756"
+      ],
+      "ratings": {}
+    }
+  },
+  "user_id": "user_1",
+  "user_services": [],
+  "user_formats": []
+}

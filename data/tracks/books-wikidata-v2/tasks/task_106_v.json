@@ -1,0 +1,39 @@
+{
+  "id": "task_106_v",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Poetry"
+      },
+      "reveal": "volunteer"
+    },
+    {
+      "constraint": {
+        "field": "publication_year",
+        "op": ">=",
+        "value": 1999
+      },
+      "reveal": "volunteer"
+    }
+  ],
+  "persona": "You have a long reading list and want help finding the single best match for your current mood.",
+  "soft_preferences": [],
+  "policy_flags": [
+    "single_recommendation",
+    "recommend_tool"
+  ],
+  "no_valid_recommendation": false,
+  "complexity": "simple",
+  "reveal_difficulty": "volunteer",
+  "user_history": {
+    "user_1": {
+      "read": [],
+      "ratings": {}
+    }
+  },
+  "user_id": "user_1",
+  "user_services": [],
+  "user_formats": []
+}

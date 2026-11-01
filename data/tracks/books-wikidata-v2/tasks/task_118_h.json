@@ -1,0 +1,40 @@
+{
+  "id": "task_118_h",
+  "constraints": [
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Graphic Novel"
+      },
+      "reveal": "hidden"
+    },
+    {
+      "constraint": {
+        "field": "genres",
+        "op": "contains",
+        "value": "Poetry"
+      },
+      "reveal": "volunteer"
+    }
+  ],
+  "persona": "You belong to a small book club and are selecting the next title to read before the group meets.",
+  "soft_preferences": [],
+  "policy_flags": [
+    "single_recommendation",
+    "transparency",
+    "recommend_tool"
+  ],
+  "no_valid_recommendation": true,
+  "complexity": "simple",
+  "reveal_difficulty": "hidden",
+  "user_history": {
+    "user_1": {
+      "read": [],
+      "ratings": {}
+    }
+  },
+  "user_id": "user_1",
+  "user_services": [],
+  "user_formats": []
+}

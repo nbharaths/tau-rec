@@ -42,9 +42,18 @@ README_END = "<!-- LEADERBOARD:END -->"
 
 README_TOP_N = 3
 
-# Short descriptors for the README tables. An unlisted generation falls back to
-# the bare label, so adding g2 changes the board without touching this file.
-GENERATION_BLURBS = {"g1": "the current harness", "g0": "the paper cohort"}
+# Short descriptors for the README tables, keyed by (track, generation). An
+# unlisted pair falls back to the bare label, so adding a generation or a
+# track changes the board without touching this file.
+GENERATION_BLURBS = {
+    ("movies-v1", "g1"): "the current harness",
+    ("movies-v1", "g0"): "the paper cohort",
+}
+
+# Memory-mode entries score constraints only, with a single recommend(title)
+# tool and no policy gates. They measure what a model recalls about the
+# catalog, not how well it recommends, and never rank against tooled rows.
+MEMORY_MODE = "memory"
 
 
 def load_entries(entries_dir: str | Path) -> list[LeaderboardEntry]:
@@ -104,7 +113,15 @@ def _generation_sort_key(label: str) -> tuple:
     return (-int(digits) if digits else 0, label)
 
 
-def _generation_block(label: str, rows: list[dict], is_newest: bool) -> list[str]:
+def _n_tasks(rows: list[dict]) -> int:
+    """The task count a block was scored over — the modal count across its
+    rows, since a track's tasks are fixed and an entry short of tasks is the
+    odd one out."""
+    counts = sorted(r["entry"].n_tasks for r in rows)
+    return max(set(counts), key=counts.count) if counts else 0
+
+
+def _generation_block(label: str, rows: list[dict], is_newest: bool, level: str = "##") -> list[str]:
     standard = sorted(
         [r for r in rows if r["entry"].simulator_model == STANDARD_SIMULATOR], key=_sort_key
     )
@@ -115,12 +132,12 @@ def _generation_block(label: str, rows: list[dict], is_newest: bool) -> list[str
     # "most recent" is a claim about this board only. It deliberately does not
     # say "current harness": the newest entries on the board may still predate
     # HEAD, which is the whole reason generations are labelled.
-    heading = f"## Generation `{label}`" + (" — most recent" if is_newest else "")
-    parts = [f"{heading}\n", f"Simulator: `{STANDARD_SIMULATOR}`, 60 tasks.\n", _table(standard)]
+    heading = f"{level} Generation `{label}`" + (" — most recent" if is_newest else "")
+    parts = [f"{heading}\n", f"Simulator: `{STANDARD_SIMULATOR}`, {_n_tasks(rows)} tasks.\n", _table(standard)]
 
     if nonstandard:
         parts += [
-            f"\n### `{label}`, non-standard simulator\n",
+            f"\n{level}# `{label}`, non-standard simulator\n",
             "Not comparable with the table above — the user simulator is worth roughly "
             "13.7 pass^1 points across models, against a board span of ~28 points.\n",
             _table(nonstandard),
@@ -128,13 +145,54 @@ def _generation_block(label: str, rows: list[dict], is_newest: bool) -> list[str
     return parts
 
 
+def _memory_block(rows: list[dict], level: str = "##") -> list[str]:
+    """Memory-mode rows for one track: a probe, shown apart from the ranking."""
+    ranked = sorted(rows, key=_sort_key)
+    return [
+        f"{level} Memorization probe (`memory` mode)\n",
+        "The agent has one tool, `recommend(title)`, and no policy gates; the score is "
+        "constraint `pass^k` over the satisfiable tasks only. This measures what a model "
+        "recalls about the catalog, not how well it recommends, and is **not ranked "
+        f"against the tables above**. Simulator: `{STANDARD_SIMULATOR}`, {_n_tasks(rows)} tasks.\n",
+        _table(ranked),
+    ]
+
+
+def _track_blocks(rows: list[dict], level: str) -> list[str]:
+    """Generation tables for one track, then its memory probe if any."""
+    tooled = [r for r in rows if r["entry"].mode != MEMORY_MODE]
+    memory = [r for r in rows if r["entry"].mode == MEMORY_MODE]
+
+    by_generation: dict[str, list[dict]] = {}
+    for row in tooled:
+        by_generation.setdefault(row["entry"].harness_generation, []).append(row)
+    labels = sorted(by_generation, key=_generation_sort_key)
+
+    parts: list[str] = []
+    if len(labels) > 1:
+        parts.append(
+            "**Generations are ranked separately and cannot be compared across tables.** "
+            "Each was scored against different policy, task, or evaluator content; "
+            "`leaderboard/GENERATIONS.md` records exactly what differs.\n"
+        )
+    for i, label in enumerate(labels):
+        parts += _generation_block(
+            label, by_generation[label], is_newest=(i == 0 and len(labels) > 1), level=level
+        )
+        parts.append("")
+    if memory:
+        parts += _memory_block(memory, level=level)
+        parts.append("")
+    return parts
+
+
 def render(entries_dir: str | Path) -> str:
     rows = [summarize(e) for e in load_entries(entries_dir)]
 
-    by_generation: dict[str, list[dict]] = {}
+    by_track: dict[str, list[dict]] = {}
     for row in rows:
-        by_generation.setdefault(row["entry"].harness_generation, []).append(row)
-    labels = sorted(by_generation, key=_generation_sort_key)
+        by_track.setdefault(row["entry"].track, []).append(row)
+    tracks = sorted(by_track)
 
     parts = [
         BANNER,
@@ -147,18 +205,19 @@ def render(entries_dir: str | Path) -> str:
         "render time, so the whole board moves when the evaluator does.\n",
     ]
 
-    if len(labels) > 1:
+    # One track renders as it always has. Several get a section each, with
+    # the generation headings demoted one level; tracks are different
+    # catalogs and domains, so nothing crosses a track boundary.
+    if len(tracks) == 1:
+        parts += _track_blocks(by_track[tracks[0]], level="##")
+    else:
         parts.append(
-            "**Generations are ranked separately and cannot be compared across tables.** "
-            "Each was scored against different policy, task, or evaluator content; "
-            "`leaderboard/GENERATIONS.md` records exactly what differs.\n"
+            "**Tracks are different catalogs, and some are different domains. "
+            "Nothing is comparable across tracks.**\n"
         )
-
-    for i, label in enumerate(labels):
-        parts += _generation_block(
-            label, by_generation[label], is_newest=(i == 0 and len(labels) > 1)
-        )
-        parts.append("")
+        for track in tracks:
+            parts.append(f"## Track `{track}`\n")
+            parts += _track_blocks(by_track[track], level="###")
 
     parts += [
         "\n## Columns\n",
@@ -198,19 +257,25 @@ def _readme_table(rows: list[dict], top: int) -> str:
 def readme_block(entries_dir: str | Path, top: int = README_TOP_N) -> str:
     """The generated region of README.md: one top-N table per generation."""
     rows = [summarize(e) for e in load_entries(entries_dir)]
-    by_generation: dict[str, list[dict]] = {}
+    by_block: dict[tuple[str, str], list[dict]] = {}
     for row in rows:
-        # Non-standard-simulator entries are not comparable with the rest, so
-        # they are excluded here exactly as they are on the main board.
-        if row["entry"].simulator_model != STANDARD_SIMULATOR:
+        e = row["entry"]
+        # Non-standard-simulator and memory-mode entries are not comparable
+        # with the rest, so they are excluded here exactly as they are from
+        # the main tables of the board.
+        if e.simulator_model != STANDARD_SIMULATOR or e.mode == MEMORY_MODE:
             continue
-        by_generation.setdefault(row["entry"].harness_generation, []).append(row)
+        by_block.setdefault((e.track, e.harness_generation), []).append(row)
 
+    tracks = sorted({t for t, _ in by_block})
     parts = [README_BEGIN, ""]
-    for label in sorted(by_generation, key=_generation_sort_key):
-        ranked = sorted(by_generation[label], key=_sort_key)
-        blurb = GENERATION_BLURBS.get(label)
-        name = f"`{label}`, {blurb}" if blurb else f"`{label}`"
+    for track, label in sorted(by_block, key=lambda k: (tracks.index(k[0]), _generation_sort_key(k[1]))):
+        ranked = sorted(by_block[(track, label)], key=_sort_key)
+        blurb = GENERATION_BLURBS.get((track, label))
+        # The track is named only when the board has more than one, so a
+        # single-track README reads exactly as it did.
+        shown_label = f"`{track}` {label}" if len(tracks) > 1 else f"`{label}`"
+        name = f"{shown_label}, {blurb}" if blurb else shown_label
         shown = min(top, len(ranked))
         parts += [f"{name} (top {shown} of {len(ranked)}):", "",
                   _readme_table(ranked, top), ""]

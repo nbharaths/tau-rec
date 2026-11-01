@@ -16,6 +16,7 @@ once a run finishes; those rows are recovered by re-scoring the trace.
 """
 from __future__ import annotations
 
+import getpass
 import json
 import shutil
 import subprocess
@@ -175,7 +176,7 @@ def main() -> int:
         blob = out.read_bytes()
         import gzip
         raw = gzip.decompress(blob)
-        for marker in (b"com.apple", b"nbs", b"/Users/"):
+        for marker in (b"com.apple", getpass.getuser().encode(), b"/Users/"):
             if marker in raw:
                 bad.append(f"{label}: archive still contains {marker!r}")
         print(f"{label}.tar.gz  {out.stat().st_size / 1e6:.1f} MB  "
