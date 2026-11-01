@@ -296,3 +296,13 @@ describing the books track is forthcoming; until it appears, please cite
   url       = {https://doi.org/10.1145/3773078.3831847}
 }
 ```
+
+## License
+
+Code is released under the MIT License ([`LICENSE`](LICENSE)). The movie
+track's task data and catalog are released under CC BY 4.0
+([`data/LICENSE`](data/LICENSE)). Each track under `data/tracks/` carries its
+own `LICENSE.md`, which controls for that track: for `books-wikidata-v2`, the
+catalog and source snapshot are CC0 1.0, and the tasks, answers, and policies
+are CC BY 4.0. The repository license does not relicense an upstream dataset or
+grant rights the authors do not hold.

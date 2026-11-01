@@ -19,17 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-----------------------------------------------------------------------------
-
-Note on data licensing
-======================
-
-The code in this repository is released under the MIT License above.
-The first-party benchmark task data and movie catalog identified in
-`data/LICENSE` are released under the Creative Commons Attribution 4.0
-International License (CC BY 4.0). Tracks under `data/tracks/` carry their
-own track-local `LICENSE.md`, which controls for that track. The repository
-license does not relicense an upstream dataset or grant rights the authors do
-not hold.
-See `data/LICENSE` for details.
