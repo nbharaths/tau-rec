@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+### Fixed
+
+- `scripts/verify_books_archive.py` also checks the quarantined first attempts
+  stored under `quarantine/stall_attempt1/`, as its docstring says; all 219 in
+  the released archives reproduce.
+- README: `uv sync --extra dev` installs the test dependencies before
+  `uv run pytest`.
+
 ## v2.0.0 — books track
 
 Adds a controlled books track. The movie track (`data/`), its catalog, tasks,

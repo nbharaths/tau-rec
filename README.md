@@ -273,6 +273,7 @@ tests/            # pytest suite (asyncio-auto)
 ## Development
 
 ```bash
+uv sync --extra dev                                # test dependencies (pytest)
 uv run pytest                                      # full suite
 uv run pytest tests/test_orchestrator.py -k name   # single test
 ```

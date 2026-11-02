@@ -86,3 +86,12 @@ def test_tampered_tool_results_scores_and_replies_are_caught(tmp_path):
     assert counts["tool_calls_differ"] == 1
     assert counts["user_replies_differ"] >= 1
     assert counts["scores_differ"] == 1
+
+
+def test_quarantined_first_attempts_in_subdirectories_are_checked(tmp_path):
+    run = _scripted_run(tmp_path)
+    stalled = run / "quarantine" / "stall_attempt1"
+    stalled.mkdir(parents=True)
+    (run / "traces" / "task_060_m_trial0.json").rename(stalled / "task_060_m_trial0.json")
+    counts = _verify(run)
+    assert counts["traces"] == 1 and counts["scores_same"] == 1 and counts["decision_logs_same"] == 1

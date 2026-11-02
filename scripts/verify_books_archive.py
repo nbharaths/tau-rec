@@ -85,7 +85,7 @@ def verify_run(manifest_path: str) -> tuple[Counter, list[str]]:
     symbolic = manifest.get("simulator_interaction_mode") == "symbolic"
     counts, problems = Counter(), []
     run_dir = Path(manifest_path).parent
-    for trace_path in sorted(run_dir.glob("traces/*.json")) + sorted(run_dir.glob("quarantine/*.json")):
+    for trace_path in sorted(run_dir.glob("traces/*.json")) + sorted(run_dir.glob("quarantine/**/*.json")):
         text = trace_path.read_text()
         doc = json.loads(text)
         task = _state["tasks"][doc["task_id"]]
