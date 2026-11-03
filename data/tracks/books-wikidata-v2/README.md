@@ -1,4 +1,4 @@
-# `books-wikidata-v2`: a controlled books track
+# τ-Rec-Books (`books-wikidata-v2`)
 
 This folder is the resource described in *τ-Rec-Books: A Disclosure-Controlled
 Benchmark for Requirement Elicitation in Agentic Recommender Systems* (under
@@ -29,6 +29,38 @@ requirements varies.
 - **Two retrieval interfaces:** `keyword` (per-field BM25, top 20) and
   `structured` (conjunctive filters on genre, language, country, year range,
   and formats, pages of 20).
+
+## Results
+
+The paper's main results (its Table 3), on the primary panel at 20k with the
+rule-based user, the base prompt, high reasoning effort, and four trials per
+task. Volunteer, mixed, and hidden are `pass^1` on the 45 satisfiable families;
+hidden NVR is `pass^1` on the 6 hidden no-valid-recommendation tasks; the "All"
+columns cover all 153 tasks; *Elic.* is the share of mixed trials that elicit
+every askable fact. Bold marks the best LLM agent per column.
+
+| Agent | Interface | Volunteer | Mixed | Hidden | Hidden NVR | All, pass^1 | All, pass^4 | Elic. |
+|---|---|---|---|---|---|---|---|---|
+| DeepSeek V4.1 Flash | keyword | 0.989 | 0.872 | 0.297 | 0.000 | 0.691 | 0.609 | 0.576 |
+|  | structured | **1.000** | **0.967** | 0.358 | 0.000 | **0.760** | **0.666** | 0.859 |
+| GLM 5.3 Flash | keyword | 0.978 | 0.869 | 0.325 | **0.167** | 0.714 | 0.574 | 0.569 |
+|  | structured | **1.000** | 0.947 | **0.367** | 0.042 | 0.756 | 0.627 | 0.641 |
+| Qwen 3.8 27B | keyword | 0.842 | 0.569 | 0.294 | **0.167** | 0.550 | 0.381 | 0.377 |
+|  | structured | **1.000** | 0.942 | 0.325 | 0.000 | 0.737 | 0.625 | 0.656 |
+| GPT-6.1 Sol | keyword | 0.994 | 0.458 | 0.139 | 0.000 | 0.523 | 0.456 | 0.207 |
+|  | structured | **1.000** | 0.419 | 0.156 | 0.000 | 0.511 | 0.424 | 0.159 |
+| LLM average | both | 0.975 | 0.756 | 0.283 | 0.047 | – | – | – |
+| Scripted popularity agent | structured | 1.000 | 1.000 | 0.622 | 0.000 | 0.850 | 0.850 | – |
+| Scripted eliminating agent | structured | 1.000 | 1.000 | 0.956 | 0.833 | 0.980 | 0.980 | – |
+| No-ask floor | – | 1.000 | 0.067 | 0.067 | 0.000 | 0.373 | 0.373 | – |
+
+Under the paper's prompt variants, on the 18-family reliability block with
+structured search: told to ask (`ask-requirements-v1`), every agent reaches at
+least 0.931 on mixed tasks; told to propose a book before recommending it
+(`ask-and-verify-v1`), agents are not detectably different from the popularity
+agent on hidden tasks; told also what a declined question and a rejection mean
+(`ask-verify-protocol-v1`), they gain a further 22.5 points on hidden tasks but
+all stay below the eliminating agent.
 
 ## Where the paper's pieces live
 
