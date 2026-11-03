@@ -1,8 +1,11 @@
 # `books-wikidata-v2`: a controlled books track
 
-A τ-Rec track for conversational book recommendation with verifiable outcomes.
-An agent talks to a simulated reader and must recommend one catalog book that
-satisfies every hard requirement, or abstain when the catalog has none.
+This folder is the resource described in *τ-Rec-Books: A Disclosure-Controlled
+Benchmark for Requirement Elicitation in Agentic Recommender Systems* (under
+review at ECIR 2027). An agent talks to a simulated reader and must recommend
+one catalog book that satisfies every hard requirement, or abstain when the
+catalog has none. Each request is fixed; only *when* the reader reveals its
+requirements varies.
 
 - **Catalog:** 20,000 literary works derived from Wikidata (CC0), ordered by a
   seeded hash so that the first 5,000 and 10,000 works form nested smaller
@@ -27,6 +30,16 @@ satisfies every hard requirement, or abstain when the catalog has none.
   `structured` (conjunctive filters on genre, language, country, year range,
   and formats, pages of 20).
 
+## Where the paper's pieces live
+
+| Paper | In this repository |
+|---|---|
+| Catalog, tasks, answer key, and policy (Sect. 3) | this folder ([Files](#files)) |
+| Rule-based user (Sect. 3) | [`CONTROLLER_PROTOCOL.md`](../../../analysis/books-controlled/CONTROLLER_PROTOCOL.md), `src/tau_rec/simulator/user_simulator.py` |
+| Agents, interfaces, prompts, and caps (Sect. 4) | `scripts/run_books_protocol.py` ([Running the reportable protocol](#running-the-reportable-protocol)) |
+| Validators and reference agents (Sect. 5) | [Validating](#validating), [Reference agents](#reference-agents) |
+| Every reported number (Sect. 6) | `analysis/books-wikidata-v2/` and the traces on the [v2.0.0 release](https://github.com/nbharaths/tau-rec/releases/tag/v2.0.0) ([Reproducing the paper's numbers](#reproducing-the-papers-numbers)) |
+
 ## Files
 
 | File | Contents |
@@ -44,9 +57,9 @@ satisfies every hard requirement, or abstain when the catalog has none.
 
 ## Running the reportable protocol
 
-The reportable protocol, used for the reported books results, is the
-51-family primary panel (153 tasks) at 20k with the rule-based user, 20 agent
-turns, 600 s of agent time per trial, and four trials per task:
+The paper's results use the 51-family primary panel (153 tasks) at 20k with the
+rule-based user, 20 agent turns, 600 s of agent time per trial, and four trials
+per task:
 
 ```bash
 uv run python scripts/run_books_protocol.py \
@@ -54,19 +67,57 @@ uv run python scripts/run_books_protocol.py \
   --retrieval-mode structured --reasoning-effort high --max-provider-cost-usd 20 --execute
 ```
 
-Without `--execute` the script prints the `tau-rec run` command. `--block
-reliability` runs the nested 18-family block with eight trials per task.
-Report `pass^1` by disclosure condition (hidden satisfiable and no-valid-answer
-tasks separately), `pass^4`, hidden success within three rejected proposals,
-elicitation, exposure, and stop classes (`scripts/report_books_run.py --run-dir
-<run>` computes them), and compare with `primary_table` in
-`analysis/books-wikidata-v2/v4_results.json`. Because the agents' order changes with the prompt, also run with
-`--agent-prompt-variant ask-and-verify-v1`, which asks agents to elicit
-requirements and to propose a book for a verdict before recommending it. Structured volunteer cells are
-saturated; mixed, hidden, and keyword cells discriminate between agents. We
-suggest tuning on the 99 families outside the primary panel
-(`analysis/books-wikidata-v2/panels.json`) and reporting non-US/UK and
-non-English requirements separately.
+- Without `--execute`, the script prints the `tau-rec run` command instead.
+- `--retrieval-mode keyword` runs the keyword interface. `--block reliability`
+  runs the nested 18-family reliability block with eight trials per task.
+- Run two prompts: the base prompt and `--agent-prompt-variant ask-and-verify-v1`,
+  which asks agents to elicit requirements and to propose a book for a verdict
+  before recommending it. Agents rank differently under the two. The paper's
+  other variants are `ask-requirements-v1` and `ask-verify-protocol-v1`.
+- `scripts/report_books_run.py --run-dir <run>` reports `pass^1` by disclosure
+  condition (hidden satisfiable and no-valid-answer tasks separately), `pass^4`,
+  hidden success within three rejected proposals, elicitation, exposure, and how
+  trials end. Compare with `primary_table` in
+  `analysis/books-wikidata-v2/v4_results.json`.
+- Structured volunteer cells are saturated; mixed, hidden, and keyword cells
+  discriminate between agents.
+- Tune on the 99 families outside the primary panel
+  (`analysis/books-wikidata-v2/panels.json`), and report non-US/UK and
+  non-English requirements separately.
+
+## Reference agents
+
+Two scripted agents run through the same user, tools, scoring, and caps, with
+no language model. The popularity agent proposes the most popular match until
+one is accepted; the eliminating agent also uses each decline and rejection to
+rule out possible requirements:
+
+```bash
+uv run python analysis/books-controlled/run_scripted_reference.py \
+  --track data/tracks/books-wikidata-v2 --output out/scripted_reference_v4.json
+uv run python analysis/books-controlled/run_scripted_reference.py \
+  --track data/tracks/books-wikidata-v2 --order eliminate --hypotheses broad \
+  --output out/scripted_eliminating_broad_v4.json
+```
+
+## Reproducing the paper's numbers
+
+Every trace behind the paper is attached to the
+[v2.0.0 release](https://github.com/nbharaths/tau-rec/releases/tag/v2.0.0).
+Download and check the six run archives, then extract them at the repository
+root:
+
+```bash
+gh release download v2.0.0 -R nbharaths/tau-rec -p 'books-wikidata-v4*.tar.gz' -p SHA256SUMS
+shasum -a 256 -c SHA256SUMS --ignore-missing
+for f in books-wikidata-v4*.tar.gz; do tar -xzf "$f"; done
+```
+
+`scripts/verify_books_archive.py` re-executes every recorded tool call,
+re-scores every trace, and replays the rule-based user. The scripts in
+[`analysis/books-controlled/`](../../../analysis/books-controlled/README.md#reproducing-the-reported-numbers)
+then regenerate every reported number from the traces and the committed labels,
+with no model calls.
 
 ## Validating
 
