@@ -182,14 +182,6 @@ uv run python scripts/generate_books_controlled.py --catalog rebuilt/catalog.jso
 match the committed files; `catalog_manifest.json` differs only in its build
 timestamp and `lineage.json` only in the catalog path it records.
 
-## Known issues
-
-- 60 records (18 of them task answers) have a title, description, author, or
-  publisher name cut off at a double quote inside the Wikidata text, from a
-  parsing defect in the export. Scoring reads identifiers and the genre,
-  language, country, year, and format fields, so it is unaffected. The records
-  stay as they are because the reported results used this catalog.
-
 ## Licensing
 
 The catalog, source selection, and source snapshot are CC0 1.0 (Wikidata
