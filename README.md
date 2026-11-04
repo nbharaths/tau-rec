@@ -4,6 +4,7 @@
 [![Paper](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Paper-yellow)](https://huggingface.co/papers/2606.10156)
 [![DOI](https://img.shields.io/badge/DOI-10.1145%2F3773078.3831847-blue)](https://doi.org/10.1145/3773078.3831847)
 [![arXiv](https://img.shields.io/badge/arXiv-2606.10156-b31b1b)](https://arxiv.org/abs/2606.10156)
+[![τ-Rec-Books on arXiv](https://img.shields.io/badge/%CF%84--Rec--Books-arXiv%202611.04459-b31b1b)](https://arxiv.org/abs/2611.04459)
 
 A verifiable benchmark for LLM-based conversational recommender systems.
 
@@ -90,8 +91,8 @@ The JSON files in `data/` are the same data — use whichever is more convenient
 
 ## Books track (`books-wikidata-v2`)
 
-A controlled books benchmark built on τ-Rec's harness. The movie track above is
-unchanged.
+A controlled books benchmark built on τ-Rec's harness, described in
+[τ-Rec-Books](https://arxiv.org/abs/2611.04459). The movie track above is unchanged.
 
 - **Catalog.** 20,000 literary works derived from Wikidata (CC0), ordered by a
   seeded hash; the first 5,000 and 10,000 form nested smaller catalogs.
@@ -280,9 +281,8 @@ uv run pytest tests/test_orchestrator.py -k name   # single test
 
 ## Citation
 
-If you use τ-Rec in your work, please cite the paper below. A companion paper
-describing the books track is forthcoming; until it appears, please cite
-τ-Rec and the release tag.
+If you use τ-Rec in your work, please cite the τ-Rec paper. If you use the books
+track (`books-wikidata-v2`), please also cite the τ-Rec-Books paper.
 
 ```bibtex
 @inproceedings{narasimhan2026taurec,
@@ -295,6 +295,16 @@ describing the books track is forthcoming; until it appears, please cite
   publisher = {Association for Computing Machinery},
   doi       = {10.1145/3773078.3831847},
   url       = {https://doi.org/10.1145/3773078.3831847}
+}
+
+@misc{narasimhan2026taurecbooks,
+  author        = {Narasimhan, Bharath Sivaram and Narasimhan, Karthik R.},
+  title         = {{$\tau$-Rec-Books}: A Disclosure-Controlled Benchmark for Requirement Elicitation in Agentic Recommender Systems},
+  year          = {2026},
+  eprint        = {2611.04459},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.IR},
+  url           = {https://arxiv.org/abs/2611.04459}
 }
 ```
 

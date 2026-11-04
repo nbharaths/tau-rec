@@ -1,8 +1,8 @@
 # τ-Rec-Books (`books-wikidata-v2`)
 
 This folder is the resource described in *τ-Rec-Books: A Disclosure-Controlled
-Benchmark for Requirement Elicitation in Agentic Recommender Systems* (under
-review at ECIR 2027). An agent talks to a simulated reader and must recommend
+Benchmark for Requirement Elicitation in Agentic Recommender Systems*
+([arXiv:2611.04459](https://arxiv.org/abs/2611.04459), under review at ECIR 2027). An agent talks to a simulated reader and must recommend
 one catalog book that satisfies every hard requirement, or abstain when the
 catalog has none. Each request is fixed; only *when* the reader reveals its
 requirements varies.
@@ -181,6 +181,20 @@ uv run python scripts/generate_books_controlled.py --catalog rebuilt/catalog.jso
 `family_manifest.json`, `task_manifest.json`, and `task_baseline.json` then
 match the committed files; `catalog_manifest.json` differs only in its build
 timestamp and `lineage.json` only in the catalog path it records.
+
+## Citation
+
+```bibtex
+@misc{narasimhan2026taurecbooks,
+  author        = {Narasimhan, Bharath Sivaram and Narasimhan, Karthik R.},
+  title         = {{$\tau$-Rec-Books}: A Disclosure-Controlled Benchmark for Requirement Elicitation in Agentic Recommender Systems},
+  year          = {2026},
+  eprint        = {2611.04459},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.IR},
+  url           = {https://arxiv.org/abs/2611.04459}
+}
+```
 
 ## Licensing
 
