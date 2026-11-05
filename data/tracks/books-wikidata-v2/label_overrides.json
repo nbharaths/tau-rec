@@ -212,6 +212,165 @@
         "description": "1969 novel by Theodore Taylor"
       },
       "reason": "Published in 1969, as the year field already says; the description's 1974 is the year of the TV film adaptation."
+    },
+    "Q123550873": {
+      "title": "The Lost Heir",
+      "publication_year": 2013,
+      "reason": "Wings of Fire #2 was first published in January 2013 (Scholastic); the item's own description says 2013."
+    },
+    "Q659151": {
+      "title": "Ruby Red",
+      "publication_year": 2009,
+      "reason": "The German original, Rubinrot, was first published in 2009; the item's own description says 2009."
+    },
+    "Q42773342": {
+      "title": "Der nasse Fisch. Gereon Raths erster Fall",
+      "publication_year": 2008,
+      "reason": "First published in 2008 (Kiepenheuer & Witsch); 2018 is a later edition. The item's own description says 2008."
+    },
+    "Q97610128": {
+      "title": "Interference",
+      "publication_year": 2019,
+      "reason": "Sue Burke's sequel to Semiosis was first published in 2019 (Tor); the item's own description says 2019."
+    },
+    "Q7361465": {
+      "title": "Roma",
+      "publication_year": 2007,
+      "reason": "First published in March 2007 (St. Martin's Press; Constable & Robinson in the UK); 2008 is the Robinson paperback. The item's own description says 2007."
+    },
+    "Q128213807": {
+      "title": "The Other Malcolm--",
+      "publication_year": 2001,
+      "set": {
+        "description": "2001 memoir by Malcolm Jarvis and Paul D. Nichols"
+      },
+      "reason": "First published by McFarland in 2001; 2008 is a later printing. It is a memoir (as its genres say), so the description no longer calls it a novel."
+    },
+    "Q5284731": {
+      "title": "Diwan-e-Ghalib",
+      "publication_year": 1841,
+      "reason": "Ghalib lived 1797-1869; the first published edition of his Urdu divan was printed in 1841, so 1533 cannot be right."
+    },
+    "Q48804733": {
+      "title": "The Thousandth Floor",
+      "set": {
+        "description": "2016 novel written by Katharine McGee"
+      },
+      "reason": "Published on August 30, 2016 (HarperCollins), as the year field already says; the description's 2017 is wrong."
+    },
+    "Q892456": {
+      "title": "Angela's Ashes",
+      "remove": {
+        "countries": [
+          "New York City"
+        ]
+      },
+      "add": {
+        "countries": [
+          "United States"
+        ]
+      },
+      "reason": "A city is not a country of origin; the memoir was first published in the United States (Scribner, New York, 1996)."
+    },
+    "Q2090270": {
+      "title": "My Father's Glory",
+      "remove": {
+        "languages": [
+          "Classical French"
+        ]
+      },
+      "add": {
+        "languages": [
+          "French"
+        ]
+      },
+      "reason": "Written in modern French (La Gloire de mon père, 1957); Classical French is 17th-18th century."
+    },
+    "Q660410": {
+      "title": "Het Menselyk Bedryf",
+      "remove": {
+        "languages": [
+          "Old Dutch"
+        ]
+      },
+      "add": {
+        "languages": [
+          "Dutch"
+        ]
+      },
+      "reason": "A 1694 text is written in (early modern) Dutch; Old Dutch ends around 1150."
+    },
+    "Q124171334": {
+      "title": "The Belvie Saga",
+      "add": {
+        "languages": [
+          "Norwegian"
+        ]
+      },
+      "reason": "Bokmål and Nynorsk are the written standards of Norwegian, so the work is in Norwegian; the parent-label folding has no entry for them."
+    },
+    "Q133955652": {
+      "title": "Solbu",
+      "add": {
+        "languages": [
+          "Norwegian"
+        ]
+      },
+      "reason": "Bokmål and Nynorsk are the written standards of Norwegian, so the work is in Norwegian; the parent-label folding has no entry for them."
+    },
+    "Q72709809": {
+      "title": "Fugl",
+      "add": {
+        "languages": [
+          "Norwegian"
+        ]
+      },
+      "reason": "Bokmål and Nynorsk are the written standards of Norwegian, so the work is in Norwegian; the parent-label folding has no entry for them."
+    },
+    "Q1729647": {
+      "title": "Karius and Bactus",
+      "add": {
+        "languages": [
+          "Norwegian"
+        ]
+      },
+      "reason": "Bokmål and Nynorsk are the written standards of Norwegian, so the work is in Norwegian; the parent-label folding has no entry for them."
+    },
+    "Q107503463": {
+      "title": "Alle tiders gullhøne",
+      "add": {
+        "languages": [
+          "Norwegian"
+        ]
+      },
+      "reason": "Bokmål and Nynorsk are the written standards of Norwegian, so the work is in Norwegian; the parent-label folding has no entry for them."
+    },
+    "Q19384352": {
+      "title": "And the World Will Shake",
+      "add": {
+        "languages": [
+          "Norwegian"
+        ]
+      },
+      "reason": "Bokmål and Nynorsk are the written standards of Norwegian, so the work is in Norwegian; the parent-label folding has no entry for them."
+    },
+    "Q11966002": {
+      "title": "Drama i Ishavet",
+      "add": {
+        "languages": [
+          "Norwegian"
+        ]
+      },
+      "reason": "Radical Bokmål is a written form of Norwegian, so the work is in Norwegian; the parent-label folding has no entry for it."
+    },
+    "Q86667105": {
+      "title": "Knife",
+      "add": {
+        "languages": [
+          "Norwegian"
+        ]
+      },
+      "reason": "Bokmål and Nynorsk are the written standards of Norwegian, so the work is in Norwegian; the parent-label folding has no entry for them."
     }
   },
   "exclusion_rules": [
