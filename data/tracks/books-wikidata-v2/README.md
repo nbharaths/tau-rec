@@ -1,5 +1,8 @@
 # τ-Rec-Books (`books-wikidata-v2`)
 
+[![arXiv](https://img.shields.io/badge/arXiv-2611.04459-b31b1b)](https://arxiv.org/abs/2611.04459)
+[![Dataset on Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue)](https://huggingface.co/datasets/nbharaths/tau-rec-books)
+
 This folder is the resource described in *τ-Rec-Books: A Disclosure-Controlled
 Benchmark for Requirement Elicitation in Agentic Recommender Systems*
 ([arXiv:2611.04459](https://arxiv.org/abs/2611.04459), under review at ECIR 2027). An agent talks to a simulated reader and must recommend

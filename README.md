@@ -5,6 +5,7 @@
 [![DOI](https://img.shields.io/badge/DOI-10.1145%2F3773078.3831847-blue)](https://doi.org/10.1145/3773078.3831847)
 [![arXiv](https://img.shields.io/badge/arXiv-2606.10156-b31b1b)](https://arxiv.org/abs/2606.10156)
 [![τ-Rec-Books on arXiv](https://img.shields.io/badge/%CF%84--Rec--Books-arXiv%202611.04459-b31b1b)](https://arxiv.org/abs/2611.04459)
+[![τ-Rec-Books on Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-%CF%84--Rec--Books-blue)](https://huggingface.co/datasets/nbharaths/tau-rec-books)
 
 A verifiable benchmark for LLM-based conversational recommender systems.
 
