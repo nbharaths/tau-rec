@@ -163,6 +163,12 @@ uv run python scripts/validate_books_controlled.py \
   --catalog data/tracks/books-wikidata-v2/catalog.json --artifact data/tracks/books-wikidata-v2
 ```
 
+`scripts/report_description_years.py --track data/tracks/books-wikidata-v2
+--only-task-changes` lists the works whose catalog year differs from the year
+their own Wikidata description opens with, and the families each one would
+move. It is report-only: a flag is a lead for an errata entry, not a verdict,
+since the description is sometimes the wrong side.
+
 ## Rebuilding from the source snapshot
 
 The catalog, tasks, and answer key rebuild byte for byte, offline, from the 21

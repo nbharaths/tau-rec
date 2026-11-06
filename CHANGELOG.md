@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Added
+
+- `scripts/report_description_years.py` reports books whose catalog year
+  differs from the year their Wikidata description opens with, and the
+  families each would move (report-only; `--fail-on-task-changes` with a
+  `--reviewed` list for future tracks). On `books-wikidata-v2` it flags 198
+  works, 13 of which change a family.
+
 ### Fixed
 
 - `scripts/verify_books_archive.py` also checks the quarantined first attempts
