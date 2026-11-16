@@ -24,8 +24,14 @@ from inspect_ai.model import (
     ModelOutput,
     ModelRefusalError,
 )
+# Private Inspect API, verified against inspect_ai 0.3.290.
 from inspect_ai.model._generate_config import active_generate_config
-from inspect_ai.model._model import ModelGenerateError
+# Private Inspect API, verified against inspect_ai 0.3.290.
+from inspect_ai.model._model import ModelGenerateError, collect_model_events
+# Private Inspect API, verified against inspect_ai 0.3.290.
+from inspect_ai.model._providers.openai import OpenAIAPI
+# Private Inspect API, verified against inspect_ai 0.3.290.
+from inspect_ai.model._providers.openai_compatible import OpenAICompatibleAPI
 from inspect_ai.tool import ToolInfo, ToolParams
 
 from tau_rec.agents.base import AgentResponse, BaseAgent
@@ -199,6 +205,22 @@ def _raw_arguments(response: Any) -> dict[str, str]:
     return found
 
 
+def _served_from_cache(generations: list[Any]) -> bool:
+    """Whether the call was answered from Inspect's response cache.
+
+    Inspect records a cache hit as a ``ModelEvent`` with ``cache="read"`` and
+    never calls ``ModelAPI.generate``, so there is no raw response to capture.
+    The last collected generation is the attempt that produced the output.
+    """
+    return bool(generations) and getattr(generations[-1].event, "cache", None) == "read"
+
+
+def _returns_raw_response(api: Any) -> bool:
+    """OpenAI-family APIs (OpenAI, Azure OpenAI, OpenAI-compatible incl.
+    OpenRouter) return an OpenAI-shaped response body with every call."""
+    return isinstance(api, (OpenAIAPI, OpenAICompatibleAPI))
+
+
 def _native_arguments(raw: str, call_id: str, function: str) -> dict:
     """Parse raw arguments exactly as native does (``json.loads``), requiring a dict."""
     try:
@@ -301,11 +323,12 @@ class InspectAgent(BaseAgent):
         holder: list[Any] = []
         token = _raw_capture.set(holder)
         try:
-            output = await self._model.generate(
-                [ChatMessageSystem(content=self._system_prompt), *self._history],
-                tools=self._tools,
-                config=self._generate_config(),
-            )
+            with collect_model_events() as generations:
+                output = await self._model.generate(
+                    [ChatMessageSystem(content=self._system_prompt), *self._history],
+                    tools=self._tools,
+                    config=self._generate_config(),
+                )
         except ModelGenerateError as error:
             raise _provider_error(error) from error
         except ModelRefusalError as error:
@@ -319,7 +342,16 @@ class InspectAgent(BaseAgent):
         _check_stop(output)
 
         call = holder[0] if holder else None
-        raw = _raw_arguments(getattr(call, "response", None))
+        response = getattr(call, "response", None)
+        raw = _raw_arguments(response)
+        # An OpenAI-family call that was not a cache hit always has a raw
+        # response; if none was captured (the wrapper was bypassed), fail
+        # closed rather than fall back to Inspect's lenient parser.
+        require_raw = (
+            not isinstance(response, dict)
+            and _returns_raw_response(self._model.api)
+            and not _served_from_cache(generations)
+        )
 
         message = output.message
         tool_calls = []
@@ -332,14 +364,20 @@ class InspectAgent(BaseAgent):
                     function=tool_call.function,
                     parse_error=tool_call.parse_error,
                 )
+            if require_raw:
+                raise AgentCallError(
+                    "agent tool call raw arguments were not captured",
+                    tool_call_id=tool_call.id,
+                    function=tool_call.function,
+                )
             if tool_call.id in raw:
                 # Inspect parses leniently (YAML for non-object strings, stray
                 # quote recovery), so "" or "null" can become {"item_id": None},
                 # an abstention. Re-parse the raw text as native does.
                 arguments = _native_arguments(raw[tool_call.id], tool_call.id, tool_call.function)
             else:
-                # No raw response for this call (a provider whose response is
-                # not OpenAI-shaped, a cache hit, mockllm): fall back to
+                # No raw arguments for this call (a provider whose response
+                # is not OpenAI-shaped, a cache hit, mockllm): fall back to
                 # Inspect's parsed arguments. Documented deviation.
                 arguments = tool_call.arguments
             tool_calls.append(
