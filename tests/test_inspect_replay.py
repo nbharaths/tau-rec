@@ -66,7 +66,7 @@ from inspect_ai.model import (  # noqa: E402
 )
 from inspect_ai.model._call_tools import parse_tool_call  # noqa: E402
 from inspect_ai.model._generate_config import active_generate_config_context_var  # noqa: E402
-from inspect_ai.model._model import active_model_context_var  # noqa: E402
+from inspect_ai.model._model import ModelGenerateError, active_model_context_var  # noqa: E402
 from inspect_ai.tool import ToolCall as InspectToolCall  # noqa: E402
 
 from tau_rec.agents import litellm_agent  # noqa: E402
@@ -246,6 +246,16 @@ CONTEXT_WINDOW_TEXT = "This model's maximum context length is 400000 tokens."
 CONTENT_POLICY_TEXT = (
     "The response was filtered due to the prompt triggering content management policy."
 )
+# OpenRouter's HTTP-400 context error. Inspect does not map it to
+# stop_reason="model_length"; it raises ModelGenerateError with this text as
+# provider_message. A script-only stop marker (set in memory, not in a fixture).
+OPENROUTER_CONTEXT_400 = "openrouter_context_400"
+OPENROUTER_CONTEXT_TEXT = (
+    "This endpoint's maximum context length is 163840 tokens. However, you requested "
+    "about 170000 tokens (169000 of text input, 1000 in the output). Please reduce the "
+    'length of either one, or use the "middle-out" transform to compress your prompt '
+    "automatically."
+)
 
 
 class NativeScript:
@@ -280,6 +290,10 @@ class NativeScript:
         if stop == "model_length":
             raise litellm.ContextWindowExceededError(
                 message=CONTEXT_WINDOW_TEXT, model=MODEL_LABEL, llm_provider="openai"
+            )
+        if stop == OPENROUTER_CONTEXT_400:
+            raise litellm.ContextWindowExceededError(
+                message=OPENROUTER_CONTEXT_TEXT, model=MODEL_LABEL, llm_provider="openrouter"
             )
         if stop == "content_filter":
             raise litellm.ContentPolicyViolationError(
@@ -386,7 +400,15 @@ class InspectScript:
     def agent_output(self, input, tools, tool_choice, config) -> ModelOutput:
         self.inputs.agent.append(_inspect_messages(list(input)))
         self.inputs.agent_tools.append([tool.name for tool in tools])
-        return inspect_agent_output(self.agent.popleft())
+        step = self.agent.popleft()
+        if step.get("stop_reason") == OPENROUTER_CONTEXT_400:
+            # What Inspect raises for the provider's 400 (model/_model.py).
+            raise ModelGenerateError(
+                "\nRequest:\n{...}\n\nAPIStatusError('Error code: 400')",
+                status_code=400,
+                provider_message=f"Error code: 400 - {OPENROUTER_CONTEXT_TEXT}",
+            )
+        return inspect_agent_output(step)
 
     def simulator_output(self, input, tools, tool_choice, config) -> ModelOutput:
         self.inputs.simulator.append(_inspect_messages(list(input)))
@@ -636,3 +658,28 @@ async def test_replay_failure_paths(name, no_sleep):
         _assert_no_leak(message_texts(trace), forbidden)
     for inputs in (native_inputs, inspect_inputs):
         _assert_no_leak([row[1] for call in inputs.simulator for row in call[1:]], forbidden)
+
+
+async def test_replay_openrouter_context_400(no_sleep):
+    """An unmapped provider's context error ends the trial as TIMEOUT on both paths.
+
+    Native: litellm raises ContextWindowExceededError. Inspect: OpenRouter's
+    HTTP 400 is not mapped to stop_reason="model_length" and arrives as
+    ModelGenerateError; the adapter applies the orchestrator's legacy rule to
+    the provider message. The model_length script, with that stop in memory.
+    """
+    case = copy.deepcopy(load_case("model_length"))
+    assert case["agent"][-1]["stop_reason"] == "model_length"
+    case["agent"][-1]["stop_reason"] = OPENROUTER_CONTEXT_400
+    native_inputs, inspect_inputs = Inputs(), Inputs()
+    native_trace, native_result = await replay_native(case, inputs=native_inputs)
+    inspect_trace, inspect_result = await replay_inspect(case, inputs=inspect_inputs)
+
+    assert native_trace.stop_reason == inspect_trace.stop_reason == StopReason.TIMEOUT
+    assert event_rows(inspect_trace) == event_rows(native_trace)
+    assert trace_doc(inspect_trace) == trace_doc(native_trace)
+    assert result_doc(inspect_result) == result_doc(native_result)
+    assert inspect_result.primary_reward == native_result.primary_reward == 0.0
+    assert inspect_inputs.agent == native_inputs.agent
+    assert inspect_inputs.simulator == native_inputs.simulator
+    _assert_no_leak(message_texts(inspect_trace), ["163840", "middle-out"])

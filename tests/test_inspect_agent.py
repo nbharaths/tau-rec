@@ -537,7 +537,9 @@ def _agent_generate_error(status_code: int | None, cause: Exception | None = Non
     error = ModelGenerateError(
         f"\nRequest:\n{AGENT_REQUEST_TEXT}\n\nBadRequestError('{AGENT_REQUEST_TEXT}')",
         status_code=status_code,
-        provider_message=f"provider says {AGENT_REQUEST_TEXT}",
+        # Inspect sets provider_message to str(provider exception): provider
+        # text, here with no context-length wording.
+        provider_message="provider says the request is invalid",
     )
     error.__cause__ = cause
     return error
@@ -559,7 +561,7 @@ async def test_provider_error_with_context_length_request_is_not_a_context_stop(
     assert str(info.value) == "agent provider call failed (status 400)"
     assert "REQUEST-TEXT" not in str(info.value)
     assert info.value.status_code == 400
-    assert info.value.provider_message == f"provider says {AGENT_REQUEST_TEXT}"
+    assert info.value.provider_message == "provider says the request is invalid"
     assert isinstance(info.value.__cause__, ModelGenerateError)
 
 
@@ -597,3 +599,87 @@ async def test_refusal_error_raised_without_model_text():
     assert "MODEL-TEXT" not in str(info.value)
     assert "REQUEST-TEXT" not in str(info.value)
     assert isinstance(info.value.__cause__, ModelRefusalError)
+
+
+# Context overflow from providers Inspect does not map (final review, finding 3)
+
+OPENROUTER_CONTEXT_TEXT = (
+    "This endpoint's maximum context length is 163840 tokens. However, you requested "
+    "about 170000 tokens (169000 of text input, 1000 in the output). Please reduce the "
+    'length of either one, or use the "middle-out" transform to compress your prompt '
+    "automatically."
+)
+
+
+def _openrouter_400(message: str):
+    """openrouter/deepseek/deepseek-v4-flash over a mock transport answering HTTP 400.
+
+    Inspect maps only some providers' context errors to stop_reason
+    "model_length"; OpenRouter's 400 reaches the adapter as ModelGenerateError.
+    """
+    requests: list[dict] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        requests.append(json.loads(request.content))
+        return httpx.Response(400, json={"error": {"message": message, "code": 400}})
+
+    model = get_model(
+        "openrouter/deepseek/deepseek-v4-flash",
+        api_key="test-key",
+        http_client=httpx.AsyncClient(transport=httpx.MockTransport(handler)),
+        memoize=False,
+    )
+    return model, requests
+
+
+@pytest.mark.parametrize(
+    ("harness", "recorded"),
+    [(LEGACY, "timeout"), (BOOKS_V4, "context_overflow")],
+    ids=["legacy", "books-v4"],
+)
+async def test_openrouter_context_400_is_a_context_stop(harness, recorded):
+    from inspect_ai.model._model import ModelGenerateError
+
+    model, requests = _openrouter_400(OPENROUTER_CONTEXT_TEXT)
+    agent = InspectAgent(model, SYSTEM_PROMPT, TOOL_DEFINITIONS, harness=harness)
+    agent.add_user_message("Hi.")
+    orchestrator = Orchestrator(agent, simulator=None, toolkit=None, harness=harness)
+    with active(model), pytest.raises(_Stop) as info:
+        await orchestrator._respond(None)
+    assert len(requests) == 1
+    cause = info.value.__cause__
+    assert isinstance(cause, AgentContextLengthError)
+    # Fixed text: the provider message stays on the chained ModelGenerateError.
+    assert "163840" not in str(cause)
+    assert isinstance(cause.__cause__, ModelGenerateError)
+    assert orchestrator._reason(info.value.reason).value == recorded
+
+
+async def test_openrouter_non_context_400_is_a_provider_error():
+    from tau_rec.inspect_support.agent import AgentProviderError
+
+    model, _ = _openrouter_400("deepseek/deepseek-v4-flash is not a valid model ID")
+    agent = _agent(model)
+    agent.add_user_message("Hi.")
+    orchestrator = Orchestrator(agent, simulator=None, toolkit=None)
+    with active(model), pytest.raises(AgentProviderError) as info:
+        await orchestrator._respond(None)
+    assert not isinstance(info.value, _Stop)
+    assert str(info.value) == "agent provider call failed (status 400)"
+
+
+@pytest.mark.parametrize("message", [None, "", "maximum length exceeded", "bad context"])
+async def test_provider_message_needs_context_and_length(message):
+    from inspect_ai.model._model import ModelGenerateError
+
+    from tau_rec.inspect_support.agent import AgentProviderError
+
+    error = ModelGenerateError(
+        f"\nRequest:\n{AGENT_REQUEST_TEXT}", status_code=400, provider_message=message
+    )
+    model = get_model("mockllm/model", custom_outputs=_Raises(error), memoize=False)
+    agent = _agent(model)
+    agent.add_user_message("Hi.")
+    orchestrator = Orchestrator(agent, simulator=None, toolkit=None)
+    with active(model), pytest.raises(AgentProviderError):
+        await orchestrator._respond(None)
