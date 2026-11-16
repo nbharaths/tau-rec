@@ -43,7 +43,6 @@ from __future__ import annotations
 import copy
 import functools
 import json
-import os
 from collections import deque
 from contextlib import contextmanager
 from dataclasses import dataclass, field
@@ -51,8 +50,8 @@ from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import AsyncMock, patch
 
-# Freeze litellm's model map (no fetch at import), as runs do.
-os.environ.setdefault("LITELLM_LOCAL_MODEL_COST_MAP", "True")
+# litellm's model map is frozen (no fetch at import) for the whole session in
+# tests/conftest.py, as runs do.
 
 import litellm  # noqa: E402
 import pytest  # noqa: E402

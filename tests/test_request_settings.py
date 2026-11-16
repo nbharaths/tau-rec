@@ -19,6 +19,10 @@ from tests.test_request_fixtures import (
 
 _NON_SETTINGS = ("model", "messages", "tools", "timeout")
 
+# Reasoning-effort routing reads litellm's model map; pin the answers the
+# fixtures were recorded under (tests/conftest.py).
+pytestmark = pytest.mark.usefixtures("pinned_reasoning_effort_params")
+
 
 def _settings_only(kwargs: dict) -> dict:
     """Native kwargs minus the request envelope and OpenRouter provider routing."""

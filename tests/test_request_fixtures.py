@@ -47,6 +47,10 @@ EFFORT_MODELS = [
 BOOKS_MODEL = "openrouter/deepseek/deepseek-v4.1-flash"
 BOOKS_ORDER = ["deepinfra/fp8"]
 
+# Reasoning-effort routing reads litellm's model map; pin the answers the
+# fixtures were recorded under (tests/conftest.py).
+pytestmark = pytest.mark.usefixtures("pinned_reasoning_effort_params")
+
 
 def _chat_response(content="Hello"):
     message = SimpleNamespace(content=content, tool_calls=None)
