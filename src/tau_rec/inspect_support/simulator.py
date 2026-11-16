@@ -22,6 +22,7 @@ from inspect_ai.model import (
     ModelRefusalError,
     get_model,
 )
+# Private Inspect API, verified against inspect_ai 0.3.290.
 from inspect_ai.model._model import ModelGenerateError
 
 from tau_rec.agents.request_settings import native_model_name, simulator_request_settings

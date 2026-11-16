@@ -9,9 +9,12 @@ from __future__ import annotations
 import json
 from typing import Any
 
+# Private Inspect API, verified against inspect_ai 0.3.290.
 from inspect_ai._util.error import PrerequisiteError
 from inspect_ai.model import GenerateConfig, Model
+# Private Inspect API, verified against inspect_ai 0.3.290.
 from inspect_ai.model._generate_config import active_generate_config
+# Private Inspect API, verified against inspect_ai 0.3.290.
 from inspect_ai.model._model_config import model_args_for_log
 
 from tau_rec import __version__

@@ -15,6 +15,8 @@ from pathlib import Path
 
 from inspect_ai import Epochs, Task, task
 from inspect_ai.dataset import MemoryDataset, Sample
+# Private Inspect API, verified against inspect_ai 0.3.290 (active_model is not
+# exported from inspect_ai.model in that release).
 from inspect_ai.model._model import active_model
 from inspect_ai.scorer import pass_k
 
