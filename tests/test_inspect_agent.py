@@ -683,3 +683,77 @@ async def test_provider_message_needs_context_and_length(message):
     orchestrator = Orchestrator(agent, simulator=None, toolkit=None)
     with active(model), pytest.raises(AgentProviderError):
         await orchestrator._respond(None)
+
+
+# Raw-argument capture fails closed for OpenAI-family APIs (final review, finding 4)
+
+RAW_MISSING = "agent tool call raw arguments were not captured"
+
+
+def _bypass_raw_capture(model) -> None:
+    """Undo the capture wrapper, as an Inspect that no longer calls ``api.generate`` would."""
+    api = model.api
+    api.generate = type(api).generate.__get__(api)  # flag stays set: no reinstall
+
+
+async def test_openai_family_without_raw_capture_fails_closed():
+    model, requests = _openai_model([("call_1", "recommend", '{"item_id": "m1"}')])
+    agent = _agent(model)
+    _bypass_raw_capture(model)
+    agent.add_user_message("Nothing fits.")
+    with active(model), pytest.raises(AgentCallError) as info:
+        await agent.respond(None)
+    assert len(requests) == 1
+    assert str(info.value) == RAW_MISSING
+    assert info.value.tool_call_id == "call_1"
+    assert info.value.function == "recommend"
+
+
+async def test_openai_family_text_only_without_raw_capture_passes():
+    # No tool call: nothing to re-parse, so nothing to fail on.
+    model, _ = _openai_model([])
+    agent = _agent(model)
+    _bypass_raw_capture(model)
+    agent.add_user_message("Hi.")
+    with active(model):
+        response = await agent.respond(None)
+    assert response.tool_calls == []
+
+
+async def test_mockllm_without_raw_capture_still_falls_back():
+    model = _model(Recorder([_tool_output([("c1", "recommend", {"item_id": "m1"})])]))
+    agent = _agent(model)
+    _bypass_raw_capture(model)
+    agent.add_user_message("Nothing fits.")
+    with active(model):
+        response = await agent.respond(None)
+    assert response.tool_calls == [{"id": "c1", "name": "recommend", "arguments": {"item_id": "m1"}}]
+
+
+async def test_cache_hit_falls_back_to_inspect_arguments(tmp_path, monkeypatch):
+    # A cache hit never reaches the provider, so there is no raw response:
+    # Inspect's parsed (cached) arguments pass through (documented deviation).
+    monkeypatch.setenv("INSPECT_CACHE_DIR", str(tmp_path))
+    model, requests = _openai_model([("call_1", "recommend", '{"item_id": "m1"}')])
+    agent = _agent(model)
+    expected = [{"id": "call_1", "name": "recommend", "arguments": {"item_id": "m1"}}]
+    with active(model, GenerateConfig(cache=True)):
+        for _ in range(2):
+            agent.reset()
+            agent.add_user_message("Nothing fits.")
+            assert (await agent.respond(None)).tool_calls == expected
+    assert len(requests) == 1  # the second call was served from the cache
+
+
+async def test_cache_enabled_miss_without_raw_capture_fails_closed(tmp_path, monkeypatch):
+    # Cache on but missed: the provider was called, so a missing capture is a
+    # failure, not a cache hit.
+    monkeypatch.setenv("INSPECT_CACHE_DIR", str(tmp_path))
+    model, requests = _openai_model([("call_1", "recommend", '{"item_id": "m1"}')])
+    agent = _agent(model)
+    _bypass_raw_capture(model)
+    agent.add_user_message("Nothing fits.")
+    with active(model, GenerateConfig(cache=True)), pytest.raises(AgentCallError) as info:
+        await agent.respond(None)
+    assert len(requests) == 1
+    assert str(info.value) == RAW_MISSING
