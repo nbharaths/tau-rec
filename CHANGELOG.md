@@ -1,6 +1,19 @@
 # Changelog
 
-## Unreleased
+## v2.1.0 — Inspect adapter
+
+Inspect adapter for movies-v1; no change to movies or books scoring.
+
+### Added
+
+- `src/tau_rec/inspect_task.py@tau_rec_movies` runs the movies track through
+  Inspect, with the user simulator as a separate model role and
+  pass^1/pass^2/pass^4 reducers over 4 epochs by default.
+- README "Run with Inspect" section: commands, comparability settings, retries,
+  and known differences from the native path.
+- Inspect logs record comparability metadata (track, generation, content
+  digests, `tau_rec` version, harness commit, resolved settings).
+- `inspect_ai` and `openai` are now core dependencies.
 
 ### Fixed
 

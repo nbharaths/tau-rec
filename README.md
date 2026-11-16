@@ -178,6 +178,77 @@ uv run tau-rec report \
   --tasks data/tasks
 ```
 
+## Run with Inspect
+
+The movies track (`movies-v1`) also runs through [Inspect](https://inspect.aisi.org.uk/)
+as `src/tau_rec/inspect_task.py@tau_rec_movies`. The native `tau-rec run` path
+is unchanged and remains the reference.
+
+```bash
+git clone https://github.com/nbharaths/tau-rec && cd tau-rec && git checkout v2.1.0 && uv sync
+# leaderboard-comparable (needs OPENAI_API_KEY for the default simulator):
+uv run inspect eval src/tau_rec/inspect_task.py@tau_rec_movies \
+  --model openai/gpt-5-mini -M responses_api=false
+```
+
+The agent is the model you pass with `--model`. The user simulator is a
+separate model role; by default it is `openai/gpt-5-mini` on Chat Completions
+at temperature 1.0, so the default run needs `OPENAI_API_KEY` whatever the
+agent model is. The agent and simulator providers need their own SDKs:
+`anthropic` for `anthropic/...` and `google-genai` for `google/...`. Neither is
+installed by default (for example `uv pip install anthropic`).
+
+**Comparability.** `-M responses_api=false` keeps a gpt-5 agent on Chat
+Completions, as the leaderboard runs do. To use a different simulator, pass the
+role in dict form and keep `responses_api: false` explicit:
+
+```bash
+uv run inspect eval src/tau_rec/inspect_task.py@tau_rec_movies \
+  --model openai/gpt-5-mini -M responses_api=false \
+  --model-role 'user={model: openai/gpt-5-mini, model_args: {responses_api: false}, config: {temperature: 1.0}}'
+```
+
+Naming the `user` role without `responses_api: false` puts a gpt-5 simulator on
+the Responses API, which departs from comparability; either keep the default or
+set it explicitly. Claude 4.7 and later cannot be the simulator: it always sends
+temperature 1.0, which those models reject. Overriding any mirrored setting
+(`--temperature`, `--reasoning-effort`, `-M` or role config) also departs from
+leaderboard comparability.
+
+**Size.** The default is 60 tasks x 4 epochs = 240 conversations, reduced to
+pass^1, pass^2 and pass^4. For another epoch count, name only reducers with
+k <= N:
+
+```bash
+uv run inspect eval src/tau_rec/inspect_task.py@tau_rec_movies \
+  --model openai/gpt-5-mini -M responses_api=false \
+  --epochs 2 --epochs-reducer pass_k_1,pass_k_2
+```
+
+In Python, use `epochs=Epochs(2, ["pass_k_1", "pass_k_2"])`.
+
+**Errors and retries.** The task sets `fail_on_error=False`, so a failed
+conversation is recorded as an errored sample rather than stopping the run. Add
+`--retry-on-error` for transient errors, and run `uv run inspect eval-retry <log>`
+to fill any samples that still errored. A log is comparable only once every
+sample has all its epochs scored: pass^k for a sample with fewer than k scored
+epochs is NaN and is excluded.
+
+**Log metadata.** Each log records the track (`movies-v1`), generation (`g1`),
+content digests, the `tau_rec` version, the harness commit and the resolved
+settings. A task constructed in Python before a model is active, such as
+`eval(tau_rec_movies(), ...)`, records `model_settings_unrecorded` and is not
+comparable. Pass the function itself, `eval(tau_rec_movies, ...)`, or use the CLI.
+
+**Known differences from the native path.**
+- Tool-call arguments from non-OpenAI providers are parsed by Inspect's parser,
+  not the native one.
+- A normal `finish_reason=content_filter` response is treated as a sample error;
+  the native path passes it through.
+
+**Inspect runs are not leaderboard entries.** The [leaderboard](#leaderboard)
+is built from the native `tau-rec run` path.
+
 ## How a trial works
 
 ```
