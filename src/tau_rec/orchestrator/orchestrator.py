@@ -89,8 +89,20 @@ class Orchestrator:
                 raise _Stop(StopReason.CONTEXT_OVERFLOW) from error
             raise
 
-    async def run(self, task_id: str, model: str, trial: int) -> ConversationTrace:
-        trace = ConversationTrace(task_id=task_id, model=model, trial=trial)
+    async def run(
+        self,
+        task_id: str,
+        model: str,
+        trial: int,
+        trace: ConversationTrace | None = None,
+    ) -> ConversationTrace:
+        if trace is None:
+            trace = ConversationTrace(task_id=task_id, model=model, trial=trial)
+        elif (trace.task_id, trace.model, trace.trial) != (task_id, model, trial):
+            raise ValueError(
+                f"supplied trace is for ({trace.task_id!r}, {trace.model!r}, {trace.trial!r}), "
+                f"not ({task_id!r}, {model!r}, {trial!r})"
+            )
         trial_start = time.perf_counter()
         self._agent_seconds = 0.0
         if self._trial_timeout_seconds is None or self._harness.cap_counts_agent_time_only:

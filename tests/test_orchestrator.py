@@ -2,7 +2,7 @@ import pytest
 import asyncio
 from unittest.mock import AsyncMock, MagicMock
 from tau_rec.orchestrator.orchestrator import Orchestrator
-from tau_rec.data_model.conversation import Message, Role, StopReason
+from tau_rec.data_model.conversation import ConversationTrace, Message, Role, StopReason
 from tau_rec.agents.base import AgentResponse
 
 
@@ -340,3 +340,33 @@ async def test_orchestrator_empty_response():
     # Greeting turn + one turn where "Hello!" was emitted and simulator responded
     # = 2 agent messages + 2 user messages that completed full turns
     assert trace.turn_count == 2
+
+
+@pytest.mark.asyncio
+async def test_run_populates_supplied_trace():
+    agent = AsyncMock()
+    agent.respond = AsyncMock(return_value=AgentResponse(message="How about this movie?"))
+    agent.add_user_message = MagicMock()
+    agent.add_assistant_message = MagicMock()
+
+    simulator = AsyncMock()
+    simulator.respond = AsyncMock(return_value=Message(role=Role.USER, content="No. ###REJECTED###"))
+
+    orch = Orchestrator(agent=agent, simulator=simulator, toolkit=MagicMock(), max_turns=1)
+    t = ConversationTrace(task_id="task_001", model="m", trial=0)
+    out = await orch.run("task_001", "m", 0, trace=t)
+    assert out is t
+    assert t.events
+
+
+@pytest.mark.parametrize(
+    "task_id, model, trial",
+    [("other_task", "m", 0), ("task_001", "other", 0), ("task_001", "m", 1)],
+)
+@pytest.mark.asyncio
+async def test_run_supplied_trace_id_mismatch_raises(task_id, model, trial):
+    orch = Orchestrator(agent=AsyncMock(), simulator=AsyncMock(), toolkit=MagicMock(), max_turns=1)
+    t = ConversationTrace(task_id="task_001", model="m", trial=0)
+    with pytest.raises(ValueError):
+        await orch.run(task_id, model, trial, trace=t)
+    assert t.events == []
