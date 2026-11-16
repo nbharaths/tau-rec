@@ -510,3 +510,90 @@ async def test_no_raw_response_falls_back_to_inspect_arguments():
     assert response.tool_calls == [
         {"id": "c1", "name": "recommend", "arguments": {"item_id": "m1"}}
     ]
+
+
+# Provider errors keep request text out (controller ruling 1, Task 8) ---------
+
+# Inspect's ModelGenerateError message embeds the request JSON; this request
+# mentions "context length", which the orchestrator matches as a context stop.
+AGENT_REQUEST_TEXT = "REQUEST-TEXT a film about the context length of memory"
+
+
+class _Raises:
+    """A mockllm custom_outputs callable that raises ``error`` on every call."""
+
+    def __init__(self, error: BaseException):
+        self.error = error
+        self.calls = 0
+
+    def __call__(self, input, tools, tool_choice, config):
+        self.calls += 1
+        raise self.error
+
+
+def _agent_generate_error(status_code: int | None, cause: Exception | None = None):
+    from inspect_ai.model._model import ModelGenerateError
+
+    error = ModelGenerateError(
+        f"\nRequest:\n{AGENT_REQUEST_TEXT}\n\nBadRequestError('{AGENT_REQUEST_TEXT}')",
+        status_code=status_code,
+        provider_message=f"provider says {AGENT_REQUEST_TEXT}",
+    )
+    error.__cause__ = cause
+    return error
+
+
+@pytest.mark.parametrize("harness", [LEGACY, BOOKS_V4], ids=lambda h: h.id)
+async def test_provider_error_with_context_length_request_is_not_a_context_stop(harness):
+    from inspect_ai.model._model import ModelGenerateError
+
+    from tau_rec.inspect_support.agent import AgentProviderError
+
+    model = get_model("mockllm/model", custom_outputs=_Raises(_agent_generate_error(400)), memoize=False)
+    agent = InspectAgent(model, SYSTEM_PROMPT, TOOL_DEFINITIONS, harness=harness)
+    agent.add_user_message("Hi.")
+    orchestrator = Orchestrator(agent, simulator=None, toolkit=None, harness=harness)
+    with active(model), pytest.raises(AgentProviderError) as info:
+        await orchestrator._respond(None)
+    assert not isinstance(info.value, _Stop)
+    assert str(info.value) == "agent provider call failed (status 400)"
+    assert "REQUEST-TEXT" not in str(info.value)
+    assert info.value.status_code == 400
+    assert info.value.provider_message == f"provider says {AGENT_REQUEST_TEXT}"
+    assert isinstance(info.value.__cause__, ModelGenerateError)
+
+
+async def test_statusless_provider_error_keeps_only_cause_class_name():
+    from tau_rec.inspect_support.agent import AgentProviderError
+
+    class APIConnectionError(Exception):
+        pass
+
+    error = _agent_generate_error(None, APIConnectionError(AGENT_REQUEST_TEXT))
+    model = get_model("mockllm/model", custom_outputs=_Raises(error), memoize=False)
+    agent = _agent(model)
+    agent.add_user_message("Hi.")
+    with active(model), pytest.raises(AgentProviderError) as info:
+        await agent.respond(None)
+    assert str(info.value) == "agent provider call failed (APIConnectionError)"
+
+
+async def test_refusal_error_raised_without_model_text():
+    from inspect_ai.model._model import ModelRefusalError
+
+    refusal = ModelOutput.from_content(
+        "mockllm/model", f"MODEL-TEXT {AGENT_REQUEST_TEXT}", stop_reason="content_filter"
+    )
+    model = get_model(
+        "mockllm/model",
+        custom_outputs=_Raises(ModelRefusalError(refusal, "mockllm/model")),
+        memoize=False,
+    )
+    agent = _agent(model)
+    agent.add_user_message("Hi.")
+    orchestrator = Orchestrator(agent, simulator=None, toolkit=None)
+    with active(model), pytest.raises(AgentCallError) as info:
+        await orchestrator._respond(None)
+    assert "MODEL-TEXT" not in str(info.value)
+    assert "REQUEST-TEXT" not in str(info.value)
+    assert isinstance(info.value.__cause__, ModelRefusalError)

@@ -21,8 +21,10 @@ from inspect_ai.model import (
     GenerateConfig,
     Model,
     ModelOutput,
+    ModelRefusalError,
 )
 from inspect_ai.model._generate_config import active_generate_config
+from inspect_ai.model._model import ModelGenerateError
 from inspect_ai.tool import ToolInfo, ToolParams
 
 from tau_rec.agents.base import AgentResponse, BaseAgent
@@ -64,6 +66,45 @@ class AgentCallError(Exception):
         self.tool_call_id = tool_call_id
         self.function = function
         self.parse_error = parse_error
+
+
+class AgentProviderError(Exception):
+    """An Inspect provider error, re-raised with no request or model text.
+
+    Inspect's ``ModelGenerateError`` message embeds up to 200 lines of the
+    request JSON (the system prompt and every turn). The orchestrator
+    substring-matches "context" + "length" on ``str(error)`` to detect a
+    context stop, so request text would let a conversation that mentions
+    "context length" end the trial as a ``TIMEOUT`` instead of erroring it.
+    The message keeps only the HTTP status or, when there is none, the
+    provider exception's class name (code-defined text). The provider's own
+    message is kept on ``provider_message``; the original error is chained
+    as ``__cause__``.
+    """
+
+    def __init__(
+        self,
+        message: str,
+        *,
+        status_code: int | None = None,
+        provider_message: str | None = None,
+    ) -> None:
+        super().__init__(message)
+        self.status_code = status_code
+        self.provider_message = provider_message
+
+
+def _provider_error(error: ModelGenerateError) -> AgentProviderError:
+    if error.status_code is not None:
+        detail = f"status {int(error.status_code)}"
+    else:
+        cause = error.__cause__
+        detail = type(cause).__name__ if cause is not None else "no status"
+    return AgentProviderError(
+        f"agent provider call failed ({detail})",
+        status_code=error.status_code,
+        provider_message=error.provider_message,
+    )
 
 
 # Raw provider responses, captured per respond() call. A context-local holder
@@ -234,6 +275,14 @@ class InspectAgent(BaseAgent):
                 tools=self._tools,
                 config=self._generate_config(),
             )
+        except ModelGenerateError as error:
+            raise _provider_error(error) from error
+        except ModelRefusalError as error:
+            # fail_on_refusal is set: same outcome as a content_filter stop.
+            raise AgentCallError(
+                "agent call was stopped by the provider's content filter "
+                "(stop_reason=content_filter, fail_on_refusal)"
+            ) from error
         finally:
             _raw_capture.reset(token)
         _check_stop(output)
