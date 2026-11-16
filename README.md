@@ -205,12 +205,12 @@ role in dict form and keep `responses_api: false` explicit:
 ```bash
 uv run inspect eval src/tau_rec/inspect_task.py@tau_rec_movies \
   --model openai/gpt-5-mini -M responses_api=false \
-  --model-role 'user={model: openai/gpt-5-mini, model_args: {responses_api: false}, config: {temperature: 1.0}}'
+  --model-role 'user={model: openai/gpt-5-mini, model_args: {responses_api: false}, temperature: 1.0}'
 ```
 
 Naming the `user` role without `responses_api: false` puts a gpt-5 simulator on
 the Responses API, which departs from comparability; either keep the default or
-set it explicitly. Claude 4.7 and later cannot be the simulator: it always sends
+set it explicitly. Claude 4.7 and later cannot be the simulator: the simulator always sends
 temperature 1.0, which those models reject. Overriding any mirrored setting
 (`--temperature`, `--reasoning-effort`, `-M` or role config) also departs from
 leaderboard comparability.
