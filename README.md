@@ -196,7 +196,15 @@ separate model role; by default it is `openai/gpt-5-mini` on Chat Completions
 at temperature 1.0, so the default run needs `OPENAI_API_KEY` whatever the
 agent model is. The agent and simulator providers need their own SDKs:
 `anthropic` for `anthropic/...` and `google-genai` for `google/...`. Neither is
-installed by default (for example `uv pip install anthropic`).
+installed by default; add one per run with `uv run --with anthropic inspect eval ...`
+(or `--with google-genai`). A package added with `uv pip install` is removed by
+the next `uv sync`.
+
+**Offline runs.** litellm tries to fetch its model map from GitHub when it is
+imported, which Inspect runs also do. In an air-gapped environment set
+`LITELLM_LOCAL_MODEL_COST_MAP=True` to use the map bundled with litellm. The
+native request settings for some OpenRouter models (whether `reasoning_effort`
+is sent), which the Inspect path mirrors, depend on which map loads.
 
 **Comparability.** `-M responses_api=false` keeps a gpt-5 agent on Chat
 Completions, as the leaderboard runs do. To use a different simulator, pass the
@@ -232,7 +240,9 @@ conversation is recorded as an errored sample rather than stopping the run. Add
 `--retry-on-error` for transient errors, and run `uv run inspect eval-retry <log>`
 to fill any samples that still errored. A log is comparable only once every
 sample has all its epochs scored: pass^k for a sample with fewer than k scored
-epochs is NaN and is excluded.
+epochs is NaN and is excluded. Do not use `--score-on-error` for comparable runs:
+the scorer cannot tell an errored conversation (a parse error, a content-filter
+stop) from an interrupted one, so it scores the errored sample 0, as `TIMEOUT`.
 
 **Log metadata.** Each log records the track (`movies-v1`), generation (`g1`),
 content digests, the `tau_rec` version, the harness commit and the resolved
@@ -242,7 +252,8 @@ comparable. Pass the function itself, `eval(tau_rec_movies, ...)`, or use the CL
 
 **Known differences from the native path.**
 - Tool-call arguments from non-OpenAI providers are parsed by Inspect's parser,
-  not the native one.
+  not the native one. So are the arguments of any call served from Inspect's
+  response cache (`--cache` or a `cache` generate config), whatever the provider.
 - A normal `finish_reason=content_filter` response is treated as a sample error;
   the native path passes it through.
 
