@@ -9,8 +9,7 @@ authors:
   - family-names: "Narasimhan"
     given-names: "Karthik R"
     affiliation: "Princeton University"
-version: "2.0.0"
-date-released: "2026-11-01"
+version: "2.1.0"
 license: "MIT"
 repository-code: "https://github.com/nbharaths/tau-rec"
 keywords:
