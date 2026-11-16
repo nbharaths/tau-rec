@@ -1,0 +1,32 @@
+{
+  "case": "model_length",
+  "source": {
+    "derived_from": "recommendation.json (task_004 prefix)",
+    "synthetic": true
+  },
+  "task_id": "task_004",
+  "trial": 0,
+  "note": "The agent's second call stops with model_length (Inspect) / raises litellm ContextWindowExceededError (native).",
+  "agent": [
+    {
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_1",
+          "name": "get_user_history",
+          "arguments": {
+            "user_id": "user_1"
+          }
+        }
+      ]
+    },
+    {
+      "content": null,
+      "tool_calls": [],
+      "stop_reason": "model_length"
+    }
+  ],
+  "simulator": [
+    "Quick rules up front: I want an Animation movie and it must be rated PG. I'm watching with kids and prefer funny over serious.\n\nI'm a film student (watch ~5 movies/week) so don't give me a long list — just pick one single title that fits those constraints. What do you recommend?"
+  ]
+}

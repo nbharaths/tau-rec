@@ -1,0 +1,44 @@
+{
+  "case": "malformed_recommend",
+  "source": {
+    "derived_from": "recommendation.json (task_004 prefix)",
+    "synthetic": true
+  },
+  "task_id": "task_004",
+  "trial": 0,
+  "note": "recommend() with malformed {-prefixed JSON arguments, alongside a valid call in the same response. Native json.loads raises; Inspect's parse_tool_call sets parse_error (arguments {}), which the adapter must raise on rather than register an abstention.",
+  "agent": [
+    {
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_1",
+          "name": "get_user_history",
+          "arguments": {
+            "user_id": "user_1"
+          }
+        }
+      ]
+    },
+    {
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_2",
+          "name": "get_metadata",
+          "arguments": {
+            "item_id": "tmdb_991494"
+          }
+        },
+        {
+          "id": "call_3",
+          "name": "recommend",
+          "raw_arguments": "{\"item_id\": \"tmdb_991494\""
+        }
+      ]
+    }
+  ],
+  "simulator": [
+    "Quick rules up front: I want an Animation movie and it must be rated PG. I'm watching with kids and prefer funny over serious.\n\nI'm a film student (watch ~5 movies/week) so don't give me a long list — just pick one single title that fits those constraints. What do you recommend?"
+  ]
+}

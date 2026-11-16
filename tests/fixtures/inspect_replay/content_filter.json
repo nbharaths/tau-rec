@@ -1,0 +1,25 @@
+{
+  "case": "content_filter",
+  "source": {
+    "derived_from": "recommendation.json (task_004 prefix)",
+    "synthetic": true
+  },
+  "task_id": "task_004",
+  "trial": 0,
+  "note": "After one question turn the agent call is content-filtered: stop_reason=content_filter (Inspect) / HTTP-400 ContentPolicyViolationError (native). The refusal text must never reach the trace.",
+  "agent": [
+    {
+      "content": "Got it — one animated, PG, funny (kid-friendly) movie. Quick question before I pick one: which streaming services do you have access to (e.g., Netflix, Disney+, Prime Video, Max/HBO, Peacock, Apple TV+, Paramount+, etc.)? I need that so I can verify availability.",
+      "tool_calls": []
+    },
+    {
+      "content": "I'm sorry, but I can't help with that request.",
+      "tool_calls": [],
+      "stop_reason": "content_filter"
+    }
+  ],
+  "simulator": [
+    "Quick rules up front: I want an Animation movie and it must be rated PG. I'm watching with kids and prefer funny over serious.\n\nI'm a film student (watch ~5 movies/week) so don't give me a long list — just pick one single title that fits those constraints. What do you recommend?",
+    "I subscribe to Netflix, Paramount+, HBO Max, and Disney+. Ready — pick one animated, PG, funny, kid-friendly movie for me."
+  ]
+}

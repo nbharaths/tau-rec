@@ -1,0 +1,71 @@
+{
+  "case": "recommendation",
+  "source": {
+    "release": "v1.2.0",
+    "archive": "tau-rec-g1-traces.tar.gz",
+    "trace": "tau-rec-g1-traces/gpt5-mini/traces/task_004_trial2.json",
+    "model": "gpt-5-mini",
+    "archived_stop_reason": "recommended",
+    "archived_primary_reward": 1.0
+  },
+  "task_id": "task_004",
+  "trial": 2,
+  "agent": [
+    {
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_1",
+          "name": "get_user_history",
+          "arguments": {
+            "user_id": "user_1"
+          }
+        }
+      ]
+    },
+    {
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_2",
+          "name": "search_catalog",
+          "arguments": {
+            "query": "animation PG comedy family funny animated PG"
+          }
+        }
+      ]
+    },
+    {
+      "content": "Got it — one animated, PG, funny (kid-friendly) movie. Quick question before I pick one: which streaming services do you have access to (e.g., Netflix, Disney+, Prime Video, Max/HBO, Peacock, Apple TV+, Paramount+, etc.)? I need that so I can verify availability.",
+      "tool_calls": []
+    },
+    {
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_3",
+          "name": "get_metadata",
+          "arguments": {
+            "item_id": "tmdb_991494"
+          }
+        }
+      ]
+    },
+    {
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_4",
+          "name": "recommend",
+          "arguments": {
+            "item_id": "tmdb_991494"
+          }
+        }
+      ]
+    }
+  ],
+  "simulator": [
+    "Quick rules up front: I want an Animation movie and it must be rated PG. I'm watching with kids and prefer funny over serious.\n\nI'm a film student (watch ~5 movies/week) so don't give me a long list — just pick one single title that fits those constraints. What do you recommend?",
+    "I subscribe to Netflix, Paramount+, HBO Max, and Disney+. Ready — pick one animated, PG, funny, kid-friendly movie for me."
+  ]
+}
