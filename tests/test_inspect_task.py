@@ -141,9 +141,58 @@ def test_missing_data_root_clear_error(monkeypatch, tmp_path):
         _in_eval_context(tau_rec_movies)
 
 
-def test_task_created_outside_an_eval_is_a_clear_error():
-    with pytest.raises(RuntimeError, match="comparability"):
-        contextvars.copy_context().run(tau_rec_movies)
+def test_task_built_outside_an_eval_has_dataset_scorer_and_caveat():
+    # As a checker does: import the function, call it, inspect the Task.
+    task = contextvars.copy_context().run(tau_rec_movies)
+    assert len(task.dataset) == 60
+    assert task.scorer
+    meta = task.metadata
+    assert meta["caveats"] == ["model_settings_unrecorded"]
+    assert meta["request_settings"] is None
+    assert meta["model_args"] is None
+    assert meta["simulator_model"] is None
+    entry = json.loads(G1_ENTRY.read_text())
+    assert meta["digests"]["tasks_sha256"] == entry["tasks_sha256"]
+    assert (meta["track"], meta["generation"]) == ("movies-v1", "g1")
+
+
+def test_eval_of_task_instance_completes_offline(tmp_path):
+    task = contextvars.copy_context().run(tau_rec_movies)
+    log = _run(task, model="mockllm/model", model_roles={"user": "mockllm/model"}, limit=1,
+               epochs=Epochs(1, ["pass_k_1"]), log_dir=str(tmp_path))
+    sample = _one(log)
+    assert sample.scores["tau_rec_scorer"].value == 0.0
+    assert [s.reducer for s in log.results.scores] == ["pass_k_1"]
+    meta = log.eval.metadata
+    assert meta["caveats"] == ["model_settings_unrecorded"]
+    assert meta["simulator_model"] is None
+    assert set(meta["digests"]) == {"policy_sha256", "tasks_sha256", "catalog_sha256"}
+    assert meta["tau_rec_version"] == tau_rec.__version__
+    assert "harness_commit" in meta
+
+
+def test_keyless_eval_without_user_role_builds_task(tmp_path, monkeypatch):
+    # No OPENAI_API_KEY and no user role: the task (and its metadata) still
+    # builds; only the simulator call fails, as a sample error.
+    for name in ("OPENAI_API_KEY", "AZUREAI_OPENAI_API_KEY"):
+        monkeypatch.delenv(name, raising=False)
+    # An earlier test may have memoized a keyed openai/gpt-5-mini client.
+    from inspect_ai.model import _model as inspect_model
+
+    monkeypatch.setattr(inspect_model, "_models", {})
+    log = _run(model="mockllm/model", model_roles=None, sample_id=TASK,
+               epochs=Epochs(1, ["pass_k_1"]), log_dir=str(tmp_path))
+    assert log.status == "success", log.error
+    meta = log.eval.metadata
+    assert meta["simulator_model"] == "openai/gpt-5-mini"
+    assert meta["caveats"] == ["simulator_settings_unresolved"]
+    assert meta["request_settings"]["simulator"] is None
+    assert meta["request_settings"]["agent"] == {"temperature": 0.0}
+    assert meta["model_args"] == {"agent": {}, "simulator": None}
+    (sample,) = log.samples
+    assert sample.error is not None
+    assert "OPENAI_API_KEY" in sample.error.message
+    assert not sample.scores
 
 
 # --- REQ-001: the documented command ------------------------------------------

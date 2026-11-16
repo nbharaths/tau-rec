@@ -19,9 +19,8 @@ from inspect_ai.model._model import active_model
 from inspect_ai.scorer import pass_k
 
 import tau_rec
-from tau_rec.inspect_support.metadata import comparability_metadata
+from tau_rec.inspect_support.metadata import comparability_metadata, resolved_user_model
 from tau_rec.inspect_support.scorer import tau_rec_scorer
-from tau_rec.inspect_support.simulator import user_model
 from tau_rec.inspect_support.solver import environment, tau_rec_solver
 
 
@@ -42,14 +41,12 @@ def tau_rec_movies(max_turns: int = 20) -> Task:
     repo_root()  # fail first, and clearly, outside a repository checkout
     env = environment()
 
+    # Inspect creates the task with the model under test active (inspect eval,
+    # eval(tau_rec_movies), eval-retry), so the log records its settings. A
+    # task built outside an eval (eval(tau_rec_movies()), task_with) records
+    # only the model-independent fields, with a caveat saying so.
     active = active_model()
-    if active is None:
-        raise RuntimeError(
-            "tau_rec_movies records comparability metadata for the model under "
-            "test, so it must be created by Inspect: run `inspect eval "
-            "src/tau_rec/inspect_task.py@tau_rec_movies`, or pass the task "
-            "function (not an instance) to inspect_ai.eval()."
-        )
+    user = resolved_user_model() if active is not None else None
 
     dataset = MemoryDataset(
         [
@@ -72,5 +69,5 @@ def tau_rec_movies(max_turns: int = 20) -> Task:
         epochs=Epochs(4, [pass_k(1), pass_k(2), pass_k(4)]),
         fail_on_error=False,
         version=tau_rec.__version__,
-        metadata=comparability_metadata(active, user_model()),
+        metadata=comparability_metadata(active, user),
     )
