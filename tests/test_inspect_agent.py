@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+import json
 from contextlib import contextmanager
 
+import httpx
 import pytest
 from inspect_ai.model import (
     ChatMessageSystem,
@@ -18,6 +20,8 @@ from inspect_ai.tool import ToolCall
 
 from tau_rec.agents.base import AgentResponse
 from tau_rec.environment.tools import TOOL_DEFINITIONS
+from tau_rec.harness import BOOKS_V4, LEGACY
+from tau_rec.orchestrator.orchestrator import Orchestrator, _Stop
 from tau_rec.inspect_support.agent import (
     AgentCallError,
     AgentContextLengthError,
@@ -217,7 +221,9 @@ async def test_parse_error_raises_not_abstention():
     agent.add_user_message("Pick one.")
     with active(model), pytest.raises(AgentCallError) as info:
         await agent.respond(None)
-    assert "recommend" in str(info.value)
+    assert info.value.function == "recommend"
+    assert info.value.tool_call_id == "c1"
+    assert info.value.parse_error.startswith("Error parsing")
     assert "context" not in str(info.value).lower()
 
 
@@ -366,3 +372,141 @@ def test_fill_unset_does_not_mutate_inputs():
 def test_fill_unset_rejects_unknown_native_setting():
     with pytest.raises(ValueError):
         fill_unset({"top_logprobs_v2": 1}, GenerateConfig())
+
+
+# Model text never reaches the error message (fix round 1, finding 1) ---------
+
+GARBLED = '{"query": "film where context of the length is'  # Inspect: parse_error
+
+
+@pytest.mark.parametrize("harness", [LEGACY, BOOKS_V4], ids=lambda h: h.id)
+async def test_parse_error_with_context_length_text_is_not_a_context_stop(harness):
+    output = _tool_output([("c1", "search_catalog", {})])
+    # Inspect's tool_parse_error_message embeds the raw arguments.
+    output.choices[0].message.tool_calls[0].parse_error = (
+        f"Error parsing the following tool call arguments:\n\n{GARBLED} too long window"
+        "\n\nError details: context length"
+    )
+    model = _model(Recorder([output]))
+    agent = InspectAgent(model, SYSTEM_PROMPT, TOOL_DEFINITIONS, harness=harness)
+    agent.add_user_message("Hi.")
+    orchestrator = Orchestrator(agent, simulator=None, toolkit=None, harness=harness)
+    with active(model), pytest.raises(AgentCallError) as info:
+        await orchestrator._respond(None)
+    assert not isinstance(info.value, _Stop)
+    assert GARBLED not in str(info.value)
+    assert "context" in info.value.parse_error
+
+
+async def test_content_filter_message_excludes_model_text():
+    refusal = "I cannot discuss the context length of this film."
+    model = _model(Recorder([
+        ModelOutput.from_content("mockllm/model", refusal, stop_reason="content_filter")
+    ]))
+    agent = _agent(model)
+    agent.add_user_message("Hi.")
+    orchestrator = Orchestrator(agent, simulator=None, toolkit=None)
+    with active(model), pytest.raises(AgentCallError) as info:
+        await orchestrator._respond(None)
+    assert refusal not in str(info.value)
+
+
+# Raw arguments re-parsed as native does (fix round 1, finding 2) -------------
+
+
+def _openai_model(tool_calls: list[tuple[str, str, str]]):
+    """openai/gpt-5-mini over a mock transport returning one Chat Completion."""
+    requests: list[dict] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        requests.append(json.loads(request.content))
+        return httpx.Response(200, json={
+            "id": "chatcmpl-1",
+            "object": "chat.completion",
+            "created": 0,
+            "model": "gpt-5-mini",
+            "choices": [{
+                "index": 0,
+                "finish_reason": "tool_calls",
+                "message": {
+                    "role": "assistant",
+                    "content": None,
+                    "tool_calls": [
+                        {"id": call_id, "type": "function",
+                         "function": {"name": name, "arguments": arguments}}
+                        for call_id, name, arguments in tool_calls
+                    ],
+                },
+            }],
+            "usage": {"prompt_tokens": 1, "completion_tokens": 1, "total_tokens": 2},
+        })
+
+    model = get_model(
+        "openai/gpt-5-mini",
+        api_key="test-key",
+        responses_api=False,
+        http_client=httpx.AsyncClient(transport=httpx.MockTransport(handler)),
+        memoize=False,
+    )
+    return model, requests
+
+
+async def _respond_once(model) -> AgentResponse:
+    agent = _agent(model)
+    agent.add_user_message("Nothing fits.")
+    with active(model):
+        return await agent.respond(None)
+
+
+@pytest.mark.parametrize("raw", ["", "null", "m123", '{"item_id": "m1"}"', "[]"])
+async def test_raw_non_object_arguments_raise(raw):
+    model, requests = _openai_model([("call_1", "recommend", raw)])
+    with pytest.raises(AgentCallError) as info:
+        await _respond_once(model)
+    assert len(requests) == 1
+    assert info.value.function == "recommend"
+    assert info.value.tool_call_id == "call_1"
+    if raw:
+        assert raw not in str(info.value)
+
+
+async def test_raw_empty_object_is_an_abstention():
+    model, _ = _openai_model([("call_1", "recommend", "{}")])
+    response = await _respond_once(model)
+    assert response.tool_calls == [{"id": "call_1", "name": "recommend", "arguments": {}}]
+
+
+async def test_raw_arguments_are_json_loads_result():
+    model, _ = _openai_model([
+        ("call_1", "get_metadata", '{"item_id": "m1"}'),
+        ("call_2", "recommend", '{"item_id": null}'),
+    ])
+    response = await _respond_once(model)
+    assert response.tool_calls == [
+        {"id": "call_1", "name": "get_metadata", "arguments": {"item_id": "m1"}},
+        {"id": "call_2", "name": "recommend", "arguments": {"item_id": None}},
+    ]
+
+
+async def test_raw_capture_sees_every_call_past_transcript_limit():
+    # Inspect's transcript keeps ModelEvent.call for only the first 5 calls
+    # per model by default; the capture must not depend on it.
+    model, requests = _openai_model([("call_1", "recommend", "")])
+    agent = _agent(model)
+    with active(model):
+        for _ in range(7):
+            agent.reset()
+            agent.add_user_message("Nothing fits.")
+            with pytest.raises(AgentCallError):
+                await agent.respond(None)
+    assert len(requests) == 7
+
+
+async def test_no_raw_response_falls_back_to_inspect_arguments():
+    # mockllm records no OpenAI-shaped response: Inspect's parsed arguments
+    # pass through (documented deviation).
+    model = _model(Recorder([_tool_output([("c1", "recommend", {"item_id": "m1"})])]))
+    response = await _respond_once(model)
+    assert response.tool_calls == [
+        {"id": "c1", "name": "recommend", "arguments": {"item_id": "m1"}}
+    ]

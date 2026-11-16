@@ -8,6 +8,10 @@ as ``ToolInfo`` definitions and Inspect never runs them.
 """
 from __future__ import annotations
 
+import json
+from contextvars import ContextVar
+from typing import Any
+
 from inspect_ai.model import (
     ChatMessage,
     ChatMessageAssistant,
@@ -42,7 +46,102 @@ class AgentCallError(Exception):
     Raised for a content-filter stop and for a tool call whose arguments did
     not parse. The trial errors; it never becomes an agent message or a
     ``{}``-argument tool call (which, for ``recommend``, would be an abstention).
+
+    The message is fixed text only. The orchestrator classifies errors by
+    substring ("context" + "length" is a context stop), so model-generated
+    text (raw arguments, tool names, call ids) is kept on attributes instead.
     """
+
+    def __init__(
+        self,
+        message: str,
+        *,
+        tool_call_id: str | None = None,
+        function: str | None = None,
+        parse_error: str | None = None,
+    ) -> None:
+        super().__init__(message)
+        self.tool_call_id = tool_call_id
+        self.function = function
+        self.parse_error = parse_error
+
+
+# Raw provider responses, captured per respond() call. A context-local holder
+# keeps concurrent samples sharing one (memoized) Model apart.
+_raw_capture: ContextVar[list[Any] | None] = ContextVar("tau_rec_raw_capture", default=None)
+
+
+def _install_raw_capture(model: Model) -> None:
+    """Record the ``ModelCall`` each successful ``ModelAPI.generate`` returns.
+
+    The transcript's ``ModelEvent.call`` is not usable for this: by default
+    Inspect keeps it only for the first few calls per model, and
+    ``--no-log-model-api`` drops it. Wrapping the API instance's ``generate``
+    sees every attempt; outside a ``respond`` it only passes through.
+    """
+    api = model.api
+    if getattr(api, "_tau_rec_raw_capture", False):
+        return
+    original = api.generate
+
+    async def generate(*args: Any, **kwargs: Any) -> Any:
+        result = await original(*args, **kwargs)
+        holder = _raw_capture.get()
+        if holder is not None:
+            holder[:] = [
+                result[1]
+                if isinstance(result, tuple) and isinstance(result[0], ModelOutput)
+                else None
+            ]
+        return result
+
+    api.generate = generate  # type: ignore[method-assign]
+    api._tau_rec_raw_capture = True  # type: ignore[attr-defined]
+
+
+def _raw_arguments(response: Any) -> dict[str, str]:
+    """Tool-call id -> raw argument string, from an OpenAI-shaped response body.
+
+    Covers Chat Completions (``choices[].message.tool_calls[]``) and Responses
+    (``output[]`` items of type ``function_call``). Any other shape yields {}.
+    """
+    found: dict[str, str] = {}
+    if not isinstance(response, dict):
+        return found
+    for choice in response.get("choices") or []:
+        message = choice.get("message") if isinstance(choice, dict) else None
+        for call in (message or {}).get("tool_calls") or []:
+            if not isinstance(call, dict):
+                continue
+            function = call.get("function") or {}
+            if isinstance(call.get("id"), str) and isinstance(function.get("arguments"), str):
+                found[call["id"]] = function["arguments"]
+    for item in response.get("output") or []:
+        if (
+            isinstance(item, dict)
+            and item.get("type") == "function_call"
+            and isinstance(item.get("call_id"), str)
+            and isinstance(item.get("arguments"), str)
+        ):
+            found[item["call_id"]] = item["arguments"]
+    return found
+
+
+def _native_arguments(raw: str, call_id: str, function: str) -> dict:
+    """Parse raw arguments exactly as native does (``json.loads``), requiring a dict."""
+    try:
+        arguments = json.loads(raw)
+    except (json.JSONDecodeError, RecursionError):
+        arguments = None
+    else:
+        if isinstance(arguments, dict):
+            return arguments
+    raise AgentCallError(
+        "agent tool call arguments are not a JSON object",
+        tool_call_id=call_id,
+        function=function,
+        parse_error="arguments did not json.loads to an object",
+    )
 
 
 def tool_infos(tool_definitions: list[dict]) -> list[ToolInfo]:
@@ -79,6 +178,7 @@ class InspectAgent(BaseAgent):
         self._tools = tool_infos(tool_definitions)
         self._harness = harness
         self._history: list[ChatMessage] = []
+        _install_raw_capture(model)
 
     def reset(self) -> None:
         self._history = []
@@ -126,24 +226,44 @@ class InspectAgent(BaseAgent):
             # Track tool results in history so future calls see them.
             self._history.extend(self._tool_messages(tool_results))
 
-        output = await self._model.generate(
-            [ChatMessageSystem(content=self._system_prompt), *self._history],
-            tools=self._tools,
-            config=self._generate_config(),
-        )
+        holder: list[Any] = []
+        token = _raw_capture.set(holder)
+        try:
+            output = await self._model.generate(
+                [ChatMessageSystem(content=self._system_prompt), *self._history],
+                tools=self._tools,
+                config=self._generate_config(),
+            )
+        finally:
+            _raw_capture.reset(token)
         _check_stop(output)
+
+        call = holder[0] if holder else None
+        raw = _raw_arguments(getattr(call, "response", None))
 
         message = output.message
         tool_calls = []
-        for call in message.tool_calls or []:
-            if call.parse_error is not None:
+        for tool_call in message.tool_calls or []:
+            if tool_call.parse_error is not None:
                 # Native json.loads raises here; never pass on {} arguments.
                 raise AgentCallError(
-                    f"tool call {call.function!r} ({call.id}) has unparseable "
-                    f"arguments: {call.parse_error}"
+                    "agent tool call arguments could not be parsed",
+                    tool_call_id=tool_call.id,
+                    function=tool_call.function,
+                    parse_error=tool_call.parse_error,
                 )
+            if tool_call.id in raw:
+                # Inspect parses leniently (YAML for non-object strings, stray
+                # quote recovery), so "" or "null" can become {"item_id": None},
+                # an abstention. Re-parse the raw text as native does.
+                arguments = _native_arguments(raw[tool_call.id], tool_call.id, tool_call.function)
+            else:
+                # No raw response for this call (a provider whose response is
+                # not OpenAI-shaped, a cache hit, mockllm): fall back to
+                # Inspect's parsed arguments. Documented deviation.
+                arguments = tool_call.arguments
             tool_calls.append(
-                {"id": call.id, "name": call.function, "arguments": call.arguments}
+                {"id": tool_call.id, "name": tool_call.function, "arguments": arguments}
             )
 
         # Kept as returned, so reasoning blocks round-trip on later turns.
@@ -159,6 +279,7 @@ def _check_stop(output: ModelOutput) -> None:
             f"{': ' + output.error if output.error else ''})"
         )
     if output.stop_reason == "content_filter":
+        # Fixed text: the refusal itself is model text and stays out.
         raise AgentCallError(
             "agent call was stopped by the provider's content filter "
             "(stop_reason=content_filter)"
