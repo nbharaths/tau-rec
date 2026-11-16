@@ -569,3 +569,46 @@ async def test_llm_user_request_carries_provider_pin(monkeypatch):
     assert completion.await_args.kwargs["extra_body"]["provider"]["order"] == ["z-ai/fp8"]
     assert completion.await_args.kwargs["extra_body"]["provider"]["allow_fallbacks"] is False
     assert simulator.call_log[0]["served_provider"] == "Z.AI"
+
+
+async def test_call_once_is_the_only_provider_touchpoint(monkeypatch):
+    import litellm
+    import tau_rec.simulator.user_simulator as module
+
+    replies = iter(["", "", "hello"])
+    seen: list[tuple[dict, int]] = []
+
+    class Overridden(UserSimulator):
+        async def _call_once(self, kwargs, attempt):
+            seen.append((kwargs, attempt))
+            return next(replies)
+
+    base, _, _ = _grounded_simulator()
+    simulator = Overridden("must-not-be-called", base.task, BOOKS, base._catalog)
+    monkeypatch.setattr(litellm, "acompletion", AsyncMock(side_effect=AssertionError("provider hit")))
+    sleep = AsyncMock()
+    monkeypatch.setattr(module.asyncio, "sleep", sleep)
+
+    reply = await simulator._llm_reply([Message(role=Role.AGENT, content="Hello! What do you like?")])
+
+    assert reply == "hello"
+    assert [attempt for _, attempt in seen] == [0, 1, 2]
+    assert seen[0][0]["messages"][0]["role"] == "system"
+    assert seen[0][0]["messages"][-1] == {"role": "user", "content": "Hello! What do you like?"}
+    assert sleep.await_count == 2
+
+
+async def test_llm_reply_raises_after_max_empty(monkeypatch):
+    import pytest
+    import tau_rec.simulator.user_simulator as module
+
+    class AlwaysEmpty(UserSimulator):
+        async def _call_once(self, kwargs, attempt):
+            return ""
+
+    base, _, _ = _grounded_simulator()
+    simulator = AlwaysEmpty("must-not-be-called", base.task, BOOKS, base._catalog)
+    monkeypatch.setattr(module.asyncio, "sleep", AsyncMock())
+
+    with pytest.raises(RuntimeError, match="user simulator returned no text in 8 attempts"):
+        await simulator._llm_reply([Message(role=Role.AGENT, content="Hi")])

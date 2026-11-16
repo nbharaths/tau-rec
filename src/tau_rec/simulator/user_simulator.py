@@ -953,82 +953,97 @@ class UserSimulator:
             return None
         return answer
 
-    async def _llm_reply(self, conversation: list[Message], system_prompt: str | None = None) -> str:
-        import litellm
-
+    def _request_messages(
+        self, conversation: list[Message], system_prompt: str | None = None,
+    ) -> list[dict]:
         messages = [{"role": "system", "content": system_prompt or self.system_prompt}]
         for msg in conversation:
             role = "assistant" if msg.role == Role.USER else "user"
             messages.append({"role": role, "content": msg.content})
+        return messages
+
+    def _request_kwargs(self, messages: list[dict]) -> dict:
+        from tau_rec.agents.litellm_agent import provider_routing
+        from tau_rec.agents.request_settings import simulator_request_settings
 
         kwargs = {
             "model": self.model,
             "messages": messages,
-            "temperature": 1.0,
+            **simulator_request_settings(self.model),
             "timeout": REQUEST_TIMEOUT_SECONDS,
         }
-        if "deepseek" in self.model.lower():
-            # litellm refuses a top-level `thinking` for unmapped OpenRouter models.
-            if not self.model.startswith("openrouter/"):
-                kwargs["thinking"] = {"type": "disabled"}
-            kwargs["extra_body"] = {"thinking": {"type": "disabled"}}
-        from tau_rec.agents.litellm_agent import provider_routing
-
         routing = provider_routing(self._provider_order)
         if routing and self.model.startswith("openrouter/"):
             kwargs.setdefault("extra_body", {})["provider"] = routing
+        return kwargs
+
+    async def _call_once(self, kwargs: dict, attempt: int) -> str:
+        """One provider call: append its call-log row, record usage, return the content.
+
+        The only place the simulator touches a provider. The reply may be empty
+        or whitespace; the row is then marked "empty". Provider errors propagate
+        to the retry loop in ``_llm_reply``.
+        """
+        import litellm
+
+        started_at = datetime.now(UTC).isoformat(timespec="milliseconds")
+        call_start = time.perf_counter()
+        response = await timed_call(
+            litellm.acompletion(**kwargs), self._harness.call_timeout_seconds
+        )
+        from tau_rec.cost import call_cost, record_usage, response_usage
+        usage = response_usage(response)
+        content = response.choices[0].message.content
+        empty = not (content and content.strip())
+        # A token-free empty reply consumed nothing and often carries no
+        # provider cost; recording it would trip the fail-closed ceiling.
+        if not (empty and not any(usage.values())):
+            record_usage("sim", response)
+        hidden_value = getattr(response, "_hidden_params", {}) or {}
+        hidden = hidden_value if isinstance(hidden_value, dict) else {}
+        self._call_log.append({
+            "attempt": attempt + 1,
+            # Providers occasionally return no text (zero tokens, or reasoning only).
+            "status": "empty" if empty else "ok",
+            "started_at": started_at,
+            "latency_seconds": time.perf_counter() - call_start,
+            "requested_model": self.model,
+            "response_model": getattr(response, "model", None),
+            "response_id": getattr(response, "id", None),
+            "system_fingerprint": (
+                getattr(response, "system_fingerprint", None)
+                or hidden.get("system_fingerprint")
+            ),
+            "provider": hidden.get("custom_llm_provider"),
+            "provider_model_id": hidden.get("model_id"),
+            "provider_order": self._provider_order,
+            "served_provider": getattr(response, "provider", None),
+            "request_parameters": {
+                "extra_body": kwargs.get("extra_body"),
+                "temperature": kwargs["temperature"],
+                "top_p": kwargs.get("top_p", "omitted"),
+                "seed": kwargs.get("seed", "omitted"),
+                "thinking": kwargs.get("thinking"),
+                "timeout_seconds": kwargs["timeout"],
+            },
+            "tokens": usage,
+            "provider_reported_cost_usd": hidden.get("response_cost"),
+            "estimated_cost_usd": call_cost(self.model, usage),
+        })
+        return content
+
+    async def _llm_reply(self, conversation: list[Message], system_prompt: str | None = None) -> str:
+        kwargs = self._request_kwargs(self._request_messages(conversation, system_prompt))
         for attempt in range(MAX_RETRIES):
             started_at = datetime.now(UTC).isoformat(timespec="milliseconds")
             call_start = time.perf_counter()
             try:
                 from tau_rec.cost import check_provider_budget
                 check_provider_budget()
-                response = await timed_call(
-                    litellm.acompletion(**kwargs), self._harness.call_timeout_seconds
-                )
-                from tau_rec.cost import call_cost, record_usage, response_usage
-                usage = response_usage(response)
-                content = response.choices[0].message.content
-                empty = not (content and content.strip())
-                # A token-free empty reply consumed nothing and often carries no
-                # provider cost; recording it would trip the fail-closed ceiling.
-                if not (empty and not any(usage.values())):
-                    record_usage("sim", response)
-                hidden_value = getattr(response, "_hidden_params", {}) or {}
-                hidden = hidden_value if isinstance(hidden_value, dict) else {}
-                self._call_log.append({
-                    "attempt": attempt + 1,
-                    "status": "ok",
-                    "started_at": started_at,
-                    "latency_seconds": time.perf_counter() - call_start,
-                    "requested_model": self.model,
-                    "response_model": getattr(response, "model", None),
-                    "response_id": getattr(response, "id", None),
-                    "system_fingerprint": (
-                        getattr(response, "system_fingerprint", None)
-                        or hidden.get("system_fingerprint")
-                    ),
-                    "provider": hidden.get("custom_llm_provider"),
-                    "provider_model_id": hidden.get("model_id"),
-                    "provider_order": self._provider_order,
-                    "served_provider": getattr(response, "provider", None),
-                    "request_parameters": {
-                        "extra_body": kwargs.get("extra_body"),
-                        "temperature": kwargs["temperature"],
-                        "top_p": kwargs.get("top_p", "omitted"),
-                        "seed": kwargs.get("seed", "omitted"),
-                        "thinking": kwargs.get("thinking"),
-                        "timeout_seconds": kwargs["timeout"],
-                    },
-                    "tokens": usage,
-                    "provider_reported_cost_usd": hidden.get("response_cost"),
-                    "estimated_cost_usd": call_cost(self.model, usage),
-                })
-                if not empty:
+                content = await self._call_once(kwargs, attempt)
+                if content and content.strip():
                     return content
-                # Providers occasionally return no text (zero tokens, or reasoning
-                # only). Resample the reply instead of failing the whole trial.
-                self._call_log[-1]["status"] = "empty"
+                # Resample the reply instead of failing the whole trial.
                 await asyncio.sleep(2 * (attempt + 1))
                 continue
             except CallTimeout as error:
