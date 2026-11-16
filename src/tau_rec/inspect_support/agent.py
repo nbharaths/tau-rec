@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import json
 from contextvars import ContextVar
+from types import SimpleNamespace
 from typing import Any
 
 from inspect_ai.model import (
@@ -31,10 +32,12 @@ from tau_rec.agents.base import AgentResponse, BaseAgent
 from tau_rec.agents.request_settings import agent_request_settings, native_model_name
 from tau_rec.harness import LEGACY, HarnessProfile
 from tau_rec.inspect_support.config import fill_unset
+from tau_rec.orchestrator.orchestrator import Orchestrator
 
 
 class AgentContextLengthError(Exception):
-    """The model ran out of context (``stop_reason="model_length"``).
+    """The model ran out of context (``stop_reason="model_length"``, or a
+    provider error whose message reads as a context overflow).
 
     The message contains "context length", so the orchestrator stops the trial
     as a context stop (``TIMEOUT`` under the legacy harness), as it does for
@@ -94,12 +97,40 @@ class AgentProviderError(Exception):
         self.provider_message = provider_message
 
 
-def _provider_error(error: ModelGenerateError) -> AgentProviderError:
+# The orchestrator's legacy context-stop rule, used by reference: its
+# _is_context_overflow (orchestrator.py:59-65) reads only ``self._harness``,
+# and under LEGACY (detailed_stop_reasons=False) it is "context" and "length"
+# both in the lowercased message.
+_LEGACY_RULE = SimpleNamespace(_harness=LEGACY)
+
+
+def _is_context_overflow(provider_message: str | None) -> bool:
+    """Whether the provider's own error text reads as a context overflow.
+
+    Inspect maps context overflow to ``stop_reason="model_length"`` only for
+    some providers (OpenAI's ``context_length_exceeded``, Anthropic, DeepSeek,
+    DeepInfra); OpenRouter and others raise ``ModelGenerateError`` instead.
+    Native litellm raises ``ContextWindowExceededError`` for these, which the
+    orchestrator matches by the same rule. ``provider_message`` is
+    ``str(provider exception)``, provider text, not request text.
+    """
+    if not provider_message:
+        return False
+    return Orchestrator._is_context_overflow(_LEGACY_RULE, Exception(provider_message))
+
+
+def _provider_error(error: ModelGenerateError) -> Exception:
     if error.status_code is not None:
         detail = f"status {int(error.status_code)}"
     else:
         cause = error.__cause__
         detail = type(cause).__name__ if cause is not None else "no status"
+    if _is_context_overflow(error.provider_message):
+        # Fixed text containing "context length": a context stop (TIMEOUT
+        # under the legacy harness), as on the native path.
+        return AgentContextLengthError(
+            f"agent model exceeded its context length (provider error, {detail})"
+        )
     return AgentProviderError(
         f"agent provider call failed ({detail})",
         status_code=error.status_code,
