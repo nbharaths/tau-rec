@@ -20,7 +20,11 @@ from inspect_ai.model import (
     get_model,
 )
 from inspect_ai.model._generate_config import active_generate_config_context_var
-from inspect_ai.model._model import active_model_context_var
+from inspect_ai.model._model import (
+    ModelGenerateError,
+    ModelRefusalError,
+    active_model_context_var,
+)
 from inspect_ai.solver import solver
 
 from tau_rec.data_model.conversation import Message, Role
@@ -29,6 +33,7 @@ from tau_rec.inspect_support.simulator import (
     DEFAULT_USER_MODEL,
     InspectSimulator,
     SimulatorCallError,
+    SimulatorProviderError,
     user_model,
 )
 from tau_rec.orchestrator.orchestrator import OPENING_GREETING
@@ -52,7 +57,10 @@ class Recorder:
 
     def __call__(self, input, tools, tool_choice, config):
         self.calls.append({"input": list(input), "config": config})
-        return self._outputs.pop(0)
+        output = self._outputs.pop(0)
+        if isinstance(output, BaseException):
+            raise output
+        return output
 
 
 def _reply(content: str, **kwargs) -> ModelOutput:
@@ -254,6 +262,86 @@ async def test_abnormal_stop_raises_without_model_text(stop_reason, no_sleep):
     assert len(recorder.calls) == 1
     assert [row["status"] for row in simulator.call_log] == ["error"]
     assert simulator.call_log[0]["retrying"] is False
+
+
+# Inspect's ModelGenerateError message carries the request JSON: here it holds
+# words the native loop treats as transient.
+REQUEST_TEXT = "REQUEST-TEXT the connection was unavailable, error 429 overloaded rate_limit 503"
+
+
+def _generate_error(status_code: int | None, cause: Exception | None = None):
+    error = ModelGenerateError(
+        f"\nRequest:\n{REQUEST_TEXT}\n\nBadRequestError('{REQUEST_TEXT}')",
+        status_code=status_code,
+        provider_message=f"provider says {REQUEST_TEXT}",
+    )
+    error.__cause__ = cause
+    return error
+
+
+async def test_provider_error_request_text_not_retried(no_sleep):
+    recorder = Recorder([_generate_error(400)])
+    simulator = InspectSimulator(_model(recorder), _task())
+
+    with pytest.raises(SimulatorProviderError) as raised:
+        await simulator.respond([Message(role=Role.AGENT, content=OPENING_GREETING)])
+
+    assert len(recorder.calls) == 1
+    (row,) = simulator.call_log
+    assert row["status"] == "error"
+    assert row["retrying"] is False
+    assert no_sleep.await_count == 0
+    assert str(raised.value) == "user simulator provider call failed (status 400)"
+    assert "REQUEST-TEXT" not in row["error"]
+    assert raised.value.status_code == 400
+    assert raised.value.provider_message == f"provider says {REQUEST_TEXT}"
+    assert isinstance(raised.value.__cause__, ModelGenerateError)
+
+
+@pytest.mark.parametrize("status_code", [429, 503])
+async def test_genuine_transient_status_retried(status_code, no_sleep):
+    recorder = Recorder([_generate_error(status_code), _reply("A comedy, please.")])
+    simulator = InspectSimulator(_model(recorder), _task())
+
+    reply = await simulator.respond([Message(role=Role.AGENT, content=OPENING_GREETING)])
+
+    assert reply.content == "A comedy, please."
+    assert len(recorder.calls) == 2
+    assert [(row["status"], row.get("retrying")) for row in simulator.call_log] == [
+        ("error", True), ("ok", None),
+    ]
+    assert str(status_code) in simulator.call_log[0]["error"]
+    assert "REQUEST-TEXT" not in simulator.call_log[0]["error"]
+    assert no_sleep.await_count == 1
+
+
+async def test_statusless_error_keeps_only_cause_class_name(no_sleep):
+    class APIConnectionError(Exception):
+        pass
+
+    recorder = Recorder([_generate_error(None, APIConnectionError(REQUEST_TEXT)), _reply("ok")])
+    simulator = InspectSimulator(_model(recorder), _task())
+
+    await simulator.respond([Message(role=Role.AGENT, content=OPENING_GREETING)])
+
+    error = simulator.call_log[0]["error"]
+    assert error == "user simulator provider call failed (APIConnectionError)"
+    assert simulator.call_log[0]["retrying"] is True
+
+
+async def test_refusal_error_raised_without_model_text(no_sleep):
+    refusal = _reply(f"MODEL-TEXT {REQUEST_TEXT}", stop_reason="content_filter")
+    recorder = Recorder([ModelRefusalError(refusal, "mockllm/model", "user")])
+    simulator = InspectSimulator(_model(recorder), _task())
+
+    with pytest.raises(SimulatorCallError) as raised:
+        await simulator.respond([Message(role=Role.AGENT, content=OPENING_GREETING)])
+
+    assert len(recorder.calls) == 1
+    assert "MODEL-TEXT" not in str(raised.value)
+    assert "REQUEST-TEXT" not in simulator.call_log[0]["error"]
+    assert simulator.call_log[0]["retrying"] is False
+    assert isinstance(raised.value.__cause__, ModelRefusalError)
 
 
 async def test_max_tokens_passes_through():

@@ -19,8 +19,10 @@ from inspect_ai.model import (
     GenerateConfig,
     Model,
     ModelOutput,
+    ModelRefusalError,
     get_model,
 )
+from inspect_ai.model._model import ModelGenerateError
 
 from tau_rec.agents.request_settings import native_model_name, simulator_request_settings
 from tau_rec.data_model.task import Task
@@ -63,6 +65,47 @@ class SimulatorCallError(Exception):
     forms). The message is fixed text only, with none of the words the native
     retry loop treats as transient, so the trial errors on the first attempt.
     """
+
+
+class SimulatorProviderError(Exception):
+    """An Inspect provider error, re-raised with no request or model text.
+
+    Inspect's ``ModelGenerateError`` message embeds up to 200 lines of the
+    request JSON (the simulator prompt and every turn), and
+    ``ModelRefusalError`` embeds the start of the completion. The native retry
+    loop matches transient-error words against ``str(error)`` and writes it to
+    the call log, so either would let conversation text decide retries and
+    leak into the sample error. The message here keeps only the HTTP status
+    (a genuine 429 or 503 still reads as transient to the native loop) or,
+    when there is none, the provider exception's class name (so a genuine
+    connection error still does). The provider's own message is kept on
+    ``provider_message``; the original error is chained as ``__cause__``.
+    """
+
+    def __init__(
+        self,
+        message: str,
+        *,
+        status_code: int | None = None,
+        provider_message: str | None = None,
+    ) -> None:
+        super().__init__(message)
+        self.status_code = status_code
+        self.provider_message = provider_message
+
+
+def _provider_error(error: ModelGenerateError) -> SimulatorProviderError:
+    if error.status_code is not None:
+        detail = f"status {int(error.status_code)}"
+    else:
+        cause = error.__cause__
+        # A class name is code-defined text, never request or model text.
+        detail = type(cause).__name__ if cause is not None else "no status"
+    return SimulatorProviderError(
+        f"user simulator provider call failed ({detail})",
+        status_code=error.status_code,
+        provider_message=error.provider_message,
+    )
 
 
 def _inspect_messages(messages: list[dict]) -> list[ChatMessage]:
@@ -126,10 +169,18 @@ class InspectSimulator(UserSimulator):
 
         started_at = datetime.now(UTC).isoformat(timespec="milliseconds")
         call_start = time.perf_counter()
-        output = await timed_call(
-            model.generate(_inspect_messages(kwargs["messages"]), config=config),
-            self._harness.call_timeout_seconds,
-        )
+        try:
+            output = await timed_call(
+                model.generate(_inspect_messages(kwargs["messages"]), config=config),
+                self._harness.call_timeout_seconds,
+            )
+        except ModelGenerateError as error:
+            raise _provider_error(error) from error
+        except ModelRefusalError as error:
+            # fail_on_refusal is set: same outcome as a content_filter stop.
+            raise SimulatorCallError(
+                "user simulator call stopped (stop_reason=content_filter, fail_on_refusal)"
+            ) from error
         _check_stop(output)
 
         content = output.completion
